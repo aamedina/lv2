@@ -1,0 +1,98 @@
+^#:rdf{:ns-prefix-map
+       {"xsd" "http://www.w3.org/2001/XMLSchema#",
+        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+        "time" "http://lv2plug.in/ns/ext/time#",
+        "owl" "http://www.w3.org/2002/07/owl#",
+        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#"}}
+[{:rdf/about :time/Rate,
+  :rdfs/comment "The rate of passage of time.",
+  :rdfs/label "Rate",
+  :rdfs/subClassOf :time/Position,
+  :rdf/type [:owl/Class :rdfs/Class]}
+ {:rdf/about :time/beatUnit,
+  :rdfs/comment "The note value that counts as one beat.",
+  :rdfs/label "beat unit",
+  :rdfs/range :xsd/nonNegativeInteger,
+  :rdfs/domain :time/Rate,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/beatsPerBar,
+  :rdfs/comment "The number of beats in one bar.",
+  :rdfs/label "beats per bar",
+  :rdfs/range :xsd/float,
+  :rdfs/domain :time/Rate,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/bar,
+  :rdfs/comment "A musical bar or measure.",
+  :rdfs/label "bar",
+  :rdfs/range :xsd/long,
+  :rdfs/domain :time/Time,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/beat,
+  :rdfs/comment "The global running beat number.",
+  :rdfs/label "beat",
+  :rdfs/range :xsd/double,
+  :rdfs/domain :time/Time,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/beatsPerMinute,
+  :rdfs/comment "Tempo in beats per minute.",
+  :rdfs/label "beats per minute",
+  :rdfs/range :xsd/float,
+  :rdfs/domain :time/Rate,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/frame,
+  :rdfs/comment "A time stamp in audio frames.",
+  :rdfs/label "frame",
+  :rdfs/range :xsd/long,
+  :rdfs/domain :time/Time,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/framesPerSecond,
+  :rdfs/comment "Frame rate in frames per second.",
+  :rdfs/label "frames per second",
+  :rdfs/range :xsd/float,
+  :rdfs/domain :time/Rate,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/barBeat,
+  :rdfs/comment
+  "The beat number within the bar, from 0 to time:beatsPerBar.",
+  :rdfs/label "beat within bar",
+  :rdfs/range :xsd/float,
+  :rdfs/domain :time/Time,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/Time,
+  :rdfs/comment "A point in time in some unit/dimension.",
+  :rdfs/label "Time",
+  :rdfs/subClassOf :time/Position,
+  :rdf/type [:owl/Class :rdfs/Class]}
+ {:rdf/about :time/speed,
+  :rdfs/comment
+  "The rate of the progress of time as a fraction of normal speed.",
+  :rdfs/label "speed",
+  :rdfs/range :xsd/float,
+  :rdfs/domain :time/Rate,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :time/Position,
+  :rdfs/comment
+  "A point in time and/or the speed at which time is passing.",
+  :rdfs/label "Position",
+  :rdf/type [:owl/Class :rdfs/Class]}
+ {:rdf/about :time/position,
+  :rdfs/comment "A musical position.",
+  :rdfs/label "position",
+  :rdfs/range :time/Position,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about "<http://lv2plug.in/ns/ext/time>",
+  :rdfs/seeAlso
+  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/time.lv2/time.meta.ttl>",
+  :rdfs/comment "A vocabulary for describing musical time.",
+  :rdfs/label "LV2 Time",
+  :rdf/type :owl/Ontology}]

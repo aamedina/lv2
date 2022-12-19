@@ -1,0 +1,372 @@
+^#:rdf{:ns-prefix-map
+       {"xsd" "http://www.w3.org/2001/XMLSchema#",
+        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+        "owl" "http://www.w3.org/2002/07/owl#",
+        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#"}}
+[{:rdf/about :xsd/unsignedShort,
+  :owl/withRestrictions _173de90a3d13f7ed64b7ec7931557fd4,
+  :owl/onDatatype :xsd/unsignedInt,
+  :rdfs/label "unsigned short",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _e17bd8fe5c7985a717a3ab718f349d28,
+  :xsd/pattern
+  "-?[0-9][0-9][0-9][0-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|[-+][0-2][0-9]:[0-5][0-9])?"}
+ {:rdf/about _956b649a2310e5c171b8fff61c71b7b4,
+  :xsd/pattern
+  "(([A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/] *)*(([A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/])|([A-Za-z0-9+/] *[A-Za-z0-9+/] *[AEIMQUYcgkosw048] *=)|([A-Za-z0-9+/] *[AQgw] *= *=)))?"}
+ {:rdf/about :xsd/nonPositiveInteger,
+  :owl/withRestrictions _04a0bc6632e67614206c3722f58b3591,
+  :owl/onDatatype :xsd/integer,
+  :rdfs/label "non-positive integer",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _19e3a7f481a64ffd6017f312fc8b9f38,
+       :rest _0039b2a18fc4c9b1b1039233c8684142,
+       :first _2fafd4e9e105737f728b8e9af4cdaae0}
+ #:rdf{:about _fd0b88f6659d58b52ab0f8ce6b1c0a98,
+       :rest :rdf/nil,
+       :first _e4f110a288a066d2c78effc4ce0a6e2c}
+ {:rdf/about :xsd/language,
+  :owl/withRestrictions _819239d8157e85193fd67c59647134eb,
+  :owl/onDatatype :xsd/token,
+  :rdfs/label "language",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/positiveInteger,
+  :owl/withRestrictions _eb52358c49324e166927e44e87d49f1d,
+  :owl/onDatatype :xsd/nonNegativeInteger,
+  :rdfs/label "positive integer",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _98f382e63f67beaf3e447a71002e6fa2,
+  :xsd/pattern
+  "(([0-1][0-9])|(2[0-4])):[0-5][0-9]:[0-5][0-9](.[0-9]+)?(Z|[-+][0-2][0-9]:[0-5][0-9])?"}
+ {:rdf/about _1a971be70f9f96faa255855846dd43fd, :xsd/fractionDigits 0}
+ #:rdf{:about _3297c3be0691e17c90f15778598f6e2b,
+       :rest _4448564968b8b66ff06d123875720ceb,
+       :first _3bddb59f991523cc19624bd24a2fad67}
+ #:rdf{:about _7500cbb1fb422d199b94654c7a0c1806,
+       :rest _69fd7fedcc0908b97a36ee4542652f78,
+       :first _fbd0338030eed241e9ceef27b7328087}
+ {:rdf/about :xsd/duration,
+  :owl/withRestrictions _19e3a7f481a64ffd6017f312fc8b9f38,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "duration",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _72695550df129b0cb9b37167373a1dfa,
+       :rest :rdf/nil,
+       :first _b11526bd8fe0440752f04aa1fd31185d}
+ #:rdf{:about _7efce96813ae532cb2a8dd666edffbe5,
+       :rest :rdf/nil,
+       :first _1fe1b3eb3f901fc340614376a123afca}
+ {:rdf/about _d6e49a89125bbdeb270c8efe534b98f9, :xsd/maxInclusive -1}
+ {:rdf/about _3bddb59f991523cc19624bd24a2fad67, :xsd/maxInclusive 127}
+ {:rdf/about :xsd/double,
+  :owl/withRestrictions _2c9e45013eae789c0b4c2124b3e05e23,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "double",
+  :rdfs/comment "IEEE double-precision 64-bit floating point.",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _c8aed100d1c5190b0c473fbf26ee3a71,
+       :rest :rdf/nil,
+       :first _54bb153802d5315b554f89b5f980cadd}
+ {:rdf/about :xsd/unsignedLong,
+  :owl/withRestrictions _51f6f74b65c83e17f00cf0092960678c,
+  :owl/onDatatype :xsd/nonNegativeInteger,
+  :rdfs/label "unsigned long",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _b09a74dbb87a085dfd0a71761e80e89b,
+  :xsd/pattern "(0|-[0-9]+)"}
+ #:rdf{:about _eb52358c49324e166927e44e87d49f1d,
+       :rest _17274615ca397730bfa83e2b168aa6b2,
+       :first _f7f153bf80ed4fc88d1191687a01d78f}
+ {:rdf/about :xsd/string,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "string",
+  :rdfs/comment "A character string.",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _8f137a518be1b356accf7175b768f281,
+  :xsd/pattern "([0-9A-Fa-f][0-9A-Fa-f])*"}
+ #:rdf{:about _f9b0546d1e32037bfe93a39169330783,
+       :rest :rdf/nil,
+       :first _e0fe23fe908785b8bc1eb3c5ec4bf6db}
+ #:rdf{:about _69fd7fedcc0908b97a36ee4542652f78,
+       :rest :rdf/nil,
+       :first _1a971be70f9f96faa255855846dd43fd}
+ {:rdf/about :xsd/base64Binary,
+  :owl/withRestrictions _7ae9503b89a90a3296098ac6188f2ac2,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "base64 binary",
+  :rdfs/comment "Base64-encoded arbitrary binary data.",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _dae8e4cad86132ba6eac05d78a39990e,
+  :xsd/maxInclusive 65535}
+ {:rdf/about :xsd/integer,
+  :owl/withRestrictions _7500cbb1fb422d199b94654c7a0c1806,
+  :owl/onDatatype :xsd/decimal,
+  :rdfs/label "integer",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _f43e00e73f3c3d5141cde72213bb7cc9,
+  :xsd/pattern "[+]?[0-9]+"}
+ {:rdf/about :xsd/hexBinary,
+  :owl/withRestrictions _a46ebf31b8c310b90848eff4c0cdd38d,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "hex binary",
+  :rdfs/comment "Hex-encoded arbitrary binary data.",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/float,
+  :owl/withRestrictions _c150075a7f7bef550f8161b5e559ec30,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "float",
+  :rdfs/comment "IEEE single-precision 32-bit floating point.",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _54bb153802d5315b554f89b5f980cadd,
+  :xsd/pattern
+  "-?[0-9][0-9][0-9][0-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([0-1][0-9])|(2[0-4])):[0-5][0-9]:[0-5][0-9](.[0-9]+)?(Z|[-+][0-2][0-9]:[0-5][0-9])?"}
+ {:rdf/about :xsd/short,
+  :owl/withRestrictions _059e12867cbad4c01b616da6bd2e6aed,
+  :owl/onDatatype :xsd/int,
+  :rdfs/label "short",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/date,
+  :owl/withRestrictions _9370bf764180cb9ae1578888463a25da,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "date",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _50630fcf8b869c3665d1752db7d972d2,
+       :rest :rdf/nil,
+       :first _41fa2dba396c1b6232ff5935044cd7f7}
+ #:rdf{:about _51f6f74b65c83e17f00cf0092960678c,
+       :rest :rdf/nil,
+       :first _2541d2ad49056849f8a260d50b95bce3}
+ {:rdf/about :xsd/time,
+  :owl/withRestrictions _c0848b1a1e1b0c28f1094536535843f6,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "time",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _7613a58854cd3017d6b47ddad3f895e6, :xsd/maxInclusive 255}
+ {:rdf/about :xsd/minExclusive,
+  :rdfs/label "min exclusive",
+  :rdfs/comment "The exclusive lower bound of an ordered datatype.",
+  :rdf/type [:owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :xsd/unsignedInt,
+  :owl/withRestrictions _264418b5c01a235ea12b413e9000393e,
+  :owl/onDatatype :xsd/unsignedLong,
+  :rdfs/label "unsigned int",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _fb854622eb83a40e8cffd23b749cd8d9,
+       :rest _f82a065f60b7c7327a9d973ecbc462ee,
+       :first _dfbc870d3ad5d433657d594ccdc4666f}
+ {:rdf/about :xsd/token,
+  :owl/onDatatype :xsd/normalizedString,
+  :rdfs/label "token",
+  :rdfs/comment
+  "The set of strings that do not contain the carriage return (#xD), line feed (#xA) nor tab (#x9) characters, that have no leading or trailing spaces (#x20) and that have no internal sequences of two or more spaces.",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _e651cad62bc6816e78d0966110265db5, :xsd/minInclusive -128}
+ #:rdf{:about _8559acdd8efcd932dc63d2c48342fc88,
+       :rest :rdf/nil,
+       :first _c1ca6188251c4da5c970d03f7bb833a8}
+ {:rdf/about _69bf31905939392f1c526e55e87988ca,
+  :owl/withRestrictions _7efce96813ae532cb2a8dd666edffbe5,
+  :owl/onDatatype :xsd/string,
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/anySimpleType,
+  :rdfs/label "any simple type",
+  :rdfs/comment "The base class of any primitive XSD dataype.",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _9370bf764180cb9ae1578888463a25da,
+       :rest :rdf/nil,
+       :first _e17bd8fe5c7985a717a3ab718f349d28}
+ {:rdf/about :xsd/byte,
+  :owl/withRestrictions _3297c3be0691e17c90f15778598f6e2b,
+  :owl/onDatatype :xsd/short,
+  :rdfs/label "byte",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/fractionDigits,
+  :rdfs/range :xsd/nonNegativeInteger,
+  :rdfs/label "fraction digits",
+  :rdfs/comment
+  "The total number of digits to the right of the decimal point required to represent a value.",
+  :rdf/type [:owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about _21ca25b556219dae06c34106fab5e270,
+  :xsd/pattern
+  "[a-zA-Z][a-zA-Z]?[a-zA-Z]?[a-zA-Z]?[a-zA-Z]?[a-zA-Z]?[a-zA-Z]?[a-zA-Z]?(-[a-zA-Z0-9][a-zA-Z0-9]?[a-zA-Z0-9]?[a-zA-Z0-9]?[a-zA-Z0-9]?[a-zA-Z0-9]?[a-zA-Z0-9]?[a-zA-Z0-9]?)*"}
+ {:rdf/about _6ed8d5b4a6f977501e99a1bcb026e301, :xsd/minInclusive 1}
+ {:rdf/about :xsd/normalizedString,
+  :owl/onDatatype :xsd/string,
+  :rdfs/label "normalized string",
+  :rdfs/comment
+  "The set of strings that do not contain the carriage return (#xD), line feed (#xA) nor tab (#x9) characters.",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _173de90a3d13f7ed64b7ec7931557fd4,
+       :rest :rdf/nil,
+       :first _dae8e4cad86132ba6eac05d78a39990e}
+ {:rdf/about _b11526bd8fe0440752f04aa1fd31185d,
+  :xsd/pattern
+  "-?INF|NaN|[+-]?(([0-9]+[.]?[0-9]*)|([0-9]*[.]?[0-9]+))([eE][-+]?[0-9]+)?"}
+ #:rdf{:about _2c9e45013eae789c0b4c2124b3e05e23,
+       :rest :rdf/nil,
+       :first _2b4a2bf6b042d8a78739c0d706274656}
+ {:rdf/about :xsd/maxInclusive,
+  :rdfs/label "max inclusive",
+  :rdfs/comment "The inclusive upper bound of an ordered datatype.",
+  :rdf/type [:owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about _fbd0338030eed241e9ceef27b7328087,
+  :xsd/pattern "[-+]?[0-9]+"}
+ #:rdf{:about _819239d8157e85193fd67c59647134eb,
+       :rest :rdf/nil,
+       :first _21ca25b556219dae06c34106fab5e270}
+ {:rdf/about _122b00339542c0d94afd71a271c65003,
+  :xsd/minInclusive -9223372036854775808}
+ {:rdf/about _f7f153bf80ed4fc88d1191687a01d78f,
+  :xsd/pattern "[+]?[0-9]*[1-9]+[0-9]*"}
+ #:rdf{:about _4448564968b8b66ff06d123875720ceb,
+       :rest :rdf/nil,
+       :first _e651cad62bc6816e78d0966110265db5}
+ {:rdf/about _2fafd4e9e105737f728b8e9af4cdaae0,
+  :xsd/pattern
+  "-?P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?"}
+ #:rdf{:about _1d2eed6106a674594d8c4dd5c77aefb8,
+       :rest :rdf/nil,
+       :first _7613a58854cd3017d6b47ddad3f895e6}
+ {:rdf/about _2541d2ad49056849f8a260d50b95bce3,
+  :xsd/maxInclusive 18446744073709551615}
+ {:rdf/about _e4f110a288a066d2c78effc4ce0a6e2c,
+  :xsd/minInclusive -2147483648}
+ {:rdf/about _42ec430667db15e112d753868f31cf96,
+  :xsd/maxInclusive 2147483647}
+ #:rdf{:about _4bd64910154011b024fefc4467e15f97,
+       :rest :rdf/nil,
+       :first _bcdca6c35e595048a2a2d39b54e75545}
+ {:rdf/about _2f6b730858707e913153d0979238a4d2,
+  :xsd/pattern
+  "-?INF|NaN|[+-]?(([0-9]+[.]?[0-9]*)|([0-9]*[.]?[0-9]+))([eE][-+]?[0-9]+)?"}
+ {:rdf/about _7e54d65044c88f162e646203f4d0eedc,
+  :xsd/whiteSpace "collapse"}
+ #:rdf{:about _f82a065f60b7c7327a9d973ecbc462ee,
+       :rest :rdf/nil,
+       :first _122b00339542c0d94afd71a271c65003}
+ #:rdf{:about _677b9ad613637b59384f1cec84b20fb0,
+       :rest _fd0b88f6659d58b52ab0f8ce6b1c0a98,
+       :first _42ec430667db15e112d753868f31cf96}
+ {:rdf/about :xsd/decimal,
+  :owl/withRestrictions _72695550df129b0cb9b37167373a1dfa,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "decimal",
+  :rdfs/comment
+  "A subset of the real numbers, which can be represented by decimal numerals.",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _264418b5c01a235ea12b413e9000393e,
+       :rest :rdf/nil,
+       :first _5ecd36d75d6c26402c9e62d0322f785b}
+ {:rdf/about _5ecd36d75d6c26402c9e62d0322f785b,
+  :xsd/maxInclusive 4294967295}
+ {:rdf/about :xsd/pattern,
+  :rdfs/label "pattern",
+  :rdfs/comment
+  "A regular expression that matches complete valid literals.",
+  :rdf/type [:owl/DatatypeProperty :rdf/Property]}
+ #:rdf{:about _c0848b1a1e1b0c28f1094536535843f6,
+       :rest :rdf/nil,
+       :first _98f382e63f67beaf3e447a71002e6fa2}
+ #:rdf{:about _04a0bc6632e67614206c3722f58b3591,
+       :rest _f9b0546d1e32037bfe93a39169330783,
+       :first _b09a74dbb87a085dfd0a71761e80e89b}
+ {:rdf/about :xsd/int,
+  :owl/withRestrictions _677b9ad613637b59384f1cec84b20fb0,
+  :owl/onDatatype :xsd/long,
+  :rdfs/label "int",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about "<http://www.w3.org/2001/XMLSchema#>",
+  :rdfs/comment "XML Schema Datatypes",
+  :rdf/type :owl/Ontology}
+ #:rdf{:about _0039b2a18fc4c9b1b1039233c8684142,
+       :rest :rdf/nil,
+       :first _7e54d65044c88f162e646203f4d0eedc}
+ {:rdf/about _1fe1b3eb3f901fc340614376a123afca,
+  :xsd/pattern "(preserve|replace|collapse)"}
+ {:rdf/about :xsd/anyURI,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "any URI",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about _e57aa12364688b3f76534ec9255261dd,
+  :xsd/whiteSpace "collapse"}
+ {:rdf/about _2b4a2bf6b042d8a78739c0d706274656,
+  :xsd/pattern
+  "-?INF|NaN|[+-]?(([0-9]+[.]?[0-9]*)|([0-9]*[.]?[0-9]+))([eE][-+]?[0-9]+)?"}
+ #:rdf{:about _059e12867cbad4c01b616da6bd2e6aed,
+       :rest _8559acdd8efcd932dc63d2c48342fc88,
+       :first _20d1c7ce8a18e1b2df9c79a6192fae2c}
+ #:rdf{:about _7ae9503b89a90a3296098ac6188f2ac2,
+       :rest :rdf/nil,
+       :first _956b649a2310e5c171b8fff61c71b7b4}
+ {:rdf/about _dfbc870d3ad5d433657d594ccdc4666f,
+  :xsd/maxInclusive 9223372036854775807}
+ {:rdf/about _c1ca6188251c4da5c970d03f7bb833a8,
+  :xsd/minInclusive -32768}
+ {:rdf/about _e0fe23fe908785b8bc1eb3c5ec4bf6db, :xsd/maxInclusive 0}
+ {:rdf/about _41fa2dba396c1b6232ff5935044cd7f7, :xsd/minInclusive 0}
+ {:rdf/about :xsd/unsignedByte,
+  :owl/withRestrictions _1d2eed6106a674594d8c4dd5c77aefb8,
+  :owl/onDatatype :xsd/unsignedShort,
+  :rdfs/label "unsigned byte",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _88413ae1e9984c4738f6e5a65aa796b1,
+       :rest :rdf/nil,
+       :first _e57aa12364688b3f76534ec9255261dd}
+ {:rdf/about :xsd/whiteSpace,
+  :rdfs/range _69bf31905939392f1c526e55e87988ca,
+  :rdfs/label "white space",
+  :rdfs/comment
+  "A string that describes whitespace normalization for a string type.",
+  :rdf/type [:owl/DatatypeProperty :rdf/Property]}
+ #:rdf{:about _a46ebf31b8c310b90848eff4c0cdd38d,
+       :rest :rdf/nil,
+       :first _8f137a518be1b356accf7175b768f281}
+ {:rdf/about _bcdca6c35e595048a2a2d39b54e75545,
+  :xsd/pattern "(true|false|0|1)"}
+ #:rdf{:about _c150075a7f7bef550f8161b5e559ec30,
+       :rest _88413ae1e9984c4738f6e5a65aa796b1,
+       :first _2f6b730858707e913153d0979238a4d2}
+ {:rdf/about :xsd/long,
+  :owl/withRestrictions _fb854622eb83a40e8cffd23b749cd8d9,
+  :owl/onDatatype :xsd/integer,
+  :rdfs/label "long",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/nonNegativeInteger,
+  :owl/withRestrictions _3b5567ed94390d28ad39f9be48cc1eef,
+  :owl/onDatatype :xsd/integer,
+  :rdfs/label "non-negative integer",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/negativeInteger,
+  :owl/withRestrictions _b9bcfb22c3a7b3c2a406460427670ed1,
+  :owl/onDatatype :xsd/nonPositiveInteger,
+  :rdfs/label "negative integer",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _17274615ca397730bfa83e2b168aa6b2,
+       :rest :rdf/nil,
+       :first _6ed8d5b4a6f977501e99a1bcb026e301}
+ #:rdf{:about _3b5567ed94390d28ad39f9be48cc1eef,
+       :rest _50630fcf8b869c3665d1752db7d972d2,
+       :first _f43e00e73f3c3d5141cde72213bb7cc9}
+ {:rdf/about :xsd/dateTime,
+  :owl/withRestrictions _c8aed100d1c5190b0c473fbf26ee3a71,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "date time",
+  :rdf/type :rdfs/Datatype}
+ #:rdf{:about _b9bcfb22c3a7b3c2a406460427670ed1,
+       :rest :rdf/nil,
+       :first _d6e49a89125bbdeb270c8efe534b98f9}
+ {:rdf/about :xsd/maxExclusive,
+  :rdfs/label "max exclusive",
+  :rdfs/comment "The exclusive upper bound of an ordered datatype.",
+  :rdf/type [:owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about :xsd/boolean,
+  :owl/withRestrictions _4bd64910154011b024fefc4467e15f97,
+  :owl/onDatatype :xsd/anySimpleType,
+  :rdfs/label "boolean",
+  :rdf/type :rdfs/Datatype}
+ {:rdf/about :xsd/minInclusive,
+  :rdfs/label "min inclusive",
+  :rdfs/comment "The inclusive lower bound of an ordered datatype.",
+  :rdf/type [:owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about _20d1c7ce8a18e1b2df9c79a6192fae2c,
+  :xsd/maxInclusive 32767}]

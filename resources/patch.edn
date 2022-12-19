@@ -1,0 +1,225 @@
+^#:rdf{:ns-prefix-map
+       {"patch" "http://lv2plug.in/ns/ext/patch#",
+        "owl" "http://www.w3.org/2002/07/owl#",
+        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "xsd" "http://www.w3.org/2001/XMLSchema#",
+        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+        "foaf" "http://xmlns.com/foaf/0.1/"}}
+[{:rdf/about :patch/Delete,
+  :rdfs/comment
+  "Request that the patch:subject or subjects be deleted.",
+  :rdfs/label "Delete",
+  :rdfs/subClassOf :patch/Request,
+  :rdf/type :rdfs/Class}
+ {:rdf/about :patch/value,
+  :rdfs/comment "The value of a property in a patch:Set message.",
+  :rdfs/domain :patch/Set,
+  :rdfs/label "value",
+  :rdf/type :rdf/Property}
+ {:rdf/about _7eb6bafe676298fc67da8e2c7c996376,
+  :owl/onProperty :patch/remove,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/sequenceNumber,
+  :rdfs/comment "The sequence number of a request or response.",
+  :rdfs/range :xsd/int,
+  :rdfs/domain :patch/Message,
+  :rdfs/label "sequence number",
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about _3c83a01a0649afe41f6bb7fec897f387,
+  :owl/onProperty :patch/subject,
+  :owl/minCardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/request,
+  :rdfs/comment "The request this is a response to.",
+  :rdfs/range :patch/Request,
+  :rdfs/domain :patch/Response,
+  :rdfs/label "request",
+  :rdf/type
+  [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/Request,
+  :rdfs/comment "A patch request message.",
+  :rdfs/subClassOf :patch/Message,
+  :rdfs/label "Request",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :patch/context,
+  :rdfs/comment "The context of properties in this message.",
+  :rdfs/label "context",
+  :rdfs/domain :patch/Message,
+  :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/Put,
+  :rdfs/comment
+  "A request to put the patch:body as the patch:subject.",
+  :rdfs/subClassOf [_d0b5ee9de90773fa9d69e7efb24a2e80 :patch/Request],
+  :rdfs/label "Put",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :patch/destination,
+  :rdfs/comment "The destination to move the patch:subject to.",
+  :rdfs/label "destination",
+  :rdfs/domain :patch/Message,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/accept,
+  :rdfs/comment "An accepted type for a response.",
+  :rdfs/range :rdfs/Class,
+  :rdfs/domain :patch/Request,
+  :rdfs/label "accept",
+  :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/subject,
+  :rdfs/comment "The subject this message applies to.",
+  :rdfs/label "subject",
+  :rdfs/domain :patch/Message,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/remove,
+  :rdfs/comment "The properties to remove from the subject.",
+  :rdfs/range :rdfs/Resource,
+  :rdfs/domain :patch/Patch,
+  :rdfs/label "remove",
+  :rdf/type
+  [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/Ack,
+  :rdfs/comment "An acknowledgement that a request was successful.",
+  :rdfs/label "Ack",
+  :rdfs/subClassOf :patch/Response,
+  :rdf/type :rdfs/Class}
+ {:rdf/about _d887014f1510d0074e8255dff0b9de9d,
+  :owl/onProperty :patch/add,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/body,
+  :rdfs/comment "The body of a message.",
+  :rdfs/label "body",
+  :rdfs/domain :patch/Message,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/Error,
+  :rdfs/comment "A response indicating an error processing a request.",
+  :rdfs/label "Error",
+  :rdfs/subClassOf :patch/Response,
+  :rdf/type :rdfs/Class}
+ {:rdf/about _46427e70e79af09b819489f571891278,
+  :owl/onProperty :patch/subject,
+  :owl/minCardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/Patch,
+  :rdfs/comment
+  "A request to add and/or remove properties of the patch:subject.",
+  :rdfs/label "Patch",
+  :rdfs/subClassOf
+  [_7eb6bafe676298fc67da8e2c7c996376
+   _d887014f1510d0074e8255dff0b9de9d
+   _3c83a01a0649afe41f6bb7fec897f387
+   :patch/Request],
+  :rdf/type :rdfs/Class}
+ {:rdf/about _b837eb39cb86727b6b35546c479f9f96,
+  :owl/onProperty :patch/destination,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/Message,
+  :rdfs/comment "A patch message.",
+  :rdfs/label "Patch Message",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :patch/Response,
+  :rdfs/comment "A response to a patch:Request.",
+  :rdfs/label "Response",
+  :rdfs/subClassOf :patch/Message,
+  :rdf/type :rdfs/Class}
+ {:rdf/about :patch/writable,
+  :rdfs/comment
+  "A property that can be set with a patch:Set or patch:Patch message.",
+  :rdfs/range :rdf/Property,
+  :rdfs/label "writable",
+  :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about "<http://lv2plug.in/ns/ext/patch>",
+  :rdfs/comment
+  "A protocol for accessing and manipulating properties.",
+  :rdfs/label "LV2 Patch",
+  :rdfs/seeAlso
+  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/patch.lv2/patch.meta.ttl>",
+  :rdf/type :owl/Ontology}
+ {:rdf/about :patch/Set,
+  :rdfs/comment "A compact request to set a property to a value.",
+  :rdfs/subClassOf
+  [_3aca4accb5e5b98a864e708e6141ae43
+   _cd77dce8414930827d72de75ac38dfd4
+   :patch/Request],
+  :rdfs/label "Set",
+  :rdf/type :rdfs/Class}
+ {:rdf/about _4440995fd82568aa90846d9cb8328dda,
+  :owl/onProperty :patch/subject,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/add,
+  :rdfs/comment "The properties to add to the subject.",
+  :rdfs/label "add",
+  :rdfs/range :rdfs/Resource,
+  :rdfs/domain :patch/Patch,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/wildcard,
+  :rdfs/comment "A wildcard that matches any resource.",
+  :rdfs/label "wildcard",
+  :rdf/type :owl/Thing}
+ {:rdf/about _cd77dce8414930827d72de75ac38dfd4,
+  :owl/onProperty :patch/property,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/Insert,
+  :rdfs/comment
+  "A request to insert a patch:body into the patch:subject.",
+  :rdfs/subClassOf [_4440995fd82568aa90846d9cb8328dda :patch/Request],
+  :rdfs/label "Insert",
+  :rdf/type :rdfs/Class}
+ {:rdf/about _3aca4accb5e5b98a864e708e6141ae43,
+  :owl/onProperty :patch/value,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/property,
+  :rdfs/comment "The property for a patch:Set or patch:Get message.",
+  :rdfs/range :rdf/Property,
+  :rdfs/domain :patch/Message,
+  :rdfs/label "property",
+  :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/Copy,
+  :rdfs/comment
+  "A request to copy the patch:subject to the patch:destination.",
+  :rdfs/subClassOf
+  [_b837eb39cb86727b6b35546c479f9f96
+   _46427e70e79af09b819489f571891278
+   :patch/Request],
+  :rdfs/label "Copy",
+  :rdf/type :rdfs/Class}
+ {:rdf/about _d0b5ee9de90773fa9d69e7efb24a2e80,
+  :owl/onProperty :patch/subject,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about _606924f403d2ab7c76278dd50d0e3aac,
+  :owl/onProperty :patch/destination,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :patch/Move,
+  :rdfs/comment
+  "A request to move the patch:subject to the patch:destination.",
+  :rdfs/subClassOf
+  [_606924f403d2ab7c76278dd50d0e3aac
+   _a4767d6e5beb9352edf7da09057a8f65
+   :patch/Request],
+  :rdfs/label "Move",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :patch/readable,
+  :rdfs/comment
+  "A property that can be read with a patch:Get message.",
+  :rdfs/range :rdf/Property,
+  :rdfs/label "readable",
+  :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :patch/Get,
+  :rdfs/comment "A request for a description of the patch:subject.",
+  :rdfs/label "Get",
+  :rdfs/subClassOf :patch/Request,
+  :rdf/type :rdfs/Class}
+ {:rdf/about _a4767d6e5beb9352edf7da09057a8f65,
+  :owl/onProperty :patch/subject,
+  :owl/cardinality 1,
+  :rdf/type :owl/Restriction}]

@@ -1,0 +1,52 @@
+^#:rdf{:ns-prefix-map
+       {"owl" "http://www.w3.org/2002/07/owl#",
+        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "pset" "http://lv2plug.in/ns/ext/presets#",
+        "xsd" "http://www.w3.org/2001/XMLSchema#",
+        "lv2" "http://lv2plug.in/ns/lv2core#",
+        "rdfs" "http://www.w3.org/2000/01/rdf-schema#"}}
+[{:rdf/about :pset/Bank,
+  :rdfs/comment "A bank of presets.",
+  :rdfs/subClassOf _00446513278025e56476e7609048217c,
+  :rdfs/label "Bank",
+  :rdf/type :rdfs/Class}
+ {:rdf/about _2007dc7e8b29d55394ac79b0f591db54,
+  :rdfs/comment "A Preset MUST have at least one string rdfs:label.",
+  :owl/minCardinality 1,
+  :owl/onProperty :rdfs/label,
+  :rdf/type :owl/Restriction}
+ {:rdf/about :pset/value,
+  :rdfs/comment "The value of a port in a preset.",
+  :rdfs/label "value",
+  :rdfs/domain :lv2/PortBase,
+  :rdf/type
+  [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about _00446513278025e56476e7609048217c,
+  :rdfs/comment "A Bank MUST have at least one string rdfs:label.",
+  :owl/minCardinality 1,
+  :owl/onProperty :rdfs/label,
+  :rdf/type :owl/Restriction}
+ {:rdf/about "<http://lv2plug.in/ns/ext/presets>",
+  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+  :rdfs/seeAlso
+  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/presets.lv2/presets.meta.ttl>",
+  :rdfs/comment "Presets for LV2 plugins.",
+  :rdfs/label "LV2 Presets",
+  :rdf/type :owl/Ontology}
+ {:rdf/about :pset/Preset,
+  :rdfs/subClassOf [_2007dc7e8b29d55394ac79b0f591db54 :lv2/PluginBase],
+  :rdfs/comment "A preset for an LV2 plugin.",
+  :rdfs/label "Preset",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :pset/preset,
+  :rdfs/comment "The preset currently applied to a plugin instance.",
+  :rdfs/label "preset",
+  :rdfs/range :pset/Preset,
+  :rdfs/domain :lv2/PluginBase,
+  :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about :pset/bank,
+  :rdfs/comment "The bank this preset belongs to.",
+  :rdfs/label "bank",
+  :rdfs/range :pset/Bank,
+  :rdfs/domain :pset/Preset,
+  :rdf/type [:owl/ObjectProperty :rdf/Property]}]

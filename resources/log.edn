@@ -1,0 +1,42 @@
+^#:rdf{:ns-prefix-map
+       {"log" "http://lv2plug.in/ns/ext/log#",
+        "owl" "http://www.w3.org/2002/07/owl#",
+        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "xsd" "http://www.w3.org/2001/XMLSchema#",
+        "lv2" "http://lv2plug.in/ns/lv2core#",
+        "rdfs" "http://www.w3.org/2000/01/rdf-schema#"}}
+[{:rdf/about :log/Note,
+  :rdfs/comment "An informative message.",
+  :rdfs/subClassOf :log/Entry,
+  :rdfs/label "Note",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :log/Trace,
+  :rdfs/comment "A debugging trace message.",
+  :rdfs/subClassOf :log/Entry,
+  :rdfs/label "Trace",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :log/log,
+  :rdfs/comment "Logging feature.",
+  :rdfs/label "log",
+  :rdf/type :lv2/Feature}
+ {:rdf/about "<http://lv2plug.in/ns/ext/log>",
+  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+  :rdfs/seeAlso
+  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/log.lv2/log.meta.ttl>",
+  :rdfs/comment "A feature for writing log messages.",
+  :rdfs/label "LV2 Log",
+  :rdf/type :owl/Ontology}
+ {:rdf/about :log/Error,
+  :rdfs/comment "An error message.",
+  :rdfs/subClassOf :log/Entry,
+  :rdfs/label "Error",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :log/Entry,
+  :rdfs/comment "A log entry.",
+  :rdfs/label "Entry",
+  :rdf/type :rdfs/Class}
+ {:rdf/about :log/Warning,
+  :rdfs/comment "A warning message.",
+  :rdfs/subClassOf :log/Entry,
+  :rdfs/label "Warning",
+  :rdf/type :rdfs/Class}]

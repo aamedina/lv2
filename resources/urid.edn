@@ -1,0 +1,20 @@
+^#:rdf{:ns-prefix-map
+       {"lv2" "http://lv2plug.in/ns/lv2core#",
+        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+        "owl" "http://www.w3.org/2002/07/owl#",
+        "urid" "http://lv2plug.in/ns/ext/urid#"}}
+[{:rdf/about :urid/unmap,
+  :rdfs/comment "A feature to unmap URIDs back to strings.",
+  :rdfs/label "unmap",
+  :rdf/type :lv2/Feature}
+ {:rdf/about "<http://lv2plug.in/ns/ext/urid>",
+  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+  :rdfs/seeAlso
+  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/urid.lv2/urid.meta.ttl>",
+  :rdfs/comment "Features for mapping URIs to and from integers.",
+  :rdfs/label "LV2 URID",
+  :rdf/type :owl/Ontology}
+ {:rdf/about :urid/map,
+  :rdfs/comment "A feature to map URI strings to integer URIDs.",
+  :rdfs/label "map",
+  :rdf/type :lv2/Feature}]
