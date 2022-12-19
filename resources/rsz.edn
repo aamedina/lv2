@@ -5,10 +5,10 @@
         "xsd" "http://www.w3.org/2001/XMLSchema#",
         "lv2" "http://lv2plug.in/ns/lv2core#",
         "rdfs" "http://www.w3.org/2000/01/rdf-schema#"}}
-[{:rdf/about "<http://lv2plug.in/ns/ext/resize-port>",
-  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+[{:rdf/about "http://lv2plug.in/ns/ext/resize-port",
+  :owl/imports "http://lv2plug.in/ns/lv2core",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/resize-port.lv2/resize-port.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/resize-port.lv2/resize-port.meta.ttl",
   :rdfs/comment "Dynamically sized LV2 port buffers.",
   :rdfs/label "LV2 Resize Port",
   :rdf/type :owl/Ontology}

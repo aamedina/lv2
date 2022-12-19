@@ -9,10 +9,10 @@
   :rdfs/comment "The work interface provided by a plugin.",
   :rdfs/label "work interface",
   :rdf/type :lv2/ExtensionData}
- {:rdf/about "<http://lv2plug.in/ns/ext/worker>",
+ {:rdf/about "http://lv2plug.in/ns/ext/worker",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/worker.lv2/worker.meta.ttl>",
-  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/worker.lv2/worker.meta.ttl",
+  :owl/imports "http://lv2plug.in/ns/lv2core",
   :rdfs/comment "Support for doing non-realtime work in plugins.",
   :rdfs/label "LV2 Worker",
   :rdf/type :owl/Ontology}

@@ -46,6 +46,11 @@
   :rdfs/label "Windows UI",
   :rdfs/subClassOf :ui/UI,
   :rdf/type [:owl/Class :rdfs/Class]}
+ {:rdf/about _e344679f0ee0ec823f3f7158a3a68b3d,
+  :rdfs/comment "A PortNotification MUST have exactly one ui:plugin.",
+  :owl/cardinality 1,
+  :owl/onProperty :ui/plugin,
+  :rdf/type :owl/Restriction}
  {:rdf/about :ui/PortProtocol,
   :rdfs/comment
   "A method to communicate port data between a UI and plugin.",
@@ -124,7 +129,7 @@
   :rdfs/comment
   "A description of port updates that a host must send a UI.",
   :rdfs/label "Port Notification",
-  :rdfs/subClassOf _ed7c8a4d7e0684ddf1335e007417f19c,
+  :rdfs/subClassOf _e344679f0ee0ec823f3f7158a3a68b3d,
   :rdf/type [:owl/Class :rdfs/Class]}
  {:rdf/about :ui/portNotification,
   :rdfs/comment
@@ -153,11 +158,6 @@
   :rdfs/label "Qt4 UI",
   :rdfs/subClassOf :ui/UI,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about _ed7c8a4d7e0684ddf1335e007417f19c,
-  :rdfs/comment "A PortNotification MUST have exactly one ui:plugin.",
-  :owl/cardinality 1,
-  :owl/onProperty :ui/plugin,
-  :rdf/type :owl/Restriction}
  {:rdf/about :ui/updateRate,
   :rdfs/comment "The target rate, in Hz, to send updates to the UI.",
   :rdfs/label "update rate",
@@ -174,12 +174,11 @@
   :rdfs/label "GTK3 UI",
   :rdfs/subClassOf :ui/UI,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about "<http://lv2plug.in/ns/extensions/ui>",
+ {:rdf/about "http://lv2plug.in/ns/extensions/ui",
   :owl/imports
-  ["<http://lv2plug.in/ns/ext/options>"
-   "<http://lv2plug.in/ns/lv2core>"],
+  ["http://lv2plug.in/ns/ext/options" "http://lv2plug.in/ns/lv2core"],
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl",
   :rdfs/comment "User interfaces for LV2 plugins.",
   :rdfs/label "LV2 UI",
   :rdf/type :owl/Ontology}

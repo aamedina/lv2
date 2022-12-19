@@ -51,10 +51,10 @@
   :rdfs/range :rdfs/Class,
   :rdfs/domain [:lv2/InputPort :ev/EventPort],
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
- {:rdf/about "<http://lv2plug.in/ns/ext/event>",
-  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+ {:rdf/about "http://lv2plug.in/ns/ext/event",
+  :owl/imports "http://lv2plug.in/ns/lv2core",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.meta.ttl",
   :rdfs/comment "A port-based real-time generic event interface.",
   :rdfs/label "LV2 Event",
   :owl/deprecated true,

@@ -17,10 +17,10 @@
   :rdfs/comment "A feature for freeing paths allocated by the host.",
   :rdfs/label "free path",
   :rdf/type :lv2/Feature}
- {:rdf/about "<http://lv2plug.in/ns/ext/state>",
-  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+ {:rdf/about "http://lv2plug.in/ns/ext/state",
+  :owl/imports "http://lv2plug.in/ns/lv2core",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.meta.ttl",
   :rdfs/comment
   "An interface for LV2 plugins to save and restore state.",
   :rdfs/label "LV2 State",

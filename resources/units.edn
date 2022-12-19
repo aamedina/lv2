@@ -4,21 +4,21 @@
         "units" "http://lv2plug.in/ns/extensions/units#",
         "owl" "http://www.w3.org/2002/07/owl#",
         "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#"}}
-[{:rdf/about :units/to,
+[{:rdf/about _4d46e42869225de96737226b45fe8824,
+  :units/to :units/km,
+  :units/factor 0.00001M}
+ {:rdf/about :units/to,
   :rdfs/comment "The target unit this conversion converts to.",
   :rdfs/label "conversion target",
   :rdfs/range :units/Unit,
   :rdfs/domain :units/Conversion,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
- {:rdf/about _1ed2fea8811d03462d3204b8486bee94,
-  :units/to :units/inch,
-  :units/factor 39.37M}
- {:rdf/about _a37f6a6bdd6215399c50127e3f03097d,
-  :units/to :units/inch,
-  :units/factor 0.3937M}
- {:rdf/about "<http://lv2plug.in/ns/extensions/units>",
+ {:rdf/about _4bfe1c59e921362b11d6b1c346421fb1,
+  :units/to :units/cm,
+  :units/factor 100000}
+ {:rdf/about "http://lv2plug.in/ns/extensions/units",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.meta.ttl",
   :rdfs/comment "Units for LV2 values.",
   :rdfs/label "LV2 Units",
   :rdf/type :owl/Ontology}
@@ -27,7 +27,7 @@
   :units/render "%f semi",
   :rdfs/comment "A semitone in the 12-tone equal temperament scale.",
   :rdfs/label "semitones",
-  :units/conversion _42cf65d7a593d106c72178699e639bb3,
+  :units/conversion _8eefea9d36d11e014e0bec00e858ef45,
   :rdf/type :units/Unit}
  {:rdf/about :units/symbol,
   :rdfs/comment "The abbreviated symbol for this unit (e.g., \"dB\").",
@@ -35,12 +35,15 @@
   :rdfs/domain :units/Unit,
   :rdfs/label "unit symbol",
   :rdf/type [:owl/DatatypeProperty :rdf/Property]}
- {:rdf/about _5a2d07c2d1453d933d9b9d4fdb29fee9,
-  :units/to :units/hz,
-  :units/factor 1000000}
- {:rdf/about _9454664f73e69344884ffb6c9dcce9c2,
-  :units/to :units/min,
-  :units/factor 0.0166666666M}
+ {:rdf/about _18591e99b0761265484e7a31832ecc17,
+  :units/to :units/km,
+  :units/factor 0.001M}
+ {:rdf/about _f4e897d8440b21677c37b55c79668da9,
+  :units/to :units/mhz,
+  :units/factor 0.001M}
+ {:rdf/about _b0113b2e2da14c3e109e8bc8c07ac51f,
+  :units/to :units/mhz,
+  :units/factor 0.000001M}
  {:rdf/about :units/render,
   :rdfs/comment
   "A printf format string for rendering a value (e.g., \"%f dB\").",
@@ -60,12 +63,12 @@
   :rdfs/comment
   "Octaves, relative musical pitch where +1 octave doubles the frequency.",
   :rdfs/label "octaves",
-  :units/conversion _3535260d3db1307edb442f5b2a80e659,
+  :units/conversion _9dd428951ea8b91e158c32f62d5f8955,
   :rdf/type :units/Unit}
  {:rdf/about :units/Conversion,
   :rdfs/comment "A conversion from one unit to another.",
   :rdfs/label "Conversion",
-  :rdfs/subClassOf _9d95531ed0ac1b54b42c46ad0af0096b,
+  :rdfs/subClassOf _41adba8ac8db3f048cccfe580ecaf5c2,
   :rdf/type [:owl/Class :rdfs/Class]}
  {:rdf/about :units/conversion,
   :rdfs/comment "A conversion from this unit to another.",
@@ -77,15 +80,18 @@
   :units/symbol "MHz",
   :units/render "%f MHz",
   :units/prefixConversion
-  [_13b2148d5a219a5ac6a5dcddc4959c59
-   _5a2d07c2d1453d933d9b9d4fdb29fee9],
+  [_da522e2f6e13e77ecc1d6438aa493db8
+   _ac12486b7802cedeadde9c73cf8c45fa],
   :rdfs/comment "Megahertz (millions of Hertz).",
   :rdfs/label "megahertz",
   :rdf/type :units/Unit}
+ {:rdf/about _27c9d3e03eb2da07f90e5996b74b31d9,
+  :units/to :units/pc,
+  :units/factor 100}
  {:rdf/about :units/bpm,
   :units/symbol "BPM",
   :units/render "%f BPM",
-  :units/prefixConversion _fe1978249d9823542d49333f184fa12b,
+  :units/prefixConversion _2d3277c3301d65ae27170b2290798497,
   :rdfs/comment
   "Beats Per Minute (BPM), the standard unit for musical tempo.",
   :rdfs/label "beats per minute",
@@ -95,11 +101,14 @@
   :units/render "%f mi",
   :rdfs/comment "A mile, defined as exactly 1609.344 metres.",
   :rdfs/label "miles",
-  :units/conversion _bd0242bdb278b2876e32466728ad977f,
+  :units/conversion _1d34768b050347b7d6fdb03fb6625618,
   :rdf/type :units/Unit}
- {:rdf/about _428fec0f3d08ec8a54251ecd76bd9528,
-  :units/to :units/km,
-  :units/factor 0.001M}
+ {:rdf/about _8316913ce8991215fb671a86fc6a4505,
+  :units/to :units/hz,
+  :units/factor 1000}
+ {:rdf/about _c10df7c385f9516ad9399cb263c31570,
+  :units/to :units/inch,
+  :units/factor 0.3937M}
  {:rdf/about :units/midiNote,
   :units/symbol "note",
   :units/render "MIDI note %d",
@@ -111,109 +120,100 @@
   :units/render "%f%%",
   :rdfs/comment "Percentage, a ratio as a fraction of 100.",
   :rdfs/label "percent",
-  :units/conversion _e5f15a6962cac82bcc6ecb8d98679a8c,
+  :units/conversion _24918db7bd9ec98733c07c97c6c06f57,
   :rdf/type :units/Unit}
- {:rdf/about _46a83bbb4cf2b8f2d1f9f737d6f77552,
-  :units/to :units/mm,
-  :units/factor 1000000}
  {:rdf/about :units/khz,
   :units/symbol "kHz",
   :units/render "%f kHz",
   :units/prefixConversion
-  [_7a431e6a6df0de8b08a8dd688b2f26ba
-   _40e2a9a52b038242bc66061cf6a2f943],
+  [_f4e897d8440b21677c37b55c79668da9
+   _8316913ce8991215fb671a86fc6a4505],
   :rdfs/comment "Kilohertz (thousands of Hertz).",
   :rdfs/label "kilohertz",
   :rdf/type :units/Unit}
- {:rdf/about _fe1978249d9823542d49333f184fa12b,
-  :units/to :units/hz,
-  :units/factor 0.0166666666M}
  {:rdf/about :units/hz,
   :units/symbol "Hz",
   :units/render "%f Hz",
   :units/prefixConversion
-  [_9113e92f212d6304e64c5d9f6c61f1b2
-   _891a00105f58178b8ca3c76fbcad8e03],
+  [_b0113b2e2da14c3e109e8bc8c07ac51f
+   _8c7bd4e9062c9e97e13743ca2afdacd3],
   :rdfs/comment
   "Hertz, or inverse seconds, the SI derived unit for frequency.",
   :rdfs/label "hertz",
   :rdf/type :units/Unit}
- {:rdf/about _79f973149e64d50f03921db1d72f952c,
-  :units/to :units/mm,
-  :units/factor 10}
- {:rdf/about _e5f15a6962cac82bcc6ecb8d98679a8c,
-  :units/to :units/coef,
-  :units/factor 0.01M}
- {:rdf/about _101c2469a8f2691318ef787b5f254abe,
-  :units/to :units/m,
-  :units/factor 0.001M}
- {:rdf/about _49337c06144de605ef4afbb9baa47fd8,
-  :units/to :units/m,
-  :units/factor 0.01M}
- {:rdf/about _055a3f818b22c8c8a55d01afb0f3e21d,
-  :units/to :units/s,
-  :units/factor 60}
- {:rdf/about _be7a7eff386157eff60f8a325e5a224a,
+ {:rdf/about _5b48d464e46fbd04031e9aec78163c32,
   :units/to :units/inch,
   :units/factor 0.03937M}
- {:rdf/about _616f7f121cd6e6a65ea672bc9438a2ca,
-  :units/to :units/km,
-  :units/factor 0.00001M}
+ {:rdf/about _9dd428951ea8b91e158c32f62d5f8955,
+  :units/to :units/semitone12TET,
+  :units/factor 12}
+ {:rdf/about _da522e2f6e13e77ecc1d6438aa493db8,
+  :units/to :units/khz,
+  :units/factor 0.001M}
  {:rdf/about :units/factor,
   :rdfs/comment
   "The factor to multiply the source value by in order to convert to the target unit.",
   :rdfs/label "conversion factor",
   :rdfs/domain :units/Conversion,
   :rdf/type [:owl/DatatypeProperty :rdf/Property]}
- {:rdf/about _cdbdb3cb8481f4deb8fbbaff7df001d7,
-  :units/to :units/mm,
-  :units/factor 1000}
- {:rdf/about _9113e92f212d6304e64c5d9f6c61f1b2,
-  :units/to :units/mhz,
-  :units/factor 0.000001M}
+ {:rdf/about _8eefea9d36d11e014e0bec00e858ef45,
+  :units/to :units/oct,
+  :units/factor 0.083333333M}
  {:rdf/about :units/coef,
   :units/symbol "",
   :units/render "* %f",
   :rdfs/comment
   "A scale coefficient where 1 is unity, or 100 percent.",
   :rdfs/label "coefficient",
-  :units/conversion _aae5457f8198dbd883f88a3bae8676e9,
+  :units/conversion _27c9d3e03eb2da07f90e5996b74b31d9,
   :rdf/type :units/Unit}
+ {:rdf/about _8e63c922d53f6fb9c45779063559ae45,
+  :units/to :units/s,
+  :units/factor 60}
  {:rdf/about :units/degree,
   :units/symbol "deg",
   :units/render "%f deg",
   :rdfs/comment "An angle where 360 degrees is one full rotation.",
   :rdfs/label "degrees",
   :rdf/type :units/Unit}
- {:rdf/about _4694cdd478fd7f1c4c788661793cf294,
+ {:rdf/about _22adcdff0f2147c4e3f028a31ae96f55,
   :units/to :units/cm,
   :units/factor 0.1M}
- {:rdf/about :units/cm,
-  :units/symbol "cm",
-  :units/render "%f cm",
-  :units/prefixConversion
-  [_616f7f121cd6e6a65ea672bc9438a2ca
-   _79f973149e64d50f03921db1d72f952c
-   _49337c06144de605ef4afbb9baa47fd8],
-  :rdfs/comment "Centimetres (hundredths of metres).",
-  :rdfs/label "centimetres",
-  :units/conversion _a37f6a6bdd6215399c50127e3f03097d,
-  :rdf/type :units/Unit}
- {:rdf/about _9d95531ed0ac1b54b42c46ad0af0096b,
+ {:rdf/about _ffff4fce9ef5e0ebcb0fbb9f2a0a14c7,
+  :units/to :units/m,
+  :units/factor 0.01M}
+ {:rdf/about _41adba8ac8db3f048cccfe580ecaf5c2,
   :rdfs/comment "A conversion MUST have exactly 1 units:to property.",
   :owl/cardinality 1,
   :owl/onProperty :units/to,
   :rdf/type :owl/Restriction}
- {:rdf/about _1b9e421de37a45def749eb98f13b72ff,
-  :units/to :units/km,
-  :units/factor 0.000001M}
+ {:rdf/about _1cc30c47185e424e6b859d7bdf620d88,
+  :units/to :units/s,
+  :units/factor 0.001M}
+ {:rdf/about :units/cm,
+  :units/symbol "cm",
+  :units/render "%f cm",
+  :units/prefixConversion
+  [_4d46e42869225de96737226b45fe8824
+   _645ba2625e8adc9564f62bb748363582
+   _ffff4fce9ef5e0ebcb0fbb9f2a0a14c7],
+  :rdfs/comment "Centimetres (hundredths of metres).",
+  :rdfs/label "centimetres",
+  :units/conversion _c10df7c385f9516ad9399cb263c31570,
+  :rdf/type :units/Unit}
  {:rdf/about :units/inch,
   :units/symbol "in",
   :units/render "%f\"",
   :rdfs/comment "An inch, defined as exactly 0.0254 metres.",
   :rdfs/label "inches",
-  :units/conversion _c3c431b0c4b45a662df20ee080b56e81,
+  :units/conversion _36e7ad2518f939cfaade5f1b3dc04fd5,
   :rdf/type :units/Unit}
+ {:rdf/about _4c3dc35ee1f2db1afbf84f4bc354f893,
+  :units/to :units/m,
+  :units/factor 0.001M}
+ {:rdf/about _73040c3c81643645db0dfc359da72a5d,
+  :units/to :units/mm,
+  :units/factor 1000}
  {:rdf/about :units/bar,
   :units/symbol "bars",
   :units/render "%f bars",
@@ -223,17 +223,14 @@
  {:rdf/about :units/s,
   :units/symbol "s",
   :units/render "%f s",
-  :units/prefixConversion _92d0f51e1245c4f2b3ccc1b7b4e276b5,
+  :units/prefixConversion _9d808636b65fe2cf43a8c91cb2840a2e,
   :rdfs/comment "Seconds, the SI base unit for time.",
   :rdfs/label "seconds",
-  :units/conversion _9454664f73e69344884ffb6c9dcce9c2,
+  :units/conversion _422a36b36773394ac9dc86cfbd6f8f04,
   :rdf/type :units/Unit}
- {:rdf/about _42cf65d7a593d106c72178699e639bb3,
-  :units/to :units/oct,
-  :units/factor 0.083333333M}
- {:rdf/about _7a431e6a6df0de8b08a8dd688b2f26ba,
-  :units/to :units/mhz,
-  :units/factor 0.001M}
+ {:rdf/about _ac12486b7802cedeadde9c73cf8c45fa,
+  :units/to :units/hz,
+  :units/factor 1000000}
  {:rdf/about :units/prefixConversion,
   :rdfs/comment
   "A conversion from this unit to another with the same base but a different prefix.",
@@ -247,40 +244,31 @@
   :units/render "%f ct",
   :rdfs/comment "Cents (hundredths of semitones).",
   :rdfs/label "cents",
-  :units/conversion _09fad14d07f804d0d204fa980ac02c55,
+  :units/conversion _ddb87f4feb944f49d9a4df74b7ce7117,
   :rdf/type :units/Unit}
- {:rdf/about _c3c431b0c4b45a662df20ee080b56e81,
-  :units/to :units/m,
-  :units/factor 0.0254M}
+ {:rdf/about _9a049b0c46e1c5941c596179a9666874,
+  :units/to :units/mm,
+  :units/factor 1000000}
  {:rdf/about :units/min,
   :units/symbol "min",
   :units/render "%f mins",
   :rdfs/comment "Minutes (60s of seconds and 60ths of an hour).",
   :rdfs/label "minutes",
-  :units/conversion _055a3f818b22c8c8a55d01afb0f3e21d,
+  :units/conversion _8e63c922d53f6fb9c45779063559ae45,
   :rdf/type :units/Unit}
- {:rdf/about _40e2a9a52b038242bc66061cf6a2f943,
-  :units/to :units/hz,
-  :units/factor 1000}
- {:rdf/about _92d0f51e1245c4f2b3ccc1b7b4e276b5,
-  :units/to :units/ms,
-  :units/factor 1000}
- {:rdf/about _55f06d5fa198c2c209eb76ae7d5fe014,
-  :units/to :units/s,
-  :units/factor 0.001M}
- {:rdf/about _bd0242bdb278b2876e32466728ad977f,
-  :units/to :units/m,
-  :units/factor 1609.344M}
+ {:rdf/about _cf84894edffcad00e2462cf1a0d7b295,
+  :units/to :units/km,
+  :units/factor 0.000001M}
+ {:rdf/about _422a36b36773394ac9dc86cfbd6f8f04,
+  :units/to :units/min,
+  :units/factor 0.0166666666M}
  {:rdf/about :units/ms,
   :units/symbol "ms",
   :units/render "%f ms",
-  :units/prefixConversion _55f06d5fa198c2c209eb76ae7d5fe014,
+  :units/prefixConversion _1cc30c47185e424e6b859d7bdf620d88,
   :rdfs/comment "Milliseconds (thousandths of seconds).",
   :rdfs/label "milliseconds",
   :rdf/type :units/Unit}
- {:rdf/about _9d65670edf2e77aec1c068978fb1b769,
-  :units/to :units/m,
-  :units/factor 1000}
  {:rdf/about :units/Unit,
   :rdfs/comment "A unit for a control value.",
   :rdfs/label "Unit",
@@ -290,19 +278,16 @@
   :rdfs/label "unit",
   :rdfs/range :units/Unit,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
- {:rdf/about _891a00105f58178b8ca3c76fbcad8e03,
-  :units/to :units/khz,
-  :units/factor 0.001M}
  {:rdf/about :units/m,
   :units/symbol "m",
   :units/render "%f m",
   :units/prefixConversion
-  [_428fec0f3d08ec8a54251ecd76bd9528
-   _cdbdb3cb8481f4deb8fbbaff7df001d7
-   _91d3057171b797d3814bd892ff42a273],
+  [_18591e99b0761265484e7a31832ecc17
+   _73040c3c81643645db0dfc359da72a5d
+   _5aed72b52c86008b7315df04314a64bc],
   :rdfs/comment "Metres, the SI base unit for length.",
   :rdfs/label "metres",
-  :units/conversion _1ed2fea8811d03462d3204b8486bee94,
+  :units/conversion _8d0135f53c3fb09229aa9d0e7ec7ad2c,
   :rdf/type :units/Unit}
  {:rdf/about :units/frame,
   :units/symbol "frames",
@@ -310,34 +295,52 @@
   :rdfs/comment "Audio frames or samples.",
   :rdfs/label "audio frames",
   :rdf/type :units/Unit}
+ {:rdf/about _24918db7bd9ec98733c07c97c6c06f57,
+  :units/to :units/coef,
+  :units/factor 0.01M}
+ {:rdf/about _9d808636b65fe2cf43a8c91cb2840a2e,
+  :units/to :units/ms,
+  :units/factor 1000}
  {:rdf/about :units/km,
   :units/symbol "km",
   :units/render "%f km",
   :units/prefixConversion
-  [_46a83bbb4cf2b8f2d1f9f737d6f77552
-   _645b532ba28910028a81c3dfbb8a7c4b
-   _9d65670edf2e77aec1c068978fb1b769],
+  [_9a049b0c46e1c5941c596179a9666874
+   _4bfe1c59e921362b11d6b1c346421fb1
+   _d3eebc38320acca04d11ad59e92c22c6],
   :rdfs/comment "Kilometres (thousands of metres).",
   :rdfs/label "kilometres",
-  :units/conversion _6387a054d9a546740b91cd8a0459b7ec,
+  :units/conversion _dc2be9937f8975ae114442685ac9c974,
   :rdf/type :units/Unit}
- {:rdf/about _09fad14d07f804d0d204fa980ac02c55,
-  :units/to :units/semitone12TET,
-  :units/factor 0.01M}
+ {:rdf/about _8c7bd4e9062c9e97e13743ca2afdacd3,
+  :units/to :units/khz,
+  :units/factor 0.001M}
+ {:rdf/about _1d34768b050347b7d6fdb03fb6625618,
+  :units/to :units/m,
+  :units/factor 1609.344M}
  {:rdf/about :units/mm,
   :units/symbol "mm",
   :units/render "%f mm",
   :units/prefixConversion
-  [_1b9e421de37a45def749eb98f13b72ff
-   _4694cdd478fd7f1c4c788661793cf294
-   _101c2469a8f2691318ef787b5f254abe],
+  [_cf84894edffcad00e2462cf1a0d7b295
+   _22adcdff0f2147c4e3f028a31ae96f55
+   _4c3dc35ee1f2db1afbf84f4bc354f893],
   :rdfs/comment "Millimetres (thousandths of metres).",
   :rdfs/label "millimetres",
-  :units/conversion _be7a7eff386157eff60f8a325e5a224a,
+  :units/conversion _5b48d464e46fbd04031e9aec78163c32,
   :rdf/type :units/Unit}
- {:rdf/about _aae5457f8198dbd883f88a3bae8676e9,
-  :units/to :units/pc,
-  :units/factor 100}
+ {:rdf/about _8d0135f53c3fb09229aa9d0e7ec7ad2c,
+  :units/to :units/inch,
+  :units/factor 39.37M}
+ {:rdf/about _dc2be9937f8975ae114442685ac9c974,
+  :units/to :units/mile,
+  :units/factor 0.62138818M}
+ {:rdf/about _ddb87f4feb944f49d9a4df74b7ce7117,
+  :units/to :units/semitone12TET,
+  :units/factor 0.01M}
+ {:rdf/about _2d3277c3301d65ae27170b2290798497,
+  :units/to :units/hz,
+  :units/factor 0.0166666666M}
  {:rdf/about :units/db,
   :units/symbol "dB",
   :units/render "%f dB",
@@ -345,18 +348,15 @@
   "Decibels, a logarithmic relative unit where 0 is unity.",
   :rdfs/label "decibels",
   :rdf/type :units/Unit}
- {:rdf/about _645b532ba28910028a81c3dfbb8a7c4b,
+ {:rdf/about _d3eebc38320acca04d11ad59e92c22c6,
+  :units/to :units/m,
+  :units/factor 1000}
+ {:rdf/about _36e7ad2518f939cfaade5f1b3dc04fd5,
+  :units/to :units/m,
+  :units/factor 0.0254M}
+ {:rdf/about _5aed72b52c86008b7315df04314a64bc,
   :units/to :units/cm,
-  :units/factor 100000}
- {:rdf/about _3535260d3db1307edb442f5b2a80e659,
-  :units/to :units/semitone12TET,
-  :units/factor 12}
- {:rdf/about _13b2148d5a219a5ac6a5dcddc4959c59,
-  :units/to :units/khz,
-  :units/factor 0.001M}
- {:rdf/about _6387a054d9a546740b91cd8a0459b7ec,
-  :units/to :units/mile,
-  :units/factor 0.62138818M}
- {:rdf/about _91d3057171b797d3814bd892ff42a273,
-  :units/to :units/cm,
-  :units/factor 100}]
+  :units/factor 100}
+ {:rdf/about _645ba2625e8adc9564f62bb748363582,
+  :units/to :units/mm,
+  :units/factor 10}]

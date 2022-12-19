@@ -25,77 +25,67 @@
   :rdfs/comment "The level of the processed component of a signal.",
   :rdfs/label "wet level",
   :rdf/type :lv2/Parameter}
- {:rdf/about _797f4f45a6bb4438f68e94333397d0ca,
-  :lv2/designation :param/delay,
-  :lv2/index 0}
+ {:rdf/about _55e7b1cf71b226dbb45388a6fe8fea99,
+  :lv2/designation :param/cutoffFrequency}
  {:rdf/about :param/waveform,
   :rdfs/comment
   "The waveform \"fader\" for oscillators or modulators that have several.",
   :rdfs/label "waveform",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _1737ce7d6629dbbd28aee2b6263641a0,
-  :lv2/designation :param/waveform}
+ {:rdf/about _0c1d0899efd252eed1e7dfaa02692130,
+  :lv2/designation :param/pulseWidth}
  {:rdf/about :param/CompressorControls,
   :pg/element
-  [_fb7fc5435641acdf1f1c8a33d4ca0450
-   _3108b4f7a440f79d8cb1f01dd868e388],
+  [_4f95cbf4d6d690b2017a4a1f69b72442
+   _5f5c65f6e82cb13935db0362282de8b9],
   :rdfs/comment "Typical controls for a compressor.",
   :rdfs/label "Compressor Controls",
   :rdfs/subClassOf :param/ControlGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _24b18992e51b49cdd16ca6011a5409ce,
-  :lv2/designation :param/release,
-  :lv2/index 5}
  {:rdf/about :param/frequency,
   :rdfs/comment "A frequency, typically in Hz.",
   :rdfs/label "frequency",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _fb7fc5435641acdf1f1c8a33d4ca0450,
-  :lv2/designation :param/ratio}
+ {:rdf/about _40c984f4c60fa577c12f41e5d9921dc5,
+  :lv2/designation :param/hold,
+  :lv2/index 2}
  {:rdf/about :param/dryLevel,
   :rdfs/comment "The level of the unprocessed component of a signal.",
   :rdfs/label "dry level",
   :rdf/type :lv2/Parameter}
+ {:rdf/about _d14265794abc7fbe9b8a31b701a23c06,
+  :lv2/designation :param/delay,
+  :lv2/index 0}
  {:rdf/about :param/decay,
   :rdfs/comment "The duration of an envelope decay stage.",
   :rdfs/label "decay",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _1c96ba452a7c12de56c4a44f2fd4045c,
-  :lv2/designation :param/sustain,
-  :lv2/index 4}
  {:rdf/about :param/OscillatorControls,
   :pg/element
-  [_a023ca4516c1158b962074d8dff540ee
-   _1737ce7d6629dbbd28aee2b6263641a0
-   _8dae31e40c7ad6f23ba979edb55024cf
-   _a520edb575a9945b5ea2fb544b584962],
+  [_0c1d0899efd252eed1e7dfaa02692130
+   _bfe1d3032d11f118476391848823ffd0
+   _95e22a95e4afbb537cde1d1306ca9ef9
+   _968787d6cd6ab805c22f777ea2b43372],
   :rdfs/comment "Typical controls for an oscillator.",
   :rdfs/label "Oscillator Controls",
   :rdfs/subClassOf :param/ControlGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _8dae31e40c7ad6f23ba979edb55024cf,
-  :lv2/designation :param/amplitude}
- {:rdf/about _2bb2003d1cbe86f9932d120a397ec0fc,
-  :lv2/designation :param/hold,
-  :lv2/index 2}
- {:rdf/about _a520edb575a9945b5ea2fb544b584962,
-  :lv2/designation :param/frequency}
- {:rdf/about _fdc213616cdd37fa3e4ee304b4a046ce,
-  :lv2/designation :param/decay,
-  :lv2/index 3}
+ {:rdf/about _573a3870dccaef3f2216d69ee63da3ee,
+  :lv2/designation :param/resonance}
+ {:rdf/about _9db40a99a24dd675ab96b727e2f4abbc,
+  :lv2/designation :param/attack,
+  :lv2/index 1}
  {:rdf/about :param/FilterControls,
   :pg/element
-  [_0a85127f78d989368c57db0c37dc5e14
-   _fc0414c959100673175a2886b4562c4c],
+  [_573a3870dccaef3f2216d69ee63da3ee
+   _55e7b1cf71b226dbb45388a6fe8fea99],
   :rdfs/comment "Typical controls for a filter.",
   :rdfs/label "Filter Controls",
   :rdfs/subClassOf :param/ControlGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _3108b4f7a440f79d8cb1f01dd868e388,
-  :lv2/designation :param/threshold}
  {:rdf/about :param/cutoffFrequency,
   :rdfs/comment "The cutoff frequency, typically in Hz, for a filter.",
   :rdfs/label "cutoff frequency",
@@ -111,12 +101,17 @@
   :rdfs/label "resonance",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _0a85127f78d989368c57db0c37dc5e14,
-  :lv2/designation :param/resonance}
+ {:rdf/about _8aad370d1e3aa8b943833b7490de6186,
+  :lv2/designation :param/sustain,
+  :lv2/index 4}
+ {:rdf/about _95e22a95e4afbb537cde1d1306ca9ef9,
+  :lv2/designation :param/amplitude}
  {:rdf/about :param/sampleRate,
   :rdfs/comment "A sample rate in Hz.",
   :rdfs/label "sample rate",
   :rdf/type :lv2/Parameter}
+ {:rdf/about _4f95cbf4d6d690b2017a4a1f69b72442,
+  :lv2/designation :param/ratio}
  {:rdf/about :param/threshold,
   :rdfs/comment "Compression threshold.",
   :rdfs/label "threshold",
@@ -127,35 +122,35 @@
   :rdfs/label "ratio",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
+ {:rdf/about _d7eb549fa464a09d4222b3643f510c2f,
+  :lv2/designation :param/release,
+  :lv2/index 5}
  {:rdf/about :param/attack,
   :rdfs/comment "The duration of an envelope attack stage.",
   :rdfs/label "attack",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _a023ca4516c1158b962074d8dff540ee,
-  :lv2/designation :param/pulseWidth}
  {:rdf/about :param/bypass,
   :rdfs/comment
   "A boolean parameter that disables processing if true.",
   :rdfs/label "bypass",
   :rdf/type :lv2/Parameter}
- {:rdf/about _567f1ac5d10bfecfeb64928de25f0fac,
-  :lv2/designation :param/attack,
-  :lv2/index 1}
- {:rdf/about _fc0414c959100673175a2886b4562c4c,
-  :lv2/designation :param/cutoffFrequency}
+ {:rdf/about _5f5c65f6e82cb13935db0362282de8b9,
+  :lv2/designation :param/threshold}
  {:rdf/about :param/EnvelopeControls,
-  :pg/element
-  [_fdc213616cdd37fa3e4ee304b4a046ce
-   _567f1ac5d10bfecfeb64928de25f0fac
-   _797f4f45a6bb4438f68e94333397d0ca
-   _24b18992e51b49cdd16ca6011a5409ce
-   _2bb2003d1cbe86f9932d120a397ec0fc
-   _1c96ba452a7c12de56c4a44f2fd4045c],
   :rdf/type :rdfs/Class,
+  :pg/element
+  [_40c984f4c60fa577c12f41e5d9921dc5
+   _8aad370d1e3aa8b943833b7490de6186
+   _a4cee4ea9a6800d8c195a50f12943b39
+   _d7eb549fa464a09d4222b3643f510c2f
+   _9db40a99a24dd675ab96b727e2f4abbc
+   _d14265794abc7fbe9b8a31b701a23c06],
   :rdfs/comment "Typical controls for a DAHDSR envelope.",
   :rdfs/subClassOf :param/ControlGroup,
   :rdfs/label "Envelope Controls"}
+ {:rdf/about _bfe1d3032d11f118476391848823ffd0,
+  :lv2/designation :param/waveform}
  {:rdf/about :param/release,
   :rdfs/comment "The duration of an envelope release stage.",
   :rdfs/label "release",
@@ -166,11 +161,16 @@
   "The ratio between processed and bypassed levels in the output.",
   :rdfs/label "wet/dry ratio",
   :rdf/type :lv2/Parameter}
+ {:rdf/about _a4cee4ea9a6800d8c195a50f12943b39,
+  :lv2/designation :param/decay,
+  :lv2/index 3}
  {:rdf/about :param/ControlGroup,
   :rdfs/comment "A group representing a set of associated controls.",
   :rdfs/label "Control Group",
   :rdfs/subClassOf :pg/Group,
   :rdf/type :rdfs/Class}
+ {:rdf/about _968787d6cd6ab805c22f777ea2b43372,
+  :lv2/designation :param/frequency}
  {:rdf/about :param/delay,
   :rdfs/comment "The duration of an envelope delay stage.",
   :rdfs/label "delay",
@@ -182,13 +182,13 @@
   :rdfs/label "amplitude",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about "<http://lv2plug.in/ns/ext/parameters>",
+ {:rdf/about "http://lv2plug.in/ns/ext/parameters",
   :owl/imports
-  ["<http://lv2plug.in/ns/lv2core>"
-   "<http://lv2plug.in/ns/ext/port-groups>"
-   "<http://lv2plug.in/ns/ext/atom>"],
+  ["http://lv2plug.in/ns/lv2core"
+   "http://lv2plug.in/ns/ext/port-groups"
+   "http://lv2plug.in/ns/ext/atom"],
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.meta.ttl",
   :rdfs/comment "Common parameters for audio processing.",
   :rdfs/label "LV2 Parameters",
   :rdf/type :owl/Ontology}

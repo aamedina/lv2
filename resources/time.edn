@@ -90,9 +90,9 @@
   :rdfs/range :time/Position,
   :rdf/type
   [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
- {:rdf/about "<http://lv2plug.in/ns/ext/time>",
+ {:rdf/about "http://lv2plug.in/ns/ext/time",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/time.lv2/time.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/time.lv2/time.meta.ttl",
   :rdfs/comment "A vocabulary for describing musical time.",
   :rdfs/label "LV2 Time",
   :rdf/type :owl/Ontology}]

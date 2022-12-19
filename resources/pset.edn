@@ -7,11 +7,11 @@
         "rdfs" "http://www.w3.org/2000/01/rdf-schema#"}}
 [{:rdf/about :pset/Bank,
   :rdfs/comment "A bank of presets.",
-  :rdfs/subClassOf _00446513278025e56476e7609048217c,
+  :rdfs/subClassOf _6e922e8b15949f29e88cb91bbe26cd5e,
   :rdfs/label "Bank",
   :rdf/type :rdfs/Class}
- {:rdf/about _2007dc7e8b29d55394ac79b0f591db54,
-  :rdfs/comment "A Preset MUST have at least one string rdfs:label.",
+ {:rdf/about _6e922e8b15949f29e88cb91bbe26cd5e,
+  :rdfs/comment "A Bank MUST have at least one string rdfs:label.",
   :owl/minCardinality 1,
   :owl/onProperty :rdfs/label,
   :rdf/type :owl/Restriction}
@@ -21,20 +21,20 @@
   :rdfs/domain :lv2/PortBase,
   :rdf/type
   [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
- {:rdf/about _00446513278025e56476e7609048217c,
-  :rdfs/comment "A Bank MUST have at least one string rdfs:label.",
-  :owl/minCardinality 1,
-  :owl/onProperty :rdfs/label,
-  :rdf/type :owl/Restriction}
- {:rdf/about "<http://lv2plug.in/ns/ext/presets>",
-  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+ {:rdf/about "http://lv2plug.in/ns/ext/presets",
+  :owl/imports "http://lv2plug.in/ns/lv2core",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/presets.lv2/presets.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/presets.lv2/presets.meta.ttl",
   :rdfs/comment "Presets for LV2 plugins.",
   :rdfs/label "LV2 Presets",
   :rdf/type :owl/Ontology}
+ {:rdf/about _87624246c9b8378c20f5c46860287af0,
+  :rdfs/comment "A Preset MUST have at least one string rdfs:label.",
+  :owl/minCardinality 1,
+  :owl/onProperty :rdfs/label,
+  :rdf/type :owl/Restriction}
  {:rdf/about :pset/Preset,
-  :rdfs/subClassOf [_2007dc7e8b29d55394ac79b0f591db54 :lv2/PluginBase],
+  :rdfs/subClassOf [_87624246c9b8378c20f5c46860287af0 :lv2/PluginBase],
   :rdfs/comment "A preset for an LV2 plugin.",
   :rdfs/label "Preset",
   :rdf/type :rdfs/Class}

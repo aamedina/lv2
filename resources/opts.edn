@@ -30,10 +30,10 @@
   "An interface for dynamically setting and getting options.",
   :rdfs/label "interface",
   :rdf/type :lv2/ExtensionData}
- {:rdf/about "<http://lv2plug.in/ns/ext/options>",
-  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+ {:rdf/about "http://lv2plug.in/ns/ext/options",
+  :owl/imports "http://lv2plug.in/ns/lv2core",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.meta.ttl",
   :rdfs/comment "Runtime options for LV2 plugins and UIs.",
   :rdfs/label "LV2 Options",
   :rdf/type :owl/Ontology}]

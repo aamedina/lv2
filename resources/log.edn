@@ -19,10 +19,10 @@
   :rdfs/comment "Logging feature.",
   :rdfs/label "log",
   :rdf/type :lv2/Feature}
- {:rdf/about "<http://lv2plug.in/ns/ext/log>",
-  :owl/imports "<http://lv2plug.in/ns/lv2core>",
+ {:rdf/about "http://lv2plug.in/ns/ext/log",
+  :owl/imports "http://lv2plug.in/ns/lv2core",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/log.lv2/log.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/log.lv2/log.meta.ttl",
   :rdfs/comment "A feature for writing log messages.",
   :rdfs/label "LV2 Log",
   :rdf/type :owl/Ontology}

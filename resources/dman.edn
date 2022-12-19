@@ -5,19 +5,19 @@
         "dman" "http://lv2plug.in/ns/ext/dynmanifest#",
         "lv2" "http://lv2plug.in/ns/lv2core#",
         "rdfs" "http://www.w3.org/2000/01/rdf-schema#"}}
-[{:rdf/about _f60f07b409804962bfd9cc8d96cd306a,
+[{:rdf/about _5ad835e51faef94a1588346ec215266c,
   :rdfs/comment "A DynManifest MUST have at least one lv2:binary.",
   :owl/minCardinality 1,
   :owl/onProperty :lv2/binary,
   :rdf/type :owl/Restriction}
  {:rdf/about :dman/DynManifest,
   :rdfs/comment "Dynamic manifest for an LV2 binary.",
-  :rdfs/subClassOf _f60f07b409804962bfd9cc8d96cd306a,
+  :rdfs/subClassOf _5ad835e51faef94a1588346ec215266c,
   :rdfs/label "Dynamic Manifest",
   :rdf/type :rdfs/Class}
- {:rdf/about "<http://lv2plug.in/ns/ext/dynmanifest>",
+ {:rdf/about "http://lv2plug.in/ns/ext/dynmanifest",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.meta.ttl",
   :rdfs/comment "Support for dynamic manifest data generation.",
   :rdfs/label "LV2 Dyn Manifest",
   :rdf/type :owl/Ontology}]

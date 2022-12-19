@@ -91,7 +91,7 @@
               (keyword (namespace k) (str \| (name k) \|))
 
               :else k))
-          (str "<" uri ">")))))
+          uri))))
 
 (defn parse
   "Parses source using Apache Jena's RDFParser and converts it to

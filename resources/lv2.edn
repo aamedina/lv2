@@ -22,10 +22,11 @@
   :rdfs/label "Expander Plugin",
   :rdfs/subClassOf :lv2/DynamicsPlugin,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about _8429d40d2f67601fc2b3cf3763b3d31a,
-  :rdfs/comment "A port MUST have at least one lv2:name.",
-  :owl/minCardinality 1,
-  :owl/onProperty :lv2/name,
+ {:rdf/about _d3cb35a55eeee1edbfef90804416ed9a,
+  :rdfs/comment
+  "A plugin MUST have at least one untranslated doap:name.",
+  :owl/someValuesFrom :rdf/PlainLiteral,
+  :owl/onProperty :doap/name,
   :rdf/type :owl/Restriction}
  {:rdf/about :lv2/BandpassPlugin,
   :rdfs/comment
@@ -54,7 +55,7 @@
  {:rdf/about :lv2/Symbol,
   :rdfs/comment "A short restricted name used as a strong identifier.",
   :rdfs/label "Symbol",
-  :owl/withRestrictions _16bd3f5357505b84f77caa1ebc4e58e6,
+  :owl/withRestrictions _95fc42b97358c3200f46bdc37ee13c80,
   :owl/onDatatype :xsd/string,
   :rdf/type :rdfs/Datatype}
  {:rdf/about :lv2/symbol,
@@ -70,10 +71,10 @@
   :rdfs/label "Compressor Plugin",
   :rdfs/subClassOf :lv2/DynamicsPlugin,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about "<http://lv2plug.in/ns/lv2core>",
-  :owl/imports "<http://usefulinc.com/ns/doap#>",
+ {:rdf/about "http://lv2plug.in/ns/lv2core",
+  :owl/imports "http://usefulinc.com/ns/doap#",
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.meta.ttl",
   :rdfs/comment "An extensible open standard for audio plugins.",
   :rdfs/label "LV2",
   :rdf/type :owl/Ontology}
@@ -102,6 +103,8 @@
   :rdfs/comment "The prototype to inherit properties from.",
   :rdfs/label "prototype",
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about _b11153ba114d40d4a6e51fd8e8c7f63b,
+  :xsd/pattern "[_a-zA-Z][_a-zA-Z0-9]*"}
  {:rdf/about :lv2/isLive,
   :rdfs/comment "Plugin has a real-time dependency.",
   :rdfs/label "is live",
@@ -185,10 +188,15 @@
   "Plugin is capable of running in a hard real-time environment.",
   :rdfs/label "hard real-time capable",
   :rdf/type :lv2/Feature}
+ {:rdf/about _7ed105b083a4ea3a53672a8fbfb3bcbc,
+  :rdfs/comment "A port MUST have at least one lv2:name.",
+  :owl/minCardinality 1,
+  :owl/onProperty :lv2/name,
+  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/Plugin,
   :rdfs/subClassOf
-  [_303d5b7b8511072d3f2146d5adf8284e
-   _53b288ca09e854866a67df4caa3f9308
+  [_e33261dc78ad359be313d2567ceca6fe
+   _d3cb35a55eeee1edbfef90804416ed9a
    :lv2/PluginBase],
   :rdfs/comment "An LV2 plugin.",
   :rdfs/label "Plugin",
@@ -203,7 +211,7 @@
   :rdfs/label "integer",
   :rdf/type :lv2/PortProperty}
  {:rdf/about :lv2/PortBase,
-  :rdfs/subClassOf _5581f87b34473454850f8eca4938c778,
+  :rdfs/subClassOf _74ffea9f1cc5553d604d9e82af7e8056,
   :rdfs/comment "Base class for a port-like resource.",
   :rdfs/label "Port Base",
   :rdf/type [:owl/Class :rdfs/Class]}
@@ -222,16 +230,10 @@
   :rdfs/comment "The primary control channel.",
   :rdfs/label "control",
   :rdf/type :lv2/Channel}
- {:rdf/about _5581f87b34473454850f8eca4938c778,
+ {:rdf/about _74ffea9f1cc5553d604d9e82af7e8056,
   :rdfs/comment "A port MUST have exactly one lv2:symbol.",
   :owl/cardinality 1,
   :owl/onProperty :lv2/symbol,
-  :rdf/type :owl/Restriction}
- {:rdf/about _53b288ca09e854866a67df4caa3f9308,
-  :rdfs/comment
-  "A plugin MUST have at least one untranslated doap:name.",
-  :owl/someValuesFrom :rdf/PlainLiteral,
-  :owl/onProperty :doap/name,
   :rdf/type :owl/Restriction}
  {:rdf/about :lv2/MixerPlugin,
   :rdfs/comment
@@ -244,9 +246,6 @@
   :rdfs/label "Distortion Plugin",
   :rdfs/subClassOf :lv2/Plugin,
   :rdf/type [:owl/Class :rdfs/Class]}
- #:rdf{:about _16bd3f5357505b84f77caa1ebc4e58e6,
-       :rest :rdf/nil,
-       :first _329a21aca89d6a53d34881023cc60f7b}
  {:rdf/about :lv2/LimiterPlugin,
   :rdfs/comment
   "A plugin that limits its input to some maximum level.",
@@ -259,7 +258,7 @@
   :owl/onDatatype :xsd/string,
   :rdf/type :rdfs/Datatype}
  {:rdf/about :lv2/documentation,
-  :rdfs/seeAlso "<http://www.w3.org/TR/xhtml-basic/>",
+  :rdfs/seeAlso "http://www.w3.org/TR/xhtml-basic/",
   :rdfs/comment "Extended documentation.",
   :rdfs/label "documentation",
   :rdfs/range :rdfs/Literal,
@@ -269,6 +268,12 @@
   :rdfs/label "project",
   :rdfs/range :doap/Project,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about _e33261dc78ad359be313d2567ceca6fe,
+  :rdfs/comment
+  "All ports on a plugin MUST be fully specified lv2:Port instances.",
+  :owl/allValuesFrom :lv2/Port,
+  :owl/onProperty :lv2/port,
+  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/LowpassPlugin,
   :rdfs/comment
   "A filter that attenuates frequencies above some cutoff.",
@@ -382,12 +387,6 @@
   :rdfs/label "Dynamics Plugin",
   :rdfs/subClassOf :lv2/Plugin,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about _303d5b7b8511072d3f2146d5adf8284e,
-  :rdfs/comment
-  "All ports on a plugin MUST be fully specified lv2:Port instances.",
-  :owl/allValuesFrom :lv2/Port,
-  :owl/onProperty :lv2/port,
-  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/PitchPlugin,
   :rdfs/comment "A plugin that shifts the pitch of its input.",
   :rdfs/label "Pitch Shifter Plugin",
@@ -458,8 +457,11 @@
   :rdfs/label "binary",
   :rdfs/range :owl/Thing,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ #:rdf{:about _95fc42b97358c3200f46bdc37ee13c80,
+       :rest :rdf/nil,
+       :first _b11153ba114d40d4a6e51fd8e8c7f63b}
  {:rdf/about :lv2/Port,
-  :rdfs/subClassOf [_8429d40d2f67601fc2b3cf3763b3d31a :lv2/PortBase],
+  :rdfs/subClassOf [_7ed105b083a4ea3a53672a8fbfb3bcbc :lv2/PortBase],
   :rdfs/comment "An LV2 plugin port.",
   :rdfs/label "Port",
   :rdf/type [:owl/Class :rdfs/Class]}
@@ -486,8 +488,6 @@
   :rdfs/label "EQ Plugin",
   :rdfs/subClassOf :lv2/FilterPlugin,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about _329a21aca89d6a53d34881023cc60f7b,
-  :xsd/pattern "[_a-zA-Z][_a-zA-Z0-9]*"}
  {:rdf/about :lv2/InputPort,
   :rdfs/comment
   "A port connected to constant data which is read during `run()`.",

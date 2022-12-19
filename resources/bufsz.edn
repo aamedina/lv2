@@ -16,12 +16,11 @@
   "Plugin prefers coarse block length without buffer splitting.",
   :rdfs/label "coarse block length",
   :rdf/type :lv2/Feature}
- {:rdf/about "<http://lv2plug.in/ns/ext/buf-size>",
+ {:rdf/about "http://lv2plug.in/ns/ext/buf-size",
   :owl/imports
-  ["<http://lv2plug.in/ns/ext/options>"
-   "<http://lv2plug.in/ns/lv2core>"],
+  ["http://lv2plug.in/ns/ext/options" "http://lv2plug.in/ns/lv2core"],
   :rdfs/seeAlso
-  "<https://gitlab.com/lv2/lv2/-/raw/master/lv2/buf-size.lv2/buf-size.meta.ttl>",
+  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/buf-size.lv2/buf-size.meta.ttl",
   :rdfs/comment "Access to, and restrictions on, buffer sizes.",
   :rdfs/label "LV2 Buf Size",
   :rdf/type :owl/Ontology}
