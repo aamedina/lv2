@@ -174,7 +174,8 @@
                                         (if-some [node (:rdf/blank form)]
                                           (get index form)
                                           form))
-                                      (get (group-by :rdf/type model) :owl/Ontology))
+                                      (or (get (group-by :rdf/type model) :owl/Ontology)
+                                          (get (group-by :rdf/type model) :lv2/Feature)))
         md         (walk/prewalk (fn [form]
                                    (if (and (keyword? form) (= (namespace form) "dc"))
                                      (keyword "dcterms" (name form))
