@@ -26,7 +26,8 @@
    [com.walmartlabs.schematic :as sc]
    [datomic.client.api :as d]
    [net.wikipunk.lv2.jena :as jena]
-   [net.wikipunk.lv2 :as host]
+   [net.wikipunk.lv2.core :as core]
+   [net.wikipunk.lv2.host :as host]
    [net.wikipunk.rdf.lv2.owl :as owl]
    [net.wikipunk.rdf.lv2.rdf :as rdf]
    [net.wikipunk.rdf.lv2.rdfs :as rdfs]
@@ -49,3 +50,9 @@
           (edn/read-string)
           (sc/assemble-system))
       (throw (ex-info "system.edn is not on classpath" {})))))
+
+(comment
+  ;; A Clojure multimethod hierarchy contained in a ref
+  (get-in system [:vocab :types])
+
+  )

@@ -1,5 +1,5 @@
-(ns net.wikipunk.lv2
-  "LV2"
+(ns net.wikipunk.lv2.host
+  "Embedded LV2 host using liblilv"
   (:require
    [clojure.java.io :as io]
    [clojure.string :as str]

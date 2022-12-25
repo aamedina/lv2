@@ -1,1 +1,2 @@
-{}
+{:host  {:sc/create-fn net.wikipunk.lv2.host/map->Host}
+ :vocab {:sc/create-fn net.wikipunk.lv2.jena/map->Vocabulary}}

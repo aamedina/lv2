@@ -8,6 +8,7 @@
    [clojure.set :as set]
    [clojure.string :as str]
    [clojure.walk :as walk]
+   [com.stuartsierra.component :as com]
    [zprint.core :as zprint])
   (:import
    (org.apache.jena.datatypes BaseDatatype$TypedValue)
@@ -245,3 +246,37 @@
                                                       :force-nl?     true}
                                               :style :hiccup}))))
        (dorun)))
+
+(defrecord Vocabulary [types]
+  com/Lifecycle
+  (start [this]
+    (let [vocab (->> (all-ns)
+                      (filter (comp :rdf/about meta))
+                      (map ns-publics)
+                      (mapcat vals)
+                      (map deref)
+                      (filter map?)
+                      (filter :rdf/about)) 
+          types (transduce
+                  (comp
+                    (filter :rdf/type)
+                    (filter (comp keyword? :rdf/about))
+                    (map #(update % :rdf/type (fn [x] (if (coll? x) x [x]))))
+                    (map #(update % :rdfs/subClassOf (fn [x] (if (coll? x) x [x])))))
+                  (completing
+                    (fn [h {:rdf/keys  [about type]
+                            :rdfs/keys [subClassOf]}]
+                      (reduce (fn [h parent]
+                                (try
+                                  (derive h about parent)
+                                  (catch Throwable ex
+                                    h)))
+                              h
+                              (concat (filter #{:rdfs/Class :owl/Class :owl/NamedIndividual}
+                                              (filter keyword? type))
+                                      (filter keyword? subClassOf)))))
+                  (make-hierarchy)
+                  vocab)]
+      (assoc this :types (ref types))))
+  (stop [this]
+    this))
