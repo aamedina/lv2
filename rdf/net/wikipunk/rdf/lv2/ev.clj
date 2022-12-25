@@ -9,6 +9,7 @@
                  :doap/name "LV2 Event",
                  :doap/shortdesc
                  "A port-based real-time generic event interface.",
+                 :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/event"},
                  :rdf/type :doap/Project},
    :owl/deprecated true,
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},

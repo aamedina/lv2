@@ -6,6 +6,7 @@
                  :doap/developer {:rdf/uri "http://drobilla.net/drobilla#me"},
                  :doap/name      "LV2 Log",
                  :doap/shortdesc "A feature for writing log messages.",
+                 :rdf/about      {:rdf/uri "http://lv2plug.in/ns/ext/log"},
                  :rdf/type       :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/log"},

@@ -9,6 +9,7 @@
     :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
     :doap/name       "LV2 URID",
     :doap/shortdesc  "Features for mapping URIs to and from integers.",
+    :rdf/about       {:rdf/uri "http://lv2plug.in/ns/ext/urid"},
     :rdf/type        :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/urid"},

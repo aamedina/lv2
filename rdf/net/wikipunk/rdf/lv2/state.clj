@@ -10,6 +10,7 @@
                  :doap/name "LV2 State",
                  :doap/shortdesc
                  "An interface for LV2 plugins to save and restore state.",
+                 :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/state"},
                  :rdf/type :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/state"},

@@ -10,6 +10,7 @@
     :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
     :doap/name       "LV2 MIDI",
     :doap/shortdesc  "A normalised definition of raw MIDI.",
+    :rdf/about       {:rdf/uri "http://lv2plug.in/ns/ext/midi"},
     :rdf/type        :doap/Project},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/midi"},
    :rdf/ns-prefix-map {"atom" "http://lv2plug.in/ns/ext/atom#",

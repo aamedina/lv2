@@ -2,13 +2,14 @@
   "This vocabulary defines various properties for plugin ports, which can be used to better describe how a plugin can be controlled.  Using this metadata, hosts can build better UIs for plugins, and provide more advanced automatic functionality."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.ttl",
-   :lv2/project {:doap/created    "2009-01-01",
-                 :doap/developer  {:rdf/uri
-                                   "http://lv2plug.in/ns/meta#kfoltman"},
-                 :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
-                 :doap/name       "LV2 Port Properties",
-                 :doap/shortdesc  "Various properties for LV2 plugin ports.",
-                 :rdf/type        :doap/Project},
+   :lv2/project
+   {:doap/created    "2009-01-01",
+    :doap/developer  {:rdf/uri "http://lv2plug.in/ns/meta#kfoltman"},
+    :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
+    :doap/name       "LV2 Port Properties",
+    :doap/shortdesc  "Various properties for LV2 plugin ports.",
+    :rdf/about       {:rdf/uri "http://lv2plug.in/ns/ext/port-props"},
+    :rdf/type        :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/port-props"},
    :rdf/ns-prefix-map {"lv2"    "http://lv2plug.in/ns/lv2core#",

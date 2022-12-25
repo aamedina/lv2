@@ -8,6 +8,7 @@
                  :doap/name "LV2 Patch",
                  :doap/shortdesc
                  "A protocol for accessing and manipulating properties.",
+                 :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/patch"},
                  :rdf/type :doap/Project},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/patch"},
    :rdf/ns-prefix-map {"foaf"  "http://xmlns.com/foaf/0.1/",

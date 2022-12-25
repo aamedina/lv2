@@ -7,6 +7,7 @@
                  :doap/name "LV2 Buf Size",
                  :doap/shortdesc
                  "Access to, and restrictions on, buffer sizes.",
+                 :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/buf-size"},
                  :rdf/type :doap/Project},
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/ext/options"}
                  {:rdf/uri "http://lv2plug.in/ns/lv2core"}],
