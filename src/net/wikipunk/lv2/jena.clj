@@ -230,11 +230,7 @@
                                        docstring)
                            docstring (str/trim (str/escape docstring {\tab "" \newline ""}))]
                        docstring)
-                     (walk/postwalk (fn [form]
-                                      (if (instance? ont_app.vocabulary.lstr.LangStr form)
-                                        (str form)
-                                        form))
-                                    (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :dcterms/title :rdfs/label))
+                     (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :dcterms/title :rdfs/label)
                      (list :refer-clojure :exclude exclusions))))))
 
 (defn parse-and-spit-namespaces
