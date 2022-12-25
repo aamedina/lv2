@@ -46,12 +46,12 @@
                       :index       4}
                      #:lv2{:designation :param/hold,
                       :index       2}
-                     #:lv2{:designation :param/release,
-                      :index       5}
+                     #:lv2{:designation :param/decay,
+                      :index       3}
                      #:lv2{:designation :param/delay,
                       :index       0}
-                     #:lv2{:designation :param/decay,
-                      :index       3}],
+                     #:lv2{:designation :param/release,
+                      :index       5}],
    :rdf/about       :param/EnvelopeControls,
    :rdf/type        :rdfs/Class,
    :rdfs/label      "Envelope Controls",

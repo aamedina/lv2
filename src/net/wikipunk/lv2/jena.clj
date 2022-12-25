@@ -117,30 +117,40 @@
              :rdf/uri     (.-datatypeURI value)}
             value))))))
 
-(defn parse
-  "Parses source using Apache Jena's RDFParser and converts it to
+(defprotocol Parsable
+  (parse [x]
+    "Parses source using Apache Jena's RDFParser and converts it to
   Clojure data using Aristotle.
 
-  Adapted from arachne.aristotle.graph/graph->clj"
-  [{:vann/keys [preferredNamespaceUri
-                preferredNamespacePrefix]
-    :dcat/keys [downloadURL] :as md}]
-  (let [g             (.toGraph (RDFParser/source downloadURL))
-        ns-prefix-map (dissoc (into {preferredNamespacePrefix
-                                     preferredNamespaceUri}
-                                    (.getNsPrefixMap (.getPrefixMapping g)))
-                              "")]
-    (reg/with ns-prefix-map
-              (into (with-meta [] (assoc md :rdf/ns-prefix-map ns-prefix-map))
-                    (map (fn [[subject triples]]
-                           (into {:rdf/about (g/data subject)}
-                                 (map (fn [[pred triples]]
-                                        (let [objects (mapv #(g/data (.getObject ^Triple %)) triples)]
-                                          [(g/data pred) (if (= 1 (count objects))
-                                                           (first objects)
-                                                           objects)])))
-                                 (group-by #(.getPredicate ^Triple %) triples))))
-                    (group-by #(.getSubject ^Triple %) (into [] g))))))
+  Adapted from arachne.aristotle.graph/graph->clj"))
+
+(extend-protocol Parsable
+  clojure.lang.IPersistentMap
+  (parse [md]
+    (let [{:vann/keys [preferredNamespaceUri
+                       preferredNamespacePrefix]
+           :dcat/keys [downloadURL]} md
+          g                          (.toGraph (RDFParser/source downloadURL))
+          ns-prefix-map              (dissoc (into (if (and preferredNamespacePrefix preferredNamespaceUri)
+                                                     {preferredNamespacePrefix preferredNamespaceUri}
+                                                     {})
+                                      (.getNsPrefixMap (.getPrefixMapping g)))
+                                "")]
+      (reg/with ns-prefix-map
+                (into (with-meta [] (assoc md :rdf/ns-prefix-map ns-prefix-map))
+                      (map (fn [[subject triples]]
+                             (into {:rdf/about (g/data subject)}
+                                   (map (fn [[pred triples]]
+                                          (let [objects (mapv #(g/data (.getObject ^Triple %)) triples)]
+                                            [(g/data pred) (if (= 1 (count objects))
+                                                             (first objects)
+                                                             objects)])))
+                                   (group-by #(.getPredicate ^Triple %) triples))))
+                      (group-by #(.getSubject ^Triple %) (into [] g))))))
+
+  String
+  (parse [s]
+    (parse {:dcat/downloadURL s})))
 
 (defn unroll
   "Walks the parsed RDF model and replaces references to blank nodes

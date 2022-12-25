@@ -25,9 +25,11 @@
    [com.stuartsierra.component.repl :refer [reset set-init start stop system]]
    [com.walmartlabs.schematic :as sc]
    [datomic.client.api :as d]
+   ;; Implementation namespaces
    [net.wikipunk.lv2.jena :as jena]
    [net.wikipunk.lv2.core :as core]
    [net.wikipunk.lv2.host :as host]
+   ;; Core RDF models
    [net.wikipunk.rdf.lv2.owl :as owl]
    [net.wikipunk.rdf.lv2.rdf :as rdf]
    [net.wikipunk.rdf.lv2.rdfs :as rdfs]
@@ -35,12 +37,31 @@
    [net.wikipunk.rdf.lv2.foaf :as foaf]
    [net.wikipunk.rdf.lv2.dcterms :as dcterms]
    [net.wikipunk.rdf.lv2.schema :as schema]
+   ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
    [net.wikipunk.rdf.lv2.da :as da]
    [net.wikipunk.rdf.lv2.dman :as dman]
+   [net.wikipunk.rdf.lv2.ev :as ev]
+   [net.wikipunk.rdf.lv2.ia :as ia]
+   [net.wikipunk.rdf.lv2.log :as log]   
    [net.wikipunk.rdf.lv2.lv2 :as lv2]
    [net.wikipunk.rdf.lv2.midi :as midi]
+   [net.wikipunk.rdf.lv2.morph :as morph]
+   [net.wikipunk.rdf.lv2.opts :as opts]
+   [net.wikipunk.rdf.lv2.param :as param]
+   [net.wikipunk.rdf.lv2.patch :as patch]
+   [net.wikipunk.rdf.lv2.pg :as pg]
+   [net.wikipunk.rdf.lv2.pprops :as pprops]
+   [net.wikipunk.rdf.lv2.pset :as pset]
+   [net.wikipunk.rdf.lv2.rsz :as rsz]
+   [net.wikipunk.rdf.lv2.state :as state]
+   [net.wikipunk.rdf.lv2.time :as time]
+   [net.wikipunk.rdf.lv2.ui :as ui]
+   [net.wikipunk.rdf.lv2.umap :as umap]
+   [net.wikipunk.rdf.lv2.units :as units]
+   [net.wikipunk.rdf.lv2.urid :as urid]
+   [net.wikipunk.rdf.lv2.work :as work]
    [zprint.core :as zprint]))
 
 (set-init
