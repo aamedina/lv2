@@ -17,10 +17,11 @@
   "Port that is not intended to be fed with a modulation signal.",
   :rdfs/label "not automatic",
   :rdf/type :lv2/PortProperty}
- {:rdf/about "http://lv2plug.in/ns/ext/port-props",
-  :owl/imports "http://lv2plug.in/ns/lv2core",
+ {:rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/port-props"},
+  :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl"},
   :rdfs/comment "Various properties for LV2 plugin ports.",
   :rdfs/label "LV2 Port Properties",
   :rdf/type :owl/Ontology}

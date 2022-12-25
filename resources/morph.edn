@@ -8,10 +8,11 @@
         "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
         "xsd" "http://www.w3.org/2001/XMLSchema#",
         "morph" "http://lv2plug.in/ns/ext/morph#"}}
-[{:rdf/about "http://lv2plug.in/ns/ext/morph",
-  :owl/imports "http://lv2plug.in/ns/lv2core",
+[{:rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/morph"},
+  :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.meta.ttl"},
   :rdfs/comment "Ports that can dynamically change type.",
   :rdfs/label "LV2 Morph",
   :rdf/type :owl/Ontology}

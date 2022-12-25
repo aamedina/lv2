@@ -1,4 +1,4 @@
-(ns net.wikipunk.lv2.owl
+(ns net.wikipunk.rdf.owl
   "http://www.w3.org/2002/07/owl"
   {:vann/preferredNamespacePrefix "owl",
    :vann/preferredNamespaceUri    "http://www.w3.org/2002/07/owl"

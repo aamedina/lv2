@@ -7,7 +7,10 @@
         "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
         "units" "http://lv2plug.in/ns/extensions/units#",
         "atom" "http://lv2plug.in/ns/ext/atom#"}}
-[{:rdf/about :param/hold,
+[{:rdf/about #:rdf{:blank "2d113e2cac912cc0a9f904f700935a8e"},
+  :lv2/designation :param/release,
+  :lv2/index 5}
+ {:rdf/about :param/hold,
   :rdfs/comment "The duration of an envelope hold stage.",
   :rdfs/label "hold",
   :rdfs/range :atom/Float,
@@ -21,24 +24,25 @@
   :units/unit :units/db,
   :rdfs/comment "Gain in decibels.",
   :rdfs/range :atom/Float}
+ {:rdf/about #:rdf{:blank "6e4a3341f2195f950e07d5c951d787a6"},
+  :lv2/designation :param/cutoffFrequency}
  {:rdf/about :param/wetLevel,
   :rdfs/comment "The level of the processed component of a signal.",
   :rdfs/label "wet level",
   :rdf/type :lv2/Parameter}
- {:rdf/about _55e7b1cf71b226dbb45388a6fe8fea99,
-  :lv2/designation :param/cutoffFrequency}
  {:rdf/about :param/waveform,
   :rdfs/comment
   "The waveform \"fader\" for oscillators or modulators that have several.",
   :rdfs/label "waveform",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _0c1d0899efd252eed1e7dfaa02692130,
-  :lv2/designation :param/pulseWidth}
+ {:rdf/about #:rdf{:blank "62985396777726829538d75586fb5c4a"},
+  :lv2/designation :param/sustain,
+  :lv2/index 4}
  {:rdf/about :param/CompressorControls,
   :pg/element
-  [_4f95cbf4d6d690b2017a4a1f69b72442
-   _5f5c65f6e82cb13935db0362282de8b9],
+  [#:rdf{:blank "3432707daebf79a7006aa78904b45363"}
+   #:rdf{:blank "54ae4c68ffa5827abe0b832c50128873"}],
   :rdfs/comment "Typical controls for a compressor.",
   :rdfs/label "Compressor Controls",
   :rdfs/subClassOf :param/ControlGroup,
@@ -48,16 +52,12 @@
   :rdfs/label "frequency",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _40c984f4c60fa577c12f41e5d9921dc5,
-  :lv2/designation :param/hold,
-  :lv2/index 2}
  {:rdf/about :param/dryLevel,
   :rdfs/comment "The level of the unprocessed component of a signal.",
   :rdfs/label "dry level",
   :rdf/type :lv2/Parameter}
- {:rdf/about _d14265794abc7fbe9b8a31b701a23c06,
-  :lv2/designation :param/delay,
-  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "3432707daebf79a7006aa78904b45363"},
+  :lv2/designation :param/ratio}
  {:rdf/about :param/decay,
   :rdfs/comment "The duration of an envelope decay stage.",
   :rdfs/label "decay",
@@ -65,27 +65,32 @@
   :rdf/type :lv2/Parameter}
  {:rdf/about :param/OscillatorControls,
   :pg/element
-  [_0c1d0899efd252eed1e7dfaa02692130
-   _bfe1d3032d11f118476391848823ffd0
-   _95e22a95e4afbb537cde1d1306ca9ef9
-   _968787d6cd6ab805c22f777ea2b43372],
+  [#:rdf{:blank "a56f64b6669ef81250f9231a6da20f36"}
+   #:rdf{:blank "6c0307c39e1f9e113769a5bfd9278fc0"}
+   #:rdf{:blank "9a8c8bca4535ed9d1809821627b358cc"}
+   #:rdf{:blank "613b8c8dca4c74a24cea307fe3bf5796"}],
   :rdfs/comment "Typical controls for an oscillator.",
   :rdfs/label "Oscillator Controls",
   :rdfs/subClassOf :param/ControlGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _573a3870dccaef3f2216d69ee63da3ee,
+ {:rdf/about #:rdf{:blank "00b315b217d88cf1242255c5679026f7"},
+  :lv2/designation :param/hold,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "1f3a0892a3f3beb906e71c9007af616e"},
   :lv2/designation :param/resonance}
- {:rdf/about _9db40a99a24dd675ab96b727e2f4abbc,
-  :lv2/designation :param/attack,
-  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "9a8c8bca4535ed9d1809821627b358cc"},
+  :lv2/designation :param/amplitude}
  {:rdf/about :param/FilterControls,
   :pg/element
-  [_573a3870dccaef3f2216d69ee63da3ee
-   _55e7b1cf71b226dbb45388a6fe8fea99],
+  [#:rdf{:blank "1f3a0892a3f3beb906e71c9007af616e"}
+   #:rdf{:blank "6e4a3341f2195f950e07d5c951d787a6"}],
   :rdfs/comment "Typical controls for a filter.",
   :rdfs/label "Filter Controls",
   :rdfs/subClassOf :param/ControlGroup,
   :rdf/type :rdfs/Class}
+ {:rdf/about #:rdf{:blank "7657767d25f7d5de80a08ffb5d2b3b40"},
+  :lv2/designation :param/decay,
+  :lv2/index 3}
  {:rdf/about :param/cutoffFrequency,
   :rdfs/comment "The cutoff frequency, typically in Hz, for a filter.",
   :rdfs/label "cutoff frequency",
@@ -101,17 +106,18 @@
   :rdfs/label "resonance",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _8aad370d1e3aa8b943833b7490de6186,
-  :lv2/designation :param/sustain,
-  :lv2/index 4}
- {:rdf/about _95e22a95e4afbb537cde1d1306ca9ef9,
-  :lv2/designation :param/amplitude}
+ {:rdf/about #:rdf{:blank "a56f64b6669ef81250f9231a6da20f36"},
+  :lv2/designation :param/pulseWidth}
+ {:rdf/about #:rdf{:blank "97dd09ce7aee2e11ffd08e3974081b3d"},
+  :lv2/designation :param/delay,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "adec49674487fc7c8f8669d219331dae"},
+  :lv2/designation :param/attack,
+  :lv2/index 1}
  {:rdf/about :param/sampleRate,
   :rdfs/comment "A sample rate in Hz.",
   :rdfs/label "sample rate",
   :rdf/type :lv2/Parameter}
- {:rdf/about _4f95cbf4d6d690b2017a4a1f69b72442,
-  :lv2/designation :param/ratio}
  {:rdf/about :param/threshold,
   :rdfs/comment "Compression threshold.",
   :rdfs/label "threshold",
@@ -122,9 +128,6 @@
   :rdfs/label "ratio",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about _d7eb549fa464a09d4222b3643f510c2f,
-  :lv2/designation :param/release,
-  :lv2/index 5}
  {:rdf/about :param/attack,
   :rdfs/comment "The duration of an envelope attack stage.",
   :rdfs/label "attack",
@@ -135,42 +138,39 @@
   "A boolean parameter that disables processing if true.",
   :rdfs/label "bypass",
   :rdf/type :lv2/Parameter}
- {:rdf/about _5f5c65f6e82cb13935db0362282de8b9,
-  :lv2/designation :param/threshold}
+ {:rdf/about #:rdf{:blank "6c0307c39e1f9e113769a5bfd9278fc0"},
+  :lv2/designation :param/waveform}
  {:rdf/about :param/EnvelopeControls,
-  :rdf/type :rdfs/Class,
   :pg/element
-  [_40c984f4c60fa577c12f41e5d9921dc5
-   _8aad370d1e3aa8b943833b7490de6186
-   _a4cee4ea9a6800d8c195a50f12943b39
-   _d7eb549fa464a09d4222b3643f510c2f
-   _9db40a99a24dd675ab96b727e2f4abbc
-   _d14265794abc7fbe9b8a31b701a23c06],
+  [#:rdf{:blank "7657767d25f7d5de80a08ffb5d2b3b40"}
+   #:rdf{:blank "62985396777726829538d75586fb5c4a"}
+   #:rdf{:blank "2d113e2cac912cc0a9f904f700935a8e"}
+   #:rdf{:blank "adec49674487fc7c8f8669d219331dae"}
+   #:rdf{:blank "97dd09ce7aee2e11ffd08e3974081b3d"}
+   #:rdf{:blank "00b315b217d88cf1242255c5679026f7"}],
+  :rdf/type :rdfs/Class,
   :rdfs/comment "Typical controls for a DAHDSR envelope.",
   :rdfs/subClassOf :param/ControlGroup,
   :rdfs/label "Envelope Controls"}
- {:rdf/about _bfe1d3032d11f118476391848823ffd0,
-  :lv2/designation :param/waveform}
  {:rdf/about :param/release,
   :rdfs/comment "The duration of an envelope release stage.",
   :rdfs/label "release",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
+ {:rdf/about #:rdf{:blank "54ae4c68ffa5827abe0b832c50128873"},
+  :lv2/designation :param/threshold}
  {:rdf/about :param/wetDryRatio,
   :rdfs/comment
   "The ratio between processed and bypassed levels in the output.",
   :rdfs/label "wet/dry ratio",
   :rdf/type :lv2/Parameter}
- {:rdf/about _a4cee4ea9a6800d8c195a50f12943b39,
-  :lv2/designation :param/decay,
-  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "613b8c8dca4c74a24cea307fe3bf5796"},
+  :lv2/designation :param/frequency}
  {:rdf/about :param/ControlGroup,
   :rdfs/comment "A group representing a set of associated controls.",
   :rdfs/label "Control Group",
   :rdfs/subClassOf :pg/Group,
   :rdf/type :rdfs/Class}
- {:rdf/about _968787d6cd6ab805c22f777ea2b43372,
-  :lv2/designation :param/frequency}
  {:rdf/about :param/delay,
   :rdfs/comment "The duration of an envelope delay stage.",
   :rdfs/label "delay",
@@ -182,13 +182,14 @@
   :rdfs/label "amplitude",
   :rdfs/range :atom/Float,
   :rdf/type :lv2/Parameter}
- {:rdf/about "http://lv2plug.in/ns/ext/parameters",
+ {:rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/parameters"},
   :owl/imports
-  ["http://lv2plug.in/ns/lv2core"
-   "http://lv2plug.in/ns/ext/port-groups"
-   "http://lv2plug.in/ns/ext/atom"],
+  [#:rdf{:uri "http://lv2plug.in/ns/lv2core"}
+   #:rdf{:uri "http://lv2plug.in/ns/ext/port-groups"}
+   #:rdf{:uri "http://lv2plug.in/ns/ext/atom"}],
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.meta.ttl"},
   :rdfs/comment "Common parameters for audio processing.",
   :rdfs/label "LV2 Parameters",
   :rdf/type :owl/Ontology}

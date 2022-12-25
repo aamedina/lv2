@@ -160,15 +160,16 @@
   :rdfs/label "Double",
   :rdfs/subClassOf :atom/Number,
   :rdf/type [:rdfs/Datatype :rdfs/Class]}
- {:rdf/about "http://lv2plug.in/ns/ext/atom",
+ {:rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/atom"},
   :owl/imports
-  ["http://lv2plug.in/ns/extensions/units"
-   "http://lv2plug.in/ns/extensions/ui"
-   "http://lv2plug.in/ns/lv2core"],
+  [#:rdf{:uri "http://lv2plug.in/ns/extensions/units"}
+   #:rdf{:uri "http://lv2plug.in/ns/extensions/ui"}
+   #:rdf{:uri "http://lv2plug.in/ns/lv2core"}],
   :rdfs/comment "A generic value container and several data types.",
   :rdfs/label "LV2 Atom",
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.meta.ttl"},
   :rdf/type :owl/Ontology}
  {:rdf/about :atom/Resource,
   :atom/cType "LV2_Atom_Object",

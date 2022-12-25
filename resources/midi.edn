@@ -7,9 +7,12 @@
         "lv2" "http://lv2plug.in/ns/lv2core#",
         "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
         "atom" "http://lv2plug.in/ns/ext/atom#"}}
-[{:rdf/about _e44f6552a95d642b2962d1bde77d21da,
-  :midi/property :midi/songPosition,
-  :midi/byteNumber [1 0]}
+[{:rdf/about #:rdf{:blank "13ef9737d39aad8dbb0d7b4d92ee98c1"},
+  :midi/property :midi/noteNumber,
+  :midi/byteNumber 0}
+ {:rdf/about #:rdf{:blank "f9b587716eb91cff8c12914aaefee417"},
+  :midi/property :midi/controllerNumber,
+  :midi/byteNumber 0}
  {:rdf/about :midi/property,
   :rdfs/comment "The property this chunk represents.",
   :rdfs/range :rdf/Property,
@@ -23,8 +26,11 @@
   :rdfs/label "Voice Message",
   :rdfs/subClassOf :midi/MidiEvent,
   :rdf/type :rdfs/Class}
+ {:rdf/about #:rdf{:blank "0e3a4b74f0aea58951186fda76d3f4cd"},
+  :midi/property :midi/velocity,
+  :midi/byteNumber 1}
  {:rdf/about :midi/ChannelPressure,
-  :midi/chunk _74c663cfadee6170c93c6d5c0fe8bce7,
+  :midi/chunk #:rdf{:blank "8e86e5b50ee9c8e7c86b3623556989f4"},
   :midi/statusMask [-48],
   :rdfs/comment "MIDI channel pressure message.",
   :rdfs/label "Channel Pressure",
@@ -47,6 +53,9 @@
   :rdfs/label "binding",
   :rdfs/range :midi/MidiEvent,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about #:rdf{:blank "1ca685393f098fda8232c41962f57acf"},
+  :midi/property :midi/programNumber,
+  :midi/byteNumber 0}
  {:rdf/about :midi/SongSelect,
   :midi/status [-13],
   :rdfs/comment "MIDI song select message.",
@@ -55,8 +64,8 @@
   :rdf/type :rdfs/Class}
  {:rdf/about :midi/NoteOn,
   :midi/chunk
-  [_d8eb4e7a61e1803491b4194334a927e4
-   _45bbb1a6bedf10d115a637b6bfd668f8],
+  [#:rdf{:blank "0e3a4b74f0aea58951186fda76d3f4cd"}
+   #:rdf{:blank "029aa29c336fa9b062bc641505997d09"}],
   :midi/statusMask [-112],
   :rdfs/comment "MIDI note on message.",
   :rdfs/label "Note On",
@@ -72,12 +81,14 @@
  {:rdf/about :midi/HexByte,
   :rdfs/comment "A hexadecimal byte, which has a value <= FF.",
   :rdfs/label "Hex Byte",
-  :owl/withRestrictions _3b7cc0d0cb4fc0886250d544c1d02d27,
+  :owl/withRestrictions
+  #:rdf{:blank "7a395c628cb7b6483244d7ebf4d03efb"},
   :owl/onDatatype :xsd/hexBinary,
   :rdf/type :rdfs/Datatype}
- {:rdf/about "http://lv2plug.in/ns/ext/midi",
+ {:rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/midi"},
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.meta.ttl"},
   :rdfs/comment "A normalised definition of raw MIDI.",
   :rdfs/label "LV2 MIDI",
   :rdf/type :owl/Ontology}
@@ -87,39 +98,44 @@
   :rdfs/label "MIDI channel",
   :rdf/type
   [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
- {:rdf/about _1d80c3707429c74dd8013be3c5879b3c,
-  :midi/property :midi/noteNumber,
-  :midi/byteNumber 0}
  {:rdf/about :midi/Start,
   :midi/status [-6],
   :rdfs/comment "MIDI start message.",
   :rdfs/label "Start",
   :rdfs/subClassOf :midi/SystemRealtime,
   :rdf/type :rdfs/Class}
- {:rdf/about _e6893bd15d6cfca32bb05815f272d7ed,
+ {:rdf/about #:rdf{:blank "565ad33de55fbe3ac8f3655f6b0aa6d9"},
+  :midi/property :midi/controllerValue,
+  :midi/byteNumber 1}
+ {:rdf/about #:rdf{:blank "e3e47d7aa6a26441253b3575686f9611"},
+  :xsd/maxInclusive "FF"}
+ {:rdf/about #:rdf{:blank "029aa29c336fa9b062bc641505997d09"},
   :midi/property :midi/noteNumber,
   :midi/byteNumber 0}
- {:rdf/about _99eb309dc7772ea92c4981e421737b3a,
-  :midi/property :midi/velocity,
+ {:rdf/about #:rdf{:blank "bcdb1981e63abc956af522922c8b73d3"},
+  :midi/property :midi/songPosition,
+  :midi/byteNumber [1 0]}
+ {:rdf/about #:rdf{:blank "cd5a78ef1ee02dca54c97f346b508f96"},
+  :midi/property :midi/benderValue,
+  :midi/byteNumber [1 0]}
+ {:rdf/about #:rdf{:blank "8e86e5b50ee9c8e7c86b3623556989f4"},
+  :midi/property :midi/pressure,
+  :midi/byteNumber 0}
+ {:rdf/about #:rdf{:blank "e03ff6bfaac35c677bf82d0d6e2356e3"},
+  :midi/property :midi/pressure,
   :midi/byteNumber 1}
- {:rdf/about _5463cd7de8e48140927e65c0bcb12caa,
-  :midi/property :midi/controllerNumber,
-  :midi/byteNumber 0}
- {:rdf/about _0c4de3f059f0c020a895891fdb492e55,
-  :midi/property :midi/programNumber,
-  :midi/byteNumber 0}
  {:rdf/about :midi/NoteOff,
   :midi/chunk
-  [_99eb309dc7772ea92c4981e421737b3a
-   _e6893bd15d6cfca32bb05815f272d7ed],
+  [#:rdf{:blank "82b930bca57fece2176c714b7068aa32"}
+   #:rdf{:blank "519f4a6a47510a8ecf9a69cff590698a"}],
   :midi/statusMask [-128],
   :rdfs/comment "MIDI note off message.",
   :rdfs/label "Note Off",
   :rdfs/subClassOf :midi/VoiceMessage,
   :rdf/type :rdfs/Class}
- {:rdf/about _45bbb1a6bedf10d115a637b6bfd668f8,
-  :midi/property :midi/noteNumber,
-  :midi/byteNumber 0}
+ {:rdf/about #:rdf{:blank "82b930bca57fece2176c714b7068aa32"},
+  :midi/property :midi/velocity,
+  :midi/byteNumber 1}
  {:rdf/about :midi/Continue,
   :midi/status [-5],
   :rdfs/comment "MIDI continue message.",
@@ -127,7 +143,7 @@
   :rdfs/subClassOf :midi/SystemRealtime,
   :rdf/type :rdfs/Class}
  {:rdf/about :midi/Bender,
-  :midi/chunk _6130660d9ea866f314feeca4d447b8b3,
+  :midi/chunk #:rdf{:blank "cd5a78ef1ee02dca54c97f346b508f96"},
   :midi/statusMask [-32],
   :rdfs/comment "MIDI bender message.",
   :rdfs/label "Bender",
@@ -159,8 +175,8 @@
   :rdf/type :rdfs/Class}
  {:rdf/about :midi/Aftertouch,
   :midi/chunk
-  [_1100d2b318c21a531c0a5da84b105e82
-   _1d80c3707429c74dd8013be3c5879b3c],
+  [#:rdf{:blank "e03ff6bfaac35c677bf82d0d6e2356e3"}
+   #:rdf{:blank "13ef9737d39aad8dbb0d7b4d92ee98c1"}],
   :midi/statusMask [-96],
   :rdfs/comment "MIDI aftertouch message.",
   :rdfs/label "Aftertouch",
@@ -190,24 +206,18 @@
   :rdfs/label "MIDI controller value",
   :rdf/type
   [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
- #:rdf{:about _3b7cc0d0cb4fc0886250d544c1d02d27,
-       :rest :rdf/nil,
-       :first _148b3156d0b2615e4724a5dacc430220}
- {:rdf/about _d8eb4e7a61e1803491b4194334a927e4,
-  :midi/property :midi/velocity,
-  :midi/byteNumber 1}
  {:rdf/about :midi/ProgramChange,
-  :midi/chunk _0c4de3f059f0c020a895891fdb492e55,
+  :midi/chunk #:rdf{:blank "1ca685393f098fda8232c41962f57acf"},
   :midi/statusMask [-64],
   :rdfs/comment "MIDI program change message.",
   :rdfs/label "Program Change",
   :rdfs/subClassOf :midi/VoiceMessage,
   :rdf/type :rdfs/Class}
- {:rdf/about _6130660d9ea866f314feeca4d447b8b3,
-  :midi/property :midi/benderValue,
-  :midi/byteNumber [1 0]}
+ #:rdf{:about #:rdf{:blank "7a395c628cb7b6483244d7ebf4d03efb"},
+       :rest :rdf/nil,
+       :first #:rdf{:blank "e3e47d7aa6a26441253b3575686f9611"}}
  {:rdf/about :midi/SongPosition,
-  :midi/chunk _e44f6552a95d642b2962d1bde77d21da,
+  :midi/chunk #:rdf{:blank "bcdb1981e63abc956af522922c8b73d3"},
   :midi/status [-14],
   :rdfs/comment "MIDI song position pointer message.",
   :rdfs/label "Song Position",
@@ -233,7 +243,6 @@
   :rdfs/label "song number",
   :rdf/type
   [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
- {:rdf/about _148b3156d0b2615e4724a5dacc430220, :xsd/maxInclusive "FF"}
  {:rdf/about :midi/velocity,
   :rdfs/comment "The velocity of a note message (0 to 127).",
   :rdfs/range :midi/HexByte,
@@ -242,8 +251,8 @@
   [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
  {:rdf/about :midi/Controller,
   :midi/chunk
-  [_b3a157594d96807bd17cedafd1f6553e
-   _5463cd7de8e48140927e65c0bcb12caa],
+  [#:rdf{:blank "565ad33de55fbe3ac8f3655f6b0aa6d9"}
+   #:rdf{:blank "f9b587716eb91cff8c12914aaefee417"}],
   :midi/statusMask [-80],
   :rdfs/comment "MIDI controller change message.",
   :rdfs/label "Controller",
@@ -255,9 +264,6 @@
   :rdfs/label "note number",
   :rdf/type
   [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
- {:rdf/about _74c663cfadee6170c93c6d5c0fe8bce7,
-  :midi/property :midi/pressure,
-  :midi/byteNumber 0}
  {:rdf/about :midi/SystemExclusive,
   :midi/status [-16],
   :rdfs/comment "MIDI system exclusive message.",
@@ -286,9 +292,6 @@
   :rdfs/label "System Realtime",
   :rdfs/subClassOf :midi/SystemMessage,
   :rdf/type :rdfs/Class}
- {:rdf/about _1100d2b318c21a531c0a5da84b105e82,
-  :midi/property :midi/pressure,
-  :midi/byteNumber 1}
  {:rdf/about :midi/chunk,
   :rdfs/comment "A chunk of a MIDI message.",
   :rdfs/label "MIDI chunk",
@@ -298,15 +301,15 @@
   :rdfs/comment "A sequence of contiguous bytes in a MIDI message.",
   :rdfs/label "Chunk",
   :rdf/type :rdfs/Class}
- {:rdf/about _b3a157594d96807bd17cedafd1f6553e,
-  :midi/property :midi/controllerValue,
-  :midi/byteNumber 1}
  {:rdf/about :midi/programNumber,
   :rdfs/comment "The numeric ID of a program (0 to 127).",
   :rdfs/range :xsd/byte,
   :rdfs/label "program number",
   :rdf/type
   [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]}
+ {:rdf/about #:rdf{:blank "519f4a6a47510a8ecf9a69cff590698a"},
+  :midi/property :midi/noteNumber,
+  :midi/byteNumber 0}
  {:rdf/about :midi/benderValue,
   :rdfs/comment "MIDI pitch bender message (-8192 to 8192).",
   :rdfs/range :xsd/short,

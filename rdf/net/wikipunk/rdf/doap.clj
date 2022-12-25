@@ -1,4 +1,4 @@
-(ns net.wikipunk.lv2.doap
+(ns net.wikipunk.rdf.doap
   "http://usefulinc.com/ns/doap#"
   {:vann/preferredNamespacePrefix "doap",
    :vann/preferredNamespaceUri    "http://usefulinc.com/ns/doap#"

@@ -1,4 +1,4 @@
-(ns net.wikipunk.lv2.jena
+(ns net.wikipunk.jena
   "Apache Jena"
   (:refer-clojure :exclude [slurp])
   (:require
@@ -83,7 +83,7 @@
       (or (when-some [k (reg/kw uri)]
             (cond
               ;; Do not return blank qualified keyword names
-              (str/blank? (name k))
+              (or (str/blank? (namespace k)) (str/blank? (name k)))
               nil
 
               ;; Since these are not readable wrap in CL-inspired || 
@@ -91,7 +91,11 @@
               (keyword (namespace k) (str \| (name k) \|))
 
               :else k))
-          uri))))
+          {:rdf/uri uri})))
+
+  Node_Blank
+  (data [n]
+    {:rdf/blank (.getLabelString (.getBlankNodeId n))}))
 
 (defn parse
   "Parses source using Apache Jena's RDFParser and converts it to

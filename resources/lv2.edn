@@ -22,11 +22,10 @@
   :rdfs/label "Expander Plugin",
   :rdfs/subClassOf :lv2/DynamicsPlugin,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about _d3cb35a55eeee1edbfef90804416ed9a,
-  :rdfs/comment
-  "A plugin MUST have at least one untranslated doap:name.",
-  :owl/someValuesFrom :rdf/PlainLiteral,
-  :owl/onProperty :doap/name,
+ {:rdf/about #:rdf{:blank "ab9bc15e4e471f1e9fc52c60e2d5653f"},
+  :rdfs/comment "A port MUST have at least one lv2:name.",
+  :owl/minCardinality 1,
+  :owl/onProperty :lv2/name,
   :rdf/type :owl/Restriction}
  {:rdf/about :lv2/BandpassPlugin,
   :rdfs/comment
@@ -55,7 +54,8 @@
  {:rdf/about :lv2/Symbol,
   :rdfs/comment "A short restricted name used as a strong identifier.",
   :rdfs/label "Symbol",
-  :owl/withRestrictions _95fc42b97358c3200f46bdc37ee13c80,
+  :owl/withRestrictions
+  #:rdf{:blank "a1a8a41786655d659e1467b3d4bc0da5"},
   :owl/onDatatype :xsd/string,
   :rdf/type :rdfs/Datatype}
  {:rdf/about :lv2/symbol,
@@ -71,10 +71,11 @@
   :rdfs/label "Compressor Plugin",
   :rdfs/subClassOf :lv2/DynamicsPlugin,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about "http://lv2plug.in/ns/lv2core",
-  :owl/imports "http://usefulinc.com/ns/doap#",
+ {:rdf/about #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
+  :owl/imports #:rdf{:uri "http://usefulinc.com/ns/doap#"},
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.meta.ttl"},
   :rdfs/comment "An extensible open standard for audio plugins.",
   :rdfs/label "LV2",
   :rdf/type :owl/Ontology}
@@ -103,7 +104,7 @@
   :rdfs/comment "The prototype to inherit properties from.",
   :rdfs/label "prototype",
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
- {:rdf/about _b11153ba114d40d4a6e51fd8e8c7f63b,
+ {:rdf/about #:rdf{:blank "753c68d22f11c0600acc9f8380a135bb"},
   :xsd/pattern "[_a-zA-Z][_a-zA-Z0-9]*"}
  {:rdf/about :lv2/isLive,
   :rdfs/comment "Plugin has a real-time dependency.",
@@ -188,15 +189,10 @@
   "Plugin is capable of running in a hard real-time environment.",
   :rdfs/label "hard real-time capable",
   :rdf/type :lv2/Feature}
- {:rdf/about _7ed105b083a4ea3a53672a8fbfb3bcbc,
-  :rdfs/comment "A port MUST have at least one lv2:name.",
-  :owl/minCardinality 1,
-  :owl/onProperty :lv2/name,
-  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/Plugin,
   :rdfs/subClassOf
-  [_e33261dc78ad359be313d2567ceca6fe
-   _d3cb35a55eeee1edbfef90804416ed9a
+  [#:rdf{:blank "d3e04bc6c283f3df7d3d5657f2835067"}
+   #:rdf{:blank "8d586e2a4981d0a8fbd977c478070eab"}
    :lv2/PluginBase],
   :rdfs/comment "An LV2 plugin.",
   :rdfs/label "Plugin",
@@ -211,7 +207,7 @@
   :rdfs/label "integer",
   :rdf/type :lv2/PortProperty}
  {:rdf/about :lv2/PortBase,
-  :rdfs/subClassOf _74ffea9f1cc5553d604d9e82af7e8056,
+  :rdfs/subClassOf #:rdf{:blank "4f412354883f0c72b626c4b3545e842a"},
   :rdfs/comment "Base class for a port-like resource.",
   :rdfs/label "Port Base",
   :rdf/type [:owl/Class :rdfs/Class]}
@@ -226,15 +222,16 @@
   :rdfs/label "Analyser Plugin",
   :rdfs/subClassOf :lv2/UtilityPlugin,
   :rdf/type [:owl/Class :rdfs/Class]}
+ {:rdf/about #:rdf{:blank "d3e04bc6c283f3df7d3d5657f2835067"},
+  :rdfs/comment
+  "All ports on a plugin MUST be fully specified lv2:Port instances.",
+  :owl/allValuesFrom :lv2/Port,
+  :owl/onProperty :lv2/port,
+  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/control,
   :rdfs/comment "The primary control channel.",
   :rdfs/label "control",
   :rdf/type :lv2/Channel}
- {:rdf/about _74ffea9f1cc5553d604d9e82af7e8056,
-  :rdfs/comment "A port MUST have exactly one lv2:symbol.",
-  :owl/cardinality 1,
-  :owl/onProperty :lv2/symbol,
-  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/MixerPlugin,
   :rdfs/comment
   "A plugin that mixes some number of inputs into some number of outputs.",
@@ -258,7 +255,7 @@
   :owl/onDatatype :xsd/string,
   :rdf/type :rdfs/Datatype}
  {:rdf/about :lv2/documentation,
-  :rdfs/seeAlso "http://www.w3.org/TR/xhtml-basic/",
+  :rdfs/seeAlso #:rdf{:uri "http://www.w3.org/TR/xhtml-basic/"},
   :rdfs/comment "Extended documentation.",
   :rdfs/label "documentation",
   :rdfs/range :rdfs/Literal,
@@ -268,12 +265,6 @@
   :rdfs/label "project",
   :rdfs/range :doap/Project,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
- {:rdf/about _e33261dc78ad359be313d2567ceca6fe,
-  :rdfs/comment
-  "All ports on a plugin MUST be fully specified lv2:Port instances.",
-  :owl/allValuesFrom :lv2/Port,
-  :owl/onProperty :lv2/port,
-  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/LowpassPlugin,
   :rdfs/comment
   "A filter that attenuates frequencies above some cutoff.",
@@ -369,6 +360,12 @@
   :rdfs/label "Delay Plugin",
   :rdfs/subClassOf :lv2/Plugin,
   :rdf/type [:owl/Class :rdfs/Class]}
+ {:rdf/about #:rdf{:blank "8d586e2a4981d0a8fbd977c478070eab"},
+  :rdfs/comment
+  "A plugin MUST have at least one untranslated doap:name.",
+  :owl/someValuesFrom :rdf/PlainLiteral,
+  :owl/onProperty :doap/name,
+  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/FlangerPlugin,
   :rdfs/comment
   "An effect that mixes slightly delayed copies of its input.",
@@ -457,11 +454,9 @@
   :rdfs/label "binary",
   :rdfs/range :owl/Thing,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
- #:rdf{:about _95fc42b97358c3200f46bdc37ee13c80,
-       :rest :rdf/nil,
-       :first _b11153ba114d40d4a6e51fd8e8c7f63b}
  {:rdf/about :lv2/Port,
-  :rdfs/subClassOf [_7ed105b083a4ea3a53672a8fbfb3bcbc :lv2/PortBase],
+  :rdfs/subClassOf
+  [#:rdf{:blank "ab9bc15e4e471f1e9fc52c60e2d5653f"} :lv2/PortBase],
   :rdfs/comment "An LV2 plugin port.",
   :rdfs/label "Port",
   :rdf/type [:owl/Class :rdfs/Class]}
@@ -476,6 +471,9 @@
   :rdfs/label "reports latency",
   :owl/deprecated true,
   :rdf/type :lv2/PortProperty}
+ #:rdf{:about #:rdf{:blank "a1a8a41786655d659e1467b3d4bc0da5"},
+       :rest :rdf/nil,
+       :first #:rdf{:blank "753c68d22f11c0600acc9f8380a135bb"}}
  {:rdf/about :lv2/ParaEQPlugin,
   :rdfs/comment
   "A plugin that adjusts the balance between configurable frequency components.",
@@ -499,6 +497,11 @@
   "The property that this port may be connected to NULL.",
   :rdfs/label "connection optional",
   :rdf/type :lv2/PortProperty}
+ {:rdf/about #:rdf{:blank "4f412354883f0c72b626c4b3545e842a"},
+  :rdfs/comment "A port MUST have exactly one lv2:symbol.",
+  :owl/cardinality 1,
+  :owl/onProperty :lv2/symbol,
+  :rdf/type :owl/Restriction}
  {:rdf/about :lv2/GatePlugin,
   :rdfs/comment
   "A plugin that attenuates signals below some threshold.",

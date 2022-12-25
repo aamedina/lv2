@@ -23,7 +23,8 @@
    [com.stuartsierra.component :as com]
    [com.stuartsierra.component.repl :refer [reset set-init start stop system]]
    [com.walmartlabs.schematic :as sc]
-   [datomic.client.api :as d]))
+   [datomic.client.api :as d]
+   [net.wikipunk.jena :as jena]))
 
 (set-init
   (fn [_]

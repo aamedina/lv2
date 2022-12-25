@@ -1,4 +1,4 @@
-(ns net.wikipunk.lv2.xsd
+(ns net.wikipunk.rdf.xsd
   "http://www.w3.org/2001/XMLSchema#"
   {:vann/preferredNamespacePrefix "xsd",
    :vann/preferredNamespaceUri    "http://www.w3.org/2001/XMLSchema#",

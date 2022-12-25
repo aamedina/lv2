@@ -36,6 +36,11 @@
   "A feature for accessing the index of a port by symbol.",
   :rdfs/label "port map",
   :rdf/type :lv2/Feature}
+ {:rdf/about #:rdf{:blank "d0749880892a53740b10a6cc5a3c203d"},
+  :rdfs/comment "A PortNotification MUST have exactly one ui:plugin.",
+  :owl/cardinality 1,
+  :owl/onProperty :ui/plugin,
+  :rdf/type :owl/Restriction}
  {:rdf/about :ui/scaleFactor,
   :rdfs/comment "Scale factor for high resolution screens.",
   :rdfs/label "scale factor",
@@ -46,11 +51,6 @@
   :rdfs/label "Windows UI",
   :rdfs/subClassOf :ui/UI,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about _e344679f0ee0ec823f3f7158a3a68b3d,
-  :rdfs/comment "A PortNotification MUST have exactly one ui:plugin.",
-  :owl/cardinality 1,
-  :owl/onProperty :ui/plugin,
-  :rdf/type :owl/Restriction}
  {:rdf/about :ui/PortProtocol,
   :rdfs/comment
   "A method to communicate port data between a UI and plugin.",
@@ -129,7 +129,7 @@
   :rdfs/comment
   "A description of port updates that a host must send a UI.",
   :rdfs/label "Port Notification",
-  :rdfs/subClassOf _e344679f0ee0ec823f3f7158a3a68b3d,
+  :rdfs/subClassOf #:rdf{:blank "d0749880892a53740b10a6cc5a3c203d"},
   :rdf/type [:owl/Class :rdfs/Class]}
  {:rdf/about :ui/portNotification,
   :rdfs/comment
@@ -174,11 +174,13 @@
   :rdfs/label "GTK3 UI",
   :rdfs/subClassOf :ui/UI,
   :rdf/type [:owl/Class :rdfs/Class]}
- {:rdf/about "http://lv2plug.in/ns/extensions/ui",
+ {:rdf/about #:rdf{:uri "http://lv2plug.in/ns/extensions/ui"},
   :owl/imports
-  ["http://lv2plug.in/ns/ext/options" "http://lv2plug.in/ns/lv2core"],
+  [#:rdf{:uri "http://lv2plug.in/ns/ext/options"}
+   #:rdf{:uri "http://lv2plug.in/ns/lv2core"}],
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl"},
   :rdfs/comment "User interfaces for LV2 plugins.",
   :rdfs/label "LV2 UI",
   :rdf/type :owl/Ontology}

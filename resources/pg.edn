@@ -5,12 +5,18 @@
         "xsd" "http://www.w3.org/2001/XMLSchema#",
         "lv2" "http://lv2plug.in/ns/lv2core#",
         "rdfs" "http://www.w3.org/2000/01/rdf-schema#"}}
-[{:rdf/about _4801f704f2c8bc8a1d3f51a96b0620c4,
-  :lv2/designation :pg/center,
-  :lv2/index 1}
- {:rdf/about _b5b577c48fa59c01cebb737c150ad11a,
-  :lv2/designation :pg/rearRight,
-  :lv2/index 6}
+[{:rdf/about #:rdf{:blank "5b4ac6af7f3b30dc8d419fb0f3d5870c"},
+  :lv2/designation :pg/ACN4,
+  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "a3a61330c9fce62fc7c5272e14edffce"},
+  :lv2/designation :pg/ACN4,
+  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "b4497fcec0bdd2f989f0b46b06888be4"},
+  :lv2/designation :pg/ACN3,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "259cf3c885a00fcb6eda2daee000e83c"},
+  :lv2/designation :pg/ACN4,
+  :lv2/index 4}
  {:rdf/about :pg/ACN1,
   :rdfs/comment "Ambisonic channel 1 (Y): degree 1, index -1.",
   :rdfs/label "ACN1",
@@ -18,18 +24,15 @@
   :pg/harmonicDegree 1,
   :pg/letterCode "Y",
   :rdf/type :lv2/Channel}
- {:rdf/about _3bdf5695e3404e0c39615bb1661f86c7,
-  :lv2/designation :pg/ACN1,
+ {:rdf/about #:rdf{:blank "52c9ab4081e4bedce5ab799b079c6692"},
+  :lv2/designation :pg/center,
   :lv2/index 1}
- {:rdf/about _88fd40c5fa2f418135a875012e6acc92,
-  :lv2/designation :pg/lowFrequencyEffects,
-  :lv2/index 7}
- {:rdf/about _6c58402b6ea4b157d9d2aa9e7308e0a3,
-  :lv2/designation :pg/ACN4,
-  :lv2/index 4}
- {:rdf/about _70ed862a7583f91f03d31bc3e8580907,
-  :lv2/designation :pg/left,
-  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "4556a2a4300b385f2620bb1efb43bcdf"},
+  :lv2/designation :pg/rearLeft,
+  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "7a8a4ace515484682c23aacf288300e3"},
+  :lv2/designation :pg/ACN2,
+  :lv2/index 2}
  {:rdf/about :pg/lowFrequencyEffects,
   :rdfs/comment "The LFE channel of a *.1 surround sound group.",
   :rdfs/label "low-frequency effects",
@@ -41,148 +44,123 @@
   :pg/harmonicDegree 0,
   :pg/letterCode "W",
   :rdf/type :lv2/Channel}
- {:rdf/about _4b11cf47bdac91792ad57b0394bac3a6,
-  :lv2/designation :pg/ACN15,
-  :lv2/index 10}
- {:rdf/about _f3c83337bf023876b5190de2e92dbbf2,
-  :lv2/designation :pg/ACN10,
-  :lv2/index 10}
- {:rdf/about _9b6c973ce9b8a0688edfda5d28579ac7,
+ {:rdf/about #:rdf{:blank "d214e8d737b5056f09e7a3e08db204ae"},
+  :lv2/designation :pg/ACN1,
+  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "6733d74e1be96e64189436f82ae3e767"},
   :lv2/designation :pg/center,
   :lv2/index 1}
- {:rdf/about _272b50c40566357893255681ebd3993e,
-  :lv2/designation :pg/rearLeft,
-  :lv2/index 3}
- {:rdf/about _93b856a09daf800d4b60ca61db41528a,
-  :lv2/designation :pg/ACN0,
+ {:rdf/about #:rdf{:blank "728345bbbf7be501b0bcd6d59188db65"},
+  :lv2/designation :pg/side,
+  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "e0a54fb65be061a181fef67ad6ad0708"},
+  :lv2/designation :pg/ACN13,
+  :lv2/index 13}
+ {:rdf/about #:rdf{:blank "1081add99dd497ebcb4a142953e9cb4e"},
+  :lv2/designation :pg/rearCenter,
+  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "3dc7bf04d0bddac61167f397bd31c5c8"},
+  :rdfs/comment "An element MUST have exactly one lv2:designation.",
+  :owl/cardinality 1,
+  :owl/onProperty :lv2/designation,
+  :rdf/type :owl/Restriction}
+ {:rdf/about #:rdf{:blank "b6218ced4071f39c3c23a476dac13b90"},
+  :lv2/designation :pg/ACN14,
+  :lv2/index 14}
+ {:rdf/about #:rdf{:blank "95956fa291328c9f8445bc27828ddf9d"},
+  :lv2/designation :pg/center,
+  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "c13c199d8b6cff1d4872b17b82c9ec95"},
+  :lv2/designation :pg/left,
   :lv2/index 0}
- {:rdf/about _3ef42098a859f4052d222152fc92ef9f,
-  :lv2/designation :pg/ACN4,
-  :lv2/index 3}
  {:rdf/about :pg/rearRight,
   :rdfs/comment "The rear-right channel of a surround sound group.",
   :rdfs/label "rear right",
   :rdf/type :lv2/Channel}
- {:rdf/about _3b4117f678a53b4998ba76f758693122,
-  :lv2/designation :pg/ACN3,
-  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "864cae56749d6202d8373f84e5406d26"},
+  :lv2/designation :pg/ACN4,
+  :lv2/index 4}
  {:rdf/about :pg/FivePointOneGroup,
   :pg/element
-  [_7fda0ddffa5237267cbde81c595c3116
-   _272b50c40566357893255681ebd3993e
-   _da5ebf2329369d2c84f50b872796c4e6
-   _cf721358e34aaec697a1d12672611124
-   _f3d3b08308955bf2076fd47fbaef7ba9
-   _2a7befecd3da298e5a60998dd787804a],
+  [#:rdf{:blank "ecb272c52b71ebfe271e034a7d01a50e"}
+   #:rdf{:blank "90c890c877d29c3c95e21920078f2d3d"}
+   #:rdf{:blank "4556a2a4300b385f2620bb1efb43bcdf"}
+   #:rdf{:blank "52c9ab4081e4bedce5ab799b079c6692"}
+   #:rdf{:blank "ad7972366867d48b463d6c9c289d1804"}
+   #:rdf{:blank "a20756188f3bd4ac79b4e15892b9ccc0"}],
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdfs/comment
   "A 5.1 (3-2 stereo with sub) discrete surround sound group.",
   :rdf/type :rdfs/Class,
   :rdfs/label "5.1 Surround"}
- {:rdf/about _06503fc4ed8d16cb7deac70b30c91ec5,
-  :lv2/designation :pg/ACN2,
-  :lv2/index 2}
- {:rdf/about _801f6aa1de4ffeea1f4dcb635ea35dd8,
-  :lv2/designation :pg/ACN0,
-  :lv2/index 0}
- {:rdf/about _c9e70aa27a036653ce683dfa031f5136,
-  :lv2/designation :pg/ACN15,
-  :lv2/index 7}
- {:rdf/about _292d5397f1afb23cc33377deb64259f5,
+ {:rdf/about #:rdf{:blank "bb300b6fbac34b9b9f8af78330209ab4"},
   :lv2/designation :pg/right,
-  :lv2/index 2}
- {:rdf/about _f3d3b08308955bf2076fd47fbaef7ba9,
-  :lv2/designation :pg/right,
-  :lv2/index 2}
- {:rdf/about _227a748fc743e61e5517560051ae2548,
-  :lv2/designation :pg/ACN9,
-  :lv2/index 5}
- {:rdf/about _39523f5132b7d34c7f73c2b7493204cc,
-  :lv2/designation :pg/ACN8,
-  :lv2/index 8}
- {:rdf/about _49232b0a09da890cfb5aec7ada6fd27f,
+  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "c77d3a74119a995beca8bf25bed49cde"},
   :lv2/designation :pg/rearLeft,
   :lv2/index 3}
- {:rdf/about _2e2a483e0432bb7b5f7c860b99131e3e,
-  :lv2/designation :pg/ACN13,
-  :lv2/index 13}
  {:rdf/about :pg/MidSideGroup,
   :pg/element
-  [_394e935b4d85e57872de8f741e93848e
-   _91aaf55e3bebd7d68e7e698cea0d0a05],
+  [#:rdf{:blank "728345bbbf7be501b0bcd6d59188db65"}
+   #:rdf{:blank "f36e5e492f5bda32834a05feb8d3556f"}],
   :rdfs/comment "A 2-channel mid-side stereo audio group.",
   :rdfs/label "Mid-Side Stereo",
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _394e935b4d85e57872de8f741e93848e,
-  :lv2/designation :pg/side,
+ {:rdf/about #:rdf{:blank "7ddf2f6a654e0dc8d38d40c331ae9a79"},
+  :lv2/designation :pg/centerLeft,
   :lv2/index 1}
- {:rdf/about _02a61dd0899936ee9f8c0cbd85b6e6c4,
-  :lv2/designation :pg/right,
+ {:rdf/about #:rdf{:blank "08536633edcf439b2ea41ab38672d581"},
+  :lv2/designation :pg/ACN1,
+  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "85e5d70e91017ed2fa73b0e3d38e4686"},
+  :lv2/designation :pg/ACN8,
   :lv2/index 4}
- {:rdf/about _b21f369121aae9dad1fb53aad3922f18,
-  :lv2/designation :pg/ACN6,
-  :lv2/index 6}
- {:rdf/about _a32dc790c20ee383143b362ab6d8c158,
-  :lv2/designation :pg/ACN12,
-  :lv2/index 12}
+ {:rdf/about #:rdf{:blank "3e0b64b028360b62398f7a4a78d39330"},
+  :lv2/designation :pg/ACN15,
+  :lv2/index 10}
  {:rdf/about :pg/sideLeft,
   :rdfs/comment
   "The side-left channel of a 6.1 or 7.1 surround sound group.",
   :rdfs/label "side left",
   :rdf/type :lv2/Channel}
- {:rdf/about _4c1a2cfed1de87a02980275b71cd1f7d,
-  :lv2/designation :pg/ACN9,
-  :lv2/index 9}
- {:rdf/about _ea66104fa3be159e10656d100d080483,
+ {:rdf/about #:rdf{:blank "0470bc05a0a3fd083c56f63d7ad63e3b"},
   :lv2/designation :pg/ACN3,
+  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "4a14b3ad29cde9f6af533940e40c1dc2"},
+  :lv2/designation :pg/ACN2,
   :lv2/index 2}
- {:rdf/about _da5ebf2329369d2c84f50b872796c4e6,
-  :lv2/designation :pg/rearRight,
-  :lv2/index 4}
- {:rdf/about _c1804085e19029813956dfccbce904a5,
-  :lv2/designation :pg/ACN15,
-  :lv2/index 6}
- {:rdf/about _927b6ce95a4c0907fccfa4daf6a7c401,
-  :lv2/designation :pg/centerRight,
+ {:rdf/about #:rdf{:blank "0e0b59e5963212eb195cef8ac4751bae"},
+  :lv2/designation :pg/rearCenter,
   :lv2/index 3}
- {:rdf/about _72d77cec8176f2124fef35251c8951c7,
-  :lv2/designation :pg/sideLeft,
-  :lv2/index 3}
- {:rdf/about _87a1be0f3881c7daf6ce441de24963e1,
+ {:rdf/about #:rdf{:blank "540aadfbe9bbddfc1cae5978368ba3fe"},
+  :lv2/designation :pg/ACN10,
+  :lv2/index 10}
+ {:rdf/about #:rdf{:blank "f2b422a54f9143a6dd861522edc6a577"},
   :lv2/designation :pg/left,
   :lv2/index 0}
- {:rdf/about _435a123b4b0423eef1a16bbc5a70d819,
-  :lv2/designation :pg/right,
+ {:rdf/about #:rdf{:blank "761bef8468f52d1a3bceeaa279d23b50"},
+  :lv2/designation :pg/ACN1,
   :lv2/index 1}
  {:rdf/about :pg/centerLeft,
   :rdfs/comment
   "The center-left channel of a 7.1 wide surround sound group.",
   :rdfs/label "center left",
   :rdf/type :lv2/Channel}
- {:rdf/about _7bc46f8fe640b7ae0caca4abbfdc8b78,
-  :lv2/designation :pg/ACN1,
-  :lv2/index 1}
- {:rdf/about _91aaf55e3bebd7d68e7e698cea0d0a05,
-  :lv2/designation :pg/center,
-  :lv2/index 0}
  {:rdf/about :pg/SevenPointOneGroup,
-  :pg/element
-  [_faf28b96fcfc229669034ca3cc120451
-   _0cb164f3d379808ef2902cef3dd16a8e
-   _aaf58d365e26bfdc05e0a4992096a796
-   _f69d4b389b829e2f79219c5954d4c34b
-   _292d5397f1afb23cc33377deb64259f5
-   _07a41d30cebfecca6f440522536384b3
-   _dd481c9914dceb0dbd6de0567f08657b
-   _6c4792f81c8e7ff948cd5e94d84b90ad],
   :rdfs/label "7.1 Surround",
   :rdfs/comment "A 7.1 discrete surround sound group.",
+  :pg/element
+  [#:rdf{:blank "b9f167db9b40650569cdca2ed13a7b63"}
+   #:rdf{:blank "b6359f75edb16758265db070090e7692"}
+   #:rdf{:blank "2b19c8bf0602c37500cfcba8771848cd"}
+   #:rdf{:blank "319bde995fd510486987580b1d1aae9b"}
+   #:rdf{:blank "1fcf8c2fc4c659beab2327fcbd0a326a"}
+   #:rdf{:blank "95956fa291328c9f8445bc27828ddf9d"}
+   #:rdf{:blank "c54fade6c8d9e32636bbff00df11d70e"}
+   #:rdf{:blank "36fb6e8ff1a71946ca28aea72292079f"}],
   :rdf/type :rdfs/Class,
   :rdfs/subClassOf :pg/DiscreteGroup}
- {:rdf/about _8ce020f4b149ea227f7127f43dca03a8,
-  :lv2/designation :pg/ACN2,
-  :lv2/index 2}
  {:rdf/about :pg/mainInput,
   :rdfs/comment "Input group that is the primary input of the plugin.",
   :rdfs/label "main input",
@@ -190,18 +168,21 @@
   :rdfs/domain :lv2/Plugin,
   :rdf/type
   [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
+ {:rdf/about #:rdf{:blank "1e7005bcd06c6f791bbd0601de55b719"},
+  :lv2/designation :pg/sideRight,
+  :lv2/index 4}
  {:rdf/about :pg/source,
   :rdfs/comment "Port or group that this group is the output of.",
   :rdfs/label "source",
   :rdfs/range :pg/InputGroup,
   :rdfs/domain :pg/OutputGroup,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
- {:rdf/about _6aa448b6a8fe7be249772bc1e23b2e66,
-  :lv2/designation :pg/left,
-  :lv2/index 0}
- {:rdf/about _24188a7aa8743525f81b197e5edce25a,
-  :lv2/designation :pg/ACN2,
-  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "c24bdae364aafd14289933a0805db599"},
+  :lv2/designation :pg/ACN6,
+  :lv2/index 6}
+ {:rdf/about #:rdf{:blank "3e1a35ebf7f55b181486902d153e4ed3"},
+  :lv2/designation :pg/ACN4,
+  :lv2/index 4}
  {:rdf/about :pg/ACN15,
   :rdfs/comment "Ambisonic channel 15 (P): degree 3, index 3.",
   :rdfs/label "ACN15",
@@ -209,9 +190,12 @@
   :pg/harmonicDegree 3,
   :pg/letterCode "P",
   :rdf/type :lv2/Channel}
- {:rdf/about _87874f2a1ded71160cf3978fe1784b97,
-  :lv2/designation :pg/ACN0,
-  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "1e2dcc2d6a352e15ce05695223f85c2c"},
+  :lv2/designation :pg/ACN4,
+  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "57b01e1926951b54250ade00029bee92"},
+  :lv2/designation :pg/ACN3,
+  :lv2/index 3}
  {:rdf/about :pg/mainOutput,
   :rdfs/comment
   "Output group that is the primary output of the plugin.",
@@ -220,15 +204,21 @@
   :rdfs/domain :lv2/Plugin,
   :rdf/type
   [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
- {:rdf/about _7b378b0ace0fb49ffb49a806990e2674,
-  :lv2/designation :pg/ACN4,
-  :lv2/index 3}
- {:rdf/about _f1e193de6e89c865fae0c1a4289de5b9,
-  :lv2/designation :pg/centerLeft,
-  :lv2/index 1}
- {:rdf/about _379df7907911a606fb6505632e3384d8,
+ {:rdf/about #:rdf{:blank "9776f20293b49f55ceba23ddb8c57c72"},
+  :lv2/designation :pg/right,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "5eaca3499bcd4b8f79cc51f002407bd9"},
+  :lv2/designation :pg/rearLeft,
+  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "1fbe299a5562f868018df077ce9c0d18"},
   :lv2/designation :pg/ACN8,
   :lv2/index 5}
+ {:rdf/about #:rdf{:blank "0cdb1277f2ad0da0a9ae225a7862d110"},
+  :lv2/designation :pg/ACN3,
+  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "f877c80d885d7c73149596c9b894fa59"},
+  :lv2/designation :pg/ACN1,
+  :lv2/index 1}
  {:rdf/about :pg/harmonicDegree,
   :rdfs/comment
   "The degree coefficient (l) of the spherical harmonic for an Ambisonic channel.",
@@ -238,18 +228,30 @@
   :rdf/type [:owl/DatatypeProperty :rdf/Property]}
  {:rdf/about :pg/FivePointZeroGroup,
   :pg/element
-  [_f67467cedafe1bbc24bbb5a4844f58a7
-   _49232b0a09da890cfb5aec7ada6fd27f
-   _6ffaba729b270ee9212547a692575e9e
-   _ece8b427ae82f46ee95bb2a2d70e77cf
-   _7d7cf43a747c83b56c1458778ac0f5e0],
+  [#:rdf{:blank "736fc385f666c16a98b3249d108f7958"}
+   #:rdf{:blank "c77d3a74119a995beca8bf25bed49cde"}
+   #:rdf{:blank "175ce2dc95275c00ad1b8d0d87b150fd"}
+   #:rdf{:blank "36fda42cc1318f803528021c1b279311"}
+   #:rdf{:blank "c13c199d8b6cff1d4872b17b82c9ec95"}],
   :rdfs/comment "A 5.0 (3-2 stereo) discrete surround sound group.",
   :rdfs/label "5.0 Surround",
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _3b5102c785e8170fdd029b741d62265a,
-  :lv2/designation :pg/ACN1,
-  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "bfcd227eb1c6448e1050b13ab2fb882a"},
+  :lv2/designation :pg/right,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "f4d2bdcc8b7185e045c0b470e9268001"},
+  :lv2/designation :pg/lowFrequencyEffects,
+  :lv2/index 7}
+ {:rdf/about #:rdf{:blank "319bde995fd510486987580b1d1aae9b"},
+  :lv2/designation :pg/left,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "d11c1489521ce41e3c326e56014a9e17"},
+  :lv2/designation :pg/ACN6,
+  :lv2/index 6}
+ {:rdf/about #:rdf{:blank "1dcf363792b571b9f297d208bb28891d"},
+  :lv2/designation :pg/ACN11,
+  :lv2/index 11}
  {:rdf/about :pg/rearCenter,
   :rdfs/comment "The rear-center channel of a surround sound group.",
   :rdfs/label "rear center",
@@ -261,21 +263,6 @@
   :pg/harmonicDegree 3,
   :pg/letterCode "N",
   :rdf/type :lv2/Channel}
- {:rdf/about _c59edf0e80c6a60257e7362d8ccc8a54,
-  :lv2/designation :pg/ACN9,
-  :lv2/index 6}
- {:rdf/about _2eb64d5464ae8d1d6e77d673e3520abe,
-  :lv2/designation :pg/ACN9,
-  :lv2/index 9}
- {:rdf/about _da979dc03f53a8ce8e9b704224893da6,
-  :lv2/designation :pg/ACN1,
-  :lv2/index 1}
- {:rdf/about _e3ded79b6d3a2364ede84358ea7ac545,
-  :lv2/designation :pg/ACN5,
-  :lv2/index 5}
- {:rdf/about _1e51487da26e2473158c28287eee92a3,
-  :lv2/designation :pg/ACN8,
-  :lv2/index 5}
  {:rdf/about :pg/ACN13,
   :rdfs/comment "Ambisonic channel 13 (L): degree 3, index 1.",
   :rdfs/label "ACN13",
@@ -283,26 +270,35 @@
   :pg/harmonicDegree 3,
   :pg/letterCode "L",
   :rdf/type :lv2/Channel}
- {:rdf/about _d3251517d389b6c71c8142a29b77c46a,
-  :lv2/designation :pg/left,
-  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "812cabcdea6d900e2d6ebd3538b3ffa6"},
+  :lv2/designation :pg/ACN9,
+  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "36fb6e8ff1a71946ca28aea72292079f"},
+  :lv2/designation :pg/sideLeft,
+  :lv2/index 3}
  {:rdf/about :pg/side,
   :rdfs/comment "The side channel of a mid-side audio group.",
   :rdfs/label "side",
   :rdf/type :lv2/Channel}
+ {:rdf/about #:rdf{:blank "82872ce1bb8d9acc4adab3d74879cdb5"},
+  :lv2/designation :pg/left,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "d31bfdfe1516ef7700166d2ea6cc78e4"},
+  :lv2/designation :pg/ACN2,
+  :lv2/index 2}
  {:rdf/about :pg/AmbisonicBH1P0Group,
   :pg/element
-  [_ea66104fa3be159e10656d100d080483
-   _da979dc03f53a8ce8e9b704224893da6
-   _801f6aa1de4ffeea1f4dcb635ea35dd8],
+  [#:rdf{:blank "b4497fcec0bdd2f989f0b46b06888be4"}
+   #:rdf{:blank "d214e8d737b5056f09e7a3e08db204ae"}
+   #:rdf{:blank "440614e19f926a2a5a6a68a5cdf578b5"}],
   :rdfs/comment
   "Ambisonic B stream of horizontal order 1 and peripheral order 0.",
   :rdfs/label "Ambisonic BH1P0",
   :rdfs/subClassOf :pg/AmbisonicGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _d6083104a803c320ea8f1d60d7eb827d,
-  :lv2/designation :pg/ACN6,
-  :lv2/index 6}
+ {:rdf/about #:rdf{:blank "a024125e37870f832571968d43c426bd"},
+  :lv2/designation :pg/ACN1,
+  :lv2/index 1}
  {:rdf/about :pg/ACN12,
   :rdfs/comment "Ambisonic channel 12 (K): degree 3, index 0.",
   :rdfs/label "ACN12",
@@ -312,11 +308,11 @@
   :rdf/type :lv2/Channel}
  {:rdf/about :pg/AmbisonicBH2P0Group,
   :pg/element
-  [_3290227ac97021d18ff8fb689b5f311d
-   _3ef42098a859f4052d222152fc92ef9f
-   _3b4117f678a53b4998ba76f758693122
-   _7bc46f8fe640b7ae0caca4abbfdc8b78
-   _4a769cd61285cb23142e85a2775e63a6],
+  [#:rdf{:blank "85e5d70e91017ed2fa73b0e3d38e4686"}
+   #:rdf{:blank "fbc16b03fc13600305c4cd01dbf6fd0b"}
+   #:rdf{:blank "a915f643a9a37f2745475dc3ebd4565a"}
+   #:rdf{:blank "f877c80d885d7c73149596c9b894fa59"}
+   #:rdf{:blank "84fdf3d7f93b1023911ef3f7c781d7ab"}],
   :rdfs/comment
   "Ambisonic B stream of horizontal order 2 and peripheral order 0.",
   :rdfs/label "Ambisonic BH2P0",
@@ -324,17 +320,28 @@
   :rdf/type :rdfs/Class}
  {:rdf/about :pg/AmbisonicBH1P1Group,
   :pg/element
-  [_39fe1227688f6181a157da337b63c9f9
-   _6d97b2cc8c929e885d7c48caf03c8d41
-   _3b5102c785e8170fdd029b741d62265a
-   _93b856a09daf800d4b60ca61db41528a],
+  [#:rdf{:blank "0470bc05a0a3fd083c56f63d7ad63e3b"}
+   #:rdf{:blank "362b42ff2fd8ceea3a15f090e21c7bb0"}
+   #:rdf{:blank "4aa8cb094d5b50b05fc5830285cf08d2"}
+   #:rdf{:blank "c47ae9f8c30a2ef38b52f3d073f49aeb"}],
   :rdfs/comment
   "Ambisonic B stream of horizontal order 1 and peripheral order 1.",
   :rdfs/label "Ambisonic BH1P1",
   :rdfs/subClassOf :pg/AmbisonicGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _eb28972647165813b1837e14745df707,
-  :lv2/designation :pg/ACN1,
+ {:rdf/about #:rdf{:blank "736fc385f666c16a98b3249d108f7958"},
+  :lv2/designation :pg/rearRight,
+  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "c6af67048f535e64a2561f36ec5d4513"},
+  :rdfs/comment "A Group MUST have exactly one string lv2:symbol.",
+  :owl/cardinality 1,
+  :owl/onProperty :lv2/symbol,
+  :rdf/type :owl/Restriction}
+ {:rdf/about #:rdf{:blank "c47ae9f8c30a2ef38b52f3d073f49aeb"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "220852fb98ce6d0c1a46b9c6a52790df"},
+  :lv2/designation :pg/right,
   :lv2/index 1}
  {:rdf/about :pg/ACN11,
   :rdfs/comment "Ambisonic channel 11 (M): degree 3, index -1.",
@@ -350,35 +357,35 @@
   :rdfs/domain :pg/Group,
   :rdf/type
   [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
- {:rdf/about _5d8c038677c59a10cf9e18d61a5a171d,
-  :lv2/designation :pg/center,
-  :lv2/index 2}
  {:rdf/about :pg/center,
   :rdfs/comment "The center channel of a discrete audio group.",
   :rdfs/label "center",
   :rdf/type :lv2/Channel}
- {:rdf/about _ecf65e9e46c6106cdb0e870d31f33e24,
-  :lv2/designation :pg/ACN3,
-  :lv2/index 3}
  {:rdf/about :pg/InputGroup,
   :rdfs/comment "A group which contains exclusively inputs.",
   :rdfs/label "Input Group",
   :rdfs/subClassOf :pg/Group,
   :rdf/type :rdfs/Class}
- {:rdf/about _ece8b427ae82f46ee95bb2a2d70e77cf,
-  :lv2/designation :pg/center,
-  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "d6656be2bc74468c967929973b128719"},
+  :lv2/designation :pg/centerRight,
+  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "c155c18686f6f4be48696dac8ea4f7c2"},
+  :lv2/designation :pg/ACN15,
+  :lv2/index 15}
+ {:rdf/about #:rdf{:blank "c799d1bc6e74818b3d9537ad79f01a2a"},
+  :lv2/designation :pg/ACN3,
+  :lv2/index 2}
  {:rdf/about :pg/AmbisonicBH3P0Group,
-  :pg/element
-  [_c1804085e19029813956dfccbce904a5
-   _520358f1a0f7f51e6e2285a2b584b860
-   _7b378b0ace0fb49ffb49a806990e2674
-   _87874f2a1ded71160cf3978fe1784b97
-   _6e57e03b9e78500050cccedb40387547
-   _7ff0bcb405ab003d31bf2c1a7f773709
-   _227a748fc743e61e5517560051ae2548],
   :rdfs/comment
   "Ambisonic B stream of horizontal order 3 and peripheral order 0.",
+  :pg/element
+  [#:rdf{:blank "5b4ac6af7f3b30dc8d419fb0f3d5870c"}
+   #:rdf{:blank "8d1a318b09e24a2aa301c3298b6cbba7"}
+   #:rdf{:blank "b85cc5ffa77b9f645e09d0731f5709fe"}
+   #:rdf{:blank "412bb13c03c91774276160c5f5889728"}
+   #:rdf{:blank "d8811b7e0aa9812867c199184d20c9a9"}
+   #:rdf{:blank "812cabcdea6d900e2d6ebd3538b3ffa6"}
+   #:rdf{:blank "c799d1bc6e74818b3d9537ad79f01a2a"}],
   :rdf/type :rdfs/Class,
   :rdfs/label "Ambisonic BH3P0",
   :rdfs/subClassOf :pg/AmbisonicGroup}
@@ -391,190 +398,179 @@
   :rdf/type :lv2/Channel}
  {:rdf/about :pg/AmbisonicBH2P1Group,
   :pg/element
-  [_cb88683438a5a4a2885a2241557d257e
-   _9d20c1d70faa5868cb2fd4149fec2c48
-   _a52b24a1a89e00ca1628aefbfa36912a
-   _34e151f37f9608728ac7c437e92982c8
-   _2b2833d2acb3127a5b1df131cfa96233
-   _1e51487da26e2473158c28287eee92a3],
+  [#:rdf{:blank "04c23dfca234cd556733bb82a2a80e32"}
+   #:rdf{:blank "1fbe299a5562f868018df077ce9c0d18"}
+   #:rdf{:blank "3e1a35ebf7f55b181486902d153e4ed3"}
+   #:rdf{:blank "1ba55b773836b293fc40a4a2cf022ee1"}
+   #:rdf{:blank "4a14b3ad29cde9f6af533940e40c1dc2"}
+   #:rdf{:blank "a024125e37870f832571968d43c426bd"}],
   :rdfs/comment
   "Ambisonic B stream of horizontal order 2 and peripheral order 1.",
   :rdf/type :rdfs/Class,
   :rdfs/subClassOf :pg/AmbisonicGroup,
   :rdfs/label "Ambisonic BH2P1"}
- {:rdf/about _6e57e03b9e78500050cccedb40387547,
-  :lv2/designation :pg/ACN1,
-  :lv2/index 1}
- {:rdf/about _4c85c30f737e64bc91449be0f719067a,
-  :lv2/designation :pg/ACN14,
-  :lv2/index 14}
- {:rdf/about _9aea9811da031f4a6cb94b7f6aced06f,
+ {:rdf/about #:rdf{:blank "37551c1a568f10693f168e63e53f38c1"},
+  :lv2/designation :pg/ACN7,
+  :lv2/index 7}
+ {:rdf/about #:rdf{:blank "f36e5e492f5bda32834a05feb8d3556f"},
+  :lv2/designation :pg/center,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "2994eb85ddd198aeb26e5b4cf503a018"},
+  :lv2/designation :pg/ACN8,
+  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "a20756188f3bd4ac79b4e15892b9ccc0"},
   :lv2/designation :pg/lowFrequencyEffects,
-  :lv2/index 6}
+  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "261d8abf9589e14711adca4cd0d425c3"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
  {:rdf/about :pg/AmbisonicBH3P1Group,
   :pg/element
-  [_379df7907911a606fb6505632e3384d8
-   _c59edf0e80c6a60257e7362d8ccc8a54
-   _8ce020f4b149ea227f7127f43dca03a8
-   _6c58402b6ea4b157d9d2aa9e7308e0a3
-   _dd9cf88589adb78ab7051a099063ebc2
-   _c9e70aa27a036653ce683dfa031f5136
-   _4d62c8d7f6d74f460bae33ac87b0d6e1
-   _d9400589aaf5b1187a5e5a9f89c81dd7],
+  [#:rdf{:blank "e1c6c55bae2c1881ea84abf23cc27d06"}
+   #:rdf{:blank "2994eb85ddd198aeb26e5b4cf503a018"}
+   #:rdf{:blank "6879141249f1667fbc2d29ef192beb7d"}
+   #:rdf{:blank "9654d809de6d353bc32322b4bdf21a8b"}
+   #:rdf{:blank "ea6b0263d11c569ed825893b0326d086"}
+   #:rdf{:blank "bbc1c60a921e57296939984eaf5057bc"}
+   #:rdf{:blank "864cae56749d6202d8373f84e5406d26"}
+   #:rdf{:blank "0b61d5a490b33d1bc65609e638d1f7ff"}],
   :rdfs/label "Ambisonic BH3P1",
   :rdfs/comment
   "Ambisonic B stream of horizontal order 3 and peripheral order 1.",
   :rdfs/subClassOf :pg/AmbisonicGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _39fe1227688f6181a157da337b63c9f9,
-  :lv2/designation :pg/ACN3,
-  :lv2/index 3}
  {:rdf/about :pg/AmbisonicBH2P2Group,
-  :rdfs/label "Ambisonic BH2P2",
   :pg/element
-  [_3bdf5695e3404e0c39615bb1661f86c7
-   _2f3c4a856581ff24d3862cf88136f8df
-   _d6083104a803c320ea8f1d60d7eb827d
-   _bf406cc4cd6d3a49527ebbf5801e4a3f
-   _ecf65e9e46c6106cdb0e870d31f33e24
-   _300aaaa258ae02cb0533321337d76764
-   _86d3edd95aa47956eef31f2cba7a6118
-   _6852e6934215581336e85e473e9354fd
-   _8561637f1035912b91d09d5d26ba121c],
+  [#:rdf{:blank "f0fb4dfa5ee72f717339c6bd10a61f69"}
+   #:rdf{:blank "23a332569597d87d636028e5755eba89"}
+   #:rdf{:blank "a3a61330c9fce62fc7c5272e14edffce"}
+   #:rdf{:blank "f9ad2c5f73a584e1f50455b6a05749de"}
+   #:rdf{:blank "761bef8468f52d1a3bceeaa279d23b50"}
+   #:rdf{:blank "57b01e1926951b54250ade00029bee92"}
+   #:rdf{:blank "d31bfdfe1516ef7700166d2ea6cc78e4"}
+   #:rdf{:blank "a1482a024b1220bdec79943718b76522"}
+   #:rdf{:blank "c24bdae364aafd14289933a0805db599"}],
+  :rdfs/label "Ambisonic BH2P2",
   :rdfs/subClassOf :pg/AmbisonicGroup,
   :rdf/type :rdfs/Class,
   :rdfs/comment
   "Ambisonic B stream of horizontal order 2 and peripheral order 2."}
- {:rdf/about _7d7cf43a747c83b56c1458778ac0f5e0,
-  :lv2/designation :pg/left,
-  :lv2/index 0}
- {:rdf/about _9c21c486661b348e9b5ebcfa046be7ff,
-  :rdfs/comment "A Group MUST have exactly one string lv2:symbol.",
-  :owl/cardinality 1,
-  :owl/onProperty :lv2/symbol,
-  :rdf/type :owl/Restriction}
- {:rdf/about _0cb164f3d379808ef2902cef3dd16a8e,
-  :lv2/designation :pg/left,
+ {:rdf/about #:rdf{:blank "3f613fa7c16049e129155729afb628e1"},
+  :lv2/designation :pg/right,
+  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "09b11babcd6e6ccc9a7089f09d6e24ba"},
+  :lv2/designation :pg/rearCenter,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "a1482a024b1220bdec79943718b76522"},
+  :lv2/designation :pg/ACN0,
   :lv2/index 0}
  {:rdf/about :pg/AmbisonicBH3P2Group,
   :pg/element
-  [_e1e0594a9603a45acf5b0642060798fa
-   _90ca47befc60621cd70a758e165bab6b
-   _4b11cf47bdac91792ad57b0394bac3a6
-   _887c392d2093324eee2e6b90c799139f
-   _39523f5132b7d34c7f73c2b7493204cc
-   _b814c91519ce10a09707dc33090bcb91
-   _06503fc4ed8d16cb7deac70b30c91ec5
-   _b21f369121aae9dad1fb53aad3922f18
-   _2eb64d5464ae8d1d6e77d673e3520abe
-   _dc72142f143ad7f882caebedc04abdb1
-   _658a20d8246971036f010bb81fd06d32],
+  [#:rdf{:blank "e914f9b7f00c5438920fb48f7ff5e54c"}
+   #:rdf{:blank "375a2e84652aada944abd9d950e91cd2"}
+   #:rdf{:blank "9ed794960ba2b5fc6d96149fd950b2ef"}
+   #:rdf{:blank "7a8a4ace515484682c23aacf288300e3"}
+   #:rdf{:blank "4825ce2f1b4ec840844f7619bcb7d1ed"}
+   #:rdf{:blank "1e2dcc2d6a352e15ce05695223f85c2c"}
+   #:rdf{:blank "04e1fda355c2d0ff843240d1dad49166"}
+   #:rdf{:blank "3e0b64b028360b62398f7a4a78d39330"}
+   #:rdf{:blank "d86aff0c19292b048c2a5078856fb5cf"}
+   #:rdf{:blank "be8a67623c26abe387c088c73d10af35"}
+   #:rdf{:blank "0cdb1277f2ad0da0a9ae225a7862d110"}],
   :rdfs/comment
   "Ambisonic B stream of horizontal order 3 and peripheral order 2.",
   :rdfs/subClassOf :pg/AmbisonicGroup,
   :rdfs/label "Ambisonic BH3P2",
   :rdf/type :rdfs/Class}
+ {:rdf/about #:rdf{:blank "d86aff0c19292b048c2a5078856fb5cf"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "89c12d840e83592624484dacc491aee9"},
+  :lv2/designation :pg/left,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "f9ad2c5f73a584e1f50455b6a05749de"},
+  :lv2/designation :pg/ACN7,
+  :lv2/index 7}
  {:rdf/about :pg/letterCode,
   :rdfs/comment "The YuMa letter code for an Ambisonic channel.",
   :rdfs/label "ambisonic letter code",
   :rdfs/range :rdf/PlainLiteral,
   :rdfs/domain :lv2/Channel,
   :rdf/type [:owl/DatatypeProperty :rdf/Property]}
- {:rdf/about _4d62c8d7f6d74f460bae33ac87b0d6e1,
-  :lv2/designation :pg/ACN0,
-  :lv2/index 0}
- {:rdf/about _dd9cf88589adb78ab7051a099063ebc2,
-  :lv2/designation :pg/ACN3,
+ {:rdf/about #:rdf{:blank "8a222140409cc57c6aeb0205658f459a"},
+  :lv2/designation :pg/sideLeft,
   :lv2/index 3}
- {:rdf/about _90ca47befc60621cd70a758e165bab6b,
-  :lv2/designation :pg/ACN0,
-  :lv2/index 0}
- {:rdf/about _5303fcfd00c3af4367c51596ad63a5c8,
-  :lv2/designation :pg/ACN8,
-  :lv2/index 8}
  {:rdf/about :pg/AmbisonicBH3P3Group,
   :rdfs/label "Ambisonic BH3P3",
   :pg/element
-  [_24188a7aa8743525f81b197e5edce25a
-   _60a945226e38ef075051514977eecbad
-   _5303fcfd00c3af4367c51596ad63a5c8
-   _2e2a483e0432bb7b5f7c860b99131e3e
-   _4c1a2cfed1de87a02980275b71cd1f7d
-   _839251147ba43564e77c11ac6780c3e5
-   _8e7e9e909c9feee793b6f9bf591f0ab8
-   _f3c83337bf023876b5190de2e92dbbf2
-   _2aadc676c8e5029ab31792344528da63
-   _e3ded79b6d3a2364ede84358ea7ac545
-   _4c85c30f737e64bc91449be0f719067a
-   _30349e6e6a5a19f084f02bac376173f6
-   _0d67b8775d330bb5fd9e8f1cd0b64df5
-   _a61240d9bf2de760f79f320d64a17149
-   _a32dc790c20ee383143b362ab6d8c158
-   _eb28972647165813b1837e14745df707],
+  [#:rdf{:blank "1dcf363792b571b9f297d208bb28891d"}
+   #:rdf{:blank "b6218ced4071f39c3c23a476dac13b90"}
+   #:rdf{:blank "518995560d101f20c150ca3094ad6406"}
+   #:rdf{:blank "d11c1489521ce41e3c326e56014a9e17"}
+   #:rdf{:blank "c155c18686f6f4be48696dac8ea4f7c2"}
+   #:rdf{:blank "540aadfbe9bbddfc1cae5978368ba3fe"}
+   #:rdf{:blank "261d8abf9589e14711adca4cd0d425c3"}
+   #:rdf{:blank "23bb83d42b619b81443fb21797e1e20d"}
+   #:rdf{:blank "ba7c44c25c05849a99b4e75903d1d82b"}
+   #:rdf{:blank "cc57eadbce26b11009c9cb82302beba1"}
+   #:rdf{:blank "be749f8a4bd061814238a27a0f47f426"}
+   #:rdf{:blank "08536633edcf439b2ea41ab38672d581"}
+   #:rdf{:blank "dc9159ca23cfff58021b832d26f856b2"}
+   #:rdf{:blank "259cf3c885a00fcb6eda2daee000e83c"}
+   #:rdf{:blank "37551c1a568f10693f168e63e53f38c1"}
+   #:rdf{:blank "e0a54fb65be061a181fef67ad6ad0708"}],
   :rdfs/comment
   "Ambisonic B stream of horizontal order 3 and peripheral order 3.",
   :rdf/type :rdfs/Class,
   :rdfs/subClassOf :pg/AmbisonicGroup}
- {:rdf/about _520358f1a0f7f51e6e2285a2b584b860,
-  :lv2/designation :pg/ACN8,
-  :lv2/index 4}
- {:rdf/about _f69d4b389b829e2f79219c5954d4c34b,
-  :lv2/designation :pg/sideLeft,
+ {:rdf/about #:rdf{:blank "ba7c44c25c05849a99b4e75903d1d82b"},
+  :lv2/designation :pg/ACN12,
+  :lv2/index 12}
+ {:rdf/about #:rdf{:blank "be749f8a4bd061814238a27a0f47f426"},
+  :lv2/designation :pg/ACN3,
   :lv2/index 3}
- {:rdf/about _faf28b96fcfc229669034ca3cc120451,
-  :lv2/designation :pg/rearRight,
-  :lv2/index 6}
- {:rdf/about _f67467cedafe1bbc24bbb5a4844f58a7,
-  :lv2/designation :pg/rearRight,
-  :lv2/index 4}
- {:rdf/about _6ffaba729b270ee9212547a692575e9e,
-  :lv2/designation :pg/right,
-  :lv2/index 2}
- {:rdf/about _cf721358e34aaec697a1d12672611124,
-  :lv2/designation :pg/lowFrequencyEffects,
+ {:rdf/about #:rdf{:blank "23bb83d42b619b81443fb21797e1e20d"},
+  :lv2/designation :pg/ACN5,
   :lv2/index 5}
- {:rdf/about _8e7e9e909c9feee793b6f9bf591f0ab8,
-  :lv2/designation :pg/ACN4,
-  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "8d1a318b09e24a2aa301c3298b6cbba7"},
+  :lv2/designation :pg/ACN1,
+  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "e914f9b7f00c5438920fb48f7ff5e54c"},
+  :lv2/designation :pg/ACN7,
+  :lv2/index 7}
+ {:rdf/about #:rdf{:blank "0b61d5a490b33d1bc65609e638d1f7ff"},
+  :lv2/designation :pg/ACN2,
+  :lv2/index 2}
  {:rdf/about :pg/StereoGroup,
   :pg/element
-  [_c10e7511997de2d31eb60037c5fcf291
-   _87a1be0f3881c7daf6ce441de24963e1],
+  [#:rdf{:blank "220852fb98ce6d0c1a46b9c6a52790df"}
+   #:rdf{:blank "8a6d7d934c3d3512e18084788b329022"}],
   :rdfs/comment "A 2-channel discrete stereo audio group.",
   :rdfs/label "Stereo",
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _4a769cd61285cb23142e85a2775e63a6,
-  :lv2/designation :pg/ACN0,
-  :lv2/index 0}
- {:rdf/about _b012f2cba9c1bd92e624800634248764,
-  :lv2/designation :pg/center,
-  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "2b19c8bf0602c37500cfcba8771848cd"},
+  :lv2/designation :pg/rearRight,
+  :lv2/index 6}
  {:rdf/about :pg/centerRight,
   :rdfs/comment
   "The center-right channel of a 7.1 wide surround sound group.",
   :rdfs/label "center right",
   :rdf/type :lv2/Channel}
- {:rdf/about _6d97b2cc8c929e885d7c48caf03c8d41,
-  :lv2/designation :pg/ACN2,
-  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "04c23dfca234cd556733bb82a2a80e32"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
  {:rdf/about :pg/DiscreteGroup,
   :rdfs/comment "A group of discrete channels.",
   :rdfs/label "Discrete Group",
   :rdfs/subClassOf :pg/Group,
   :rdf/type :rdfs/Class}
- {:rdf/about _9d20c1d70faa5868cb2fd4149fec2c48,
+ {:rdf/about #:rdf{:blank "fbc16b03fc13600305c4cd01dbf6fd0b"},
   :lv2/designation :pg/ACN4,
-  :lv2/index 4}
- {:rdf/about _eab472556e3d3c1974a2378d4894d870,
-  :lv2/designation :pg/left,
-  :lv2/index 0}
- {:rdf/about _347e2eadc14015429bc689056c906d28,
-  :lv2/designation :pg/rearLeft,
-  :lv2/index 5}
- {:rdf/about _d9400589aaf5b1187a5e5a9f89c81dd7,
-  :lv2/designation :pg/ACN1,
-  :lv2/index 1}
+  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "ea6b0263d11c569ed825893b0326d086"},
+  :lv2/designation :pg/ACN9,
+  :lv2/index 6}
  {:rdf/about :pg/harmonicIndex,
   :rdfs/comment
   "The index coefficient (m) of the spherical harmonic for an Ambisonic channel.",
@@ -584,52 +580,41 @@
   :rdf/type [:owl/DatatypeProperty :rdf/Property]}
  {:rdf/about :pg/ThreePointZeroGroup,
   :pg/element
-  [_71dd3ba097dae43dffafb15e9c08f1b3
-   _435a123b4b0423eef1a16bbc5a70d819
-   _eab472556e3d3c1974a2378d4894d870],
+  [#:rdf{:blank "09b11babcd6e6ccc9a7089f09d6e24ba"}
+   #:rdf{:blank "bb300b6fbac34b9b9f8af78330209ab4"}
+   #:rdf{:blank "89c12d840e83592624484dacc491aee9"}],
   :rdfs/comment "A 3.0 discrete surround sound group.",
   :rdfs/label "3.0 Surround",
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _839251147ba43564e77c11ac6780c3e5,
-  :lv2/designation :pg/ACN0,
-  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "e1c6c55bae2c1881ea84abf23cc27d06"},
+  :lv2/designation :pg/ACN15,
+  :lv2/index 7}
  {:rdf/about :pg/sideRight,
   :rdfs/comment
   "The side-right channel of a 6.1 or 7.1 surround sound group.",
   :rdfs/label "side right",
   :rdf/type :lv2/Channel}
- {:rdf/about _7fda0ddffa5237267cbde81c595c3116,
-  :lv2/designation :pg/left,
-  :lv2/index 0}
- {:rdf/about _07a41d30cebfecca6f440522536384b3,
-  :lv2/designation :pg/sideRight,
-  :lv2/index 4}
- {:rdf/about _c10e7511997de2d31eb60037c5fcf291,
-  :lv2/designation :pg/right,
-  :lv2/index 1}
- {:rdf/about _60a945226e38ef075051514977eecbad,
-  :lv2/designation :pg/ACN7,
-  :lv2/index 7}
- {:rdf/about _2f3c4a856581ff24d3862cf88136f8df,
-  :lv2/designation :pg/ACN4,
-  :lv2/index 4}
- {:rdf/about _3b7109b7aaa8955aaef2ac270a7b3e30,
+ {:rdf/about #:rdf{:blank "175ce2dc95275c00ad1b8d0d87b150fd"},
   :lv2/designation :pg/right,
   :lv2/index 2}
- {:rdf/about "http://lv2plug.in/ns/ext/port-groups",
-  :owl/imports "http://lv2plug.in/ns/lv2core",
+ {:rdf/about #:rdf{:blank "23a332569597d87d636028e5755eba89"},
+  :lv2/designation :pg/ACN8,
+  :lv2/index 8}
+ {:rdf/about #:rdf{:blank "17500d32562c2b3586c80bc49cd4bb88"},
+  :lv2/designation :pg/rearRight,
+  :lv2/index 6}
+ {:rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/port-groups"},
+  :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
   :rdfs/seeAlso
-  "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-groups.lv2/port-groups.meta.ttl",
+  #:rdf{:uri
+        "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-groups.lv2/port-groups.meta.ttl"},
   :rdfs/comment "Multi-channel groups of LV2 ports.",
   :rdfs/label "LV2 Port Groups",
   :rdf/type :owl/Ontology}
- {:rdf/about _0d67b8775d330bb5fd9e8f1cd0b64df5,
-  :lv2/designation :pg/ACN11,
-  :lv2/index 11}
- {:rdf/about _6c4792f81c8e7ff948cd5e94d84b90ad,
-  :lv2/designation :pg/lowFrequencyEffects,
-  :lv2/index 7}
+ {:rdf/about #:rdf{:blank "4aa8cb094d5b50b05fc5830285cf08d2"},
+  :lv2/designation :pg/ACN1,
+  :lv2/index 1}
  {:rdf/about :pg/ACN9,
   :rdfs/comment "Ambisonic channel 9 (Q): degree 3, index -3.",
   :rdfs/label "ACN9",
@@ -639,17 +624,23 @@
   :rdf/type :lv2/Channel}
  {:rdf/about :pg/FourPointZeroGroup,
   :pg/element
-  [_db1eebb58f4556ee14b09c3fb237367e
-   _3a54bd753dadd2cb3d101b4ed09a342b
-   _4801f704f2c8bc8a1d3f51a96b0620c4
-   _d3251517d389b6c71c8142a29b77c46a],
+  [#:rdf{:blank "0e0b59e5963212eb195cef8ac4751bae"}
+   #:rdf{:blank "bfcd227eb1c6448e1050b13ab2fb882a"}
+   #:rdf{:blank "6733d74e1be96e64189436f82ae3e767"}
+   #:rdf{:blank "82872ce1bb8d9acc4adab3d74879cdb5"}],
   :rdfs/comment "A 4.0 (Quadraphonic) discrete surround sound group.",
   :rdfs/label "4.0 Surround",
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdf/type :rdfs/Class}
- {:rdf/about _a52b24a1a89e00ca1628aefbfa36912a,
-  :lv2/designation :pg/ACN3,
-  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "dc9159ca23cfff58021b832d26f856b2"},
+  :lv2/designation :pg/ACN2,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "37cab77141b1952d459eb42b60ef0909"},
+  :lv2/designation :pg/center,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "84fdf3d7f93b1023911ef3f7c781d7ab"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
  {:rdf/about :pg/ACN8,
   :rdfs/comment "Ambisonic channel 8 (U): degree 2, index 2.",
   :rdfs/label "ACN8",
@@ -657,18 +648,30 @@
   :pg/harmonicDegree 2,
   :pg/letterCode "U",
   :rdf/type :lv2/Channel}
- {:rdf/about _a61240d9bf2de760f79f320d64a17149,
+ {:rdf/about #:rdf{:blank "4825ce2f1b4ec840844f7619bcb7d1ed"},
+  :lv2/designation :pg/ACN8,
+  :lv2/index 8}
+ {:rdf/about #:rdf{:blank "90c890c877d29c3c95e21920078f2d3d"},
+  :lv2/designation :pg/rearRight,
+  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "412bb13c03c91774276160c5f5889728"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "d8811b7e0aa9812867c199184d20c9a9"},
   :lv2/designation :pg/ACN15,
-  :lv2/index 15}
- {:rdf/about _dc72142f143ad7f882caebedc04abdb1,
+  :lv2/index 6}
+ {:rdf/about #:rdf{:blank "ad7972366867d48b463d6c9c289d1804"},
+  :lv2/designation :pg/right,
+  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "440614e19f926a2a5a6a68a5cdf578b5"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "9ed794960ba2b5fc6d96149fd950b2ef"},
   :lv2/designation :pg/ACN1,
   :lv2/index 1}
- {:rdf/about _bf406cc4cd6d3a49527ebbf5801e4a3f,
-  :lv2/designation :pg/ACN7,
-  :lv2/index 7}
- {:rdf/about _cb88683438a5a4a2885a2241557d257e,
-  :lv2/designation :pg/ACN2,
-  :lv2/index 2}
+ {:rdf/about #:rdf{:blank "518995560d101f20c150ca3094ad6406"},
+  :lv2/designation :pg/ACN9,
+  :lv2/index 9}
  {:rdf/about :pg/rearLeft,
   :rdfs/comment "The rear-left channel of a surround sound group.",
   :rdfs/label "rear left",
@@ -677,6 +680,9 @@
   :rdfs/comment "Port or group is a side chain of another.",
   :rdfs/label "side-chain of",
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about #:rdf{:blank "a915f643a9a37f2745475dc3ebd4565a"},
+  :lv2/designation :pg/ACN3,
+  :lv2/index 2}
  {:rdf/about :pg/ACN7,
   :rdfs/comment "Ambisonic channel 7 (S): degree 2, index 1.",
   :rdfs/label "ACN7",
@@ -684,23 +690,11 @@
   :pg/harmonicDegree 2,
   :pg/letterCode "S",
   :rdf/type :lv2/Channel}
- {:rdf/about _dd481c9914dceb0dbd6de0567f08657b,
-  :lv2/designation :pg/rearLeft,
-  :lv2/index 5}
- {:rdf/about _aaf58d365e26bfdc05e0a4992096a796,
+ {:rdf/about #:rdf{:blank "fa2354de70b340288c71bdeee160fff6"},
   :lv2/designation :pg/center,
   :lv2/index 1}
- {:rdf/about _71dd3ba097dae43dffafb15e9c08f1b3,
-  :lv2/designation :pg/rearCenter,
-  :lv2/index 2}
- {:rdf/about _db1eebb58f4556ee14b09c3fb237367e,
-  :lv2/designation :pg/rearCenter,
-  :lv2/index 3}
- {:rdf/about _887c392d2093324eee2e6b90c799139f,
-  :lv2/designation :pg/ACN7,
-  :lv2/index 7}
- {:rdf/about _30349e6e6a5a19f084f02bac376173f6,
-  :lv2/designation :pg/ACN6,
+ {:rdf/about #:rdf{:blank "05753c0e39f107be7a49758c50c49139"},
+  :lv2/designation :pg/lowFrequencyEffects,
   :lv2/index 6}
  {:rdf/about :pg/ACN6,
   :rdfs/comment "Ambisonic channel 6 (R): degree 2, index 0.",
@@ -709,15 +703,18 @@
   :pg/harmonicDegree 2,
   :pg/letterCode "R",
   :rdf/type :lv2/Channel}
- {:rdf/about _2aadc676c8e5029ab31792344528da63,
+ {:rdf/about #:rdf{:blank "1ba55b773836b293fc40a4a2cf022ee1"},
   :lv2/designation :pg/ACN3,
   :lv2/index 3}
- {:rdf/about _3a54bd753dadd2cb3d101b4ed09a342b,
-  :lv2/designation :pg/right,
-  :lv2/index 2}
- {:rdf/about _94d4a6657f32a4b1f50fb2ade45c8118,
-  :lv2/designation :pg/sideRight,
-  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "9654d809de6d353bc32322b4bdf21a8b"},
+  :lv2/designation :pg/ACN3,
+  :lv2/index 3}
+ {:rdf/about #:rdf{:blank "bbc1c60a921e57296939984eaf5057bc"},
+  :lv2/designation :pg/ACN0,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "6879141249f1667fbc2d29ef192beb7d"},
+  :lv2/designation :pg/ACN1,
+  :lv2/index 1}
  {:rdf/about :pg/ACN5,
   :rdfs/comment "Ambisonic channel 5 (T): degree 2, index -1.",
   :rdfs/label "ACN5",
@@ -725,9 +722,9 @@
   :pg/harmonicDegree 2,
   :pg/letterCode "T",
   :rdf/type :lv2/Channel}
- {:rdf/about _3290227ac97021d18ff8fb689b5f311d,
-  :lv2/designation :pg/ACN8,
-  :lv2/index 4}
+ {:rdf/about #:rdf{:blank "04e1fda355c2d0ff843240d1dad49166"},
+  :lv2/designation :pg/ACN6,
+  :lv2/index 6}
  {:rdf/about :pg/group,
   :rdfs/comment "Group that this port is a part of.",
   :rdfs/label "group",
@@ -737,34 +734,41 @@
   [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property]}
  {:rdf/about :pg/Group,
   :rdfs/comment "A set of ports that are logically grouped together.",
-  :rdfs/subClassOf _9c21c486661b348e9b5ebcfa046be7ff,
+  :rdfs/subClassOf #:rdf{:blank "c6af67048f535e64a2561f36ec5d4513"},
   :rdfs/label "Port Group",
   :rdf/type :rdfs/Class}
+ {:rdf/about #:rdf{:blank "f0fb4dfa5ee72f717339c6bd10a61f69"},
+  :lv2/designation :pg/ACN5,
+  :lv2/index 5}
  {:rdf/about :pg/SevenPointOneWideGroup,
   :pg/element
-  [_70ed862a7583f91f03d31bc3e8580907
-   _927b6ce95a4c0907fccfa4daf6a7c401
-   _f1e193de6e89c865fae0c1a4289de5b9
-   _88fd40c5fa2f418135a875012e6acc92
-   _02a61dd0899936ee9f8c0cbd85b6e6c4
-   _347e2eadc14015429bc689056c906d28
-   _b5b577c48fa59c01cebb737c150ad11a
-   _5d8c038677c59a10cf9e18d61a5a171d],
+  [#:rdf{:blank "f4d2bdcc8b7185e045c0b470e9268001"}
+   #:rdf{:blank "17500d32562c2b3586c80bc49cd4bb88"}
+   #:rdf{:blank "7ddf2f6a654e0dc8d38d40c331ae9a79"}
+   #:rdf{:blank "3f613fa7c16049e129155729afb628e1"}
+   #:rdf{:blank "f2b422a54f9143a6dd861522edc6a577"}
+   #:rdf{:blank "5eaca3499bcd4b8f79cc51f002407bd9"}
+   #:rdf{:blank "37cab77141b1952d459eb42b60ef0909"}
+   #:rdf{:blank "d6656be2bc74468c967929973b128719"}],
   :rdfs/label "7.1 Surround (Wide)",
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdf/type :rdfs/Class,
   :rdfs/comment "A 7.1 wide discrete surround sound group."}
- {:rdf/about _747f909496dddcd281bbf15713ebbbc9,
-  :rdfs/comment "An element MUST have exactly one lv2:designation.",
-  :owl/cardinality 1,
-  :owl/onProperty :lv2/designation,
-  :rdf/type :owl/Restriction}
- {:rdf/about _658a20d8246971036f010bb81fd06d32,
-  :lv2/designation :pg/ACN3,
-  :lv2/index 3}
- {:rdf/about _6852e6934215581336e85e473e9354fd,
-  :lv2/designation :pg/ACN0,
+ {:rdf/about #:rdf{:blank "36fda42cc1318f803528021c1b279311"},
+  :lv2/designation :pg/center,
+  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "0d3aa9361407c74c1aab782aec61fd01"},
+  :lv2/designation :pg/left,
   :lv2/index 0}
+ {:rdf/about #:rdf{:blank "b6359f75edb16758265db070090e7692"},
+  :lv2/designation :pg/lowFrequencyEffects,
+  :lv2/index 7}
+ {:rdf/about #:rdf{:blank "be8a67623c26abe387c088c73d10af35"},
+  :lv2/designation :pg/ACN5,
+  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "1fcf8c2fc4c659beab2327fcbd0a326a"},
+  :lv2/designation :pg/rearLeft,
+  :lv2/index 5}
  {:rdf/about :pg/ACN4,
   :rdfs/comment "Ambisonic channel 4 (V): degree 2, index -2.",
   :rdfs/label "ACN4",
@@ -777,31 +781,34 @@
   :rdfs/label "Output Group",
   :rdfs/subClassOf :pg/Group,
   :rdf/type :rdfs/Class}
- {:rdf/about _300aaaa258ae02cb0533321337d76764,
-  :lv2/designation :pg/ACN5,
-  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "1847f86a80e641309c3623d2f646756b"},
+  :lv2/designation :pg/center,
+  :lv2/index 0}
  {:rdf/about :pg/SixPointOneGroup,
   :pg/element
-  [_3b7109b7aaa8955aaef2ac270a7b3e30
-   _9aea9811da031f4a6cb94b7f6aced06f
-   _db2c7aef4b7a70d4fe980bf1130fb512
-   _6aa448b6a8fe7be249772bc1e23b2e66
-   _9b6c973ce9b8a0688edfda5d28579ac7
-   _72d77cec8176f2124fef35251c8951c7
-   _94d4a6657f32a4b1f50fb2ade45c8118],
+  [#:rdf{:blank "8a222140409cc57c6aeb0205658f459a"}
+   #:rdf{:blank "1e7005bcd06c6f791bbd0601de55b719"}
+   #:rdf{:blank "9776f20293b49f55ceba23ddb8c57c72"}
+   #:rdf{:blank "0d3aa9361407c74c1aab782aec61fd01"}
+   #:rdf{:blank "1081add99dd497ebcb4a142953e9cb4e"}
+   #:rdf{:blank "fa2354de70b340288c71bdeee160fff6"}
+   #:rdf{:blank "05753c0e39f107be7a49758c50c49139"}],
   :rdfs/subClassOf :pg/DiscreteGroup,
   :rdfs/label "6.1 Surround",
   :rdf/type :rdfs/Class,
   :rdfs/comment "A 6.1 discrete surround sound group."}
- {:rdf/about _2a7befecd3da298e5a60998dd787804a,
-  :lv2/designation :pg/center,
-  :lv2/index 1}
- {:rdf/about _e1e0594a9603a45acf5b0642060798fa,
-  :lv2/designation :pg/ACN4,
+ {:rdf/about #:rdf{:blank "8a6d7d934c3d3512e18084788b329022"},
+  :lv2/designation :pg/left,
+  :lv2/index 0}
+ {:rdf/about #:rdf{:blank "cc57eadbce26b11009c9cb82302beba1"},
+  :lv2/designation :pg/ACN8,
+  :lv2/index 8}
+ {:rdf/about #:rdf{:blank "b85cc5ffa77b9f645e09d0731f5709fe"},
+  :lv2/designation :pg/ACN8,
   :lv2/index 4}
- {:rdf/about _db2c7aef4b7a70d4fe980bf1130fb512,
-  :lv2/designation :pg/rearCenter,
-  :lv2/index 5}
+ {:rdf/about #:rdf{:blank "b9f167db9b40650569cdca2ed13a7b63"},
+  :lv2/designation :pg/sideRight,
+  :lv2/index 4}
  {:rdf/about :pg/ACN3,
   :rdfs/comment "Ambisonic channel 3 (X): degree 1, index 1.",
   :rdfs/label "ACN3",
@@ -809,24 +816,18 @@
   :pg/harmonicDegree 1,
   :pg/letterCode "X",
   :rdf/type :lv2/Channel}
- {:rdf/about _7ff0bcb405ab003d31bf2c1a7f773709,
-  :lv2/designation :pg/ACN3,
-  :lv2/index 2}
- {:rdf/about _2b2833d2acb3127a5b1df131cfa96233,
-  :lv2/designation :pg/ACN1,
-  :lv2/index 1}
+ {:rdf/about #:rdf{:blank "375a2e84652aada944abd9d950e91cd2"},
+  :lv2/designation :pg/ACN9,
+  :lv2/index 9}
  {:rdf/about :pg/left,
   :rdfs/comment "The left channel of a stereo audio group.",
   :rdfs/label "left",
   :rdf/type :lv2/Channel}
- {:rdf/about _8561637f1035912b91d09d5d26ba121c,
+ {:rdf/about #:rdf{:blank "362b42ff2fd8ceea3a15f090e21c7bb0"},
   :lv2/designation :pg/ACN2,
   :lv2/index 2}
- {:rdf/about _34e151f37f9608728ac7c437e92982c8,
-  :lv2/designation :pg/ACN0,
-  :lv2/index 0}
  {:rdf/about :pg/MonoGroup,
-  :pg/element _b012f2cba9c1bd92e624800634248764,
+  :pg/element #:rdf{:blank "1847f86a80e641309c3623d2f646756b"},
   :rdfs/comment "A single channel audio group.",
   :rdfs/label "Mono",
   :rdfs/subClassOf :pg/DiscreteGroup,
@@ -838,9 +839,9 @@
   :pg/harmonicDegree 1,
   :pg/letterCode "Z",
   :rdf/type :lv2/Channel}
- {:rdf/about _86d3edd95aa47956eef31f2cba7a6118,
-  :lv2/designation :pg/ACN8,
-  :lv2/index 8}
+ {:rdf/about #:rdf{:blank "ecb272c52b71ebfe271e034a7d01a50e"},
+  :lv2/designation :pg/left,
+  :lv2/index 0}
  {:rdf/about :pg/right,
   :rdfs/comment "The right channel of a stereo audio group.",
   :rdfs/label "right",
@@ -850,16 +851,16 @@
   :rdfs/label "element",
   :rdfs/range :pg/Element,
   :rdf/type [:owl/ObjectProperty :rdf/Property]}
+ {:rdf/about #:rdf{:blank "c54fade6c8d9e32636bbff00df11d70e"},
+  :lv2/designation :pg/right,
+  :lv2/index 2}
  {:rdf/about :pg/Element,
   :rdfs/comment
   ["An element of a group, with a designation and optional index."
    "An ordered element of a group."],
-  :rdfs/subClassOf _747f909496dddcd281bbf15713ebbbc9,
+  :rdfs/subClassOf #:rdf{:blank "3dc7bf04d0bddac61167f397bd31c5c8"},
   :rdfs/label "Element",
   :rdf/type :rdfs/Class}
- {:rdf/about _b814c91519ce10a09707dc33090bcb91,
-  :lv2/designation :pg/ACN5,
-  :lv2/index 5}
  {:rdf/about :pg/AmbisonicGroup,
   :rdfs/comment "A group of Ambisonic channels.",
   :rdfs/label "Ambisonic Group",
