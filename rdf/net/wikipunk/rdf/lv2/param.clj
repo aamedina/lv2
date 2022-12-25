@@ -40,18 +40,18 @@
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
-  {:pg/element      [#:lv2{:designation :param/delay,
-                      :index       0}
-                     #:lv2{:designation :param/release,
-                      :index       5}
-                     #:lv2{:designation :param/attack,
+  {:pg/element      [#:lv2{:designation :param/attack,
                       :index       1}
                      #:lv2{:designation :param/sustain,
                       :index       4}
-                     #:lv2{:designation :param/decay,
-                      :index       3}
                      #:lv2{:designation :param/hold,
-                      :index       2}],
+                      :index       2}
+                     #:lv2{:designation :param/release,
+                      :index       5}
+                     #:lv2{:designation :param/delay,
+                      :index       0}
+                     #:lv2{:designation :param/decay,
+                      :index       3}],
    :rdf/about       :param/EnvelopeControls,
    :rdf/type        :rdfs/Class,
    :rdfs/label      "Envelope Controls",

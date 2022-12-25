@@ -34,7 +34,12 @@
    [net.wikipunk.rdf.lv2.foaf :as foaf]
    [net.wikipunk.rdf.lv2.dcterms :as dcterms]
    [net.wikipunk.rdf.lv2.schema :as schema]
+   [net.wikipunk.rdf.lv2.atom :as atom]
+   [net.wikipunk.rdf.lv2.bufsz :as bufsz]
+   [net.wikipunk.rdf.lv2.da :as da]
+   [net.wikipunk.rdf.lv2.dman :as dman]
    [net.wikipunk.rdf.lv2.lv2 :as lv2]
+   [net.wikipunk.rdf.lv2.midi :as midi]
    [zprint.core :as zprint]))
 
 (set-init
