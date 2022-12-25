@@ -246,6 +246,7 @@
                                  (:dcterms/title md)
                                  (get-in md [:lv2/project :lv2/documentation :rdf/literal])
                                  (:rdfs/comment md)
+                                 (:rdfs/label md)
                                  (:vann/preferredNamespaceUri md)
                                  (:doc md)
                                  "")

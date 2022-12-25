@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.schema
-  "https://schema.org/"
+  "Schema.org Vocabulary"
   {:dcat/downloadURL
    "https://raw.githubusercontent.com/schemaorg/schemaorg/main/data/releases/15.0/schemaorg.owl",
    :dcterms/modified {:rdf/literal "2022-10-25",
