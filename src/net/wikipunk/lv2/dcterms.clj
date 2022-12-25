@@ -1,4 +1,4 @@
-(ns net.wikipunk.rdf.dcterms
+(ns net.wikipunk.lv2.dcterms
   "http://purl.org/dc/terms/"
   {:vann/preferredNamespacePrefix "dcterms",
    :vann/preferredNamespaceUri    "http://purl.org/dc/terms/",

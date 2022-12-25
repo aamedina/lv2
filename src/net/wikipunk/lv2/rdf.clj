@@ -1,4 +1,4 @@
-(ns net.wikipunk.rdf.rdf
+(ns net.wikipunk.lv2.rdf
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   {:vann/preferredNamespacePrefix "rdf",
    :vann/preferredNamespaceUri    "http://www.w3.org/1999/02/22-rdf-syntax-ns#"

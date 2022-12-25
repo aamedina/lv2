@@ -20,11 +20,13 @@
    [clojure.set :as set]
    [clojure.string :as str]
    [clojure.tools.namespace.repl :refer [refresh refresh-all clear]]
+   [clojure.walk :as walk]
    [com.stuartsierra.component :as com]
    [com.stuartsierra.component.repl :refer [reset set-init start stop system]]
    [com.walmartlabs.schematic :as sc]
    [datomic.client.api :as d]
-   [net.wikipunk.jena :as jena]))
+   [net.wikipunk.jena :as jena]
+   [zprint.core :as zprint]))
 
 (set-init
   (fn [_]

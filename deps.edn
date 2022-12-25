@@ -15,6 +15,8 @@
   org.clojure/clojure
   {:mvn/version "1.11.1"}
   org.clojure/tools.logging
+  {:mvn/version "1.2.4"}
+  zprint/zprint
   {:mvn/version "1.2.4"}}
  :paths ["src" "resources" "classes" "rdf"]
  :aliases

@@ -1,12 +1,14 @@
 (ns net.wikipunk.jena
   "Apache Jena"
-  (:refer-clojure :exclude [slurp])
   (:require
    [arachne.aristotle.registry :as reg]
    [arachne.aristotle.graph :as g]
    [clojure.core.protocols :refer [coll-reduce]]
    [clojure.java.io :as io]
-   [clojure.string :as str])
+   [clojure.set :as set]
+   [clojure.string :as str]
+   [clojure.walk :as walk]
+   [zprint.core :as zprint])
   (:import
    (org.apache.jena.graph Graph Node Triple Node_URI Node_Literal Node_Variable Node_Blank)
    (org.apache.jena.riot RDFParser)
@@ -102,11 +104,16 @@
   Clojure data using Aristotle.
 
   Adapted from arachne.aristotle.graph/graph->clj"
-  [x]
-  (let [g             (.toGraph (RDFParser/source x))
-        ns-prefix-map (into {} (.getNsPrefixMap (.getPrefixMapping g)))]
+  [{:vann/keys [preferredNamespaceUri
+                preferredNamespacePrefix]
+    :dcat/keys [downloadURL] :as md}]
+  (let [g             (.toGraph (RDFParser/source downloadURL))
+        ns-prefix-map (dissoc (into {preferredNamespacePrefix
+                                     preferredNamespaceUri}
+                                    (.getNsPrefixMap (.getPrefixMapping g)))
+                              "")]
     (reg/with ns-prefix-map
-              (into (with-meta [] {:rdf/ns-prefix-map ns-prefix-map})
+              (into (with-meta [] (assoc md :rdf/ns-prefix-map ns-prefix-map))
                     (map (fn [[subject triples]]
                            (into {:rdf/about (g/data subject)}
                                  (map (fn [[pred triples]]
@@ -116,6 +123,59 @@
                                                            objects)])))
                                  (group-by #(.getPredicate ^Triple %) triples))))
                     (group-by #(.getSubject ^Triple %) (into [] g))))))
+
+(defn unroll
+  "Walks the parsed RDF model and replaces references to blank nodes
+  with their data. Also unrolls lists."
+  [model]
+  (let [index (-> (group-by :rdf/about model)
+                  (update-vals first)
+                  (update-vals #(dissoc % :rdf/about)))
+        index' (walk/prewalk (fn [form]
+                               (if-some [node (:rdf/blank form)]
+                                 (get index form)
+                                 form))
+                             index)
+        md (reduce (fn [md [uri m]]
+                     (merge (update md :rdf/about conj uri) m))
+                   (assoc (meta model) :rdf/about [])
+                   (filter (comp :rdf/uri key) index'))
+        exclusions (->> (keys (filter (comp qualified-keyword? key) index'))
+                        (map name)
+                        (filter #(var? (ns-resolve 'clojure.core (symbol %))))
+                        (map symbol)
+                        (into []))]
+    (->> index'
+         (filter (comp qualified-keyword? key))
+         (sort-by key)
+         (map (fn [form] (walk/postwalk (fn [form]
+                                          (cond
+                                            (identical? (:rdf/rest form) :rdf/nil)
+                                            [(:rdf/first form)]
+
+                                            (and (:rdf/first form) (:rdf/rest form))
+                                            (into [(:rdf/first form)] (:rdf/rest form))
+
+                                            :else form))
+                                        form)))
+         (map (fn [[k v]]
+                (let [sym (symbol (name k))
+                      sym (cond
+                            (get clojure.lang.RT/DEFAULT_IMPORTS sym)
+                            (symbol (str sym "Class"))
+
+                            (= (name sym) "nil")
+                            'null
+                            
+                            :else sym)]
+                  (list 'def sym v))))
+         (cons (list 'ns (symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
+                     (or (:rdfs/comment md)
+                         (:dcterms/abstract md)
+                         (:dcterms/description md)
+                         (:doc md))
+                     (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description)
+                     (list :refer-clojure :exclude exclusions))))))
 
 (defn parse-and-spit
   "Parses source and writes subjects of the RDF model as maps to the path specified."
@@ -132,13 +192,8 @@
        (filter (comp :dcat/downloadURL meta))
        (map (fn [ns] [(ns-name ns) (meta ns)]))
        (pmap (fn [[ns-name md]]
-               (parse-and-spit (str "resources/" (:vann/preferredNamespacePrefix md) ".edn")
-                               (:dcat/downloadURL md))))
+               (spit (str "rdf/net/wikipunk/rdf/lv2/" (:vann/preferredNamespacePrefix md) ".clj")
+                     (zprint/zprint-file-str (apply str (unroll (parse md)))
+                                             ""
+                                             {:parse {:interpose "\n\n"}}))))
        (dorun)))
-
-(defn slurp
-  "Reads EDN model from disk."
-  [f]
-  (with-open [r (java.io.PushbackReader. (io/reader f))]
-    (binding [*read-eval*    nil]
-      (read r))))
