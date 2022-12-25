@@ -192,7 +192,7 @@
                             (update index k merge v))
                           index' (dissoc seeAlso (:rdf/about md)))
         md (cond-> md
-             (map? project) (assoc :lv2/project project))
+              project (assoc :lv2/project project))
         exclusions (->> (keys (filter (comp qualified-keyword? key) index'))
                         (map name)
                         (filter #(var? (ns-resolve 'clojure.core (symbol %))))
@@ -234,7 +234,7 @@
                                             (str/trim (str/replace docstring #"\s" " ")))
                                 v         (assoc v :rdf/about k)]
                             (if docstring
-                              (list 'def sym docstring (dissoc v :lv2/documentation :dcterms/description))
+                              (list 'def sym docstring (dissoc v :lv2/documentation))
                               (list 'def sym v)))))
                    (map (fn [form] (walk/postwalk (fn [form]
                                                     (if (bytes? form)
@@ -254,7 +254,10 @@
                                docstring)
                    docstring (str/trim (str/replace docstring #"\s" " "))]
                docstring)
-            ~(dissoc (update md :lv2/project #(dissoc % :lv2/documentation)) :doc)
+            ~(dissoc (cond-> md
+                       (:lv2/project md)
+                       (update :lv2/project #(dissoc % :lv2/documentation)))
+                     :doc)
             ~@(when (seq exclusions)
                 [(list :refer-clojure :exclude exclusions)]))
           forms)))

@@ -5,7 +5,6 @@
    :dcterms/description
    "The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language.",
    :dcterms/title "Friend of a Friend (FOAF) vocabulary",
-   :lv2/project nil,
    :rdf/about {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "foaf"    "http://xmlns.com/foaf/0.1/",

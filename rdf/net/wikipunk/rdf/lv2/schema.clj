@@ -4,7 +4,6 @@
    "https://raw.githubusercontent.com/schemaorg/schemaorg/main/data/releases/15.0/schemaorg.owl",
    :dcterms/modified {:rdf/literal "2022-10-25",
                       :rdf/uri     "http://www.w3.org/2001/XMLSchema#dat"},
-   :lv2/project nil,
    :owl/versionInfo "15.0",
    :rdf/about {:rdf/uri "https://schema.org/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",

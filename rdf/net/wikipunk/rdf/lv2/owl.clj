@@ -4,7 +4,6 @@
    :dcterms/title "The OWL 2 Schema vocabulary (OWL 2)",
    :grddl/namespaceTransformation
    {:rdf/uri "http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl"},
-   :lv2/project nil,
    :owl/imports {:rdf/uri "http://www.w3.org/2000/01/rdf-schema"},
    :owl/versionIRI {:rdf/uri "http://www.w3.org/2002/07/owl"},
    :owl/versionInfo "$Date: 2009/11/15 10:54:12 $",

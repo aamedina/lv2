@@ -5,7 +5,6 @@
    :dcterms/description
    "This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts.",
    :dcterms/title "The RDF Concepts Vocabulary (RDF)",
-   :lv2/project nil,
    :rdf/about {:rdf/uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"},
    :rdf/ns-prefix-map {"dc"   "http://purl.org/dc/elements/1.1/",
                        "owl"  "http://www.w3.org/2002/07/owl#",

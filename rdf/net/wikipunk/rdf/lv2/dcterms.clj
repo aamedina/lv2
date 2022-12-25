@@ -4,7 +4,6 @@
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/dcterms.ttl",
    :dcterms/modified "2010-10-11",
    :dcterms/title "DCMI Metadata Terms",
-   :lv2/project nil,
    :rdf/about {:rdf/uri "http://purl.org/dc/terms/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "owl"     "http://www.w3.org/2002/07/owl#",
@@ -19,19 +18,23 @@
 
 (def Agent
   "Examples of Agent include person, organization, and software agent."
-  {:rdf/about        :dcterms/Agent,
-   :rdf/type         [:rdfs/Class :dcterms/AgentClass],
-   :rdfs/comment     "A resource that acts or has the power to act.",
+  {:dcterms/description
+   "Examples of Agent include person, organization, and software agent.",
+   :rdf/about :dcterms/Agent,
+   :rdf/type [:rdfs/Class :dcterms/AgentClass],
+   :rdfs/comment "A resource that acts or has the power to act.",
    :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label       "Agent"})
+   :rdfs/label "Agent"})
 
 (def AgentClass
   "Examples of Agent Class include groups seen as classes, such as students, women, charities, lecturers."
-  {:rdf/about        :dcterms/AgentClass,
-   :rdf/type         :rdfs/Class,
-   :rdfs/comment     "A group of agents.",
+  {:dcterms/description
+   "Examples of Agent Class include groups seen as classes, such as students, women, charities, lecturers.",
+   :rdf/about :dcterms/AgentClass,
+   :rdf/type :rdfs/Class,
+   :rdfs/comment "A group of agents.",
    :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label       "Agent Class"})
+   :rdfs/label "Agent Class"})
 
 (def LicenseDocument
   "A legal document giving official permission to do something with a Resource."
@@ -45,7 +48,9 @@
 
 (def LinguisticSystem
   "Examples include written, spoken, sign, and computer languages."
-  {:rdf/about :dcterms/LinguisticSystem,
+  {:dcterms/description
+   "Examples include written, spoken, sign, and computer languages.",
+   :rdf/about :dcterms/LinguisticSystem,
    :rdf/type :rdfs/Class,
    :rdfs/comment
    "A system of signs, symbols, sounds, gestures, or rules used in communication.",
@@ -118,12 +123,14 @@
 
 (def alternative
   "The distinction between titles and alternative titles is application-specific."
-  {:rdf/about          :dcterms/alternative,
-   :rdf/type           :rdf/Property,
-   :rdfs/comment       "An alternative name for the resource.",
-   :rdfs/isDefinedBy   {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label         "alternative title",
-   :rdfs/range         :rdfs/Literal,
+  {:dcterms/description
+   "The distinction between titles and alternative titles is application-specific.",
+   :rdf/about :dcterms/alternative,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "An alternative name for the resource.",
+   :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
+   :rdfs/label "alternative title",
+   :rdfs/range :rdfs/Literal,
    :rdfs/subPropertyOf :dcterms/title})
 
 (def available
@@ -150,7 +157,9 @@
 
 (def contributor
   "Examples of a Contributor include a person, an organization, or a service."
-  {:rdf/about :dcterms/contributor,
+  {:dcterms/description
+   "Examples of a Contributor include a person, an organization, or a service.",
+   :rdf/about :dcterms/contributor,
    :rdf/type :rdf/Property,
    :rdfs/comment
    "An entity responsible for making contributions to the resource.",
@@ -170,7 +179,9 @@
 
 (def creator
   "Examples of a Creator include a person, an organization, or a service."
-  {:owl/equivalentProperty {:rdf/uri "http://xmlns.com/foaf/0.1/maker"},
+  {:dcterms/description
+   "Examples of a Creator include a person, an organization, or a service.",
+   :owl/equivalentProperty {:rdf/uri "http://xmlns.com/foaf/0.1/maker"},
    :rdf/about :dcterms/creator,
    :rdf/type :rdf/Property,
    :rdfs/comment "An entity primarily responsible for making the resource.",
@@ -181,7 +192,9 @@
 
 (def date
   "Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF]."
-  {:rdf/about :dcterms/date,
+  {:dcterms/description
+   "Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF].",
+   :rdf/about :dcterms/date,
    :rdf/type :rdf/Property,
    :rdfs/comment
    "A point or period of time associated with an event in the lifecycle of the resource.",
@@ -191,12 +204,14 @@
 
 (def dateAccepted
   "Examples of resources to which a Date Accepted may be relevant are a thesis (accepted by a university department) or an article (accepted by a journal)."
-  {:rdf/about          :dcterms/dateAccepted,
-   :rdf/type           :rdf/Property,
-   :rdfs/comment       "Date of acceptance of the resource.",
-   :rdfs/isDefinedBy   {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label         "date accepted",
-   :rdfs/range         :rdfs/Literal,
+  {:dcterms/description
+   "Examples of resources to which a Date Accepted may be relevant are a thesis (accepted by a university department) or an article (accepted by a journal).",
+   :rdf/about :dcterms/dateAccepted,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "Date of acceptance of the resource.",
+   :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
+   :rdfs/label "date accepted",
+   :rdfs/range :rdfs/Literal,
    :rdfs/subPropertyOf :dcterms/date})
 
 (def dateCopyrighted
@@ -211,25 +226,31 @@
 
 (def dateSubmitted
   "Examples of resources to which a Date Submitted may be relevant are a thesis (submitted to a university department) or an article (submitted to a journal)."
-  {:rdf/about          :dcterms/dateSubmitted,
-   :rdf/type           :rdf/Property,
-   :rdfs/comment       "Date of submission of the resource.",
-   :rdfs/isDefinedBy   {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label         "date submitted",
-   :rdfs/range         :rdfs/Literal,
+  {:dcterms/description
+   "Examples of resources to which a Date Submitted may be relevant are a thesis (submitted to a university department) or an article (submitted to a journal).",
+   :rdf/about :dcterms/dateSubmitted,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "Date of submission of the resource.",
+   :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
+   :rdfs/label "date submitted",
+   :rdfs/range :rdfs/Literal,
    :rdfs/subPropertyOf :dcterms/date})
 
 (def description
   "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."
-  {:rdf/about        :dcterms/description,
-   :rdf/type         :rdf/Property,
-   :rdfs/comment     "An account of the resource.",
+  {:dcterms/description
+   "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.",
+   :rdf/about :dcterms/description,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "An account of the resource.",
    :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label       "description"})
+   :rdfs/label "description"})
 
 (def format
   "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."
-  {:rdf/about :dcterms/format,
+  {:dcterms/description
+   "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME].",
+   :rdf/about :dcterms/format,
    :rdf/type :rdf/Property,
    :rdfs/comment
    "The file format, physical medium, or dimensions of the resource.",
@@ -319,7 +340,9 @@
 
 (def isVersionOf
   "Changes in version imply substantive changes in content rather than differences in format."
-  {:rdf/about :dcterms/isVersionOf,
+  {:dcterms/description
+   "Changes in version imply substantive changes in content rather than differences in format.",
+   :rdf/about :dcterms/isVersionOf,
    :rdf/type :rdf/Property,
    :rdfs/comment
    "A related resource of which the described resource is a version, edition, or adaptation.",
@@ -339,12 +362,14 @@
 
 (def language
   "Recommended best practice is to use a controlled vocabulary such as RFC 4646."
-  {:rdf/about        :dcterms/language,
-   :rdf/type         :rdf/Property,
-   :rdfs/comment     "A language of the resource.",
+  {:dcterms/description
+   "Recommended best practice is to use a controlled vocabulary such as RFC 4646.",
+   :rdf/about :dcterms/language,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "A language of the resource.",
    :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label       "language",
-   :rdfs/range       :dcterms/LinguisticSystem})
+   :rdfs/label "language",
+   :rdfs/range :dcterms/LinguisticSystem})
 
 (def license
   "A legal document giving official permission to do something with the resource."
@@ -369,12 +394,14 @@
 
 (def publisher
   "Examples of a Publisher include a person, an organization, or a service."
-  {:rdf/about        :dcterms/publisher,
-   :rdf/type         :rdf/Property,
-   :rdfs/comment     "An entity responsible for making the resource available.",
+  {:dcterms/description
+   "Examples of a Publisher include a person, an organization, or a service.",
+   :rdf/about :dcterms/publisher,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "An entity responsible for making the resource available.",
    :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label       "publisher",
-   :rdfs/range       :dcterms/Agent})
+   :rdfs/label "publisher",
+   :rdfs/range :dcterms/Agent})
 
 (def references
   "A related resource that is referenced, cited, or otherwise pointed to by the described resource."
@@ -388,11 +415,13 @@
 
 (def relation
   "Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."
-  {:rdf/about        :dcterms/relation,
-   :rdf/type         :rdf/Property,
-   :rdfs/comment     "A related resource.",
+  {:dcterms/description
+   "Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system. ",
+   :rdf/about :dcterms/relation,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "A related resource.",
    :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label       "relation"})
+   :rdfs/label "relation"})
 
 (def replaces
   "A related resource that is supplanted, displaced, or superseded by the described resource."
@@ -416,12 +445,14 @@
 
 (def rights
   "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."
-  {:rdf/about        :dcterms/rights,
-   :rdf/type         :rdf/Property,
-   :rdfs/comment     "Information about rights held in and over the resource.",
+  {:dcterms/description
+   "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.",
+   :rdf/about :dcterms/rights,
+   :rdf/type :rdf/Property,
+   :rdfs/comment "Information about rights held in and over the resource.",
    :rdfs/isDefinedBy {:rdf/uri "http://purl.org/dc/terms/"},
-   :rdfs/label       "rights",
-   :rdfs/range       :dcterms/RightsStatement})
+   :rdfs/label "rights",
+   :rdfs/range :dcterms/RightsStatement})
 
 (def rightsHolder
   "A person or organization owning or managing rights over the resource."

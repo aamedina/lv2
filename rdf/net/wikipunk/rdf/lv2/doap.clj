@@ -6,7 +6,6 @@
    :foaf/maker {:foaf/mbox {:rdf/uri "mailto:edd@usefulinc.com"},
                 :foaf/name "Edd Dumbill",
                 :rdf/type  :foaf/Person},
-   :lv2/project nil,
    :owl/imports {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdf/about {:rdf/uri "http://usefulinc.com/ns/doap#"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
