@@ -14,8 +14,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.meta.ttl"},
    :vann/preferredNamespacePrefix "state",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/state#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/state#"})
 
 (def State
   "LV2 plugin state."

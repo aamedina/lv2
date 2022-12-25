@@ -13,8 +13,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/time.lv2/time.meta.ttl"},
    :vann/preferredNamespacePrefix "time",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/time#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/time#"})
 
 (def Position
   "A point in time and/or the speed at which time is passing."

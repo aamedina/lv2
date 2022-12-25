@@ -15,8 +15,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/resize-port.lv2/resize-port.meta.ttl"},
    :vann/preferredNamespacePrefix "rsz",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/resize-port#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/resize-port#"})
 
 (def asLargeAs
   "Port that this port must have at least as much buffer space as."

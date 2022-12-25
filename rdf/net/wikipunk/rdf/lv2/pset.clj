@@ -15,8 +15,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/presets.lv2/presets.meta.ttl"},
    :vann/preferredNamespacePrefix "pset",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/presets#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/presets#"})
 
 (def Bank
   "A bank of presets."

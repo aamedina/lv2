@@ -17,8 +17,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/buf-size.lv2/buf-size.meta.ttl"},
    :vann/preferredNamespacePrefix "bufsz",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/buf-size#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/buf-size#"})
 
 (def boundedBlockLength
   "Block length has lower and upper bounds."

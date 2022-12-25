@@ -15,8 +15,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/log.lv2/log.meta.ttl"},
    :vann/preferredNamespacePrefix "log",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/log#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/log#"})
 
 (def Entry
   "A log entry."

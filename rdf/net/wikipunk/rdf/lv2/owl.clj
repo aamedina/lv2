@@ -22,8 +22,7 @@
     {:rdf/uri
      "http://www.w3.org/TR/owl2-rdf-based-semantics/#table-axiomatic-classes"}],
    :vann/preferredNamespacePrefix "owl",
-   :vann/preferredNamespaceUri "http://www.w3.org/2002/07/owl"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://www.w3.org/2002/07/owl"})
 
 (def AllDifferent
   "The class of collections of pairwise different individuals."

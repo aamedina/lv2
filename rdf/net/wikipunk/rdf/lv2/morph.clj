@@ -18,8 +18,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.meta.ttl"},
    :vann/preferredNamespacePrefix "morph",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/morph#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/morph#"})
 
 (def AutoMorphPort
   "A port that can change its type based on that of another."

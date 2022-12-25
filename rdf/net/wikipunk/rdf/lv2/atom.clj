@@ -19,8 +19,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.meta.ttl"},
    :vann/preferredNamespacePrefix "atom",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/atom#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/atom#"})
 
 (def Atom
   "Abstract base class for all atoms."

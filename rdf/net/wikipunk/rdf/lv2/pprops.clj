@@ -15,8 +15,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl"},
    :vann/preferredNamespacePrefix "pprops",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/port-props#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/port-props#"})
 
 (def causesArtifacts
   "Input port causes audible artifacts when changed."

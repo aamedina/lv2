@@ -11,5 +11,4 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/instance-access.lv2/instance-access.meta.ttl"},
    :vann/preferredNamespacePrefix "ia",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/instance-access#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/instance-access#"})

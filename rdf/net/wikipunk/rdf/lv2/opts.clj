@@ -15,8 +15,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.meta.ttl"},
    :vann/preferredNamespacePrefix "opts",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/options#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/options#"})
 
 (def Option
   "A value for a static option passed to an instance."

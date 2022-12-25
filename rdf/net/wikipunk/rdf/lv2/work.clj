@@ -15,8 +15,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/worker.lv2/worker.meta.ttl"},
    :vann/preferredNamespacePrefix "work",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/worker#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/worker#"})
 
 (def interface
   "The work interface provided by a plugin."

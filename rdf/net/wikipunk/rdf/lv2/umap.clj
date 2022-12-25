@@ -14,5 +14,4 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/uri-map.lv2/uri-map.meta.ttl"},
    :vann/preferredNamespacePrefix "umap",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/uri-map#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/uri-map#"})

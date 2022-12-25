@@ -15,8 +15,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.meta.ttl"},
    :vann/preferredNamespacePrefix "ev",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/event#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/event#"})
 
 (def Event
   "A single generic time-stamped event."

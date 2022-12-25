@@ -16,8 +16,7 @@
    :rdfs/seeAlso
    {:rdf/uri "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl"},
    :vann/preferredNamespacePrefix "ui",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/ui#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/ui#"})
 
 (def CocoaUI
   "A UI where the widget is a pointer to a NSView."

@@ -14,8 +14,7 @@
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.meta.ttl"},
    :vann/preferredNamespacePrefix "dman",
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/dynmanifest#"}
-  (:refer-clojure :exclude []))
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/dynmanifest#"})
 
 (def DynManifest
   "Dynamic manifest for an LV2 binary."

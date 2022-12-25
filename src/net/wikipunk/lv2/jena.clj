@@ -218,20 +218,22 @@
                                             (into (vector-of :byte) form)
                                             form))
                                         form)))
-         (cons (list 'ns (symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
-                     (let [docstring (or (:rdfs/comment md)
-                                         (:dcterms/abstract md)
-                                         (:dcterms/description md)
-                                         (:dcterms/title md)
-                                         (:rdfs/label md)
-                                         (:doc md))
-                           docstring (if (coll? docstring)
-                                       (first (filter string? docstring))
-                                       docstring)
-                           docstring (str/trim (str/escape docstring {\tab "" \newline ""}))]
-                       docstring)
-                     (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :dcterms/title :rdfs/label)
-                     (list :refer-clojure :exclude exclusions))))))
+         (cons
+           `(~'ns ~(symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
+             ~(let [docstring (or (:rdfs/comment md)
+                                  (:dcterms/abstract md)
+                                  (:dcterms/description md)
+                                  (:dcterms/title md)
+                                  (:rdfs/label md)
+                                  (:doc md))
+                    docstring (if (coll? docstring)
+                                (first (filter string? docstring))
+                                docstring)
+                    docstring (str/trim (str/escape docstring {\tab "" \newline ""}))]
+                docstring)
+             ~(dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :dcterms/title :rdfs/label)
+             ~@(when (seq exclusions)
+                 [(list :refer-clojure :exclude exclusions)]))))))
 
 (defn parse-and-spit-namespaces
   "Crawls namespaces and spits resources."
