@@ -174,7 +174,11 @@
                          (:dcterms/abstract md)
                          (:dcterms/description md)
                          (:doc md))
-                     (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description)
+                     (walk/postwalk (fn [form]
+                                      (if (instance? ont_app.vocabulary.lstr.LangStr form)
+                                        (str form)
+                                        form))
+                                    (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description))
                      (list :refer-clojure :exclude exclusions))))))
 
 (defn parse-and-spit
