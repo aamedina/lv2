@@ -1,623 +1,625 @@
 (ns net.wikipunk.rdf.lv2.foaf
   "This version of the FOAF vocabulary has been slightly trimmed for LV2."
-  {:rdf/type :owl/Ontology,
-   :vann/preferredNamespacePrefix "foaf",
-   :dcat/downloadURL
-     "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/foaf.ttl",
-   :rdf/about [#:rdf{:uri "http://xmlns.com/foaf/0.1/"}],
+  {:dcat/downloadURL
+   "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/foaf.ttl",
    :dcterms/title "Friend of a Friend (FOAF) vocabulary",
-   :vann/preferredNamespaceUri "http://xmlns.com/foaf/0.1/",
-   :rdf/ns-prefix-map {"foaf" "http://xmlns.com/foaf/0.1/",
-                       "dcterms" "http://purl.org/dc/terms/",
-                       "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                       "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                       "owl" "http://www.w3.org/2002/07/owl#"}}
+   :rdf/about #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
+                       "foaf"    "http://xmlns.com/foaf/0.1/",
+                       "owl"     "http://www.w3.org/2002/07/owl#",
+                       "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "rdfs"    "http://www.w3.org/2000/01/rdf-schema#"},
+   :rdf/type :owl/Ontology,
+   :vann/preferredNamespacePrefix "foaf",
+   :vann/preferredNamespaceUri "http://xmlns.com/foaf/0.1/"}
   (:refer-clojure :exclude [name]))
 
 (def Agent
   "An agent (eg. person, group, software or physical artifact)."
   {:owl/equivalentClass :dcterms/Agent,
-   :rdfs/label "Agent",
-   :rdfs/comment "An agent (eg. person, group, software or physical artifact).",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdf/about           :foaf/Agent,
+   :rdf/type            [:owl/Class :rdfs/Class],
+   :rdfs/label          "Agent"})
 
 (def Document
   "A document."
   {:owl/disjointWith [:foaf/Project :foaf/Organization],
-   :rdfs/label "Document",
+   :rdf/about        :foaf/Document,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "A document.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Document"})
 
 (def Group
   "A class of Agents."
-  {:rdfs/subClassOf :foaf/Agent,
-   :rdfs/label "Group",
-   :rdfs/comment "A class of Agents.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+  {:rdf/about       :foaf/Group,
+   :rdf/type        [:owl/Class :rdfs/Class],
+   :rdfs/label      "Group",
+   :rdfs/subClassOf :foaf/Agent})
 
 (def Image
   "An image."
-  {:rdfs/subClassOf :foaf/Document,
-   :rdfs/label "Image",
+  {:rdf/about        :foaf/Image,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "An image.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Image",
+   :rdfs/subClassOf  :foaf/Document})
 
 (def LabelProperty
   "A foaf:LabelProperty is any RDF property with textual values that serve as labels."
-  {:rdfs/label "Label Property",
+  {:rdf/about        :foaf/LabelProperty,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment
-     "A foaf:LabelProperty is any RDF property with textual values that serve as labels.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Label Property"})
 
 (def OnlineAccount
   "An online account."
-  {:rdfs/subClassOf :owl/Thing,
-   :rdfs/label "Online Account",
+  {:rdf/about        :foaf/OnlineAccount,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "An online account.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Online Account",
+   :rdfs/subClassOf  :owl/Thing})
 
 (def OnlineChatAccount
   "An online chat account."
-  {:rdfs/subClassOf :foaf/OnlineAccount,
-   :rdfs/label "Online Chat Account",
+  {:rdf/about        :foaf/OnlineChatAccount,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "An online chat account.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Online Chat Account",
+   :rdfs/subClassOf  :foaf/OnlineAccount})
 
 (def OnlineEcommerceAccount
   "An online e-commerce account."
-  {:rdfs/subClassOf :foaf/OnlineAccount,
-   :rdfs/label "Online E-commerce Account",
+  {:rdf/about        :foaf/OnlineEcommerceAccount,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "An online e-commerce account.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Online E-commerce Account",
+   :rdfs/subClassOf  :foaf/OnlineAccount})
 
 (def OnlineGamingAccount
   "An online gaming account."
-  {:rdfs/subClassOf :foaf/OnlineAccount,
-   :rdfs/label "Online Gaming Account",
+  {:rdf/about        :foaf/OnlineGamingAccount,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "An online gaming account.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Online Gaming Account",
+   :rdfs/subClassOf  :foaf/OnlineAccount})
 
 (def Organization
   "An organization."
   {:owl/disjointWith [:foaf/Person :foaf/Document],
-   :rdfs/subClassOf :foaf/Agent,
-   :rdfs/label "Organization",
+   :rdf/about        :foaf/Organization,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "An organization.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Organization",
+   :rdfs/subClassOf  :foaf/Agent})
 
 (def Person
   "A person."
   {:owl/disjointWith [:foaf/Project :foaf/Organization],
-   :rdfs/subClassOf :foaf/Agent,
-   :rdfs/label "Person",
+   :rdf/about        :foaf/Person,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "A person.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Person",
+   :rdfs/subClassOf  :foaf/Agent})
 
 (def PersonalProfileDocument
   "A personal profile RDF document."
-  {:rdfs/subClassOf :foaf/Document,
-   :rdfs/label "PersonalProfileDocument",
-   :rdfs/comment "A personal profile RDF document.",
-   :rdf/type [:owl/Class :rdfs/Class]})
+  {:rdf/about       :foaf/PersonalProfileDocument,
+   :rdf/type        [:owl/Class :rdfs/Class],
+   :rdfs/label      "PersonalProfileDocument",
+   :rdfs/subClassOf :foaf/Document})
 
 (def Project
   "A project (a collective endeavour of some kind)."
   {:owl/disjointWith [:foaf/Person :foaf/Document],
-   :rdfs/label "Project",
+   :rdf/about        :foaf/Project,
+   :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "A project (a collective endeavour of some kind).",
-   :rdf/type [:owl/Class :rdfs/Class]})
+   :rdfs/label       "Project"})
 
 (def account
   "Indicates an account held by this agent."
-  {:rdfs/range :foaf/OnlineAccount,
-   :rdfs/label "account",
+  {:rdf/about        :foaf/account,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "Indicates an account held by this agent.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "account",
+   :rdfs/range       :foaf/OnlineAccount})
 
 (def accountName
   "Indicates the name (identifier) associated with this online account."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "account name",
+  {:rdf/about        :foaf/accountName,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/OnlineAccount,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/OnlineAccount,
-   :rdfs/comment
-     "Indicates the name (identifier) associated with this online account.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "account name",
+   :rdfs/range       :rdfs/Literal})
 
 (def accountServiceHomepage
   "Indicates a homepage of the service provide for this online account."
-  {:rdfs/range :foaf/Document,
-   :rdfs/label "account service homepage",
+  {:rdf/about        :foaf/accountServiceHomepage,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/OnlineAccount,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/OnlineAccount,
-   :rdfs/comment
-     "Indicates a homepage of the service provide for this online account.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "account service homepage",
+   :rdfs/range       :foaf/Document})
 
 (def age
   "The age in years of some agent."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "age",
+  {:rdf/about        :foaf/age,
+   :rdf/type         [:owl/FunctionalProperty
+                      :owl/DatatypeProperty
+                      :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "The age in years of some agent.",
-   :rdf/type [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "age",
+   :rdfs/range       :rdfs/Literal})
 
 (def aimChatID
   "An AIM chat ID"
-  {:rdfs/subPropertyOf :foaf/nick,
-   :rdfs/range :rdfs/Literal,
-   :rdfs/label "AIM chat ID",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "An AIM chat ID",
-   :rdf/type [:owl/InverseFunctionalProperty :owl/DatatypeProperty
-              :rdf/Property]})
+  {:rdf/about          :foaf/aimChatID,
+   :rdf/type           [:owl/InverseFunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "AIM chat ID",
+   :rdfs/range         :rdfs/Literal,
+   :rdfs/subPropertyOf :foaf/nick})
 
 (def birthday
   "The birthday of this Agent, represented in mm-dd string form, eg. '12-31'."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "birthday",
+  {:rdf/about        :foaf/birthday,
+   :rdf/type         [:owl/FunctionalProperty
+                      :owl/DatatypeProperty
+                      :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment
-     "The birthday of this Agent, represented in mm-dd string form, eg. '12-31'.",
-   :rdf/type [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "birthday",
+   :rdfs/range       :rdfs/Literal})
 
 (def currentProject
   "A current project this person works on."
-  {:rdfs/range :owl/Thing,
-   :rdfs/label "current project",
+  {:rdf/about        :foaf/currentProject,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "A current project this person works on.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "current project",
+   :rdfs/range       :owl/Thing})
 
 (def depiction
   "A depiction of some thing."
-  {:owl/inverseOf :foaf/depicts,
-   :rdfs/range :foaf/Image,
-   :rdfs/label "depiction",
+  {:owl/inverseOf    :foaf/depicts,
+   :rdf/about        :foaf/depiction,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :owl/Thing,
-   :rdfs/comment "A depiction of some thing.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "depiction",
+   :rdfs/range       :foaf/Image})
 
 (def depicts
   "A thing depicted in this representation."
-  {:owl/inverseOf :foaf/depiction,
-   :rdfs/range :owl/Thing,
-   :rdfs/label "depicts",
+  {:owl/inverseOf    :foaf/depiction,
+   :rdf/about        :foaf/depicts,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Image,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Image,
-   :rdfs/comment "A thing depicted in this representation.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "depicts",
+   :rdfs/range       :owl/Thing})
 
 (def familyName
   "The family name of some person."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "familyName",
+  {:rdf/about        :foaf/familyName,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "The family name of some person.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "familyName",
+   :rdfs/range       :rdfs/Literal})
 
 (def firstName
   "The first name of a person."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "firstName",
+  {:rdf/about        :foaf/firstName,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "The first name of a person.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "firstName",
+   :rdfs/range       :rdfs/Literal})
 
 (def gender
   "The gender of this Agent (typically but not necessarily 'male' or 'female')."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "gender",
+  {:rdf/about        :foaf/gender,
+   :rdf/type         [:owl/FunctionalProperty
+                      :owl/DatatypeProperty
+                      :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment
-     "The gender of this Agent (typically but not necessarily 'male' or 'female').",
-   :rdf/type [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "gender",
+   :rdfs/range       :rdfs/Literal})
 
 (def givenName
   "The given name of some person."
-  {:rdfs/label "Given name",
+  {:rdf/about        :foaf/givenName,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "The given name of some person.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "Given name"})
 
 (def homepage
   "A homepage for some thing."
-  {:rdfs/comment "A homepage for some thing.",
-   :rdfs/range :foaf/Document,
-   :rdf/type [:rdf/Property :owl/ObjectProperty :owl/InverseFunctionalProperty],
-   :rdfs/subPropertyOf [:foaf/page :foaf/isPrimaryTopicOf],
-   :rdfs/domain :owl/Thing,
-   :rdfs/label "homepage",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"}})
+  {:rdf/about          :foaf/homepage,
+   :rdf/type           [:rdf/Property
+                        :owl/ObjectProperty
+                        :owl/InverseFunctionalProperty],
+   :rdfs/domain        :owl/Thing,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "homepage",
+   :rdfs/range         :foaf/Document,
+   :rdfs/subPropertyOf [:foaf/page :foaf/isPrimaryTopicOf]})
 
 (def icqChatID
   "An ICQ chat ID"
-  {:rdfs/subPropertyOf :foaf/nick,
-   :rdfs/range :rdfs/Literal,
-   :rdfs/label "ICQ chat ID",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "An ICQ chat ID",
-   :rdf/type [:owl/InverseFunctionalProperty :owl/DatatypeProperty
-              :rdf/Property]})
+  {:rdf/about          :foaf/icqChatID,
+   :rdf/type           [:owl/InverseFunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "ICQ chat ID",
+   :rdfs/range         :rdfs/Literal,
+   :rdfs/subPropertyOf :foaf/nick})
 
 (def img
   "An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage)."
-  {:rdfs/subPropertyOf :foaf/depiction,
-   :rdfs/range :foaf/Image,
-   :rdfs/label "image",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment
-     "An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage).",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+  {:rdf/about          :foaf/img,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain        :foaf/Person,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "image",
+   :rdfs/range         :foaf/Image,
+   :rdfs/subPropertyOf :foaf/depiction})
 
 (def interest
   "A page about a topic of interest to this person."
-  {:rdfs/range :foaf/Document,
-   :rdfs/label "interest",
+  {:rdf/about        :foaf/interest,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "A page about a topic of interest to this person.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "interest",
+   :rdfs/range       :foaf/Document})
 
 (def isPrimaryTopicOf
   "A document that this thing is the primary topic of."
-  {:rdfs/domain :owl/Thing,
-   :rdf/type [:owl/InverseFunctionalProperty :rdf/Property],
-   :rdfs/subPropertyOf :foaf/page,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/label "is primary topic of",
-   :rdfs/comment "A document that this thing is the primary topic of.",
-   :owl/inverseOf :foaf/primaryTopic,
-   :rdfs/range :foaf/Document})
+  {:owl/inverseOf      :foaf/primaryTopic,
+   :rdf/about          :foaf/isPrimaryTopicOf,
+   :rdf/type           [:owl/InverseFunctionalProperty :rdf/Property],
+   :rdfs/domain        :owl/Thing,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "is primary topic of",
+   :rdfs/range         :foaf/Document,
+   :rdfs/subPropertyOf :foaf/page})
 
 (def jabberID
   "A jabber ID for something."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "jabber ID",
+  {:rdf/about        :foaf/jabberID,
+   :rdf/type         [:owl/InverseFunctionalProperty
+                      :owl/DatatypeProperty
+                      :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "A jabber ID for something.",
-   :rdf/type [:owl/InverseFunctionalProperty :owl/DatatypeProperty
-              :rdf/Property]})
+   :rdfs/label       "jabber ID",
+   :rdfs/range       :rdfs/Literal})
 
 (def knows
   "A person known by this person (indicating some level of reciprocated interaction between the parties)."
-  {:rdfs/range :foaf/Person,
-   :rdfs/label "knows",
+  {:rdf/about        :foaf/knows,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment
-     "A person known by this person (indicating some level of reciprocated interaction between the parties).",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "knows",
+   :rdfs/range       :foaf/Person})
 
 (def lastName
   "The last name of a person."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "lastName",
+  {:rdf/about        :foaf/lastName,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "The last name of a person.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "lastName",
+   :rdfs/range       :rdfs/Literal})
 
 (def logo
   "A logo representing some thing."
-  {:rdfs/range :owl/Thing,
-   :rdfs/label "logo",
+  {:rdf/about        :foaf/logo,
+   :rdf/type         [:owl/ObjectProperty
+                      :owl/InverseFunctionalProperty
+                      :rdf/Property],
+   :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :owl/Thing,
-   :rdfs/comment "A logo representing some thing.",
-   :rdf/type [:owl/ObjectProperty :owl/InverseFunctionalProperty
-              :rdf/Property]})
+   :rdfs/label       "logo",
+   :rdfs/range       :owl/Thing})
 
 (def made
   "Something that was made by this agent."
-  {:owl/inverseOf :foaf/maker,
-   :rdfs/range :owl/Thing,
-   :rdfs/label "made",
+  {:owl/inverseOf    :foaf/maker,
+   :rdf/about        :foaf/made,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "Something that was made by this agent.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "made",
+   :rdfs/range       :owl/Thing})
 
 (def maker
   "An agent that made this thing."
-  {:rdfs/domain :owl/Thing,
-   :rdf/type [:owl/ObjectProperty :rdf/Property],
-   :owl/equivalentProperty :dcterms/creator,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/label "maker",
-   :rdfs/comment "An agent that made this thing.",
-   :owl/inverseOf :foaf/made,
-   :rdfs/range :foaf/Agent})
+  {:owl/equivalentProperty :dcterms/creator,
+   :owl/inverseOf          :foaf/made,
+   :rdf/about              :foaf/maker,
+   :rdf/type               [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain            :owl/Thing,
+   :rdfs/isDefinedBy       #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label             "maker",
+   :rdfs/range             :foaf/Agent})
 
 (def mbox
   "A personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that there is (across time and change) at most one individual that ever has any particular value for foaf:mbox."
-  {:rdfs/range :owl/Thing,
-   :rdfs/label "personal mailbox",
+  {:rdf/about        :foaf/mbox,
+   :rdf/type         [:owl/ObjectProperty
+                      :owl/InverseFunctionalProperty
+                      :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment
-     "A personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that there is (across time and change) at most one individual that ever has any particular value for foaf:mbox.",
-   :rdf/type [:owl/ObjectProperty :owl/InverseFunctionalProperty
-              :rdf/Property]})
+   :rdfs/label       "personal mailbox",
+   :rdfs/range       :owl/Thing})
 
 (def mbox_sha1sum
   "The sha1sum of the URI of an Internet mailbox associated with exactly one owner, the first owner of the mailbox."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "sha1sum of a personal mailbox URI name",
+  {:rdf/about        :foaf/mbox_sha1sum,
+   :rdf/type         [:owl/InverseFunctionalProperty
+                      :owl/DatatypeProperty
+                      :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment
-     "The sha1sum of the URI of an Internet mailbox associated with exactly one owner, the first owner of the mailbox.",
-   :rdf/type [:owl/InverseFunctionalProperty :owl/DatatypeProperty
-              :rdf/Property]})
+   :rdfs/label       "sha1sum of a personal mailbox URI name",
+   :rdfs/range       :rdfs/Literal})
 
 (def member
   "Indicates a member of a Group"
-  {:rdfs/range :foaf/Agent,
-   :rdfs/label "member",
+  {:rdf/about        :foaf/member,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Group,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Group,
-   :rdfs/comment "Indicates a member of a Group",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "member",
+   :rdfs/range       :foaf/Agent})
 
 (def membershipClass
   "Indicates the class of individuals that are a member of a Group"
-  {:rdfs/label "membershipClass",
+  {:rdf/about        :foaf/membershipClass,
+   :rdf/type         [:owl/AnnotationProperty :rdf/Property],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment
-     "Indicates the class of individuals that are a member of a Group",
-   :rdf/type [:owl/AnnotationProperty :rdf/Property]})
+   :rdfs/label       "membershipClass"})
 
 (def msnChatID
   "An MSN chat ID"
-  {:rdfs/subPropertyOf :foaf/nick,
-   :rdfs/range :rdfs/Literal,
-   :rdfs/label "MSN chat ID",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "An MSN chat ID",
-   :rdf/type [:owl/InverseFunctionalProperty :owl/DatatypeProperty
-              :rdf/Property]})
+  {:rdf/about          :foaf/msnChatID,
+   :rdf/type           [:owl/InverseFunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "MSN chat ID",
+   :rdfs/range         :rdfs/Literal,
+   :rdfs/subPropertyOf :foaf/nick})
 
 (def myersBriggs
   "A Myers Briggs (MBTI) personality classification."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "myersBriggs",
+  {:rdf/about        :foaf/myersBriggs,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "A Myers Briggs (MBTI) personality classification.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "myersBriggs",
+   :rdfs/range       :rdfs/Literal})
 
 (def name
   "A name for some thing."
-  {:rdfs/subPropertyOf :rdfs/label,
-   :rdfs/range :rdfs/Literal,
-   :rdfs/label "name",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :owl/Thing,
-   :rdfs/comment "A name for some thing.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+  {:rdf/about          :foaf/name,
+   :rdf/type           [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain        :owl/Thing,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "name",
+   :rdfs/range         :rdfs/Literal,
+   :rdfs/subPropertyOf :rdfs/label})
 
 (def nick
   "A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames)."
-  {:rdfs/label "nickname",
+  {:rdf/about        :foaf/nick,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment
-     "A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames).",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "nickname"})
 
 (def openid
   "An OpenID for an Agent."
-  {:rdfs/subPropertyOf :foaf/isPrimaryTopicOf,
-   :rdfs/range :foaf/Document,
-   :rdfs/label "openid",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "An OpenID for an Agent.",
-   :rdf/type [:owl/ObjectProperty :owl/InverseFunctionalProperty
-              :rdf/Property]})
+  {:rdf/about          :foaf/openid,
+   :rdf/type           [:owl/ObjectProperty
+                        :owl/InverseFunctionalProperty
+                        :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "openid",
+   :rdfs/range         :foaf/Document,
+   :rdfs/subPropertyOf :foaf/isPrimaryTopicOf})
 
 (def page
   "A page or document about this thing."
-  {:owl/inverseOf :foaf/topic,
-   :rdfs/range :foaf/Document,
-   :rdfs/label "page",
+  {:owl/inverseOf    :foaf/topic,
+   :rdf/about        :foaf/page,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :owl/Thing,
-   :rdfs/comment "A page or document about this thing.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "page",
+   :rdfs/range       :foaf/Document})
 
 (def pastProject
   "A project this person has previously worked on."
-  {:rdfs/range :owl/Thing,
-   :rdfs/label "past project",
+  {:rdf/about        :foaf/pastProject,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "A project this person has previously worked on.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "past project",
+   :rdfs/range       :owl/Thing})
 
 (def phone
   "A phone, specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel)."
-  {:rdfs/label "phone",
+  {:rdf/about        :foaf/phone,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment
-     "A phone, specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel).",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "phone"})
 
 (def plan
   "A .plan comment, in the tradition of finger and '.plan' files."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "plan",
+  {:rdf/about        :foaf/plan,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment
-     "A .plan comment, in the tradition of finger and '.plan' files.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "plan",
+   :rdfs/range       :rdfs/Literal})
 
 (def primaryTopic
   "The primary topic of some page or document."
-  {:owl/inverseOf :foaf/isPrimaryTopicOf,
-   :rdfs/range :owl/Thing,
-   :rdfs/label "primary topic",
+  {:owl/inverseOf    :foaf/isPrimaryTopicOf,
+   :rdf/about        :foaf/primaryTopic,
+   :rdf/type         [:owl/ObjectProperty
+                      :owl/FunctionalProperty
+                      :rdf/Property],
+   :rdfs/domain      :foaf/Document,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Document,
-   :rdfs/comment "The primary topic of some page or document.",
-   :rdf/type [:owl/ObjectProperty :owl/FunctionalProperty :rdf/Property]})
+   :rdfs/label       "primary topic",
+   :rdfs/range       :owl/Thing})
 
 (def publications
   "A link to the publications of this person."
-  {:rdfs/range :foaf/Document,
-   :rdfs/label "publications",
+  {:rdf/about        :foaf/publications,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "A link to the publications of this person.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "publications",
+   :rdfs/range       :foaf/Document})
 
 (def schoolHomepage
   "A homepage of a school attended by the person."
-  {:rdfs/range :foaf/Document,
-   :rdfs/label "schoolHomepage",
+  {:rdf/about        :foaf/schoolHomepage,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment "A homepage of a school attended by the person.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "schoolHomepage",
+   :rdfs/range       :foaf/Document})
 
 (def sha1
   "A sha1sum hash, in hex."
-  {:rdfs/label "sha1sum (hex)",
+  {:rdf/about        :foaf/sha1,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/Document,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Document,
-   :rdfs/comment "A sha1sum hash, in hex.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "sha1sum (hex)"})
 
 (def skypeID
   "A Skype ID"
-  {:rdfs/subPropertyOf :foaf/nick,
-   :rdfs/range :rdfs/Literal,
-   :rdfs/label "Skype ID",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "A Skype ID",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+  {:rdf/about          :foaf/skypeID,
+   :rdf/type           [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "Skype ID",
+   :rdfs/range         :rdfs/Literal,
+   :rdfs/subPropertyOf :foaf/nick})
 
 (def status
   "A string expressing what the user is happy for the general public (normally) to know about their current activity."
-  {:rdfs/range :rdfs/Literal,
-   :rdfs/label "status",
+  {:rdf/about        :foaf/status,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment
-     "A string expressing what the user is happy for the general public (normally) to know about their current activity.",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "status",
+   :rdfs/range       :rdfs/Literal})
 
 (def thumbnail
   "A derived thumbnail image."
-  {:rdfs/range :foaf/Image,
-   :rdfs/label "thumbnail",
+  {:rdf/about        :foaf/thumbnail,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Image,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Image,
-   :rdfs/comment "A derived thumbnail image.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "thumbnail",
+   :rdfs/range       :foaf/Image})
 
 (def tipjar
   "A tipjar document for this agent, describing means for payment and reward."
-  {:rdfs/subPropertyOf :foaf/page,
-   :rdfs/range :foaf/Document,
-   :rdfs/label "tipjar",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment
-     "A tipjar document for this agent, describing means for payment and reward.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+  {:rdf/about          :foaf/tipjar,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "tipjar",
+   :rdfs/range         :foaf/Document,
+   :rdfs/subPropertyOf :foaf/page})
 
 (def title
   "Title (Mr, Mrs, Ms, Dr. etc)"
-  {:rdfs/label "title",
+  {:rdf/about        :foaf/title,
+   :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/comment "Title (Mr, Mrs, Ms, Dr. etc)",
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label       "title"})
 
 (def topic
   "A topic of some page or document."
-  {:owl/inverseOf :foaf/page,
-   :rdfs/range :owl/Thing,
-   :rdfs/label "topic",
+  {:owl/inverseOf    :foaf/page,
+   :rdf/about        :foaf/topic,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Document,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Document,
-   :rdfs/comment "A topic of some page or document.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "topic",
+   :rdfs/range       :owl/Thing})
 
 (def topic_interest
   "A thing of interest to this person."
-  {:rdfs/range :owl/Thing,
-   :rdfs/label "topic_interest",
+  {:rdf/about        :foaf/topic_interest,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Agent,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "A thing of interest to this person.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "topic_interest",
+   :rdfs/range       :owl/Thing})
 
 (def weblog
   "A weblog of some thing (whether person, group, company etc.)."
-  {:rdfs/subPropertyOf :foaf/page,
-   :rdfs/range :foaf/Document,
-   :rdfs/label "weblog",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment
-     "A weblog of some thing (whether person, group, company etc.).",
-   :rdf/type [:owl/ObjectProperty :owl/InverseFunctionalProperty
-              :rdf/Property]})
+  {:rdf/about          :foaf/weblog,
+   :rdf/type           [:owl/ObjectProperty
+                        :owl/InverseFunctionalProperty
+                        :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "weblog",
+   :rdfs/range         :foaf/Document,
+   :rdfs/subPropertyOf :foaf/page})
 
 (def workInfoHomepage
   "A work info homepage of some person; a page about their work for some organization."
-  {:rdfs/range :foaf/Document,
-   :rdfs/label "work info homepage",
+  {:rdf/about        :foaf/workInfoHomepage,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment
-     "A work info homepage of some person; a page about their work for some organization.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "work info homepage",
+   :rdfs/range       :foaf/Document})
 
 (def workplaceHomepage
   "A workplace homepage of some person; the homepage of an organization they work for."
-  {:rdfs/range :foaf/Document,
-   :rdfs/label "workplace homepage",
+  {:rdf/about        :foaf/workplaceHomepage,
+   :rdf/type         [:owl/ObjectProperty :rdf/Property],
+   :rdfs/domain      :foaf/Person,
    :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Person,
-   :rdfs/comment
-     "A workplace homepage of some person; the homepage of an organization they work for.",
-   :rdf/type [:owl/ObjectProperty :rdf/Property]})
+   :rdfs/label       "workplace homepage",
+   :rdfs/range       :foaf/Document})
 
 (def yahooChatID
   "A Yahoo chat ID"
-  {:rdfs/subPropertyOf :foaf/nick,
-   :rdfs/range :rdfs/Literal,
-   :rdfs/label "Yahoo chat ID",
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
-   :rdfs/domain :foaf/Agent,
-   :rdfs/comment "A Yahoo chat ID",
-   :rdf/type [:owl/InverseFunctionalProperty :owl/DatatypeProperty
-              :rdf/Property]})
+  {:rdf/about          :foaf/yahooChatID,
+   :rdf/type           [:owl/InverseFunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/domain        :foaf/Agent,
+   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/label         "Yahoo chat ID",
+   :rdfs/range         :rdfs/Literal,
+   :rdfs/subPropertyOf :foaf/nick})

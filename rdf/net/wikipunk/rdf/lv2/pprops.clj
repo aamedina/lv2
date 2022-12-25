@@ -1,96 +1,95 @@
 (ns net.wikipunk.rdf.lv2.pprops
   "Various properties for LV2 plugin ports."
-  {:rdf/type :owl/Ontology,
-   :vann/preferredNamespacePrefix "pprops",
-   :rdfs/seeAlso
-     #:rdf{:uri
-             "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl"},
-   :dcat/downloadURL
-     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.ttl",
+  {:dcat/downloadURL
+   "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.ttl",
    :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about [#:rdf{:uri "http://lv2plug.in/ns/ext/port-props"}],
-   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/port-props#",
-   :rdf/ns-prefix-map {"pprops" "http://lv2plug.in/ns/ext/port-props#",
-                       "owl" "http://www.w3.org/2002/07/owl#",
-                       "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                       "xsd" "http://www.w3.org/2001/XMLSchema#",
-                       "lv2" "http://lv2plug.in/ns/lv2core#",
-                       "rdfs" "http://www.w3.org/2000/01/rdf-schema#"}}
+   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/port-props"},
+   :rdf/ns-prefix-map {"lv2"    "http://lv2plug.in/ns/lv2core#",
+                       "owl"    "http://www.w3.org/2002/07/owl#",
+                       "pprops" "http://lv2plug.in/ns/ext/port-props#",
+                       "rdf"    "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "rdfs"   "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"    "http://www.w3.org/2001/XMLSchema#"},
+   :rdf/type :owl/Ontology,
+   :rdfs/seeAlso
+   #:rdf{:uri
+         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl"},
+   :vann/preferredNamespacePrefix "pprops",
+   :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/port-props#"}
   (:refer-clojure :exclude []))
 
 (def causesArtifacts
   "Input port causes audible artifacts when changed."
-  {:rdfs/comment "Input port causes audible artifacts when changed.",
-   :rdfs/label "changes cause artifacts",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/causesArtifacts,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "changes cause artifacts"})
 
 (def continuousCV
   "Port carries a smooth modulation signal."
-  {:rdfs/comment "Port carries a smooth modulation signal.",
-   :rdfs/label "smooth modulation signal",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/continuousCV,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "smooth modulation signal"})
 
 (def discreteCV
   "Port carries a discrete modulation signal."
-  {:rdfs/comment "Port carries a discrete modulation signal.",
-   :rdfs/label "discrete modulation signal",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/discreteCV,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "discrete modulation signal"})
 
 (def displayPriority
   "A priority ranking this port in importance to its plugin."
-  {:rdfs/comment "A priority ranking this port in importance to its plugin.",
-   :rdfs/label "display priority",
-   :rdfs/range :xsd/nonNegativeInteger,
+  {:rdf/about   :pprops/displayPriority,
+   :rdf/type    [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain :lv2/Port,
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label  "display priority",
+   :rdfs/range  :xsd/nonNegativeInteger})
 
 (def expensive
   "Input port is expensive to change."
-  {:rdfs/comment "Input port is expensive to change.",
-   :rdfs/label "changes are expensive",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/expensive,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "changes are expensive"})
 
 (def hasStrictBounds
   "Port has strict bounds which are not internally clamped."
-  {:rdfs/comment "Port has strict bounds which are not internally clamped.",
-   :rdfs/label "has strict bounds",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/hasStrictBounds,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "has strict bounds"})
 
 (def logarithmic
   "Port value is logarithmic."
-  {:rdfs/comment "Port value is logarithmic.",
-   :rdfs/label "logarithmic",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/logarithmic,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "logarithmic"})
 
 (def notAutomatic
   "Port that is not intended to be fed with a modulation signal."
-  {:rdfs/comment
-     "Port that is not intended to be fed with a modulation signal.",
-   :rdfs/label "not automatic",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/notAutomatic,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "not automatic"})
 
 (def notOnGUI
   "Port that should not be displayed on a GUI."
-  {:rdfs/comment "Port that should not be displayed on a GUI.",
-   :rdfs/label "not on GUI",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/notOnGUI,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "not on GUI"})
 
 (def rangeSteps
   "The number of even steps the range should be divided into."
-  {:rdfs/comment "The number of even steps the range should be divided into.",
-   :rdfs/label "range steps",
-   :rdfs/range :xsd/nonNegativeInteger,
+  {:rdf/about   :pprops/rangeSteps,
+   :rdf/type    [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain :lv2/Port,
-   :rdf/type [:owl/DatatypeProperty :rdf/Property]})
+   :rdfs/label  "range steps",
+   :rdfs/range  :xsd/nonNegativeInteger})
 
 (def supportsStrictBounds
   "A feature indicating plugin support for strict port bounds."
-  {:rdfs/comment "A feature indicating plugin support for strict port bounds.",
-   :rdfs/label "supports strict bounds",
-   :rdf/type :lv2/Feature})
+  {:rdf/about  :pprops/supportsStrictBounds,
+   :rdf/type   :lv2/Feature,
+   :rdfs/label "supports strict bounds"})
 
 (def trigger
   "Port is a momentary trigger."
-  {:rdfs/comment "Port is a momentary trigger.",
-   :rdfs/label "trigger",
-   :rdf/type :lv2/PortProperty})
+  {:rdf/about  :pprops/trigger,
+   :rdf/type   :lv2/PortProperty,
+   :rdfs/label "trigger"})

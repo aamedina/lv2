@@ -26,6 +26,9 @@
    [com.walmartlabs.schematic :as sc]
    [datomic.client.api :as d]
    [net.wikipunk.jena :as jena]
+   #_[net.wikipunk.rdf.lv2.rdf :as rdf]
+   #_[net.wikipunk.rdf.lv2.rdfs :as rdfs]
+   #_[net.wikipunk.rdf.lv2.schema :as schema]
    [zprint.core :as zprint]))
 
 (set-init

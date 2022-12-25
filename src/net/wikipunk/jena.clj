@@ -157,6 +157,10 @@
                      (merge (update md :rdf/about conj uri) m))
                    (assoc (meta model) :rdf/about [])
                    (filter (comp :rdf/uri key) index'))
+        md (update md :rdf/about (fn [about]
+                                   (if (= (count about) 1)
+                                     (first about)
+                                     about)))
         exclusions (->> (keys (filter (comp qualified-keyword? key) index'))
                         (map name)
                         (filter #(var? (ns-resolve 'clojure.core (symbol %))))
@@ -185,15 +189,14 @@
                             'null
                             
                             :else sym)
-                      docstring (or (:rdfs/comment v)
-                                    (:dcterms/abstract v)
-                                    (:dcterms/description v)
-                                    (:rdfs/label v))]
-                  (list 'def sym
-                        (if (coll? docstring)
-                          (first (filter string? docstring))
-                          docstring)
-                        v))))
+                      docstring (:rdfs/comment v)
+                      docstring (if (coll? docstring)
+                                  (first (filter string? docstring))
+                                  docstring)
+                      v (assoc v :rdf/about k)]
+                  (if docstring
+                    (list 'def sym docstring (dissoc v :rdfs/comment))
+                    (list 'def sym v)))))
          (map (fn [form] (walk/postwalk (fn [form]
                                           (if (bytes? form)
                                             (into (vector-of :byte) form)
@@ -225,5 +228,12 @@
                (spit (str "rdf/net/wikipunk/rdf/lv2/" (:vann/preferredNamespacePrefix md) ".clj")
                      (zprint/zprint-file-str (apply str (unroll (parse md)))
                                              ""
-                                             {:parse {:interpose "\n\n"}}))))
+                                             {:parse {:interpose "\n\n"}
+                                              :map   {:justify?      true
+                                                      :nl-separator? false
+                                                      :hang?         true
+                                                      :indent 0
+                                                      :sort-in-code? true
+                                                      :force-nl?     true}
+                                              :style :hiccup}))))
        (dorun)))
