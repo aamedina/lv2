@@ -72,9 +72,11 @@
           (sc/assemble-system))
       (throw (ex-info "system.edn is not on classpath" {})))))
 
-(def rdf (deref (get-in system [:vocab :types])))
+
 
 (comment
+  (def rdf (deref (get-in system [:vocab :types])))
+  
   ;; A Clojure multimethod hierarchy contained in a ref
   (get-in system [:vocab :types])
 
