@@ -7,8 +7,6 @@
                  :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
                  :doap/name       "LV2 Parameters",
                  :doap/shortdesc  "Common parameters for audio processing.",
-                 :rdf/about       {:rdf/uri
-                                   "http://lv2plug.in/ns/ext/parameters"},
                  :rdf/type        :doap/Project},
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/lv2core"}
                  {:rdf/uri "http://lv2plug.in/ns/ext/port-groups"}
@@ -52,18 +50,18 @@
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
-  {:pg/element      [{:lv2/designation :param/hold,
+  {:pg/element      [{:lv2/designation :param/sustain,
+                      :lv2/index       4}
+                     {:lv2/designation :param/release,
+                      :lv2/index       5}
+                     {:lv2/designation :param/hold,
                       :lv2/index       2}
+                     {:lv2/designation :param/attack,
+                      :lv2/index       1}
                      {:lv2/designation :param/decay,
                       :lv2/index       3}
                      {:lv2/designation :param/delay,
-                      :lv2/index       0}
-                     {:lv2/designation :param/release,
-                      :lv2/index       5}
-                     {:lv2/designation :param/attack,
-                      :lv2/index       1}
-                     {:lv2/designation :param/sustain,
-                      :lv2/index       4}],
+                      :lv2/index       0}],
    :rdf/about       :param/EnvelopeControls,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a DAHDSR envelope.",

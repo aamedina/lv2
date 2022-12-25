@@ -10,7 +10,6 @@
     :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
     :doap/name       "LV2 Units",
     :doap/shortdesc  "Units for LV2 values.",
-    :rdf/about       {:rdf/uri "http://lv2plug.in/ns/extensions/units"},
     :rdf/type        :doap/Project},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/extensions/units"},
    :rdf/ns-prefix-map {"owl"   "http://www.w3.org/2002/07/owl#",

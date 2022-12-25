@@ -7,7 +7,6 @@
                  :doap/name "LV2 Worker",
                  :doap/shortdesc
                  "Support for doing non-realtime work in plugins.",
-                 :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/worker"},
                  :rdf/type :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/worker"},

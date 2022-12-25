@@ -8,7 +8,6 @@
                                   "http://opensource.org/licenses/isc"},
                  :doap/name      "LV2 Presets",
                  :doap/shortdesc "Presets for LV2 plugins.",
-                 :rdf/about      {:rdf/uri "http://lv2plug.in/ns/ext/presets"},
                  :rdf/type       :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/presets"},

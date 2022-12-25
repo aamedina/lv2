@@ -2,15 +2,14 @@
   "This extension makes it possible to create user interfaces for LV2 plugins.  UIs are implemented as an LV2UI_Descriptor loaded via lv2ui_descriptor() in a shared library, and are distributed in bundles just like plugins.  UIs are associated with plugins in data:      :::turtle     @prefix ui: <http://lv2plug.in/ns/extensions/ui#> .      <http://my.plugin>   ui:ui      <http://my.pluginui> .     <http://my.pluginui> a          ui:X11UI ;                          lv2:binary <myui.so> .  where `http://my.plugin` is the URI of the plugin, `http://my.pluginui` is the URI of the plugin UI and `myui.so` is the relative URI to the shared object file.  While it is possible to have the plugin UI and the plugin in the same shared object file, it is a good idea to keep them separate so that hosts can avoid loading the UI code if they do not need it.  A UI MUST specify its class in the RDF data (`ui:X11UI` in the above example).  The class defines what type the UI is, for example what graphics toolkit it uses.  Any type of UI class can be defined separately from this extension.  It is possible to have multiple UIs for the same plugin, or to have the UI for a plugin in a different bundle from the actual plugin.  This allows plugin UIs to be written independently.  Note that the process that loads the shared object file containing the UI code and the process that loads the shared object file containing the actual plugin implementation are not necessarily the same process (and not even necessarily on the same machine).  This means that plugin and UI code MUST NOT use singletons and global variables and expect them to refer to the same objects in the UI and the actual plugin. The function callback interface defined in this header is the only method of communication between UIs and plugin instances (extensions may define more, though this is discouraged unless absolutely necessary since the significant benefits of network transparency and serialisability are lost).  UI functionality may be extended via features, much like plugins:      :::turtle     <http://my.pluginui> lv2:requiredFeature <http://my.feature> .     <http://my.pluginui> lv2:optionalFeature <http://my.feature> .  The rules for a UI with a required or optional feature are identical to those of lv2:Plugin instances: if a UI declares a feature as required, the host is NOT allowed to load it unless it supports that feature; and if it does support a feature, it MUST pass an appropriate LV2_Feature struct to the UI's instantiate() method.  This extension defines several standard features for common functionality.  UIs written to this specification do not need to be thread-safe.  All functions may only be called in the <q>UI thread</q>.  There is only one UI thread (for toolkits, the one the UI main loop runs in).  There is no requirement that a <q>UI</q> actually be a graphical widget.  Note that UIs are completely separate from plugins.  From the plugin's perspective, control from a UI is indistinguishable from any other control, as it all occurs via ports."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.ttl",
-   :lv2/project
-   {:doap/created    "2006-00-00",
-    :doap/developer  {:rdf/uri "http://lv2plug.in/ns/meta#larsl"},
-    :doap/license    {:rdf/uri "http://opensource.org/licenses/isc"},
-    :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
-    :doap/name       "LV2 UI",
-    :doap/shortdesc  "User interfaces for LV2 plugins.",
-    :rdf/about       {:rdf/uri "http://lv2plug.in/ns/extensions/ui"},
-    :rdf/type        :doap/Project},
+   :lv2/project {:doap/created    "2006-00-00",
+                 :doap/developer  {:rdf/uri "http://lv2plug.in/ns/meta#larsl"},
+                 :doap/license    {:rdf/uri
+                                   "http://opensource.org/licenses/isc"},
+                 :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
+                 :doap/name       "LV2 UI",
+                 :doap/shortdesc  "User interfaces for LV2 plugins.",
+                 :rdf/type        :doap/Project},
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/ext/options"}
                  {:rdf/uri "http://lv2plug.in/ns/lv2core"}],
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/extensions/ui"},

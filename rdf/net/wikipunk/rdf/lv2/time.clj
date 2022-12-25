@@ -6,7 +6,6 @@
                  :doap/developer {:rdf/uri "http://drobilla.net/drobilla#me"},
                  :doap/name      "LV2 Time",
                  :doap/shortdesc "A vocabulary for describing musical time.",
-                 :rdf/about      {:rdf/uri "http://lv2plug.in/ns/ext/time"},
                  :rdf/type       :doap/Project},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/time"},
    :rdf/ns-prefix-map {"owl"  "http://www.w3.org/2002/07/owl#",

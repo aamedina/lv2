@@ -8,7 +8,6 @@
                  :doap/name "LV2 Atom",
                  :doap/shortdesc
                  "A generic value container and several data types.",
-                 :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/atom"},
                  :rdf/type :doap/Project},
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/extensions/units"}
                  {:rdf/uri "http://lv2plug.in/ns/extensions/ui"}

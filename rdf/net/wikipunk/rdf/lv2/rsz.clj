@@ -6,8 +6,6 @@
                  :doap/developer {:rdf/uri "http://drobilla.net/drobilla#me"},
                  :doap/name      "LV2 Resize Port",
                  :doap/shortdesc "Dynamically sized LV2 port buffers.",
-                 :rdf/about      {:rdf/uri
-                                  "http://lv2plug.in/ns/ext/resize-port"},
                  :rdf/type       :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/resize-port"},

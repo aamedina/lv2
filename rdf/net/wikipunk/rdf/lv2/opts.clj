@@ -6,7 +6,6 @@
                  :doap/developer {:rdf/uri "http://drobilla.net/drobilla#me"},
                  :doap/name      "LV2 Options",
                  :doap/shortdesc "Runtime options for LV2 plugins and UIs.",
-                 :rdf/about      {:rdf/uri "http://lv2plug.in/ns/ext/options"},
                  :rdf/type       :doap/Project},
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/options"},

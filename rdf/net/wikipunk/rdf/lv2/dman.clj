@@ -10,7 +10,6 @@
                  :doap/programming-language "C",
                  :doap/shortdesc
                  "Support for dynamic manifest data generation.",
-                 :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/dynmanifest"},
                  :rdf/type :doap/Project},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/dynmanifest"},
    :rdf/ns-prefix-map {"dman" "http://lv2plug.in/ns/ext/dynmanifest#",

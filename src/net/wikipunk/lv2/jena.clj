@@ -184,7 +184,7 @@
         seeAlso (when (and seeAlso (str/ends-with? seeAlso "ttl"))
                   (update-vals (group-by :rdf/about (parse seeAlso)) first))
         project (when seeAlso
-                  (get seeAlso (:rdf/about md)))
+                  (dissoc (get seeAlso (:rdf/about md)) :rdf/about))
         index' (reduce-kv (fn [index k v]
                             (update index k merge v))
                           index' (dissoc seeAlso (:rdf/about md)))

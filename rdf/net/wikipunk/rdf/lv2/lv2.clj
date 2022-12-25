@@ -12,7 +12,6 @@
     :doap/name       "LV2",
     :doap/programming-language "C",
     :doap/shortdesc  "An extensible open standard for audio plugins",
-    :rdf/about       {:rdf/uri "http://lv2plug.in/ns/lv2core"},
     :rdf/type        :doap/Project},
    :owl/imports {:rdf/uri "http://usefulinc.com/ns/doap#"},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/lv2core"},
