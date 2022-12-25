@@ -180,6 +180,19 @@
                                      (keyword "dcterms" (name form))
                                      form))
                                  (reduce merge (meta model) ontologies))
+        seeAlso (:rdf/uri (:rdfs/seeAlso md))
+        seeAlso (when (and seeAlso (str/ends-with? seeAlso "ttl"))
+                  (update-vals (group-by :rdf/about (parse seeAlso)) first))
+        project (when seeAlso
+                  (get seeAlso (:rdf/about md)))
+        ;; index' (reduce (fn [index [k v]]
+        ;;                  (update index k merge v))
+        ;;                index' (dissoc seeAlso (:rdf/about md)))
+        index' (reduce-kv (fn [index k v]
+                            (update index k merge v))
+                          index' (dissoc seeAlso (:rdf/about md)))
+        md (cond-> md
+             (map? project) (assoc :lv2/project project))
         exclusions (->> (keys (filter (comp qualified-keyword? key) index'))
                         (map name)
                         (filter #(var? (ns-resolve 'clojure.core (symbol %))))
@@ -211,15 +224,16 @@
                                       'null
                                       
                                       :else sym)
-                                docstring (:rdfs/comment v)
+                                docstring (or (some-> (:lv2/documentation v) :rdf/literal)
+                                              (:rdfs/comment v))
                                 docstring (if (coll? docstring)
                                             (first (filter string? docstring))
                                             docstring)
                                 docstring (when docstring
-                                            (str/replace docstring #"\s" " "))
+                                            (str/trim (str/replace docstring #"\s" " ")))
                                 v         (assoc v :rdf/about k)]
                             (if docstring
-                              (list 'def sym docstring (dissoc v :rdfs/comment))
+                              (list 'def sym docstring (dissoc v :rdfs/comment :lv2/documentation))
                               (list 'def sym v)))))
                    (map (fn [form] (walk/postwalk (fn [form]
                                                     (if (bytes? form)
@@ -229,15 +243,17 @@
     (cons `(~'ns ~(symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
             ~(let [docstring (or (:dcterms/abstract md)
                                  (:dcterms/title md)
-                                 (:doc md)
+                                 (get-in md [:lv2/project :lv2/documentation :rdf/literal])
+                                 (:rdfs/comment md)
                                  (:vann/preferredNamespaceUri md)
+                                 (:doc md)
                                  "")
                    docstring (if (and (coll? docstring) (seq docstring))
                                (first (filter string? docstring))
                                docstring)
                    docstring (str/trim (str/replace docstring #"\s" " "))]
                docstring)
-            ~(dissoc md :doc :rdfs/comment)
+            ~(dissoc (update md :lv2/project #(dissoc % :lv2/documentation)) :doc)
             ~@(when (seq exclusions)
                 [(list :refer-clojure :exclude exclusions)]))
           forms)))

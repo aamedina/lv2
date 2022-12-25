@@ -4,12 +4,15 @@
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/dcterms.ttl",
    :dcterms/modified "2010-10-11",
    :dcterms/title "DCMI Metadata Terms",
+   :lv2/project nil,
    :rdf/about {:rdf/uri "http://purl.org/dc/terms/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "owl"     "http://www.w3.org/2002/07/owl#",
                        "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"    "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/comment
+   "This version of the DCMI Terms vocabulary has been heavily trimmed for LV2.",
    :vann/preferredNamespacePrefix "dcterms",
    :vann/preferredNamespaceUri "http://purl.org/dc/terms/"}
   (:refer-clojure :exclude [format]))

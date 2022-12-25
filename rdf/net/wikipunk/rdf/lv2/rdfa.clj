@@ -8,6 +8,7 @@
    :dcterms/publisher {:rdf/uri "http://www.w3.org/data#W3C"},
    :dcterms/title
    "RDFa Vocabulary for Term and Prefix Assignment, and for Processor Graph Reporting",
+   :lv2/project nil,
    :owl/versionInfo "$Date: 2013-03-11 07:54:23 $",
    :rdf/about {:rdf/uri "http://www.w3.org/ns/rdfa#"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",

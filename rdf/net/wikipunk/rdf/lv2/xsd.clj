@@ -1,13 +1,15 @@
 (ns net.wikipunk.rdf.lv2.xsd
-  "http://www.w3.org/2001/XMLSchema#"
+  "XML Schema Datatypes"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/xsd.ttl",
+   :lv2/project nil,
    :rdf/about {:rdf/uri "http://www.w3.org/2001/XMLSchema#"},
    :rdf/ns-prefix-map {"owl"  "http://www.w3.org/2002/07/owl#",
                        "rdf"  "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/comment "XML Schema Datatypes",
    :vann/preferredNamespacePrefix "xsd",
    :vann/preferredNamespaceUri "http://www.w3.org/2001/XMLSchema#"}
   (:refer-clojure :exclude [boolean short byte float time double long int]))

@@ -1,7 +1,13 @@
 (ns net.wikipunk.rdf.lv2.time
-  "http://lv2plug.in/ns/ext/time#"
+  "This is a vocabulary for describing a position in time and the speed of time passage, in both real and musical terms.  In addition to real time (based on seconds), two units of time are used: _frames_ and _beats_.  A frame is a numbered quantum of time.  Frame time is related to real-time by the _frame rate_ or _sample rate_, time:framesPerSecond.  A beat is a single pulse of musical time.  Beat time is related to real-time by the _tempo_, time:beatsPerMinute.  Musical time additionally has a _meter_ which describes passage of time in terms of musical _bars_.  A bar is a higher level grouping of beats.  The meter describes how many beats are in one bar."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/time.lv2/time.ttl",
+   :lv2/project {:doap/created   "2011-10-05",
+                 :doap/developer {:rdf/uri "http://drobilla.net/drobilla#me"},
+                 :doap/name      "LV2 Time",
+                 :doap/shortdesc "A vocabulary for describing musical time.",
+                 :rdf/about      {:rdf/uri "http://lv2plug.in/ns/ext/time"},
+                 :rdf/type       :doap/Project},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/time"},
    :rdf/ns-prefix-map {"owl"  "http://www.w3.org/2002/07/owl#",
                        "rdf"  "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -9,6 +15,7 @@
                        "time" "http://lv2plug.in/ns/ext/time#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/comment "A vocabulary for describing musical time.",
    :rdfs/label "LV2 Time",
    :rdfs/seeAlso
    {:rdf/uri
@@ -17,13 +24,13 @@
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/time#"})
 
 (def Position
-  "A point in time and/or the speed at which time is passing."
+  "A point in time and/or the speed at which time is passing.  A position is both a point and a speed, which precisely defines a time within a timeline."
   {:rdf/about  :time/Position,
    :rdf/type   [:owl/Class :rdfs/Class],
    :rdfs/label "Position"})
 
 (def Rate
-  "The rate of passage of time."
+  "The rate of passage of time in terms of one unit with respect to another."
   {:rdf/about       :time/Rate,
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/label      "Rate",
@@ -53,7 +60,7 @@
    :rdfs/range  :xsd/float})
 
 (def beat
-  "The global running beat number."
+  "This is not the beat within a bar like time:barBeat, but relative to the same origin as time:bar and monotonically increases unless the transport is repositioned."
   {:rdf/about   :time/beat,
    :rdf/type    [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/domain :time/Time,
@@ -61,7 +68,7 @@
    :rdfs/range  :xsd/double})
 
 (def beatUnit
-  "The note value that counts as one beat."
+  "Beat unit, the note value that counts as one beat.  This is the bottom number in a time signature: 2 for half note, 4 for quarter note, and so on."
   {:rdf/about   :time/beatUnit,
    :rdf/type    [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/domain :time/Rate,
@@ -108,7 +115,7 @@
    :rdfs/range :time/Position})
 
 (def speed
-  "The rate of the progress of time as a fraction of normal speed."
+  "The rate of the progress of time as a fraction of normal speed.  For example, a rate of 0.0 is stopped, 1.0 is rolling at normal speed, 0.5 is rolling at half speed, -1.0 is reverse, and so on."
   {:rdf/about   :time/speed,
    :rdf/type    [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/domain :time/Rate,

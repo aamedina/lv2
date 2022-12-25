@@ -1,7 +1,17 @@
 (ns net.wikipunk.rdf.lv2.units
-  "Units for LV2 values."
+  "This is a vocabulary for units typically used for control values in audio processing.  For example, to say that a gain control is in decibels:      :::turtle     @prefix units: <http://lv2plug.in/ns/extensions/units#> .     @prefix eg:    <http://example.org/> .      eg:plugin lv2:port [         a            lv2:ControlPort , lv2:InputPort ;         lv2:index    0 ;         lv2:symbol   \"gain\" ;         lv2:name     \"Gain\" ;         units:unit   units:db     ] .  Using the same form, plugins may also specify one-off units inline, to give better display hints to hosts:      :::turtle     eg:plugin lv2:port [         a            lv2:ControlPort , lv2:InputPort ;         lv2:index    0 ;         lv2:symbol   \"frob\" ;         lv2:name     \"frob level\" ;         units:unit [             a            units:Unit ;             rdfs:label   \"frobnication\" ;             units:symbol \"fr\" ;             units:render \"%f f\"         ]     ] .  It is also possible to define conversions between various units, which makes it possible for hosts to automatically convert between units where possible.  The units defined in this extension include conversion definitions where it makes sense to do so."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.ttl",
+   :lv2/project
+   {:doap/created    "2007-02-06",
+    :doap/developer  {:rdf/uri "http://plugin.org.uk/swh.xrdf#me"},
+    :doap/homepage   {:rdf/uri "http://lv2plug.in/ns/extensions/units"},
+    :doap/license    {:rdf/uri "http://opensource.org/licenses/isc"},
+    :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
+    :doap/name       "LV2 Units",
+    :doap/shortdesc  "Units for LV2 values.",
+    :rdf/about       {:rdf/uri "http://lv2plug.in/ns/extensions/units"},
+    :rdf/type        :doap/Project},
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/extensions/units"},
    :rdf/ns-prefix-map {"owl"   "http://www.w3.org/2002/07/owl#",
                        "rdf"   "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -9,6 +19,7 @@
                        "units" "http://lv2plug.in/ns/extensions/units#",
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/comment "Units for LV2 values.",
    :rdfs/label "LV2 Units",
    :rdfs/seeAlso
    {:rdf/uri

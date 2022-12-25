@@ -1,7 +1,15 @@
 (ns net.wikipunk.rdf.lv2.param
-  "http://lv2plug.in/ns/ext/parameters#"
+  "This is a vocabulary for parameters that are common in audio processing software.  A <q>parameter</q> is purely a metadata concept, unrelated to any particular code mechanism.  Parameters are used to assign meaning to controls (for example, using lv2:designation for ports) so they can be used more intelligently or presented to the user more efficiently."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.ttl",
+   :lv2/project {:doap/created    "2009-00-00",
+                 :doap/developer  {:rdf/uri "http://lv2plug.in/ns/meta#larsl"},
+                 :doap/maintainer {:rdf/uri "http://drobilla.net/drobilla#me"},
+                 :doap/name       "LV2 Parameters",
+                 :doap/shortdesc  "Common parameters for audio processing.",
+                 :rdf/about       {:rdf/uri
+                                   "http://lv2plug.in/ns/ext/parameters"},
+                 :rdf/type        :doap/Project},
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/lv2core"}
                  {:rdf/uri "http://lv2plug.in/ns/ext/port-groups"}
                  {:rdf/uri "http://lv2plug.in/ns/ext/atom"}],
@@ -15,6 +23,7 @@
                        "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
                        "units" "http://lv2plug.in/ns/extensions/units#"},
    :rdf/type :owl/Ontology,
+   :rdfs/comment "Common parameters for audio processing.",
    :rdfs/label "LV2 Parameters",
    :rdfs/seeAlso
    {:rdf/uri
@@ -41,18 +50,18 @@
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
-  {:pg/element      [{:lv2/designation :param/sustain,
-                      :lv2/index       4}
-                     {:lv2/designation :param/attack,
+  {:pg/element      [{:lv2/designation :param/attack,
                       :lv2/index       1}
+                     {:lv2/designation :param/delay,
+                      :lv2/index       0}
                      {:lv2/designation :param/release,
                       :lv2/index       5}
                      {:lv2/designation :param/decay,
                       :lv2/index       3}
-                     {:lv2/designation :param/delay,
-                      :lv2/index       0}
                      {:lv2/designation :param/hold,
-                      :lv2/index       2}],
+                      :lv2/index       2}
+                     {:lv2/designation :param/sustain,
+                      :lv2/index       4}],
    :rdf/about       :param/EnvelopeControls,
    :rdf/type        :rdfs/Class,
    :rdfs/label      "Envelope Controls",
@@ -206,7 +215,7 @@
    :rdfs/range :atom/Float})
 
 (def wetDryRatio
-  "The ratio between processed and bypassed levels in the output."
+  "The ratio between processed and bypass components in output signal.  The dry and wet percentages can be calculated from the following equations:      :::c     dry = (wetDryRatio.maximum - wetDryRatio.value) / wetDryRatio.maximum     wet = wetDryRatio.value / wetDryRatio.maximum  Typically, maximum value of 1 or 100 and minimum value of 0 should be used."
   {:rdf/about  :param/wetDryRatio,
    :rdf/type   :lv2/Parameter,
    :rdfs/label "wet/dry ratio"})

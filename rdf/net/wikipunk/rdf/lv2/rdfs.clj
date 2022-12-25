@@ -2,6 +2,7 @@
   "The RDF Schema vocabulary (RDFS)"
   {:dcat/downloadURL  "http://www.w3.org/2000/01/rdf-schema#",
    :dcterms/title     "The RDF Schema vocabulary (RDFS)",
+   :lv2/project       nil,
    :rdf/about         {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/ns-prefix-map {"dc"   "http://purl.org/dc/elements/1.1/",
                        "owl"  "http://www.w3.org/2002/07/owl#",

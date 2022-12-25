@@ -6,6 +6,7 @@
    :foaf/maker {:foaf/mbox {:rdf/uri "mailto:edd@usefulinc.com"},
                 :foaf/name "Edd Dumbill",
                 :rdf/type  :foaf/Person},
+   :lv2/project nil,
    :owl/imports {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdf/about {:rdf/uri "http://usefulinc.com/ns/doap#"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
@@ -15,6 +16,20 @@
                        "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"    "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/comment
+   ["The Description of a Project (DOAP) vocabulary, described using W3C RDF Schema and the Web Ontology Language."
+    {:rdf/lang "cs",
+     :rdf/literal
+     "Slovník Description of a Project (DOAP, Popis projektu), popsaný použitím W3C RDF Schema a Web Ontology Language."}
+    {:rdf/lang "fr",
+     :rdf/literal
+     "Le vocabulaire Description Of A Project (DOAP, Description D'Un Projet),\n\t\tdécrit en utilisant RDF Schema du W3C et OWL."}
+    {:rdf/lang "es",
+     :rdf/literal
+     "El vocabulario Description of a Project (DOAP, Descripción de un Proyecto), descrito usando RDF Schema de W3C\n\t\ty Web Ontology Language."}
+    {:rdf/lang "de",
+     :rdf/literal
+     "Das Vokabular \"Description of a Project (DOAP)\", beschrieben durch W3C RDF Schema and the Web Ontology Language."}],
    :vann/preferredNamespacePrefix "doap",
    :vann/preferredNamespaceUri "http://usefulinc.com/ns/doap#"}
   (:refer-clojure :exclude [name]))

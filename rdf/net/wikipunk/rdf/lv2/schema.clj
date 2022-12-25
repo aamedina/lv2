@@ -4,6 +4,7 @@
    "https://raw.githubusercontent.com/schemaorg/schemaorg/main/data/releases/15.0/schemaorg.owl",
    :dcterms/modified {:rdf/literal "2022-10-25",
                       :rdf/uri     "http://www.w3.org/2001/XMLSchema#dat"},
+   :lv2/project nil,
    :owl/versionInfo "15.0",
    :rdf/about {:rdf/uri "https://schema.org/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
@@ -43,7 +44,7 @@
    :rdfs/subClassOf  :schema/WebPage})
 
 (def AcceptAction
-  "The act of committing to/adopting an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RejectAction\">RejectAction</a>: The antonym of AcceptAction.</li> </ul> "
+  "The act of committing to/adopting an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RejectAction\">RejectAction</a>: The antonym of AcceptAction.</li> </ul>"
   {:rdf/about        :schema/AcceptAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/AcceptAction,
@@ -288,7 +289,7 @@
    :rdfs/subClassOf  :schema/InsertAction})
 
 (def ApplyAction
-  "The act of registering to an organization/service without the guarantee to receive it.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.</li> </ul> "
+  "The act of registering to an organization/service without the guarantee to receive it.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.</li> </ul>"
   {:rdf/about        :schema/ApplyAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/ApplyAction,
@@ -362,7 +363,7 @@
    :rdfs/subClassOf  :schema/CreativeWork})
 
 (def AskAction
-  "The act of posing a question / favor to someone.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ReplyAction\">ReplyAction</a>: Appears generally as a response to AskAction.</li> </ul> "
+  "The act of posing a question / favor to someone.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ReplyAction\">ReplyAction</a>: Appears generally as a response to AskAction.</li> </ul>"
   {:rdf/about        :schema/AskAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/AskAction,
@@ -605,7 +606,7 @@
    :rdfs/subClassOf  :schema/QualitativeValue})
 
 (def BefriendAction
-  "The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.</li> </ul> "
+  "The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.</li> </ul>"
   {:rdf/about        :schema/BefriendAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/BefriendAction,
@@ -758,7 +759,7 @@
    :rdfs/subClassOf  :schema/DataType})
 
 (def BorrowAction
-  "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/LendAction\">LendAction</a>: Reciprocal of BorrowAction.</li> </ul> "
+  "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/LendAction\">LendAction</a>: Reciprocal of BorrowAction.</li> </ul>"
   {:rdf/about        :schema/BorrowAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/BorrowAction,
@@ -911,7 +912,7 @@
    :rdfs/subClassOf  :schema/Audience})
 
 (def BusinessEntityType
-  "A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#Business</li> <li>http://purl.org/goodrelations/v1#Enduser</li> <li>http://purl.org/goodrelations/v1#PublicInstitution</li> <li>http://purl.org/goodrelations/v1#Reseller</li> </ul> "
+  "A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#Business</li> <li>http://purl.org/goodrelations/v1#Enduser</li> <li>http://purl.org/goodrelations/v1#PublicInstitution</li> <li>http://purl.org/goodrelations/v1#Reseller</li> </ul>"
   {:rdf/about        :schema/BusinessEntityType,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/BusinessEntityType,
@@ -927,7 +928,7 @@
    :rdfs/subClassOf  :schema/Event})
 
 (def BusinessFunction
-  "The business function specifies the type of activity or access (i.e., the bundle of rights) offered by the organization or business person through the offer. Typical are sell, rental or lease, maintenance or repair, manufacture / produce, recycle / dispose, engineering / construction, or installation. Proprietary specifications of access rights are also instances of this class.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#ConstructionInstallation</li> <li>http://purl.org/goodrelations/v1#Dispose</li> <li>http://purl.org/goodrelations/v1#LeaseOut</li> <li>http://purl.org/goodrelations/v1#Maintain</li> <li>http://purl.org/goodrelations/v1#ProvideService</li> <li>http://purl.org/goodrelations/v1#Repair</li> <li>http://purl.org/goodrelations/v1#Sell</li> <li>http://purl.org/goodrelations/v1#Buy</li> </ul> "
+  "The business function specifies the type of activity or access (i.e., the bundle of rights) offered by the organization or business person through the offer. Typical are sell, rental or lease, maintenance or repair, manufacture / produce, recycle / dispose, engineering / construction, or installation. Proprietary specifications of access rights are also instances of this class.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#ConstructionInstallation</li> <li>http://purl.org/goodrelations/v1#Dispose</li> <li>http://purl.org/goodrelations/v1#LeaseOut</li> <li>http://purl.org/goodrelations/v1#Maintain</li> <li>http://purl.org/goodrelations/v1#ProvideService</li> <li>http://purl.org/goodrelations/v1#Repair</li> <li>http://purl.org/goodrelations/v1#Sell</li> <li>http://purl.org/goodrelations/v1#Buy</li> </ul>"
   {:rdf/about        :schema/BusinessFunction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/BusinessFunction,
@@ -991,7 +992,7 @@
    :rdfs/subClassOf  :schema/BodyOfWater})
 
 (def CancelAction
-  "The act of asserting that a future event/action is no longer going to happen.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ConfirmAction\">ConfirmAction</a>: The antonym of CancelAction.</li> </ul> "
+  "The act of asserting that a future event/action is no longer going to happen.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ConfirmAction\">ConfirmAction</a>: The antonym of CancelAction.</li> </ul>"
   {:rdf/about        :schema/CancelAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/CancelAction,
@@ -1071,7 +1072,7 @@
    :rdfs/subClassOf  :schema/FindAction})
 
 (def CheckInAction
-  "The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check-in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/CheckOutAction\">CheckOutAction</a>: The antonym of CheckInAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/ArriveAction\">ArriveAction</a>: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.</li> <li><a class=\"localLink\" href=\"https://schema.org/ConfirmAction\">ConfirmAction</a>: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the <em>start</em> of a previously reserved service rather than its validity/existence.</li> </ul> "
+  "The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check-in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/CheckOutAction\">CheckOutAction</a>: The antonym of CheckInAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/ArriveAction\">ArriveAction</a>: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.</li> <li><a class=\"localLink\" href=\"https://schema.org/ConfirmAction\">ConfirmAction</a>: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the <em>start</em> of a previously reserved service rather than its validity/existence.</li> </ul>"
   {:rdf/about        :schema/CheckInAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/CheckInAction,
@@ -1079,7 +1080,7 @@
    :rdfs/subClassOf  :schema/CommunicateAction})
 
 (def CheckOutAction
-  "The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check-in) or place (e.g. hotel).<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/CheckInAction\">CheckInAction</a>: The antonym of CheckOutAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/DepartAction\">DepartAction</a>: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.</li> <li><a class=\"localLink\" href=\"https://schema.org/CancelAction\">CancelAction</a>: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.</li> </ul> "
+  "The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check-in) or place (e.g. hotel).<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/CheckInAction\">CheckInAction</a>: The antonym of CheckOutAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/DepartAction\">DepartAction</a>: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.</li> <li><a class=\"localLink\" href=\"https://schema.org/CancelAction\">CancelAction</a>: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.</li> </ul>"
   {:rdf/about        :schema/CheckOutAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/CheckOutAction,
@@ -1335,7 +1336,7 @@
    :rdfs/subClassOf  :schema/Store})
 
 (def ConfirmAction
-  "The act of notifying someone that a future event/action is going to happen as expected.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/CancelAction\">CancelAction</a>: The antonym of ConfirmAction.</li> </ul> "
+  "The act of notifying someone that a future event/action is going to happen as expected.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/CancelAction\">CancelAction</a>: The antonym of ConfirmAction.</li> </ul>"
   {:rdf/about        :schema/ConfirmAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/ConfirmAction,
@@ -1520,7 +1521,7 @@
    :rdfs/subClassOf  [:schema/CreativeWork :schema/Series]})
 
 (def CreditCard
-  "A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#AmericanExpress</li> <li>http://purl.org/goodrelations/v1#DinersClub</li> <li>http://purl.org/goodrelations/v1#Discover</li> <li>http://purl.org/goodrelations/v1#JCB</li> <li>http://purl.org/goodrelations/v1#MasterCard</li> <li>http://purl.org/goodrelations/v1#VISA</li> </ul> "
+  "A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#AmericanExpress</li> <li>http://purl.org/goodrelations/v1#DinersClub</li> <li>http://purl.org/goodrelations/v1#Discover</li> <li>http://purl.org/goodrelations/v1#JCB</li> <li>http://purl.org/goodrelations/v1#MasterCard</li> <li>http://purl.org/goodrelations/v1#VISA</li> </ul>"
   {:rdf/about        :schema/CreditCard,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/CreditCard,
@@ -1736,7 +1737,7 @@
    :rdfs/subClassOf  :schema/Event})
 
 (def DeliveryMethod
-  "A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#DeliveryModeDirectDownload</li> <li>http://purl.org/goodrelations/v1#DeliveryModeFreight</li> <li>http://purl.org/goodrelations/v1#DeliveryModeMail</li> <li>http://purl.org/goodrelations/v1#DeliveryModeOwnFleet</li> <li>http://purl.org/goodrelations/v1#DeliveryModePickUp</li> <li>http://purl.org/goodrelations/v1#DHL</li> <li>http://purl.org/goodrelations/v1#FederalExpress</li> <li>http://purl.org/goodrelations/v1#UPS</li> </ul> "
+  "A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#DeliveryModeDirectDownload</li> <li>http://purl.org/goodrelations/v1#DeliveryModeFreight</li> <li>http://purl.org/goodrelations/v1#DeliveryModeMail</li> <li>http://purl.org/goodrelations/v1#DeliveryModeOwnFleet</li> <li>http://purl.org/goodrelations/v1#DeliveryModePickUp</li> <li>http://purl.org/goodrelations/v1#DHL</li> <li>http://purl.org/goodrelations/v1#FederalExpress</li> <li>http://purl.org/goodrelations/v1#UPS</li> </ul>"
   {:rdf/about        :schema/DeliveryMethod,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/DeliveryMethod,
@@ -2438,7 +2439,7 @@
    :rdfs/subClassOf  :schema/LocalBusiness})
 
 (def FindAction
-  "The act of finding an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/SearchAction\">SearchAction</a>: FindAction is generally lead by a SearchAction, but not necessarily.</li> </ul> "
+  "The act of finding an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/SearchAction\">SearchAction</a>: FindAction is generally lead by a SearchAction, but not necessarily.</li> </ul>"
   {:rdf/about        :schema/FindAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/FindAction,
@@ -2494,7 +2495,7 @@
    :rdfs/subClassOf  :schema/Store})
 
 (def FollowAction
-  "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/BefriendAction\">BefriendAction</a>: Unlike BefriendAction, FollowAction implies that the connection is <em>not</em> necessarily reciprocal.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.</li> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/TrackAction\">TrackAction</a>: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).</li> </ul> "
+  "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/BefriendAction\">BefriendAction</a>: Unlike BefriendAction, FollowAction implies that the connection is <em>not</em> necessarily reciprocal.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.</li> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/TrackAction\">TrackAction</a>: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).</li> </ul>"
   {:rdf/about        :schema/FollowAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/FollowAction,
@@ -2679,7 +2680,7 @@
    :rdfs/subClassOf  :schema/Intangible})
 
 (def GiveAction
-  "The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/TakeAction\">TakeAction</a>: Reciprocal of GiveAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/SendAction\">SendAction</a>: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).</li> </ul> "
+  "The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/TakeAction\">TakeAction</a>: Reciprocal of GiveAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/SendAction\">SendAction</a>: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).</li> </ul>"
   {:rdf/about        :schema/GiveAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/GiveAction,
@@ -3266,7 +3267,7 @@
    :rdfs/subClassOf  :schema/Intangible})
 
 (def JoinAction
-  "An agent joins an event/group with participants/friends at a location.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, JoinAction refers to joining a group/team of people.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.</li> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.</li> </ul> "
+  "An agent joins an event/group with participants/friends at a location.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, JoinAction refers to joining a group/team of people.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.</li> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.</li> </ul>"
   {:rdf/about        :schema/JoinAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/JoinAction,
@@ -3322,7 +3323,7 @@
    :rdfs/subClassOf  :schema/CreativeWork})
 
 (def LeaveAction
-  "An agent leaves an event / group with participants/friends at a location.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: The antonym of LeaveAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/UnRegisterAction\">UnRegisterAction</a>: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.</li> </ul> "
+  "An agent leaves an event / group with participants/friends at a location.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: The antonym of LeaveAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/UnRegisterAction\">UnRegisterAction</a>: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.</li> </ul>"
   {:rdf/about        :schema/LeaveAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/LeaveAction,
@@ -3378,7 +3379,7 @@
    :rdfs/subClassOf  :schema/GovernmentBuilding})
 
 (def LendAction
-  "The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/BorrowAction\">BorrowAction</a>: Reciprocal of LendAction.</li> </ul> "
+  "The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/BorrowAction\">BorrowAction</a>: Reciprocal of LendAction.</li> </ul>"
   {:rdf/about        :schema/LendAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/LendAction,
@@ -4244,7 +4245,7 @@
    :rdfs/subClassOf  :schema/Landform})
 
 (def MoveAction
-  "The act of an agent relocating to a place.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/TransferAction\">TransferAction</a>: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.</li> </ul> "
+  "The act of an agent relocating to a place.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/TransferAction\">TransferAction</a>: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.</li> </ul>"
   {:rdf/about        :schema/MoveAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/MoveAction,
@@ -4509,7 +4510,7 @@
    :rdfs/subClassOf  :schema/DigitalDocument})
 
 (def NumberClass
-  "Data type: Number.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul> "
+  "Data type: Number.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul>"
   {:rdf/about        :schema/Number,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/Number,
@@ -4850,7 +4851,7 @@
    :rdfs/subClassOf  :schema/PriceSpecification})
 
 (def PaymentMethod
-  "A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li> <li>http://purl.org/goodrelations/v1#ByInvoice</li> <li>http://purl.org/goodrelations/v1#Cash</li> <li>http://purl.org/goodrelations/v1#CheckInAdvance</li> <li>http://purl.org/goodrelations/v1#COD</li> <li>http://purl.org/goodrelations/v1#DirectDebit</li> <li>http://purl.org/goodrelations/v1#GoogleCheckout</li> <li>http://purl.org/goodrelations/v1#PayPal</li> <li>http://purl.org/goodrelations/v1#PaySwarm</li> </ul> "
+  "A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li> <li>http://purl.org/goodrelations/v1#ByInvoice</li> <li>http://purl.org/goodrelations/v1#Cash</li> <li>http://purl.org/goodrelations/v1#CheckInAdvance</li> <li>http://purl.org/goodrelations/v1#COD</li> <li>http://purl.org/goodrelations/v1#DirectDebit</li> <li>http://purl.org/goodrelations/v1#GoogleCheckout</li> <li>http://purl.org/goodrelations/v1#PayPal</li> <li>http://purl.org/goodrelations/v1#PaySwarm</li> </ul>"
   {:rdf/about        :schema/PaymentMethod,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/PaymentMethod,
@@ -5046,7 +5047,7 @@
    :rdfs/subClassOf  :schema/CreativeWork})
 
 (def PlayAction
-  "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, competition or exercise.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ListenAction\">ListenAction</a>: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.</li> <li><a class=\"localLink\" href=\"https://schema.org/WatchAction\">WatchAction</a>: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.</li> </ul> "
+  "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, competition or exercise.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ListenAction\">ListenAction</a>: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.</li> <li><a class=\"localLink\" href=\"https://schema.org/WatchAction\">WatchAction</a>: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.</li> </ul>"
   {:rdf/about        :schema/PlayAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/PlayAction,
@@ -5574,7 +5575,7 @@
    :rdfs/subClassOf  :schema/WebPage})
 
 (def ReceiveAction
-  "The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/SendAction\">SendAction</a>: The reciprocal of ReceiveAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/TakeAction\">TakeAction</a>: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine).</li> </ul> "
+  "The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/SendAction\">SendAction</a>: The reciprocal of ReceiveAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/TakeAction\">TakeAction</a>: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine).</li> </ul>"
   {:rdf/about        :schema/ReceiveAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/ReceiveAction,
@@ -5624,7 +5625,7 @@
    :rdfs/subClassOf  :schema/Enumeration})
 
 (def RegisterAction
-  "The act of registering to be a user of a service, product or web page.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, <em>not</em> a group/team of people.</li> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.</li> </ul> "
+  "The act of registering to be a user of a service, product or web page.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, <em>not</em> a group/team of people.</li> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.</li> </ul>"
   {:rdf/about        :schema/RegisterAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/RegisterAction,
@@ -5632,7 +5633,7 @@
    :rdfs/subClassOf  :schema/InteractAction})
 
 (def RejectAction
-  "The act of rejecting to/adopting an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/AcceptAction\">AcceptAction</a>: The antonym of RejectAction.</li> </ul> "
+  "The act of rejecting to/adopting an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/AcceptAction\">AcceptAction</a>: The antonym of RejectAction.</li> </ul>"
   {:rdf/about        :schema/RejectAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/RejectAction,
@@ -5673,7 +5674,7 @@
    :rdfs/subClassOf  :schema/UpdateAction})
 
 (def ReplyAction
-  "The act of responding to a question/message asked/sent by the object. Related to <a class=\"localLink\" href=\"https://schema.org/AskAction\">AskAction</a>.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/AskAction\">AskAction</a>: Appears generally as an origin of a ReplyAction.</li> </ul> "
+  "The act of responding to a question/message asked/sent by the object. Related to <a class=\"localLink\" href=\"https://schema.org/AskAction\">AskAction</a>.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/AskAction\">AskAction</a>: Appears generally as an origin of a ReplyAction.</li> </ul>"
   {:rdf/about        :schema/ReplyAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/ReplyAction,
@@ -5756,7 +5757,7 @@
    :rdfs/subClassOf  :schema/StatusEnumeration})
 
 (def ReserveAction
-  "Reserving a concrete object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ScheduleAction\">ScheduleAction</a>: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.</li> </ul> "
+  "Reserving a concrete object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ScheduleAction\">ScheduleAction</a>: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.</li> </ul>"
   {:rdf/about        :schema/ReserveAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/ReserveAction,
@@ -5943,7 +5944,7 @@
    :rdfs/subClassOf  :schema/Intangible})
 
 (def ScheduleAction
-  "Scheduling future actions, events, or tasks.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ReserveAction\">ReserveAction</a>: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.</li> </ul> "
+  "Scheduling future actions, events, or tasks.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ReserveAction\">ReserveAction</a>: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.</li> </ul>"
   {:rdf/about        :schema/ScheduleAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/ScheduleAction,
@@ -5999,7 +6000,7 @@
    :rdfs/subClassOf  :schema/BodyOfWater})
 
 (def SearchAction
-  "The act of searching for an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FindAction\">FindAction</a>: SearchAction generally leads to a FindAction, but not necessarily.</li> </ul> "
+  "The act of searching for an object.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FindAction\">FindAction</a>: SearchAction generally leads to a FindAction, but not necessarily.</li> </ul>"
   {:rdf/about        :schema/SearchAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/SearchAction,
@@ -6064,7 +6065,7 @@
    :rdfs/subClassOf  :schema/TradeAction})
 
 (def SendAction
-  "The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ReceiveAction\">ReceiveAction</a>: The reciprocal of SendAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/GiveAction\">GiveAction</a>: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).</li> </ul> "
+  "The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/ReceiveAction\">ReceiveAction</a>: The reciprocal of SendAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/GiveAction\">GiveAction</a>: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).</li> </ul>"
   {:rdf/about        :schema/SendAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/SendAction,
@@ -6406,7 +6407,7 @@
    :rdfs/subClassOf  :schema/Thing})
 
 (def SubscribeAction
-  "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.</li> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.</li> </ul> "
+  "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.</li> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.</li> <li><a class=\"localLink\" href=\"https://schema.org/JoinAction\">JoinAction</a>: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.</li> </ul>"
   {:rdf/about        :schema/SubscribeAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/SubscribeAction,
@@ -6512,7 +6513,7 @@
    :rdfs/subClassOf  :schema/WebPageElement})
 
 (def TakeAction
-  "The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/GiveAction\">GiveAction</a>: The reciprocal of TakeAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/ReceiveAction\">ReceiveAction</a>: Unlike ReceiveAction, TakeAction implies that ownership has been transferred.</li> </ul> "
+  "The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/GiveAction\">GiveAction</a>: The reciprocal of TakeAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/ReceiveAction\">ReceiveAction</a>: Unlike ReceiveAction, TakeAction implies that ownership has been transferred.</li> </ul>"
   {:rdf/about        :schema/TakeAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/TakeAction,
@@ -6736,7 +6737,7 @@
    :rdfs/subClassOf  :schema/Store})
 
 (def TrackAction
-  "An agent tracks an object for updates.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, TrackAction refers to the interest on the location of innanimates objects.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.</li> </ul> "
+  "An agent tracks an object for updates.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/FollowAction\">FollowAction</a>: Unlike FollowAction, TrackAction refers to the interest on the location of innanimates objects.</li> <li><a class=\"localLink\" href=\"https://schema.org/SubscribeAction\">SubscribeAction</a>: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.</li> </ul>"
   {:rdf/about        :schema/TrackAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/TrackAction,
@@ -6856,7 +6857,7 @@
    :rdfs/subClassOf  :schema/NonprofitType})
 
 (def UnRegisterAction
-  "The act of un-registering from a service.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: antonym of UnRegisterAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/LeaveAction\">LeaveAction</a>: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you were previously registered, rather than leaving a team/group of people.</li> </ul> "
+  "The act of un-registering from a service.<br/><br/>  Related actions:<br/><br/>  <ul> <li><a class=\"localLink\" href=\"https://schema.org/RegisterAction\">RegisterAction</a>: antonym of UnRegisterAction.</li> <li><a class=\"localLink\" href=\"https://schema.org/LeaveAction\">LeaveAction</a>: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you were previously registered, rather than leaving a team/group of people.</li> </ul>"
   {:rdf/about        :schema/UnRegisterAction,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/UnRegisterAction,
@@ -7162,7 +7163,7 @@
    :rdfs/subClassOf  :schema/StructuredValue})
 
 (def WarrantyScope
-  "A range of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#Labor-BringIn</li> <li>http://purl.org/goodrelations/v1#PartsAndLabor-BringIn</li> <li>http://purl.org/goodrelations/v1#PartsAndLabor-PickUp</li> </ul> "
+  "A range of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.<br/><br/>  Commonly used values:<br/><br/>  <ul> <li>http://purl.org/goodrelations/v1#Labor-BringIn</li> <li>http://purl.org/goodrelations/v1#PartsAndLabor-BringIn</li> <li>http://purl.org/goodrelations/v1#PartsAndLabor-PickUp</li> </ul>"
   {:rdf/about        :schema/WarrantyScope,
    :rdf/type         :owl/Class,
    :rdfs/isDefinedBy :schema/WarrantyScope,
@@ -7372,7 +7373,7 @@
                       :rdf/type    :owl/Class}})
 
 (def accelerationTime
-  "The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>  Typical unit code(s): SEC for seconds<br/><br/>  <ul> <li>Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use \"SEC\" for seconds and indicate the velocities in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a>, or use <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> with a <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> of 0..60 mph or 0..100 km/h to specify the reference speeds.</li> </ul> "
+  "The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>  Typical unit code(s): SEC for seconds<br/><br/>  <ul> <li>Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use \"SEC\" for seconds and indicate the velocities in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a>, or use <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> with a <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> of 0..60 mph or 0..100 km/h to specify the reference speeds.</li> </ul>"
   {:rdf/about        :schema/accelerationTime,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
@@ -13654,7 +13655,7 @@
                       :rdf/type    :owl/Class}})
 
 (def enginePower
-  "The power of the vehicle's engine.     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>  <ul> <li>Note 1: There are many different ways of measuring an engine's power. For an overview, see  <a href=\"http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes\">http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes</a>.</li> <li>Note 2: You can link to information about how the given value has been determined using the <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> property.</li> <li>Note 3: You can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul> "
+  "The power of the vehicle's engine.     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>  <ul> <li>Note 1: There are many different ways of measuring an engine's power. For an overview, see  <a href=\"http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes\">http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes</a>.</li> <li>Note 2: You can link to information about how the given value has been determined using the <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> property.</li> <li>Note 3: You can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul>"
   {:rdf/about        :schema/enginePower,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EngineSpecification],
@@ -14623,7 +14624,7 @@
                       :rdf/type    :owl/Class}})
 
 (def fuelConsumption
-  "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>  <ul> <li>Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use <a class=\"localLink\" href=\"https://schema.org/unitText\">unitText</a> to indicate the unit of measurement, e.g. L/100 km.</li> <li>Note 2: There are two ways of indicating the fuel consumption, <a class=\"localLink\" href=\"https://schema.org/fuelConsumption\">fuelConsumption</a> (e.g. 8 liters per 100 km) and <a class=\"localLink\" href=\"https://schema.org/fuelEfficiency\">fuelEfficiency</a> (e.g. 30 miles per gallon). They are reciprocal.</li> <li>Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> to link the value for the fuel consumption to another value.</li> </ul> "
+  "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>  <ul> <li>Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use <a class=\"localLink\" href=\"https://schema.org/unitText\">unitText</a> to indicate the unit of measurement, e.g. L/100 km.</li> <li>Note 2: There are two ways of indicating the fuel consumption, <a class=\"localLink\" href=\"https://schema.org/fuelConsumption\">fuelConsumption</a> (e.g. 8 liters per 100 km) and <a class=\"localLink\" href=\"https://schema.org/fuelEfficiency\">fuelEfficiency</a> (e.g. 30 miles per gallon). They are reciprocal.</li> <li>Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> to link the value for the fuel consumption to another value.</li> </ul>"
   {:rdf/about        :schema/fuelConsumption,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
@@ -14637,7 +14638,7 @@
                       :rdf/type    :owl/Class}})
 
 (def fuelEfficiency
-  "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>  <ul> <li>Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use <a class=\"localLink\" href=\"https://schema.org/unitText\">unitText</a> to indicate the unit of measurement, e.g. mpg or km/L.</li> <li>Note 2: There are two ways of indicating the fuel consumption, <a class=\"localLink\" href=\"https://schema.org/fuelConsumption\">fuelConsumption</a> (e.g. 8 liters per 100 km) and <a class=\"localLink\" href=\"https://schema.org/fuelEfficiency\">fuelEfficiency</a> (e.g. 30 miles per gallon). They are reciprocal.</li> <li>Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> to link the value for the fuel economy to another value.</li> </ul> "
+  "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>  <ul> <li>Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use <a class=\"localLink\" href=\"https://schema.org/unitText\">unitText</a> to indicate the unit of measurement, e.g. mpg or km/L.</li> <li>Note 2: There are two ways of indicating the fuel consumption, <a class=\"localLink\" href=\"https://schema.org/fuelConsumption\">fuelConsumption</a> (e.g. 8 liters per 100 km) and <a class=\"localLink\" href=\"https://schema.org/fuelEfficiency\">fuelEfficiency</a> (e.g. 30 miles per gallon). They are reciprocal.</li> <li>Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> to link the value for the fuel economy to another value.</li> </ul>"
   {:rdf/about        :schema/fuelEfficiency,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
@@ -15964,7 +15965,7 @@
                       :rdf/type    :owl/Class}})
 
 (def highPrice
-  "The highest price of all offers available.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul> "
+  "The highest price of all offers available.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul>"
   {:rdf/about        :schema/highPrice,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/AggregateOffer],
@@ -18279,7 +18280,7 @@
    :rdfs/subPropertyOf :schema/participant})
 
 (def lowPrice
-  "The lowest price of all offers available.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul> "
+  "The lowest price of all offers available.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul>"
   {:rdf/about        :schema/lowPrice,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/AggregateOffer],
@@ -20040,7 +20041,7 @@
                       :rdf/type    :owl/Class}})
 
 (def openingHours
-  "The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>  <ul> <li>Days are specified using the following two-letter combinations: <code>Mo</code>, <code>Tu</code>, <code>We</code>, <code>Th</code>, <code>Fr</code>, <code>Sa</code>, <code>Su</code>.</li> <li>Times are specified using 24:00 format. For example, 3pm is specified as <code>15:00</code>, 10am as <code>10:00</code>. </li> <li>Here is an example: <code>&lt;time itemprop=\"openingHours\" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.</li> <li>If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.</li> </ul> "
+  "The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>  <ul> <li>Days are specified using the following two-letter combinations: <code>Mo</code>, <code>Tu</code>, <code>We</code>, <code>Th</code>, <code>Fr</code>, <code>Sa</code>, <code>Su</code>.</li> <li>Times are specified using 24:00 format. For example, 3pm is specified as <code>15:00</code>, 10am as <code>10:00</code>. </li> <li>Here is an example: <code>&lt;time itemprop=\"openingHours\" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.</li> <li>If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.</li> </ul>"
   {:rdf/about        :schema/openingHours,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LocalBusiness
@@ -20701,7 +20702,7 @@
                       :rdf/type    :owl/Class}})
 
 (def payload
-  "The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of <a class=\"localLink\" href=\"https://schema.org/weight\">weight</a> and <a class=\"localLink\" href=\"https://schema.org/payload\">payload</a></li> <li>Note 2: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 3: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a>.</li> <li>Note 4: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul> "
+  "The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of <a class=\"localLink\" href=\"https://schema.org/weight\">weight</a> and <a class=\"localLink\" href=\"https://schema.org/payload\">payload</a></li> <li>Note 2: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 3: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a>.</li> <li>Note 4: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul>"
   {:rdf/about        :schema/payload,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
@@ -21445,7 +21446,7 @@
                       :rdf/type    :owl/Class}})
 
 (def price
-  "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use the <a class=\"localLink\" href=\"https://schema.org/priceCurrency\">priceCurrency</a> property (with standard formats: <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217 currency format</a>, e.g. \"USD\"; <a href=\"https://en.wikipedia.org/wiki/List_of_cryptocurrencies\">Ticker symbol</a> for cryptocurrencies, e.g. \"BTC\"; well known names for <a href=\"https://en.wikipedia.org/wiki/Local_exchange_trading_system\">Local Exchange Trading Systems</a> (LETS) and other currency types, e.g. \"Ithaca HOUR\") instead of including <a href=\"http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign\">ambiguous symbols</a> such as '$' in the value.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> <li>Note that both <a href=\"http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute\">RDFa</a> and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values alongside more human-friendly formatting.</li> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> </ul> "
+  "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use the <a class=\"localLink\" href=\"https://schema.org/priceCurrency\">priceCurrency</a> property (with standard formats: <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217 currency format</a>, e.g. \"USD\"; <a href=\"https://en.wikipedia.org/wiki/List_of_cryptocurrencies\">Ticker symbol</a> for cryptocurrencies, e.g. \"BTC\"; well known names for <a href=\"https://en.wikipedia.org/wiki/Local_exchange_trading_system\">Local Exchange Trading Systems</a> (LETS) and other currency types, e.g. \"Ithaca HOUR\") instead of including <a href=\"http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign\">ambiguous symbols</a> such as '$' in the value.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> <li>Note that both <a href=\"http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute\">RDFa</a> and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values alongside more human-friendly formatting.</li> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> </ul>"
   {:rdf/about        :schema/price,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PriceSpecification
@@ -22238,7 +22239,7 @@
                       :rdf/type    :owl/Class}})
 
 (def ratingValue
-  "The rating for the content.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul> "
+  "The rating for the content.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul>"
   {:rdf/about        :schema/ratingValue,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Rating],
@@ -23394,7 +23395,7 @@
                       :rdf/type    :owl/Class}})
 
 (def roofLoad
-  "The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 2: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a></li> <li>Note 3: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul> "
+  "The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 2: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a></li> <li>Note 3: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul>"
   {:rdf/about        :schema/roofLoad,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BusOrCoach :schema/Car],
@@ -25857,7 +25858,7 @@
    :rdfs/subPropertyOf :schema/hasPart})
 
 (def tongueWeight
-  "The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 2: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a>.</li> <li>Note 3: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul> "
+  "The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 2: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a>.</li> <li>Note 3: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul>"
   {:rdf/about        :schema/tongueWeight,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
@@ -25886,7 +25887,7 @@
    :rdfs/subPropertyOf :schema/instrument})
 
 (def torque
-  "The torque (turning force) of the vehicle's engine.<br/><br/>  Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>  <ul> <li>Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> property.</li> <li>Note 2: You can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul> "
+  "The torque (turning force) of the vehicle's engine.<br/><br/>  Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>  <ul> <li>Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> property.</li> <li>Note 2: You can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul>"
   {:rdf/about        :schema/torque,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EngineSpecification],
@@ -25926,7 +25927,7 @@
                       :rdf/type    :owl/Class}})
 
 (def totalPrice
-  "The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul> "
+  "The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>  Usage guidelines:<br/><br/>  <ul> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul>"
   {:rdf/about        :schema/totalPrice,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Reservation :schema/Ticket],
@@ -26585,7 +26586,7 @@
                       :rdf/type    :owl/Class}})
 
 (def value
-  "The value of the quantitative value or property value node.<br/><br/>  <ul> <li>For <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> and <a class=\"localLink\" href=\"https://schema.org/MonetaryAmount\">MonetaryAmount</a>, the recommended type for values is 'Number'.</li> <li>For <a class=\"localLink\" href=\"https://schema.org/PropertyValue\">PropertyValue</a>, it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.</li> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul> "
+  "The value of the quantitative value or property value node.<br/><br/>  <ul> <li>For <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> and <a class=\"localLink\" href=\"https://schema.org/MonetaryAmount\">MonetaryAmount</a>, the recommended type for values is 'Number'.</li> <li>For <a class=\"localLink\" href=\"https://schema.org/PropertyValue\">PropertyValue</a>, it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.</li> <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.</li> <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li> </ul>"
   {:rdf/about        :schema/value,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PropertyValue
@@ -27074,7 +27075,7 @@
                       :rdf/type    :owl/Class}})
 
 (def weightTotal
-  "The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 2: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a>.</li> <li>Note 3: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul> "
+  "The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>  Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>  <ul> <li>Note 1: You can indicate additional information in the <a class=\"localLink\" href=\"https://schema.org/name\">name</a> of the <a class=\"localLink\" href=\"https://schema.org/QuantitativeValue\">QuantitativeValue</a> node.</li> <li>Note 2: You may also link to a <a class=\"localLink\" href=\"https://schema.org/QualitativeValue\">QualitativeValue</a> node that provides additional information using <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a>.</li> <li>Note 3: Note that you can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges.</li> </ul>"
   {:rdf/about        :schema/weightTotal,
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
