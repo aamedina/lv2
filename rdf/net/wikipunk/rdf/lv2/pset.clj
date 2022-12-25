@@ -31,6 +31,7 @@
   "A bank of presets."
   {:rdf/about       :pset/Bank,
    :rdf/type        :rdfs/Class,
+   :rdfs/comment    "A bank of presets.",
    :rdfs/label      "Bank",
    :rdfs/subClassOf {:owl/minCardinality 1,
                      :owl/onProperty :rdfs/label,
@@ -42,6 +43,7 @@
   "The structure of a Preset deliberately mirrors that of a plugin, so existing predicates can be used to describe any data associated with the preset.  For example:      :::turtle     @prefix eg: <http://example.org/> .      eg:mypreset         a pset:Preset ;         rdfs:label \"One louder\" ;         lv2:appliesTo eg:myplugin ;         lv2:port [             lv2:symbol \"volume1\" ;             pset:value 11.0         ] , [             lv2:symbol \"volume2\" ;             pset:value 11.0         ] .  A Preset SHOULD have at least one lv2:appliesTo property.  Each Port on a Preset MUST have at least a lv2:symbol property and a pset:value property.  Hosts SHOULD save user presets to a bundle in the user-local LV2 directory (for example `~/.lv2`) with a name like `<Plugin_Name>_<Preset_Name>.preset.lv2` (for example `LV2_Amp_At_Eleven.preset.lv2`), where names are transformed to be valid LV2 symbols for maximum compatibility."
   {:rdf/about       :pset/Preset,
    :rdf/type        :rdfs/Class,
+   :rdfs/comment    "A preset for an LV2 plugin.",
    :rdfs/label      "Preset",
    :rdfs/subClassOf [{:owl/minCardinality 1,
                       :owl/onProperty :rdfs/label,
@@ -52,23 +54,26 @@
 
 (def bank
   "The bank this preset belongs to."
-  {:rdf/about   :pset/bank,
-   :rdf/type    [:owl/ObjectProperty :rdf/Property],
-   :rdfs/domain :pset/Preset,
-   :rdfs/label  "bank",
-   :rdfs/range  :pset/Bank})
+  {:rdf/about    :pset/bank,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The bank this preset belongs to.",
+   :rdfs/domain  :pset/Preset,
+   :rdfs/label   "bank",
+   :rdfs/range   :pset/Bank})
 
 (def preset
   "Specifies the preset currently applied to a plugin instance.  This property may be useful for saving state, or notifying a plugin instance at run-time about a preset change."
-  {:rdf/about   :pset/preset,
-   :rdf/type    [:owl/ObjectProperty :rdf/Property],
-   :rdfs/domain :lv2/PluginBase,
-   :rdfs/label  "preset",
-   :rdfs/range  :pset/Preset})
+  {:rdf/about    :pset/preset,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The preset currently applied to a plugin instance.",
+   :rdfs/domain  :lv2/PluginBase,
+   :rdfs/label   "preset",
+   :rdfs/range   :pset/Preset})
 
 (def value
   "This property is used in a similar way to lv2:default."
-  {:rdf/about   :pset/value,
-   :rdf/type    [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/domain :lv2/PortBase,
-   :rdfs/label  "value"})
+  {:rdf/about    :pset/value,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The value of a port in a preset.",
+   :rdfs/domain  :lv2/PortBase,
+   :rdfs/label   "value"})

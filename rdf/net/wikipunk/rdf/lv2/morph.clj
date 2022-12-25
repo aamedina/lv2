@@ -32,6 +32,7 @@
   "Ports of this type MUST have another type which defines the default buffer format (for example, lv2:ControlPort) but may dynamically change types based on the configured types of any morph:MorphPort ports on the same plugin instance.  The type of a port may only change in response to a host call to LV2_Options_Interface::set().  Whenever any port type on the instance changes, the host MUST check the type of all morph:AutoMorphPort ports with LV2_Options_Interface::get() before calling run() again, since they may have changed.  If the type of any port is zero, it means the current configuration is invalid and the plugin may not be run (unless that port is lv2:connectionOptional and connected to NULL).  This is mainly useful for outputs whose type depends on the type of corresponding inputs."
   {:rdf/about       :morph/AutoMorphPort,
    :rdf/type        [:owl/Class :rdfs/Class],
+   :rdfs/comment    "A port that can change its type based on that of another.",
    :rdfs/label      "Auto Morph Port",
    :rdfs/subClassOf :lv2/Port})
 
@@ -39,19 +40,22 @@
   "Ports of this type MUST have another type which defines the default buffer format (for example lv2:ControlPort) but can be dynamically changed to a different type in hosts that support opts:interface.  The host may change the type of a MorphPort by setting its morph:currentType with LV2_Options_Interface::set().  If the plugin has any morph:AutoMorphPort ports, the host MUST check their types after changing any port type since they may have changed."
   {:rdf/about       :morph/MorphPort,
    :rdf/type        [:owl/Class :rdfs/Class],
+   :rdfs/comment    "A port which can be switched to another type.",
    :rdfs/label      "Morph Port",
    :rdfs/subClassOf :lv2/Port})
 
 (def currentType
   "The currently active type of the port.  This is for dynamic use as an option and SHOULD NOT be listed in the static plugin data."
-  {:rdf/about   :morph/currentType,
-   :rdf/type    [:owl/ObjectProperty :opts/Option :rdf/Property],
-   :rdfs/domain :morph/MorphPort,
-   :rdfs/label  "current type"})
+  {:rdf/about    :morph/currentType,
+   :rdf/type     [:owl/ObjectProperty :opts/Option :rdf/Property],
+   :rdfs/comment "The currently active type of the port.",
+   :rdfs/domain  :morph/MorphPort,
+   :rdfs/label   "current type"})
 
 (def supportsType
   "Indicates that a port supports being switched to a certain type.  A MorphPort MUST list each type it supports being switched to in the plugin data using this property."
-  {:rdf/about   :morph/supportsType,
-   :rdf/type    [:owl/ObjectProperty :rdf/Property],
-   :rdfs/domain :morph/MorphPort,
-   :rdfs/label  "supports type"})
+  {:rdf/about    :morph/supportsType,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "A type that a port supports being switched to.",
+   :rdfs/domain  :morph/MorphPort,
+   :rdfs/label   "supports type"})

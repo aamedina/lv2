@@ -16,9 +16,10 @@
 
 (def anySimpleType
   "The base class of any primitive XSD dataype."
-  {:rdf/about  :xsd/anySimpleType,
-   :rdf/type   :rdfs/Datatype,
-   :rdfs/label "any simple type"})
+  {:rdf/about    :xsd/anySimpleType,
+   :rdf/type     :rdfs/Datatype,
+   :rdfs/comment "The base class of any primitive XSD dataype.",
+   :rdfs/label   "any simple type"})
 
 (def anyURI
   {:owl/onDatatype :xsd/anySimpleType,
@@ -34,6 +35,7 @@
      "(([A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/] *)*(([A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/] *[A-Za-z0-9+/])|([A-Za-z0-9+/] *[A-Za-z0-9+/] *[AEIMQUYcgkosw048] *=)|([A-Za-z0-9+/] *[AQgw] *= *=)))?"}],
    :rdf/about :xsd/base64Binary,
    :rdf/type :rdfs/Datatype,
+   :rdfs/comment "Base64-encoded arbitrary binary data.",
    :rdfs/label "base64 binary"})
 
 (def boolean
@@ -76,6 +78,8 @@
      "-?INF|NaN|[+-]?(([0-9]+[.]?[0-9]*)|([0-9]*[.]?[0-9]+))([eE][-+]?[0-9]+)?"}],
    :rdf/about :xsd/decimal,
    :rdf/type :rdfs/Datatype,
+   :rdfs/comment
+   "A subset of the real numbers, which can be represented by decimal numerals.",
    :rdfs/label "decimal"})
 
 (def double
@@ -86,6 +90,7 @@
      "-?INF|NaN|[+-]?(([0-9]+[.]?[0-9]*)|([0-9]*[.]?[0-9]+))([eE][-+]?[0-9]+)?"}],
    :rdf/about :xsd/double,
    :rdf/type :rdfs/Datatype,
+   :rdfs/comment "IEEE double-precision 64-bit floating point.",
    :rdfs/label "double"})
 
 (def duration
@@ -107,12 +112,15 @@
     {:xsd/whiteSpace "collapse"}],
    :rdf/about :xsd/float,
    :rdf/type :rdfs/Datatype,
+   :rdfs/comment "IEEE single-precision 32-bit floating point.",
    :rdfs/label "float"})
 
 (def fractionDigits
   "The total number of digits to the right of the decimal point required to represent a value."
-  {:rdf/about  :xsd/fractionDigits,
-   :rdf/type   [:owl/DatatypeProperty :rdf/Property],
+  {:rdf/about :xsd/fractionDigits,
+   :rdf/type [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment
+   "The total number of digits to the right of the decimal point required to represent a value.",
    :rdfs/label "fraction digits",
    :rdfs/range :xsd/nonNegativeInteger})
 
@@ -122,6 +130,7 @@
    :owl/withRestrictions [{:xsd/pattern "([0-9A-Fa-f][0-9A-Fa-f])*"}],
    :rdf/about            :xsd/hexBinary,
    :rdf/type             :rdfs/Datatype,
+   :rdfs/comment         "Hex-encoded arbitrary binary data.",
    :rdfs/label           "hex binary"})
 
 (def int
@@ -158,27 +167,31 @@
 
 (def maxExclusive
   "The exclusive upper bound of an ordered datatype."
-  {:rdf/about  :xsd/maxExclusive,
-   :rdf/type   [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/label "max exclusive"})
+  {:rdf/about    :xsd/maxExclusive,
+   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The exclusive upper bound of an ordered datatype.",
+   :rdfs/label   "max exclusive"})
 
 (def maxInclusive
   "The inclusive upper bound of an ordered datatype."
-  {:rdf/about  :xsd/maxInclusive,
-   :rdf/type   [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/label "max inclusive"})
+  {:rdf/about    :xsd/maxInclusive,
+   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The inclusive upper bound of an ordered datatype.",
+   :rdfs/label   "max inclusive"})
 
 (def minExclusive
   "The exclusive lower bound of an ordered datatype."
-  {:rdf/about  :xsd/minExclusive,
-   :rdf/type   [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/label "min exclusive"})
+  {:rdf/about    :xsd/minExclusive,
+   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The exclusive lower bound of an ordered datatype.",
+   :rdfs/label   "min exclusive"})
 
 (def minInclusive
   "The inclusive lower bound of an ordered datatype."
-  {:rdf/about  :xsd/minInclusive,
-   :rdf/type   [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/label "min inclusive"})
+  {:rdf/about    :xsd/minInclusive,
+   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The inclusive lower bound of an ordered datatype.",
+   :rdfs/label   "min inclusive"})
 
 (def negativeInteger
   {:owl/onDatatype       :xsd/nonPositiveInteger,
@@ -204,15 +217,18 @@
 (def normalizedString
   "The set of strings that do not contain the carriage return (#xD), line feed (#xA) nor tab (#x9) characters."
   {:owl/onDatatype :xsd/string,
-   :rdf/about      :xsd/normalizedString,
-   :rdf/type       :rdfs/Datatype,
-   :rdfs/label     "normalized string"})
+   :rdf/about :xsd/normalizedString,
+   :rdf/type :rdfs/Datatype,
+   :rdfs/comment
+   "The set of strings that do not contain the carriage return (#xD), line feed (#xA) nor tab (#x9) characters.",
+   :rdfs/label "normalized string"})
 
 (def pattern
   "A regular expression that matches complete valid literals."
-  {:rdf/about  :xsd/pattern,
-   :rdf/type   [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/label "pattern"})
+  {:rdf/about    :xsd/pattern,
+   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "A regular expression that matches complete valid literals.",
+   :rdfs/label   "pattern"})
 
 (def positiveInteger
   {:owl/onDatatype       :xsd/nonNegativeInteger,
@@ -234,6 +250,7 @@
   {:owl/onDatatype :xsd/anySimpleType,
    :rdf/about      :xsd/string,
    :rdf/type       :rdfs/Datatype,
+   :rdfs/comment   "A character string.",
    :rdfs/label     "string"})
 
 (def time
@@ -248,9 +265,11 @@
 (def token
   "The set of strings that do not contain the carriage return (#xD), line feed (#xA) nor tab (#x9) characters, that have no leading or trailing spaces (#x20) and that have no internal sequences of two or more spaces."
   {:owl/onDatatype :xsd/normalizedString,
-   :rdf/about      :xsd/token,
-   :rdf/type       :rdfs/Datatype,
-   :rdfs/label     "token"})
+   :rdf/about :xsd/token,
+   :rdf/type :rdfs/Datatype,
+   :rdfs/comment
+   "The set of strings that do not contain the carriage return (#xD), line feed (#xA) nor tab (#x9) characters, that have no leading or trailing spaces (#x20) and that have no internal sequences of two or more spaces.",
+   :rdfs/label "token"})
 
 (def unsignedByte
   {:owl/onDatatype       :xsd/unsignedShort,
@@ -282,8 +301,10 @@
 
 (def whiteSpace
   "A string that describes whitespace normalization for a string type."
-  {:rdf/about  :xsd/whiteSpace,
-   :rdf/type   [:owl/DatatypeProperty :rdf/Property],
+  {:rdf/about :xsd/whiteSpace,
+   :rdf/type [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment
+   "A string that describes whitespace normalization for a string type.",
    :rdfs/label "white space",
    :rdfs/range {:owl/onDatatype :xsd/string,
                 :owl/withRestrictions [{:xsd/pattern

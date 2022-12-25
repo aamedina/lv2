@@ -225,6 +225,7 @@
                                       
                                       :else sym)
                                 docstring (or (some-> (:lv2/documentation v) :rdf/literal)
+                                              (:dcterms/description v)
                                               (:rdfs/comment v))
                                 docstring (if (coll? docstring)
                                             (first (filter string? docstring))
@@ -233,7 +234,7 @@
                                             (str/trim (str/replace docstring #"\s" " ")))
                                 v         (assoc v :rdf/about k)]
                             (if docstring
-                              (list 'def sym docstring (dissoc v :rdfs/comment :lv2/documentation))
+                              (list 'def sym docstring (dissoc v :lv2/documentation :dcterms/description))
                               (list 'def sym v)))))
                    (map (fn [form] (walk/postwalk (fn [form]
                                                     (if (bytes? form)

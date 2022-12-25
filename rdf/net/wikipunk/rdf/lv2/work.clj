@@ -28,12 +28,14 @@
 
 (def interface
   "The work interface provided by a plugin, LV2_Worker_Interface.      :::turtle      @prefix work: <http://lv2plug.in/ns/ext/worker#> .      <plugin>         a lv2:Plugin ;         lv2:extensionData work:interface ."
-  {:rdf/about  :work/interface,
-   :rdf/type   :lv2/ExtensionData,
-   :rdfs/label "work interface"})
+  {:rdf/about    :work/interface,
+   :rdf/type     :lv2/ExtensionData,
+   :rdfs/comment "The work interface provided by a plugin.",
+   :rdfs/label   "work interface"})
 
 (def schedule
   "The work scheduling feature provided by a host, LV2_Worker_Schedule.  If the host passes this feature to LV2_Descriptor::instantiate, the plugin MAY use it to schedule work in the audio thread, and MUST NOT call it in any other context.  Hosts MAY pass this feature to other functions as well, in which case the plugin MAY use it to schedule work in the calling context.  The plugin MUST NOT assume any relationship between different schedule features."
-  {:rdf/about  :work/schedule,
-   :rdf/type   :lv2/Feature,
-   :rdfs/label "work schedule"})
+  {:rdf/about    :work/schedule,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "The work scheduling feature provided by a host.",
+   :rdfs/label   "work schedule"})

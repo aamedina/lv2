@@ -32,6 +32,7 @@
   "There MUST NOT be any instances of dman:DynManifest in the generated manifest.  All relative URIs in the generated data MUST be relative to the base path that would be used to parse a normal LV2 manifest (the bundle path)."
   {:rdf/about       :dman/DynManifest,
    :rdf/type        :rdfs/Class,
+   :rdfs/comment    "Dynamic manifest for an LV2 binary.",
    :rdfs/label      "Dynamic Manifest",
    :rdfs/subClassOf {:owl/minCardinality 1,
                      :owl/onProperty :lv2/binary,

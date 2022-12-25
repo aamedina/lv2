@@ -27,14 +27,16 @@
 
 (def Entry
   "Subclasses of this are passed as the `type` parameter to LV2_Log_Log methods to describe the nature of the log entry."
-  {:rdf/about  :log/Entry,
-   :rdf/type   :rdfs/Class,
-   :rdfs/label "Log Entry"})
+  {:rdf/about    :log/Entry,
+   :rdf/type     :rdfs/Class,
+   :rdfs/comment "A log entry.",
+   :rdfs/label   "Log Entry"})
 
 (def ErrorClass
   "An error should only be posted when a serious unexpected error occurs, and should be actively shown to the user by the host."
   {:rdf/about       :log/Error,
    :rdf/type        :rdfs/Class,
+   :rdfs/comment    "An error message.",
    :rdfs/label      "Error",
    :rdfs/subClassOf :log/Entry})
 
@@ -42,6 +44,7 @@
   "A note records some useful piece of information, but may be ignored.  The host should provide passive access to note entries to the user."
   {:rdf/about       :log/Note,
    :rdf/type        :rdfs/Class,
+   :rdfs/comment    "An informative message.",
    :rdfs/label      "Note",
    :rdfs/subClassOf :log/Entry})
 
@@ -49,6 +52,7 @@
   "A trace should not be displayed during normal operation, but the host may implement an option to display them for debugging purposes.  This entry type is special in that one may be posted in a real-time thread.  It is assumed that if debug tracing is enabled, real-time performance is not a concern.  However, the host MUST guarantee that posting a trace _is_ real-time safe if debug tracing is not enabled (for example, by simply ignoring the call as early as possible)."
   {:rdf/about       :log/Trace,
    :rdf/type        :rdfs/Class,
+   :rdfs/comment    "A debugging trace message.",
    :rdfs/label      "Trace",
    :rdfs/subClassOf :log/Entry})
 
@@ -56,11 +60,13 @@
   "A warning should be posted when an unexpected, but non-critical, error occurs. The host should provide passive access to warnings entries to the user, but may also choose to actively show them."
   {:rdf/about       :log/Warning,
    :rdf/type        :rdfs/Class,
+   :rdfs/comment    "A warning message.",
    :rdfs/label      "Warning",
    :rdfs/subClassOf :log/Entry})
 
 (def log
   "A feature which plugins may use to log messages.  To support this feature, the host must pass an LV2_Feature to LV2_Descriptor::instantiate() with URI LV2_LOG__log and data pointed to an instance of LV2_Log_Log."
-  {:rdf/about  :log/log,
-   :rdf/type   :lv2/Feature,
-   :rdfs/label "log"})
+  {:rdf/about    :log/log,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "Logging feature.",
+   :rdfs/label   "log"})

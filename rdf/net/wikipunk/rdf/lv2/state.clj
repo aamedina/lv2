@@ -30,55 +30,67 @@
 
 (def State
   "This type should be used wherever instance state is described.  The properties of a resource with this type correspond directly to the properties of the state dictionary (except the property that states it has this type)."
-  {:rdf/about  :state/State,
-   :rdf/type   :rdfs/Class,
-   :rdfs/label "State"})
+  {:rdf/about    :state/State,
+   :rdf/type     :rdfs/Class,
+   :rdfs/comment "LV2 plugin state.",
+   :rdfs/label   "State"})
 
 (def StateChanged
   "A notification that the internal state of the plugin has been changed in a way that the host can not otherwise know about.  This is a one-way notification, intended to be used as the type of an [Object](atom.html#Object) sent from plugins when necessary.  Plugins SHOULD emit such an event whenever a change has occurred that would result in a different state being saved, but not when the host explicitly makes a change which it knows is likely to have that effect, such as changing a parameter."
-  {:rdf/about  :state/StateChanged,
-   :rdf/type   :rdfs/Class,
+  {:rdf/about :state/StateChanged,
+   :rdf/type :rdfs/Class,
+   :rdfs/comment
+   "A notification that the internal state of the plugin has changed.",
    :rdfs/label "State Changed"})
 
 (def freePath
   "This feature provides a function that can be used by plugins to free paths that were allocated by the host via other state features (state:mapPath and state:makePath)."
-  {:rdf/about  :state/freePath,
-   :rdf/type   :lv2/Feature,
-   :rdfs/label "free path"})
+  {:rdf/about    :state/freePath,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "A feature for freeing paths allocated by the host.",
+   :rdfs/label   "free path"})
 
 (def interface
   "A structure (LV2_State_Interface) which contains functions to be called by the host to save and restore state.  In order to support this extension, the plugin must return a valid LV2_State_Interface from LV2_Descriptor::extension_data() when it is called with URI LV2_STATE__interface.  The plugin data file should describe this like so:      :::turtle     @prefix state: <http://lv2plug.in/ns/ext/state#> .      <plugin>         a lv2:Plugin ;         lv2:extensionData state:interface ."
-  {:rdf/about  :state/interface,
-   :rdf/type   :lv2/ExtensionData,
-   :rdfs/label "interface"})
+  {:rdf/about    :state/interface,
+   :rdf/type     :lv2/ExtensionData,
+   :rdfs/comment "A plugin interface for saving and restoring state.",
+   :rdfs/label   "interface"})
 
 (def loadDefaultState
   "This feature indicates that the plugin has default state listed with the state:state property which should be loaded by the host before running the plugin.  Requiring this feature allows plugins to implement a single state loading mechanism which works for initialisation as well as restoration, without having to hard-code default state.  To support this feature, the host MUST restore the default state after instantiating the plugin but before calling run()."
-  {:rdf/about  :state/loadDefaultState,
-   :rdf/type   :lv2/Feature,
-   :rdfs/label "load default state"})
+  {:rdf/about    :state/loadDefaultState,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "A feature indicating that the plugin has default state.",
+   :rdfs/label   "load default state"})
 
 (def makePath
   "This feature allows plugins to create new files and/or directories.  To support this feature the host passes an LV2_Feature with URI LV2_STATE__makePath and data pointed to an LV2_State_Make_Path to the plugin.  The host may make this feature available only during save by passing it to LV2_State_Interface::save(), or available any time by passing it to LV2_Descriptor::instantiate().  If passed to LV2_State_Interface::save(), the feature MUST NOT be used beyond the scope of that call.  The plugin is guaranteed a hierarchical namespace unique to that plugin instance, and may expect the returned path to have the requested path as a suffix.  There is one such namespace, even if the feature is passed to both LV2_Descriptor::instantiate() and LV2_State_Interface::save().  Beyond this, the plugin MUST NOT make any assumptions about the returned paths.  Like any other paths, the plugin MUST map these paths using state:mapPath before storing them in state.  The plugin MUST NOT assume these paths will be available across a save/restore otherwise, that is, only mapped paths saved to state are persistent, any other created paths are temporary.  For example, a plugin may create a file in a subdirectory like so:      :::c     char* save_myfile(LV2_State_Make_Path* make_path)     {         char* path   = make_path->path(make_path->handle, \"foo/bar/myfile.txt\");         FILE* myfile = fopen(path, 'w');         fprintf(myfile, \"I am some data\");         fclose(myfile);         return path;     }"
-  {:rdf/about  :state/makePath,
-   :rdf/type   :lv2/Feature,
-   :rdfs/label "make path"})
+  {:rdf/about    :state/makePath,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "A feature for creating new files and directories.",
+   :rdfs/label   "make path"})
 
 (def mapPath
   "This feature maps absolute paths to/from <q>abstract paths</q> which are stored in state.  To support this feature a host must pass an LV2_Feature with URI LV2_STATE__mapPath and data pointed to an LV2_State_Map_Path to the plugin's LV2_State_Interface methods.  The plugin MUST map _all_ paths stored in its state (including those inside any files).  This is necessary so that hosts can handle file system references correctly, for example to share common files, or bundle state for distribution or archival.  For example, a plugin may write a path to a state file like so:      :::c     void write_path(LV2_State_Map_Path* map_path, FILE* myfile, const char* path)     {         char* abstract_path = map_path->abstract_path(map_path->handle, path);         fprintf(myfile, \"%s\", abstract_path);         free(abstract_path);     }  Then, later reload the path like so:      :::c     char* read_path(LV2_State_Map_Path* map_path, FILE* myfile)     {         /* Obviously this is not production quality code! */         char abstract_path[1024];         fscanf(myfile, \"%s\", abstract_path);         return map_path->absolute_path(map_path->handle, abstract_path);     }"
-  {:rdf/about  :state/mapPath,
-   :rdf/type   :lv2/Feature,
+  {:rdf/about :state/mapPath,
+   :rdf/type :lv2/Feature,
+   :rdfs/comment
+   "A feature for mapping between absolute and abstract file paths.",
    :rdfs/label "map path"})
 
 (def state
   "This property may be used anywhere a state needs to be described, for example:      :::turtle     @prefix eg: <http://example.org/> .      <plugin-instance>         state:state [             eg:somekey \"some value\" ;             eg:someotherkey \"some other value\" ;             eg:favourite-number 2         ] ."
-  {:rdf/about  :state/state,
-   :rdf/type   [:owl/ObjectProperty :rdf/Property],
-   :rdfs/label "state",
-   :rdfs/range :state/State})
+  {:rdf/about    :state/state,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The state of an LV2 plugin instance.",
+   :rdfs/label   "state",
+   :rdfs/range   :state/State})
 
 (def threadSafeRestore
   "If a plugin supports this feature, its LV2_State_Interface::restore method is thread-safe and may be called concurrently with audio class functions.  To support this feature, the host MUST pass a [work:schedule](worker.html#schedule) feature to the restore method, which will be used to complete the state restoration.  The usual mechanics of the worker apply: the host will call the plugin's work method, which emits a response which is later applied in the audio thread.  The host is not required to block audio processing while restore() and work() load the state, so this feature allows state to be restored without dropouts."
-  {:rdf/about  :state/threadSafeRestore,
-   :rdf/type   :lv2/Feature,
+  {:rdf/about :state/threadSafeRestore,
+   :rdf/type :lv2/Feature,
+   :rdfs/comment
+   "A feature indicating support for thread-safe state restoration.",
    :rdfs/label "thread-safe restore"})

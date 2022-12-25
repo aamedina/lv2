@@ -29,12 +29,14 @@
 
 (def map
   "To support this feature, the host must pass an LV2_Feature to LV2_Descriptor::instantiate() with URI LV2_URID__map and data pointed to an instance of LV2_URID_Map."
-  {:rdf/about  :urid/map,
-   :rdf/type   :lv2/Feature,
-   :rdfs/label "map"})
+  {:rdf/about    :urid/map,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "A feature to map URI strings to integer URIDs.",
+   :rdfs/label   "map"})
 
 (def unmap
   "To support this feature, the host must pass an LV2_Feature to LV2_Descriptor::instantiate() with URI LV2_URID__unmap and data pointed to an instance of LV2_URID_Unmap."
-  {:rdf/about  :urid/unmap,
-   :rdf/type   :lv2/Feature,
-   :rdfs/label "unmap"})
+  {:rdf/about    :urid/unmap,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "A feature to unmap URIDs back to strings.",
+   :rdfs/label   "unmap"})
