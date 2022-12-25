@@ -2,8 +2,8 @@
   "Dynamically sized LV2 port buffers."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/resize-port.lv2/resize-port.ttl",
-   :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/resize-port"},
+   :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/resize-port"},
    :rdf/ns-prefix-map {"lv2"  "http://lv2plug.in/ns/lv2core#",
                        "owl"  "http://www.w3.org/2002/07/owl#",
                        "rdf"  "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -12,8 +12,8 @@
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/resize-port.lv2/resize-port.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/resize-port.lv2/resize-port.meta.ttl"},
    :vann/preferredNamespacePrefix "rsz",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/resize-port#"}
   (:refer-clojure :exclude []))

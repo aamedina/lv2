@@ -2,8 +2,8 @@
   "An extensible open standard for audio plugins."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.ttl",
-   :owl/imports #:rdf{:uri "http://usefulinc.com/ns/doap#"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
+   :owl/imports {:rdf/uri "http://usefulinc.com/ns/doap#"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/lv2core"},
    :rdf/ns-prefix-map {"doap" "http://usefulinc.com/ns/doap#",
                        "lv2"  "http://lv2plug.in/ns/lv2core#",
                        "owl"  "http://www.w3.org/2002/07/owl#",
@@ -12,8 +12,8 @@
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.meta.ttl"},
    :vann/preferredNamespacePrefix "lv2",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/lv2core#"}
   (:refer-clojure :exclude [symbol name]))
@@ -418,7 +418,7 @@
 (def Symbol
   "A short restricted name used as a strong identifier."
   {:owl/onDatatype       :xsd/string,
-   :owl/withRestrictions [#:xsd{:pattern "[_a-zA-Z][_a-zA-Z0-9]*"}],
+   :owl/withRestrictions [{:xsd/pattern "[_a-zA-Z][_a-zA-Z0-9]*"}],
    :rdf/about            :lv2/Symbol,
    :rdf/type             :rdfs/Datatype,
    :rdfs/label           "Symbol"})
@@ -482,7 +482,7 @@
    :rdf/type     [:owl/AnnotationProperty :rdf/Property],
    :rdfs/label   "documentation",
    :rdfs/range   :rdfs/Literal,
-   :rdfs/seeAlso #:rdf{:uri "http://www.w3.org/TR/xhtml-basic/"}})
+   :rdfs/seeAlso {:rdf/uri "http://www.w3.org/TR/xhtml-basic/"}})
 
 (def enabled
   "Whether processing is currently enabled (not bypassed)."

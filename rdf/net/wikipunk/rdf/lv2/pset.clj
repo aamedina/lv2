@@ -2,8 +2,8 @@
   "Presets for LV2 plugins."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/presets.lv2/presets.ttl",
-   :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/presets"},
+   :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/presets"},
    :rdf/ns-prefix-map {"lv2"  "http://lv2plug.in/ns/lv2core#",
                        "owl"  "http://www.w3.org/2002/07/owl#",
                        "pset" "http://lv2plug.in/ns/ext/presets#",
@@ -12,8 +12,8 @@
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/presets.lv2/presets.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/presets.lv2/presets.meta.ttl"},
    :vann/preferredNamespacePrefix "pset",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/presets#"}
   (:refer-clojure :exclude []))

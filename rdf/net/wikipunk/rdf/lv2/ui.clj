@@ -2,9 +2,9 @@
   "User interfaces for LV2 plugins."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.ttl",
-   :owl/imports [#:rdf{:uri "http://lv2plug.in/ns/ext/options"}
-                 #:rdf{:uri "http://lv2plug.in/ns/lv2core"}],
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/extensions/ui"},
+   :owl/imports [{:rdf/uri "http://lv2plug.in/ns/ext/options"}
+                 {:rdf/uri "http://lv2plug.in/ns/lv2core"}],
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/extensions/ui"},
    :rdf/ns-prefix-map {"lv2"  "http://lv2plug.in/ns/lv2core#",
                        "opts" "http://lv2plug.in/ns/ext/options#",
                        "owl"  "http://www.w3.org/2002/07/owl#",
@@ -14,7 +14,7 @@
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl"},
+   {:rdf/uri "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl"},
    :vann/preferredNamespacePrefix "ui",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/ui#"}
   (:refer-clojure :exclude []))

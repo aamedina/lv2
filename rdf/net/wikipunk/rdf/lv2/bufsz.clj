@@ -2,9 +2,9 @@
   "Access to, and restrictions on, buffer sizes."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/buf-size.lv2/buf-size.ttl",
-   :owl/imports [#:rdf{:uri "http://lv2plug.in/ns/ext/options"}
-                 #:rdf{:uri "http://lv2plug.in/ns/lv2core"}],
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/buf-size"},
+   :owl/imports [{:rdf/uri "http://lv2plug.in/ns/ext/options"}
+                 {:rdf/uri "http://lv2plug.in/ns/lv2core"}],
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/buf-size"},
    :rdf/ns-prefix-map {"bufsz" "http://lv2plug.in/ns/ext/buf-size#",
                        "lv2"   "http://lv2plug.in/ns/lv2core#",
                        "opts"  "http://lv2plug.in/ns/ext/options#",
@@ -14,8 +14,8 @@
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/buf-size.lv2/buf-size.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/buf-size.lv2/buf-size.meta.ttl"},
    :vann/preferredNamespacePrefix "bufsz",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/buf-size#"}
   (:refer-clojure :exclude []))

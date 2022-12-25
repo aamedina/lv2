@@ -241,16 +241,17 @@
        (map (fn [ns] [(ns-name ns) (meta ns)]))
        (pmap (fn [[ns-name md]]
                (spit (str "rdf/net/wikipunk/rdf/lv2/" (:vann/preferredNamespacePrefix md) ".clj")
-                     (zprint/zprint-file-str (apply str (unroll (parse md)))
-                                             ""
-                                             {:parse {:interpose "\n\n"}
-                                              :map   {:justify?      true
-                                                      :nl-separator? false
-                                                      :hang?         true
-                                                      :indent 0
-                                                      :sort-in-code? true
-                                                      :force-nl?     true}
-                                              :style :hiccup}))))
+                     (binding [*print-namespace-maps* nil]
+                       (zprint/zprint-file-str (apply str (unroll (parse md)))
+                                               ""
+                                               {:parse  {:interpose "\n\n"}
+                                                :map    {:justify?      true
+                                                         :nl-separator? false
+                                                         :hang?         true
+                                                         :indent        0
+                                                         :sort-in-code? true
+                                                         :force-nl?     true}
+                                                :vector {:wrap? false}})))))
        (dorun)))
 
 (defrecord Vocabulary [types]

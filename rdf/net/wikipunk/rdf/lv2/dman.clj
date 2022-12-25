@@ -2,7 +2,7 @@
   "Support for dynamic manifest data generation."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.ttl",
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/dynmanifest"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/dynmanifest"},
    :rdf/ns-prefix-map {"dman" "http://lv2plug.in/ns/ext/dynmanifest#",
                        "lv2"  "http://lv2plug.in/ns/lv2core#",
                        "owl"  "http://www.w3.org/2002/07/owl#",
@@ -11,8 +11,8 @@
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.meta.ttl"},
    :vann/preferredNamespacePrefix "dman",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/dynmanifest#"}
   (:refer-clojure :exclude []))

@@ -2,8 +2,8 @@
   "An interface for LV2 plugins to save and restore state."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.ttl",
-   :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/state"},
+   :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/state"},
    :rdf/ns-prefix-map {"lv2"   "http://lv2plug.in/ns/lv2core#",
                        "owl"   "http://www.w3.org/2002/07/owl#",
                        "rdf"   "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -11,8 +11,8 @@
                        "state" "http://lv2plug.in/ns/ext/state#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.meta.ttl"},
    :vann/preferredNamespacePrefix "state",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/state#"}
   (:refer-clojure :exclude []))

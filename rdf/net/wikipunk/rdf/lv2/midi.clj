@@ -2,7 +2,7 @@
   "A normalised definition of raw MIDI."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.ttl",
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/midi"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/midi"},
    :rdf/ns-prefix-map {"atom" "http://lv2plug.in/ns/ext/atom#",
                        "ev"   "http://lv2plug.in/ns/ext/event#",
                        "lv2"  "http://lv2plug.in/ns/lv2core#",
@@ -13,8 +13,8 @@
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.meta.ttl"},
    :vann/preferredNamespacePrefix "midi",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/midi#"}
   (:refer-clojure :exclude [binding chunk]))
@@ -29,10 +29,10 @@
 
 (def Aftertouch
   "MIDI aftertouch message."
-  {:midi/chunk      [#:midi{:byteNumber 1,
-                      :property   :midi/pressure}
-                     #:midi{:byteNumber 0,
-                      :property   :midi/noteNumber}],
+  {:midi/chunk      [{:midi/byteNumber 1,
+                      :midi/property   :midi/pressure}
+                     {:midi/byteNumber 0,
+                      :midi/property   :midi/noteNumber}],
    :midi/statusMask [-96],
    :rdf/about       :midi/Aftertouch,
    :rdf/type        :rdfs/Class,
@@ -41,8 +41,8 @@
 
 (def Bender
   "MIDI bender message."
-  {:midi/chunk      #:midi{:byteNumber [1 0],
-                     :property   :midi/benderValue},
+  {:midi/chunk      {:midi/byteNumber [1 0],
+                     :midi/property   :midi/benderValue},
    :midi/statusMask [-32],
    :rdf/about       :midi/Bender,
    :rdf/type        :rdfs/Class,
@@ -51,8 +51,8 @@
 
 (def ChannelPressure
   "MIDI channel pressure message."
-  {:midi/chunk      #:midi{:byteNumber 0,
-                     :property   :midi/pressure},
+  {:midi/chunk      {:midi/byteNumber 0,
+                     :midi/property   :midi/pressure},
    :midi/statusMask [-48],
    :rdf/about       :midi/ChannelPressure,
    :rdf/type        :rdfs/Class,
@@ -83,10 +83,10 @@
 
 (def Controller
   "MIDI controller change message."
-  {:midi/chunk      [#:midi{:byteNumber 1,
-                      :property   :midi/controllerValue}
-                     #:midi{:byteNumber 0,
-                      :property   :midi/controllerNumber}],
+  {:midi/chunk      [{:midi/byteNumber 1,
+                      :midi/property   :midi/controllerValue}
+                     {:midi/byteNumber 0,
+                      :midi/property   :midi/controllerNumber}],
    :midi/statusMask [-80],
    :rdf/about       :midi/Controller,
    :rdf/type        :rdfs/Class,
@@ -96,7 +96,7 @@
 (def HexByte
   "A hexadecimal byte, which has a value <= FF."
   {:owl/onDatatype       :xsd/hexBinary,
-   :owl/withRestrictions [#:xsd{:maxInclusive "FF"}],
+   :owl/withRestrictions [{:xsd/maxInclusive "FF"}],
    :rdf/about            :midi/HexByte,
    :rdf/type             :rdfs/Datatype,
    :rdfs/label           "Hex Byte"})
@@ -111,10 +111,10 @@
 
 (def NoteOff
   "MIDI note off message."
-  {:midi/chunk      [#:midi{:byteNumber 1,
-                      :property   :midi/velocity}
-                     #:midi{:byteNumber 0,
-                      :property   :midi/noteNumber}],
+  {:midi/chunk      [{:midi/byteNumber 1,
+                      :midi/property   :midi/velocity}
+                     {:midi/byteNumber 0,
+                      :midi/property   :midi/noteNumber}],
    :midi/statusMask [-128],
    :rdf/about       :midi/NoteOff,
    :rdf/type        :rdfs/Class,
@@ -123,10 +123,10 @@
 
 (def NoteOn
   "MIDI note on message."
-  {:midi/chunk      [#:midi{:byteNumber 1,
-                      :property   :midi/velocity}
-                     #:midi{:byteNumber 0,
-                      :property   :midi/noteNumber}],
+  {:midi/chunk      [{:midi/byteNumber 1,
+                      :midi/property   :midi/velocity}
+                     {:midi/byteNumber 0,
+                      :midi/property   :midi/noteNumber}],
    :midi/statusMask [-112],
    :rdf/about       :midi/NoteOn,
    :rdf/type        :rdfs/Class,
@@ -135,8 +135,8 @@
 
 (def ProgramChange
   "MIDI program change message."
-  {:midi/chunk      #:midi{:byteNumber 0,
-                     :property   :midi/programNumber},
+  {:midi/chunk      {:midi/byteNumber 0,
+                     :midi/property   :midi/programNumber},
    :midi/statusMask [-64],
    :rdf/about       :midi/ProgramChange,
    :rdf/type        :rdfs/Class,
@@ -161,8 +161,8 @@
 
 (def SongPosition
   "MIDI song position pointer message."
-  {:midi/chunk      #:midi{:byteNumber [1 0],
-                     :property   :midi/songPosition},
+  {:midi/chunk      {:midi/byteNumber [1 0],
+                     :midi/property   :midi/songPosition},
    :midi/status     [-14],
    :rdf/about       :midi/SongPosition,
    :rdf/type        :rdfs/Class,

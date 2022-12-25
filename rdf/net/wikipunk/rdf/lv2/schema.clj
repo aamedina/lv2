@@ -2,10 +2,10 @@
   "Schema.org Vocabulary"
   {:dcat/downloadURL
    "https://raw.githubusercontent.com/schemaorg/schemaorg/main/data/releases/15.0/schemaorg.owl",
-   :dcterms/modified #:rdf{:literal "2022-10-25",
-                      :uri     "http://www.w3.org/2001/XMLSchema#dat"},
+   :dcterms/modified {:rdf/literal "2022-10-25",
+                      :rdf/uri     "http://www.w3.org/2001/XMLSchema#dat"},
    :owl/versionInfo "15.0",
-   :rdf/about #:rdf{:uri "https://schema.org/"},
+   :rdf/about {:rdf/uri "https://schema.org/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "owl"     "http://www.w3.org/2002/07/owl#",
                        "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -131,21 +131,21 @@
 
 (def AdultOrientedEnumeration
   "Enumeration of considerations that make a product relevant or potentially restricted for adults only."
-  {:rdf/about :schema/AdultOrientedEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/AdultOrientedEnumeration"},
-   :rdfs/label "AdultOrientedEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/AdultOrientedEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/AdultOrientedEnumeration"},
+   :rdfs/label       "AdultOrientedEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def AdvertiserContentArticle
   "An <a class=\"localLink\" href=\"https://schema.org/Article\">Article</a> that an external entity has paid to place or to produce to its specifications. Includes <a href=\"https://en.wikipedia.org/wiki/Advertorial\">advertorials</a>, sponsored content, native advertising and other paid content."
-  {:rdf/about :schema/AdvertiserContentArticle,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/AdvertiserContentArticle"},
-   :rdfs/label "AdvertiserContentArticle",
-   :rdfs/subClassOf :schema/Article})
+  {:rdf/about        :schema/AdvertiserContentArticle,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/AdvertiserContentArticle"},
+   :rdfs/label       "AdvertiserContentArticle",
+   :rdfs/subClassOf  :schema/Article})
 
 (def AggregateOffer
   "When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.<br/><br/>Note: AggregateOffers are normally expected to associate multiple offers that all share the same defined <a class=\"localLink\" href=\"https://schema.org/businessFunction\">businessFunction</a> value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined."
@@ -207,7 +207,7 @@
   "A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices."
   {:rdf/about        :schema/AmpStory,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/AmpStory"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/AmpStory"},
    :rdfs/label       "AmpStory",
    :rdfs/subClassOf  [:schema/CreativeWork :schema/MediaObject]})
 
@@ -223,28 +223,28 @@
   "An AnalysisNewsArticle is a <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions."
   {:rdf/about        :schema/AnalysisNewsArticle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/AnalysisNewsArticle"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/AnalysisNewsArticle"},
    :rdfs/label       "AnalysisNewsArticle",
    :rdfs/subClassOf  :schema/NewsArticle})
 
 (def AnatomicalStructure
   "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures."
-  {:rdf/about :schema/AnatomicalStructure,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/AnatomicalStructure"},
-   :rdfs/label "AnatomicalStructure",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/AnatomicalStructure,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/AnatomicalStructure"},
+   :rdfs/label       "AnatomicalStructure",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def AnatomicalSystem
   "An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can include circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems."
-  {:rdf/about :schema/AnatomicalSystem,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/AnatomicalSystem"},
-   :rdfs/label "AnatomicalSystem",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/AnatomicalSystem,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/AnatomicalSystem"},
+   :rdfs/label       "AnatomicalSystem",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def AnimalShelter
   "Animal shelter."
@@ -296,12 +296,12 @@
 
 (def ApprovedIndication
   "An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US."
-  {:rdf/about :schema/ApprovedIndication,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/ApprovedIndication"},
-   :rdfs/label "ApprovedIndication",
-   :rdfs/subClassOf :schema/MedicalIndication})
+  {:rdf/about        :schema/ApprovedIndication,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/ApprovedIndication"},
+   :rdfs/label       "ApprovedIndication",
+   :rdfs/subClassOf  :schema/MedicalIndication})
 
 (def Aquarium
   "Aquarium."
@@ -315,7 +315,7 @@
   "An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections."
   {:rdf/about        :schema/ArchiveComponent,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ArchiveComponent"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ArchiveComponent"},
    :rdfs/label       "ArchiveComponent",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -323,8 +323,8 @@
   "An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public."
   {:rdf/about        :schema/ArchiveOrganization,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/ArchiveOrganization"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ArchiveOrganization"},
    :rdfs/label       "ArchiveOrganization",
    :rdfs/subClassOf  :schema/LocalBusiness})
 
@@ -348,7 +348,7 @@
   "A type of blood vessel that specifically carries blood away from the heart."
   {:rdf/about        :schema/Artery,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Artery"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Artery"},
    :rdfs/label       "Artery",
    :rdfs/subClassOf  :schema/Vessel})
 
@@ -372,8 +372,8 @@
   "A <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> expressing an open call by a <a class=\"localLink\" href=\"https://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a> asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes."
   {:rdf/about        :schema/AskPublicNewsArticle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/AskPublicNewsArticle"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/AskPublicNewsArticle"},
    :rdfs/label       "AskPublicNewsArticle",
    :rdfs/subClassOf  :schema/NewsArticle})
 
@@ -397,7 +397,7 @@
   "A collection or bound volume of maps, charts, plates or tables, physical or in media form illustrating any subject."
   {:rdf/about        :schema/Atlas,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/Atlas"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/Atlas"},
    :rdfs/label       "Atlas",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -429,8 +429,8 @@
   "A specific and exact (byte-for-byte) version of an <a class=\"localLink\" href=\"https://schema.org/AudioObject\">AudioObject</a>. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity."
   {:rdf/about        :schema/AudioObjectSnapshot,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/AudioObjectSnapshot"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/AudioObjectSnapshot"},
    :rdfs/label       "AudioObjectSnapshot",
    :rdfs/subClassOf  :schema/AudioObject})
 
@@ -438,7 +438,7 @@
   "An audiobook."
   {:rdf/about        :schema/Audiobook,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/Audiobook"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/Audiobook"},
    :rdfs/label       "Audiobook",
    :rdfs/subClassOf  [:schema/AudioObject :schema/Book]})
 
@@ -518,8 +518,8 @@
   "A <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> providing historical context, definition and detail on a specific topic (aka \"explainer\" or \"backgrounder\"). For example, an in-depth article or frequently-asked-questions (<a href=\"https://en.wikipedia.org/wiki/FAQ\">FAQ</a>) document on topics such as Climate Change or the European Union. Other kinds of background material from a non-news setting are often described using <a class=\"localLink\" href=\"https://schema.org/Book\">Book</a> or <a class=\"localLink\" href=\"https://schema.org/Article\">Article</a>, in particular <a class=\"localLink\" href=\"https://schema.org/ScholarlyArticle\">ScholarlyArticle</a>. See also <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> for related vocabulary from a learning/education perspective."
   {:rdf/about        :schema/BackgroundNewsArticle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/BackgroundNewsArticle"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/BackgroundNewsArticle"},
    :rdfs/label       "BackgroundNewsArticle",
    :rdfs/subClassOf  :schema/NewsArticle})
 
@@ -623,7 +623,7 @@
   "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical."
   {:rdf/about        :schema/BioChemEntity,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/BioChemEntity"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/BioChemEntity"},
    :rdfs/label       "BioChemEntity",
    :rdfs/subClassOf  :schema/Thing})
 
@@ -647,7 +647,7 @@
   "A medical test performed on a sample of a patient's blood."
   {:rdf/about        :schema/BloodTest,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/BloodTest"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/BloodTest"},
    :rdfs/label       "BloodTest",
    :rdfs/subClassOf  :schema/MedicalTest})
 
@@ -663,7 +663,7 @@
   "A reservation for boat travel.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a>."
   {:rdf/about        :schema/BoatReservation,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/BoatReservation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/BoatReservation"},
    :rdfs/label       "BoatReservation",
    :rdfs/subClassOf  :schema/Reservation})
 
@@ -671,7 +671,7 @@
   "A terminal for boats, ships, and other water vessels."
   {:rdf/about        :schema/BoatTerminal,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/BoatTerminal"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/BoatTerminal"},
    :rdfs/label       "BoatTerminal",
    :rdfs/subClassOf  :schema/CivicStructure})
 
@@ -679,7 +679,7 @@
   "A trip on a commercial ferry line."
   {:rdf/about        :schema/BoatTrip,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/BoatTrip"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/BoatTrip"},
    :rdfs/label       "BoatTrip",
    :rdfs/subClassOf  :schema/Trip})
 
@@ -688,7 +688,7 @@
   {:rdf/about :schema/BodyMeasurementTypeEnumeration,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/BodyMeasurementTypeEnumeration"},
+   {:rdf/uri "https://pending.schema.org/BodyMeasurementTypeEnumeration"},
    :rdfs/label "BodyMeasurementTypeEnumeration",
    :rdfs/subClassOf :schema/MeasurementTypeEnumeration})
 
@@ -704,7 +704,7 @@
   "Rigid connective tissue that comprises up the skeletal structure of the human body."
   {:rdf/about        :schema/Bone,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Bone"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Bone"},
    :rdfs/label       "Bone",
    :rdfs/subClassOf  :schema/AnatomicalStructure})
 
@@ -776,8 +776,8 @@
   "Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity."
   {:rdf/about        :schema/BrainStructure,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/BrainStructure"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/BrainStructure"},
    :rdfs/label       "BrainStructure",
    :rdfs/subClassOf  :schema/AnatomicalStructure})
 
@@ -849,7 +849,7 @@
   "An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm."
   {:rdf/about        :schema/BrokerageAccount,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/BrokerageAccount"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/BrokerageAccount"},
    :rdfs/label       "BrokerageAccount",
    :rdfs/subClassOf  :schema/InvestmentOrDeposit})
 
@@ -865,7 +865,7 @@
   "A bus (also omnibus or autobus) is a road vehicle designed to carry passengers. Coaches are luxury busses, usually in service for long distance travel."
   {:rdf/about        :schema/BusOrCoach,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/BusOrCoach"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/BusOrCoach"},
    :rdfs/label       "BusOrCoach",
    :rdfs/subClassOf  :schema/Vehicle})
 
@@ -945,7 +945,7 @@
   "A CDCPMDRecord is a data structure representing a record in a CDC tabular data format      used for hospital data reporting. See <a href=\"/docs/cdc-covid.html\">documentation</a> for details, and the linked CDC materials for authoritative      definitions used as the source here."
   {:rdf/about        :schema/CDCPMDRecord,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/CDCPMDRecord"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/CDCPMDRecord"},
    :rdfs/label       "CDCPMDRecord",
    :rdfs/subClassOf  :schema/StructuredValue})
 
@@ -1009,7 +1009,7 @@
   "A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi."
   {:rdf/about        :schema/CarUsageType,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/CarUsageType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/CarUsageType"},
    :rdfs/label       "CarUsageType",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -1025,7 +1025,7 @@
   "A Category Code."
   {:rdf/about        :schema/CategoryCode,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/CategoryCode"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/CategoryCode"},
    :rdfs/label       "CategoryCode",
    :rdfs/subClassOf  :schema/DefinedTerm})
 
@@ -1033,7 +1033,7 @@
   "A set of Category Code values."
   {:rdf/about        :schema/CategoryCodeSet,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/CategoryCodeSet"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/CategoryCodeSet"},
    :rdfs/label       "CategoryCodeSet",
    :rdfs/subClassOf  :schema/DefinedTermSet})
 
@@ -1057,7 +1057,7 @@
   "One of the sections into which a book is divided. A chapter usually has a section number or a name."
   {:rdf/about        :schema/Chapter,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/Chapter"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/Chapter"},
    :rdfs/label       "Chapter",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -1097,7 +1097,7 @@
   "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: <a href=\"https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999\">ChEBI:59999</a>)."
   {:rdf/about        :schema/ChemicalSubstance,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ChemicalSubstance"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ChemicalSubstance"},
    :rdfs/label       "ChemicalSubstance",
    :rdfs/subClassOf  :schema/BioChemEntity})
 
@@ -1161,7 +1161,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/Claim\">Claim</a> in Schema.org represents a specific, factually-oriented claim that could be the <a class=\"localLink\" href=\"https://schema.org/itemReviewed\">itemReviewed</a> in a <a class=\"localLink\" href=\"https://schema.org/ClaimReview\">ClaimReview</a>. The content of a claim can be summarized with the <a class=\"localLink\" href=\"https://schema.org/text\">text</a> property. Variations on well known claims can have their common identity indicated via <a class=\"localLink\" href=\"https://schema.org/sameAs\">sameAs</a> links, and summarized with a <a class=\"localLink\" href=\"https://schema.org/name\">name</a>. Ideally, a <a class=\"localLink\" href=\"https://schema.org/Claim\">Claim</a> description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.<br/><br/>Beyond <a class=\"localLink\" href=\"https://schema.org/ClaimReview\">ClaimReview</a>, the Claim type can be associated with related creative works - for example a <a class=\"localLink\" href=\"https://schema.org/ScholarlyArticle\">ScholarlyArticle</a> or <a class=\"localLink\" href=\"https://schema.org/Question\">Question</a> might be <a class=\"localLink\" href=\"https://schema.org/about\">about</a> some <a class=\"localLink\" href=\"https://schema.org/Claim\">Claim</a>.<br/><br/>At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration."
   {:rdf/about        :schema/Claim,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Claim"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Claim"},
    :rdfs/label       "Claim",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -1177,7 +1177,7 @@
   "A class, also often called a 'Type'; equivalent to rdfs:Class."
   {:rdf/about        :schema/Class,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://meta.schema.org/Class"},
+   :rdfs/isDefinedBy {:rdf/uri "https://meta.schema.org/Class"},
    :rdfs/label       "Class",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -1209,7 +1209,7 @@
   "A collection of items, e.g. creative works or products."
   {:rdf/about        :schema/Collection,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/Collection"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/Collection"},
    :rdfs/label       "Collection",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -1249,7 +1249,7 @@
   "The artwork on the cover of a comic."
   {:rdf/about        :schema/ComicCoverArt,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/ComicCoverArt"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/ComicCoverArt"},
    :rdfs/label       "ComicCoverArt",
    :rdfs/subClassOf  [:schema/ComicStory :schema/CoverArt]})
 
@@ -1257,7 +1257,7 @@
   "Individual comic issues are serially published as        part of a larger series. For the sake of consistency, even one-shot issues        belong to a series comprised of a single issue. All comic issues can be        uniquely identified by: the combination of the name and volume number of the        series to which the issue belongs; the issue number; and the variant        description of the issue (if any)."
   {:rdf/about        :schema/ComicIssue,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/ComicIssue"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/ComicIssue"},
    :rdfs/label       "ComicIssue",
    :rdfs/subClassOf  :schema/PublicationIssue})
 
@@ -1265,7 +1265,7 @@
   "A sequential publication of comic stories under a        unifying title, for example \"The Amazing Spider-Man\" or \"Groo the        Wanderer\"."
   {:rdf/about        :schema/ComicSeries,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/ComicSeries"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/ComicSeries"},
    :rdfs/label       "ComicSeries",
    :rdfs/subClassOf  :schema/Periodical})
 
@@ -1273,7 +1273,7 @@
   "The term \"story\" is any indivisible, re-printable        unit of a comic, including the interior stories, covers, and backmatter. Most        comics have at least two stories: a cover (ComicCoverArt) and an interior story."
   {:rdf/about        :schema/ComicStory,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/ComicStory"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/ComicStory"},
    :rdfs/label       "ComicStory",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -1305,7 +1305,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/CompleteDataFeed\">CompleteDataFeed</a> is a <a class=\"localLink\" href=\"https://schema.org/DataFeed\">DataFeed</a> whose standard representation includes content for every item currently in the feed.<br/><br/>This is the equivalent of Atom's element as defined in Feed Paging and Archiving <a href=\"https://tools.ietf.org/html/rfc5005\">RFC 5005</a>, for example (and as defined for Atom), when using data from a feed that represents a collection of items that varies over time (e.g. \"Top Twenty Records\") there is no need to have newer entries mixed in alongside older, obsolete entries. By marking this feed as a CompleteDataFeed, old entries can be safely discarded when the feed is refreshed, since we can assume the feed has provided descriptions for all current items."
   {:rdf/about        :schema/CompleteDataFeed,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/CompleteDataFeed"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/CompleteDataFeed"},
    :rdfs/label       "CompleteDataFeed",
    :rdfs/subClassOf  :schema/DataFeed})
 
@@ -1345,7 +1345,7 @@
   "A Consortium is a membership <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a> whose members are typically Organizations."
   {:rdf/about        :schema/Consortium,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Consortium"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Consortium"},
    :rdfs/label       "Consortium",
    :rdfs/subClassOf  :schema/Organization})
 
@@ -1433,7 +1433,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/comment\">comment</a> that corrects <a class=\"localLink\" href=\"https://schema.org/CreativeWork\">CreativeWork</a>."
   {:rdf/about        :schema/CorrectionComment,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/CorrectionComment"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/CorrectionComment"},
    :rdfs/label       "CorrectionComment",
    :rdfs/subClassOf  :schema/Comment})
 
@@ -1473,7 +1473,7 @@
   "The artwork on the outer surface of a CreativeWork."
   {:rdf/about        :schema/CoverArt,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/CoverArt"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/CoverArt"},
    :rdfs/label       "CoverArt",
    :rdfs/subClassOf  :schema/VisualArtwork})
 
@@ -1481,8 +1481,8 @@
   "A CovidTestingFacility is a <a class=\"localLink\" href=\"https://schema.org/MedicalClinic\">MedicalClinic</a> where testing for the COVID-19 Coronavirus      disease is available. If the facility is being made available from an established <a class=\"localLink\" href=\"https://schema.org/Pharmacy\">Pharmacy</a>, <a class=\"localLink\" href=\"https://schema.org/Hotel\">Hotel</a>, or other      non-medical organization, multiple types can be listed. This makes it easier to re-use existing schema.org information      about that place, e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable."
   {:rdf/about        :schema/CovidTestingFacility,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/CovidTestingFacility"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/CovidTestingFacility"},
    :rdfs/label       "CovidTestingFacility",
    :rdfs/subClassOf  :schema/MedicalClinic})
 
@@ -1538,7 +1538,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/CriticReview\">CriticReview</a> is a more specialized form of Review written or published by a source that is recognized for its reviewing activities. These can include online columns, travel and food guides, TV and radio shows, blogs and other independent Web sites. <a class=\"localLink\" href=\"https://schema.org/CriticReview\">CriticReview</a>s are typically more in-depth and professionally written. For simpler, casually written user/visitor/viewer/customer reviews, it is more appropriate to use the <a class=\"localLink\" href=\"https://schema.org/UserReview\">UserReview</a> type. Review aggregator sites such as Metacritic already separate out the site's user reviews from selected critic reviews that originate from third-party sources."
   {:rdf/about        :schema/CriticReview,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/CriticReview"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/CriticReview"},
    :rdfs/label       "CriticReview",
    :rdfs/subClassOf  :schema/Review})
 
@@ -1546,7 +1546,7 @@
   "Text representing a CSS selector."
   {:rdf/about        :schema/CssSelectorType,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/CssSelectorType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/CssSelectorType"},
    :rdfs/label       "CssSelectorType",
    :rdfs/subClassOf  :schema/Text})
 
@@ -1562,7 +1562,7 @@
   "An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it."
   {:rdf/about        :schema/DDxElement,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/DDxElement"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/DDxElement"},
    :rdfs/label       "DDxElement",
    :rdfs/subClassOf  :schema/MedicalIntangible})
 
@@ -1690,7 +1690,7 @@
   "A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.<br/><br/>Examples: a delivery destination when shopping. Region where regional pricing is configured.<br/><br/>Requirement 1:Country: USStates: \"NY\", \"CA\"<br/><br/>Requirement 2:Country: USPostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}{ [12345, 12345], [78945, 78945], }Region = state, canton, prefecture, autonomous community..."
   {:rdf/about        :schema/DefinedRegion,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/DefinedRegion"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/DefinedRegion"},
    :rdfs/label       "DefinedRegion",
    :rdfs/subClassOf  :schema/StructuredValue})
 
@@ -1698,7 +1698,7 @@
   "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term."
   {:rdf/about        :schema/DefinedTerm,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/DefinedTerm"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/DefinedTerm"},
    :rdfs/label       "DefinedTerm",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -1706,7 +1706,7 @@
   "A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration."
   {:rdf/about        :schema/DefinedTermSet,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/DefinedTermSet"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/DefinedTermSet"},
    :rdfs/label       "DefinedTermSet",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -1746,8 +1746,8 @@
   "A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the <a class=\"localLink\" href=\"https://schema.org/shippingSettingsLink\">shippingSettingsLink</a> property of an <a class=\"localLink\" href=\"https://schema.org/OfferShippingDetails\">OfferShippingDetails</a>. Several occurrences can be published, distinguished (and identified/referenced) by their different values for <a class=\"localLink\" href=\"https://schema.org/transitTimeLabel\">transitTimeLabel</a>."
   {:rdf/about        :schema/DeliveryTimeSettings,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/DeliveryTimeSettings"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/DeliveryTimeSettings"},
    :rdfs/label       "DeliveryTimeSettings",
    :rdfs/subClassOf  :schema/StructuredValue})
 
@@ -1797,36 +1797,36 @@
   "A medical laboratory that offers on-site or off-site diagnostic services."
   {:rdf/about        :schema/DiagnosticLab,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/DiagnosticLab"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/DiagnosticLab"},
    :rdfs/label       "DiagnosticLab",
    :rdfs/subClassOf  :schema/MedicalOrganization})
 
 (def DiagnosticProcedure
   "A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes."
-  {:rdf/about :schema/DiagnosticProcedure,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/DiagnosticProcedure"},
-   :rdfs/label "DiagnosticProcedure",
-   :rdfs/subClassOf :schema/MedicalProcedure})
+  {:rdf/about        :schema/DiagnosticProcedure,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/DiagnosticProcedure"},
+   :rdfs/label       "DiagnosticProcedure",
+   :rdfs/subClassOf  :schema/MedicalProcedure})
 
 (def Diet
   "A strategy of regulating the intake of food to achieve or maintain a specific health-related goal."
   {:rdf/about        :schema/Diet,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Diet"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Diet"},
    :rdfs/label       "Diet",
    :rdfs/subClassOf  [:schema/LifestyleModification :schema/CreativeWork]})
 
 (def DietarySupplement
   "A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites."
-  {:rdf/about :schema/DietarySupplement,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/DietarySupplement"},
-   :rdfs/label "DietarySupplement",
-   :rdfs/subClassOf [:schema/Substance :schema/Product]})
+  {:rdf/about        :schema/DietarySupplement,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/DietarySupplement"},
+   :rdfs/label       "DietarySupplement",
+   :rdfs/subClassOf  [:schema/Substance :schema/Product]})
 
 (def DigitalDocument
   "An electronic file or document."
@@ -1854,12 +1854,12 @@
 
 (def DigitalPlatformEnumeration
   "Enumerates some common technology platforms, for use with properties such as <a class=\"localLink\" href=\"https://schema.org/actionPlatform\">actionPlatform</a>. It is not supposed to be comprehensive - when a suitable code is not enumerated here, textual or URL values can be used instead. These codes are at a fairly high level and do not deal with versioning and other nuance. Additional codes can be suggested <a href=\"https://github.com/schemaorg/schemaorg/issues/3057\">in github</a>."
-  {:rdf/about :schema/DigitalPlatformEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/DigitalPlatformEnumeration"},
-   :rdfs/label "DigitalPlatformEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/DigitalPlatformEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/DigitalPlatformEnumeration"},
+   :rdfs/label       "DigitalPlatformEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def DisagreeAction
   "The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants."
@@ -1921,8 +1921,8 @@
   "A specific dosing schedule for a drug or supplement."
   {:rdf/about        :schema/DoseSchedule,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/DoseSchedule"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/DoseSchedule"},
    :rdfs/label       "DoseSchedule",
    :rdfs/subClassOf  :schema/MedicalIntangible})
 
@@ -1946,7 +1946,7 @@
   "A picture or diagram made with a pencil, pen, or crayon rather than paint."
   {:rdf/about        :schema/Drawing,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Drawing"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Drawing"},
    :rdfs/label       "Drawing",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -1970,7 +1970,7 @@
   "A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge makes a clear difference between them."
   {:rdf/about        :schema/Drug,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Drug"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Drug"},
    :rdfs/label       "Drug",
    :rdfs/subClassOf  [:schema/Product :schema/Substance]})
 
@@ -1978,7 +1978,7 @@
   "A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc."
   {:rdf/about        :schema/DrugClass,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/DrugClass"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/DrugClass"},
    :rdfs/label       "DrugClass",
    :rdfs/subClassOf  :schema/MedicalEntity})
 
@@ -1986,25 +1986,25 @@
   "The cost per unit of a medical drug. Note that this type is not meant to represent the price in an offer of a drug for sale; see the Offer type for that. This type will typically be used to tag wholesale or average retail cost of a drug, or maximum reimbursable cost. Costs of medical drugs vary widely depending on how and where they are paid for, so while this type captures some of the variables, costs should be used with caution by consumers of this schema's markup."
   {:rdf/about        :schema/DrugCost,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/DrugCost"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/DrugCost"},
    :rdfs/label       "DrugCost",
    :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def DrugCostCategory
   "Enumerated categories of medical drug costs."
-  {:rdf/about :schema/DrugCostCategory,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/DrugCostCategory"},
-   :rdfs/label "DrugCostCategory",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/DrugCostCategory,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/DrugCostCategory"},
+   :rdfs/label       "DrugCostCategory",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def DrugLegalStatus
   "The legal availability status of a medical drug."
   {:rdf/about        :schema/DrugLegalStatus,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/DrugLegalStatus"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/DrugLegalStatus"},
    :rdfs/label       "DrugLegalStatus",
    :rdfs/subClassOf  :schema/MedicalIntangible})
 
@@ -2013,7 +2013,7 @@
   {:rdf/about :schema/DrugPregnancyCategory,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/DrugPregnancyCategory"},
+   {:rdf/uri "https://health-lifesci.schema.org/DrugPregnancyCategory"},
    :rdfs/label "DrugPregnancyCategory",
    :rdfs/subClassOf :schema/MedicalEnumeration})
 
@@ -2022,7 +2022,7 @@
   {:rdf/about :schema/DrugPrescriptionStatus,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/DrugPrescriptionStatus"},
+   {:rdf/uri "https://health-lifesci.schema.org/DrugPrescriptionStatus"},
    :rdfs/label "DrugPrescriptionStatus",
    :rdfs/subClassOf :schema/MedicalEnumeration})
 
@@ -2030,8 +2030,8 @@
   "A specific strength in which a medical drug is available in a specific country."
   {:rdf/about        :schema/DrugStrength,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/DrugStrength"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/DrugStrength"},
    :rdfs/label       "DrugStrength",
    :rdfs/subClassOf  :schema/MedicalIntangible})
 
@@ -2056,7 +2056,7 @@
   {:rdf/about :schema/EUEnergyEfficiencyEnumeration,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/EUEnergyEfficiencyEnumeration"},
+   {:rdf/uri "https://pending.schema.org/EUEnergyEfficiencyEnumeration"},
    :rdfs/label "EUEnergyEfficiencyEnumeration",
    :rdfs/subClassOf :schema/EnergyEfficiencyEnumeration})
 
@@ -2089,7 +2089,7 @@
   {:rdf/about :schema/EducationalOccupationalCredential,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/EducationalOccupationalCredential"},
+   {:rdf/uri "https://pending.schema.org/EducationalOccupationalCredential"},
    :rdfs/label "EducationalOccupationalCredential",
    :rdfs/subClassOf :schema/CreativeWork})
 
@@ -2098,7 +2098,7 @@
   {:rdf/about :schema/EducationalOccupationalProgram,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/EducationalOccupationalProgram"},
+   {:rdf/uri "https://pending.schema.org/EducationalOccupationalProgram"},
    :rdfs/label "EducationalOccupationalProgram",
    :rdfs/subClassOf :schema/Intangible})
 
@@ -2178,7 +2178,7 @@
   "An <a class=\"localLink\" href=\"https://schema.org/EmployerReview\">EmployerReview</a> is a review of an <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a> regarding its role as an employer, written by a current or former employee of that organization."
   {:rdf/about        :schema/EmployerReview,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/EmployerReview"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/EmployerReview"},
    :rdfs/label       "EmployerReview",
    :rdfs/subClassOf  :schema/Review})
 
@@ -2216,29 +2216,29 @@
 
 (def EnergyConsumptionDetails
   "EnergyConsumptionDetails represents information related to the energy efficiency of a product that consumes energy. The information that can be provided is based on international regulations such as for example <a href=\"https://eur-lex.europa.eu/eli/reg/2017/1369/oj\">EU directive 2017/1369</a> for energy labeling and the <a href=\"https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/energy-water-use-labeling-consumer\">Energy labeling rule</a> under the Energy Policy and Conservation Act (EPCA) in the US."
-  {:rdf/about :schema/EnergyConsumptionDetails,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/EnergyConsumptionDetails"},
-   :rdfs/label "EnergyConsumptionDetails",
-   :rdfs/subClassOf :schema/Intangible})
+  {:rdf/about        :schema/EnergyConsumptionDetails,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/EnergyConsumptionDetails"},
+   :rdfs/label       "EnergyConsumptionDetails",
+   :rdfs/subClassOf  :schema/Intangible})
 
 (def EnergyEfficiencyEnumeration
   "Enumerates energy efficiency levels (also known as \"classes\" or \"ratings\") and certifications that are part of several international energy efficiency standards."
-  {:rdf/about :schema/EnergyEfficiencyEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/EnergyEfficiencyEnumeration"},
-   :rdfs/label "EnergyEfficiencyEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/EnergyEfficiencyEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/EnergyEfficiencyEnumeration"},
+   :rdfs/label       "EnergyEfficiencyEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def EnergyStarEnergyEfficiencyEnumeration
   "Used to indicate whether a product is EnergyStar certified."
   {:rdf/about :schema/EnergyStarEnergyEfficiencyEnumeration,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri
-         "https://pending.schema.org/EnergyStarEnergyEfficiencyEnumeration"},
+   {:rdf/uri
+    "https://pending.schema.org/EnergyStarEnergyEfficiencyEnumeration"},
    :rdfs/label "EnergyStarEnergyEfficiencyEnumeration",
    :rdfs/subClassOf :schema/EnergyEfficiencyEnumeration})
 
@@ -2295,7 +2295,7 @@
   {:rdf/about :schema/EventAttendanceModeEnumeration,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/EventAttendanceModeEnumeration"},
+   {:rdf/uri "https://pending.schema.org/EventAttendanceModeEnumeration"},
    :rdfs/label "EventAttendanceModeEnumeration",
    :rdfs/subClassOf :schema/Enumeration})
 
@@ -2311,7 +2311,7 @@
   "A series of <a class=\"localLink\" href=\"https://schema.org/Event\">Event</a>s. Included events can relate with the series using the <a class=\"localLink\" href=\"https://schema.org/superEvent\">superEvent</a> property.<br/><br/>An EventSeries is a collection of events that share some unifying characteristic. For example, \"The Olympic Games\" is a series, whichis repeated regularly. The \"2012 London Olympics\" can be presented both as an <a class=\"localLink\" href=\"https://schema.org/Event\">Event</a> in the series \"Olympic Games\", and as an<a class=\"localLink\" href=\"https://schema.org/EventSeries\">EventSeries</a> that included a number of sporting competitions as Events.<br/><br/>The nature of the association between the events in an <a class=\"localLink\" href=\"https://schema.org/EventSeries\">EventSeries</a> can vary, but typical examples couldinclude a thematic event series (e.g. topical meetups or classes), or a series of regular events that share a location, attendee group and/or organizers.<br/><br/>EventSeries has been defined as a kind of Event to make it easy for publishers to use it in an Event context withoutworrying about which kinds of series are really event-like enough to call an Event. In general an EventSeriesmay seem more Event-like when the period of time is compact and when aspects such as location are fixed, butit may also sometimes prove useful to describe a longer-term series as an Event."
   {:rdf/about        :schema/EventSeries,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/EventSeries"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/EventSeries"},
    :rdfs/label       "EventSeries",
    :rdfs/subClassOf  [:schema/Series :schema/Event]})
 
@@ -2333,12 +2333,12 @@
 
 (def ExchangeRateSpecification
   "A structured value representing exchange rate."
-  {:rdf/about :schema/ExchangeRateSpecification,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/ExchangeRateSpecification"},
-   :rdfs/label "ExchangeRateSpecification",
-   :rdfs/subClassOf :schema/StructuredValue})
+  {:rdf/about        :schema/ExchangeRateSpecification,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ExchangeRateSpecification"},
+   :rdfs/label       "ExchangeRateSpecification",
+   :rdfs/subClassOf  :schema/StructuredValue})
 
 (def ExerciseAction
   "The act of participating in exertive activity for the purposes of improving health and fitness."
@@ -2360,8 +2360,8 @@
   "Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician."
   {:rdf/about        :schema/ExercisePlan,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/ExercisePlan"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/ExercisePlan"},
    :rdfs/label       "ExercisePlan",
    :rdfs/subClassOf  [:schema/CreativeWork :schema/PhysicalActivity]})
 
@@ -2480,7 +2480,7 @@
   "A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some <a class=\"localLink\" href=\"https://schema.org/ApartmentComplex\">ApartmentComplex</a> has an <a class=\"localLink\" href=\"https://schema.org/accommodationFloorPlan\">accommodationFloorPlan</a> which is a <a class=\"localLink\" href=\"https://schema.org/FloorPlan\">FloorPlan</a>.  A FloorPlan is always in the context of a particular place, either a larger <a class=\"localLink\" href=\"https://schema.org/ApartmentComplex\">ApartmentComplex</a> or a single <a class=\"localLink\" href=\"https://schema.org/Apartment\">Apartment</a>. The visual/spatial aspects of a floor plan (i.e. room layout, <a href=\"https://en.wikipedia.org/wiki/Floor_plan\">see wikipedia</a>) can be indicated using <a class=\"localLink\" href=\"https://schema.org/image\">image</a>."
   {:rdf/about        :schema/FloorPlan,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/FloorPlan"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/FloorPlan"},
    :rdfs/label       "FloorPlan",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -2536,7 +2536,7 @@
   "A FundingAgency is an organization that implements one or more <a class=\"localLink\" href=\"https://schema.org/FundingScheme\">FundingScheme</a>s and manages    the granting process (via <a class=\"localLink\" href=\"https://schema.org/Grant\">Grant</a>s, typically <a class=\"localLink\" href=\"https://schema.org/MonetaryGrant\">MonetaryGrant</a>s).    A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc.<br/><br/>Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation, ..."
   {:rdf/about        :schema/FundingAgency,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/FundingAgency"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/FundingAgency"},
    :rdfs/label       "FundingAgency",
    :rdfs/subClassOf  :schema/Project})
 
@@ -2544,7 +2544,7 @@
   "A FundingScheme combines organizational, project and policy aspects of grant-based funding    that sets guidelines, principles and mechanisms to support other kinds of projects and activities.    Funding is typically organized via <a class=\"localLink\" href=\"https://schema.org/Grant\">Grant</a> funding. Examples of funding schemes: Swiss Priority Programmes (SPPs); EU Framework 7 (FP7); Horizon 2020; the NIH-R01 Grant Program; Wellcome institutional strategic support fund. For large scale public sector funding, the management and administration of grant awards is often handled by other, dedicated, organizations - <a class=\"localLink\" href=\"https://schema.org/FundingAgency\">FundingAgency</a>s such as ERC, REA, ..."
   {:rdf/about        :schema/FundingScheme,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/FundingScheme"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/FundingScheme"},
    :rdfs/label       "FundingScheme",
    :rdfs/subClassOf  :schema/Organization})
 
@@ -2566,12 +2566,12 @@
 
 (def GameAvailabilityEnumeration
   "For a <a class=\"localLink\" href=\"https://schema.org/VideoGame\">VideoGame</a>, such as used with a <a class=\"localLink\" href=\"https://schema.org/PlayGameAction\">PlayGameAction</a>, an enumeration of the kind of game availability offered."
-  {:rdf/about :schema/GameAvailabilityEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/GameAvailabilityEnumeration"},
-   :rdfs/label "GameAvailabilityEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/GameAvailabilityEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/GameAvailabilityEnumeration"},
+   :rdfs/label       "GameAvailabilityEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def GamePlayMode
   "Indicates whether this game is multi-player, co-op or single-player."
@@ -2633,7 +2633,7 @@
   "A discrete unit of inheritance which affects one or more biological traits (Source: <a href=\"https://en.wikipedia.org/wiki/Gene\">https://en.wikipedia.org/wiki/Gene</a>). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype)."
   {:rdf/about        :schema/Gene,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Gene"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Gene"},
    :rdfs/label       "Gene",
    :rdfs/subClassOf  :schema/BioChemEntity})
 
@@ -2673,8 +2673,7 @@
   "(Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices."
   {:rdf/about        :schema/GeospatialGeometry,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/GeospatialGeometry"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/GeospatialGeometry"},
    :rdfs/label       "GeospatialGeometry",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -2698,8 +2697,8 @@
   "GovernmentBenefitsType enumerates several kinds of government benefits to support the COVID-19 situation. Note that this structure may not capture all benefits offered."
   {:rdf/about        :schema/GovernmentBenefitsType,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/GovernmentBenefitsType"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/GovernmentBenefitsType"},
    :rdfs/label       "GovernmentBenefitsType",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -2747,7 +2746,7 @@
   "A grant, typically financial or otherwise quantifiable, of resources. Typically a <a class=\"localLink\" href=\"https://schema.org/funder\">funder</a> sponsors some <a class=\"localLink\" href=\"https://schema.org/MonetaryAmount\">MonetaryAmount</a> to an <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a> or <a class=\"localLink\" href=\"https://schema.org/Person\">Person</a>,    sometimes not necessarily via a dedicated or long-lived <a class=\"localLink\" href=\"https://schema.org/Project\">Project</a>, resulting in one or more outputs, or <a class=\"localLink\" href=\"https://schema.org/fundedItem\">fundedItem</a>s. For financial sponsorship, indicate the <a class=\"localLink\" href=\"https://schema.org/funder\">funder</a> of a <a class=\"localLink\" href=\"https://schema.org/MonetaryGrant\">MonetaryGrant</a>. For non-financial support, indicate <a class=\"localLink\" href=\"https://schema.org/sponsor\">sponsor</a> of <a class=\"localLink\" href=\"https://schema.org/Grant\">Grant</a>s of resources (e.g. office space).<br/><br/>Grants support  activities directed towards some agreed collective goals, often but not always organized as <a class=\"localLink\" href=\"https://schema.org/Project\">Project</a>s. Long-lived projects are sometimes sponsored by a variety of grants over time, but it is also common for a project to be associated with a single grant.<br/><br/>The amount of a <a class=\"localLink\" href=\"https://schema.org/Grant\">Grant</a> is represented using <a class=\"localLink\" href=\"https://schema.org/amount\">amount</a> as a <a class=\"localLink\" href=\"https://schema.org/MonetaryAmount\">MonetaryAmount</a>."
   {:rdf/about        :schema/Grant,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Grant"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Grant"},
    :rdfs/label       "Grant",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -2763,7 +2762,7 @@
   "<a class=\"localLink\" href=\"https://schema.org/Guide\">Guide</a> is a page or article that recommends specific products or services, or aspects of a thing for a user to consider. A <a class=\"localLink\" href=\"https://schema.org/Guide\">Guide</a> may represent a Buying Guide and detail aspects of products or services for a user to consider. A <a class=\"localLink\" href=\"https://schema.org/Guide\">Guide</a> may represent a Product Guide and recommend specific products or services. A <a class=\"localLink\" href=\"https://schema.org/Guide\">Guide</a> may represent a Ranked List and recommend specific products or services with ranking."
   {:rdf/about        :schema/Guide,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Guide"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Guide"},
    :rdfs/label       "Guide",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -2779,7 +2778,7 @@
   "A <a href=\"https://en.wikipedia.org/wiki/Hackathon\">hackathon</a> event."
   {:rdf/about        :schema/Hackathon,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Hackathon"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Hackathon"},
    :rdfs/label       "Hackathon",
    :rdfs/subClassOf  :schema/Event})
 
@@ -2809,12 +2808,12 @@
 
 (def HealthAspectEnumeration
   "HealthAspectEnumeration enumerates several aspects of health content online, each of which might be described using <a class=\"localLink\" href=\"https://schema.org/hasHealthAspect\">hasHealthAspect</a> and <a class=\"localLink\" href=\"https://schema.org/HealthTopicContent\">HealthTopicContent</a>."
-  {:rdf/about :schema/HealthAspectEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/HealthAspectEnumeration"},
-   :rdfs/label "HealthAspectEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/HealthAspectEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/HealthAspectEnumeration"},
+   :rdfs/label       "HealthAspectEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def HealthClub
   "A health club."
@@ -2829,8 +2828,8 @@
   "A US-style health insurance plan, including PPOs, EPOs, and HMOs."
   {:rdf/about        :schema/HealthInsurancePlan,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/HealthInsurancePlan"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/HealthInsurancePlan"},
    :rdfs/label       "HealthInsurancePlan",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -2839,7 +2838,7 @@
   {:rdf/about :schema/HealthPlanCostSharingSpecification,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/HealthPlanCostSharingSpecification"},
+   {:rdf/uri "https://pending.schema.org/HealthPlanCostSharingSpecification"},
    :rdfs/label "HealthPlanCostSharingSpecification",
    :rdfs/subClassOf :schema/Intangible})
 
@@ -2847,8 +2846,8 @@
   "For a given health insurance plan, the specification for costs and coverage of prescription drugs."
   {:rdf/about        :schema/HealthPlanFormulary,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/HealthPlanFormulary"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/HealthPlanFormulary"},
    :rdfs/label       "HealthPlanFormulary",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -2856,7 +2855,7 @@
   "A US-style health insurance plan network."
   {:rdf/about        :schema/HealthPlanNetwork,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/HealthPlanNetwork"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/HealthPlanNetwork"},
    :rdfs/label       "HealthPlanNetwork",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -2864,8 +2863,7 @@
   "<a class=\"localLink\" href=\"https://schema.org/HealthTopicContent\">HealthTopicContent</a> is <a class=\"localLink\" href=\"https://schema.org/WebContent\">WebContent</a> that is about some aspect of a health topic, e.g. a condition, its symptoms or treatments. Such content may be comprised of several parts or sections and use different types of media. Multiple instances of <a class=\"localLink\" href=\"https://schema.org/WebContent\">WebContent</a> (and hence <a class=\"localLink\" href=\"https://schema.org/HealthTopicContent\">HealthTopicContent</a>) can be related using <a class=\"localLink\" href=\"https://schema.org/hasPart\">hasPart</a> / <a class=\"localLink\" href=\"https://schema.org/isPartOf\">isPartOf</a> where there is some kind of content hierarchy, and their content described with <a class=\"localLink\" href=\"https://schema.org/about\">about</a> and <a class=\"localLink\" href=\"https://schema.org/mentions\">mentions</a> e.g. building upon the existing <a class=\"localLink\" href=\"https://schema.org/MedicalCondition\">MedicalCondition</a> vocabulary."
   {:rdf/about        :schema/HealthTopicContent,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/HealthTopicContent"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/HealthTopicContent"},
    :rdfs/label       "HealthTopicContent",
    :rdfs/subClassOf  :schema/WebContent})
 
@@ -3027,7 +3025,7 @@
   "A HyperToc represents a hypertext table of contents for complex media objects, such as <a class=\"localLink\" href=\"https://schema.org/VideoObject\">VideoObject</a>, <a class=\"localLink\" href=\"https://schema.org/AudioObject\">AudioObject</a>. Items in the table of contents are indicated using the <a class=\"localLink\" href=\"https://schema.org/tocEntry\">tocEntry</a> property, and typed <a class=\"localLink\" href=\"https://schema.org/HyperTocEntry\">HyperTocEntry</a>. For cases where the same larger work is split into multiple files, <a class=\"localLink\" href=\"https://schema.org/associatedMedia\">associatedMedia</a> can be used on individual <a class=\"localLink\" href=\"https://schema.org/HyperTocEntry\">HyperTocEntry</a> items."
   {:rdf/about        :schema/HyperToc,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/HyperToc"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/HyperToc"},
    :rdfs/label       "HyperToc",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -3035,7 +3033,7 @@
   "A HyperToEntry is an item within a <a class=\"localLink\" href=\"https://schema.org/HyperToc\">HyperToc</a>, which represents a hypertext table of contents for complex media objects, such as <a class=\"localLink\" href=\"https://schema.org/VideoObject\">VideoObject</a>, <a class=\"localLink\" href=\"https://schema.org/AudioObject\">AudioObject</a>. The media object itself is indicated using <a class=\"localLink\" href=\"https://schema.org/associatedMedia\">associatedMedia</a>. Each section of interest within that content can be described with a <a class=\"localLink\" href=\"https://schema.org/HyperTocEntry\">HyperTocEntry</a>, with associated <a class=\"localLink\" href=\"https://schema.org/startOffset\">startOffset</a> and <a class=\"localLink\" href=\"https://schema.org/endOffset\">endOffset</a>. When several entries are all from the same file, <a class=\"localLink\" href=\"https://schema.org/associatedMedia\">associatedMedia</a> is used on the overarching <a class=\"localLink\" href=\"https://schema.org/HyperTocEntry\">HyperTocEntry</a>; if the content has been split into multiple files, they can be referenced using <a class=\"localLink\" href=\"https://schema.org/associatedMedia\">associatedMedia</a> on each <a class=\"localLink\" href=\"https://schema.org/HyperTocEntry\">HyperTocEntry</a>."
   {:rdf/about        :schema/HyperTocEntry,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/HyperTocEntry"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/HyperTocEntry"},
    :rdfs/label       "HyperTocEntry",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -3075,8 +3073,8 @@
   "A specific and exact (byte-for-byte) version of an <a class=\"localLink\" href=\"https://schema.org/ImageObject\">ImageObject</a>. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata (e.g. XMP, EXIF) the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity."
   {:rdf/about        :schema/ImageObjectSnapshot,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/ImageObjectSnapshot"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ImageObjectSnapshot"},
    :rdfs/label       "ImageObjectSnapshot",
    :rdfs/subClassOf  :schema/ImageObject})
 
@@ -3084,8 +3082,7 @@
   "Any medical imaging modality typically used for diagnostic purposes."
   {:rdf/about        :schema/ImagingTest,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/ImagingTest"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/ImagingTest"},
    :rdfs/label       "ImagingTest",
    :rdfs/subClassOf  :schema/MedicalTest})
 
@@ -3099,21 +3096,21 @@
 
 (def InfectiousAgentClass
   "Classes of agents or pathogens that transmit infectious diseases. Enumerated type."
-  {:rdf/about :schema/InfectiousAgentClass,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/InfectiousAgentClass"},
-   :rdfs/label "InfectiousAgentClass",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/InfectiousAgentClass,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/InfectiousAgentClass"},
+   :rdfs/label       "InfectiousAgentClass",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def InfectiousDisease
   "An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease."
-  {:rdf/about :schema/InfectiousDisease,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/InfectiousDisease"},
-   :rdfs/label "InfectiousDisease",
-   :rdfs/subClassOf :schema/MedicalCondition})
+  {:rdf/about        :schema/InfectiousDisease,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/InfectiousDisease"},
+   :rdfs/label       "InfectiousDisease",
+   :rdfs/subClassOf  :schema/MedicalCondition})
 
 (def InformAction
   "The act of notifying someone of information pertinent to them, with no expectation of a response."
@@ -3191,7 +3188,7 @@
   "A company or fund that gathers capital from a number of investors to create a pool of money that is then re-invested into stocks, bonds and other assets."
   {:rdf/about        :schema/InvestmentFund,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/InvestmentFund"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/InvestmentFund"},
    :rdfs/label       "InvestmentFund",
    :rdfs/subClassOf  :schema/InvestmentOrDeposit})
 
@@ -3279,7 +3276,7 @@
   "The anatomical location at which two or more bones make contact."
   {:rdf/about        :schema/Joint,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Joint"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Joint"},
    :rdfs/label       "Joint",
    :rdfs/subClassOf  :schema/AnatomicalStructure})
 
@@ -3319,7 +3316,7 @@
   "The LearningResource type can be used to indicate <a class=\"localLink\" href=\"https://schema.org/CreativeWork\">CreativeWork</a>s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.<br/><br/><a class=\"localLink\" href=\"https://schema.org/LearningResource\">LearningResource</a> is expected to be used as an addition to a primary type such as <a class=\"localLink\" href=\"https://schema.org/Book\">Book</a>, <a class=\"localLink\" href=\"https://schema.org/VideoObject\">VideoObject</a>, <a class=\"localLink\" href=\"https://schema.org/Product\">Product</a> etc.<br/><br/><a class=\"localLink\" href=\"https://schema.org/EducationEvent\">EducationEvent</a> serves a similar purpose for event-like things (e.g. a <a class=\"localLink\" href=\"https://schema.org/Trip\">Trip</a>). A <a class=\"localLink\" href=\"https://schema.org/LearningResource\">LearningResource</a> may be created as a result of an <a class=\"localLink\" href=\"https://schema.org/EducationEvent\">EducationEvent</a>, for example by recording one."
   {:rdf/about        :schema/LearningResource,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/LearningResource"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/LearningResource"},
    :rdfs/label       "LearningResource",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -3335,7 +3332,7 @@
   "A list of possible statuses for the legal force of a legislation."
   {:rdf/about        :schema/LegalForceStatus,
    :rdf/type         [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/LegalForceStatus"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/LegalForceStatus"},
    :rdfs/label       "LegalForceStatus",
    :rdfs/subClassOf  :schema/StatusEnumeration})
 
@@ -3351,7 +3348,7 @@
   "A list of possible levels for the legal validity of a legislation."
   {:rdf/about        :schema/LegalValueLevel,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/LegalValueLevel"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/LegalValueLevel"},
    :rdfs/label       "LegalValueLevel",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -3359,7 +3356,7 @@
   "A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article)."
   {:rdf/about        :schema/Legislation,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Legislation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Legislation"},
    :rdfs/label       "Legislation",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -3367,7 +3364,7 @@
   "A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version."
   {:rdf/about        :schema/LegislationObject,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/LegislationObject"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/LegislationObject"},
    :rdfs/label       "LegislationObject",
    :rdfs/subClassOf  [:schema/MediaObject :schema/Legislation]})
 
@@ -3399,7 +3396,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/LibrarySystem\">LibrarySystem</a> is a collaborative system amongst several libraries."
   {:rdf/about        :schema/LibrarySystem,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/LibrarySystem"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/LibrarySystem"},
    :rdfs/label       "LibrarySystem",
    :rdfs/subClassOf  :schema/Organization})
 
@@ -3408,7 +3405,7 @@
   {:rdf/about :schema/LifestyleModification,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/LifestyleModification"},
+   {:rdf/uri "https://health-lifesci.schema.org/LifestyleModification"},
    :rdfs/label "LifestyleModification",
    :rdfs/subClassOf :schema/MedicalEntity})
 
@@ -3416,7 +3413,7 @@
   "A short band of tough, flexible, fibrous connective tissue that functions to connect multiple bones, cartilages, and structurally support joints."
   {:rdf/about        :schema/Ligament,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Ligament"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Ligament"},
    :rdfs/label       "Ligament",
    :rdfs/subClassOf  :schema/AnatomicalStructure})
 
@@ -3432,7 +3429,7 @@
   "A Role that represents a Web link, e.g. as expressed via the 'url' property. Its linkRelationship property can indicate URL-based and plain textual link types, e.g. those in IANA link registry or others such as 'amphtml'. This structure provides a placeholder where details from HTML's link element can be represented outside of HTML, e.g. in JSON-LD feeds."
   {:rdf/about        :schema/LinkRole,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/LinkRole"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/LinkRole"},
    :rdfs/label       "LinkRole",
    :rdfs/subClassOf  :schema/Role})
 
@@ -3536,8 +3533,8 @@
   "A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart."
   {:rdf/about        :schema/LymphaticVessel,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/LymphaticVessel"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/LymphaticVessel"},
    :rdfs/label       "LymphaticVessel",
    :rdfs/subClassOf  :schema/Vessel})
 
@@ -3545,7 +3542,7 @@
   "A book, document, or piece of music written by hand rather than typed or printed."
   {:rdf/about        :schema/Manuscript,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Manuscript"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Manuscript"},
    :rdfs/label       "Manuscript",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -3585,27 +3582,27 @@
   "A math solver which is capable of solving a subset of mathematical problems."
   {:rdf/about        :schema/MathSolver,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/MathSolver"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/MathSolver"},
    :rdfs/label       "MathSolver",
    :rdfs/subClassOf  :schema/CreativeWork})
 
 (def MaximumDoseSchedule
   "The maximum dosing schedule considered safe for a drug or supplement as recommended by an authority or by the drug/supplement's manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity."
-  {:rdf/about :schema/MaximumDoseSchedule,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MaximumDoseSchedule"},
-   :rdfs/label "MaximumDoseSchedule",
-   :rdfs/subClassOf :schema/DoseSchedule})
+  {:rdf/about        :schema/MaximumDoseSchedule,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MaximumDoseSchedule"},
+   :rdfs/label       "MaximumDoseSchedule",
+   :rdfs/subClassOf  :schema/DoseSchedule})
 
 (def MeasurementTypeEnumeration
   "Enumeration of common measurement types (or dimensions), for example \"chest\" for a person, \"inseam\" for pants, \"gauge\" for screws, or \"wheel\" for bicycles."
-  {:rdf/about :schema/MeasurementTypeEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/MeasurementTypeEnumeration"},
-   :rdfs/label "MeasurementTypeEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/MeasurementTypeEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/MeasurementTypeEnumeration"},
+   :rdfs/label       "MeasurementTypeEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def MediaGallery
   "Web page type: Media gallery page. A mixed-media page that can contain media such as images, videos, and other multimedia."
@@ -3620,7 +3617,7 @@
   {:rdf/about :schema/MediaManipulationRatingEnumeration,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/MediaManipulationRatingEnumeration"},
+   {:rdf/uri "https://pending.schema.org/MediaManipulationRatingEnumeration"},
    :rdfs/label "MediaManipulationRatingEnumeration",
    :rdfs/subClassOf :schema/Enumeration})
 
@@ -3636,7 +3633,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/MediaReview\">MediaReview</a> is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.    For more general reviews of media in the broader sense, use <a class=\"localLink\" href=\"https://schema.org/UserReview\">UserReview</a>, <a class=\"localLink\" href=\"https://schema.org/CriticReview\">CriticReview</a> or other <a class=\"localLink\" href=\"https://schema.org/Review\">Review</a> types. This definition is    a work in progress. While the <a class=\"localLink\" href=\"https://schema.org/MediaManipulationRatingEnumeration\">MediaManipulationRatingEnumeration</a> list reflects significant community review amongst fact-checkers and others working    to combat misinformation, the specific structures for representing media objects, their versions and publication context, are still evolving. Similarly, best practices for the relationship between <a class=\"localLink\" href=\"https://schema.org/MediaReview\">MediaReview</a> and <a class=\"localLink\" href=\"https://schema.org/ClaimReview\">ClaimReview</a> markup have not yet been finalized."
   {:rdf/about        :schema/MediaReview,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/MediaReview"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/MediaReview"},
    :rdfs/label       "MediaReview",
    :rdfs/subClassOf  :schema/Review})
 
@@ -3644,7 +3641,7 @@
   "Represents an item or group of closely related items treated as a unit for the sake of evaluation in a <a class=\"localLink\" href=\"https://schema.org/MediaReview\">MediaReview</a>. Authorship etc. apply to the items rather than to the curation/grouping or reviewing party."
   {:rdf/about        :schema/MediaReviewItem,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/MediaReviewItem"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/MediaReviewItem"},
    :rdfs/label       "MediaReviewItem",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -3660,26 +3657,26 @@
   "Target audiences for medical web pages."
   {:rdf/about        :schema/MedicalAudience,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalAudience"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalAudience"},
    :rdfs/label       "MedicalAudience",
    :rdfs/subClassOf  [:schema/Audience :schema/PeopleAudience]})
 
 (def MedicalAudienceType
   "Target audiences types for medical web pages. Enumerated type."
-  {:rdf/about :schema/MedicalAudienceType,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalAudienceType"},
-   :rdfs/label "MedicalAudienceType",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/MedicalAudienceType,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalAudienceType"},
+   :rdfs/label       "MedicalAudienceType",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def MedicalBusiness
   "A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include different businesses run by health professionals."
   {:rdf/about        :schema/MedicalBusiness,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalBusiness"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalBusiness"},
    :rdfs/label       "MedicalBusiness",
    :rdfs/subClassOf  :schema/LocalBusiness})
 
@@ -3687,8 +3684,8 @@
   "The causative agent(s) that are responsible for the pathophysiologic process that eventually results in a medical condition, symptom or sign. In this schema, unless otherwise specified this is meant to be the proximate cause of the medical condition, symptom or sign. The proximate cause is defined as the causative agent that most directly results in the medical condition, symptom or sign. For example, the HIV virus could be considered a cause of AIDS. Or in a diagnostic context, if a patient fell and sustained a hip fracture and two days later sustained a pulmonary embolism which eventuated in a cardiac arrest, the cause of the cardiac arrest (the proximate cause) would be the pulmonary embolism and not the fall. Medical causes can include cardiovascular, chemical, dermatologic, endocrine, environmental, gastroenterologic, genetic, hematologic, gynecologic, iatrogenic, infectious, musculoskeletal, neurologic, nutritional, obstetric, oncologic, otolaryngologic, pharmacologic, psychiatric, pulmonary, renal, rheumatologic, toxic, traumatic, or urologic causes; medical conditions can be causes as well."
   {:rdf/about        :schema/MedicalCause,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalCause"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalCause"},
    :rdfs/label       "MedicalCause",
    :rdfs/subClassOf  :schema/MedicalEntity})
 
@@ -3696,8 +3693,8 @@
   "A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well."
   {:rdf/about        :schema/MedicalClinic,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalClinic"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalClinic"},
    :rdfs/label       "MedicalClinic",
    :rdfs/subClassOf  [:schema/MedicalBusiness :schema/MedicalOrganization]})
 
@@ -3705,26 +3702,25 @@
   "A code for a medical entity."
   {:rdf/about        :schema/MedicalCode,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalCode"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/MedicalCode"},
    :rdfs/label       "MedicalCode",
    :rdfs/subClassOf  [:schema/MedicalIntangible :schema/CategoryCode]})
 
 (def MedicalCondition
   "Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc."
-  {:rdf/about :schema/MedicalCondition,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalCondition"},
-   :rdfs/label "MedicalCondition",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/MedicalCondition,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalCondition"},
+   :rdfs/label       "MedicalCondition",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalConditionStage
   "A stage of a medical condition, such as 'Stage IIIa'."
   {:rdf/about :schema/MedicalConditionStage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalConditionStage"},
+   {:rdf/uri "https://health-lifesci.schema.org/MedicalConditionStage"},
    :rdfs/label "MedicalConditionStage",
    :rdfs/subClassOf :schema/MedicalIntangible})
 
@@ -3733,7 +3729,7 @@
   {:rdf/about :schema/MedicalContraindication,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalContraindication"},
+   {:rdf/uri "https://health-lifesci.schema.org/MedicalContraindication"},
    :rdfs/label "MedicalContraindication",
    :rdfs/subClassOf :schema/MedicalEntity})
 
@@ -3741,63 +3737,63 @@
   "Any object used in a medical capacity, such as to diagnose or treat a patient."
   {:rdf/about        :schema/MedicalDevice,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalDevice"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalDevice"},
    :rdfs/label       "MedicalDevice",
    :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalDevicePurpose
   "Categories of medical devices, organized by the purpose or intended use of the device."
-  {:rdf/about :schema/MedicalDevicePurpose,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalDevicePurpose"},
-   :rdfs/label "MedicalDevicePurpose",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/MedicalDevicePurpose,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalDevicePurpose"},
+   :rdfs/label       "MedicalDevicePurpose",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def MedicalEntity
   "The most generic type of entity related to health and the practice of medicine."
   {:rdf/about        :schema/MedicalEntity,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalEntity"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalEntity"},
    :rdfs/label       "MedicalEntity",
    :rdfs/subClassOf  :schema/Thing})
 
 (def MedicalEnumeration
   "Enumerations related to health and the practice of medicine: A concept that is used to attribute a quality to another concept, as a qualifier, a collection of items or a listing of all of the elements of a set in medicine practice."
-  {:rdf/about :schema/MedicalEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalEnumeration"},
-   :rdfs/label "MedicalEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/MedicalEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalEnumeration"},
+   :rdfs/label       "MedicalEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def MedicalEvidenceLevel
   "Level of evidence for a medical guideline. Enumerated type."
-  {:rdf/about :schema/MedicalEvidenceLevel,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalEvidenceLevel"},
-   :rdfs/label "MedicalEvidenceLevel",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/MedicalEvidenceLevel,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalEvidenceLevel"},
+   :rdfs/label       "MedicalEvidenceLevel",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def MedicalGuideline
   "Any recommendation made by a standard society (e.g. ACC/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity."
-  {:rdf/about :schema/MedicalGuideline,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalGuideline"},
-   :rdfs/label "MedicalGuideline",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/MedicalGuideline,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalGuideline"},
+   :rdfs/label       "MedicalGuideline",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalGuidelineContraindication
   "A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound."
   {:rdf/about :schema/MedicalGuidelineContraindication,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri
-         "https://health-lifesci.schema.org/MedicalGuidelineContraindication"},
+   {:rdf/uri
+    "https://health-lifesci.schema.org/MedicalGuidelineContraindication"},
    :rdfs/label "MedicalGuidelineContraindication",
    :rdfs/subClassOf :schema/MedicalGuideline})
 
@@ -3806,8 +3802,8 @@
   {:rdf/about :schema/MedicalGuidelineRecommendation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri
-         "https://health-lifesci.schema.org/MedicalGuidelineRecommendation"},
+   {:rdf/uri
+    "https://health-lifesci.schema.org/MedicalGuidelineRecommendation"},
    :rdfs/label "MedicalGuidelineRecommendation",
    :rdfs/subClassOf :schema/MedicalGuideline})
 
@@ -3816,34 +3812,34 @@
   {:rdf/about :schema/MedicalImagingTechnique,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalImagingTechnique"},
+   {:rdf/uri "https://health-lifesci.schema.org/MedicalImagingTechnique"},
    :rdfs/label "MedicalImagingTechnique",
    :rdfs/subClassOf :schema/MedicalEnumeration})
 
 (def MedicalIndication
   "A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc."
-  {:rdf/about :schema/MedicalIndication,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalIndication"},
-   :rdfs/label "MedicalIndication",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/MedicalIndication,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalIndication"},
+   :rdfs/label       "MedicalIndication",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalIntangible
   "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space."
-  {:rdf/about :schema/MedicalIntangible,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalIntangible"},
-   :rdfs/label "MedicalIntangible",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/MedicalIntangible,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalIntangible"},
+   :rdfs/label       "MedicalIntangible",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalObservationalStudy
   "An observational study is a type of medical study that attempts to infer the possible effect of a treatment through observation of a cohort of subjects over a period of time. In an observational study, the assignment of subjects into treatment groups versus control groups is outside the control of the investigator. This is in contrast with controlled studies, such as the randomized controlled trials represented by MedicalTrial, where each subject is randomly assigned to a treatment group or a control group before the start of the treatment."
   {:rdf/about :schema/MedicalObservationalStudy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalObservationalStudy"},
+   {:rdf/uri "https://health-lifesci.schema.org/MedicalObservationalStudy"},
    :rdfs/label "MedicalObservationalStudy",
    :rdfs/subClassOf :schema/MedicalStudy})
 
@@ -3852,8 +3848,8 @@
   {:rdf/about :schema/MedicalObservationalStudyDesign,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri
-         "https://health-lifesci.schema.org/MedicalObservationalStudyDesign"},
+   {:rdf/uri
+    "https://health-lifesci.schema.org/MedicalObservationalStudyDesign"},
    :rdfs/label "MedicalObservationalStudyDesign",
    :rdfs/subClassOf :schema/MedicalEnumeration})
 
@@ -3867,64 +3863,64 @@
 
 (def MedicalProcedure
   "A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques."
-  {:rdf/about :schema/MedicalProcedure,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalProcedure"},
-   :rdfs/label "MedicalProcedure",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/MedicalProcedure,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalProcedure"},
+   :rdfs/label       "MedicalProcedure",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalProcedureType
   "An enumeration that describes different types of medical procedures."
-  {:rdf/about :schema/MedicalProcedureType,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalProcedureType"},
-   :rdfs/label "MedicalProcedureType",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/MedicalProcedureType,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalProcedureType"},
+   :rdfs/label       "MedicalProcedureType",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def MedicalRiskCalculator
   "A complex mathematical calculation requiring an online calculator, used to assess prognosis. Note: use the url property of Thing to record any URLs for online calculators."
   {:rdf/about :schema/MedicalRiskCalculator,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalRiskCalculator"},
+   {:rdf/uri "https://health-lifesci.schema.org/MedicalRiskCalculator"},
    :rdfs/label "MedicalRiskCalculator",
    :rdfs/subClassOf :schema/MedicalRiskEstimator})
 
 (def MedicalRiskEstimator
   "Any rule set or interactive tool for estimating the risk of developing a complication or condition."
-  {:rdf/about :schema/MedicalRiskEstimator,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalRiskEstimator"},
-   :rdfs/label "MedicalRiskEstimator",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/MedicalRiskEstimator,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalRiskEstimator"},
+   :rdfs/label       "MedicalRiskEstimator",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalRiskFactor
   "A risk factor is anything that increases a person's likelihood of developing or contracting a disease, medical condition, or complication."
-  {:rdf/about :schema/MedicalRiskFactor,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalRiskFactor"},
-   :rdfs/label "MedicalRiskFactor",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/MedicalRiskFactor,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalRiskFactor"},
+   :rdfs/label       "MedicalRiskFactor",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalRiskScore
   "A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score."
-  {:rdf/about :schema/MedicalRiskScore,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalRiskScore"},
-   :rdfs/label "MedicalRiskScore",
-   :rdfs/subClassOf :schema/MedicalRiskEstimator})
+  {:rdf/about        :schema/MedicalRiskScore,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalRiskScore"},
+   :rdfs/label       "MedicalRiskScore",
+   :rdfs/subClassOf  :schema/MedicalRiskEstimator})
 
 (def MedicalScholarlyArticle
   "A scholarly article in the medical domain."
   {:rdf/about :schema/MedicalScholarlyArticle,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalScholarlyArticle"},
+   {:rdf/uri "https://health-lifesci.schema.org/MedicalScholarlyArticle"},
    :rdfs/label "MedicalScholarlyArticle",
    :rdfs/subClassOf :schema/ScholarlyArticle})
 
@@ -3932,53 +3928,52 @@
   "Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination."
   {:rdf/about        :schema/MedicalSign,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalSign"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/MedicalSign"},
    :rdfs/label       "MedicalSign",
    :rdfs/subClassOf  :schema/MedicalSignOrSymptom})
 
 (def MedicalSignOrSymptom
   "Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective."
-  {:rdf/about :schema/MedicalSignOrSymptom,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalSignOrSymptom"},
-   :rdfs/label "MedicalSignOrSymptom",
-   :rdfs/subClassOf :schema/MedicalCondition})
+  {:rdf/about        :schema/MedicalSignOrSymptom,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalSignOrSymptom"},
+   :rdfs/label       "MedicalSignOrSymptom",
+   :rdfs/subClassOf  :schema/MedicalCondition})
 
 (def MedicalSpecialty
   "Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type."
-  {:rdf/about :schema/MedicalSpecialty,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalSpecialty"},
-   :rdfs/label "MedicalSpecialty",
-   :rdfs/subClassOf [:schema/Specialty :schema/MedicalEnumeration]})
+  {:rdf/about        :schema/MedicalSpecialty,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalSpecialty"},
+   :rdfs/label       "MedicalSpecialty",
+   :rdfs/subClassOf  [:schema/Specialty :schema/MedicalEnumeration]})
 
 (def MedicalStudy
   "A medical study is an umbrella type covering all kinds of research studies relating to human medicine or health, including observational studies and interventional trials and registries, randomized, controlled or not. When the specific type of study is known, use one of the extensions of this type, such as MedicalTrial or MedicalObservationalStudy. Also, note that this type should be used to mark up data that describes the study itself; to tag an article that publishes the results of a study, use MedicalScholarlyArticle. Note: use the code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID."
   {:rdf/about        :schema/MedicalStudy,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalStudy"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalStudy"},
    :rdfs/label       "MedicalStudy",
    :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalStudyStatus
   "The status of a medical study. Enumerated type."
-  {:rdf/about :schema/MedicalStudyStatus,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalStudyStatus"},
-   :rdfs/label "MedicalStudyStatus",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/MedicalStudyStatus,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalStudyStatus"},
+   :rdfs/label       "MedicalStudyStatus",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def MedicalSymptom
   "Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue."
   {:rdf/about        :schema/MedicalSymptom,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalSymptom"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalSymptom"},
    :rdfs/label       "MedicalSymptom",
    :rdfs/subClassOf  :schema/MedicalSignOrSymptom})
 
@@ -3986,26 +3981,25 @@
   "Any medical test, typically performed for diagnostic purposes."
   {:rdf/about        :schema/MedicalTest,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalTest"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/MedicalTest"},
    :rdfs/label       "MedicalTest",
    :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def MedicalTestPanel
   "Any collection of tests commonly ordered together."
-  {:rdf/about :schema/MedicalTestPanel,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalTestPanel"},
-   :rdfs/label "MedicalTestPanel",
-   :rdfs/subClassOf :schema/MedicalTest})
+  {:rdf/about        :schema/MedicalTestPanel,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalTestPanel"},
+   :rdfs/label       "MedicalTestPanel",
+   :rdfs/subClassOf  :schema/MedicalTest})
 
 (def MedicalTherapy
   "Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition."
   {:rdf/about        :schema/MedicalTherapy,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalTherapy"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalTherapy"},
    :rdfs/label       "MedicalTherapy",
    :rdfs/subClassOf  :schema/TherapeuticProcedure})
 
@@ -4013,26 +4007,26 @@
   "A medical trial is a type of medical study that uses a scientific process to compare the safety and efficacy of medical therapies or medical procedures. In general, medical trials are controlled and subjects are allocated at random to the different treatment and/or control groups."
   {:rdf/about        :schema/MedicalTrial,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalTrial"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalTrial"},
    :rdfs/label       "MedicalTrial",
    :rdfs/subClassOf  :schema/MedicalStudy})
 
 (def MedicalTrialDesign
   "Design models for medical trials. Enumerated type."
-  {:rdf/about :schema/MedicalTrialDesign,
-   :rdf/type [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/MedicalTrialDesign"},
-   :rdfs/label "MedicalTrialDesign",
-   :rdfs/subClassOf :schema/MedicalEnumeration})
+  {:rdf/about        :schema/MedicalTrialDesign,
+   :rdf/type         [:owl/NamedIndividual :owl/Class],
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalTrialDesign"},
+   :rdfs/label       "MedicalTrialDesign",
+   :rdfs/subClassOf  :schema/MedicalEnumeration})
 
 (def MedicalWebPage
   "A web page that provides medical information."
   {:rdf/about        :schema/MedicalWebPage,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicalWebPage"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicalWebPage"},
    :rdfs/label       "MedicalWebPage",
    :rdfs/subClassOf  :schema/WebPage})
 
@@ -4040,8 +4034,8 @@
   "Systems of medical practice."
   {:rdf/about        :schema/MedicineSystem,
    :rdf/type         [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/MedicineSystem"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/MedicineSystem"},
    :rdfs/label       "MedicineSystem",
    :rdfs/subClassOf  :schema/MedicalEnumeration})
 
@@ -4087,19 +4081,19 @@
 
 (def MerchantReturnEnumeration
   "Enumerates several kinds of product return policies."
-  {:rdf/about :schema/MerchantReturnEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/MerchantReturnEnumeration"},
-   :rdfs/label "MerchantReturnEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/MerchantReturnEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/MerchantReturnEnumeration"},
+   :rdfs/label       "MerchantReturnEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def MerchantReturnPolicy
   "A MerchantReturnPolicy provides information about product return policies associated with an <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a>, <a class=\"localLink\" href=\"https://schema.org/Product\">Product</a>, or <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a>."
   {:rdf/about        :schema/MerchantReturnPolicy,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/MerchantReturnPolicy"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/MerchantReturnPolicy"},
    :rdfs/label       "MerchantReturnPolicy",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -4108,8 +4102,7 @@
   {:rdf/about :schema/MerchantReturnPolicySeasonalOverride,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri
-         "https://pending.schema.org/MerchantReturnPolicySeasonalOverride"},
+   {:rdf/uri "https://pending.schema.org/MerchantReturnPolicySeasonalOverride"},
    :rdfs/label "MerchantReturnPolicySeasonalOverride",
    :rdfs/subClassOf :schema/Intangible})
 
@@ -4149,7 +4142,7 @@
   "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity."
   {:rdf/about        :schema/MolecularEntity,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/MolecularEntity"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/MolecularEntity"},
    :rdfs/label       "MolecularEntity",
    :rdfs/subClassOf  :schema/BioChemEntity})
 
@@ -4173,7 +4166,7 @@
   "A monetary grant."
   {:rdf/about        :schema/MonetaryGrant,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/MonetaryGrant"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/MonetaryGrant"},
    :rdfs/label       "MonetaryGrant",
    :rdfs/subClassOf  :schema/Grant})
 
@@ -4181,7 +4174,7 @@
   "The act of transferring money from one place to another place. This may occur electronically or physically."
   {:rdf/about        :schema/MoneyTransfer,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/MoneyTransfer"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/MoneyTransfer"},
    :rdfs/label       "MoneyTransfer",
    :rdfs/subClassOf  :schema/TransferAction})
 
@@ -4189,7 +4182,7 @@
   "A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)"
   {:rdf/about        :schema/MortgageLoan,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/MortgageLoan"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/MortgageLoan"},
    :rdfs/label       "MortgageLoan",
    :rdfs/subClassOf  :schema/LoanOrCredit})
 
@@ -4213,7 +4206,7 @@
   "A motorcycle or motorbike is a single-track, two-wheeled motor vehicle."
   {:rdf/about        :schema/Motorcycle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/Motorcycle"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/Motorcycle"},
    :rdfs/label       "Motorcycle",
    :rdfs/subClassOf  :schema/Vehicle})
 
@@ -4237,7 +4230,7 @@
   "A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling."
   {:rdf/about        :schema/MotorizedBicycle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/MotorizedBicycle"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/MotorizedBicycle"},
    :rdfs/label       "MotorizedBicycle",
    :rdfs/subClassOf  :schema/Vehicle})
 
@@ -4309,7 +4302,7 @@
   "A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement."
   {:rdf/about        :schema/Muscle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Muscle"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Muscle"},
    :rdfs/label       "Muscle",
    :rdfs/subClassOf  :schema/AnatomicalStructure})
 
@@ -4437,7 +4430,7 @@
   "NLNonprofitType: Non-profit organization type originating from the Netherlands."
   {:rdf/about        :schema/NLNonprofitType,
    :rdf/type         [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/NLNonprofitType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/NLNonprofitType"},
    :rdfs/label       "NLNonprofitType",
    :rdfs/subClassOf  :schema/NonprofitType})
 
@@ -4453,7 +4446,7 @@
   "A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons."
   {:rdf/about        :schema/Nerve,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Nerve"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Nerve"},
    :rdfs/label       "Nerve",
    :rdfs/subClassOf  :schema/AnatomicalStructure})
 
@@ -4469,8 +4462,8 @@
   "A News/Media organization such as a newspaper or TV station."
   {:rdf/about        :schema/NewsMediaOrganization,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/NewsMediaOrganization"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/NewsMediaOrganization"},
    :rdfs/label       "NewsMediaOrganization",
    :rdfs/subClassOf  :schema/Organization})
 
@@ -4478,7 +4471,7 @@
   "A publication containing information about varied topics that are pertinent to general information, a geographic area, or a specific subject matter (i.e. business, culture, education). Often published daily."
   {:rdf/about        :schema/Newspaper,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/Newspaper"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/Newspaper"},
    :rdfs/label       "Newspaper",
    :rdfs/subClassOf  :schema/Periodical})
 
@@ -4494,7 +4487,7 @@
   "NonprofitType enumerates several kinds of official non-profit types of which a non-profit organization can be."
   {:rdf/about        :schema/NonprofitType,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/NonprofitType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/NonprofitType"},
    :rdfs/label       "NonprofitType",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -4534,7 +4527,7 @@
   "Instances of the class <a class=\"localLink\" href=\"https://schema.org/Observation\">Observation</a> are used to specify observations about an entity (which may or may not be an instance of a <a class=\"localLink\" href=\"https://schema.org/StatisticalPopulation\">StatisticalPopulation</a>), at a particular time. The principal properties of an <a class=\"localLink\" href=\"https://schema.org/Observation\">Observation</a> are <a class=\"localLink\" href=\"https://schema.org/observedNode\">observedNode</a>, <a class=\"localLink\" href=\"https://schema.org/measuredProperty\">measuredProperty</a>, <a class=\"localLink\" href=\"https://schema.org/measuredValue\">measuredValue</a> (or <a class=\"localLink\" href=\"https://schema.org/median\">median</a>, etc.) and <a class=\"localLink\" href=\"https://schema.org/observationDate\">observationDate</a> (<a class=\"localLink\" href=\"https://schema.org/measuredProperty\">measuredProperty</a> properties can, but need not always, be W3C RDF Data Cube \"measure properties\", as in the <a href=\"https://www.w3.org/TR/vocab-data-cube/#dsd-example\">lifeExpectancy example</a>).See also <a class=\"localLink\" href=\"https://schema.org/StatisticalPopulation\">StatisticalPopulation</a>, and the <a href=\"/docs/data-and-datasets.html\">data and datasets</a> overview for more details."
   {:rdf/about        :schema/Observation,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Observation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Observation"},
    :rdfs/label       "Observation",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -4551,18 +4544,18 @@
   {:rdf/about :schema/OccupationalExperienceRequirements,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/OccupationalExperienceRequirements"},
+   {:rdf/uri "https://pending.schema.org/OccupationalExperienceRequirements"},
    :rdfs/label "OccupationalExperienceRequirements",
    :rdfs/subClassOf :schema/Intangible})
 
 (def OccupationalTherapy
   "A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems."
-  {:rdf/about :schema/OccupationalTherapy,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/OccupationalTherapy"},
-   :rdfs/label "OccupationalTherapy",
-   :rdfs/subClassOf :schema/MedicalTherapy})
+  {:rdf/about        :schema/OccupationalTherapy,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/OccupationalTherapy"},
+   :rdfs/label       "OccupationalTherapy",
+   :rdfs/subClassOf  :schema/MedicalTherapy})
 
 (def OceanBodyOfWater
   "An ocean (for example, the Pacific)."
@@ -4592,7 +4585,7 @@
   "An <a class=\"localLink\" href=\"https://schema.org/OfferForLease\">OfferForLease</a> in Schema.org represents an <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a> to lease out something, i.e. an <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a> whose  <a class=\"localLink\" href=\"https://schema.org/businessFunction\">businessFunction</a> is <a href=\"http://purl.org/goodrelations/v1#LeaseOut.\">lease out</a>. See <a href=\"https://en.wikipedia.org/wiki/GoodRelations\">Good Relations</a> for  background on the underlying concepts."
   {:rdf/about        :schema/OfferForLease,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/OfferForLease"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/OfferForLease"},
    :rdfs/label       "OfferForLease",
    :rdfs/subClassOf  :schema/Offer})
 
@@ -4600,7 +4593,7 @@
   "An <a class=\"localLink\" href=\"https://schema.org/OfferForPurchase\">OfferForPurchase</a> in Schema.org represents an <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a> to sell something, i.e. an <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a> whose  <a class=\"localLink\" href=\"https://schema.org/businessFunction\">businessFunction</a> is <a href=\"http://purl.org/goodrelations/v1#Sell.\">sell</a>. See <a href=\"https://en.wikipedia.org/wiki/GoodRelations\">Good Relations</a> for  background on the underlying concepts."
   {:rdf/about        :schema/OfferForPurchase,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/OfferForPurchase"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/OfferForPurchase"},
    :rdfs/label       "OfferForPurchase",
    :rdfs/subClassOf  :schema/Offer})
 
@@ -4616,8 +4609,8 @@
   "OfferShippingDetails represents information about shipping destinations.<br/><br/>Multiple of these entities can be used to represent different shipping rates for different destinations:<br/><br/>One entity for Alaska/Hawaii. A different one for continental US. A different one for all France.<br/><br/>Multiple of these entities can be used to represent different shipping costs and delivery times.<br/><br/>Two entities that are identical but differ in rate and time:<br/><br/>E.g. Cheaper and slower: $5 in 5-7 daysor Fast and expensive: $15 in 1-2 days."
   {:rdf/about        :schema/OfferShippingDetails,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/OfferShippingDetails"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/OfferShippingDetails"},
    :rdfs/label       "OfferShippingDetails",
    :rdfs/subClassOf  :schema/StructuredValue})
 
@@ -4641,7 +4634,7 @@
   "A particular online business, either standalone or the online part of a broader organization. Examples include an eCommerce site, an online travel booking site, an online learning site, an online logistics and shipping provider, an online (virtual) doctor, etc."
   {:rdf/about        :schema/OnlineBusiness,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/OnlineBusiness"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/OnlineBusiness"},
    :rdfs/label       "OnlineBusiness",
    :rdfs/subClassOf  :schema/Organization})
 
@@ -4649,7 +4642,7 @@
   "An eCommerce site."
   {:rdf/about        :schema/OnlineStore,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/OnlineStore"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/OnlineStore"},
    :rdfs/label       "OnlineStore",
    :rdfs/subClassOf  :schema/OnlineBusiness})
 
@@ -4665,8 +4658,7 @@
   "An <a class=\"localLink\" href=\"https://schema.org/OpinionNewsArticle\">OpinionNewsArticle</a> is a <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> that primarily expresses opinions rather than journalistic reporting of news and events. For example, a <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> consisting of a column or <a class=\"localLink\" href=\"https://schema.org/Blog\">Blog</a>/<a class=\"localLink\" href=\"https://schema.org/BlogPosting\">BlogPosting</a> entry in the Opinions section of a news publication."
   {:rdf/about        :schema/OpinionNewsArticle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/OpinionNewsArticle"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/OpinionNewsArticle"},
    :rdfs/label       "OpinionNewsArticle",
    :rdfs/subClassOf  :schema/NewsArticle})
 
@@ -4674,7 +4666,7 @@
   "A store that sells reading glasses and similar devices for improving vision."
   {:rdf/about        :schema/Optician,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Optician"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Optician"},
    :rdfs/label       "Optician",
    :rdfs/subClassOf  :schema/MedicalBusiness})
 
@@ -4768,12 +4760,12 @@
 
 (def PalliativeProcedure
   "A medical procedure intended primarily for palliative purposes, aimed at relieving the symptoms of an underlying health condition."
-  {:rdf/about :schema/PalliativeProcedure,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/PalliativeProcedure"},
-   :rdfs/label "PalliativeProcedure",
-   :rdfs/subClassOf [:schema/MedicalTherapy :schema/MedicalProcedure]})
+  {:rdf/about        :schema/PalliativeProcedure,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/PalliativeProcedure"},
+   :rdfs/label       "PalliativeProcedure",
+   :rdfs/subClassOf  [:schema/MedicalTherapy :schema/MedicalProcedure]})
 
 (def ParcelDelivery
   "The delivery of a parcel either via the postal service or a commercial service."
@@ -4811,8 +4803,8 @@
   "A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist."
   {:rdf/about        :schema/PathologyTest,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/PathologyTest"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/PathologyTest"},
    :rdfs/label       "PathologyTest",
    :rdfs/subClassOf  :schema/MedicalTest})
 
@@ -4820,7 +4812,7 @@
   "A patient is any person recipient of health care services."
   {:rdf/about        :schema/Patient,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Patient"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Patient"},
    :rdfs/label       "Patient",
    :rdfs/subClassOf  [:schema/MedicalAudience :schema/Person]})
 
@@ -4978,19 +4970,19 @@
 
 (def PhysicalActivity
   "Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan."
-  {:rdf/about :schema/PhysicalActivity,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/PhysicalActivity"},
-   :rdfs/label "PhysicalActivity",
-   :rdfs/subClassOf :schema/LifestyleModification})
+  {:rdf/about        :schema/PhysicalActivity,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/PhysicalActivity"},
+   :rdfs/label       "PhysicalActivity",
+   :rdfs/subClassOf  :schema/LifestyleModification})
 
 (def PhysicalActivityCategory
   "Categories of physical activity, organized by physiologic classification."
   {:rdf/about :schema/PhysicalActivityCategory,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/PhysicalActivityCategory"},
+   {:rdf/uri "https://health-lifesci.schema.org/PhysicalActivityCategory"},
    :rdfs/label "PhysicalActivityCategory",
    :rdfs/subClassOf :schema/Enumeration})
 
@@ -4998,8 +4990,8 @@
   "A type of physical examination of a patient performed by a physician."
   {:rdf/about        :schema/PhysicalExam,
    :rdf/type         [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/PhysicalExam"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/PhysicalExam"},
    :rdfs/label       "PhysicalExam",
    :rdfs/subClassOf  [:schema/MedicalEnumeration :schema/MedicalProcedure]})
 
@@ -5007,8 +4999,8 @@
   "A process of progressive physical care and rehabilitation aimed at improving a health condition."
   {:rdf/about        :schema/PhysicalTherapy,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/PhysicalTherapy"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/PhysicalTherapy"},
    :rdfs/label       "PhysicalTherapy",
    :rdfs/subClassOf  :schema/MedicalTherapy})
 
@@ -5048,7 +5040,7 @@
   "A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note: A performance of a Play would be a <a class=\"localLink\" href=\"https://schema.org/TheaterEvent\">TheaterEvent</a> or <a class=\"localLink\" href=\"https://schema.org/BroadcastEvent\">BroadcastEvent</a> - the <em>Play</em> being the <a class=\"localLink\" href=\"https://schema.org/workPerformed\">workPerformed</a>."
   {:rdf/about        :schema/Play,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Play"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Play"},
    :rdfs/label       "Play",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -5064,7 +5056,7 @@
   "The act of playing a video game."
   {:rdf/about        :schema/PlayGameAction,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/PlayGameAction"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/PlayGameAction"},
    :rdfs/label       "PlayGameAction",
    :rdfs/subClassOf  :schema/ConsumeAction})
 
@@ -5088,7 +5080,7 @@
   "A single episode of a podcast series."
   {:rdf/about        :schema/PodcastEpisode,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/PodcastEpisode"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/PodcastEpisode"},
    :rdfs/label       "PodcastEpisode",
    :rdfs/subClassOf  :schema/Episode})
 
@@ -5096,7 +5088,7 @@
   "A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used."
   {:rdf/about        :schema/PodcastSeason,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/PodcastSeason"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/PodcastSeason"},
    :rdfs/label       "PodcastSeason",
    :rdfs/subClassOf  :schema/CreativeWorkSeason})
 
@@ -5104,7 +5096,7 @@
   "A podcast is an episodic series of digital audio or video files which a user can download and listen to."
   {:rdf/about        :schema/PodcastSeries,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/PodcastSeries"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/PodcastSeries"},
    :rdfs/label       "PodcastSeries",
    :rdfs/subClassOf  :schema/CreativeWorkSeries})
 
@@ -5145,7 +5137,7 @@
   {:rdf/about :schema/PostalCodeRangeSpecification,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/PostalCodeRangeSpecification"},
+   {:rdf/uri "https://pending.schema.org/PostalCodeRangeSpecification"},
    :rdfs/label "PostalCodeRangeSpecification",
    :rdfs/subClassOf :schema/StructuredValue})
 
@@ -5153,7 +5145,7 @@
   "A large, usually printed placard, bill, or announcement, often illustrated, that is posted to advertise or publicize something."
   {:rdf/about        :schema/Poster,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Poster"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Poster"},
    :rdfs/label       "Poster",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -5191,19 +5183,19 @@
 
 (def PreventionIndication
   "An indication for preventing an underlying condition, symptom, etc."
-  {:rdf/about :schema/PreventionIndication,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/PreventionIndication"},
-   :rdfs/label "PreventionIndication",
-   :rdfs/subClassOf :schema/MedicalIndication})
+  {:rdf/about        :schema/PreventionIndication,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/PreventionIndication"},
+   :rdfs/label       "PreventionIndication",
+   :rdfs/subClassOf  :schema/MedicalIndication})
 
 (def PriceComponentTypeEnumeration
   "Enumerates different price components that together make up the total price for an offered product."
   {:rdf/about :schema/PriceComponentTypeEnumeration,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/PriceComponentTypeEnumeration"},
+   {:rdf/uri "https://pending.schema.org/PriceComponentTypeEnumeration"},
    :rdfs/label "PriceComponentTypeEnumeration",
    :rdfs/subClassOf :schema/Enumeration})
 
@@ -5219,8 +5211,8 @@
   "Enumerates different price types, for example list price, invoice price, and sale price."
   {:rdf/about        :schema/PriceTypeEnumeration,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/PriceTypeEnumeration"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/PriceTypeEnumeration"},
    :rdfs/label       "PriceTypeEnumeration",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -5236,7 +5228,7 @@
   "A set of products (either <a class=\"localLink\" href=\"https://schema.org/ProductGroup\">ProductGroup</a>s or specific variants) that are listed together e.g. in an <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a>."
   {:rdf/about        :schema/ProductCollection,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ProductCollection"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ProductCollection"},
    :rdfs/label       "ProductCollection",
    :rdfs/subClassOf  [:schema/Collection :schema/Product]})
 
@@ -5244,7 +5236,7 @@
   "A ProductGroup represents a group of <a class=\"localLink\" href=\"https://schema.org/Product\">Product</a>s that vary only in certain well-described ways, such as by <a class=\"localLink\" href=\"https://schema.org/size\">size</a>, <a class=\"localLink\" href=\"https://schema.org/color\">color</a>, <a class=\"localLink\" href=\"https://schema.org/material\">material</a> etc.<br/><br/>While a ProductGroup itself is not directly offered for sale, the various varying products that it represents can be. The ProductGroup serves as a prototype or template, standing in for all of the products who have an <a class=\"localLink\" href=\"https://schema.org/isVariantOf\">isVariantOf</a> relationship to it. As such, properties (including additional types) can be applied to the ProductGroup to represent characteristics shared by each of the (possibly very many) variants. Properties that reference a ProductGroup are not included in this mechanism; neither are the following specific properties <a class=\"localLink\" href=\"https://schema.org/variesBy\">variesBy</a>, <a class=\"localLink\" href=\"https://schema.org/hasVariant\">hasVariant</a>, <a class=\"localLink\" href=\"https://schema.org/url\">url</a>."
   {:rdf/about        :schema/ProductGroup,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ProductGroup"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ProductGroup"},
    :rdfs/label       "ProductGroup",
    :rdfs/subClassOf  :schema/Product})
 
@@ -5260,8 +5252,8 @@
   "ProductReturnEnumeration enumerates several kinds of product return policy. Note that this structure may not capture all aspects of the policy."
   {:rdf/about        :schema/ProductReturnEnumeration,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://attic.schema.org/ProductReturnEnumeration"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://attic.schema.org/ProductReturnEnumeration"},
    :rdfs/label       "ProductReturnEnumeration",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -5269,7 +5261,7 @@
   "A ProductReturnPolicy provides information about product return policies associated with an <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a> or <a class=\"localLink\" href=\"https://schema.org/Product\">Product</a>."
   {:rdf/about        :schema/ProductReturnPolicy,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://attic.schema.org/ProductReturnPolicy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://attic.schema.org/ProductReturnPolicy"},
    :rdfs/label       "ProductReturnPolicy",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -5301,7 +5293,7 @@
   "An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.Use properties from <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a>, <a class=\"localLink\" href=\"https://schema.org/subOrganization\">subOrganization</a>/<a class=\"localLink\" href=\"https://schema.org/parentOrganization\">parentOrganization</a> to indicate project sub-structures."
   {:rdf/about        :schema/Project,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Project"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Project"},
    :rdfs/label       "Project",
    :rdfs/subClassOf  :schema/Organization})
 
@@ -5309,7 +5301,7 @@
   "Data type: PronounceableText."
   {:rdf/about        :schema/PronounceableText,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/PronounceableText"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/PronounceableText"},
    :rdfs/label       "PronounceableText",
    :rdfs/subClassOf  :schema/Text})
 
@@ -5317,7 +5309,7 @@
   "A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property."
   {:rdf/about        :schema/Property,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://meta.schema.org/Property"},
+   :rdfs/isDefinedBy {:rdf/uri "https://meta.schema.org/Property"},
    :rdfs/label       "Property",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -5341,7 +5333,7 @@
   "Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring."
   {:rdf/about        :schema/Protein,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Protein"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Protein"},
    :rdfs/label       "Protein",
    :rdfs/subClassOf  :schema/BioChemEntity})
 
@@ -5350,7 +5342,7 @@
   {:rdf/about :schema/PsychologicalTreatment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/PsychologicalTreatment"},
+   {:rdf/uri "https://health-lifesci.schema.org/PsychologicalTreatment"},
    :rdfs/label "PsychologicalTreatment",
    :rdfs/subClassOf :schema/TherapeuticProcedure})
 
@@ -5366,7 +5358,7 @@
   "A public toilet is a room or small building containing one or more toilets (and possibly also urinals) which is available for use by the general public, or by customers or employees of certain businesses."
   {:rdf/about        :schema/PublicToilet,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/PublicToilet"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/PublicToilet"},
    :rdfs/label       "PublicToilet",
    :rdfs/subClassOf  :schema/CivicStructure})
 
@@ -5446,7 +5438,7 @@
   "Quiz: A test of knowledge, skills and abilities."
   {:rdf/about        :schema/Quiz,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Quiz"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Quiz"},
    :rdfs/label       "Quiz",
    :rdfs/subClassOf  :schema/LearningResource})
 
@@ -5454,7 +5446,7 @@
   "A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use <a class=\"localLink\" href=\"https://schema.org/isBasedOn\">isBasedOn</a> to link to source/origin. The <a class=\"localLink\" href=\"https://schema.org/recordedIn\">recordedIn</a> property can be used to reference a Quotation from an <a class=\"localLink\" href=\"https://schema.org/Event\">Event</a>."
   {:rdf/about        :schema/Quotation,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Quotation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Quotation"},
    :rdfs/label       "Quotation",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -5476,19 +5468,19 @@
 
 (def RadiationTherapy
   "A process of care using radiation aimed at improving a health condition."
-  {:rdf/about :schema/RadiationTherapy,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/RadiationTherapy"},
-   :rdfs/label "RadiationTherapy",
-   :rdfs/subClassOf :schema/MedicalTherapy})
+  {:rdf/about        :schema/RadiationTherapy,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/RadiationTherapy"},
+   :rdfs/label       "RadiationTherapy",
+   :rdfs/subClassOf  :schema/MedicalTherapy})
 
 (def RadioBroadcastService
   "A delivery service through which radio content is provided via broadcast over the air or online."
   {:rdf/about        :schema/RadioBroadcastService,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/RadioBroadcastService"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/RadioBroadcastService"},
    :rdfs/label       "RadioBroadcastService",
    :rdfs/subClassOf  :schema/BroadcastService})
 
@@ -5576,7 +5568,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/RealEstateListing\">RealEstateListing</a> is a listing that describes one or more real-estate <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a>s (whose <a class=\"localLink\" href=\"https://schema.org/businessFunction\">businessFunction</a> is typically to lease out, or to sell).  The <a class=\"localLink\" href=\"https://schema.org/RealEstateListing\">RealEstateListing</a> type itself represents the overall listing, as manifested in some <a class=\"localLink\" href=\"https://schema.org/WebPage\">WebPage</a>."
   {:rdf/about        :schema/RealEstateListing,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/RealEstateListing"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/RealEstateListing"},
    :rdfs/label       "RealEstateListing",
    :rdfs/subClassOf  :schema/WebPage})
 
@@ -5600,7 +5592,7 @@
   "<a class=\"localLink\" href=\"https://schema.org/Recommendation\">Recommendation</a> is a type of <a class=\"localLink\" href=\"https://schema.org/Review\">Review</a> that suggests or proposes something as the best option or best course of action. Recommendations may be for products or services, or other concrete things, as in the case of a ranked list or product guide. A <a class=\"localLink\" href=\"https://schema.org/Guide\">Guide</a> may list multiple recommendations for different categories. For example, in a <a class=\"localLink\" href=\"https://schema.org/Guide\">Guide</a> about which TVs to buy, the author may have several <a class=\"localLink\" href=\"https://schema.org/Recommendation\">Recommendation</a>s."
   {:rdf/about        :schema/Recommendation,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Recommendation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Recommendation"},
    :rdfs/label       "Recommendation",
    :rdfs/subClassOf  :schema/Review})
 
@@ -5609,7 +5601,7 @@
   {:rdf/about :schema/RecommendedDoseSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/RecommendedDoseSchedule"},
+   {:rdf/uri "https://health-lifesci.schema.org/RecommendedDoseSchedule"},
    :rdfs/label "RecommendedDoseSchedule",
    :rdfs/subClassOf :schema/DoseSchedule})
 
@@ -5625,8 +5617,8 @@
   "Enumerates several kinds of product return refund types."
   {:rdf/about        :schema/RefundTypeEnumeration,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/RefundTypeEnumeration"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/RefundTypeEnumeration"},
    :rdfs/label       "RefundTypeEnumeration",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -5666,8 +5658,8 @@
   "A structured value representing repayment."
   {:rdf/about        :schema/RepaymentSpecification,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/RepaymentSpecification"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/RepaymentSpecification"},
    :rdfs/label       "RepaymentSpecification",
    :rdfs/subClassOf  :schema/StructuredValue})
 
@@ -5699,26 +5691,26 @@
   "The <a class=\"localLink\" href=\"https://schema.org/ReportageNewsArticle\">ReportageNewsArticle</a> type is a subtype of <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> representing news articles which are the result of journalistic news reporting conventions.<br/><br/>In practice many news publishers produce a wide variety of article types, many of which might be considered a <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> but not a <a class=\"localLink\" href=\"https://schema.org/ReportageNewsArticle\">ReportageNewsArticle</a>. For example, opinion pieces, reviews, analysis, sponsored or satirical articles, or articles that combine several of these elements.<br/><br/>The <a class=\"localLink\" href=\"https://schema.org/ReportageNewsArticle\">ReportageNewsArticle</a> type is based on a stricter ideal for \"news\" as a work of journalism, with articles based on factual information either observed or verified by the author, or reported and verified from knowledgeable sources.  This often includes perspectives from multiple viewpoints on a particular issue (distinguishing news reports from public relations or propaganda).  News reports in the <a class=\"localLink\" href=\"https://schema.org/ReportageNewsArticle\">ReportageNewsArticle</a> sense de-emphasize the opinion of the author, with commentary and value judgements typically expressed elsewhere.<br/><br/>A <a class=\"localLink\" href=\"https://schema.org/ReportageNewsArticle\">ReportageNewsArticle</a> which goes deeper into analysis can also be marked with an additional type of <a class=\"localLink\" href=\"https://schema.org/AnalysisNewsArticle\">AnalysisNewsArticle</a>."
   {:rdf/about        :schema/ReportageNewsArticle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/ReportageNewsArticle"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ReportageNewsArticle"},
    :rdfs/label       "ReportageNewsArticle",
    :rdfs/subClassOf  :schema/NewsArticle})
 
 (def ReportedDoseSchedule
   "A patient-reported or observed dosing schedule for a drug or supplement."
-  {:rdf/about :schema/ReportedDoseSchedule,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/ReportedDoseSchedule"},
-   :rdfs/label "ReportedDoseSchedule",
-   :rdfs/subClassOf :schema/DoseSchedule})
+  {:rdf/about        :schema/ReportedDoseSchedule,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/ReportedDoseSchedule"},
+   :rdfs/label       "ReportedDoseSchedule",
+   :rdfs/subClassOf  :schema/DoseSchedule})
 
 (def ResearchOrganization
   "A Research Organization (e.g. scientific institute, research company)."
   {:rdf/about        :schema/ResearchOrganization,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/ResearchOrganization"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ResearchOrganization"},
    :rdfs/label       "ResearchOrganization",
    :rdfs/subClassOf  :schema/Organization})
 
@@ -5726,7 +5718,7 @@
   "A Research project."
   {:rdf/about        :schema/ResearchProject,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ResearchProject"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ResearchProject"},
    :rdfs/label       "ResearchProject",
    :rdfs/subClassOf  :schema/Project})
 
@@ -5830,8 +5822,8 @@
   "Enumerates several kinds of policies for product return fees."
   {:rdf/about        :schema/ReturnFeesEnumeration,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/ReturnFeesEnumeration"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ReturnFeesEnumeration"},
    :rdfs/label       "ReturnFeesEnumeration",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -5840,18 +5832,18 @@
   {:rdf/about :schema/ReturnLabelSourceEnumeration,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/ReturnLabelSourceEnumeration"},
+   {:rdf/uri "https://pending.schema.org/ReturnLabelSourceEnumeration"},
    :rdfs/label "ReturnLabelSourceEnumeration",
    :rdfs/subClassOf :schema/Enumeration})
 
 (def ReturnMethodEnumeration
   "Enumerates several types of product return methods."
-  {:rdf/about :schema/ReturnMethodEnumeration,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/ReturnMethodEnumeration"},
-   :rdfs/label "ReturnMethodEnumeration",
-   :rdfs/subClassOf :schema/Enumeration})
+  {:rdf/about        :schema/ReturnMethodEnumeration,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ReturnMethodEnumeration"},
+   :rdfs/label       "ReturnMethodEnumeration",
+   :rdfs/subClassOf  :schema/Enumeration})
 
 (def Review
   "A review of an item - for example, of a restaurant, movie, or store."
@@ -5873,7 +5865,7 @@
   "A <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> and <a class=\"localLink\" href=\"https://schema.org/CriticReview\">CriticReview</a> providing a professional critic's assessment of a service, product, performance, or artistic or literary work."
   {:rdf/about        :schema/ReviewNewsArticle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ReviewNewsArticle"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ReviewNewsArticle"},
    :rdfs/label       "ReviewNewsArticle",
    :rdfs/subClassOf  [:schema/CriticReview :schema/NewsArticle]})
 
@@ -5937,7 +5929,7 @@
   "An <a class=\"localLink\" href=\"https://schema.org/Article\">Article</a> whose content is primarily <a href=\"https://en.wikipedia.org/wiki/Satire\">[satirical]</a> in nature, i.e. unlikely to be literally true. A satirical article is sometimes but not necessarily also a <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a>. <a class=\"localLink\" href=\"https://schema.org/ScholarlyArticle\">ScholarlyArticle</a>s are also sometimes satirized."
   {:rdf/about        :schema/SatiricalArticle,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/SatiricalArticle"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/SatiricalArticle"},
    :rdfs/label       "SatiricalArticle",
    :rdfs/subClassOf  :schema/Article})
 
@@ -5945,7 +5937,7 @@
   "A schedule defines a repeating time period used to describe a regularly occurring <a class=\"localLink\" href=\"https://schema.org/Event\">Event</a>. At a minimum a schedule will specify <a class=\"localLink\" href=\"https://schema.org/repeatFrequency\">repeatFrequency</a> which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely.      This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also      have start and end dates to indicate when they are active, e.g. to define a limited calendar of events."
   {:rdf/about        :schema/Schedule,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Schedule"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Schedule"},
    :rdfs/label       "Schedule",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -5977,7 +5969,7 @@
   "A School District is an administrative area for the administration of schools."
   {:rdf/about        :schema/SchoolDistrict,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/SchoolDistrict"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/SchoolDistrict"},
    :rdfs/label       "SchoolDistrict",
    :rdfs/subClassOf  :schema/AdministrativeArea})
 
@@ -6015,12 +6007,12 @@
 
 (def SearchRescueOrganization
   "A Search and Rescue organization of some kind."
-  {:rdf/about :schema/SearchRescueOrganization,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/SearchRescueOrganization"},
-   :rdfs/label "SearchRescueOrganization",
-   :rdfs/subClassOf :schema/Organization})
+  {:rdf/about        :schema/SearchRescueOrganization,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/SearchRescueOrganization"},
+   :rdfs/label       "SearchRescueOrganization",
+   :rdfs/subClassOf  :schema/Organization})
 
 (def SearchResultsPage
   "Web page type: Search results page."
@@ -6050,7 +6042,7 @@
   "This is the <a class=\"localLink\" href=\"https://schema.org/Action\">Action</a> of navigating to a specific <a class=\"localLink\" href=\"https://schema.org/startOffset\">startOffset</a> timestamp within a <a class=\"localLink\" href=\"https://schema.org/VideoObject\">VideoObject</a>, typically represented with a URL template structure."
   {:rdf/about        :schema/SeekToAction,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/SeekToAction"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/SeekToAction"},
    :rdfs/label       "SeekToAction",
    :rdfs/subClassOf  :schema/Action})
 
@@ -6114,7 +6106,7 @@
   "Printed music, as opposed to performed or recorded music."
   {:rdf/about        :schema/SheetMusic,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/SheetMusic"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/SheetMusic"},
    :rdfs/label       "SheetMusic",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -6122,8 +6114,8 @@
   "ShippingDeliveryTime provides various pieces of information about delivery times for shipping."
   {:rdf/about        :schema/ShippingDeliveryTime,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/ShippingDeliveryTime"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ShippingDeliveryTime"},
    :rdfs/label       "ShippingDeliveryTime",
    :rdfs/subClassOf  :schema/StructuredValue})
 
@@ -6131,8 +6123,8 @@
   "A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the <a class=\"localLink\" href=\"https://schema.org/shippingSettingsLink\">shippingSettingsLink</a> property of an <a class=\"localLink\" href=\"https://schema.org/OfferShippingDetails\">OfferShippingDetails</a>. Several occurrences can be published, distinguished and matched (i.e. identified/referenced) by their different values for <a class=\"localLink\" href=\"https://schema.org/shippingLabel\">shippingLabel</a>."
   {:rdf/about        :schema/ShippingRateSettings,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/ShippingRateSettings"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/ShippingRateSettings"},
    :rdfs/label       "ShippingRateSettings",
    :rdfs/subClassOf  :schema/StructuredValue})
 
@@ -6156,7 +6148,7 @@
   "Short story or tale. A brief work of literature, usually written in narrative prose."
   {:rdf/about        :schema/ShortStory,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ShortStory"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ShortStory"},
    :rdfs/label       "ShortStory",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -6180,8 +6172,8 @@
   "Enumerates common size groups for various product categories."
   {:rdf/about        :schema/SizeGroupEnumeration,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/SizeGroupEnumeration"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/SizeGroupEnumeration"},
    :rdfs/label       "SizeGroupEnumeration",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -6189,7 +6181,7 @@
   "Size related properties of a product, typically a size code (<a class=\"localLink\" href=\"https://schema.org/name\">name</a>) and optionally a <a class=\"localLink\" href=\"https://schema.org/sizeSystem\">sizeSystem</a>, <a class=\"localLink\" href=\"https://schema.org/sizeGroup\">sizeGroup</a>, and product measurements (<a class=\"localLink\" href=\"https://schema.org/hasMeasurement\">hasMeasurement</a>). In addition, the intended audience can be defined through <a class=\"localLink\" href=\"https://schema.org/suggestedAge\">suggestedAge</a>, <a class=\"localLink\" href=\"https://schema.org/suggestedGender\">suggestedGender</a>, and suggested body measurements (<a class=\"localLink\" href=\"https://schema.org/suggestedMeasurement\">suggestedMeasurement</a>)."
   {:rdf/about        :schema/SizeSpecification,
    :rdf/type         [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/SizeSpecification"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/SizeSpecification"},
    :rdfs/label       "SizeSpecification",
    :rdfs/subClassOf  :schema/QualitativeValue})
 
@@ -6197,8 +6189,8 @@
   "Enumerates common size systems for different categories of products, for example \"EN-13402\" or \"UK\" for wearables or \"Imperial\" for screws."
   {:rdf/about        :schema/SizeSystemEnumeration,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/SizeSystemEnumeration"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/SizeSystemEnumeration"},
    :rdfs/label       "SizeSystemEnumeration",
    :rdfs/subClassOf  :schema/Enumeration})
 
@@ -6246,7 +6238,7 @@
   "The action that takes in a math expression and directs users to a page potentially capable of solving/simplifying that expression."
   {:rdf/about        :schema/SolveMathAction,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/SolveMathAction"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/SolveMathAction"},
    :rdfs/label       "SolveMathAction",
    :rdfs/subClassOf  :schema/Action})
 
@@ -6270,8 +6262,8 @@
   "A SpecialAnnouncement combines a simple date-stamped textual information update      with contextualized Web links and other structured data.  It represents an information update made by a      locally-oriented organization, for example schools, pharmacies, healthcare providers,  community groups, police,      local government.<br/><br/>For work in progress guidelines on Coronavirus-related markup see <a href=\"https://docs.google.com/document/d/14ikaGCKxo50rRM7nvKSlbUpjyIk2WMQd3IkB1lItlrM/edit#\">this doc</a>.<br/><br/>The motivating scenario for SpecialAnnouncement is the <a href=\"https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic\">Coronavirus pandemic</a>, and the initial vocabulary is oriented to this urgent situation. Schema.orgexpect to improve the markup iteratively as it is deployed and as feedback emerges from use. In addition to ourusual <a href=\"https://github.com/schemaorg/schemaorg/issues/2490\">Github entry</a>, feedback comments can also be provided in <a href=\"https://docs.google.com/document/d/1fpdFFxk8s87CWwACs53SGkYv3aafSxz_DTtOQxMrBJQ/edit#\">this document</a>.<br/><br/>While this schema is designed to communicate urgent crisis-related information, it is not the same as an emergency warning technology like <a href=\"https://en.wikipedia.org/wiki/Common_Alerting_Protocol\">CAP</a>, although there may be overlaps. The intent is to coverthe kinds of everyday practical information being posted to existing websites during an emergency situation.<br/><br/>Several kinds of information can be provided:<br/><br/>We encourage the provision of \"name\", \"text\", \"datePosted\", \"expires\" (if appropriate), \"category\" and\"url\" as a simple baseline. It is important to provide a value for \"category\" where possible, most ideally as a well knownURL from Wikipedia or Wikidata. In the case of the 2019-2020 Coronavirus pandemic, this should be \"https://en.wikipedia.org/w/index.php?title=2019-20_coronavirus_pandemic\" or \"https://www.wikidata.org/wiki/Q81068910\".<br/><br/>For many of the possible properties, values can either be simple links or an inline description, depending on whether a summary is available. For a link, provide just the URL of the appropriate page as the property's value. For an inline description, use a <a class=\"localLink\" href=\"https://schema.org/WebContent\">WebContent</a> type, and provide the url as a property of that, alongside at least a simple \"<a class=\"localLink\" href=\"https://schema.org/text\">text</a>\" summary of the page. It isunlikely that a single SpecialAnnouncement will need all of the possible properties simultaneously.<br/><br/>We expect that in many cases the page referenced might contain more specialized structured data, e.g. contact info, <a class=\"localLink\" href=\"https://schema.org/openingHours\">openingHours</a>, <a class=\"localLink\" href=\"https://schema.org/Event\">Event</a>, <a class=\"localLink\" href=\"https://schema.org/FAQPage\">FAQPage</a> etc. By linking to those pages from a <a class=\"localLink\" href=\"https://schema.org/SpecialAnnouncement\">SpecialAnnouncement</a> you can help make it clearer that the events are related to the situation (e.g. Coronavirus) indicated by the <a class=\"localLink\" href=\"https://schema.org/category\">category</a> property of the <a class=\"localLink\" href=\"https://schema.org/SpecialAnnouncement\">SpecialAnnouncement</a>.<br/><br/>Many <a class=\"localLink\" href=\"https://schema.org/SpecialAnnouncement\">SpecialAnnouncement</a>s will relate to particular regions and to identifiable local organizations. Use <a class=\"localLink\" href=\"https://schema.org/spatialCoverage\">spatialCoverage</a> for the region, and <a class=\"localLink\" href=\"https://schema.org/announcementLocation\">announcementLocation</a> to indicate specific <a class=\"localLink\" href=\"https://schema.org/LocalBusiness\">LocalBusiness</a>es and <a class=\"localLink\" href=\"https://schema.org/CivicStructure\">CivicStructure</a>s. If the announcement affects both a particular region and a specific location (for example, a library closure that serves an entire region), use both <a class=\"localLink\" href=\"https://schema.org/spatialCoverage\">spatialCoverage</a> and <a class=\"localLink\" href=\"https://schema.org/announcementLocation\">announcementLocation</a>.<br/><br/>The <a class=\"localLink\" href=\"https://schema.org/about\">about</a> property can be used to indicate entities that are the focus of the announcement. We now recommend using <a class=\"localLink\" href=\"https://schema.org/about\">about</a> onlyfor representing non-location entities (e.g. a <a class=\"localLink\" href=\"https://schema.org/Course\">Course</a> or a <a class=\"localLink\" href=\"https://schema.org/RadioStation\">RadioStation</a>). For places, use <a class=\"localLink\" href=\"https://schema.org/announcementLocation\">announcementLocation</a> and <a class=\"localLink\" href=\"https://schema.org/spatialCoverage\">spatialCoverage</a>. Consumers of this markup should be aware that the initial design encouraged the use of <a class=\"localLink\" href=\"https://schema.org/about\">about</a> for locations too.<br/><br/>The basic content of <a class=\"localLink\" href=\"https://schema.org/SpecialAnnouncement\">SpecialAnnouncement</a> is similar to that of an <a href=\"https://en.wikipedia.org/wiki/RSS\">RSS</a> or <a href=\"https://en.wikipedia.org/wiki/Atom_(Web_standard)\">Atom</a> feed. For publishers without such feeds, basic feed-like information can be shared by posting<a class=\"localLink\" href=\"https://schema.org/SpecialAnnouncement\">SpecialAnnouncement</a> updates in a page, e.g. using JSON-LD. For sites with Atom/RSS functionality, you can point to a feedwith the <a class=\"localLink\" href=\"https://schema.org/webFeed\">webFeed</a> property. This can be a simple URL, or an inline <a class=\"localLink\" href=\"https://schema.org/DataFeed\">DataFeed</a> object, with <a class=\"localLink\" href=\"https://schema.org/encodingFormat\">encodingFormat</a> providingmedia type information, e.g. \"application/rss+xml\" or \"application/atom+xml\"."
   {:rdf/about        :schema/SpecialAnnouncement,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/SpecialAnnouncement"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/SpecialAnnouncement"},
    :rdfs/label       "SpecialAnnouncement",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -6359,7 +6351,7 @@
   "A statement about something, for example a fun or interesting fact. If known, the main entity this statement is about can be indicated using mainEntity. For more formal claims (e.g. in Fact Checking), consider using <a class=\"localLink\" href=\"https://schema.org/Claim\">Claim</a> instead. Use the <a class=\"localLink\" href=\"https://schema.org/text\">text</a> property to capture the text of the statement."
   {:rdf/about        :schema/Statement,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Statement"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Statement"},
    :rdfs/label       "Statement",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -6367,8 +6359,8 @@
   "A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property <a class=\"localLink\" href=\"https://schema.org/populationType\">populationType</a> is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a <a class=\"localLink\" href=\"https://schema.org/StatisticalPopulation\">StatisticalPopulation</a> representing all <a class=\"localLink\" href=\"https://schema.org/Person\">Person</a>s with a <a class=\"localLink\" href=\"https://schema.org/homeLocation\">homeLocation</a> of East Podunk California would be described by applying the appropriate <a class=\"localLink\" href=\"https://schema.org/homeLocation\">homeLocation</a> and <a class=\"localLink\" href=\"https://schema.org/populationType\">populationType</a> properties to a <a class=\"localLink\" href=\"https://schema.org/StatisticalPopulation\">StatisticalPopulation</a> item that stands for that set of people.The properties <a class=\"localLink\" href=\"https://schema.org/numConstraints\">numConstraints</a> and <a class=\"localLink\" href=\"https://schema.org/constrainingProperty\">constrainingProperty</a> are used to specify which of the populations properties are used to specify the population. Note that the sense of \"population\" used here is the general sense of a statisticalpopulation, and does not imply that the population consists of people. For example, a <a class=\"localLink\" href=\"https://schema.org/populationType\">populationType</a> of <a class=\"localLink\" href=\"https://schema.org/Event\">Event</a> or <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> could be used. See also <a class=\"localLink\" href=\"https://schema.org/Observation\">Observation</a>, and the <a href=\"/docs/data-and-datasets.html\">data and datasets</a> overview for more details."
   {:rdf/about        :schema/StatisticalPopulation,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/StatisticalPopulation"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/StatisticalPopulation"},
    :rdfs/label       "StatisticalPopulation",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -6408,7 +6400,7 @@
   "A StupidType for testing."
   {:rdf/about        :schema/StupidType,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://attic.schema.org/StupidType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://attic.schema.org/StupidType"},
    :rdfs/label       "StupidType",
    :rdfs/subClassOf  :schema/Thing})
 
@@ -6424,7 +6416,7 @@
   "Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical."
   {:rdf/about        :schema/Substance,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Substance"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Substance"},
    :rdfs/label       "Substance",
    :rdfs/subClassOf  :schema/MedicalEntity})
 
@@ -6446,21 +6438,21 @@
 
 (def SuperficialAnatomy
   "Anatomical features that can be observed by sight (without dissection), including the form and proportions of the human body as well as surface landmarks that correspond to deeper subcutaneous structures. Superficial anatomy plays an important role in sports medicine, phlebotomy, and other medical specialties as underlying anatomical structures can be identified through surface palpation. For example, during back surgery, superficial anatomy can be used to palpate and count vertebrae to find the site of incision. Or in phlebotomy, superficial anatomy can be used to locate an underlying vein; for example, the median cubital vein can be located by palpating the borders of the cubital fossa (such as the epicondyles of the humerus) and then looking for the superficial signs of the vein, such as size, prominence, ability to refill after depression, and feel of surrounding tissue support. As another example, in a subluxation (dislocation) of the glenohumeral joint, the bony structure becomes pronounced with the deltoid muscle failing to cover the glenohumeral joint allowing the edges of the scapula to be superficially visible. Here, the superficial anatomy is the visible edges of the scapula, implying the underlying dislocation of the joint (the related anatomical structure)."
-  {:rdf/about :schema/SuperficialAnatomy,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/SuperficialAnatomy"},
-   :rdfs/label "SuperficialAnatomy",
-   :rdfs/subClassOf :schema/MedicalEntity})
+  {:rdf/about        :schema/SuperficialAnatomy,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/SuperficialAnatomy"},
+   :rdfs/label       "SuperficialAnatomy",
+   :rdfs/subClassOf  :schema/MedicalEntity})
 
 (def SurgicalProcedure
   "A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes."
-  {:rdf/about :schema/SurgicalProcedure,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/SurgicalProcedure"},
-   :rdfs/label "SurgicalProcedure",
-   :rdfs/subClassOf :schema/MedicalProcedure})
+  {:rdf/about        :schema/SurgicalProcedure,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/SurgicalProcedure"},
+   :rdfs/label       "SurgicalProcedure",
+   :rdfs/subClassOf  :schema/MedicalProcedure})
 
 (def SuspendAction
   "The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer)."
@@ -6570,7 +6562,7 @@
   "A set of organisms asserted to represent a natural cohesive biological unit."
   {:rdf/about        :schema/Taxon,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/Taxon"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/Taxon"},
    :rdfs/label       "Taxon",
    :rdfs/subClassOf  :schema/Thing})
 
@@ -6640,18 +6632,18 @@
 
 (def TherapeuticProcedure
   "A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition."
-  {:rdf/about :schema/TherapeuticProcedure,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/TherapeuticProcedure"},
-   :rdfs/label "TherapeuticProcedure",
-   :rdfs/subClassOf :schema/MedicalProcedure})
+  {:rdf/about        :schema/TherapeuticProcedure,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/TherapeuticProcedure"},
+   :rdfs/label       "TherapeuticProcedure",
+   :rdfs/subClassOf  :schema/MedicalProcedure})
 
 (def Thesis
   "A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification."
   {:rdf/about        :schema/Thesis,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/Thesis"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/Thesis"},
    :rdfs/label       "Thesis",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -6714,8 +6706,7 @@
   "A tourist destination. In principle any <a class=\"localLink\" href=\"https://schema.org/Place\">Place</a> can be a <a class=\"localLink\" href=\"https://schema.org/TouristDestination\">TouristDestination</a> from a <a class=\"localLink\" href=\"https://schema.org/City\">City</a>, Region or <a class=\"localLink\" href=\"https://schema.org/Country\">Country</a> to an <a class=\"localLink\" href=\"https://schema.org/AmusementPark\">AmusementPark</a> or <a class=\"localLink\" href=\"https://schema.org/Hotel\">Hotel</a>. This Type can be used on its own to describe a general <a class=\"localLink\" href=\"https://schema.org/TouristDestination\">TouristDestination</a>, or be used as an <a class=\"localLink\" href=\"https://schema.org/additionalType\">additionalType</a> to add tourist relevant properties to any other <a class=\"localLink\" href=\"https://schema.org/Place\">Place</a>.  A <a class=\"localLink\" href=\"https://schema.org/TouristDestination\">TouristDestination</a> is defined as a <a class=\"localLink\" href=\"https://schema.org/Place\">Place</a> that contains, or is colocated with, one or more <a class=\"localLink\" href=\"https://schema.org/TouristAttraction\">TouristAttraction</a>s, often linked by a similar theme or interest to a particular <a class=\"localLink\" href=\"https://schema.org/touristType\">touristType</a>. The <a href=\"http://www2.unwto.org/\">UNWTO</a> defines Destination (main destination of a tourism trip) as the place visited that is central to the decision to take the trip.  (See examples below.)"
   {:rdf/about        :schema/TouristDestination,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/TouristDestination"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/TouristDestination"},
    :rdfs/label       "TouristDestination",
    :rdfs/subClassOf  :schema/Place})
 
@@ -6731,7 +6722,7 @@
   "A tourist trip. A created itinerary of visits to one or more places of interest (<a class=\"localLink\" href=\"https://schema.org/TouristAttraction\">TouristAttraction</a>/<a class=\"localLink\" href=\"https://schema.org/TouristDestination\">TouristDestination</a>) often linked by a similar theme, geographic area, or interest to a particular <a class=\"localLink\" href=\"https://schema.org/touristType\">touristType</a>. The <a href=\"http://www2.unwto.org/\">UNWTO</a> defines tourism trip as the Trip taken by visitors.  (See examples below.)"
   {:rdf/about        :schema/TouristTrip,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/TouristTrip"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/TouristTrip"},
    :rdfs/label       "TouristTrip",
    :rdfs/subClassOf  :schema/Trip})
 
@@ -6809,12 +6800,12 @@
 
 (def TreatmentIndication
   "An indication for treating an underlying condition, symptom, etc."
-  {:rdf/about :schema/TreatmentIndication,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/TreatmentIndication"},
-   :rdfs/label "TreatmentIndication",
-   :rdfs/subClassOf :schema/MedicalIndication})
+  {:rdf/about        :schema/TreatmentIndication,
+   :rdf/type         :owl/Class,
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/TreatmentIndication"},
+   :rdfs/label       "TreatmentIndication",
+   :rdfs/subClassOf  :schema/MedicalIndication})
 
 (def Trip
   "A trip or journey. An itinerary of visits to one or more places."
@@ -6843,7 +6834,7 @@
   "UKNonprofitType: Non-profit organization type originating from the United Kingdom."
   {:rdf/about        :schema/UKNonprofitType,
    :rdf/type         [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/UKNonprofitType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/UKNonprofitType"},
    :rdfs/label       "UKNonprofitType",
    :rdfs/subClassOf  :schema/NonprofitType})
 
@@ -6859,7 +6850,7 @@
   "USNonprofitType: Non-profit organization type originating from the United States."
   {:rdf/about        :schema/USNonprofitType,
    :rdf/type         [:owl/NamedIndividual :owl/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/USNonprofitType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/USNonprofitType"},
    :rdfs/label       "USNonprofitType",
    :rdfs/subClassOf  :schema/NonprofitType})
 
@@ -6971,7 +6962,7 @@
   "A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with <a class=\"localLink\" href=\"https://schema.org/CriticReview\">CriticReview</a>."
   {:rdf/about        :schema/UserReview,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/UserReview"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/UserReview"},
    :rdfs/label       "UserReview",
    :rdfs/subClassOf  :schema/Review})
 
@@ -6995,7 +6986,7 @@
   "A type of blood vessel that specifically carries blood to the heart."
   {:rdf/about        :schema/Vein,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Vein"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Vein"},
    :rdfs/label       "Vein",
    :rdfs/subClassOf  :schema/Vessel})
 
@@ -7003,7 +6994,7 @@
   "A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body."
   {:rdf/about        :schema/Vessel,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/Vessel"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/Vessel"},
    :rdfs/label       "Vessel",
    :rdfs/subClassOf  :schema/AnatomicalStructure})
 
@@ -7011,8 +7002,8 @@
   "A vet's office."
   {:rdf/about        :schema/VeterinaryCare,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/VeterinaryCare"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/VeterinaryCare"},
    :rdfs/label       "VeterinaryCare",
    :rdfs/subClassOf  :schema/MedicalOrganization})
 
@@ -7060,8 +7051,8 @@
   "A specific and exact (byte-for-byte) version of a <a class=\"localLink\" href=\"https://schema.org/VideoObject\">VideoObject</a>. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity."
   {:rdf/about        :schema/VideoObjectSnapshot,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/VideoObjectSnapshot"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/VideoObjectSnapshot"},
    :rdfs/label       "VideoObjectSnapshot",
    :rdfs/subClassOf  :schema/VideoObject})
 
@@ -7077,7 +7068,7 @@
   "An online or virtual location for attending events. For example, one may attend an online seminar or educational event. While a virtual location may be used as the location of an event, virtual locations should not be confused with physical locations in the real world."
   {:rdf/about        :schema/VirtualLocation,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/VirtualLocation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/VirtualLocation"},
    :rdfs/label       "VirtualLocation",
    :rdfs/subClassOf  :schema/Intangible})
 
@@ -7101,7 +7092,7 @@
   "Vital signs are measures of various physiological functions in order to assess the most basic body functions."
   {:rdf/about        :schema/VitalSign,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/VitalSign"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/VitalSign"},
    :rdfs/label       "VitalSign",
    :rdfs/subClassOf  :schema/MedicalSign})
 
@@ -7206,7 +7197,7 @@
   {:rdf/about :schema/WearableMeasurementTypeEnumeration,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/WearableMeasurementTypeEnumeration"},
+   {:rdf/uri "https://pending.schema.org/WearableMeasurementTypeEnumeration"},
    :rdfs/label "WearableMeasurementTypeEnumeration",
    :rdfs/subClassOf :schema/MeasurementTypeEnumeration})
 
@@ -7215,7 +7206,7 @@
   {:rdf/about :schema/WearableSizeGroupEnumeration,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/WearableSizeGroupEnumeration"},
+   {:rdf/uri "https://pending.schema.org/WearableSizeGroupEnumeration"},
    :rdfs/label "WearableSizeGroupEnumeration",
    :rdfs/subClassOf :schema/SizeGroupEnumeration})
 
@@ -7224,7 +7215,7 @@
   {:rdf/about :schema/WearableSizeSystemEnumeration,
    :rdf/type [:owl/NamedIndividual :owl/Class],
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/WearableSizeSystemEnumeration"},
+   {:rdf/uri "https://pending.schema.org/WearableSizeSystemEnumeration"},
    :rdfs/label "WearableSizeSystemEnumeration",
    :rdfs/subClassOf :schema/SizeSystemEnumeration})
 
@@ -7232,7 +7223,7 @@
   "An application programming interface accessible over Web/Internet technologies."
   {:rdf/about        :schema/WebAPI,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/WebAPI"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/WebAPI"},
    :rdfs/label       "WebAPI",
    :rdfs/subClassOf  :schema/Service})
 
@@ -7248,7 +7239,7 @@
   "WebContent is a type representing all <a class=\"localLink\" href=\"https://schema.org/WebPage\">WebPage</a>, <a class=\"localLink\" href=\"https://schema.org/WebSite\">WebSite</a> and <a class=\"localLink\" href=\"https://schema.org/WebPageElement\">WebPageElement</a> content. It is sometimes the case that detailed distinctions between Web pages, sites and their parts are not always important or obvious. The  <a class=\"localLink\" href=\"https://schema.org/WebContent\">WebContent</a> type makes it easier to describe Web-addressable content without requiring such distinctions to always be stated. (The intent is that the existing types <a class=\"localLink\" href=\"https://schema.org/WebPage\">WebPage</a>, <a class=\"localLink\" href=\"https://schema.org/WebSite\">WebSite</a> and <a class=\"localLink\" href=\"https://schema.org/WebPageElement\">WebPageElement</a> will eventually be declared as subtypes of <a class=\"localLink\" href=\"https://schema.org/WebContent\">WebContent</a>.)"
   {:rdf/about        :schema/WebContent,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/WebContent"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/WebContent"},
    :rdfs/label       "WebContent",
    :rdfs/subClassOf  :schema/CreativeWork})
 
@@ -7304,7 +7295,7 @@
   "A program with both an educational and employment component. Typically based at a workplace and structured around work-based learning, with the aim of instilling competencies related to an occupation. WorkBasedProgram is used to distinguish programs such as apprenticeships from school, college or other classroom based educational programs."
   {:rdf/about        :schema/WorkBasedProgram,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/WorkBasedProgram"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/WorkBasedProgram"},
    :rdfs/label       "WorkBasedProgram",
    :rdfs/subClassOf  :schema/EducationalOccupationalProgram})
 
@@ -7328,7 +7319,7 @@
   "Text representing an XPath (typically but not necessarily version 1.0)."
   {:rdf/about        :schema/XPathType,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/XPathType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/XPathType"},
    :rdfs/label       "XPathType",
    :rdfs/subClassOf  :schema/Text})
 
@@ -7363,7 +7354,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Book],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/abridged"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/abridged"},
    :rdfs/label       "abridged",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -7374,7 +7365,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/abstract"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/abstract"},
    :rdfs/label       "abstract",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -7385,7 +7376,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/accelerationTime"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/accelerationTime"},
    :rdfs/label       "accelerationTime",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -7545,15 +7536,15 @@
 
 (def accommodationCategory
   "Category of an <a class=\"localLink\" href=\"https://schema.org/Accommodation\">Accommodation</a>, following real estate conventions, e.g. RESO (see <a href=\"https://ddwiki.reso.org/display/DDW17/PropertySubType+Field\">PropertySubType</a>, and <a href=\"https://ddwiki.reso.org/display/DDW17/PropertyType+Field\">PropertyType</a> fields  for suggested values)."
-  {:rdf/about :schema/accommodationCategory,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Accommodation],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/accommodationCategory"},
-   :rdfs/label "accommodationCategory",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class},
+  {:rdf/about          :schema/accommodationCategory,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Accommodation],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/accommodationCategory"},
+   :rdfs/label         "accommodationCategory",
+   :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/category})
 
 (def accommodationFloorPlan
@@ -7562,8 +7553,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Residence :schema/Accommodation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/accommodationFloorPlan"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/accommodationFloorPlan"},
    :rdfs/label       "accommodationFloorPlan",
    :rdfs/range       {:owl/unionOf [:schema/FloorPlan
                                     :schema/Text
@@ -7589,8 +7580,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BankAccount],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/accountMinimumInflow"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/accountMinimumInflow"},
    :rdfs/label       "accountMinimumInflow",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Text
@@ -7604,8 +7595,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BankAccount],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/accountOverdraftLimit"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/accountOverdraftLimit"},
    :rdfs/label       "accountOverdraftLimit",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Text
@@ -7633,8 +7624,8 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/CreativeWork],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/acquireLicensePage"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/acquireLicensePage"},
    :rdfs/label         "acquireLicensePage",
    :rdfs/range         {:owl/unionOf [:schema/URL
                                       :schema/CreativeWork
@@ -7664,7 +7655,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Car :schema/BusOrCoach],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/acrissCode"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/acrissCode"},
    :rdfs/label       "acrissCode",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -7742,64 +7733,66 @@
 
 (def actionableFeedbackPolicy
   "For a <a class=\"localLink\" href=\"https://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a> or other news-related <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a>, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication."
-  {:rdf/about :schema/actionableFeedbackPolicy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Organization
-                               :schema/NewsMediaOrganization],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/actionableFeedbackPolicy"},
-   :rdfs/label "actionableFeedbackPolicy",
-   :rdfs/range
-   {:owl/unionOf [:schema/URL :schema/CreativeWork :schema/Text :schema/Role],
-    :rdf/type    :owl/Class},
+  {:rdf/about          :schema/actionableFeedbackPolicy,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Organization
+                                      :schema/NewsMediaOrganization],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/actionableFeedbackPolicy"},
+   :rdfs/label         "actionableFeedbackPolicy",
+   :rdfs/range         {:owl/unionOf [:schema/URL
+                                      :schema/CreativeWork
+                                      :schema/Text
+                                      :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/publishingPrinciples})
 
 (def activeIngredient
   "An active ingredient, typically chemical compounds and/or biologic substances."
-  {:rdf/about :schema/activeIngredient,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug
-                               :schema/DrugStrength
-                               :schema/DietarySupplement
-                               :schema/Substance],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/activeIngredient"},
-   :rdfs/label "activeIngredient",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/activeIngredient,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug
+                                    :schema/DrugStrength
+                                    :schema/DietarySupplement
+                                    :schema/Substance],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/activeIngredient"},
+   :rdfs/label       "activeIngredient",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def activityDuration
   "Length of time to engage in the activity."
-  {:rdf/about :schema/activityDuration,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/ExercisePlan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/activityDuration"},
-   :rdfs/label "activityDuration",
-   :rdfs/range {:owl/unionOf [:schema/Duration
-                              :schema/QuantitativeValue
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/activityDuration,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/activityDuration"},
+   :rdfs/label       "activityDuration",
+   :rdfs/range       {:owl/unionOf [:schema/Duration
+                                    :schema/QuantitativeValue
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def activityFrequency
   "How often one should engage in the activity."
-  {:rdf/about :schema/activityFrequency,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/ExercisePlan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/activityFrequency"},
-   :rdfs/label "activityFrequency",
-   :rdfs/range {:owl/unionOf [:schema/Text
-                              :schema/QuantitativeValue
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/activityFrequency,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/activityFrequency"},
+   :rdfs/label       "activityFrequency",
+   :rdfs/range       {:owl/unionOf [:schema/Text
+                                    :schema/QuantitativeValue
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def actor
   "An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip."
@@ -7918,15 +7911,15 @@
 
 (def additionalVariable
   "Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc."
-  {:rdf/about :schema/additionalVariable,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/ExercisePlan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/additionalVariable"},
-   :rdfs/label "additionalVariable",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/additionalVariable,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/additionalVariable"},
+   :rdfs/label       "additionalVariable",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def address
   "Physical address of the item."
@@ -7988,15 +7981,15 @@
 
 (def administrationRoute
   "A route by which this drug may be administered, e.g. 'oral'."
-  {:rdf/about :schema/administrationRoute,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/administrationRoute"},
-   :rdfs/label "administrationRoute",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/administrationRoute,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/administrationRoute"},
+   :rdfs/label       "administrationRoute",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def advanceBookingRequirement
   "The amount of time that is required between accepting the offer and the actual usage of the resource or service."
@@ -8019,8 +8012,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/TherapeuticProcedure
                                     :schema/MedicalDevice],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/adverseOutcome"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/adverseOutcome"},
    :rdfs/label       "adverseOutcome",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
                                     :schema/Text
@@ -8034,7 +8027,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalTest],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/affectedBy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/affectedBy"},
    :rdfs/label       "affectedBy",
    :rdfs/range       {:owl/unionOf [:schema/Drug
                                     :schema/Text
@@ -8199,8 +8192,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/alcoholWarning"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/alcoholWarning"},
    :rdfs/label       "alcoholWarning",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -8211,7 +8204,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalRiskScore],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/algorithm"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/algorithm"},
    :rdfs/label       "algorithm",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -8255,7 +8248,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Gene],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/alternativeOf"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/alternativeOf"},
    :rdfs/label       "alternativeOf",
    :rdfs/range       {:owl/unionOf [:schema/Gene
                                     :schema/Text
@@ -8348,8 +8341,8 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/SpecialAnnouncement],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/announcementLocation"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/announcementLocation"},
    :rdfs/label         "announcementLocation",
    :rdfs/range         {:owl/unionOf [:schema/LocalBusiness
                                       :schema/CivicStructure
@@ -8391,7 +8384,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Answer],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/answerExplanation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/answerExplanation"},
    :rdfs/label       "answerExplanation",
    :rdfs/range       {:owl/unionOf [:schema/WebContent
                                     :schema/Comment
@@ -8406,7 +8399,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Muscle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/antagonist"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/antagonist"},
    :rdfs/label       "antagonist",
    :rdfs/range       {:owl/unionOf [:schema/Muscle
                                     :schema/Text
@@ -8420,7 +8413,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Claim],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/appearance"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/appearance"},
    :rdfs/label         "appearance",
    :rdfs/range         {:owl/unionOf [:schema/CreativeWork
                                       :schema/Text
@@ -8435,7 +8428,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/applicableCountry"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/applicableCountry"},
    :rdfs/label       "applicableCountry",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/Country
@@ -8445,18 +8438,18 @@
 
 (def applicableLocation
   "The location in which the status applies."
-  {:rdf/about :schema/applicableLocation,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/DrugCost :schema/DrugLegalStatus],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/applicableLocation"},
-   :rdfs/label "applicableLocation",
-   :rdfs/range {:owl/unionOf [:schema/AdministrativeArea
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/applicableLocation,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/DrugCost :schema/DrugLegalStatus],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/applicableLocation"},
+   :rdfs/label       "applicableLocation",
+   :rdfs/range       {:owl/unionOf [:schema/AdministrativeArea
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def applicantLocationRequirements
   "The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements."
@@ -8465,7 +8458,7 @@
    :rdfs/domain {:owl/unionOf [:schema/JobPosting],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/applicantLocationRequirements"},
+   {:rdf/uri "https://pending.schema.org/applicantLocationRequirements"},
    :rdfs/label "applicantLocationRequirements",
    :rdfs/range {:owl/unionOf [:schema/AdministrativeArea
                               :schema/Text
@@ -8505,8 +8498,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/applicationContact"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/applicationContact"},
    :rdfs/label       "applicationContact",
    :rdfs/range       {:owl/unionOf [:schema/ContactPoint
                                     :schema/Text
@@ -8520,8 +8512,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/applicationDeadline"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/applicationDeadline"},
    :rdfs/label       "applicationDeadline",
    :rdfs/range       {:owl/unionOf [:schema/Date],
                       :rdf/type    :owl/Class}})
@@ -8532,8 +8524,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/applicationStartDate"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/applicationStartDate"},
    :rdfs/label       "applicationStartDate",
    :rdfs/range       {:owl/unionOf [:schema/Date],
                       :rdf/type    :owl/Class}})
@@ -8596,7 +8588,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ArchiveOrganization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/archiveHeld"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/archiveHeld"},
    :rdfs/label       "archiveHeld",
    :rdfs/range       {:owl/unionOf [:schema/ArchiveComponent
                                     :schema/Text
@@ -8610,7 +8602,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/archivedAt"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/archivedAt"},
    :rdfs/label       "archivedAt",
    :rdfs/range       {:owl/unionOf [:schema/WebPage
                                     :schema/URL
@@ -8674,8 +8666,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BoatTrip],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/arrivalBoatTerminal"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/arrivalBoatTerminal"},
    :rdfs/label       "arrivalBoatTerminal",
    :rdfs/range       {:owl/unionOf [:schema/BoatTerminal
                                     :schema/Text
@@ -8788,8 +8780,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Artery],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/arterialBranch"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/arterialBranch"},
    :rdfs/label       "arterialBranch",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
                                     :schema/Text
@@ -8838,7 +8830,7 @@
                                     :schema/ComicStory
                                     :schema/VisualArtwork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/artist"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/artist"},
    :rdfs/label       "artist",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Text
@@ -8865,7 +8857,7 @@
                                       :schema/Demand
                                       :schema/Product],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/asin"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/asin"},
    :rdfs/label         "asin",
    :rdfs/range         {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                         :rdf/type    :owl/Class},
@@ -8877,7 +8869,7 @@
    :rdf/type            :owl/ObjectProperty,
    :rdfs/domain         {:owl/unionOf [:schema/MedicalWebPage],
                          :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy    #:rdf{:uri "https://health-lifesci.schema.org/aspect"},
+   :rdfs/isDefinedBy    {:rdf/uri "https://health-lifesci.schema.org/aspect"},
    :rdfs/label          "aspect",
    :rdfs/range          {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                          :rdf/type    :owl/Class},
@@ -8914,7 +8906,7 @@
                                     :schema/EducationEvent
                                     :schema/LearningResource],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/assesses"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/assesses"},
    :rdfs/label       "assesses",
    :rdfs/range       {:owl/unionOf [:schema/DefinedTerm
                                     :schema/Text
@@ -8924,21 +8916,21 @@
 
 (def associatedAnatomy
   "The anatomy of the underlying organ system or structures associated with this entity."
-  {:rdf/about :schema/associatedAnatomy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/PhysicalActivity
-                               :schema/MedicalCondition],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/associatedAnatomy"},
-   :rdfs/label "associatedAnatomy",
-   :rdfs/range {:owl/unionOf [:schema/AnatomicalStructure
-                              :schema/SuperficialAnatomy
-                              :schema/AnatomicalSystem
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/associatedAnatomy,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/PhysicalActivity
+                                    :schema/MedicalCondition],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/associatedAnatomy"},
+   :rdfs/label       "associatedAnatomy",
+   :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
+                                    :schema/SuperficialAnatomy
+                                    :schema/AnatomicalSystem
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def associatedArticle
   "A NewsArticle associated with the Media Object."
@@ -8956,16 +8948,18 @@
 
 (def associatedClaimReview
   "An associated <a class=\"localLink\" href=\"https://schema.org/ClaimReview\">ClaimReview</a>, related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case <a class=\"localLink\" href=\"https://schema.org/relatedMediaReview\">relatedMediaReview</a> would commonly be used on a <a class=\"localLink\" href=\"https://schema.org/ClaimReview\">ClaimReview</a>, while <a class=\"localLink\" href=\"https://schema.org/relatedClaimReview\">relatedClaimReview</a> would be used on <a class=\"localLink\" href=\"https://schema.org/MediaReview\">MediaReview</a>."
-  {:rdf/about :schema/associatedClaimReview,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Review],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/associatedClaimReview"},
-   :rdfs/label "associatedClaimReview",
-   :rdfs/range
-   {:owl/unionOf [:schema/Review :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class},
+  {:rdf/about          :schema/associatedClaimReview,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Review],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/associatedClaimReview"},
+   :rdfs/label         "associatedClaimReview",
+   :rdfs/range         {:owl/unionOf [:schema/Review
+                                      :schema/Text
+                                      :schema/URL
+                                      :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/associatedReview})
 
 (def associatedDisease
@@ -8974,7 +8968,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/associatedDisease"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/associatedDisease"},
    :rdfs/label       "associatedDisease",
    :rdfs/range       {:owl/unionOf [:schema/PropertyValue
                                     :schema/URL
@@ -9001,16 +8995,18 @@
 
 (def associatedMediaReview
   "An associated <a class=\"localLink\" href=\"https://schema.org/MediaReview\">MediaReview</a>, related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case <a class=\"localLink\" href=\"https://schema.org/relatedMediaReview\">relatedMediaReview</a> would commonly be used on a <a class=\"localLink\" href=\"https://schema.org/ClaimReview\">ClaimReview</a>, while <a class=\"localLink\" href=\"https://schema.org/relatedClaimReview\">relatedClaimReview</a> would be used on <a class=\"localLink\" href=\"https://schema.org/MediaReview\">MediaReview</a>."
-  {:rdf/about :schema/associatedMediaReview,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Review],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/associatedMediaReview"},
-   :rdfs/label "associatedMediaReview",
-   :rdfs/range
-   {:owl/unionOf [:schema/Review :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class},
+  {:rdf/about          :schema/associatedMediaReview,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Review],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/associatedMediaReview"},
+   :rdfs/label         "associatedMediaReview",
+   :rdfs/range         {:owl/unionOf [:schema/Review
+                                      :schema/Text
+                                      :schema/URL
+                                      :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/associatedReview})
 
 (def associatedPathophysiology
@@ -9022,7 +9018,7 @@
                                :schema/SuperficialAnatomy],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/associatedPathophysiology"},
+   {:rdf/uri "https://health-lifesci.schema.org/associatedPathophysiology"},
    :rdfs/label "associatedPathophysiology",
    :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                 :rdf/type    :owl/Class}})
@@ -9033,7 +9029,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Review],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/associatedReview"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/associatedReview"},
    :rdfs/label       "associatedReview",
    :rdfs/range       {:owl/unionOf [:schema/Review
                                     :schema/Text
@@ -9261,8 +9257,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugStrength],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/availableIn"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/availableIn"},
    :rdfs/label       "availableIn",
    :rdfs/range       {:owl/unionOf [:schema/AdministrativeArea
                                     :schema/Text
@@ -9300,34 +9295,37 @@
 
 (def availableService
   "A medical service available from this provider."
-  {:rdf/about :schema/availableService,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain
-   {:owl/unionOf [:schema/Physician :schema/Hospital :schema/MedicalClinic],
-    :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/availableService"},
-   :rdfs/label "availableService",
-   :rdfs/range {:owl/unionOf [:schema/MedicalTherapy
-                              :schema/MedicalProcedure
-                              :schema/MedicalTest
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/availableService,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Physician
+                                    :schema/Hospital
+                                    :schema/MedicalClinic],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/availableService"},
+   :rdfs/label       "availableService",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalTherapy
+                                    :schema/MedicalProcedure
+                                    :schema/MedicalTest
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def availableStrength
   "An available dosage strength for the drug."
-  {:rdf/about :schema/availableStrength,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/availableStrength"},
-   :rdfs/label "availableStrength",
-   :rdfs/range
-   {:owl/unionOf [:schema/DrugStrength :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/availableStrength,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/availableStrength"},
+   :rdfs/label       "availableStrength",
+   :rdfs/range       {:owl/unionOf [:schema/DrugStrength
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def availableTest
   "A diagnostic test or procedure offered by this lab."
@@ -9335,8 +9333,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DiagnosticLab],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/availableTest"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/availableTest"},
    :rdfs/label       "availableTest",
    :rdfs/range       {:owl/unionOf [:schema/MedicalTest
                                     :schema/Text
@@ -9407,7 +9405,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Article],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/backstory"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/backstory"},
    :rdfs/label       "backstory",
    :rdfs/range       {:owl/unionOf [:schema/CreativeWork
                                     :schema/Text
@@ -9421,7 +9419,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BankAccount],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/bankAccountType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/bankAccountType"},
    :rdfs/label       "bankAccountType",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -9494,7 +9492,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MoneyTransfer],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/beneficiaryBank"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/beneficiaryBank"},
    :rdfs/label       "beneficiaryBank",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/BankOrCreditUnion
@@ -9520,8 +9518,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthInsurancePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/benefitsSummaryUrl"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/benefitsSummaryUrl"},
    :rdfs/label       "benefitsSummaryUrl",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -9560,7 +9557,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/UnitPriceSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/billingDuration"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/billingDuration"},
    :rdfs/label       "billingDuration",
    :rdfs/range       {:owl/unionOf [:schema/Number
                                     :schema/QuantitativeValue
@@ -9601,7 +9598,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/UnitPriceSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/billingStart"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/billingStart"},
    :rdfs/label       "billingStart",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -9612,8 +9609,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/bioChemInteraction"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/bioChemInteraction"},
    :rdfs/label       "bioChemInteraction",
    :rdfs/range       {:owl/unionOf [:schema/BioChemEntity
                                     :schema/Text
@@ -9627,7 +9623,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/bioChemSimilarity"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/bioChemSimilarity"},
    :rdfs/label       "bioChemSimilarity",
    :rdfs/range       {:owl/unionOf [:schema/BioChemEntity
                                     :schema/Text
@@ -9641,7 +9637,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/biologicalRole"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/biologicalRole"},
    :rdfs/label       "biologicalRole",
    :rdfs/range       {:owl/unionOf [:schema/DefinedTerm
                                     :schema/Text
@@ -9651,15 +9647,15 @@
 
 (def biomechnicalClass
   "The biomechanical properties of the bone."
-  {:rdf/about :schema/biomechnicalClass,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Joint],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/biomechnicalClass"},
-   :rdfs/label "biomechnicalClass",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/biomechnicalClass,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Joint],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/biomechnicalClass"},
+   :rdfs/label       "biomechnicalClass",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def birthDate
   "Date of birth."
@@ -9732,8 +9728,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Muscle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/bloodSupply"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/bloodSupply"},
    :rdfs/label       "bloodSupply",
    :rdfs/range       {:owl/unionOf [:schema/Vessel
                                     :schema/Text
@@ -9773,8 +9768,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/AnatomicalStructure
                                     :schema/MedicalProcedure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/bodyLocation"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/bodyLocation"},
    :rdfs/label       "bodyLocation",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -9785,7 +9780,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/bodyType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/bodyType"},
    :rdfs/label       "bodyType",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/URL
@@ -9877,7 +9872,7 @@
    :rdf/type            :owl/ObjectProperty,
    :rdfs/domain         {:owl/unionOf [:schema/Nerve],
                          :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy    #:rdf{:uri "https://health-lifesci.schema.org/branch"},
+   :rdfs/isDefinedBy    {:rdf/uri "https://health-lifesci.schema.org/branch"},
    :rdfs/label          "branch",
    :rdfs/range          {:owl/unionOf [:schema/AnatomicalStructure
                                        :schema/Text
@@ -9946,15 +9941,15 @@
 
 (def breastfeedingWarning
   "Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers."
-  {:rdf/about :schema/breastfeedingWarning,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/breastfeedingWarning"},
-   :rdfs/label "breastfeedingWarning",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/breastfeedingWarning,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/breastfeedingWarning"},
+   :rdfs/label       "breastfeedingWarning",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def broadcastAffiliateOf
   "The media network(s) whose content is broadcast on this station."
@@ -10049,18 +10044,18 @@
 
 (def broadcastSignalModulation
   "The modulation (e.g. FM, AM, etc) used by a particular broadcast service."
-  {:rdf/about :schema/broadcastSignalModulation,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/BroadcastFrequencySpecification],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/broadcastSignalModulation"},
-   :rdfs/label "broadcastSignalModulation",
-   :rdfs/range {:owl/unionOf [:schema/QualitativeValue
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/broadcastSignalModulation,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/BroadcastFrequencySpecification],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/broadcastSignalModulation"},
+   :rdfs/label       "broadcastSignalModulation",
+   :rdfs/range       {:owl/unionOf [:schema/QualitativeValue
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def broadcastSubChannel
   "The subchannel used for the broadcast."
@@ -10068,8 +10063,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BroadcastFrequencySpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/broadcastSubChannel"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/broadcastSubChannel"},
    :rdfs/label       "broadcastSubChannel",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -10156,7 +10151,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ShippingDeliveryTime],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/businessDays"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/businessDays"},
    :rdfs/label       "businessDays",
    :rdfs/range       {:owl/unionOf [:schema/OpeningHoursSpecification
                                     :schema/Text
@@ -10217,7 +10212,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Schedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/byDay"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/byDay"},
    :rdfs/label       "byDay",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/DayOfWeek
@@ -10231,7 +10226,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Schedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/byMonth"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/byMonth"},
    :rdfs/label       "byMonth",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -10242,7 +10237,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Schedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/byMonthDay"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/byMonthDay"},
    :rdfs/label       "byMonthDay",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -10253,7 +10248,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Schedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/byMonthWeek"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/byMonthWeek"},
    :rdfs/label       "byMonthWeek",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -10266,7 +10261,7 @@
                                       :schema/Person
                                       :schema/BroadcastService],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/callSign"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/callSign"},
    :rdfs/label         "callSign",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -10377,7 +10372,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PaymentCard],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cashBack"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cashBack"},
    :rdfs/label       "cashBack",
    :rdfs/range       {:owl/unionOf [:schema/Number :schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -10437,7 +10432,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCause],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/causeOf"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/causeOf"},
    :rdfs/label       "causeOf",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
                                     :schema/Text
@@ -10529,15 +10524,15 @@
 
 (def checkoutPageURLTemplate
   "A URL template (RFC 6570) for a checkout page for an offer. This approach allows merchants to specify a URL for online checkout of the offered product, by interpolating parameters such as the logged in user ID, product ID, quantity, discount code etc. Parameter naming and standardization are not specified here."
-  {:rdf/about :schema/checkoutPageURLTemplate,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Offer],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/checkoutPageURLTemplate"},
-   :rdfs/label "checkoutPageURLTemplate",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/checkoutPageURLTemplate,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Offer],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/checkoutPageURLTemplate"},
+   :rdfs/label       "checkoutPageURLTemplate",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def checkoutTime
   "The latest someone may check out of a lodging establishment."
@@ -10557,8 +10552,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ChemicalSubstance],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/chemicalComposition"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/chemicalComposition"},
    :rdfs/label       "chemicalComposition",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -10570,7 +10565,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/ChemicalSubstance
                                     :schema/MolecularEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/chemicalRole"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/chemicalRole"},
    :rdfs/label       "chemicalRole",
    :rdfs/range       {:owl/unionOf [:schema/DefinedTerm
                                     :schema/Text
@@ -10607,7 +10602,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Taxon],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/childTaxon"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/childTaxon"},
    :rdfs/label       "childTaxon",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/Text
@@ -10674,7 +10669,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Claim],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/claimInterpreter"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/claimInterpreter"},
    :rdfs/label       "claimInterpreter",
    :rdfs/range       {:owl/unionOf [:schema/Organization
                                     :schema/Person
@@ -10700,8 +10695,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain {:owl/unionOf [:schema/Drug],
                  :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/clincalPharmacology"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/clincalPharmacology"},
    :rdfs/label "clincalPharmacology",
    :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                 :rdf/type    :owl/Class},
@@ -10709,15 +10704,15 @@
 
 (def clinicalPharmacology
   "Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD)."
-  {:rdf/about :schema/clinicalPharmacology,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/clinicalPharmacology"},
-   :rdfs/label "clinicalPharmacology",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/clinicalPharmacology,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/clinicalPharmacology"},
+   :rdfs/label       "clinicalPharmacology",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def clipNumber
   "Position of the clip within an ordered group of clips."
@@ -10765,7 +10760,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/code"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/code"},
    :rdfs/label       "code",
    :rdfs/range       {:owl/unionOf [:schema/MedicalCode
                                     :schema/Text
@@ -10801,7 +10796,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/MedicalCode :schema/CategoryCode],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/codeValue"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/codeValue"},
    :rdfs/label         "codeValue",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -10813,8 +10808,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCode],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/codingSystem"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/codingSystem"},
    :rdfs/label       "codingSystem",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -10870,7 +10865,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Collection],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/collectionSize"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/collectionSize"},
    :rdfs/label       "collectionSize",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -10894,7 +10889,7 @@
                                     :schema/ComicIssue
                                     :schema/ComicStory],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/colorist"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/colorist"},
    :rdfs/label       "colorist",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Text
@@ -10956,8 +10951,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalCredential
                                     :schema/LearningResource],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/competencyRequired"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/competencyRequired"},
    :rdfs/label       "competencyRequired",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/DefinedTerm
@@ -11001,8 +10995,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/AnatomicalSystem],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/comprisedOf"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/comprisedOf"},
    :rdfs/label       "comprisedOf",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalSystem
                                     :schema/AnatomicalStructure
@@ -11017,8 +11010,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/conditionsOfAccess"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/conditionsOfAccess"},
    :rdfs/label       "conditionsOfAccess",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11041,8 +11033,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/AnatomicalStructure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/connectedTo"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/connectedTo"},
    :rdfs/label       "connectedTo",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
                                     :schema/Text
@@ -11056,8 +11047,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/StatisticalPopulation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/constrainingProperty"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/constrainingProperty"},
    :rdfs/label       "constrainingProperty",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -11124,8 +11115,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PaymentCard],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/contactlessPayment"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/contactlessPayment"},
    :rdfs/label       "contactlessPayment",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -11226,8 +11216,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/contentReferenceTime"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/contentReferenceTime"},
    :rdfs/label       "contentReferenceTime",
    :rdfs/range       {:owl/unionOf [:schema/DateTime],
                       :rdf/type    :owl/Class}})
@@ -11267,18 +11257,19 @@
 
 (def contraindication
   "A contraindication for this therapy."
-  {:rdf/about :schema/contraindication,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalDevice :schema/MedicalTherapy],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/contraindication"},
-   :rdfs/label "contraindication",
-   :rdfs/range {:owl/unionOf [:schema/MedicalContraindication
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/contraindication,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalDevice
+                                    :schema/MedicalTherapy],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/contraindication"},
+   :rdfs/label       "contraindication",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalContraindication
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def contributor
   "A secondary contributor to the CreativeWork or Event."
@@ -11342,7 +11333,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/copyrightNotice"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/copyrightNotice"},
    :rdfs/label       "copyrightNotice",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11364,7 +11355,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/correction"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/correction"},
    :rdfs/label       "correction",
    :rdfs/range       {:owl/unionOf [:schema/CorrectionComment
                                     :schema/URL
@@ -11379,8 +11370,8 @@
    :rdfs/domain        {:owl/unionOf [:schema/Organization
                                       :schema/NewsMediaOrganization],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/correctionsPolicy"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/correctionsPolicy"},
    :rdfs/label         "correctionsPolicy",
    :rdfs/range         {:owl/unionOf [:schema/CreativeWork
                                       :schema/URL
@@ -11395,8 +11386,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugCost],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/costCategory"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/costCategory"},
    :rdfs/label       "costCategory",
    :rdfs/range       {:owl/unionOf [:schema/DrugCostCategory
                                     :schema/Text
@@ -11410,8 +11401,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugCost],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/costCurrency"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/costCurrency"},
    :rdfs/label       "costCurrency",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11422,7 +11413,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugCost],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/costOrigin"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/costOrigin"},
    :rdfs/label       "costOrigin",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11433,8 +11424,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugCost],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/costPerUnit"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/costPerUnit"},
    :rdfs/label       "costPerUnit",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/QualitativeValue
@@ -11471,22 +11461,22 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Product],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/countryOfAssembly"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/countryOfAssembly"},
    :rdfs/label       "countryOfAssembly",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
 
 (def countryOfLastProcessing
   "The place where the item (typically <a class=\"localLink\" href=\"https://schema.org/Product\">Product</a>) was last processed and tested before importation."
-  {:rdf/about :schema/countryOfLastProcessing,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Product],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/countryOfLastProcessing"},
-   :rdfs/label "countryOfLastProcessing",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/countryOfLastProcessing,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Product],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/countryOfLastProcessing"},
+   :rdfs/label       "countryOfLastProcessing",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def countryOfOrigin
   "The country of origin of something, including products as well as creative  works such as movie and TV content.<br/><br/>In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of <a class=\"localLink\" href=\"https://schema.org/CreativeWork\">CreativeWork</a> it is difficult to provide fully general guidance, and properties such as <a class=\"localLink\" href=\"https://schema.org/contentLocation\">contentLocation</a> and <a class=\"localLink\" href=\"https://schema.org/locationCreated\">locationCreated</a> may be more applicable.<br/><br/>In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here."
@@ -11566,7 +11556,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CourseInstance],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/courseWorkload"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/courseWorkload"},
    :rdfs/label       "courseWorkload",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11599,8 +11589,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/creativeWorkStatus"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/creativeWorkStatus"},
    :rdfs/label       "creativeWorkStatus",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/DefinedTerm
@@ -11629,8 +11618,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalCredential],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/credentialCategory"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/credentialCategory"},
    :rdfs/label       "credentialCategory",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/DefinedTerm
@@ -11644,7 +11632,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/creditText"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/creditText"},
    :rdfs/label       "creditText",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11711,8 +11699,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ExchangeRateSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/currentExchangeRate"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/currentExchangeRate"},
    :rdfs/label       "currentExchangeRate",
    :rdfs/range       {:owl/unionOf [:schema/UnitPriceSpecification
                                     :schema/Text
@@ -11737,18 +11725,18 @@
 
 (def customerRemorseReturnFees
   "The type of return fees if the product is returned due to customer remorse."
-  {:rdf/about :schema/customerRemorseReturnFees,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MerchantReturnPolicy],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/customerRemorseReturnFees"},
-   :rdfs/label "customerRemorseReturnFees",
-   :rdfs/range {:owl/unionOf [:schema/ReturnFeesEnumeration
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/customerRemorseReturnFees,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/customerRemorseReturnFees"},
+   :rdfs/label       "customerRemorseReturnFees",
+   :rdfs/range       {:owl/unionOf [:schema/ReturnFeesEnumeration
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def customerRemorseReturnLabelSource
   "The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse."
@@ -11757,7 +11745,7 @@
    :rdfs/domain {:owl/unionOf [:schema/MerchantReturnPolicy],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/customerRemorseReturnLabelSource"},
+   {:rdf/uri "https://pending.schema.org/customerRemorseReturnLabelSource"},
    :rdfs/label "customerRemorseReturnLabelSource",
    :rdfs/range {:owl/unionOf [:schema/ReturnLabelSourceEnumeration
                               :schema/Text
@@ -11772,8 +11760,8 @@
    :rdfs/domain {:owl/unionOf [:schema/MerchantReturnPolicy],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri
-         "https://pending.schema.org/customerRemorseReturnShippingFeesAmount"},
+   {:rdf/uri
+    "https://pending.schema.org/customerRemorseReturnShippingFeesAmount"},
    :rdfs/label "customerRemorseReturnShippingFeesAmount",
    :rdfs/range
    {:owl/unionOf [:schema/MonetaryAmount :schema/Text :schema/URL :schema/Role],
@@ -11785,7 +11773,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ShippingDeliveryTime],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cutoffTime"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cutoffTime"},
    :rdfs/label       "cutoffTime",
    :rdfs/range       {:owl/unionOf [:schema/Time],
                       :rdf/type    :owl/Class}})
@@ -11796,7 +11784,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdCollectionDate"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdCollectionDate"},
    :rdfs/label       "cvdCollectionDate",
    :rdfs/range       {:owl/unionOf [:schema/DateTime
                                     :schema/Text
@@ -11810,7 +11798,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdFacilityCounty"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdFacilityCounty"},
    :rdfs/label       "cvdFacilityCounty",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11821,7 +11809,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdFacilityId"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdFacilityId"},
    :rdfs/label       "cvdFacilityId",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -11832,7 +11820,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumBeds"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumBeds"},
    :rdfs/label       "cvdNumBeds",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11843,7 +11831,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumBedsOcc"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumBedsOcc"},
    :rdfs/label       "cvdNumBedsOcc",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11854,7 +11842,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumC19Died"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumC19Died"},
    :rdfs/label       "cvdNumC19Died",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11865,7 +11853,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumC19HOPats"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumC19HOPats"},
    :rdfs/label       "cvdNumC19HOPats",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11876,7 +11864,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumC19HospPats"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumC19HospPats"},
    :rdfs/label       "cvdNumC19HospPats",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11887,23 +11875,23 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/cvdNumC19MechVentPats"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/cvdNumC19MechVentPats"},
    :rdfs/label       "cvdNumC19MechVentPats",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
 
 (def cvdNumC19OFMechVentPats
   "numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator."
-  {:rdf/about :schema/cvdNumC19OFMechVentPats,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain {:owl/unionOf [:schema/CDCPMDRecord],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/cvdNumC19OFMechVentPats"},
-   :rdfs/label "cvdNumC19OFMechVentPats",
-   :rdfs/range {:owl/unionOf [:schema/Number],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/cvdNumC19OFMechVentPats,
+   :rdf/type         :owl/DatatypeProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/cvdNumC19OFMechVentPats"},
+   :rdfs/label       "cvdNumC19OFMechVentPats",
+   :rdfs/range       {:owl/unionOf [:schema/Number],
+                      :rdf/type    :owl/Class}})
 
 (def cvdNumC19OverflowPats
   "numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed."
@@ -11911,8 +11899,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/cvdNumC19OverflowPats"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/cvdNumC19OverflowPats"},
    :rdfs/label       "cvdNumC19OverflowPats",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11923,7 +11911,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumICUBeds"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumICUBeds"},
    :rdfs/label       "cvdNumICUBeds",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11934,7 +11922,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumICUBedsOcc"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumICUBedsOcc"},
    :rdfs/label       "cvdNumICUBedsOcc",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11945,7 +11933,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumTotBeds"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumTotBeds"},
    :rdfs/label       "cvdNumTotBeds",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11956,7 +11944,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumVent"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumVent"},
    :rdfs/label       "cvdNumVent",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -11967,7 +11955,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CDCPMDRecord],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/cvdNumVentUse"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/cvdNumVentUse"},
    :rdfs/label       "cvdNumVentUse",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -12259,7 +12247,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/OfferShippingDetails
                                     :schema/DeliveryTimeSettings],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/deliveryTime"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/deliveryTime"},
    :rdfs/label       "deliveryTime",
    :rdfs/range       {:owl/unionOf [:schema/ShippingDeliveryTime
                                     :schema/Text
@@ -12301,8 +12289,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BoatTrip],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/departureBoatTerminal"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/departureBoatTerminal"},
    :rdfs/label       "departureBoatTerminal",
    :rdfs/range       {:owl/unionOf [:schema/BoatTerminal
                                     :schema/Text
@@ -12440,7 +12428,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Patient :schema/DDxElement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/diagnosis"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/diagnosis"},
    :rdfs/label       "diagnosis",
    :rdfs/range       {:owl/unionOf [:schema/MedicalCondition
                                     :schema/Text
@@ -12454,7 +12442,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/AnatomicalStructure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/diagram"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/diagram"},
    :rdfs/label       "diagram",
    :rdfs/range       {:owl/unionOf [:schema/ImageObject
                                     :schema/Text
@@ -12468,7 +12456,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/ExerciseAction],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://health-lifesci.schema.org/diet"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://health-lifesci.schema.org/diet"},
    :rdfs/label         "diet",
    :rdfs/range         {:owl/unionOf [:schema/Diet
                                       :schema/Text
@@ -12483,8 +12471,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Diet],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/dietFeatures"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/dietFeatures"},
    :rdfs/label       "dietFeatures",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -12496,7 +12484,7 @@
    :rdfs/domain {:owl/unionOf [:schema/MedicalCondition],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/differentialDiagnosis"},
+   {:rdf/uri "https://health-lifesci.schema.org/differentialDiagnosis"},
    :rdfs/label "differentialDiagnosis",
    :rdfs/range
    {:owl/unionOf [:schema/DDxElement :schema/Text :schema/URL :schema/Role],
@@ -12508,7 +12496,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/directApply"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/directApply"},
    :rdfs/label       "directApply",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -12639,8 +12627,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/diseasePreventionInfo"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/diseasePreventionInfo"},
    :rdfs/label       "diseasePreventionInfo",
    :rdfs/range       {:owl/unionOf [:schema/WebContent
                                     :schema/URL
@@ -12650,20 +12638,20 @@
 
 (def diseaseSpreadStatistics
   "Statistical information about the spread of a disease, either as <a class=\"localLink\" href=\"https://schema.org/WebContent\">WebContent</a>, or  described directly as a <a class=\"localLink\" href=\"https://schema.org/Dataset\">Dataset</a>, or the specific <a class=\"localLink\" href=\"https://schema.org/Observation\">Observation</a>s in the dataset. When a <a class=\"localLink\" href=\"https://schema.org/WebContent\">WebContent</a> URL is  provided, the page indicated might also contain more such markup."
-  {:rdf/about :schema/diseaseSpreadStatistics,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/SpecialAnnouncement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/diseaseSpreadStatistics"},
-   :rdfs/label "diseaseSpreadStatistics",
-   :rdfs/range {:owl/unionOf [:schema/URL
-                              :schema/Observation
-                              :schema/WebContent
-                              :schema/Dataset
-                              :schema/Text
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/diseaseSpreadStatistics,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/diseaseSpreadStatistics"},
+   :rdfs/label       "diseaseSpreadStatistics",
+   :rdfs/range       {:owl/unionOf [:schema/URL
+                                    :schema/Observation
+                                    :schema/WebContent
+                                    :schema/Dataset
+                                    :schema/Text
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def dissolutionDate
   "The date that this organization was dissolved."
@@ -12693,18 +12681,18 @@
 
 (def distinguishingSign
   "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis."
-  {:rdf/about :schema/distinguishingSign,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/DDxElement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/distinguishingSign"},
-   :rdfs/label "distinguishingSign",
-   :rdfs/range {:owl/unionOf [:schema/MedicalSignOrSymptom
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/distinguishingSign,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/DDxElement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/distinguishingSign"},
+   :rdfs/label       "distinguishingSign",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalSignOrSymptom
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def distribution
   "A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also <a href=\"https://www.w3.org/TR/vocab-dcat-3/#Class:Distribution\">DCAT</a> on this point). Different distributions might include or exclude different subsets of the entire dataset, for example."
@@ -12727,7 +12715,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/NewsMediaOrganization
                                     :schema/Organization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/diversityPolicy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/diversityPolicy"},
    :rdfs/label       "diversityPolicy",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/CreativeWork
@@ -12737,17 +12725,19 @@
 
 (def diversityStaffingReport
   "For an <a class=\"localLink\" href=\"https://schema.org/Organization\">Organization</a> (often but not necessarily a <a class=\"localLink\" href=\"https://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported."
-  {:rdf/about :schema/diversityStaffingReport,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/NewsMediaOrganization
-                               :schema/Organization],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/diversityStaffingReport"},
-   :rdfs/label "diversityStaffingReport",
-   :rdfs/range
-   {:owl/unionOf [:schema/Article :schema/URL :schema/Text :schema/Role],
-    :rdf/type    :owl/Class},
+  {:rdf/about          :schema/diversityStaffingReport,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/NewsMediaOrganization
+                                      :schema/Organization],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/diversityStaffingReport"},
+   :rdfs/label         "diversityStaffingReport",
+   :rdfs/range         {:owl/unionOf [:schema/Article
+                                      :schema/URL
+                                      :schema/Text
+                                      :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/publishingPrinciples})
 
 (def documentation
@@ -12756,7 +12746,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/WebAPI],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/documentation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/documentation"},
    :rdfs/label       "documentation",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/CreativeWork
@@ -12771,7 +12761,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/OfferShippingDetails
                                     :schema/ShippingRateSettings],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/doesNotShip"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/doesNotShip"},
    :rdfs/label       "doesNotShip",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -12782,7 +12772,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Property],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://meta.schema.org/domainIncludes"},
+   :rdfs/isDefinedBy {:rdf/uri "https://meta.schema.org/domainIncludes"},
    :rdfs/label       "domainIncludes",
    :rdfs/range       {:owl/unionOf [:schema/Class
                                     :schema/Text
@@ -12796,7 +12786,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MortgageLoan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/domiciledMortgage"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/domiciledMortgage"},
    :rdfs/label       "domiciledMortgage",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -12818,7 +12808,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/dosageForm"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/dosageForm"},
    :rdfs/label       "dosageForm",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -12829,8 +12819,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug :schema/TherapeuticProcedure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/doseSchedule"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/doseSchedule"},
    :rdfs/label       "doseSchedule",
    :rdfs/range       {:owl/unionOf [:schema/DoseSchedule
                                     :schema/Text
@@ -12844,7 +12834,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DoseSchedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/doseUnit"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/doseUnit"},
    :rdfs/label       "doseUnit",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -12855,7 +12845,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DoseSchedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/doseValue"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/doseValue"},
    :rdfs/label       "doseValue",
    :rdfs/range       {:owl/unionOf [:schema/QualitativeValue
                                     :schema/Number
@@ -12870,7 +12860,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/RepaymentSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/downPayment"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/downPayment"},
    :rdfs/label       "downPayment",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Number
@@ -12907,7 +12897,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vein],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/drainsTo"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/drainsTo"},
    :rdfs/label       "drainsTo",
    :rdfs/range       {:owl/unionOf [:schema/Vessel
                                     :schema/Text
@@ -12963,7 +12953,7 @@
                                     :schema/MedicalCondition
                                     :schema/Patient],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/drug"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/drug"},
    :rdfs/label       "drug",
    :rdfs/range       {:owl/unionOf [:schema/Drug
                                     :schema/Text
@@ -12977,7 +12967,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/drugClass"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/drugClass"},
    :rdfs/label       "drugClass",
    :rdfs/range       {:owl/unionOf [:schema/DrugClass
                                     :schema/Text
@@ -12991,7 +12981,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugCost :schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/drugUnit"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/drugUnit"},
    :rdfs/label       "drugUnit",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -13010,16 +13000,18 @@
 
 (def duplicateTherapy
   "A therapy that duplicates or overlaps this one."
-  {:rdf/about :schema/duplicateTherapy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalTherapy],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/duplicateTherapy"},
-   :rdfs/label "duplicateTherapy",
-   :rdfs/range
-   {:owl/unionOf [:schema/MedicalTherapy :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/duplicateTherapy,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalTherapy],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/duplicateTherapy"},
+   :rdfs/label       "duplicateTherapy",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalTherapy
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def duration
   "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>."
@@ -13077,8 +13069,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/RepaymentSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/earlyPrepaymentPenalty"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/earlyPrepaymentPenalty"},
    :rdfs/label       "earlyPrepaymentPenalty",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Text
@@ -13092,7 +13084,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/CreativeWork],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/editEIDR"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/editEIDR"},
    :rdfs/label         "editEIDR",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -13118,7 +13110,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Question :schema/SolveMathAction],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/eduQuestionType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/eduQuestionType"},
    :rdfs/label       "eduQuestionType",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -13129,8 +13121,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting :schema/Occupation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/educationRequirements"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/educationRequirements"},
    :rdfs/label       "educationRequirements",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/EducationalOccupationalCredential
@@ -13188,7 +13180,7 @@
                                     :schema/CreativeWork
                                     :schema/LearningResource],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/educationalLevel"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/educationalLevel"},
    :rdfs/label       "educationalLevel",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/DefinedTerm
@@ -13202,8 +13194,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/educationalProgramMode"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/educationalProgramMode"},
    :rdfs/label       "educationalProgramMode",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -13255,7 +13247,7 @@
    :rdfs/domain {:owl/unionOf [:schema/JobPosting],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/eligibilityToWorkRequirement"},
+   {:rdf/uri "https://pending.schema.org/eligibilityToWorkRequirement"},
    :rdfs/label "eligibilityToWorkRequirement",
    :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                 :rdf/type    :owl/Class}})
@@ -13371,8 +13363,8 @@
                                       :schema/ImageObject
                                       :schema/AudioObject],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/embeddedTextCaption"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/embeddedTextCaption"},
    :rdfs/label         "embeddedTextCaption",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -13384,7 +13376,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/emissionsCO2"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/emissionsCO2"},
    :rdfs/label       "emissionsCO2",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -13424,7 +13416,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/employerOverview"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/employerOverview"},
    :rdfs/label       "employerOverview",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -13446,7 +13438,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/employmentUnit"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/employmentUnit"},
    :rdfs/label       "employmentUnit",
    :rdfs/range       {:owl/unionOf [:schema/Organization
                                     :schema/Text
@@ -13461,8 +13453,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Gene],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/encodesBioChemEntity"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/encodesBioChemEntity"},
    :rdfs/label       "encodesBioChemEntity",
    :rdfs/range       {:owl/unionOf [:schema/BioChemEntity
                                     :schema/Text
@@ -13561,7 +13553,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Clip],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/endOffset"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/endOffset"},
    :rdfs/label       "endOffset",
    :rdfs/range       {:owl/unionOf [:schema/HyperTocEntry
                                     :schema/Number
@@ -13607,7 +13599,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Diet],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/endorsers"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/endorsers"},
    :rdfs/label       "endorsers",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Organization
@@ -13618,33 +13610,33 @@
 
 (def energyEfficiencyScaleMax
   "Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++."
-  {:rdf/about :schema/energyEfficiencyScaleMax,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/EnergyConsumptionDetails],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/energyEfficiencyScaleMax"},
-   :rdfs/label "energyEfficiencyScaleMax",
-   :rdfs/range {:owl/unionOf [:schema/EUEnergyEfficiencyEnumeration
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/energyEfficiencyScaleMax,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/EnergyConsumptionDetails],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/energyEfficiencyScaleMax"},
+   :rdfs/label       "energyEfficiencyScaleMax",
+   :rdfs/range       {:owl/unionOf [:schema/EUEnergyEfficiencyEnumeration
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def energyEfficiencyScaleMin
   "Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++."
-  {:rdf/about :schema/energyEfficiencyScaleMin,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/EnergyConsumptionDetails],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/energyEfficiencyScaleMin"},
-   :rdfs/label "energyEfficiencyScaleMin",
-   :rdfs/range {:owl/unionOf [:schema/EUEnergyEfficiencyEnumeration
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/energyEfficiencyScaleMin,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/EnergyConsumptionDetails],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/energyEfficiencyScaleMin"},
+   :rdfs/label       "energyEfficiencyScaleMin",
+   :rdfs/range       {:owl/unionOf [:schema/EUEnergyEfficiencyEnumeration
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def engineDisplacement
   "The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches* Note 1: You can link to information about how the given value has been determined using the <a class=\"localLink\" href=\"https://schema.org/valueReference\">valueReference</a> property.* Note 2: You can use <a class=\"localLink\" href=\"https://schema.org/minValue\">minValue</a> and <a class=\"localLink\" href=\"https://schema.org/maxValue\">maxValue</a> to indicate ranges."
@@ -13652,7 +13644,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EngineSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/engineDisplacement"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/engineDisplacement"},
    :rdfs/label       "engineDisplacement",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -13666,7 +13658,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EngineSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/enginePower"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/enginePower"},
    :rdfs/label       "enginePower",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -13680,7 +13672,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EngineSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/engineType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/engineType"},
    :rdfs/label       "engineType",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/QualitativeValue
@@ -13710,8 +13702,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition
                                     :schema/PhysicalActivity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/epidemiology"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/epidemiology"},
    :rdfs/label       "epidemiology",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -13845,8 +13837,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalRiskEstimator],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/estimatesRiskOf"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/estimatesRiskOf"},
    :rdfs/label       "estimatesRiskOf",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
                                     :schema/Text
@@ -13861,7 +13853,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/Organization
                                     :schema/NewsMediaOrganization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ethicsPolicy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ethicsPolicy"},
    :rdfs/label       "ethicsPolicy",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/CreativeWork
@@ -13895,8 +13887,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Event],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/eventAttendanceMode"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/eventAttendanceMode"},
    :rdfs/label       "eventAttendanceMode",
    :rdfs/range       {:owl/unionOf [:schema/EventAttendanceModeEnumeration
                                     :schema/Text
@@ -13910,7 +13902,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Event],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/eventSchedule"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/eventSchedule"},
    :rdfs/label       "eventSchedule",
    :rdfs/range       {:owl/unionOf [:schema/Schedule
                                     :schema/Text
@@ -13953,8 +13945,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalGuideline],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/evidenceLevel"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/evidenceLevel"},
    :rdfs/label       "evidenceLevel",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEvidenceLevel
                                     :schema/Text
@@ -13968,8 +13960,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalGuideline],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/evidenceOrigin"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/evidenceOrigin"},
    :rdfs/label       "evidenceOrigin",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -13995,7 +13987,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Schedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/exceptDate"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/exceptDate"},
    :rdfs/label       "exceptDate",
    :rdfs/range       {:owl/unionOf [:schema/DateTime :schema/Date],
                       :rdf/type    :owl/Class}})
@@ -14006,8 +13998,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ExchangeRateSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/exchangeRateSpread"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/exchangeRateSpread"},
    :rdfs/label       "exchangeRateSpread",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Number
@@ -14048,8 +14039,8 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/ExerciseAction],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://health-lifesci.schema.org/exercisePlan"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://health-lifesci.schema.org/exercisePlan"},
    :rdfs/label         "exercisePlan",
    :rdfs/range         {:owl/unionOf [:schema/ExercisePlan
                                       :schema/Text
@@ -14064,8 +14055,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain {:owl/unionOf [:schema/ExerciseAction],
                  :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/exerciseRelatedDiet"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/exerciseRelatedDiet"},
    :rdfs/label "exerciseRelatedDiet",
    :rdfs/range
    {:owl/unionOf [:schema/Diet :schema/Text :schema/URL :schema/Role],
@@ -14079,8 +14070,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan
                                     :schema/ExerciseAction],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/exerciseType"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/exerciseType"},
    :rdfs/label       "exerciseType",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -14123,15 +14114,15 @@
 
 (def expectedPrognosis
   "The likely outcome in either the short term or long term of the medical condition."
-  {:rdf/about :schema/expectedPrognosis,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalCondition],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/expectedPrognosis"},
-   :rdfs/label "expectedPrognosis",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/expectedPrognosis,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/expectedPrognosis"},
+   :rdfs/label       "expectedPrognosis",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def expectsAcceptanceOf
   "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it."
@@ -14156,7 +14147,7 @@
    :rdfs/domain {:owl/unionOf [:schema/JobPosting],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/experienceInPlaceOfEducation"},
+   {:rdf/uri "https://pending.schema.org/experienceInPlaceOfEducation"},
    :rdfs/label "experienceInPlaceOfEducation",
    :rdfs/range {:owl/unionOf [:schema/Boolean],
                 :rdf/type    :owl/Class}})
@@ -14177,15 +14168,15 @@
 
 (def expertConsiderations
   "Medical expert advice related to the plan."
-  {:rdf/about :schema/expertConsiderations,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Diet],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/expertConsiderations"},
-   :rdfs/label "expertConsiderations",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/expertConsiderations,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Diet],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/expertConsiderations"},
+   :rdfs/label       "expertConsiderations",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def expires
   "Date the content expires and is no longer useful or available. For example a <a class=\"localLink\" href=\"https://schema.org/VideoObject\">VideoObject</a> or <a class=\"localLink\" href=\"https://schema.org/NewsArticle\">NewsArticle</a> whose availability or relevance is time-limited, or a <a class=\"localLink\" href=\"https://schema.org/ClaimReview\">ClaimReview</a> fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date."
@@ -14204,7 +14195,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Gene],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/expressedIn"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/expressedIn"},
    :rdfs/label       "expressedIn",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalSystem
                                     :schema/BioChemEntity
@@ -14320,8 +14311,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/financialAidEligible"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/financialAidEligible"},
    :rdfs/label       "financialAidEligible",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/DefinedTerm
@@ -14335,7 +14326,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Claim],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/firstAppearance"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/firstAppearance"},
    :rdfs/label         "firstAppearance",
    :rdfs/range         {:owl/unionOf [:schema/CreativeWork
                                       :schema/Text
@@ -14390,7 +14381,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Accommodation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/floorLevel"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/floorLevel"},
    :rdfs/label       "floorLevel",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -14401,7 +14392,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PaymentCard],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/floorLimit"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/floorLimit"},
    :rdfs/label       "floorLimit",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Text
@@ -14459,7 +14450,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalProcedure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/followup"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/followup"},
    :rdfs/label       "followup",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -14501,8 +14492,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/foodWarning"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/foodWarning"},
    :rdfs/label       "foodWarning",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -14579,8 +14569,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ShippingRateSettings],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/freeShippingThreshold"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/freeShippingThreshold"},
    :rdfs/label       "freeShippingThreshold",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/DeliveryChargeSpecification
@@ -14595,7 +14585,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DoseSchedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/frequency"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/frequency"},
    :rdfs/label       "frequency",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -14623,7 +14613,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/fuelCapacity"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/fuelCapacity"},
    :rdfs/label       "fuelCapacity",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -14680,8 +14670,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Joint],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/functionalClass"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/functionalClass"},
    :rdfs/label       "functionalClass",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
                                     :schema/Text
@@ -14696,7 +14686,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Grant],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/fundedItem"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/fundedItem"},
    :rdfs/label       "fundedItem",
    :rdfs/range       {:owl/unionOf [:schema/CreativeWork
                                     :schema/BioChemEntity
@@ -14744,7 +14734,7 @@
                                     :schema/BioChemEntity
                                     :schema/Product],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/funding"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/funding"},
    :rdfs/label       "funding",
    :rdfs/range       {:owl/unionOf [:schema/Grant
                                     :schema/Text
@@ -14773,8 +14763,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PlayGameAction],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/gameAvailabilityType"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/gameAvailabilityType"},
    :rdfs/label       "gameAvailabilityType",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/GameAvailabilityEnumeration
@@ -14871,7 +14861,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Person :schema/SportsTeam],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/gender"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/gender"},
    :rdfs/label       "gender",
    :rdfs/range       {:owl/unionOf [:schema/GenderType
                                     :schema/Text
@@ -15106,7 +15096,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/gettingTestedInfo"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/gettingTestedInfo"},
    :rdfs/label       "gettingTestedInfo",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/WebContent
@@ -15145,8 +15135,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/governmentBenefitsInfo"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/governmentBenefitsInfo"},
    :rdfs/label       "governmentBenefitsInfo",
    :rdfs/range       {:owl/unionOf [:schema/GovernmentService
                                     :schema/Text
@@ -15160,7 +15150,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LoanOrCredit],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/gracePeriod"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/gracePeriod"},
    :rdfs/label       "gracePeriod",
    :rdfs/range       {:owl/unionOf [:schema/Duration
                                     :schema/Text
@@ -15221,7 +15211,7 @@
                                       :schema/Product
                                       :schema/Demand],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/gtin"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/gtin"},
    :rdfs/label         "gtin",
    :rdfs/range         {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                         :rdf/type    :owl/Class},
@@ -15289,7 +15279,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/guideline"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/guideline"},
    :rdfs/label       "guideline",
    :rdfs/range       {:owl/unionOf [:schema/MedicalGuideline
                                     :schema/Text
@@ -15303,24 +15293,26 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalGuideline],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/guidelineDate"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/guidelineDate"},
    :rdfs/label       "guidelineDate",
    :rdfs/range       {:owl/unionOf [:schema/Date],
                       :rdf/type    :owl/Class}})
 
 (def guidelineSubject
   "The medical conditions, treatments, etc. that are the subject of the guideline."
-  {:rdf/about :schema/guidelineSubject,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalGuideline],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/guidelineSubject"},
-   :rdfs/label "guidelineSubject",
-   :rdfs/range
-   {:owl/unionOf [:schema/MedicalEntity :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/guidelineSubject,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalGuideline],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/guidelineSubject"},
+   :rdfs/label       "guidelineSubject",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def handlingTime
   "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup. Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as \"d\"), i.e. only counting days when the business normally operates."
@@ -15328,7 +15320,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ShippingDeliveryTime],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/handlingTime"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/handlingTime"},
    :rdfs/label       "handlingTime",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -15342,8 +15334,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Product :schema/Offer],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/hasAdultConsideration"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/hasAdultConsideration"},
    :rdfs/label       "hasAdultConsideration",
    :rdfs/range       {:owl/unionOf [:schema/AdultOrientedEnumeration
                                     :schema/Text
@@ -15358,8 +15350,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/hasBioChemEntityPart"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/hasBioChemEntityPart"},
    :rdfs/label       "hasBioChemEntityPart",
    :rdfs/range       {:owl/unionOf [:schema/BioChemEntity
                                     :schema/Text
@@ -15369,15 +15361,15 @@
 
 (def hasBioPolymerSequence
   "A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein."
-  {:rdf/about :schema/hasBioPolymerSequence,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Protein :schema/Gene],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/hasBioPolymerSequence"},
-   :rdfs/label "hasBioPolymerSequence",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class},
+  {:rdf/about          :schema/hasBioPolymerSequence,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Protein :schema/Gene],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/hasBioPolymerSequence"},
+   :rdfs/label         "hasBioPolymerSequence",
+   :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/hasRepresentation})
 
 (def hasBroadcastChannel
@@ -15401,7 +15393,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/CategoryCodeSet],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/hasCategoryCode"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/hasCategoryCode"},
    :rdfs/label         "hasCategoryCode",
    :rdfs/range         {:owl/unionOf [:schema/CategoryCode
                                       :schema/Text
@@ -15416,7 +15408,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/hasCourse"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/hasCourse"},
    :rdfs/label       "hasCourse",
    :rdfs/range       {:owl/unionOf [:schema/Course
                                     :schema/Text
@@ -15444,7 +15436,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Person :schema/Organization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/hasCredential"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/hasCredential"},
    :rdfs/label       "hasCredential",
    :rdfs/range       {:owl/unionOf [:schema/EducationalOccupationalCredential
                                     :schema/Text
@@ -15458,7 +15450,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DefinedTermSet :schema/Taxon],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/hasDefinedTerm"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/hasDefinedTerm"},
    :rdfs/label       "hasDefinedTerm",
    :rdfs/range       {:owl/unionOf [:schema/DefinedTerm
                                     :schema/Text
@@ -15501,41 +15493,41 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Place],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/hasDriveThroughService"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/hasDriveThroughService"},
    :rdfs/label       "hasDriveThroughService",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
 
 (def hasEnergyConsumptionDetails
   "Defines the energy efficiency Category (also known as \"class\" or \"rating\") for a product according to an international energy efficiency standard."
-  {:rdf/about :schema/hasEnergyConsumptionDetails,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Product],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/hasEnergyConsumptionDetails"},
-   :rdfs/label "hasEnergyConsumptionDetails",
-   :rdfs/range {:owl/unionOf [:schema/EnergyConsumptionDetails
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/hasEnergyConsumptionDetails,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Product],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/hasEnergyConsumptionDetails"},
+   :rdfs/label       "hasEnergyConsumptionDetails",
+   :rdfs/range       {:owl/unionOf [:schema/EnergyConsumptionDetails
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def hasEnergyEfficiencyCategory
   "Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard."
-  {:rdf/about :schema/hasEnergyEfficiencyCategory,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/EnergyConsumptionDetails],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/hasEnergyEfficiencyCategory"},
-   :rdfs/label "hasEnergyEfficiencyCategory",
-   :rdfs/range {:owl/unionOf [:schema/EnergyEfficiencyEnumeration
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/hasEnergyEfficiencyCategory,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/EnergyConsumptionDetails],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/hasEnergyEfficiencyCategory"},
+   :rdfs/label       "hasEnergyEfficiencyCategory",
+   :rdfs/range       {:owl/unionOf [:schema/EnergyEfficiencyEnumeration
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def hasHealthAspect
   "Indicates the aspect or aspects specifically addressed in some <a class=\"localLink\" href=\"https://schema.org/HealthTopicContent\">HealthTopicContent</a>. For example, that the content is an overview, or that it talks about treatment, self-care, treatments or their side-effects."
@@ -15543,7 +15535,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthTopicContent],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/hasHealthAspect"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/hasHealthAspect"},
    :rdfs/label       "hasHealthAspect",
    :rdfs/range       {:owl/unionOf [:schema/HealthAspectEnumeration
                                     :schema/Text
@@ -15573,7 +15565,7 @@
                                     :schema/SizeSpecification
                                     :schema/Product],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/hasMeasurement"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/hasMeasurement"},
    :rdfs/label       "hasMeasurement",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -15625,19 +15617,20 @@
 
 (def hasMerchantReturnPolicy
   "Specifies a MerchantReturnPolicy that may be applicable."
-  {:rdf/about :schema/hasMerchantReturnPolicy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain
-   {:owl/unionOf [:schema/Organization :schema/Offer :schema/Product],
-    :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/hasMerchantReturnPolicy"},
-   :rdfs/label "hasMerchantReturnPolicy",
-   :rdfs/range {:owl/unionOf [:schema/MerchantReturnPolicy
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/hasMerchantReturnPolicy,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Organization
+                                    :schema/Offer
+                                    :schema/Product],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/hasMerchantReturnPolicy"},
+   :rdfs/label       "hasMerchantReturnPolicy",
+   :rdfs/range       {:owl/unionOf [:schema/MerchantReturnPolicy
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def hasMolecularFunction
   "Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence."
@@ -15645,8 +15638,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/hasMolecularFunction"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/hasMolecularFunction"},
    :rdfs/label       "hasMolecularFunction",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/PropertyValue
@@ -15716,18 +15709,18 @@
 
 (def hasProductReturnPolicy
   "Indicates a ProductReturnPolicy that may be applicable."
-  {:rdf/about :schema/hasProductReturnPolicy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Product :schema/Organization],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://attic.schema.org/hasProductReturnPolicy"},
-   :rdfs/label "hasProductReturnPolicy",
-   :rdfs/range {:owl/unionOf [:schema/ProductReturnPolicy
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class},
+  {:rdf/about           :schema/hasProductReturnPolicy,
+   :rdf/type            :owl/ObjectProperty,
+   :rdfs/domain         {:owl/unionOf [:schema/Product :schema/Organization],
+                         :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy    {:rdf/uri
+                         "https://attic.schema.org/hasProductReturnPolicy"},
+   :rdfs/label          "hasProductReturnPolicy",
+   :rdfs/range          {:owl/unionOf [:schema/ProductReturnPolicy
+                                       :schema/Text
+                                       :schema/URL
+                                       :schema/Role],
+                         :rdf/type    :owl/Class},
    :schema/supersededBy :schema/hasMerchantReturnPolicy})
 
 (def hasRepresentation
@@ -15736,7 +15729,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/hasRepresentation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/hasRepresentation"},
    :rdfs/label       "hasRepresentation",
    :rdfs/range       {:owl/unionOf [:schema/PropertyValue
                                     :schema/Text
@@ -15751,7 +15744,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ProductGroup],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/hasVariant"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/hasVariant"},
    :rdfs/label       "hasVariant",
    :rdfs/range       {:owl/unionOf [:schema/Product
                                     :schema/Text
@@ -15778,8 +15771,8 @@
                                     :schema/MedicalStudy
                                     :schema/PeopleAudience],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/healthCondition"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/healthCondition"},
    :rdfs/label       "healthCondition",
    :rdfs/range       {:owl/unionOf [:schema/MedicalCondition
                                     :schema/Text
@@ -15789,27 +15782,27 @@
 
 (def healthPlanCoinsuranceOption
   "Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?"
-  {:rdf/about :schema/healthPlanCoinsuranceOption,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/healthPlanCoinsuranceOption"},
-   :rdfs/label "healthPlanCoinsuranceOption",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/healthPlanCoinsuranceOption,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanCoinsuranceOption"},
+   :rdfs/label       "healthPlanCoinsuranceOption",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def healthPlanCoinsuranceRate
   "The rate of coinsurance expressed as a number between 0.0 and 1.0."
-  {:rdf/about :schema/healthPlanCoinsuranceRate,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/healthPlanCoinsuranceRate"},
-   :rdfs/label "healthPlanCoinsuranceRate",
-   :rdfs/range {:owl/unionOf [:schema/Number],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/healthPlanCoinsuranceRate,
+   :rdf/type         :owl/DatatypeProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanCoinsuranceRate"},
+   :rdfs/label       "healthPlanCoinsuranceRate",
+   :rdfs/range       {:owl/unionOf [:schema/Number],
+                      :rdf/type    :owl/Class}})
 
 (def healthPlanCopay
   "The copay amount."
@@ -15817,7 +15810,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/healthPlanCopay"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/healthPlanCopay"},
    :rdfs/label       "healthPlanCopay",
    :rdfs/range       {:owl/unionOf [:schema/PriceSpecification
                                     :schema/Text
@@ -15831,8 +15824,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/healthPlanCopayOption"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanCopayOption"},
    :rdfs/label       "healthPlanCopayOption",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -15844,8 +15837,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/HealthPlanNetwork
                                     :schema/HealthPlanFormulary],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/healthPlanCostSharing"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanCostSharing"},
    :rdfs/label       "healthPlanCostSharing",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -15856,8 +15849,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthInsurancePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/healthPlanDrugOption"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanDrugOption"},
    :rdfs/label       "healthPlanDrugOption",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -15869,8 +15862,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/HealthPlanFormulary
                                     :schema/HealthInsurancePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/healthPlanDrugTier"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/healthPlanDrugTier"},
    :rdfs/label       "healthPlanDrugTier",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -15881,7 +15873,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthInsurancePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/healthPlanId"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/healthPlanId"},
    :rdfs/label       "healthPlanId",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -15892,8 +15884,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthInsurancePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/healthPlanMarketingUrl"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanMarketingUrl"},
    :rdfs/label       "healthPlanMarketingUrl",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -15905,8 +15897,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/HealthPlanNetwork
                                     :schema/MedicalOrganization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/healthPlanNetworkId"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanNetworkId"},
    :rdfs/label       "healthPlanNetworkId",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -15917,39 +15909,39 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HealthPlanNetwork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/healthPlanNetworkTier"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanNetworkTier"},
    :rdfs/label       "healthPlanNetworkTier",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
 
 (def healthPlanPharmacyCategory
   "The category or type of pharmacy associated with this cost sharing."
-  {:rdf/about :schema/healthPlanPharmacyCategory,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/healthPlanPharmacyCategory"},
-   :rdfs/label "healthPlanPharmacyCategory",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/healthPlanPharmacyCategory,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/HealthPlanCostSharingSpecification],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthPlanPharmacyCategory"},
+   :rdfs/label       "healthPlanPharmacyCategory",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def healthcareReportingData
   "Indicates data describing a hospital, e.g. a CDC <a class=\"localLink\" href=\"https://schema.org/CDCPMDRecord\">CDCPMDRecord</a> or as some kind of <a class=\"localLink\" href=\"https://schema.org/Dataset\">Dataset</a>."
-  {:rdf/about :schema/healthcareReportingData,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Hospital],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/healthcareReportingData"},
-   :rdfs/label "healthcareReportingData",
-   :rdfs/range {:owl/unionOf [:schema/Dataset
-                              :schema/CDCPMDRecord
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/healthcareReportingData,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Hospital],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/healthcareReportingData"},
+   :rdfs/label       "healthcareReportingData",
+   :rdfs/range       {:owl/unionOf [:schema/Dataset
+                                    :schema/CDCPMDRecord
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def height
   "The height of the item."
@@ -16006,7 +15998,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ArchiveComponent],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/holdingArchive"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/holdingArchive"},
    :rdfs/label       "holdingArchive",
    :rdfs/range       {:owl/unionOf [:schema/ArchiveOrganization
                                     :schema/Text
@@ -16070,16 +16062,18 @@
 
 (def hospitalAffiliation
   "A hospital with which the physician or office is affiliated."
-  {:rdf/about :schema/hospitalAffiliation,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Physician],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/hospitalAffiliation"},
-   :rdfs/label "hospitalAffiliation",
-   :rdfs/range
-   {:owl/unionOf [:schema/Hospital :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/hospitalAffiliation,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Physician],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/hospitalAffiliation"},
+   :rdfs/label       "hospitalAffiliation",
+   :rdfs/range       {:owl/unionOf [:schema/Hospital
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def hostingOrganization
   "The organization (airline, travelers' club, etc.) the membership is made with."
@@ -16117,8 +16111,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalProcedure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/howPerformed"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/howPerformed"},
    :rdfs/label       "howPerformed",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -16176,8 +16170,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalSign],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/identifyingExam"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/identifyingExam"},
    :rdfs/label       "identifyingExam",
    :rdfs/range       {:owl/unionOf [:schema/PhysicalExam
                                     :schema/Text
@@ -16191,8 +16185,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalSign],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/identifyingTest"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/identifyingTest"},
    :rdfs/label       "identifyingTest",
    :rdfs/range       {:owl/unionOf [:schema/MedicalTest
                                     :schema/Text
@@ -16230,18 +16224,18 @@
 
 (def imagingTechnique
   "Imaging technique used."
-  {:rdf/about :schema/imagingTechnique,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/ImagingTest],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/imagingTechnique"},
-   :rdfs/label "imagingTechnique",
-   :rdfs/range {:owl/unionOf [:schema/MedicalImagingTechnique
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/imagingTechnique,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/ImagingTest],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/imagingTechnique"},
+   :rdfs/label       "imagingTechnique",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalImagingTechnique
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def inAlbum
   "The album to which this recording belongs."
@@ -16277,7 +16271,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/MolecularEntity],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/inChI"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/inChI"},
    :rdfs/label         "inChI",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -16289,7 +16283,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/MolecularEntity],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/inChIKey"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/inChIKey"},
    :rdfs/label         "inChIKey",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -16301,7 +16295,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/CategoryCode],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/inCodeSet"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/inCodeSet"},
    :rdfs/label         "inCodeSet",
    :rdfs/range         {:owl/unionOf [:schema/CategoryCodeSet
                                       :schema/URL
@@ -16316,8 +16310,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/DefinedTerm],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/inDefinedTermSet"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/inDefinedTermSet"},
    :rdfs/label         "inDefinedTermSet",
    :rdfs/range         {:owl/unionOf [:schema/DefinedTermSet
                                       :schema/URL
@@ -16366,8 +16359,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Product],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/inProductGroupWithID"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/inProductGroupWithID"},
    :rdfs/label       "inProductGroupWithID",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -16378,8 +16371,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/inStoreReturnsOffered"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/inStoreReturnsOffered"},
    :rdfs/label       "inStoreReturnsOffered",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -16390,7 +16383,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Thesis],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/inSupportOf"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/inSupportOf"},
    :rdfs/label       "inSupportOf",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -16469,7 +16462,7 @@
    :rdfs/domain {:owl/unionOf [:schema/Drug],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/includedInHealthInsurancePlan"},
+   {:rdf/uri "https://pending.schema.org/includedInHealthInsurancePlan"},
    :rdfs/label "includedInHealthInsurancePlan",
    :rdfs/range {:owl/unionOf [:schema/HealthInsurancePlan
                               :schema/Text
@@ -16479,18 +16472,18 @@
 
 (def includedRiskFactor
   "A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition."
-  {:rdf/about :schema/includedRiskFactor,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalRiskEstimator],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/includedRiskFactor"},
-   :rdfs/label "includedRiskFactor",
-   :rdfs/range {:owl/unionOf [:schema/MedicalRiskFactor
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/includedRiskFactor,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalRiskEstimator],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/includedRiskFactor"},
+   :rdfs/label       "includedRiskFactor",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalRiskFactor
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def includesAttraction
   "Attraction located at destination."
@@ -16498,8 +16491,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/TouristDestination],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/includesAttraction"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/includesAttraction"},
    :rdfs/label       "includesAttraction",
    :rdfs/range       {:owl/unionOf [:schema/TouristAttraction
                                     :schema/Text
@@ -16509,33 +16501,33 @@
 
 (def includesHealthPlanFormulary
   "Formularies covered by this plan."
-  {:rdf/about :schema/includesHealthPlanFormulary,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/HealthInsurancePlan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/includesHealthPlanFormulary"},
-   :rdfs/label "includesHealthPlanFormulary",
-   :rdfs/range {:owl/unionOf [:schema/HealthPlanFormulary
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/includesHealthPlanFormulary,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/HealthInsurancePlan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/includesHealthPlanFormulary"},
+   :rdfs/label       "includesHealthPlanFormulary",
+   :rdfs/range       {:owl/unionOf [:schema/HealthPlanFormulary
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def includesHealthPlanNetwork
   "Networks covered by this plan."
-  {:rdf/about :schema/includesHealthPlanNetwork,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/HealthInsurancePlan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/includesHealthPlanNetwork"},
-   :rdfs/label "includesHealthPlanNetwork",
-   :rdfs/range {:owl/unionOf [:schema/HealthPlanNetwork
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/includesHealthPlanNetwork,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/HealthInsurancePlan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/includesHealthPlanNetwork"},
+   :rdfs/label       "includesHealthPlanNetwork",
+   :rdfs/range       {:owl/unionOf [:schema/HealthPlanNetwork
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def includesObject
   "This links to a node or nodes indicating the exact quantity of the products included in  an <a class=\"localLink\" href=\"https://schema.org/Offer\">Offer</a> or <a class=\"localLink\" href=\"https://schema.org/ProductCollection\">ProductCollection</a>."
@@ -16559,8 +16551,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalRiskFactor],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/increasesRiskOf"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/increasesRiskOf"},
    :rdfs/label       "increasesRiskOf",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
                                     :schema/Text
@@ -16592,7 +16584,7 @@
                                     :schema/DeliveryChargeSpecification
                                     :schema/ActionAccessSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ineligibleRegion"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ineligibleRegion"},
    :rdfs/label       "ineligibleRegion",
    :rdfs/range       {:owl/unionOf [:schema/Place
                                     :schema/GeoShape
@@ -16607,26 +16599,26 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/InfectiousDisease],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/infectiousAgent"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/infectiousAgent"},
    :rdfs/label       "infectiousAgent",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
 
 (def infectiousAgentClass
   "The class of infectious agent (bacteria, prion, etc.) that causes the disease."
-  {:rdf/about :schema/infectiousAgentClass,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/InfectiousDisease],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/infectiousAgentClass"},
-   :rdfs/label "infectiousAgentClass",
-   :rdfs/range {:owl/unionOf [:schema/InfectiousAgentClass
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/infectiousAgentClass,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/InfectiousDisease],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/infectiousAgentClass"},
+   :rdfs/label       "infectiousAgentClass",
+   :rdfs/range       {:owl/unionOf [:schema/InfectiousAgentClass
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def ingredients
   "A single ingredient used in the recipe, e.g. sugar, flour or garlic."
@@ -16649,7 +16641,7 @@
                                     :schema/ComicIssue
                                     :schema/ComicStory],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/inker"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/inker"},
    :rdfs/label       "inker",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Text
@@ -16663,7 +16655,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Muscle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/insertion"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/insertion"},
    :rdfs/label       "insertion",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
                                     :schema/Text
@@ -16716,7 +16708,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/intensity"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/intensity"},
    :rdfs/label       "intensity",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -16730,8 +16722,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/interactingDrug"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/interactingDrug"},
    :rdfs/label       "interactingDrug",
    :rdfs/range       {:owl/unionOf [:schema/Drug
                                     :schema/Text
@@ -16824,8 +16816,8 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/CreativeWork :schema/MediaObject],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/interpretedAsClaim"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/interpretedAsClaim"},
    :rdfs/label         "interpretedAsClaim",
    :rdfs/range         {:owl/unionOf [:schema/Claim
                                       :schema/Text
@@ -16856,7 +16848,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Property],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://meta.schema.org/inverseOf"},
+   :rdfs/isDefinedBy {:rdf/uri "https://meta.schema.org/inverseOf"},
    :rdfs/label       "inverseOf",
    :rdfs/range       {:owl/unionOf [:schema/Property
                                     :schema/Text
@@ -16870,8 +16862,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalOrganization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/isAcceptingNewPatients"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/isAcceptingNewPatients"},
    :rdfs/label       "isAcceptingNewPatients",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -16910,7 +16902,7 @@
    :rdfs/domain {:owl/unionOf [:schema/Drug],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/isAvailableGenerically"},
+   {:rdf/uri "https://health-lifesci.schema.org/isAvailableGenerically"},
    :rdfs/label "isAvailableGenerically",
    :rdfs/range {:owl/unionOf [:schema/Boolean],
                 :rdf/type    :owl/Class}})
@@ -16962,17 +16954,19 @@
 
 (def isEncodedByBioChemEntity
   "Another BioChemEntity encoding by this one."
-  {:owl/inverseOf :schema/encodesBioChemEntity,
-   :rdf/about :schema/isEncodedByBioChemEntity,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/BioChemEntity],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/isEncodedByBioChemEntity"},
-   :rdfs/label "isEncodedByBioChemEntity",
-   :rdfs/range
-   {:owl/unionOf [:schema/Gene :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:owl/inverseOf    :schema/encodesBioChemEntity,
+   :rdf/about        :schema/isEncodedByBioChemEntity,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/isEncodedByBioChemEntity"},
+   :rdfs/label       "isEncodedByBioChemEntity",
+   :rdfs/range       {:owl/unionOf [:schema/Gene
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def isFamilyFriendly
   "Indicates whether this content is family friendly."
@@ -17005,7 +16999,7 @@
    :rdfs/domain {:owl/unionOf [:schema/BioChemEntity],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/isInvolvedInBiologicalProcess"},
+   {:rdf/uri "https://pending.schema.org/isInvolvedInBiologicalProcess"},
    :rdfs/label "isInvolvedInBiologicalProcess",
    :rdfs/range {:owl/unionOf [:schema/PropertyValue
                               :schema/DefinedTerm
@@ -17032,7 +17026,7 @@
    :rdfs/domain {:owl/unionOf [:schema/BioChemEntity],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/isLocatedInSubcellularLocation"},
+   {:rdf/uri "https://pending.schema.org/isLocatedInSubcellularLocation"},
    :rdfs/label "isLocatedInSubcellularLocation",
    :rdfs/range {:owl/unionOf [:schema/PropertyValue
                               :schema/DefinedTerm
@@ -17063,8 +17057,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/isPartOfBioChemEntity"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/isPartOfBioChemEntity"},
    :rdfs/label       "isPartOfBioChemEntity",
    :rdfs/range       {:owl/unionOf [:schema/BioChemEntity
                                     :schema/Text
@@ -17078,8 +17072,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/FloorPlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/isPlanForApartment"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/isPlanForApartment"},
    :rdfs/label       "isPlanForApartment",
    :rdfs/range       {:owl/unionOf [:schema/Accommodation
                                     :schema/Text
@@ -17093,8 +17086,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug :schema/DietarySupplement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/isProprietary"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/isProprietary"},
    :rdfs/label       "isProprietary",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -17120,7 +17113,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/|3DModel|],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/isResizable"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/isResizable"},
    :rdfs/label       "isResizable",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -17147,8 +17140,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/ShippingRateSettings
                                     :schema/DeliveryTimeSettings],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/isUnlabelledFallback"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/isUnlabelledFallback"},
    :rdfs/label       "isUnlabelledFallback",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -17200,7 +17193,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Organization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/iso6523Code"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/iso6523Code"},
    :rdfs/label       "iso6523Code",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -17322,8 +17315,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/itemDefectReturnFees"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/itemDefectReturnFees"},
    :rdfs/label       "itemDefectReturnFees",
    :rdfs/range       {:owl/unionOf [:schema/ReturnFeesEnumeration
                                     :schema/Text
@@ -17333,18 +17326,18 @@
 
 (def itemDefectReturnLabelSource
   "The method (from an enumeration) by which the customer obtains a return shipping label for a defect product."
-  {:rdf/about :schema/itemDefectReturnLabelSource,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MerchantReturnPolicy],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/itemDefectReturnLabelSource"},
-   :rdfs/label "itemDefectReturnLabelSource",
-   :rdfs/range {:owl/unionOf [:schema/ReturnLabelSourceEnumeration
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/itemDefectReturnLabelSource,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/itemDefectReturnLabelSource"},
+   :rdfs/label       "itemDefectReturnLabelSource",
+   :rdfs/range       {:owl/unionOf [:schema/ReturnLabelSourceEnumeration
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def itemDefectReturnShippingFeesAmount
   "Amount of shipping costs for defect product returns. Applicable when property <a class=\"localLink\" href=\"https://schema.org/itemDefectReturnFees\">itemDefectReturnFees</a> equals <a class=\"localLink\" href=\"https://schema.org/ReturnShippingFees\">ReturnShippingFees</a>."
@@ -17353,7 +17346,7 @@
    :rdfs/domain {:owl/unionOf [:schema/MerchantReturnPolicy],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/itemDefectReturnShippingFeesAmount"},
+   {:rdf/uri "https://pending.schema.org/itemDefectReturnShippingFeesAmount"},
    :rdfs/label "itemDefectReturnShippingFeesAmount",
    :rdfs/range
    {:owl/unionOf [:schema/MonetaryAmount :schema/Text :schema/URL :schema/Role],
@@ -17394,7 +17387,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/ArchiveComponent],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/itemLocation"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/itemLocation"},
    :rdfs/label         "itemLocation",
    :rdfs/range         {:owl/unionOf [:schema/PostalAddress
                                       :schema/Text
@@ -17459,7 +17452,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Trip],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/itinerary"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/itinerary"},
    :rdfs/label       "itinerary",
    :rdfs/range       {:owl/unionOf [:schema/Place
                                     :schema/ItemList
@@ -17474,7 +17467,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MolecularEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/iupacName"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/iupacName"},
    :rdfs/label       "iupacName",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -17496,7 +17489,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/jobImmediateStart"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/jobImmediateStart"},
    :rdfs/label       "jobImmediateStart",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -17521,7 +17514,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/jobLocationType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/jobLocationType"},
    :rdfs/label       "jobLocationType",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -17532,7 +17525,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/jobStartDate"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/jobStartDate"},
    :rdfs/label       "jobStartDate",
    :rdfs/range       {:owl/unionOf [:schema/Date
                                     :schema/Text
@@ -17546,7 +17539,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Person],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/jobTitle"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/jobTitle"},
    :rdfs/label       "jobTitle",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/DefinedTerm
@@ -17561,7 +17554,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/Legislation
                                     :schema/GovernmentService],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/jurisdiction"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/jurisdiction"},
    :rdfs/label       "jurisdiction",
    :rdfs/range       {:owl/unionOf [:schema/AdministrativeArea
                                     :schema/Text
@@ -17618,7 +17611,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Organization :schema/Person],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/knowsAbout"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/knowsAbout"},
    :rdfs/label       "knowsAbout",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/Text
@@ -17632,7 +17625,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Person :schema/Organization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/knowsLanguage"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/knowsLanguage"},
    :rdfs/label       "knowsLanguage",
    :rdfs/range       {:owl/unionOf [:schema/Language
                                     :schema/Text
@@ -17646,8 +17639,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/labelDetails"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/labelDetails"},
    :rdfs/label       "labelDetails",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -17716,7 +17709,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/FloorPlan],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/layoutImage"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/layoutImage"},
    :rdfs/label         "layoutImage",
    :rdfs/range         {:owl/unionOf [:schema/ImageObject
                                       :schema/URL
@@ -17748,7 +17741,7 @@
                                     :schema/Accommodation
                                     :schema/RealEstateListing],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/leaseLength"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/leaseLength"},
    :rdfs/label       "leaseLength",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Duration
@@ -17776,8 +17769,7 @@
                                     :schema/Drug
                                     :schema/DietarySupplement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/legalStatus"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/legalStatus"},
    :rdfs/label       "legalStatus",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/MedicalEnumeration
@@ -17792,8 +17784,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Legislation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationApplies"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/legislationApplies"},
    :rdfs/label       "legislationApplies",
    :rdfs/range       {:owl/unionOf [:schema/Legislation
                                     :schema/Text
@@ -17807,8 +17798,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Legislation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationChanges"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/legislationChanges"},
    :rdfs/label       "legislationChanges",
    :rdfs/range       {:owl/unionOf [:schema/Legislation
                                     :schema/Text
@@ -17818,16 +17808,18 @@
 
 (def legislationConsolidates
   "Indicates another legislation taken into account in this consolidated legislation (which is usually the product of an editorial process that revises the legislation). This property should be used multiple times to refer to both the original version or the previous consolidated version, and to the legislations making the change."
-  {:rdf/about :schema/legislationConsolidates,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Legislation],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/legislationConsolidates"},
-   :rdfs/label "legislationConsolidates",
-   :rdfs/range
-   {:owl/unionOf [:schema/Legislation :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/legislationConsolidates,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Legislation],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/legislationConsolidates"},
+   :rdfs/label       "legislationConsolidates",
+   :rdfs/range       {:owl/unionOf [:schema/Legislation
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def legislationDate
   "The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force."
@@ -17835,7 +17827,7 @@
    :rdf/type           :owl/DatatypeProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Legislation],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/legislationDate"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/legislationDate"},
    :rdfs/label         "legislationDate",
    :rdfs/range         {:owl/unionOf [:schema/Date],
                         :rdf/type    :owl/Class},
@@ -17847,39 +17839,39 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Legislation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationDateVersion"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/legislationDateVersion"},
    :rdfs/label       "legislationDateVersion",
    :rdfs/range       {:owl/unionOf [:schema/Date],
                       :rdf/type    :owl/Class}})
 
 (def legislationIdentifier
   "An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex."
-  {:rdf/about :schema/legislationIdentifier,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Legislation],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationIdentifier"},
-   :rdfs/label "legislationIdentifier",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class},
+  {:rdf/about          :schema/legislationIdentifier,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Legislation],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/legislationIdentifier"},
+   :rdfs/label         "legislationIdentifier",
+   :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/identifier})
 
 (def legislationJurisdiction
   "The jurisdiction from which the legislation originates."
-  {:rdf/about :schema/legislationJurisdiction,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Legislation],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/legislationJurisdiction"},
-   :rdfs/label "legislationJurisdiction",
-   :rdfs/range {:owl/unionOf [:schema/AdministrativeArea
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class},
+  {:rdf/about          :schema/legislationJurisdiction,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Legislation],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/legislationJurisdiction"},
+   :rdfs/label         "legislationJurisdiction",
+   :rdfs/range         {:owl/unionOf [:schema/AdministrativeArea
+                                      :schema/Text
+                                      :schema/URL
+                                      :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf [:schema/jurisdiction :schema/spatialCoverage]})
 
 (def legislationLegalForce
@@ -17888,8 +17880,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Legislation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationLegalForce"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/legislationLegalForce"},
    :rdfs/label       "legislationLegalForce",
    :rdfs/range       {:owl/unionOf [:schema/LegalForceStatus
                                     :schema/Text
@@ -17903,8 +17895,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LegislationObject],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationLegalValue"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/legislationLegalValue"},
    :rdfs/label       "legislationLegalValue",
    :rdfs/range       {:owl/unionOf [:schema/LegalValueLevel
                                     :schema/Text
@@ -17918,8 +17910,8 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Legislation],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/legislationPassedBy"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/legislationPassedBy"},
    :rdfs/label         "legislationPassedBy",
    :rdfs/range         {:owl/unionOf [:schema/Organization
                                       :schema/Person
@@ -17935,8 +17927,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Legislation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationResponsible"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/legislationResponsible"},
    :rdfs/label       "legislationResponsible",
    :rdfs/range       {:owl/unionOf [:schema/Organization
                                     :schema/Person
@@ -17947,16 +17939,18 @@
 
 (def legislationTransposes
   "Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations."
-  {:rdf/about :schema/legislationTransposes,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Legislation],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/legislationTransposes"},
-   :rdfs/label "legislationTransposes",
-   :rdfs/range
-   {:owl/unionOf [:schema/Legislation :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class},
+  {:rdf/about          :schema/legislationTransposes,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        {:owl/unionOf [:schema/Legislation],
+                        :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/legislationTransposes"},
+   :rdfs/label         "legislationTransposes",
+   :rdfs/range         {:owl/unionOf [:schema/Legislation
+                                      :schema/Text
+                                      :schema/URL
+                                      :schema/Role],
+                        :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :schema/legislationApplies})
 
 (def legislationType
@@ -17965,7 +17959,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Legislation],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/legislationType"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/legislationType"},
    :rdfs/label         "legislationType",
    :rdfs/range         {:owl/unionOf [:schema/Text
                                       :schema/CategoryCode
@@ -18038,7 +18032,7 @@
                                     :schema/ComicIssue
                                     :schema/ComicStory],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/letterer"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/letterer"},
    :rdfs/label       "letterer",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Text
@@ -18077,7 +18071,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LinkRole],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/linkRelationship"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/linkRelationship"},
    :rdfs/label       "linkRelationship",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -18098,16 +18092,18 @@
 
 (def loanMortgageMandateAmount
   "Amount of mortgage mandate that can be converted into a proper mortgage at a later stage."
-  {:rdf/about :schema/loanMortgageMandateAmount,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MortgageLoan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/loanMortgageMandateAmount"},
-   :rdfs/label "loanMortgageMandateAmount",
-   :rdfs/range
-   {:owl/unionOf [:schema/MonetaryAmount :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/loanMortgageMandateAmount,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MortgageLoan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/loanMortgageMandateAmount"},
+   :rdfs/label       "loanMortgageMandateAmount",
+   :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def loanPaymentAmount
   "The amount of money to pay in a single payment."
@@ -18115,7 +18111,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/RepaymentSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/loanPaymentAmount"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/loanPaymentAmount"},
    :rdfs/label       "loanPaymentAmount",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Text
@@ -18129,8 +18125,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/RepaymentSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/loanPaymentFrequency"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/loanPaymentFrequency"},
    :rdfs/label       "loanPaymentFrequency",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -18141,7 +18137,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LoanOrCredit],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/loanRepaymentForm"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/loanRepaymentForm"},
    :rdfs/label       "loanRepaymentForm",
    :rdfs/range       {:owl/unionOf [:schema/RepaymentSpecification
                                     :schema/Text
@@ -18170,7 +18166,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LoanOrCredit],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/loanType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/loanType"},
    :rdfs/label       "loanType",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -18374,7 +18370,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/maintainer"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/maintainer"},
    :rdfs/label       "maintainer",
    :rdfs/range       {:owl/unionOf [:schema/Organization
                                     :schema/Person
@@ -18456,7 +18452,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Observation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/marginOfError"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/marginOfError"},
    :rdfs/label       "marginOfError",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -18470,7 +18466,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/NewsMediaOrganization],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/masthead"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/masthead"},
    :rdfs/label         "masthead",
    :rdfs/range         {:owl/unionOf [:schema/URL
                                       :schema/CreativeWork
@@ -18499,7 +18495,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/materialExtent"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/materialExtent"},
    :rdfs/label       "materialExtent",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -18513,7 +18509,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MathSolver],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/mathExpression"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/mathExpression"},
    :rdfs/label       "mathExpression",
    :rdfs/range       {:owl/unionOf [:schema/SolveMathAction
                                     :schema/Text
@@ -18563,7 +18559,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/maximumEnrollment"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/maximumEnrollment"},
    :rdfs/label       "maximumEnrollment",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -18577,8 +18573,8 @@
                                     :schema/DietarySupplement
                                     :schema/Substance],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/maximumIntake"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/maximumIntake"},
    :rdfs/label       "maximumIntake",
    :rdfs/range       {:owl/unionOf [:schema/MaximumDoseSchedule
                                     :schema/Text
@@ -18593,7 +18589,7 @@
    :rdfs/domain {:owl/unionOf [:schema/Event],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/maximumPhysicalAttendeeCapacity"},
+   {:rdf/uri "https://pending.schema.org/maximumPhysicalAttendeeCapacity"},
    :rdfs/label "maximumPhysicalAttendeeCapacity",
    :rdfs/range {:owl/unionOf [:schema/Integer],
                 :rdf/type    :owl/Class}})
@@ -18605,7 +18601,7 @@
    :rdfs/domain {:owl/unionOf [:schema/Event],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/maximumVirtualAttendeeCapacity"},
+   {:rdf/uri "https://pending.schema.org/maximumVirtualAttendeeCapacity"},
    :rdfs/label "maximumVirtualAttendeeCapacity",
    :rdfs/range {:owl/unionOf [:schema/Integer],
                 :rdf/type    :owl/Class}})
@@ -18627,7 +18623,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Observation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/measuredProperty"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/measuredProperty"},
    :rdfs/label       "measuredProperty",
    :rdfs/range       {:owl/unionOf [:schema/Property
                                     :schema/Text
@@ -18641,7 +18637,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Observation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/measuredValue"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/measuredValue"},
    :rdfs/label       "measuredValue",
    :rdfs/range       {:owl/unionOf [:schema/DataType
                                     :schema/Text
@@ -18658,38 +18654,38 @@
                                     :schema/PropertyValue
                                     :schema/DataDownload],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/measurementTechnique"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/measurementTechnique"},
    :rdfs/label       "measurementTechnique",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
 
 (def mechanismOfAction
   "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect."
-  {:rdf/about :schema/mechanismOfAction,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug :schema/DietarySupplement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/mechanismOfAction"},
-   :rdfs/label "mechanismOfAction",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/mechanismOfAction,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug :schema/DietarySupplement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/mechanismOfAction"},
+   :rdfs/label       "mechanismOfAction",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def mediaAuthenticityCategory
   "Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared)."
-  {:rdf/about :schema/mediaAuthenticityCategory,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MediaReview],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/mediaAuthenticityCategory"},
-   :rdfs/label "mediaAuthenticityCategory",
-   :rdfs/range {:owl/unionOf [:schema/MediaManipulationRatingEnumeration
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/mediaAuthenticityCategory,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MediaReview],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/mediaAuthenticityCategory"},
+   :rdfs/label       "mediaAuthenticityCategory",
+   :rdfs/range       {:owl/unionOf [:schema/MediaManipulationRatingEnumeration
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def mediaItemAppearance
   "In the context of a <a class=\"localLink\" href=\"https://schema.org/MediaReview\">MediaReview</a>, indicates specific media item(s) that are grouped using a <a class=\"localLink\" href=\"https://schema.org/MediaReviewItem\">MediaReviewItem</a>."
@@ -18697,8 +18693,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MediaReviewItem],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/mediaItemAppearance"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/mediaItemAppearance"},
    :rdfs/label       "mediaItemAppearance",
    :rdfs/range       {:owl/unionOf [:schema/MediaObject
                                     :schema/Text
@@ -18723,8 +18719,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalWebPage],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/medicalAudience"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/medicalAudience"},
    :rdfs/label       "medicalAudience",
    :rdfs/range       {:owl/unionOf [:schema/MedicalAudienceType
                                     :schema/MedicalAudience
@@ -18735,21 +18731,21 @@
 
 (def medicalSpecialty
   "A medical specialty of the provider."
-  {:rdf/about :schema/medicalSpecialty,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalClinic
-                               :schema/MedicalOrganization
-                               :schema/Hospital
-                               :schema/Physician],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/medicalSpecialty"},
-   :rdfs/label "medicalSpecialty",
-   :rdfs/range {:owl/unionOf [:schema/MedicalSpecialty
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/medicalSpecialty,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalClinic
+                                    :schema/MedicalOrganization
+                                    :schema/Hospital
+                                    :schema/Physician],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/medicalSpecialty"},
+   :rdfs/label       "medicalSpecialty",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalSpecialty
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def medicineSystem
   "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc."
@@ -18757,8 +18753,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/medicineSystem"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/medicineSystem"},
    :rdfs/label       "medicineSystem",
    :rdfs/range       {:owl/unionOf [:schema/MedicineSystem
                                     :schema/Text
@@ -18772,8 +18768,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://auto.schema.org/meetsEmissionStandard"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/meetsEmissionStandard"},
    :rdfs/label       "meetsEmissionStandard",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/URL
@@ -18848,8 +18843,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ProgramMembership],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/membershipPointsEarned"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/membershipPointsEarned"},
    :rdfs/label       "membershipPointsEarned",
    :rdfs/range       {:owl/unionOf [:schema/Number
                                     :schema/QuantitativeValue
@@ -18937,8 +18932,7 @@
                       [:schema/MerchantReturnPolicy
                        :schema/MerchantReturnPolicySeasonalOverride],
                       :rdf/type :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/merchantReturnDays"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/merchantReturnDays"},
    :rdfs/label       "merchantReturnDays",
    :rdfs/range       {:owl/unionOf [:schema/Date
                                     :schema/DateTime
@@ -18951,8 +18945,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/merchantReturnLink"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/merchantReturnLink"},
    :rdfs/label       "merchantReturnLink",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -19032,7 +19025,7 @@
    :rdfs/domain {:owl/unionOf [:schema/NewsMediaOrganization],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/missionCoveragePrioritiesPolicy"},
+   {:rdf/uri "https://pending.schema.org/missionCoveragePrioritiesPolicy"},
    :rdfs/label "missionCoveragePrioritiesPolicy",
    :rdfs/range
    {:owl/unionOf [:schema/URL :schema/CreativeWork :schema/Text :schema/Role],
@@ -19045,7 +19038,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Product :schema/Offer],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/mobileUrl"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/mobileUrl"},
    :rdfs/label       "mobileUrl",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -19070,7 +19063,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/modelDate"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/modelDate"},
    :rdfs/label       "modelDate",
    :rdfs/range       {:owl/unionOf [:schema/Date],
                       :rdf/type    :owl/Class}})
@@ -19092,7 +19085,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MolecularEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/molecularFormula"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/molecularFormula"},
    :rdfs/label       "molecularFormula",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -19103,7 +19096,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MolecularEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/molecularWeight"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/molecularWeight"},
    :rdfs/label       "molecularWeight",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -19113,18 +19106,18 @@
 
 (def monoisotopicMolecularWeight
   "The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units in the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;."
-  {:rdf/about :schema/monoisotopicMolecularWeight,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MolecularEntity],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/monoisotopicMolecularWeight"},
-   :rdfs/label "monoisotopicMolecularWeight",
-   :rdfs/range {:owl/unionOf [:schema/QuantitativeValue
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/monoisotopicMolecularWeight,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MolecularEntity],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/monoisotopicMolecularWeight"},
+   :rdfs/label       "monoisotopicMolecularWeight",
+   :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def monthlyMinimumRepaymentAmount
   "The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month."
@@ -19133,7 +19126,7 @@
    :rdfs/domain {:owl/unionOf [:schema/PaymentCard],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/monthlyMinimumRepaymentAmount"},
+   {:rdf/uri "https://pending.schema.org/monthlyMinimumRepaymentAmount"},
    :rdfs/label "monthlyMinimumRepaymentAmount",
    :rdfs/range {:owl/unionOf [:schema/MonetaryAmount
                               :schema/Number
@@ -19148,8 +19141,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/OccupationalExperienceRequirements],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/monthsOfExperience"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/monthsOfExperience"},
    :rdfs/label       "monthsOfExperience",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -19184,8 +19176,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Muscle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/muscleAction"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/muscleAction"},
    :rdfs/label       "muscleAction",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -19329,15 +19321,15 @@
 
 (def naturalProgression
   "The expected progression of the condition if it is not treated and allowed to progress naturally."
-  {:rdf/about :schema/naturalProgression,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalCondition],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/naturalProgression"},
-   :rdfs/label "naturalProgression",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/naturalProgression,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/naturalProgression"},
+   :rdfs/label       "naturalProgression",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def negativeNotes
   "Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside <a class=\"localLink\" href=\"https://schema.org/positiveNotes\">positiveNotes</a>). For symmetry <br/><br/>In the case of a <a class=\"localLink\" href=\"https://schema.org/Review\">Review</a>, the property describes the <a class=\"localLink\" href=\"https://schema.org/itemReviewed\">itemReviewed</a> from the perspective of the review; in the case of a <a class=\"localLink\" href=\"https://schema.org/Product\">Product</a>, the product itself is being described. Since product descriptions tend to emphasise positive claims, it may be relatively unusual to find <a class=\"localLink\" href=\"https://schema.org/negativeNotes\">negativeNotes</a> used in this way. Nevertheless for the sake of symmetry, <a class=\"localLink\" href=\"https://schema.org/negativeNotes\">negativeNotes</a> can be used on <a class=\"localLink\" href=\"https://schema.org/Product\">Product</a>.<br/><br/>The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list)."
@@ -19345,7 +19337,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Review :schema/Product],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/negativeNotes"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/negativeNotes"},
    :rdfs/label       "negativeNotes",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/ListItem
@@ -19361,7 +19353,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Muscle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/nerve"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/nerve"},
    :rdfs/label       "nerve",
    :rdfs/range       {:owl/unionOf [:schema/Nerve
                                     :schema/Text
@@ -19375,7 +19367,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Nerve],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/nerveMotor"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/nerveMotor"},
    :rdfs/label       "nerveMotor",
    :rdfs/range       {:owl/unionOf [:schema/Muscle
                                     :schema/Text
@@ -19400,16 +19392,18 @@
 
 (def newsUpdatesAndGuidelines
   "Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing <a class=\"localLink\" href=\"https://schema.org/SpecialAnnouncement\">SpecialAnnouncement</a> markup on a site."
-  {:rdf/about :schema/newsUpdatesAndGuidelines,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/SpecialAnnouncement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/newsUpdatesAndGuidelines"},
-   :rdfs/label "newsUpdatesAndGuidelines",
-   :rdfs/range
-   {:owl/unionOf [:schema/WebContent :schema/URL :schema/Text :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/newsUpdatesAndGuidelines,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/newsUpdatesAndGuidelines"},
+   :rdfs/label       "newsUpdatesAndGuidelines",
+   :rdfs/range       {:owl/unionOf [:schema/WebContent
+                                    :schema/URL
+                                    :schema/Text
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def nextItem
   "A link to the ListItem that follows the current one."
@@ -19431,7 +19425,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/NewsMediaOrganization],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/noBylinesPolicy"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/noBylinesPolicy"},
    :rdfs/label         "noBylinesPolicy",
    :rdfs/range         {:owl/unionOf [:schema/URL
                                       :schema/CreativeWork
@@ -19456,15 +19450,15 @@
 
 (def nonProprietaryName
   "The generic name of this drug or supplement."
-  {:rdf/about :schema/nonProprietaryName,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug :schema/DietarySupplement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/nonProprietaryName"},
-   :rdfs/label "nonProprietaryName",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/nonProprietaryName,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug :schema/DietarySupplement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/nonProprietaryName"},
+   :rdfs/label       "nonProprietaryName",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def nonprofitStatus
   "nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business."
@@ -19472,7 +19466,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Organization],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/nonprofitStatus"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/nonprofitStatus"},
    :rdfs/label       "nonprofitStatus",
    :rdfs/range       {:owl/unionOf [:schema/NonprofitType
                                     :schema/Text
@@ -19486,8 +19480,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalTest],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/normalRange"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/normalRange"},
    :rdfs/label       "normalRange",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEnumeration
                                     :schema/Text
@@ -19501,7 +19494,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Product],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/nsn"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/nsn"},
    :rdfs/label         "nsn",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -19543,7 +19536,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/StatisticalPopulation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/numConstraints"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/numConstraints"},
    :rdfs/label       "numConstraints",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -19561,18 +19554,18 @@
 
 (def numberOfAccommodationUnits
   "Indicates the total (available plus unavailable) number of accommodation units in an <a class=\"localLink\" href=\"https://schema.org/ApartmentComplex\">ApartmentComplex</a>, or the number of accommodation units for a specific <a class=\"localLink\" href=\"https://schema.org/FloorPlan\">FloorPlan</a> (within its specific <a class=\"localLink\" href=\"https://schema.org/ApartmentComplex\">ApartmentComplex</a>). See also <a class=\"localLink\" href=\"https://schema.org/numberOfAvailableAccommodationUnits\">numberOfAvailableAccommodationUnits</a>."
-  {:rdf/about :schema/numberOfAccommodationUnits,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/FloorPlan :schema/ApartmentComplex],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/numberOfAccommodationUnits"},
-   :rdfs/label "numberOfAccommodationUnits",
-   :rdfs/range {:owl/unionOf [:schema/QuantitativeValue
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/numberOfAccommodationUnits,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/FloorPlan :schema/ApartmentComplex],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/numberOfAccommodationUnits"},
+   :rdfs/label       "numberOfAccommodationUnits",
+   :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def numberOfAirbags
   "The number or type of airbags in the vehicle."
@@ -19595,7 +19588,7 @@
    :rdfs/domain {:owl/unionOf [:schema/FloorPlan :schema/ApartmentComplex],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/numberOfAvailableAccommodationUnits"},
+   {:rdf/uri "https://pending.schema.org/numberOfAvailableAccommodationUnits"},
    :rdfs/label "numberOfAvailableAccommodationUnits",
    :rdfs/range {:owl/unionOf [:schema/QuantitativeValue
                               :schema/Text
@@ -19624,8 +19617,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Accommodation :schema/FloorPlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/numberOfBathroomsTotal"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/numberOfBathroomsTotal"},
    :rdfs/label       "numberOfBathroomsTotal",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -19638,7 +19631,7 @@
                                     :schema/ApartmentComplex
                                     :schema/Accommodation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/numberOfBedrooms"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/numberOfBedrooms"},
    :rdfs/label       "numberOfBedrooms",
    :rdfs/range       {:owl/unionOf [:schema/Number
                                     :schema/QuantitativeValue
@@ -19665,7 +19658,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/Course
                                     :schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/numberOfCredits"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/numberOfCredits"},
    :rdfs/label       "numberOfCredits",
    :rdfs/range       {:owl/unionOf [:schema/StructuredValue
                                     :schema/Integer
@@ -19739,8 +19732,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Accommodation :schema/FloorPlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/numberOfFullBathrooms"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/numberOfFullBathrooms"},
    :rdfs/label       "numberOfFullBathrooms",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -19762,8 +19755,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/RepaymentSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/numberOfLoanPayments"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/numberOfLoanPayments"},
    :rdfs/label       "numberOfLoanPayments",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -19781,15 +19774,15 @@
 
 (def numberOfPartialBathrooms
   "Number of partial bathrooms - The total number of half and ¼ bathrooms in an <a class=\"localLink\" href=\"https://schema.org/Accommodation\">Accommodation</a>. This corresponds to the <a href=\"https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field\">BathroomsPartial field in RESO</a>."
-  {:rdf/about :schema/numberOfPartialBathrooms,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Accommodation :schema/FloorPlan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/numberOfPartialBathrooms"},
-   :rdfs/label "numberOfPartialBathrooms",
-   :rdfs/range {:owl/unionOf [:schema/Number],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/numberOfPartialBathrooms,
+   :rdf/type         :owl/DatatypeProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Accommodation :schema/FloorPlan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/numberOfPartialBathrooms"},
+   :rdfs/label       "numberOfPartialBathrooms",
+   :rdfs/range       {:owl/unionOf [:schema/Number],
+                      :rdf/type    :owl/Class}})
 
 (def numberOfPlayers
   "Indicate how many people can play this game (minimum, maximum, or range)."
@@ -19899,7 +19892,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Observation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/observationDate"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/observationDate"},
    :rdfs/label       "observationDate",
    :rdfs/range       {:owl/unionOf [:schema/DateTime],
                       :rdf/type    :owl/Class}})
@@ -19910,7 +19903,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Observation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/observedNode"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/observedNode"},
    :rdfs/label       "observedNode",
    :rdfs/range       {:owl/unionOf [:schema/StatisticalPopulation
                                     :schema/Text
@@ -19958,8 +19951,8 @@
                                     :schema/EducationalOccupationalProgram
                                     :schema/WorkBasedProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/occupationalCategory"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/occupationalCategory"},
    :rdfs/label       "occupationalCategory",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/CategoryCode
@@ -19975,7 +19968,7 @@
                                :schema/Course],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/occupationalCredentialAwarded"},
+   {:rdf/uri "https://pending.schema.org/occupationalCredentialAwarded"},
    :rdfs/label "occupationalCredentialAwarded",
    :rdfs/range {:owl/unionOf [:schema/URL
                               :schema/Text
@@ -20035,15 +20028,15 @@
 
 (def offersPrescriptionByMail
   "Whether prescriptions can be delivered by mail."
-  {:rdf/about :schema/offersPrescriptionByMail,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain {:owl/unionOf [:schema/HealthPlanFormulary],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/offersPrescriptionByMail"},
-   :rdfs/label "offersPrescriptionByMail",
-   :rdfs/range {:owl/unionOf [:schema/Boolean],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/offersPrescriptionByMail,
+   :rdf/type         :owl/DatatypeProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/HealthPlanFormulary],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/offersPrescriptionByMail"},
+   :rdfs/label       "offersPrescriptionByMail",
+   :rdfs/range       {:owl/unionOf [:schema/Boolean],
+                      :rdf/type    :owl/Class}})
 
 (def openingHours
   "The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/><ul><li>Days are specified using the following two-letter combinations: <code>Mo</code>, <code>Tu</code>, <code>We</code>, <code>Th</code>, <code>Fr</code>, <code>Sa</code>, <code>Su</code>.</li><li>Times are specified using 24:00 format. For example, 3pm is specified as <code>15:00</code>, 10am as <code>10:00</code>. </li><li>Here is an example: <code>&lt;time itemprop=\"openingHours\" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.</li><li>If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.</li></ul>"
@@ -20263,7 +20256,7 @@
    :rdfs/domain {:owl/unionOf [:schema/MediaReview],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/originalMediaContextDescription"},
+   {:rdf/uri "https://pending.schema.org/originalMediaContextDescription"},
    :rdfs/label "originalMediaContextDescription",
    :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                 :rdf/type    :owl/Class},
@@ -20275,7 +20268,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MediaReview],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/originalMediaLink"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/originalMediaLink"},
    :rdfs/label       "originalMediaLink",
    :rdfs/range       {:owl/unionOf [:schema/MediaObject
                                     :schema/WebPage
@@ -20290,8 +20283,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LymphaticVessel],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/originatesFrom"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/originatesFrom"},
    :rdfs/label       "originatesFrom",
    :rdfs/range       {:owl/unionOf [:schema/Vessel
                                     :schema/Text
@@ -20305,7 +20298,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/overdosage"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/overdosage"},
    :rdfs/label       "overdosage",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -20339,8 +20332,8 @@
    :rdfs/domain        {:owl/unionOf [:schema/NewsMediaOrganization
                                       :schema/Organization],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/ownershipFundingInfo"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/ownershipFundingInfo"},
    :rdfs/label         "ownershipFundingInfo",
    :rdfs/range         {:owl/unionOf [:schema/Text
                                       :schema/AboutPage
@@ -20477,7 +20470,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Taxon],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/parentTaxon"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/parentTaxon"},
    :rdfs/label       "parentTaxon",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/Text
@@ -20581,8 +20574,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/AnatomicalStructure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/partOfSystem"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/partOfSystem"},
    :rdfs/label       "partOfSystem",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalSystem
                                     :schema/Text
@@ -20615,7 +20608,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Trip],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/partOfTrip"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/partOfTrip"},
    :rdfs/label       "partOfTrip",
    :rdfs/range       {:owl/unionOf [:schema/Trip
                                     :schema/Text
@@ -20686,8 +20679,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition
                                     :schema/PhysicalActivity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/pathophysiology"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/pathophysiology"},
    :rdfs/label       "pathophysiology",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -20698,7 +20691,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Product :schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/pattern"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/pattern"},
    :rdfs/label       "pattern",
    :rdfs/range       {:owl/unionOf [:schema/DefinedTerm
                                     :schema/Text
@@ -20712,7 +20705,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/payload"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/payload"},
    :rdfs/label       "payload",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -20812,7 +20805,7 @@
                                     :schema/ComicIssue
                                     :schema/ComicStory],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/penciler"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/penciler"},
    :rdfs/label       "penciler",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Text
@@ -20996,7 +20989,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PronounceableText],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/phoneticText"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/phoneticText"},
    :rdfs/label       "phoneticText",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21039,8 +21032,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/physicalRequirement"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/physicalRequirement"},
    :rdfs/label       "physicalRequirement",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/URL
@@ -21055,7 +21048,7 @@
    :rdfs/domain {:owl/unionOf [:schema/Diet],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/physiologicalBenefits"},
+   {:rdf/uri "https://health-lifesci.schema.org/physiologicalBenefits"},
    :rdfs/label "physiologicalBenefits",
    :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                 :rdf/type    :owl/Class}})
@@ -21140,7 +21133,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/StatisticalPopulation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/populationType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/populationType"},
    :rdfs/label       "populationType",
    :rdfs/range       {:owl/unionOf [:schema/Class
                                     :schema/Text
@@ -21168,7 +21161,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Review :schema/Product],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/positiveNotes"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/positiveNotes"},
    :rdfs/label       "positiveNotes",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/ListItem
@@ -21180,29 +21173,31 @@
 
 (def possibleComplication
   "A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc."
-  {:rdf/about :schema/possibleComplication,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalCondition],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/possibleComplication"},
-   :rdfs/label "possibleComplication",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/possibleComplication,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/possibleComplication"},
+   :rdfs/label       "possibleComplication",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def possibleTreatment
   "A possible treatment to address this condition, sign or symptom."
-  {:rdf/about :schema/possibleTreatment,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalCondition
-                               :schema/MedicalSignOrSymptom],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/possibleTreatment"},
-   :rdfs/label "possibleTreatment",
-   :rdfs/range
-   {:owl/unionOf [:schema/MedicalTherapy :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/possibleTreatment,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition
+                                    :schema/MedicalSignOrSymptom],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/possibleTreatment"},
+   :rdfs/label       "possibleTreatment",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalTherapy
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def postOfficeBoxNumber
   "The post office box number for PO box addresses."
@@ -21221,7 +21216,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalDevice],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/postOp"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/postOp"},
    :rdfs/label       "postOp",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21246,7 +21241,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PostalCodeRangeSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/postalCodeBegin"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/postalCodeBegin"},
    :rdfs/label       "postalCodeBegin",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21257,7 +21252,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PostalCodeRangeSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/postalCodeEnd"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/postalCodeEnd"},
    :rdfs/label       "postalCodeEnd",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21268,7 +21263,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DefinedRegion],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/postalCodePrefix"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/postalCodePrefix"},
    :rdfs/label       "postalCodePrefix",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21279,7 +21274,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DefinedRegion],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/postalCodeRange"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/postalCodeRange"},
    :rdfs/label       "postalCodeRange",
    :rdfs/range       {:owl/unionOf [:schema/PostalCodeRangeSpecification
                                     :schema/Text
@@ -21308,7 +21303,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/MolecularEntity
                                     :schema/ChemicalSubstance],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/potentialUse"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/potentialUse"},
    :rdfs/label       "potentialUse",
    :rdfs/range       {:owl/unionOf [:schema/DefinedTerm
                                     :schema/Text
@@ -21322,7 +21317,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalDevice],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/preOp"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/preOp"},
    :rdfs/label       "preOp",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21343,30 +21338,30 @@
 
 (def pregnancyCategory
   "Pregnancy category of this drug."
-  {:rdf/about :schema/pregnancyCategory,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/pregnancyCategory"},
-   :rdfs/label "pregnancyCategory",
-   :rdfs/range {:owl/unionOf [:schema/DrugPregnancyCategory
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/pregnancyCategory,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/pregnancyCategory"},
+   :rdfs/label       "pregnancyCategory",
+   :rdfs/range       {:owl/unionOf [:schema/DrugPregnancyCategory
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def pregnancyWarning
   "Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy."
-  {:rdf/about :schema/pregnancyWarning,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/pregnancyWarning"},
-   :rdfs/label "pregnancyWarning",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/pregnancyWarning,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/pregnancyWarning"},
+   :rdfs/label       "pregnancyWarning",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def prepTime
   "The length of time it takes to prepare the items to be used in instructions or a direction, in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>."
@@ -21388,8 +21383,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalProcedure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/preparation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/preparation"},
    :rdfs/label       "preparation",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
                                     :schema/Text
@@ -21403,26 +21397,26 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/prescribingInfo"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/prescribingInfo"},
    :rdfs/label       "prescribingInfo",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
 
 (def prescriptionStatus
   "Indicates the status of drug prescription, e.g. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc."
-  {:rdf/about :schema/prescriptionStatus,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/Drug],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/prescriptionStatus"},
-   :rdfs/label "prescriptionStatus",
-   :rdfs/range {:owl/unionOf [:schema/Text
-                              :schema/DrugPrescriptionStatus
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/prescriptionStatus,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/Drug],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/prescriptionStatus"},
+   :rdfs/label       "prescriptionStatus",
+   :rdfs/range       {:owl/unionOf [:schema/Text
+                                    :schema/DrugPrescriptionStatus
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def previousItem
   "A link to the ListItem that precedes the current one."
@@ -21485,8 +21479,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/UnitPriceSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/priceComponentType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/priceComponentType"},
    :rdfs/label       "priceComponentType",
    :rdfs/range       {:owl/unionOf [:schema/PriceComponentTypeEnumeration
                                     :schema/Text
@@ -21578,16 +21571,18 @@
 
 (def primaryPrevention
   "A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination."
-  {:rdf/about :schema/primaryPrevention,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalCondition],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/primaryPrevention"},
-   :rdfs/label "primaryPrevention",
-   :rdfs/range
-   {:owl/unionOf [:schema/MedicalTherapy :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/primaryPrevention,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/primaryPrevention"},
+   :rdfs/label       "primaryPrevention",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalTherapy
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def printColumn
   "The number of the column in which the NewsArticle appears in the print edition."
@@ -21639,7 +21634,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalDevice],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/procedure"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/procedure"},
    :rdfs/label       "procedure",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21650,8 +21645,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalProcedure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/procedureType"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/procedureType"},
    :rdfs/label       "procedureType",
    :rdfs/range       {:owl/unionOf [:schema/MedicalProcedureType
                                     :schema/Text
@@ -21720,7 +21715,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ProductGroup],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/productGroupID"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/productGroupID"},
    :rdfs/label       "productGroupID",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21743,8 +21738,7 @@
    :rdf/type            :owl/DatatypeProperty,
    :rdfs/domain         {:owl/unionOf [:schema/ProductReturnPolicy],
                          :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy    #:rdf{:uri
-                              "https://attic.schema.org/productReturnDays"},
+   :rdfs/isDefinedBy    {:rdf/uri "https://attic.schema.org/productReturnDays"},
    :rdfs/label          "productReturnDays",
    :rdfs/range          {:owl/unionOf [:schema/Integer],
                          :rdf/type    :owl/Class},
@@ -21756,8 +21750,7 @@
    :rdf/type            :owl/ObjectProperty,
    :rdfs/domain         {:owl/unionOf [:schema/ProductReturnPolicy],
                          :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy    #:rdf{:uri
-                              "https://attic.schema.org/productReturnLink"},
+   :rdfs/isDefinedBy    {:rdf/uri "https://attic.schema.org/productReturnLink"},
    :rdfs/label          "productReturnLink",
    :rdfs/range          {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                          :rdf/type    :owl/Class},
@@ -21851,8 +21844,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/programPrerequisites"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/programPrerequisites"},
    :rdfs/label       "programPrerequisites",
    :rdfs/range       {:owl/unionOf [:schema/AlignmentObject
                                     :schema/Course
@@ -21868,7 +21861,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/programType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/programType"},
    :rdfs/label       "programType",
    :rdfs/range       {:owl/unionOf [:schema/DefinedTerm
                                     :schema/Text
@@ -21918,8 +21911,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug :schema/DietarySupplement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/proprietaryName"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/proprietaryName"},
    :rdfs/label       "proprietaryName",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -21951,7 +21944,7 @@
                                     :schema/Action
                                     :schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/provider"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/provider"},
    :rdfs/label       "provider",
    :rdfs/range       {:owl/unionOf [:schema/Organization
                                     :schema/Person
@@ -22013,16 +22006,18 @@
 
 (def publicTransportClosuresInfo
   "Information about public transport closures."
-  {:rdf/about :schema/publicTransportClosuresInfo,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/SpecialAnnouncement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/publicTransportClosuresInfo"},
-   :rdfs/label "publicTransportClosuresInfo",
-   :rdfs/range
-   {:owl/unionOf [:schema/WebContent :schema/URL :schema/Text :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/publicTransportClosuresInfo,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/publicTransportClosuresInfo"},
+   :rdfs/label       "publicTransportClosuresInfo",
+   :rdfs/range       {:owl/unionOf [:schema/WebContent
+                                    :schema/URL
+                                    :schema/Text
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def publication
   "A publication event associated with the item."
@@ -22044,8 +22039,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalScholarlyArticle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/publicationType"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/publicationType"},
    :rdfs/label       "publicationType",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -22056,7 +22051,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PublicationEvent],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/publishedBy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/publishedBy"},
    :rdfs/label       "publishedBy",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Organization
@@ -22100,7 +22095,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/publisherImprint"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/publisherImprint"},
    :rdfs/label       "publisherImprint",
    :rdfs/range       {:owl/unionOf [:schema/Organization
                                     :schema/Text
@@ -22141,7 +22136,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Occupation :schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/qualifications"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/qualifications"},
    :rdfs/label       "qualifications",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/EducationalOccupationalCredential
@@ -22155,8 +22150,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/quarantineGuidelines"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/quarantineGuidelines"},
    :rdfs/label       "quarantineGuidelines",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/WebContent
@@ -22211,7 +22206,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Property],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://meta.schema.org/rangeIncludes"},
+   :rdfs/isDefinedBy {:rdf/uri "https://meta.schema.org/rangeIncludes"},
    :rdfs/label       "rangeIncludes",
    :rdfs/range       {:owl/unionOf [:schema/Class
                                     :schema/Text
@@ -22236,7 +22231,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Rating],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/ratingExplanation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/ratingExplanation"},
    :rdfs/label       "ratingExplanation",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -22261,7 +22256,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Audiobook],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://bib.schema.org/readBy"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://bib.schema.org/readBy"},
    :rdfs/label         "readBy",
    :rdfs/range         {:owl/unionOf [:schema/Person
                                       :schema/Text
@@ -22408,7 +22403,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalCredential],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/recognizedBy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/recognizedBy"},
    :rdfs/label       "recognizedBy",
    :rdfs/range       {:owl/unionOf [:schema/Organization
                                     :schema/Text
@@ -22418,16 +22413,18 @@
 
 (def recognizingAuthority
   "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine."
-  {:rdf/about :schema/recognizingAuthority,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalEntity],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/recognizingAuthority"},
-   :rdfs/label "recognizingAuthority",
-   :rdfs/range
-   {:owl/unionOf [:schema/Organization :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/recognizingAuthority,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalEntity],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/recognizingAuthority"},
+   :rdfs/label       "recognizingAuthority",
+   :rdfs/range       {:owl/unionOf [:schema/Organization
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def recommendationStrength
   "Strength of the guideline's recommendation (e.g. 'class I')."
@@ -22436,25 +22433,25 @@
    :rdfs/domain {:owl/unionOf [:schema/MedicalGuidelineRecommendation],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/recommendationStrength"},
+   {:rdf/uri "https://health-lifesci.schema.org/recommendationStrength"},
    :rdfs/label "recommendationStrength",
    :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                 :rdf/type    :owl/Class}})
 
 (def recommendedIntake
   "Recommended intake of this supplement for a given population as defined by a specific recommending authority."
-  {:rdf/about :schema/recommendedIntake,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/DietarySupplement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/recommendedIntake"},
-   :rdfs/label "recommendedIntake",
-   :rdfs/range {:owl/unionOf [:schema/RecommendedDoseSchedule
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/recommendedIntake,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/DietarySupplement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/recommendedIntake"},
+   :rdfs/label       "recommendedIntake",
+   :rdfs/range       {:owl/unionOf [:schema/RecommendedDoseSchedule
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def recordLabel
   "The label that issued the release."
@@ -22536,7 +22533,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LoanOrCredit],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/recourseLoan"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/recourseLoan"},
    :rdfs/label       "recourseLoan",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -22575,7 +22572,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/refundType"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/refundType"},
    :rdfs/label       "refundType",
    :rdfs/range       {:owl/unionOf [:schema/RefundTypeEnumeration
                                     :schema/Text
@@ -22589,8 +22586,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vein :schema/LymphaticVessel],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/regionDrained"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/regionDrained"},
    :rdfs/label       "regionDrained",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalSystem
                                     :schema/AnatomicalStructure
@@ -22619,8 +22616,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SuperficialAnatomy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/relatedAnatomy"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/relatedAnatomy"},
    :rdfs/label       "relatedAnatomy",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalSystem
                                     :schema/AnatomicalStructure
@@ -22631,20 +22628,20 @@
 
 (def relatedCondition
   "A medical condition associated with this anatomy."
-  {:rdf/about :schema/relatedCondition,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/AnatomicalStructure
-                               :schema/AnatomicalSystem
-                               :schema/SuperficialAnatomy],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/relatedCondition"},
-   :rdfs/label "relatedCondition",
-   :rdfs/range {:owl/unionOf [:schema/MedicalCondition
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/relatedCondition,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/AnatomicalStructure
+                                    :schema/AnatomicalSystem
+                                    :schema/SuperficialAnatomy],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/relatedCondition"},
+   :rdfs/label       "relatedCondition",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalCondition
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def relatedDrug
   "Any other drug related to this one, for example commonly-prescribed alternatives."
@@ -22652,8 +22649,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/relatedDrug"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/relatedDrug"},
    :rdfs/label       "relatedDrug",
    :rdfs/range       {:owl/unionOf [:schema/Drug
                                     :schema/Text
@@ -22674,18 +22670,18 @@
 
 (def relatedStructure
   "Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system."
-  {:rdf/about :schema/relatedStructure,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/AnatomicalSystem],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/relatedStructure"},
-   :rdfs/label "relatedStructure",
-   :rdfs/range {:owl/unionOf [:schema/AnatomicalStructure
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/relatedStructure,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/AnatomicalSystem],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/relatedStructure"},
+   :rdfs/label       "relatedStructure",
+   :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def relatedTherapy
   "A medical therapy related to this anatomy."
@@ -22695,8 +22691,8 @@
                                     :schema/AnatomicalStructure
                                     :schema/SuperficialAnatomy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/relatedTherapy"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/relatedTherapy"},
    :rdfs/label       "relatedTherapy",
    :rdfs/range       {:owl/unionOf [:schema/MedicalTherapy
                                     :schema/Text
@@ -22785,18 +22781,18 @@
 
 (def relevantSpecialty
   "If applicable, a medical specialty in which this entity is relevant."
-  {:rdf/about :schema/relevantSpecialty,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalEntity],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/relevantSpecialty"},
-   :rdfs/label "relevantSpecialty",
-   :rdfs/range {:owl/unionOf [:schema/MedicalSpecialty
-                              :schema/Text
-                              :schema/URL
-                              :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/relevantSpecialty,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalEntity],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/relevantSpecialty"},
+   :rdfs/label       "relevantSpecialty",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalSpecialty
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def remainingAttendeeCapacity
   "The number of attendee places for an event that remain unallocated."
@@ -22815,7 +22811,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LoanOrCredit],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/renegotiableLoan"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/renegotiableLoan"},
    :rdfs/label       "renegotiableLoan",
    :rdfs/range       {:owl/unionOf [:schema/Boolean],
                       :rdf/type    :owl/Class}})
@@ -22826,7 +22822,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Schedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/repeatCount"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/repeatCount"},
    :rdfs/label       "repeatCount",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -22837,7 +22833,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Schedule],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/repeatFrequency"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/repeatFrequency"},
    :rdfs/label         "repeatFrequency",
    :rdfs/range         {:owl/unionOf [:schema/Duration
                                       :schema/Text
@@ -22852,8 +22848,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/repetitions"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/repetitions"},
    :rdfs/label       "repetitions",
    :rdfs/range       {:owl/unionOf [:schema/Number
                                     :schema/QuantitativeValue
@@ -23085,8 +23080,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/restPeriods"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/restPeriods"},
    :rdfs/label       "restPeriods",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -23100,7 +23094,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/restockingFee"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/restockingFee"},
    :rdfs/label       "restockingFee",
    :rdfs/range       {:owl/unionOf [:schema/Number
                                     :schema/MonetaryAmount
@@ -23160,7 +23154,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/returnFees"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/returnFees"},
    :rdfs/label       "returnFees",
    :rdfs/range       {:owl/unionOf [:schema/ReturnFeesEnumeration
                                     :schema/Text
@@ -23174,7 +23168,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/returnLabelSource"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/returnLabelSource"},
    :rdfs/label       "returnLabelSource",
    :rdfs/range       {:owl/unionOf [:schema/ReturnLabelSourceEnumeration
                                     :schema/Text
@@ -23188,7 +23182,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/returnMethod"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/returnMethod"},
    :rdfs/label       "returnMethod",
    :rdfs/range       {:owl/unionOf [:schema/ReturnMethodEnumeration
                                     :schema/Text
@@ -23204,8 +23198,8 @@
                       [:schema/MerchantReturnPolicy
                        :schema/MerchantReturnPolicySeasonalOverride],
                       :rdf/type :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/returnPolicyCategory"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/returnPolicyCategory"},
    :rdfs/label       "returnPolicyCategory",
    :rdfs/range       {:owl/unionOf [:schema/MerchantReturnEnumeration
                                     :schema/Text
@@ -23219,8 +23213,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/returnPolicyCountry"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/returnPolicyCountry"},
    :rdfs/label       "returnPolicyCountry",
    :rdfs/range       {:owl/unionOf [:schema/Country
                                     :schema/Text
@@ -23235,7 +23229,7 @@
    :rdfs/domain {:owl/unionOf [:schema/MerchantReturnPolicy],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/returnPolicySeasonalOverride"},
+   {:rdf/uri "https://pending.schema.org/returnPolicySeasonalOverride"},
    :rdfs/label "returnPolicySeasonalOverride",
    :rdfs/range {:owl/unionOf [:schema/MerchantReturnPolicySeasonalOverride
                               :schema/Text
@@ -23245,16 +23239,18 @@
 
 (def returnShippingFeesAmount
   "Amount of shipping costs for product returns (for any reason). Applicable when property <a class=\"localLink\" href=\"https://schema.org/returnFees\">returnFees</a> equals <a class=\"localLink\" href=\"https://schema.org/ReturnShippingFees\">ReturnShippingFees</a>."
-  {:rdf/about :schema/returnShippingFeesAmount,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MerchantReturnPolicy],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/returnShippingFeesAmount"},
-   :rdfs/label "returnShippingFeesAmount",
-   :rdfs/range
-   {:owl/unionOf [:schema/MonetaryAmount :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/returnShippingFeesAmount,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MerchantReturnPolicy],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/returnShippingFeesAmount"},
+   :rdfs/label       "returnShippingFeesAmount",
+   :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def review
   "A review of the item."
@@ -23366,7 +23362,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/riskFactor"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/riskFactor"},
    :rdfs/label       "riskFactor",
    :rdfs/range       {:owl/unionOf [:schema/MedicalRiskFactor
                                     :schema/Text
@@ -23380,7 +23376,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Diet],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/risks"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/risks"},
    :rdfs/label       "risks",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -23402,7 +23398,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BusOrCoach :schema/Car],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/roofLoad"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/roofLoad"},
    :rdfs/label       "roofLoad",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -23430,7 +23426,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/LymphaticVessel],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/runsTo"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/runsTo"},
    :rdfs/label       "runsTo",
    :rdfs/range       {:owl/unionOf [:schema/Vessel
                                     :schema/Text
@@ -23467,22 +23463,22 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/rxcui"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/rxcui"},
    :rdfs/label       "rxcui",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
 
 (def safetyConsideration
   "Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement."
-  {:rdf/about :schema/safetyConsideration,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/DietarySupplement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/safetyConsideration"},
-   :rdfs/label "safetyConsideration",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/safetyConsideration,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/DietarySupplement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/safetyConsideration"},
+   :rdfs/label       "safetyConsideration",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def salaryCurrency
   "The currency (coded using <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a>) used for the main salary information in this job posting or for this employee."
@@ -23501,8 +23497,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/salaryUponCompletion"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/salaryUponCompletion"},
    :rdfs/label       "salaryUponCompletion",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmountDistribution
                                     :schema/Text
@@ -23553,7 +23549,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Schedule],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/scheduleTimezone"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/scheduleTimezone"},
    :rdfs/label       "scheduleTimezone",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -23597,8 +23593,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/schoolClosuresInfo"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/schoolClosuresInfo"},
    :rdfs/label       "schoolClosuresInfo",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/WebContent
@@ -23637,7 +23632,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/sdDatePublished"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/sdDatePublished"},
    :rdfs/label       "sdDatePublished",
    :rdfs/range       {:owl/unionOf [:schema/Date],
                       :rdf/type    :owl/Class}})
@@ -23648,7 +23643,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/sdLicense"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/sdLicense"},
    :rdfs/label       "sdLicense",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/CreativeWork
@@ -23662,7 +23657,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/sdPublisher"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/sdPublisher"},
    :rdfs/label       "sdPublisher",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Organization
@@ -23760,7 +23755,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/seatingCapacity"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/seatingCapacity"},
    :rdfs/label       "seatingCapacity",
    :rdfs/range       {:owl/unionOf [:schema/Number
                                     :schema/QuantitativeValue
@@ -23785,16 +23780,18 @@
 
 (def secondaryPrevention
   "A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition."
-  {:rdf/about :schema/secondaryPrevention,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/MedicalCondition],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/secondaryPrevention"},
-   :rdfs/label "secondaryPrevention",
-   :rdfs/range
-   {:owl/unionOf [:schema/MedicalTherapy :schema/Text :schema/URL :schema/Role],
-    :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/secondaryPrevention,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/secondaryPrevention"},
+   :rdfs/label       "secondaryPrevention",
+   :rdfs/range       {:owl/unionOf [:schema/MedicalTherapy
+                                    :schema/Text
+                                    :schema/URL
+                                    :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def securityClearanceRequirement
   "A description of any security clearance requirements of the job."
@@ -23803,7 +23800,7 @@
    :rdfs/domain {:owl/unionOf [:schema/JobPosting],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/securityClearanceRequirement"},
+   {:rdf/uri "https://pending.schema.org/securityClearanceRequirement"},
    :rdfs/label "securityClearanceRequirement",
    :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                 :rdf/type    :owl/Class}})
@@ -23876,8 +23873,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/sensoryRequirement"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/sensoryRequirement"},
    :rdfs/label       "sensoryRequirement",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/DefinedTerm
@@ -23891,8 +23887,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Nerve],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/sensoryUnit"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/sensoryUnit"},
    :rdfs/label       "sensoryUnit",
    :rdfs/range       {:owl/unionOf [:schema/SuperficialAnatomy
                                     :schema/AnatomicalStructure
@@ -23922,7 +23917,7 @@
    :rdfs/domain {:owl/unionOf [:schema/MedicalTherapy :schema/MedicalDevice],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/seriousAdverseOutcome"},
+   {:rdf/uri "https://health-lifesci.schema.org/seriousAdverseOutcome"},
    :rdfs/label "seriousAdverseOutcome",
    :rdfs/range
    {:owl/unionOf [:schema/MedicalEntity :schema/Text :schema/URL :schema/Role],
@@ -24113,7 +24108,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/MediaObject],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/sha256"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/sha256"},
    :rdfs/label         "sha256",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -24141,8 +24136,8 @@
                                     :schema/ShippingRateSettings
                                     :schema/OfferShippingDetails],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/shippingDestination"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/shippingDestination"},
    :rdfs/label       "shippingDestination",
    :rdfs/range       {:owl/unionOf [:schema/DefinedRegion
                                     :schema/Text
@@ -24156,7 +24151,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Offer],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/shippingDetails"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/shippingDetails"},
    :rdfs/label       "shippingDetails",
    :rdfs/range       {:owl/unionOf [:schema/OfferShippingDetails
                                     :schema/Text
@@ -24171,7 +24166,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/OfferShippingDetails
                                     :schema/ShippingRateSettings],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/shippingLabel"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/shippingLabel"},
    :rdfs/label       "shippingLabel",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -24182,7 +24177,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/OfferShippingDetails],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/shippingOrigin"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/shippingOrigin"},
    :rdfs/label       "shippingOrigin",
    :rdfs/range       {:owl/unionOf [:schema/DefinedRegion
                                     :schema/Text
@@ -24197,7 +24192,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/ShippingRateSettings
                                     :schema/OfferShippingDetails],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/shippingRate"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/shippingRate"},
    :rdfs/label       "shippingRate",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmount
                                     :schema/Text
@@ -24211,8 +24206,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/OfferShippingDetails],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/shippingSettingsLink"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/shippingSettingsLink"},
    :rdfs/label       "shippingSettingsLink",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -24252,8 +24247,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalTest],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/signDetected"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/signDetected"},
    :rdfs/label       "signDetected",
    :rdfs/range       {:owl/unionOf [:schema/MedicalSign
                                     :schema/Text
@@ -24267,8 +24262,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/signOrSymptom"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/signOrSymptom"},
    :rdfs/label       "signOrSymptom",
    :rdfs/range       {:owl/unionOf [:schema/MedicalSignOrSymptom
                                     :schema/Text
@@ -24282,8 +24277,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SuperficialAnatomy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/significance"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/significance"},
    :rdfs/label       "significance",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -24317,7 +24312,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork :schema/Product],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/size"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/size"},
    :rdfs/label       "size",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/DefinedTerm
@@ -24333,7 +24328,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SizeSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/sizeGroup"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/sizeGroup"},
    :rdfs/label       "sizeGroup",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/SizeGroupEnumeration
@@ -24347,7 +24342,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SizeSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/sizeSystem"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/sizeSystem"},
    :rdfs/label       "sizeSystem",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/SizeSystemEnumeration
@@ -24404,7 +24399,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/MolecularEntity],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/smiles"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/smiles"},
    :rdfs/label         "smiles",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -24505,8 +24500,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Nerve],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/sourcedFrom"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/sourcedFrom"},
    :rdfs/label       "sourcedFrom",
    :rdfs/range       {:owl/unionOf [:schema/BrainStructure
                                     :schema/Text
@@ -24602,8 +24596,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PronounceableText],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/speechToTextMarkup"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/speechToTextMarkup"},
    :rdfs/label       "speechToTextMarkup",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -24614,7 +24607,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/speed"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/speed"},
    :rdfs/label       "speed",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -24628,7 +24621,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Quotation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/spokenByCharacter"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/spokenByCharacter"},
    :rdfs/label       "spokenByCharacter",
    :rdfs/range       {:owl/unionOf [:schema/Person
                                     :schema/Organization
@@ -24664,7 +24657,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/SportsOrganization
                                     :schema/SportsEvent],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/sport"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/sport"},
    :rdfs/label       "sport",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -24734,7 +24727,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/stage"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/stage"},
    :rdfs/label       "stage",
    :rdfs/range       {:owl/unionOf [:schema/MedicalConditionStage
                                     :schema/Text
@@ -24748,8 +24741,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalConditionStage],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/stageAsNumber"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/stageAsNumber"},
    :rdfs/label       "stageAsNumber",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -24793,7 +24786,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Clip :schema/SeekToAction],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/startOffset"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/startOffset"},
    :rdfs/label       "startOffset",
    :rdfs/range       {:owl/unionOf [:schema/HyperTocEntry
                                     :schema/Number
@@ -24825,7 +24818,7 @@
                                     :schema/MedicalProcedure
                                     :schema/MedicalStudy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/status"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/status"},
    :rdfs/label       "status",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/EventStatusType
@@ -24919,8 +24912,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugStrength],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/strengthUnit"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/strengthUnit"},
    :rdfs/label       "strengthUnit",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -24931,8 +24924,8 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DrugStrength],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/strengthValue"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/strengthValue"},
    :rdfs/label       "strengthValue",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -24943,8 +24936,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Joint],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/structuralClass"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/structuralClass"},
    :rdfs/label       "structuralClass",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -24955,7 +24948,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/study"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/study"},
    :rdfs/label       "study",
    :rdfs/range       {:owl/unionOf [:schema/MedicalStudy
                                     :schema/Text
@@ -24969,8 +24962,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalObservationalStudy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/studyDesign"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/studyDesign"},
    :rdfs/label       "studyDesign",
    :rdfs/range       {:owl/unionOf [:schema/MedicalObservationalStudyDesign
                                     :schema/Text
@@ -24984,8 +24976,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalStudy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/studyLocation"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/studyLocation"},
    :rdfs/label       "studyLocation",
    :rdfs/range       {:owl/unionOf [:schema/AdministrativeArea
                                     :schema/Text
@@ -24999,8 +24991,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalStudy],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/studySubject"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/studySubject"},
    :rdfs/label       "studySubject",
    :rdfs/range       {:owl/unionOf [:schema/MedicalEntity
                                     :schema/Text
@@ -25014,7 +25006,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle :schema/StupidType],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://attic.schema.org/stupidProperty"},
+   :rdfs/isDefinedBy {:rdf/uri "https://attic.schema.org/stupidProperty"},
    :rdfs/label       "stupidProperty",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -25087,8 +25079,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalConditionStage],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/subStageSuffix"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/subStageSuffix"},
    :rdfs/label       "subStageSuffix",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -25099,8 +25091,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/AnatomicalStructure],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/subStructure"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/subStructure"},
    :rdfs/label       "subStructure",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
                                     :schema/Text
@@ -25114,7 +25106,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalTestPanel],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/subTest"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/subTest"},
    :rdfs/label       "subTest",
    :rdfs/range       {:owl/unionOf [:schema/MedicalTest
                                     :schema/Text
@@ -25129,7 +25121,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Trip],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/subTrip"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/subTrip"},
    :rdfs/label       "subTrip",
    :rdfs/range       {:owl/unionOf [:schema/Trip
                                     :schema/Text
@@ -25162,7 +25154,7 @@
                                     :schema/TVEpisode
                                     :schema/BroadcastEvent],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/subtitleLanguage"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/subtitleLanguage"},
    :rdfs/label       "subtitleLanguage",
    :rdfs/range       {:owl/unionOf [:schema/Language
                                     :schema/Text
@@ -25205,7 +25197,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/PeopleAudience
                                     :schema/SizeSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/suggestedAge"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/suggestedAge"},
    :rdfs/label       "suggestedAge",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -25261,8 +25253,8 @@
    :rdfs/domain      {:owl/unionOf [:schema/PeopleAudience
                                     :schema/SizeSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/suggestedMeasurement"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/suggestedMeasurement"},
    :rdfs/label       "suggestedMeasurement",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -25318,7 +25310,7 @@
                                     :schema/Class
                                     :schema/Enumeration],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://meta.schema.org/supersededBy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://meta.schema.org/supersededBy"},
    :rdfs/label       "supersededBy",
    :rdfs/range       {:owl/unionOf [:schema/Class
                                     :schema/Property
@@ -25349,7 +25341,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Artery],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/supplyTo"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/supplyTo"},
    :rdfs/label       "supplyTo",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
                                     :schema/Text
@@ -25448,15 +25440,16 @@
 
 (def targetPopulation
   "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'."
-  {:rdf/about :schema/targetPopulation,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/DoseSchedule :schema/DietarySupplement],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/targetPopulation"},
-   :rdfs/label "targetPopulation",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/targetPopulation,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/DoseSchedule
+                                    :schema/DietarySupplement],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/targetPopulation"},
+   :rdfs/label       "targetPopulation",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def targetProduct
   "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used."
@@ -25501,7 +25494,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Taxon],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/taxonRank"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/taxonRank"},
    :rdfs/label       "taxonRank",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/Text
@@ -25515,7 +25508,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/BioChemEntity],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/taxonomicRange"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/taxonomicRange"},
    :rdfs/label       "taxonomicRange",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/Taxon
@@ -25532,7 +25525,7 @@
                                     :schema/CreativeWork
                                     :schema/LearningResource],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/teaches"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/teaches"},
    :rdfs/label       "teaches",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/DefinedTerm
@@ -25588,7 +25581,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/DefinedTerm],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/termCode"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/termCode"},
    :rdfs/label       "termCode",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -25599,7 +25592,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/termDuration"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/termDuration"},
    :rdfs/label       "termDuration",
    :rdfs/range       {:owl/unionOf [:schema/Duration
                                     :schema/Text
@@ -25613,7 +25606,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Service],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/termsOfService"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/termsOfService"},
    :rdfs/label       "termsOfService",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -25624,7 +25617,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/termsPerYear"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/termsPerYear"},
    :rdfs/label       "termsPerYear",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -25646,7 +25639,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PronounceableText],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/textValue"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/textValue"},
    :rdfs/label       "textValue",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -25729,7 +25722,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/timeOfDay"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/timeOfDay"},
    :rdfs/label       "timeOfDay",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -25754,7 +25747,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/timeToComplete"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/timeToComplete"},
    :rdfs/label       "timeToComplete",
    :rdfs/range       {:owl/unionOf [:schema/Duration
                                     :schema/Text
@@ -25768,8 +25761,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/PathologyTest],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/tissueSample"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/tissueSample"},
    :rdfs/label       "tissueSample",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -25791,7 +25784,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/Movie :schema/TVEpisode],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/titleEIDR"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/titleEIDR"},
    :rdfs/label         "titleEIDR",
    :rdfs/range         {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                         :rdf/type    :owl/Class},
@@ -25839,7 +25832,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HyperTocEntry],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/tocContinuation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/tocContinuation"},
    :rdfs/label       "tocContinuation",
    :rdfs/range       {:owl/unionOf [:schema/HyperTocEntry
                                     :schema/Text
@@ -25853,7 +25846,7 @@
    :rdf/type           :owl/ObjectProperty,
    :rdfs/domain        {:owl/unionOf [:schema/HyperToc],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri "https://pending.schema.org/tocEntry"},
+   :rdfs/isDefinedBy   {:rdf/uri "https://pending.schema.org/tocEntry"},
    :rdfs/label         "tocEntry",
    :rdfs/range         {:owl/unionOf [:schema/HyperTocEntry
                                       :schema/Text
@@ -25868,7 +25861,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/tongueWeight"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/tongueWeight"},
    :rdfs/label       "tongueWeight",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -25897,7 +25890,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EngineSpecification],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/torque"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/torque"},
    :rdfs/label       "torque",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -25911,7 +25904,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/JobPosting],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/totalJobOpenings"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/totalJobOpenings"},
    :rdfs/label       "totalJobOpenings",
    :rdfs/range       {:owl/unionOf [:schema/Integer],
                       :rdf/type    :owl/Class}})
@@ -25968,7 +25961,7 @@
                                     :schema/Place
                                     :schema/Accommodation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/tourBookingPage"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/tourBookingPage"},
    :rdfs/label       "tourBookingPage",
    :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -26069,7 +26062,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/trailerWeight"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/trailerWeight"},
    :rdfs/label       "trailerWeight",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -26106,7 +26099,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram
                                     :schema/WorkBasedProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/trainingSalary"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/trainingSalary"},
    :rdfs/label       "trainingSalary",
    :rdfs/range       {:owl/unionOf [:schema/MonetaryAmountDistribution
                                     :schema/Text
@@ -26145,7 +26138,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ShippingDeliveryTime],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/transitTime"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/transitTime"},
    :rdfs/label       "transitTime",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -26160,7 +26153,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/OfferShippingDetails
                                     :schema/DeliveryTimeSettings],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/transitTimeLabel"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/transitTimeLabel"},
    :rdfs/label       "transitTimeLabel",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -26172,7 +26165,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/translationOfWork"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/translationOfWork"},
    :rdfs/label       "translationOfWork",
    :rdfs/range       {:owl/unionOf [:schema/CreativeWork
                                     :schema/Text
@@ -26197,15 +26190,15 @@
 
 (def transmissionMethod
   "How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc."
-  {:rdf/about :schema/transmissionMethod,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/InfectiousDisease],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://health-lifesci.schema.org/transmissionMethod"},
-   :rdfs/label "transmissionMethod",
-   :rdfs/range {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/transmissionMethod,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/InfectiousDisease],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/transmissionMethod"},
+   :rdfs/label       "transmissionMethod",
+   :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def travelBans
   "Information about travel bans, e.g. in the context of a pandemic."
@@ -26213,7 +26206,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/travelBans"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/travelBans"},
    :rdfs/label       "travelBans",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/WebContent
@@ -26227,8 +26220,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalTrial],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/trialDesign"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/trialDesign"},
    :rdfs/label       "trialDesign",
    :rdfs/range       {:owl/unionOf [:schema/MedicalTrialDesign
                                     :schema/Text
@@ -26242,7 +26234,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vein],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/tributary"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/tributary"},
    :rdfs/label       "tributary",
    :rdfs/range       {:owl/unionOf [:schema/AnatomicalStructure
                                     :schema/Text
@@ -26297,8 +26289,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/EducationalOccupationalProgram],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://pending.schema.org/typicalCreditsPerTerm"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/typicalCreditsPerTerm"},
    :rdfs/label       "typicalCreditsPerTerm",
    :rdfs/range       {:owl/unionOf [:schema/Integer
                                     :schema/StructuredValue
@@ -26313,8 +26305,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalCondition],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/typicalTest"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/typicalTest"},
    :rdfs/label       "typicalTest",
    :rdfs/range       {:owl/unionOf [:schema/MedicalTest
                                     :schema/Text
@@ -26372,8 +26363,8 @@
    :rdfs/domain        {:owl/unionOf [:schema/NewsMediaOrganization
                                       :schema/Organization],
                         :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy   #:rdf{:uri
-                             "https://pending.schema.org/unnamedSourcesPolicy"},
+   :rdfs/isDefinedBy   {:rdf/uri
+                        "https://pending.schema.org/unnamedSourcesPolicy"},
    :rdfs/label         "unnamedSourcesPolicy",
    :rdfs/range         {:owl/unionOf [:schema/URL
                                       :schema/CreativeWork
@@ -26446,7 +26437,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/usageInfo"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/usageInfo"},
    :rdfs/label       "usageInfo",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/CreativeWork
@@ -26460,8 +26451,8 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalTest],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri
-                           "https://health-lifesci.schema.org/usedToDiagnose"},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://health-lifesci.schema.org/usedToDiagnose"},
    :rdfs/label       "usedToDiagnose",
    :rdfs/range       {:owl/unionOf [:schema/MedicalCondition
                                     :schema/Text
@@ -26486,7 +26477,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/MedicalTest],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/usesDevice"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/usesDevice"},
    :rdfs/label       "usesDevice",
    :rdfs/range       {:owl/unionOf [:schema/MedicalDevice
                                     :schema/Text
@@ -26496,15 +26487,15 @@
 
 (def usesHealthPlanIdStandard
   "The standard for interpreting the Plan ID. The preferred is \"HIOS\". See the Centers for Medicare &amp; Medicaid Services for more details."
-  {:rdf/about :schema/usesHealthPlanIdStandard,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain {:owl/unionOf [:schema/HealthInsurancePlan],
-                 :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/usesHealthPlanIdStandard"},
-   :rdfs/label "usesHealthPlanIdStandard",
-   :rdfs/range {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
-                :rdf/type    :owl/Class}})
+  {:rdf/about        :schema/usesHealthPlanIdStandard,
+   :rdf/type         :owl/ObjectProperty,
+   :rdfs/domain      {:owl/unionOf [:schema/HealthInsurancePlan],
+                      :rdf/type    :owl/Class},
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://pending.schema.org/usesHealthPlanIdStandard"},
+   :rdfs/label       "usesHealthPlanIdStandard",
+   :rdfs/range       {:owl/unionOf [:schema/URL :schema/Text :schema/Role],
+                      :rdf/type    :owl/Class}})
 
 (def utterances
   "Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a <a class=\"localLink\" href=\"https://schema.org/HyperTocEntry\">HyperTocEntry</a>."
@@ -26512,7 +26503,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/HyperTocEntry],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/utterances"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/utterances"},
    :rdfs/label       "utterances",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -26704,7 +26695,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Dataset],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/variableMeasured"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/variableMeasured"},
    :rdfs/label       "variableMeasured",
    :rdfs/range       {:owl/unionOf [:schema/PropertyValue
                                     :schema/Text
@@ -26718,7 +26709,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Dataset],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://attic.schema.org/variablesMeasured"},
+   :rdfs/isDefinedBy {:rdf/uri "https://attic.schema.org/variablesMeasured"},
    :rdfs/label       "variablesMeasured",
    :rdfs/range       {:owl/unionOf [:schema/PropertyValue
                                     :schema/Text
@@ -26732,7 +26723,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ComicIssue],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/variantCover"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/variantCover"},
    :rdfs/label       "variantCover",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -26743,7 +26734,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ProductGroup],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/variesBy"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/variesBy"},
    :rdfs/label       "variesBy",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/DefinedTerm
@@ -26853,7 +26844,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/vehicleSpecialUsage"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/vehicleSpecialUsage"},
    :rdfs/label       "vehicleSpecialUsage",
    :rdfs/range       {:owl/unionOf [:schema/Text
                                     :schema/CarUsageType
@@ -26899,7 +26890,7 @@
    :rdfs/domain {:owl/unionOf [:schema/NewsMediaOrganization],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   #:rdf{:uri "https://pending.schema.org/verificationFactCheckingPolicy"},
+   {:rdf/uri "https://pending.schema.org/verificationFactCheckingPolicy"},
    :rdfs/label "verificationFactCheckingPolicy",
    :rdfs/range
    {:owl/unionOf [:schema/URL :schema/CreativeWork :schema/Text :schema/Role],
@@ -26991,7 +26982,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Drug],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/warning"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/warning"},
    :rdfs/label       "warning",
    :rdfs/range       {:owl/unionOf [:schema/Text :schema/URL :schema/Role],
                       :rdf/type    :owl/Class}})
@@ -27057,7 +27048,7 @@
    :rdfs/domain      {:owl/unionOf [:schema/SpecialAnnouncement
                                     :schema/PodcastSeries],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/webFeed"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/webFeed"},
    :rdfs/label       "webFeed",
    :rdfs/range       {:owl/unionOf [:schema/URL
                                     :schema/DataFeed
@@ -27087,7 +27078,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/weightTotal"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/weightTotal"},
    :rdfs/label       "weightTotal",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -27101,7 +27092,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Vehicle],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://auto.schema.org/wheelbase"},
+   :rdfs/isDefinedBy {:rdf/uri "https://auto.schema.org/wheelbase"},
    :rdfs/label       "wheelbase",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Text
@@ -27246,7 +27237,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/CreativeWork],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://bib.schema.org/workTranslation"},
+   :rdfs/isDefinedBy {:rdf/uri "https://bib.schema.org/workTranslation"},
    :rdfs/label       "workTranslation",
    :rdfs/range       {:owl/unionOf [:schema/CreativeWork
                                     :schema/Text
@@ -27260,7 +27251,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      {:owl/unionOf [:schema/ExercisePlan],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://health-lifesci.schema.org/workload"},
+   :rdfs/isDefinedBy {:rdf/uri "https://health-lifesci.schema.org/workload"},
    :rdfs/label       "workload",
    :rdfs/range       {:owl/unionOf [:schema/QuantitativeValue
                                     :schema/Energy
@@ -27318,7 +27309,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      {:owl/unionOf [:schema/Accommodation],
                       :rdf/type    :owl/Class},
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/yearBuilt"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/yearBuilt"},
    :rdfs/label       "yearBuilt",
    :rdfs/range       {:owl/unionOf [:schema/Number],
                       :rdf/type    :owl/Class}})
@@ -27369,6 +27360,6 @@
   "A 3D model represents some kind of 3D content, which may have <a class=\"localLink\" href=\"https://schema.org/encoding\">encoding</a>s in one or more <a class=\"localLink\" href=\"https://schema.org/MediaObject\">MediaObject</a>s. Many 3D formats are available (e.g. see <a href=\"https://en.wikipedia.org/wiki/Category:3D_graphics_file_formats\">Wikipedia</a>); specific encoding formats can be represented using the <a class=\"localLink\" href=\"https://schema.org/encodingFormat\">encodingFormat</a> property applied to the relevant <a class=\"localLink\" href=\"https://schema.org/MediaObject\">MediaObject</a>. For thecase of a single file published after Zip compression, the convention of appending '+zip' to the <a class=\"localLink\" href=\"https://schema.org/encodingFormat\">encodingFormat</a> can be used. Geospatial, AR/VR, artistic/animation, gaming, engineering and scientific content can all be represented using <a class=\"localLink\" href=\"https://schema.org/3DModel\">3DModel</a>."
   {:rdf/about        :schema/|3DModel|,
    :rdf/type         :owl/Class,
-   :rdfs/isDefinedBy #:rdf{:uri "https://pending.schema.org/3DModel"},
+   :rdfs/isDefinedBy {:rdf/uri "https://pending.schema.org/3DModel"},
    :rdfs/label       "3DModel",
    :rdfs/subClassOf  :schema/MediaObject})

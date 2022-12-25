@@ -3,8 +3,8 @@
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.ttl",
    :owl/deprecated true,
-   :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/event"},
+   :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/event"},
    :rdf/ns-prefix-map {"ev"   "http://lv2plug.in/ns/ext/event#",
                        "lv2"  "http://lv2plug.in/ns/lv2core#",
                        "owl"  "http://www.w3.org/2002/07/owl#",
@@ -12,8 +12,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.meta.ttl"},
    :vann/preferredNamespacePrefix "ev",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/event#"}
   (:refer-clojure :exclude []))

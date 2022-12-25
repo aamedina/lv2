@@ -2,7 +2,7 @@
   "A protocol for accessing and manipulating properties."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/patch.lv2/patch.ttl",
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/patch"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/patch"},
    :rdf/ns-prefix-map {"foaf"  "http://xmlns.com/foaf/0.1/",
                        "owl"   "http://www.w3.org/2002/07/owl#",
                        "patch" "http://lv2plug.in/ns/ext/patch#",
@@ -11,8 +11,8 @@
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/patch.lv2/patch.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/patch.lv2/patch.meta.ttl"},
    :vann/preferredNamespacePrefix "patch",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/patch#"}
   (:refer-clojure :exclude [remove]))

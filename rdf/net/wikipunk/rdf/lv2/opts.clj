@@ -2,8 +2,8 @@
   "Runtime options for LV2 plugins and UIs."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.ttl",
-   :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/options"},
+   :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/options"},
    :rdf/ns-prefix-map {"lv2"  "http://lv2plug.in/ns/lv2core#",
                        "opts" "http://lv2plug.in/ns/ext/options#",
                        "owl"  "http://www.w3.org/2002/07/owl#",
@@ -12,8 +12,8 @@
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.meta.ttl"},
    :vann/preferredNamespacePrefix "opts",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/options#"}
   (:refer-clojure :exclude []))

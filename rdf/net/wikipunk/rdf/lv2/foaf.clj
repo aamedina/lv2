@@ -2,7 +2,7 @@
   "This version of the FOAF vocabulary has been slightly trimmed for LV2."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/foaf.ttl",
-   :rdf/about #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdf/about {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "foaf"    "http://xmlns.com/foaf/0.1/",
                        "owl"     "http://www.w3.org/2002/07/owl#",
@@ -25,7 +25,7 @@
   {:owl/disjointWith [:foaf/Project :foaf/Organization],
    :rdf/about        :foaf/Document,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Document"})
 
 (def Group
@@ -39,7 +39,7 @@
   "An image."
   {:rdf/about        :foaf/Image,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Image",
    :rdfs/subClassOf  :foaf/Document})
 
@@ -47,14 +47,14 @@
   "A foaf:LabelProperty is any RDF property with textual values that serve as labels."
   {:rdf/about        :foaf/LabelProperty,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Label Property"})
 
 (def OnlineAccount
   "An online account."
   {:rdf/about        :foaf/OnlineAccount,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Online Account",
    :rdfs/subClassOf  :owl/Thing})
 
@@ -62,7 +62,7 @@
   "An online chat account."
   {:rdf/about        :foaf/OnlineChatAccount,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Online Chat Account",
    :rdfs/subClassOf  :foaf/OnlineAccount})
 
@@ -70,7 +70,7 @@
   "An online e-commerce account."
   {:rdf/about        :foaf/OnlineEcommerceAccount,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Online E-commerce Account",
    :rdfs/subClassOf  :foaf/OnlineAccount})
 
@@ -78,7 +78,7 @@
   "An online gaming account."
   {:rdf/about        :foaf/OnlineGamingAccount,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Online Gaming Account",
    :rdfs/subClassOf  :foaf/OnlineAccount})
 
@@ -87,7 +87,7 @@
   {:owl/disjointWith [:foaf/Person :foaf/Document],
    :rdf/about        :foaf/Organization,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Organization",
    :rdfs/subClassOf  :foaf/Agent})
 
@@ -96,7 +96,7 @@
   {:owl/disjointWith [:foaf/Project :foaf/Organization],
    :rdf/about        :foaf/Person,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Person",
    :rdfs/subClassOf  :foaf/Agent})
 
@@ -112,7 +112,7 @@
   {:owl/disjointWith [:foaf/Person :foaf/Document],
    :rdf/about        :foaf/Project,
    :rdf/type         [:owl/Class :rdfs/Class],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Project"})
 
 (def account
@@ -120,7 +120,7 @@
   {:rdf/about        :foaf/account,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "account",
    :rdfs/range       :foaf/OnlineAccount})
 
@@ -129,7 +129,7 @@
   {:rdf/about        :foaf/accountName,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/OnlineAccount,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "account name",
    :rdfs/range       :rdfs/Literal})
 
@@ -138,7 +138,7 @@
   {:rdf/about        :foaf/accountServiceHomepage,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/OnlineAccount,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "account service homepage",
    :rdfs/range       :foaf/Document})
 
@@ -149,7 +149,7 @@
                       :owl/DatatypeProperty
                       :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "age",
    :rdfs/range       :rdfs/Literal})
 
@@ -160,7 +160,7 @@
                         :owl/DatatypeProperty
                         :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "AIM chat ID",
    :rdfs/range         :rdfs/Literal,
    :rdfs/subPropertyOf :foaf/nick})
@@ -172,7 +172,7 @@
                       :owl/DatatypeProperty
                       :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "birthday",
    :rdfs/range       :rdfs/Literal})
 
@@ -181,7 +181,7 @@
   {:rdf/about        :foaf/currentProject,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "current project",
    :rdfs/range       :owl/Thing})
 
@@ -191,7 +191,7 @@
    :rdf/about        :foaf/depiction,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :owl/Thing,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "depiction",
    :rdfs/range       :foaf/Image})
 
@@ -201,7 +201,7 @@
    :rdf/about        :foaf/depicts,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Image,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "depicts",
    :rdfs/range       :owl/Thing})
 
@@ -210,7 +210,7 @@
   {:rdf/about        :foaf/familyName,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "familyName",
    :rdfs/range       :rdfs/Literal})
 
@@ -219,7 +219,7 @@
   {:rdf/about        :foaf/firstName,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "firstName",
    :rdfs/range       :rdfs/Literal})
 
@@ -230,7 +230,7 @@
                       :owl/DatatypeProperty
                       :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "gender",
    :rdfs/range       :rdfs/Literal})
 
@@ -238,7 +238,7 @@
   "The given name of some person."
   {:rdf/about        :foaf/givenName,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "Given name"})
 
 (def homepage
@@ -248,7 +248,7 @@
                         :owl/ObjectProperty
                         :owl/InverseFunctionalProperty],
    :rdfs/domain        :owl/Thing,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "homepage",
    :rdfs/range         :foaf/Document,
    :rdfs/subPropertyOf [:foaf/page :foaf/isPrimaryTopicOf]})
@@ -260,7 +260,7 @@
                         :owl/DatatypeProperty
                         :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "ICQ chat ID",
    :rdfs/range         :rdfs/Literal,
    :rdfs/subPropertyOf :foaf/nick})
@@ -270,7 +270,7 @@
   {:rdf/about          :foaf/img,
    :rdf/type           [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain        :foaf/Person,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "image",
    :rdfs/range         :foaf/Image,
    :rdfs/subPropertyOf :foaf/depiction})
@@ -280,7 +280,7 @@
   {:rdf/about        :foaf/interest,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "interest",
    :rdfs/range       :foaf/Document})
 
@@ -290,7 +290,7 @@
    :rdf/about          :foaf/isPrimaryTopicOf,
    :rdf/type           [:owl/InverseFunctionalProperty :rdf/Property],
    :rdfs/domain        :owl/Thing,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "is primary topic of",
    :rdfs/range         :foaf/Document,
    :rdfs/subPropertyOf :foaf/page})
@@ -302,7 +302,7 @@
                       :owl/DatatypeProperty
                       :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "jabber ID",
    :rdfs/range       :rdfs/Literal})
 
@@ -311,7 +311,7 @@
   {:rdf/about        :foaf/knows,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "knows",
    :rdfs/range       :foaf/Person})
 
@@ -320,7 +320,7 @@
   {:rdf/about        :foaf/lastName,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "lastName",
    :rdfs/range       :rdfs/Literal})
 
@@ -331,7 +331,7 @@
                       :owl/InverseFunctionalProperty
                       :rdf/Property],
    :rdfs/domain      :owl/Thing,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "logo",
    :rdfs/range       :owl/Thing})
 
@@ -341,7 +341,7 @@
    :rdf/about        :foaf/made,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "made",
    :rdfs/range       :owl/Thing})
 
@@ -352,7 +352,7 @@
    :rdf/about              :foaf/maker,
    :rdf/type               [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain            :owl/Thing,
-   :rdfs/isDefinedBy       #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy       {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label             "maker",
    :rdfs/range             :foaf/Agent})
 
@@ -363,7 +363,7 @@
                       :owl/InverseFunctionalProperty
                       :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "personal mailbox",
    :rdfs/range       :owl/Thing})
 
@@ -374,7 +374,7 @@
                       :owl/DatatypeProperty
                       :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "sha1sum of a personal mailbox URI name",
    :rdfs/range       :rdfs/Literal})
 
@@ -383,7 +383,7 @@
   {:rdf/about        :foaf/member,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Group,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "member",
    :rdfs/range       :foaf/Agent})
 
@@ -391,7 +391,7 @@
   "Indicates the class of individuals that are a member of a Group"
   {:rdf/about        :foaf/membershipClass,
    :rdf/type         [:owl/AnnotationProperty :rdf/Property],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "membershipClass"})
 
 (def msnChatID
@@ -401,7 +401,7 @@
                         :owl/DatatypeProperty
                         :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "MSN chat ID",
    :rdfs/range         :rdfs/Literal,
    :rdfs/subPropertyOf :foaf/nick})
@@ -411,7 +411,7 @@
   {:rdf/about        :foaf/myersBriggs,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "myersBriggs",
    :rdfs/range       :rdfs/Literal})
 
@@ -420,7 +420,7 @@
   {:rdf/about          :foaf/name,
    :rdf/type           [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain        :owl/Thing,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "name",
    :rdfs/range         :rdfs/Literal,
    :rdfs/subPropertyOf :rdfs/label})
@@ -429,7 +429,7 @@
   "A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames)."
   {:rdf/about        :foaf/nick,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "nickname"})
 
 (def openid
@@ -439,7 +439,7 @@
                         :owl/InverseFunctionalProperty
                         :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "openid",
    :rdfs/range         :foaf/Document,
    :rdfs/subPropertyOf :foaf/isPrimaryTopicOf})
@@ -450,7 +450,7 @@
    :rdf/about        :foaf/page,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :owl/Thing,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "page",
    :rdfs/range       :foaf/Document})
 
@@ -459,7 +459,7 @@
   {:rdf/about        :foaf/pastProject,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "past project",
    :rdfs/range       :owl/Thing})
 
@@ -467,7 +467,7 @@
   "A phone, specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel)."
   {:rdf/about        :foaf/phone,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "phone"})
 
 (def plan
@@ -475,7 +475,7 @@
   {:rdf/about        :foaf/plan,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "plan",
    :rdfs/range       :rdfs/Literal})
 
@@ -487,7 +487,7 @@
                       :owl/FunctionalProperty
                       :rdf/Property],
    :rdfs/domain      :foaf/Document,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "primary topic",
    :rdfs/range       :owl/Thing})
 
@@ -496,7 +496,7 @@
   {:rdf/about        :foaf/publications,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "publications",
    :rdfs/range       :foaf/Document})
 
@@ -505,7 +505,7 @@
   {:rdf/about        :foaf/schoolHomepage,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "schoolHomepage",
    :rdfs/range       :foaf/Document})
 
@@ -514,7 +514,7 @@
   {:rdf/about        :foaf/sha1,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/Document,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "sha1sum (hex)"})
 
 (def skypeID
@@ -522,7 +522,7 @@
   {:rdf/about          :foaf/skypeID,
    :rdf/type           [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "Skype ID",
    :rdfs/range         :rdfs/Literal,
    :rdfs/subPropertyOf :foaf/nick})
@@ -532,7 +532,7 @@
   {:rdf/about        :foaf/status,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "status",
    :rdfs/range       :rdfs/Literal})
 
@@ -541,7 +541,7 @@
   {:rdf/about        :foaf/thumbnail,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Image,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "thumbnail",
    :rdfs/range       :foaf/Image})
 
@@ -550,7 +550,7 @@
   {:rdf/about          :foaf/tipjar,
    :rdf/type           [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "tipjar",
    :rdfs/range         :foaf/Document,
    :rdfs/subPropertyOf :foaf/page})
@@ -559,7 +559,7 @@
   "Title (Mr, Mrs, Ms, Dr. etc)"
   {:rdf/about        :foaf/title,
    :rdf/type         [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "title"})
 
 (def topic
@@ -568,7 +568,7 @@
    :rdf/about        :foaf/topic,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Document,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "topic",
    :rdfs/range       :owl/Thing})
 
@@ -577,7 +577,7 @@
   {:rdf/about        :foaf/topic_interest,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Agent,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "topic_interest",
    :rdfs/range       :owl/Thing})
 
@@ -588,7 +588,7 @@
                         :owl/InverseFunctionalProperty
                         :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "weblog",
    :rdfs/range         :foaf/Document,
    :rdfs/subPropertyOf :foaf/page})
@@ -598,7 +598,7 @@
   {:rdf/about        :foaf/workInfoHomepage,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "work info homepage",
    :rdfs/range       :foaf/Document})
 
@@ -607,7 +607,7 @@
   {:rdf/about        :foaf/workplaceHomepage,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/domain      :foaf/Person,
-   :rdfs/isDefinedBy #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label       "workplace homepage",
    :rdfs/range       :foaf/Document})
 
@@ -618,7 +618,7 @@
                         :owl/DatatypeProperty
                         :rdf/Property],
    :rdfs/domain        :foaf/Agent,
-   :rdfs/isDefinedBy   #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
+   :rdfs/isDefinedBy   {:rdf/uri "http://xmlns.com/foaf/0.1/"},
    :rdfs/label         "Yahoo chat ID",
    :rdfs/range         :rdfs/Literal,
    :rdfs/subPropertyOf :foaf/nick})

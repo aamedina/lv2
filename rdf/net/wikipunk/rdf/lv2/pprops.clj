@@ -2,8 +2,8 @@
   "Various properties for LV2 plugin ports."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.ttl",
-   :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/port-props"},
+   :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/port-props"},
    :rdf/ns-prefix-map {"lv2"    "http://lv2plug.in/ns/lv2core#",
                        "owl"    "http://www.w3.org/2002/07/owl#",
                        "pprops" "http://lv2plug.in/ns/ext/port-props#",
@@ -12,8 +12,8 @@
                        "xsd"    "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl"},
    :vann/preferredNamespacePrefix "pprops",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/port-props#"}
   (:refer-clojure :exclude []))

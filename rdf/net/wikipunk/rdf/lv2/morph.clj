@@ -2,8 +2,8 @@
   "Ports that can dynamically change type."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.ttl",
-   :owl/imports #:rdf{:uri "http://lv2plug.in/ns/lv2core"},
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/morph"},
+   :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/morph"},
    :rdf/ns-prefix-map {"doap"  "http://usefulinc.com/ns/doap#",
                        "foaf"  "http://xmlns.com/foaf/0.1/",
                        "lv2"   "http://lv2plug.in/ns/lv2core#",
@@ -15,8 +15,8 @@
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.meta.ttl"},
    :vann/preferredNamespacePrefix "morph",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/morph#"}
   (:refer-clojure :exclude []))

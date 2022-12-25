@@ -2,10 +2,10 @@
   "A generic value container and several data types."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.ttl",
-   :owl/imports [#:rdf{:uri "http://lv2plug.in/ns/extensions/units"}
-                 #:rdf{:uri "http://lv2plug.in/ns/extensions/ui"}
-                 #:rdf{:uri "http://lv2plug.in/ns/lv2core"}],
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/atom"},
+   :owl/imports [{:rdf/uri "http://lv2plug.in/ns/extensions/units"}
+                 {:rdf/uri "http://lv2plug.in/ns/extensions/ui"}
+                 {:rdf/uri "http://lv2plug.in/ns/lv2core"}],
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/atom"},
    :rdf/ns-prefix-map {"atom"  "http://lv2plug.in/ns/ext/atom#",
                        "lv2"   "http://lv2plug.in/ns/lv2core#",
                        "owl"   "http://www.w3.org/2002/07/owl#",
@@ -16,8 +16,8 @@
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.meta.ttl"},
    :vann/preferredNamespacePrefix "atom",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/atom#"}
   (:refer-clojure :exclude []))

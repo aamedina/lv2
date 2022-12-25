@@ -2,7 +2,7 @@
   "Units for LV2 values."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.ttl",
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/extensions/units"},
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/extensions/units"},
    :rdf/ns-prefix-map {"owl"   "http://www.w3.org/2002/07/owl#",
                        "rdf"   "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
@@ -10,8 +10,8 @@
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.meta.ttl"},
    :vann/preferredNamespacePrefix "units",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/units#"}
   (:refer-clojure :exclude [min symbol]))
@@ -54,8 +54,8 @@
   {:rdf/about    :units/bpm,
    :rdf/type     :units/Unit,
    :rdfs/label   "beats per minute",
-   :units/prefixConversion #:units{:factor 0.0166666666M,
-                            :to     :units/hz},
+   :units/prefixConversion {:units/factor 0.0166666666M,
+                            :units/to     :units/hz},
    :units/render "%f BPM",
    :units/symbol "BPM"})
 
@@ -64,8 +64,8 @@
   {:rdf/about        :units/cent,
    :rdf/type         :units/Unit,
    :rdfs/label       "cents",
-   :units/conversion #:units{:factor 0.01M,
-                      :to     :units/semitone12TET},
+   :units/conversion {:units/factor 0.01M,
+                      :units/to     :units/semitone12TET},
    :units/render     "%f ct",
    :units/symbol     "ct"})
 
@@ -74,14 +74,14 @@
   {:rdf/about        :units/cm,
    :rdf/type         :units/Unit,
    :rdfs/label       "centimetres",
-   :units/conversion #:units{:factor 0.3937M,
-                      :to     :units/inch},
-   :units/prefixConversion [#:units{:factor 0.00001M,
-                             :to     :units/km}
-                            #:units{:factor 10,
-                             :to     :units/mm}
-                            #:units{:factor 0.01M,
-                             :to     :units/m}],
+   :units/conversion {:units/factor 0.3937M,
+                      :units/to     :units/inch},
+   :units/prefixConversion [{:units/factor 0.00001M,
+                             :units/to     :units/km}
+                            {:units/factor 10,
+                             :units/to     :units/mm}
+                            {:units/factor 0.01M,
+                             :units/to     :units/m}],
    :units/render     "%f cm",
    :units/symbol     "cm"})
 
@@ -90,8 +90,8 @@
   {:rdf/about        :units/coef,
    :rdf/type         :units/Unit,
    :rdfs/label       "coefficient",
-   :units/conversion #:units{:factor 100,
-                      :to     :units/pc},
+   :units/conversion {:units/factor 100,
+                      :units/to     :units/pc},
    :units/render     "* %f",
    :units/symbol     ""})
 
@@ -139,10 +139,10 @@
   {:rdf/about    :units/hz,
    :rdf/type     :units/Unit,
    :rdfs/label   "hertz",
-   :units/prefixConversion [#:units{:factor 0.000001M,
-                             :to     :units/mhz}
-                            #:units{:factor 0.001M,
-                             :to     :units/khz}],
+   :units/prefixConversion [{:units/factor 0.000001M,
+                             :units/to     :units/mhz}
+                            {:units/factor 0.001M,
+                             :units/to     :units/khz}],
    :units/render "%f Hz",
    :units/symbol "Hz"})
 
@@ -151,8 +151,8 @@
   {:rdf/about        :units/inch,
    :rdf/type         :units/Unit,
    :rdfs/label       "inches",
-   :units/conversion #:units{:factor 0.0254M,
-                      :to     :units/m},
+   :units/conversion {:units/factor 0.0254M,
+                      :units/to     :units/m},
    :units/render     "%f\"",
    :units/symbol     "in"})
 
@@ -161,10 +161,10 @@
   {:rdf/about    :units/khz,
    :rdf/type     :units/Unit,
    :rdfs/label   "kilohertz",
-   :units/prefixConversion [#:units{:factor 0.001M,
-                             :to     :units/mhz}
-                            #:units{:factor 1000,
-                             :to     :units/hz}],
+   :units/prefixConversion [{:units/factor 0.001M,
+                             :units/to     :units/mhz}
+                            {:units/factor 1000,
+                             :units/to     :units/hz}],
    :units/render "%f kHz",
    :units/symbol "kHz"})
 
@@ -173,14 +173,14 @@
   {:rdf/about        :units/km,
    :rdf/type         :units/Unit,
    :rdfs/label       "kilometres",
-   :units/conversion #:units{:factor 0.62138818M,
-                      :to     :units/mile},
-   :units/prefixConversion [#:units{:factor 1000000,
-                             :to     :units/mm}
-                            #:units{:factor 100000,
-                             :to     :units/cm}
-                            #:units{:factor 1000,
-                             :to     :units/m}],
+   :units/conversion {:units/factor 0.62138818M,
+                      :units/to     :units/mile},
+   :units/prefixConversion [{:units/factor 1000000,
+                             :units/to     :units/mm}
+                            {:units/factor 100000,
+                             :units/to     :units/cm}
+                            {:units/factor 1000,
+                             :units/to     :units/m}],
    :units/render     "%f km",
    :units/symbol     "km"})
 
@@ -189,14 +189,14 @@
   {:rdf/about        :units/m,
    :rdf/type         :units/Unit,
    :rdfs/label       "metres",
-   :units/conversion #:units{:factor 39.37M,
-                      :to     :units/inch},
-   :units/prefixConversion [#:units{:factor 0.001M,
-                             :to     :units/km}
-                            #:units{:factor 1000,
-                             :to     :units/mm}
-                            #:units{:factor 100,
-                             :to     :units/cm}],
+   :units/conversion {:units/factor 39.37M,
+                      :units/to     :units/inch},
+   :units/prefixConversion [{:units/factor 0.001M,
+                             :units/to     :units/km}
+                            {:units/factor 1000,
+                             :units/to     :units/mm}
+                            {:units/factor 100,
+                             :units/to     :units/cm}],
    :units/render     "%f m",
    :units/symbol     "m"})
 
@@ -205,10 +205,10 @@
   {:rdf/about    :units/mhz,
    :rdf/type     :units/Unit,
    :rdfs/label   "megahertz",
-   :units/prefixConversion [#:units{:factor 0.001M,
-                             :to     :units/khz}
-                            #:units{:factor 1000000,
-                             :to     :units/hz}],
+   :units/prefixConversion [{:units/factor 0.001M,
+                             :units/to     :units/khz}
+                            {:units/factor 1000000,
+                             :units/to     :units/hz}],
    :units/render "%f MHz",
    :units/symbol "MHz"})
 
@@ -225,8 +225,8 @@
   {:rdf/about        :units/mile,
    :rdf/type         :units/Unit,
    :rdfs/label       "miles",
-   :units/conversion #:units{:factor 1609.344M,
-                      :to     :units/m},
+   :units/conversion {:units/factor 1609.344M,
+                      :units/to     :units/m},
    :units/render     "%f mi",
    :units/symbol     "mi"})
 
@@ -235,8 +235,8 @@
   {:rdf/about        :units/min,
    :rdf/type         :units/Unit,
    :rdfs/label       "minutes",
-   :units/conversion #:units{:factor 60,
-                      :to     :units/s},
+   :units/conversion {:units/factor 60,
+                      :units/to     :units/s},
    :units/render     "%f mins",
    :units/symbol     "min"})
 
@@ -245,14 +245,14 @@
   {:rdf/about        :units/mm,
    :rdf/type         :units/Unit,
    :rdfs/label       "millimetres",
-   :units/conversion #:units{:factor 0.03937M,
-                      :to     :units/inch},
-   :units/prefixConversion [#:units{:factor 0.000001M,
-                             :to     :units/km}
-                            #:units{:factor 0.1M,
-                             :to     :units/cm}
-                            #:units{:factor 0.001M,
-                             :to     :units/m}],
+   :units/conversion {:units/factor 0.03937M,
+                      :units/to     :units/inch},
+   :units/prefixConversion [{:units/factor 0.000001M,
+                             :units/to     :units/km}
+                            {:units/factor 0.1M,
+                             :units/to     :units/cm}
+                            {:units/factor 0.001M,
+                             :units/to     :units/m}],
    :units/render     "%f mm",
    :units/symbol     "mm"})
 
@@ -261,8 +261,8 @@
   {:rdf/about    :units/ms,
    :rdf/type     :units/Unit,
    :rdfs/label   "milliseconds",
-   :units/prefixConversion #:units{:factor 0.001M,
-                            :to     :units/s},
+   :units/prefixConversion {:units/factor 0.001M,
+                            :units/to     :units/s},
    :units/render "%f ms",
    :units/symbol "ms"})
 
@@ -271,8 +271,8 @@
   {:rdf/about        :units/oct,
    :rdf/type         :units/Unit,
    :rdfs/label       "octaves",
-   :units/conversion #:units{:factor 12,
-                      :to     :units/semitone12TET},
+   :units/conversion {:units/factor 12,
+                      :units/to     :units/semitone12TET},
    :units/render     "%f octaves",
    :units/symbol     "oct"})
 
@@ -281,8 +281,8 @@
   {:rdf/about        :units/pc,
    :rdf/type         :units/Unit,
    :rdfs/label       "percent",
-   :units/conversion #:units{:factor 0.01M,
-                      :to     :units/coef},
+   :units/conversion {:units/factor 0.01M,
+                      :units/to     :units/coef},
    :units/render     "%f%%",
    :units/symbol     "%"})
 
@@ -308,10 +308,10 @@
   {:rdf/about        :units/s,
    :rdf/type         :units/Unit,
    :rdfs/label       "seconds",
-   :units/conversion #:units{:factor 0.0166666666M,
-                      :to     :units/min},
-   :units/prefixConversion #:units{:factor 1000,
-                            :to     :units/ms},
+   :units/conversion {:units/factor 0.0166666666M,
+                      :units/to     :units/min},
+   :units/prefixConversion {:units/factor 1000,
+                            :units/to     :units/ms},
    :units/render     "%f s",
    :units/symbol     "s"})
 
@@ -320,8 +320,8 @@
   {:rdf/about        :units/semitone12TET,
    :rdf/type         :units/Unit,
    :rdfs/label       "semitones",
-   :units/conversion #:units{:factor 0.083333333M,
-                      :to     :units/oct},
+   :units/conversion {:units/factor 0.083333333M,
+                      :units/to     :units/oct},
    :units/render     "%f semi",
    :units/symbol     "semi"})
 

@@ -2,10 +2,10 @@
   "Common parameters for audio processing."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.ttl",
-   :owl/imports [#:rdf{:uri "http://lv2plug.in/ns/lv2core"}
-                 #:rdf{:uri "http://lv2plug.in/ns/ext/port-groups"}
-                 #:rdf{:uri "http://lv2plug.in/ns/ext/atom"}],
-   :rdf/about #:rdf{:uri "http://lv2plug.in/ns/ext/parameters"},
+   :owl/imports [{:rdf/uri "http://lv2plug.in/ns/lv2core"}
+                 {:rdf/uri "http://lv2plug.in/ns/ext/port-groups"}
+                 {:rdf/uri "http://lv2plug.in/ns/ext/atom"}],
+   :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/parameters"},
    :rdf/ns-prefix-map {"atom"  "http://lv2plug.in/ns/ext/atom#",
                        "lv2"   "http://lv2plug.in/ns/lv2core#",
                        "owl"   "http://www.w3.org/2002/07/owl#",
@@ -16,16 +16,16 @@
                        "units" "http://lv2plug.in/ns/extensions/units#"},
    :rdf/type :owl/Ontology,
    :rdfs/seeAlso
-   #:rdf{:uri
-         "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.meta.ttl"},
+   {:rdf/uri
+    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.meta.ttl"},
    :vann/preferredNamespacePrefix "param",
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/parameters#"}
   (:refer-clojure :exclude [delay]))
 
 (def CompressorControls
   "Typical controls for a compressor."
-  {:pg/element      [#:lv2{:designation :param/ratio}
-                     #:lv2{:designation :param/threshold}],
+  {:pg/element      [{:lv2/designation :param/ratio}
+                     {:lv2/designation :param/threshold}],
    :rdf/about       :param/CompressorControls,
    :rdf/type        :rdfs/Class,
    :rdfs/label      "Compressor Controls",
@@ -40,18 +40,18 @@
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
-  {:pg/element      [#:lv2{:designation :param/delay,
-                      :index       0}
-                     #:lv2{:designation :param/release,
-                      :index       5}
-                     #:lv2{:designation :param/sustain,
-                      :index       4}
-                     #:lv2{:designation :param/hold,
-                      :index       2}
-                     #:lv2{:designation :param/decay,
-                      :index       3}
-                     #:lv2{:designation :param/attack,
-                      :index       1}],
+  {:pg/element      [{:lv2/designation :param/hold,
+                      :lv2/index       2}
+                     {:lv2/designation :param/release,
+                      :lv2/index       5}
+                     {:lv2/designation :param/decay,
+                      :lv2/index       3}
+                     {:lv2/designation :param/attack,
+                      :lv2/index       1}
+                     {:lv2/designation :param/sustain,
+                      :lv2/index       4}
+                     {:lv2/designation :param/delay,
+                      :lv2/index       0}],
    :rdf/about       :param/EnvelopeControls,
    :rdf/type        :rdfs/Class,
    :rdfs/label      "Envelope Controls",
@@ -59,8 +59,8 @@
 
 (def FilterControls
   "Typical controls for a filter."
-  {:pg/element      [#:lv2{:designation :param/resonance}
-                     #:lv2{:designation :param/cutoffFrequency}],
+  {:pg/element      [{:lv2/designation :param/resonance}
+                     {:lv2/designation :param/cutoffFrequency}],
    :rdf/about       :param/FilterControls,
    :rdf/type        :rdfs/Class,
    :rdfs/label      "Filter Controls",
@@ -68,10 +68,10 @@
 
 (def OscillatorControls
   "Typical controls for an oscillator."
-  {:pg/element      [#:lv2{:designation :param/pulseWidth}
-                     #:lv2{:designation :param/waveform}
-                     #:lv2{:designation :param/amplitude}
-                     #:lv2{:designation :param/frequency}],
+  {:pg/element      [{:lv2/designation :param/pulseWidth}
+                     {:lv2/designation :param/waveform}
+                     {:lv2/designation :param/amplitude}
+                     {:lv2/designation :param/frequency}],
    :rdf/about       :param/OscillatorControls,
    :rdf/type        :rdfs/Class,
    :rdfs/label      "Oscillator Controls",
