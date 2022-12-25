@@ -10,6 +10,8 @@
    [clojure.walk :as walk]
    [zprint.core :as zprint])
   (:import
+   (org.apache.jena.datatypes BaseDatatype$TypedValue)
+   (org.apache.jena.datatypes.xsd XSDDatatype XSDDateTime)
    (org.apache.jena.graph Graph Node Triple Node_URI Node_Literal Node_Variable Node_Blank)
    (org.apache.jena.riot RDFParser)
    (org.apache.jena.rdf.model Model)
@@ -97,7 +99,22 @@
 
   Node_Blank
   (data [n]
-    {:rdf/blank (.getLabelString (.getBlankNodeId n))}))
+    {:rdf/blank (.getLabelString (.getBlankNodeId n))})
+
+  Node_Literal
+  (data [n]
+    (if (= XSDDatatype/XSDdateTime (.getLiteralDatatype n))
+      (.getTime (.asCalendar ^XSDDateTime (.getLiteralValue n)))
+      (if-let [lang (not-empty (.getLiteralLanguage n))]
+        (if (str/starts-with? lang "en")
+          (.getLiteralValue n)
+          {:rdf/literal (.getLiteralValue n)
+           :rdf/lang    lang})
+        (let [value (.getLiteralValue n)]
+          (if (instance? BaseDatatype$TypedValue value)
+            {:rdf/literal (.-lexicalValue value)
+             :rdf/uri     (.-datatypeURI value)}
+            value))))))
 
 (defn parse
   "Parses source using Apache Jena's RDFParser and converts it to
@@ -167,27 +184,36 @@
                             (= (name sym) "nil")
                             'null
                             
-                            :else sym)]
-                  (list 'def sym v))))
+                            :else sym)
+                      docstring (or (:rdfs/comment v)
+                                    (:dcterms/abstract v)
+                                    (:dcterms/description v)
+                                    (:rdfs/label v))]
+                  (list 'def sym
+                        (if (coll? docstring)
+                          (first (filter string? docstring))
+                          docstring)
+                        v))))
+         (map (fn [form] (walk/postwalk (fn [form]
+                                          (if (bytes? form)
+                                            (into (vector-of :byte) form)
+                                            form))
+                                        form)))
          (cons (list 'ns (symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
-                     (or (:rdfs/comment md)
-                         (:dcterms/abstract md)
-                         (:dcterms/description md)
-                         (:doc md))
+                     (let [docstring (or (:rdfs/comment md)
+                                         (:dcterms/abstract md)
+                                         (:dcterms/description md)
+                                         (:rdfs/label md)
+                                         (:doc md))]
+                       (if (coll? docstring)
+                         (first (filter string? docstring))
+                         docstring))
                      (walk/postwalk (fn [form]
                                       (if (instance? ont_app.vocabulary.lstr.LangStr form)
                                         (str form)
                                         form))
-                                    (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description))
+                                    (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :rdfs/label))
                      (list :refer-clojure :exclude exclusions))))))
-
-(defn parse-and-spit
-  "Parses source and writes subjects of the RDF model as maps to the path specified."
-  [f x]
-  (with-open [w (clojure.java.io/writer f)]
-    (binding [*print-meta* true
-              *out*        w]
-      (clojure.pprint/pprint (parse x)))))
 
 (defn parse-and-spit-namespaces
   "Crawls namespaces and spits resources."
