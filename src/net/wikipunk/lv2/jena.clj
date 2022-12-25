@@ -182,6 +182,9 @@
          (map (fn [[k v]]
                 (let [sym (symbol (name k))
                       sym (cond
+                            (= (name sym) "Class")
+                            'T
+                            
                             (get clojure.lang.RT/DEFAULT_IMPORTS sym)
                             (symbol (str sym "Class"))
 
@@ -193,6 +196,8 @@
                       docstring (if (coll? docstring)
                                   (first (filter string? docstring))
                                   docstring)
+                      docstring (when docstring
+                                  (str/trim (str/escape docstring {\tab "" \newline ""})))
                       v (assoc v :rdf/about k)]
                   (if docstring
                     (list 'def sym docstring (dissoc v :rdfs/comment))
@@ -206,16 +211,19 @@
                      (let [docstring (or (:rdfs/comment md)
                                          (:dcterms/abstract md)
                                          (:dcterms/description md)
+                                         (:dcterms/title md)
                                          (:rdfs/label md)
-                                         (:doc md))]
-                       (if (coll? docstring)
-                         (first (filter string? docstring))
-                         docstring))
+                                         (:doc md))
+                           docstring (if (coll? docstring)
+                                       (first (filter string? docstring))
+                                       docstring)
+                           docstring (str/trim (str/escape docstring {\tab "" \newline ""}))]
+                       docstring)
                      (walk/postwalk (fn [form]
                                       (if (instance? ont_app.vocabulary.lstr.LangStr form)
                                         (str form)
                                         form))
-                                    (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :rdfs/label))
+                                    (dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :dcterms/title :rdfs/label))
                      (list :refer-clojure :exclude exclusions))))))
 
 (defn parse-and-spit-namespaces

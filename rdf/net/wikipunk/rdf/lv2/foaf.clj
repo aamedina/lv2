@@ -2,7 +2,6 @@
   "This version of the FOAF vocabulary has been slightly trimmed for LV2."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/foaf.ttl",
-   :dcterms/title "Friend of a Friend (FOAF) vocabulary",
    :rdf/about #:rdf{:uri "http://xmlns.com/foaf/0.1/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "foaf"    "http://xmlns.com/foaf/0.1/",

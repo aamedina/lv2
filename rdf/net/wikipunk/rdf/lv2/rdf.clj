@@ -2,7 +2,6 @@
   "This is the RDF Schema for the RDF vocabulary defined in the RDF namespace."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/rdf.ttl",
-   :dcterms/title "The RDF Vocabulary (RDF)",
    :rdf/about #:rdf{:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "owl"     "http://www.w3.org/2002/07/owl#",

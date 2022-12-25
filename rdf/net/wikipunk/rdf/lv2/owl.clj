@@ -1,8 +1,7 @@
 (ns net.wikipunk.rdf.lv2.owl
-  "\n  This ontology partially describes the built-in classes and\n  properties that together form the basis of the RDF/XML syntax of OWL 2.\n  The content of this ontology is based on Tables 6.1 and 6.2\n  in Section 6.4 of the OWL 2 RDF-Based Semantics specification,\n  available at http://www.w3.org/TR/owl2-rdf-based-semantics/.\n  Please note that those tables do not include the different annotations\n  (labels, comments and rdfs:isDefinedBy links) used in this file.\n  Also note that the descriptions provided in this ontology do not\n  provide a complete and correct formal description of either the syntax\n  or the semantics of the introduced terms (please see the OWL 2\n  recommendations for the complete and normative specifications).\n  Furthermore, the information provided by this ontology may be\n  misleading if not used with care. This ontology SHOULD NOT be imported\n  into OWL ontologies. Importing this file into an OWL 2 DL ontology\n  will cause it to become an OWL 2 Full ontology and may have other,\n  unexpected, consequences.\n   "
+  "This ontology partially describes the built-in classes and  properties that together form the basis of the RDF/XML syntax of OWL 2.  The content of this ontology is based on Tables 6.1 and 6.2  in Section 6.4 of the OWL 2 RDF-Based Semantics specification,  available at http://www.w3.org/TR/owl2-rdf-based-semantics/.  Please note that those tables do not include the different annotations  (labels, comments and rdfs:isDefinedBy links) used in this file.  Also note that the descriptions provided in this ontology do not  provide a complete and correct formal description of either the syntax  or the semantics of the introduced terms (please see the OWL 2  recommendations for the complete and normative specifications).  Furthermore, the information provided by this ontology may be  misleading if not used with care. This ontology SHOULD NOT be imported  into OWL ontologies. Importing this file into an OWL 2 DL ontology  will cause it to become an OWL 2 Full ontology and may have other,  unexpected, consequences."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/owl.ttl",
-   :dcterms/title "The OWL 2 Schema vocabulary (OWL 2)",
    :owl/imports #:rdf{:uri "http://www.w3.org/2000/01/rdf-schema#"},
    :owl/versionIRI #:rdf{:uri "http://www.w3.org/2002/07/owl"},
    :owl/versionInfo "$Date: 2009/11/15 10:54:12 $",
@@ -82,7 +81,7 @@
    :rdfs/label       "Axiom",
    :rdfs/subClassOf  :rdfs/Resource})
 
-(def ClassClass
+(def T
   "The class of OWL classes."
   {:rdf/about        :owl/Class,
    :rdf/type         :rdfs/Class,

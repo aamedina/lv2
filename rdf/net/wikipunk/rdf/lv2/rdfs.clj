@@ -1,8 +1,7 @@
 (ns net.wikipunk.rdf.lv2.rdfs
-  "http://www.w3.org/2000/01/rdf-schema#"
+  "The RDF Schema vocabulary (RDFS)"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/rdfs.ttl",
-   :dcterms/title "The RDF Schema vocabulary (RDFS)",
    :rdf/about #:rdf{:uri "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "owl"     "http://www.w3.org/2002/07/owl#",
@@ -14,7 +13,7 @@
    :vann/preferredNamespaceUri "http://www.w3.org/2000/01/rdf-schema#"}
   (:refer-clojure :exclude [comment range]))
 
-(def ClassClass
+(def T
   "The class of classes."
   {:rdf/about        :rdfs/Class,
    :rdf/type         :rdfs/Class,
