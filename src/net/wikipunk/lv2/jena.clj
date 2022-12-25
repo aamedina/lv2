@@ -185,9 +185,6 @@
                   (update-vals (group-by :rdf/about (parse seeAlso)) first))
         project (when seeAlso
                   (get seeAlso (:rdf/about md)))
-        ;; index' (reduce (fn [index [k v]]
-        ;;                  (update index k merge v))
-        ;;                index' (dissoc seeAlso (:rdf/about md)))
         index' (reduce-kv (fn [index k v]
                             (update index k merge v))
                           index' (dissoc seeAlso (:rdf/about md)))
