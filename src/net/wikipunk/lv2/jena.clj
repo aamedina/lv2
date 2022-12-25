@@ -1,4 +1,4 @@
-(ns net.wikipunk.jena
+(ns net.wikipunk.lv2.jena
   "Apache Jena"
   (:require
    [arachne.aristotle.registry :as reg]
