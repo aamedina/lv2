@@ -9,6 +9,7 @@
                        "units" "http://lv2plug.in/ns/extensions/units#",
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Units",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.meta.ttl"},

@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.dman
-  "Support for dynamic manifest data generation."
+  "http://lv2plug.in/ns/ext/dynmanifest#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.ttl",
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/dynmanifest"},
@@ -10,6 +10,7 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Dyn Manifest",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/dynmanifest.lv2/dynmanifest.meta.ttl"},

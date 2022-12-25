@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.time
-  "A vocabulary for describing musical time."
+  "http://lv2plug.in/ns/ext/time#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/time.lv2/time.ttl",
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/time"},
@@ -9,6 +9,7 @@
                        "time" "http://lv2plug.in/ns/ext/time#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Time",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/time.lv2/time.meta.ttl"},

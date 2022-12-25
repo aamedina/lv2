@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.atom
-  "A generic value container and several data types."
+  "http://lv2plug.in/ns/ext/atom#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.ttl",
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/extensions/units"}
@@ -15,6 +15,7 @@
                        "units" "http://lv2plug.in/ns/extensions/units#",
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Atom",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/atom.lv2/atom.meta.ttl"},

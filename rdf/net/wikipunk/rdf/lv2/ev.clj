@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.ev
-  "A port-based real-time generic event interface."
+  "http://lv2plug.in/ns/ext/event#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.ttl",
    :owl/deprecated true,
@@ -11,6 +11,7 @@
                        "rdf"  "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Event",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/event.lv2/event.meta.ttl"},

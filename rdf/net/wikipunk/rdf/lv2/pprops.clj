@@ -11,6 +11,7 @@
                        "rdfs"   "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"    "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Port Properties",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/port-props.lv2/port-props.meta.ttl"},

@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.urid
-  "Features for mapping URIs to and from integers."
+  "http://lv2plug.in/ns/ext/urid#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/urid.lv2/urid.ttl",
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
@@ -9,6 +9,7 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "urid" "http://lv2plug.in/ns/ext/urid#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 URID",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/urid.lv2/urid.meta.ttl"},

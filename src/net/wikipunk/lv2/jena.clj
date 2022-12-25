@@ -134,8 +134,8 @@
           ns-prefix-map              (dissoc (into (if (and preferredNamespacePrefix preferredNamespaceUri)
                                                      {preferredNamespacePrefix preferredNamespaceUri}
                                                      {})
-                                      (.getNsPrefixMap (.getPrefixMapping g)))
-                                "")]
+                                                   (.getNsPrefixMap (.getPrefixMapping g)))
+                                             "")]
       (reg/with ns-prefix-map
                 (into (with-meta [] (assoc md :rdf/ns-prefix-map ns-prefix-map))
                       (map (fn [[subject triples]]
@@ -156,84 +156,91 @@
   "Walks the parsed RDF model and replaces references to blank nodes
   with their data. Also unrolls lists."
   [model]
-  (let [index (-> (group-by :rdf/about model)
-                  (update-vals first)
-                  (update-vals #(dissoc % :rdf/about)))
-        index' (walk/prewalk (fn [form]
-                               (if-some [node (:rdf/blank form)]
-                                 (get index form)
-                                 form))
-                             index)
-        md (reduce (fn [md [uri m]]
-                     (merge (update md :rdf/about conj uri) m))
-                   (assoc (meta model) :rdf/about [])
-                   (filter (comp :rdf/uri key) index'))
-        md (update md :rdf/about (fn [about]
-                                   (if (= (count about) 1)
-                                     (first about)
-                                     about)))
+  (let [index      (-> (group-by :rdf/about model)
+                       (update-vals first)
+                       (update-vals #(dissoc % :rdf/about)))
+        index'     (->> (walk/prewalk (fn [form]
+                                        (if-some [node (:rdf/blank form)]
+                                          (get index form)
+                                          form))
+                                      index)
+                        (walk/postwalk (fn [form]
+                                         (if (and (keyword? form) (= (namespace form) "dc"))
+                                           ;; dcterms is a superset of dc(11)
+                                           ;; https://www.dublincore.org/specifications/dublin-core/dces/
+                                           (keyword "dcterms" (name form))
+                                           form))))        
+        ontologies      (walk/prewalk (fn [form]
+                                        (if-some [node (:rdf/blank form)]
+                                          (get index form)
+                                          form))
+                                      (get (group-by :rdf/type model) :owl/Ontology))
+        md         (walk/prewalk (fn [form]
+                                   (if (and (keyword? form) (= (namespace form) "dc"))
+                                     (keyword "dcterms" (name form))
+                                     form))
+                                 (reduce merge (meta model) ontologies))
         exclusions (->> (keys (filter (comp qualified-keyword? key) index'))
                         (map name)
                         (filter #(var? (ns-resolve 'clojure.core (symbol %))))
                         (map symbol)
-                        (into []))]
-    (->> index'
-         (filter (comp qualified-keyword? key))
-         (sort-by key)
-         (map (fn [form] (walk/postwalk (fn [form]
-                                          (cond
-                                            (identical? (:rdf/rest form) :rdf/nil)
-                                            [(:rdf/first form)]
+                        (into []))
+        forms      (->> index'
+                   (filter (comp qualified-keyword? key))
+                   (sort-by key)
+                   (map (fn [form] (walk/postwalk (fn [form]
+                                                    (cond
+                                                      (identical? (:rdf/rest form) :rdf/nil)
+                                                      [(:rdf/first form)]
 
-                                            (and (:rdf/first form) (:rdf/rest form))
-                                            (into [(:rdf/first form)] (:rdf/rest form))
+                                                      (and (:rdf/first form) (:rdf/rest form))
+                                                      (into [(:rdf/first form)] (:rdf/rest form))
 
-                                            :else form))
-                                        form)))
-         (map (fn [[k v]]
-                (let [sym (symbol (name k))
-                      sym (cond
-                            (= (name sym) "Class")
-                            'T
-                            
-                            (get clojure.lang.RT/DEFAULT_IMPORTS sym)
-                            (symbol (str sym "Class"))
+                                                      :else form))
+                                                  form)))
+                   (map (fn [[k v]]
+                          (let [sym (symbol (name k))
+                                sym (cond
+                                      (= (name sym) "Class")
+                                      'T
+                                      
+                                      (get clojure.lang.RT/DEFAULT_IMPORTS sym)
+                                      (symbol (str sym "Class"))
 
-                            (= (name sym) "nil")
-                            'null
-                            
-                            :else sym)
-                      docstring (:rdfs/comment v)
-                      docstring (if (coll? docstring)
-                                  (first (filter string? docstring))
-                                  docstring)
-                      docstring (when docstring
-                                  (str/trim (str/escape docstring {\tab "" \newline ""})))
-                      v (assoc v :rdf/about k)]
-                  (if docstring
-                    (list 'def sym docstring (dissoc v :rdfs/comment))
-                    (list 'def sym v)))))
-         (map (fn [form] (walk/postwalk (fn [form]
-                                          (if (bytes? form)
-                                            (into (vector-of :byte) form)
-                                            form))
-                                        form)))
-         (cons
-           `(~'ns ~(symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
-             ~(let [docstring (or (:rdfs/comment md)
-                                  (:dcterms/abstract md)
-                                  (:dcterms/description md)
-                                  (:dcterms/title md)
-                                  (:rdfs/label md)
-                                  (:doc md))
-                    docstring (if (coll? docstring)
-                                (first (filter string? docstring))
-                                docstring)
-                    docstring (str/trim (str/escape docstring {\tab "" \newline ""}))]
-                docstring)
-             ~(dissoc md :doc :rdfs/comment :dcterms/abstract :dcterms/description :dcterms/title :rdfs/label)
-             ~@(when (seq exclusions)
-                 [(list :refer-clojure :exclude exclusions)]))))))
+                                      (= (name sym) "nil")
+                                      'null
+                                      
+                                      :else sym)
+                                docstring (:rdfs/comment v)
+                                docstring (if (coll? docstring)
+                                            (first (filter string? docstring))
+                                            docstring)
+                                docstring (when docstring
+                                            (str/replace docstring #"\s" " "))
+                                v         (assoc v :rdf/about k)]
+                            (if docstring
+                              (list 'def sym docstring (dissoc v :rdfs/comment))
+                              (list 'def sym v)))))
+                   (map (fn [form] (walk/postwalk (fn [form]
+                                                    (if (bytes? form)
+                                                      (into (vector-of :byte) form)
+                                                      form))
+                                                  form))))]
+    (cons `(~'ns ~(symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
+            ~(let [docstring (or (:dcterms/abstract md)
+                                 (:dcterms/title md)
+                                 (:doc md)
+                                 (:vann/preferredNamespaceUri md)
+                                 "")
+                   docstring (if (and (coll? docstring) (seq docstring))
+                               (first (filter string? docstring))
+                               docstring)
+                   docstring (str/trim (str/replace docstring #"\s" " "))]
+               docstring)
+            ~(dissoc md :doc :rdfs/comment)
+            ~@(when (seq exclusions)
+                [(list :refer-clojure :exclude exclusions)]))
+          forms)))
 
 (defn parse-and-spit-namespaces
   "Crawls namespaces and spits resources."
@@ -260,12 +267,12 @@
   com/Lifecycle
   (start [this]
     (let [vocab (->> (all-ns)
-                      (filter (comp :rdf/about meta))
-                      (map ns-publics)
-                      (mapcat vals)
-                      (map deref)
-                      (filter map?)
-                      (filter :rdf/about)) 
+                     (filter (comp :rdf/about meta))
+                     (map ns-publics)
+                     (mapcat vals)
+                     (map deref)
+                     (filter map?)
+                     (filter :rdf/about)) 
           types (transduce
                   (comp
                     (filter :rdf/type)

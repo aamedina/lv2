@@ -1,8 +1,9 @@
 (ns net.wikipunk.rdf.lv2.dcterms
-  "This version of the DCMI Terms vocabulary has been heavily trimmed for LV2."
+  "DCMI Metadata Terms"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/dcterms.ttl",
    :dcterms/modified "2010-10-11",
+   :dcterms/title "DCMI Metadata Terms",
    :rdf/about {:rdf/uri "http://purl.org/dc/terms/"},
    :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "owl"     "http://www.w3.org/2002/07/owl#",

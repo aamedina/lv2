@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.lv2
-  "An extensible open standard for audio plugins."
+  "http://lv2plug.in/ns/lv2core#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.ttl",
    :owl/imports {:rdf/uri "http://usefulinc.com/ns/doap#"},
@@ -11,6 +11,7 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.meta.ttl"},

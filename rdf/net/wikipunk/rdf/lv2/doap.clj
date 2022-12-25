@@ -1,7 +1,8 @@
 (ns net.wikipunk.rdf.lv2.doap
-  "The Description of a Project (DOAP) vocabulary, described using W3C RDF Schema and the Web Ontology Language."
+  "Description of a Project (DOAP) vocabulary"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/doap.ttl",
+   :dcterms/title "Description of a Project (DOAP) vocabulary",
    :foaf/maker {:foaf/mbox {:rdf/uri "mailto:edd@usefulinc.com"},
                 :foaf/name "Edd Dumbill",
                 :rdf/type  :foaf/Person},
@@ -359,7 +360,7 @@
    :rdfs/range       :foaf/Person})
 
 (def homepage
-  "URL of a project's homepage,associated with exactly one project."
+  "URL of a project's homepage,   associated with exactly one project."
   {:rdf/about          :doap/homepage,
    :rdf/type           [:owl/InverseFunctionalProperty :rdf/Property],
    :rdfs/domain        :doap/Project,
@@ -492,7 +493,7 @@
    :rdfs/subPropertyOf :rdfs/label})
 
 (def old-homepage
-  "URL of a project's past homepage,associated with exactly one project."
+  "URL of a project's past homepage,   associated with exactly one project."
   {:rdf/about          :doap/old-homepage,
    :rdf/type           [:owl/InverseFunctionalProperty :rdf/Property],
    :rdfs/domain        :doap/Project,

@@ -1,16 +1,20 @@
 (ns net.wikipunk.rdf.lv2.owl
-  "This ontology partially describes the built-in classes and  properties that together form the basis of the RDF/XML syntax of OWL 2.  The content of this ontology is based on Tables 6.1 and 6.2  in Section 6.4 of the OWL 2 RDF-Based Semantics specification,  available at http://www.w3.org/TR/owl2-rdf-based-semantics/.  Please note that those tables do not include the different annotations  (labels, comments and rdfs:isDefinedBy links) used in this file.  Also note that the descriptions provided in this ontology do not  provide a complete and correct formal description of either the syntax  or the semantics of the introduced terms (please see the OWL 2  recommendations for the complete and normative specifications).  Furthermore, the information provided by this ontology may be  misleading if not used with care. This ontology SHOULD NOT be imported  into OWL ontologies. Importing this file into an OWL 2 DL ontology  will cause it to become an OWL 2 Full ontology and may have other,  unexpected, consequences."
-  {:dcat/downloadURL
-   "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/owl.ttl",
-   :owl/imports {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
+  "The OWL 2 Schema vocabulary (OWL 2)"
+  {:dcat/downloadURL "http://www.w3.org/2002/07/owl",
+   :dcterms/title "The OWL 2 Schema vocabulary (OWL 2)",
+   :grddl/namespaceTransformation
+   {:rdf/uri "http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl"},
+   :owl/imports {:rdf/uri "http://www.w3.org/2000/01/rdf-schema"},
    :owl/versionIRI {:rdf/uri "http://www.w3.org/2002/07/owl"},
    :owl/versionInfo "$Date: 2009/11/15 10:54:12 $",
    :rdf/about {:rdf/uri "http://www.w3.org/2002/07/owl"},
-   :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
-                       "owl"     "http://www.w3.org/2002/07/owl#",
-                       "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                       "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-                       "xsd"     "http://www.w3.org/2001/XMLSchema#"},
+   :rdf/ns-prefix-map {"dc"    "http://purl.org/dc/elements/1.1/",
+                       "grddl" "http://www.w3.org/2003/g/data-view#",
+                       "owl"   "http://www.w3.org/2002/07/owl#",
+                       "rdf"   "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
+                       "xml"   "http://www.w3.org/XML/1998/namespace",
+                       "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfs/isDefinedBy [{:rdf/uri "http://www.w3.org/TR/owl2-syntax/"}
                       {:rdf/uri "http://www.w3.org/TR/owl2-mapping-to-rdf/"}
@@ -87,6 +91,14 @@
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
    :rdfs/label       "Class",
    :rdfs/subClassOf  :rdfs/Class})
+
+(def DataRange
+  "The class of OWL data ranges, which are special kinds of datatypes. Note: The use of the IRI owl:DataRange has been deprecated as of OWL 2. The IRI rdfs:Datatype SHOULD be used instead."
+  {:rdf/about        :owl/DataRange,
+   :rdf/type         :rdfs/Class,
+   :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
+   :rdfs/label       "DataRange",
+   :rdfs/subClassOf  :rdfs/Datatype})
 
 (def DatatypeProperty
   "The class of data properties."
@@ -229,7 +241,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "all values from",
+   :rdfs/label       "allValuesFrom",
    :rdfs/range       :rdfs/Class})
 
 (def annotatedProperty
@@ -238,7 +250,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Resource,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "annotated property",
+   :rdfs/label       "annotatedProperty",
    :rdfs/range       :rdfs/Resource})
 
 (def annotatedSource
@@ -247,7 +259,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Resource,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "annotated source",
+   :rdfs/label       "annotatedSource",
    :rdfs/range       :rdfs/Resource})
 
 (def annotatedTarget
@@ -256,7 +268,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Resource,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "annotated target",
+   :rdfs/label       "annotatedTarget",
    :rdfs/range       :rdfs/Resource})
 
 (def assertionProperty
@@ -265,7 +277,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/NegativePropertyAssertion,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "assertion property",
+   :rdfs/label       "assertionProperty",
    :rdfs/range       :rdf/Property})
 
 (def backwardCompatibleWith
@@ -274,7 +286,7 @@
    :rdf/type         [:owl/OntologyProperty :owl/AnnotationProperty],
    :rdfs/domain      :owl/Ontology,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "backward compatible with",
+   :rdfs/label       "backwardCompatibleWith",
    :rdfs/range       :owl/Ontology})
 
 (def bottomDataProperty
@@ -283,7 +295,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "bottom data property",
+   :rdfs/label       "bottomDataProperty",
    :rdfs/range       :rdfs/Literal})
 
 (def bottomObjectProperty
@@ -292,7 +304,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "bottom object property",
+   :rdfs/label       "bottomObjectProperty",
    :rdfs/range       :owl/Thing})
 
 (def cardinality
@@ -310,7 +322,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "complement of",
+   :rdfs/label       "complementOf",
    :rdfs/range       :owl/Class})
 
 (def datatypeComplementOf
@@ -319,7 +331,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Datatype,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "datatype complement of",
+   :rdfs/label       "datatypeComplementOf",
    :rdfs/range       :rdfs/Datatype})
 
 (def deprecated
@@ -337,7 +349,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "different from",
+   :rdfs/label       "differentFrom",
    :rdfs/range       :owl/Thing})
 
 (def disjointUnionOf
@@ -346,7 +358,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "disjoint union of",
+   :rdfs/label       "disjointUnionOf",
    :rdfs/range       :rdf/List})
 
 (def disjointWith
@@ -355,7 +367,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "disjoint with",
+   :rdfs/label       "disjointWith",
    :rdfs/range       :owl/Class})
 
 (def distinctMembers
@@ -364,7 +376,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/AllDifferent,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "distinct members",
+   :rdfs/label       "distinctMembers",
    :rdfs/range       :rdf/List})
 
 (def equivalentClass
@@ -373,7 +385,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "equivalent class",
+   :rdfs/label       "equivalentClass",
    :rdfs/range       :rdfs/Class})
 
 (def equivalentProperty
@@ -382,7 +394,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdf/Property,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "equivalent property",
+   :rdfs/label       "equivalentProperty",
    :rdfs/range       :rdf/Property})
 
 (def hasKey
@@ -391,7 +403,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "has key",
+   :rdfs/label       "hasKey",
    :rdfs/range       :rdf/List})
 
 (def hasSelf
@@ -400,7 +412,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "has self",
+   :rdfs/label       "hasSelf",
    :rdfs/range       :rdfs/Resource})
 
 (def hasValue
@@ -409,7 +421,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "has value",
+   :rdfs/label       "hasValue",
    :rdfs/range       :rdfs/Resource})
 
 (def imports
@@ -427,7 +439,7 @@
    :rdf/type         [:owl/OntologyProperty :owl/AnnotationProperty],
    :rdfs/domain      :owl/Ontology,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "incompatible with",
+   :rdfs/label       "incompatibleWith",
    :rdfs/range       :owl/Ontology})
 
 (def intersectionOf
@@ -436,7 +448,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "intersection of",
+   :rdfs/label       "intersectionOf",
    :rdfs/range       :rdf/List})
 
 (def inverseOf
@@ -445,7 +457,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/ObjectProperty,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "inverse of",
+   :rdfs/label       "inverseOf",
    :rdfs/range       :owl/ObjectProperty})
 
 (def maxCardinality
@@ -454,7 +466,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "max cardinality",
+   :rdfs/label       "maxCardinality",
    :rdfs/range       :xsd/nonNegativeInteger})
 
 (def maxQualifiedCardinality
@@ -463,7 +475,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "max qualified cardinality",
+   :rdfs/label       "maxQualifiedCardinality",
    :rdfs/range       :xsd/nonNegativeInteger})
 
 (def members
@@ -481,7 +493,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "min cardinality",
+   :rdfs/label       "minCardinality",
    :rdfs/range       :xsd/nonNegativeInteger})
 
 (def minQualifiedCardinality
@@ -490,7 +502,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "min qualified cardinality",
+   :rdfs/label       "minQualifiedCardinality",
    :rdfs/range       :xsd/nonNegativeInteger})
 
 (def onClass
@@ -499,7 +511,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "on class",
+   :rdfs/label       "onClass",
    :rdfs/range       :owl/Class})
 
 (def onDataRange
@@ -508,7 +520,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "on data range",
+   :rdfs/label       "onDataRange",
    :rdfs/range       :rdfs/Datatype})
 
 (def onDatatype
@@ -517,7 +529,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Datatype,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "on datatype",
+   :rdfs/label       "onDatatype",
    :rdfs/range       :rdfs/Datatype})
 
 (def onProperties
@@ -526,7 +538,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "on properties",
+   :rdfs/label       "onProperties",
    :rdfs/range       :rdf/List})
 
 (def onProperty
@@ -535,7 +547,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "on property",
+   :rdfs/label       "onProperty",
    :rdfs/range       :rdf/Property})
 
 (def oneOf
@@ -544,7 +556,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "one of",
+   :rdfs/label       "oneOf",
    :rdfs/range       :rdf/List})
 
 (def priorVersion
@@ -553,7 +565,7 @@
    :rdf/type         [:owl/OntologyProperty :owl/AnnotationProperty],
    :rdfs/domain      :owl/Ontology,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "prior version",
+   :rdfs/label       "priorVersion",
    :rdfs/range       :owl/Ontology})
 
 (def propertyChainAxiom
@@ -562,7 +574,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/ObjectProperty,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "property chain axiom",
+   :rdfs/label       "propertyChainAxiom",
    :rdfs/range       :rdf/List})
 
 (def propertyDisjointWith
@@ -571,7 +583,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdf/Property,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "property disjoint with",
+   :rdfs/label       "propertyDisjointWith",
    :rdfs/range       :rdf/Property})
 
 (def qualifiedCardinality
@@ -580,7 +592,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "qualified cardinality",
+   :rdfs/label       "qualifiedCardinality",
    :rdfs/range       :xsd/nonNegativeInteger})
 
 (def sameAs
@@ -589,7 +601,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "same as",
+   :rdfs/label       "sameAs",
    :rdfs/range       :owl/Thing})
 
 (def someValuesFrom
@@ -598,7 +610,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/Restriction,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "some values from",
+   :rdfs/label       "someValuesFrom",
    :rdfs/range       :rdfs/Class})
 
 (def sourceIndividual
@@ -607,7 +619,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/NegativePropertyAssertion,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "source individual",
+   :rdfs/label       "sourceIndividual",
    :rdfs/range       :owl/Thing})
 
 (def targetIndividual
@@ -616,7 +628,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/NegativePropertyAssertion,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "target individual",
+   :rdfs/label       "targetIndividual",
    :rdfs/range       :owl/Thing})
 
 (def targetValue
@@ -625,7 +637,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :owl/NegativePropertyAssertion,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "target value",
+   :rdfs/label       "targetValue",
    :rdfs/range       :rdfs/Literal})
 
 (def topDataProperty
@@ -634,7 +646,7 @@
    :rdf/type         :owl/DatatypeProperty,
    :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "top data property",
+   :rdfs/label       "topDataProperty",
    :rdfs/range       :rdfs/Literal})
 
 (def topObjectProperty
@@ -643,7 +655,7 @@
    :rdf/type         :owl/ObjectProperty,
    :rdfs/domain      :owl/Thing,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "top object property",
+   :rdfs/label       "topObjectProperty",
    :rdfs/range       :owl/Thing})
 
 (def unionOf
@@ -652,7 +664,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "union of",
+   :rdfs/label       "unionOf",
    :rdfs/range       :rdf/List})
 
 (def versionIRI
@@ -661,7 +673,7 @@
    :rdf/type         :owl/OntologyProperty,
    :rdfs/domain      :owl/Ontology,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "version IRI",
+   :rdfs/label       "versionIRI",
    :rdfs/range       :owl/Ontology})
 
 (def versionInfo
@@ -670,7 +682,7 @@
    :rdf/type         :owl/AnnotationProperty,
    :rdfs/domain      :rdfs/Resource,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "version info",
+   :rdfs/label       "versionInfo",
    :rdfs/range       :rdfs/Resource})
 
 (def withRestrictions
@@ -679,5 +691,5 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Datatype,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/07/owl#"},
-   :rdfs/label       "with restrictions",
+   :rdfs/label       "withRestrictions",
    :rdfs/range       :rdf/List})

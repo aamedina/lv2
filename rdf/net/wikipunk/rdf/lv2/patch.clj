@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.patch
-  "A protocol for accessing and manipulating properties."
+  "http://lv2plug.in/ns/ext/patch#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/patch.lv2/patch.ttl",
    :rdf/about {:rdf/uri "http://lv2plug.in/ns/ext/patch"},
@@ -10,6 +10,7 @@
                        "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Patch",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/patch.lv2/patch.meta.ttl"},

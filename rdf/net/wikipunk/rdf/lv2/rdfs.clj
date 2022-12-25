@@ -1,14 +1,14 @@
 (ns net.wikipunk.rdf.lv2.rdfs
   "The RDF Schema vocabulary (RDFS)"
-  {:dcat/downloadURL
-   "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/rdfs.ttl",
-   :rdf/about {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
-   :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
-                       "owl"     "http://www.w3.org/2002/07/owl#",
-                       "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                       "rdfs"    "http://www.w3.org/2000/01/rdf-schema#"},
-   :rdf/type :owl/Ontology,
-   :rdfs/seeAlso {:rdf/uri "http://www.w3.org/2000/01/rdf-schema-more"},
+  {:dcat/downloadURL  "http://www.w3.org/2000/01/rdf-schema#",
+   :dcterms/title     "The RDF Schema vocabulary (RDFS)",
+   :rdf/about         {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
+   :rdf/ns-prefix-map {"dc"   "http://purl.org/dc/elements/1.1/",
+                       "owl"  "http://www.w3.org/2002/07/owl#",
+                       "rdf"  "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "rdfs" "http://www.w3.org/2000/01/rdf-schema#"},
+   :rdf/type          :owl/Ontology,
+   :rdfs/seeAlso      {:rdf/uri "http://www.w3.org/2000/01/rdf-schema-more"},
    :vann/preferredNamespacePrefix "rdfs",
    :vann/preferredNamespaceUri "http://www.w3.org/2000/01/rdf-schema#"}
   (:refer-clojure :exclude [comment range]))
@@ -30,11 +30,11 @@
    :rdfs/subClassOf  :rdfs/Resource})
 
 (def ContainerMembershipProperty
-  "The class of container membership properties, rdf:_1, rdf:_2, ..., all of which are sub-properties of 'member'."
+  "The class of container membership properties, rdf:_1, rdf:_2, ...,                     all of which are sub-properties of 'member'."
   {:rdf/about        :rdfs/ContainerMembershipProperty,
    :rdf/type         :rdfs/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
-   :rdfs/label       "Container Membership Property",
+   :rdfs/label       "ContainerMembershipProperty",
    :rdfs/subClassOf  :rdf/Property})
 
 (def Datatype
@@ -79,12 +79,12 @@
    :rdfs/range       :rdfs/Class})
 
 (def isDefinedBy
-  "The definition of the subject resource."
+  "The defininition of the subject resource."
   {:rdf/about          :rdfs/isDefinedBy,
    :rdf/type           :rdf/Property,
    :rdfs/domain        :rdfs/Resource,
    :rdfs/isDefinedBy   {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
-   :rdfs/label         "is defined by",
+   :rdfs/label         "isDefinedBy",
    :rdfs/range         :rdfs/Resource,
    :rdfs/subPropertyOf :rdfs/seeAlso})
 
@@ -121,7 +121,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Resource,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
-   :rdfs/label       "see also",
+   :rdfs/label       "seeAlso",
    :rdfs/range       :rdfs/Resource})
 
 (def subClassOf
@@ -130,7 +130,7 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdfs/Class,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
-   :rdfs/label       "sub-class of",
+   :rdfs/label       "subClassOf",
    :rdfs/range       :rdfs/Class})
 
 (def subPropertyOf
@@ -139,5 +139,5 @@
    :rdf/type         :rdf/Property,
    :rdfs/domain      :rdf/Property,
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2000/01/rdf-schema#"},
-   :rdfs/label       "sub-property of",
+   :rdfs/label       "subPropertyOf",
    :rdfs/range       :rdf/Property})

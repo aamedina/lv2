@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.state
-  "An interface for LV2 plugins to save and restore state."
+  "http://lv2plug.in/ns/ext/state#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.ttl",
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
@@ -10,6 +10,7 @@
                        "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
                        "state" "http://lv2plug.in/ns/ext/state#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 State",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/state.lv2/state.meta.ttl"},

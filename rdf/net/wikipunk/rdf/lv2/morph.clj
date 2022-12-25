@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.morph
-  "Ports that can dynamically change type."
+  "http://lv2plug.in/ns/ext/morph#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.ttl",
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
@@ -14,6 +14,7 @@
                        "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Morph",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.meta.ttl"},

@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.ui
-  "User interfaces for LV2 plugins."
+  "http://lv2plug.in/ns/ext/ui#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.ttl",
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/ext/options"}
@@ -13,6 +13,7 @@
                        "ui"   "http://lv2plug.in/ns/extensions/ui#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 UI",
    :rdfs/seeAlso
    {:rdf/uri "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.meta.ttl"},
    :vann/preferredNamespacePrefix "ui",

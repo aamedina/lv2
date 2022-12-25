@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.param
-  "Common parameters for audio processing."
+  "http://lv2plug.in/ns/ext/parameters#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.ttl",
    :owl/imports [{:rdf/uri "http://lv2plug.in/ns/lv2core"}
@@ -15,6 +15,7 @@
                        "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
                        "units" "http://lv2plug.in/ns/extensions/units#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Parameters",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.meta.ttl"},
@@ -40,16 +41,16 @@
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
-  {:pg/element      [{:lv2/designation :param/release,
-                      :lv2/index       5}
-                     {:lv2/designation :param/sustain,
+  {:pg/element      [{:lv2/designation :param/sustain,
                       :lv2/index       4}
-                     {:lv2/designation :param/delay,
-                      :lv2/index       0}
                      {:lv2/designation :param/attack,
                       :lv2/index       1}
+                     {:lv2/designation :param/release,
+                      :lv2/index       5}
                      {:lv2/designation :param/decay,
                       :lv2/index       3}
+                     {:lv2/designation :param/delay,
+                      :lv2/index       0}
                      {:lv2/designation :param/hold,
                       :lv2/index       2}],
    :rdf/about       :param/EnvelopeControls,

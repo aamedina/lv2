@@ -32,6 +32,7 @@
    ;; Core RDF models
    [net.wikipunk.rdf.lv2.owl :as owl]
    [net.wikipunk.rdf.lv2.rdf :as rdf]
+   [net.wikipunk.rdf.lv2.rdfa :as rdfa]
    [net.wikipunk.rdf.lv2.rdfs :as rdfs]
    [net.wikipunk.rdf.lv2.doap :as doap]
    [net.wikipunk.rdf.lv2.foaf :as foaf]

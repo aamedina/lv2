@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.opts
-  "Runtime options for LV2 plugins and UIs."
+  "http://lv2plug.in/ns/ext/options#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.ttl",
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
@@ -11,6 +11,7 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Options",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/options.lv2/options.meta.ttl"},

@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.log
-  "A feature for writing log messages."
+  "http://lv2plug.in/ns/ext/log#"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/log.lv2/log.ttl",
    :owl/imports {:rdf/uri "http://lv2plug.in/ns/lv2core"},
@@ -11,6 +11,7 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdfs/label "LV2 Log",
    :rdfs/seeAlso
    {:rdf/uri
     "https://gitlab.com/lv2/lv2/-/raw/master/lv2/log.lv2/log.meta.ttl"},
