@@ -13,7 +13,8 @@
                         net.wikipunk.rdfa/doap
                         net.wikipunk.rdfa/schema
                         net.wikipunk.rdfa/vann
-                        net.wikipunk.rdfa/vs]
+                        net.wikipunk.rdfa/vs
+                        net.wikipunk.rdfa/prov]
          :lv2          [net.wikipunk.lv2
                         net.wikipunk.lv2/atom
                         net.wikipunk.lv2/buf-size

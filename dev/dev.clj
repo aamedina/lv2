@@ -42,6 +42,7 @@
    [net.wikipunk.lv2.rdf.jsonschema :as jsonschema]
    [net.wikipunk.lv2.rdf.dcam :as dcam]
    [net.wikipunk.lv2.rdf.dcterms :as dcterms]
+   [net.wikipunk.lv2.rdf.prov :as prov]
    [net.wikipunk.lv2.rdf.schema :as schema]
    [net.wikipunk.lv2.rdf.skos :as skos]
    [net.wikipunk.lv2.rdf.xsd :as xsd]

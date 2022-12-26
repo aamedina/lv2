@@ -177,80 +177,82 @@
                                            ;; https://www.dublincore.org/specifications/dublin-core/dces/
                                            (keyword "dcterms" (name form))
                                            form))))        
-        ontologies      (walk/prewalk (fn [form]
-                                        (if-some [node (:rdf/blank form)]
-                                          (get index form)
-                                          form))
-                                      (or (get (group-by :rdf/type model) :owl/Ontology)
-                                          (get (group-by :rdf/type model) :lv2/Feature)))
+        ontologies (walk/prewalk (fn [form]
+                                   (if-some [node (:rdf/blank form)]
+                                     (get index form)
+                                     form))
+                                 (or (get (group-by :rdf/type model) :owl/Ontology)
+                                     (get (group-by :rdf/type model) :lv2/Feature)))
         md         (walk/prewalk (fn [form]
                                    (if (and (keyword? form) (or (= (namespace form) "dc")
                                                                 (= (namespace form) "dct")))
                                      (keyword "dcterms" (name form))
                                      form))
                                  (reduce merge (meta model) ontologies))
-        seeAlso (:rdfs/seeAlso md)
-        seeAlso (when (and seeAlso (str/ends-with? seeAlso "ttl"))
-                  (update-vals (group-by :rdf/about (parse seeAlso)) first))
-        project (when seeAlso
-                  (get seeAlso (:rdf/about md)))
-        index' (reduce-kv (fn [index k v]
-                            (update index k merge v))
-                          index' (dissoc seeAlso (:rdf/about md)))
-        md (cond-> md
-              project (assoc :lv2/project project))
+        seeAlso    (:rdfs/seeAlso md)
+        seeAlso    (when (and seeAlso (str/ends-with? seeAlso "ttl"))
+                     (update-vals (group-by :rdf/about (parse seeAlso)) first))
+        project    (when seeAlso
+                     (get seeAlso (:rdf/about md)))
+        index'     (reduce-kv (fn [index k v]
+                                (update index k merge v))
+                              index' (dissoc seeAlso (:rdf/about md)))
+        md         (cond-> md
+                     project (assoc :lv2/project project))
         exclusions (->> (keys (filter (comp qualified-keyword? key) index'))
                         (map name)
                         (filter #(var? (ns-resolve 'clojure.core (symbol %))))
                         (map symbol)
                         (into []))
         forms      (->> index'
-                   (filter (comp qualified-keyword? key))
-                   (sort-by key)
-                   (map (fn [form] (walk/postwalk (fn [form]
-                                                    (cond
-                                                      (identical? (:rdf/rest form) :rdf/nil)
-                                                      [(:rdf/first form)]
+                        (filter (comp qualified-keyword? key))
+                        (filter (comp (partial = (:rdfa/prefix md)) namespace key))
+                        (sort-by key)
+                        (map (fn [form] (walk/postwalk (fn [form]
+                                                         (cond
+                                                           (identical? (:rdf/rest form) :rdf/nil)
+                                                           [(:rdf/first form)]
 
-                                                      (and (:rdf/first form) (:rdf/rest form))
-                                                      (into [(:rdf/first form)] (:rdf/rest form))
+                                                           (and (:rdf/first form) (:rdf/rest form))
+                                                           (into [(:rdf/first form)] (:rdf/rest form))
 
-                                                      :else form))
-                                                  form)))
-                   (map (fn [[k v]]
-                          (let [sym (symbol (name k))
-                                sym (cond
-                                      (= (name sym) "Class")
-                                      'T
-                                      
-                                      (get clojure.lang.RT/DEFAULT_IMPORTS sym)
-                                      (symbol (str sym "Class"))
+                                                           :else form))
+                                                       form)))
+                        (map (fn [[k v]]
+                               (let [sym (symbol (name k))
+                                     sym (cond
+                                           (= (name sym) "Class")
+                                           'T
+                                           
+                                           (get clojure.lang.RT/DEFAULT_IMPORTS sym)
+                                           (symbol (str sym "Class"))
 
-                                      (= (name sym) "nil")
-                                      'null
-                                      
-                                      :else sym)
-                                docstring (or (some-> (:lv2/documentation v))
-                                              (:dcterms/description v)
-                                              (:skos/definition v)
-                                              (:rdfs/comment v))
-                                docstring (if (vector? docstring)
-                                            (first (filter string? docstring))
-                                            docstring)
-                                docstring (if (map? docstring)
-                                            (:rdf/value docstring "")
-                                            docstring)
-                                docstring (when docstring
-                                            (str/trim (str/replace docstring #"\s" " ")))
-                                v         (assoc v :rdf/about k)]
-                            (if docstring
-                              (list 'def sym docstring (dissoc v :lv2/documentation))
-                              (list 'def sym v)))))
-                   (map (fn [form] (walk/postwalk (fn [form]
-                                                    (if (bytes? form)
-                                                      (into (vector-of :byte) form)
-                                                      form))
-                                                  form))))]
+                                           (= (name sym) "nil")
+                                           'null
+                                           
+                                           :else sym)
+                                     docstring (or (some-> (:lv2/documentation v))
+                                                   (:dcterms/description v)
+                                                   (:skos/definition v)
+                                                   (:prov/definition v)
+                                                   (:rdfs/comment v))
+                                     docstring (if (vector? docstring)
+                                                 (first (filter string? docstring))
+                                                 docstring)
+                                     docstring (if (map? docstring)
+                                                 (:rdf/value docstring "")
+                                                 docstring)
+                                     docstring (when docstring
+                                                 (str/trim (str/replace docstring #"\s" " ")))
+                                     v         (assoc v :rdf/about k)]
+                                 (if docstring
+                                   (list 'def sym docstring (dissoc v :lv2/documentation))
+                                   (list 'def sym v)))))
+                        (map (fn [form] (walk/postwalk (fn [form]
+                                                         (if (bytes? form)
+                                                           (into (vector-of :byte) form)
+                                                           form))
+                                                       form))))]
     (cons `(~'ns ~(symbol (str "net.wikipunk.lv2.rdf." (:rdfa/prefix md)))
             ~(let [docstring (or (get-in md [:lv2/project :lv2/documentation])
                                  (:dcterms/abstract md)
@@ -281,22 +283,22 @@
   "Crawls namespaces and spits resources."
   ([]
    (->> (all-ns)
-       (filter (comp :dcat/downloadURL meta))
-       (map (fn [ns] [(ns-name ns) (meta ns)]))
-       (pmap (fn [[ns-name md]]
-               (spit (str "rdf/net/wikipunk/lv2/rdf/" (:rdfa/prefix md) ".clj")
-                     (binding [*print-namespace-maps* nil]
-                       (zprint/zprint-file-str  (str/join \newline (unroll (parse md)))
-                                                ""
-                                                {:parse  {:interpose "\n\n"}
-                                                 :map    {:justify?      true
-                                                          :nl-separator? false
-                                                          :hang?         true
-                                                          :indent        0
-                                                          :sort-in-code? true
-                                                          :force-nl?     true}
-                                                 :vector {:wrap? false}})))))
-       (dorun)))
+        (filter (comp :dcat/downloadURL meta))
+        (map (fn [ns] [(ns-name ns) (meta ns)]))
+        (pmap (fn [[ns-name md]]
+                (spit (str "rdf/net/wikipunk/lv2/rdf/" (:rdfa/prefix md) ".clj")
+                      (binding [*print-namespace-maps* nil]
+                        (zprint/zprint-file-str  (str/join \newline (unroll (parse md)))
+                                                 ""
+                                                 {:parse  {:interpose "\n\n"}
+                                                  :map    {:justify?      true
+                                                           :nl-separator? false
+                                                           :hang?         true
+                                                           :indent        0
+                                                           :sort-in-code? true
+                                                           :force-nl?     true}
+                                                  :vector {:wrap? false}})))))
+        (dorun)))
   ([xs]
    (dorun
      (pmap (fn [x]
