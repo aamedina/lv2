@@ -51,6 +51,11 @@
    {:rdf/uri "http://www.w3.org/Submission/2008/SUBM-ccREL-20080501/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def cnt
+  {:rdfa/uri    "http://www.w3.org/2011/content#"
+   :rdfa/prefix "cnt"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def csvw
   "Metadata for Tabular Data"
   {:rdfa/uri         "http://www.w3.org/ns/csvw#",
