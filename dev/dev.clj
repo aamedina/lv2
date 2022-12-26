@@ -93,6 +93,7 @@
    [net.wikipunk.rdf.frbr :as frbr]
    [net.wikipunk.rdf.keys :as keys]
    [net.wikipunk.rdf.ore :as ore]
+   [net.wikipunk.rdf.pav :as pav]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]

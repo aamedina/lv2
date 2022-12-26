@@ -313,6 +313,12 @@
    {:rdf/uri "http://www.w3.org/TR/2009/REC-owl2-overview-20091027/"},
    :rdf/type    :rdfa/PrefixMapping})
 
+(def pav
+  {:dcat/downloadURL "https://pav-ontology.github.io/pav/pav.rdf"
+   :rdfa/uri         "http://purl.org/pav/"
+   :rdfa/prefix      "pav"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def prov
   "Provenance Vocabulary"
   {:rdfa/uri         "http://www.w3.org/ns/prov#",

@@ -91,6 +91,14 @@
               (or (str/blank? (namespace k)) (str/blank? (name k)))
               nil
 
+              (and (Character/isDigit (first (name k)))
+                   (= (last (name k)) \/))
+              nil
+
+              (and (Character/isDigit (first (name k)))
+                   (Character/isDigit (last (name k))))
+              nil
+
               ;; Since these are not readable wrap in CL-inspired || 
               (Character/isDigit (first (name k)))
               (keyword (namespace k) (str \| (name k) \|))
