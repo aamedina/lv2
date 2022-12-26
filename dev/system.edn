@@ -47,7 +47,8 @@
                           net.wikipunk.boot/adms
                           net.wikipunk.boot/exif
                           net.wikipunk.boot/acl
-                          net.wikipunk.boot/bibo]
+                          net.wikipunk.boot/bibo
+                          net.wikipunk.boot/csvw]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2

@@ -79,6 +79,7 @@
    [net.wikipunk.rdf.exif :as exif]
    [net.wikipunk.rdf.acl :as acl]
    [net.wikipunk.rdf.bibo :as bibo]
+   [net.wikipunk.rdf.csvw :as csvw]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
