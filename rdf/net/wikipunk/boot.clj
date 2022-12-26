@@ -257,7 +257,8 @@
 
 (def rev
   "RDF Review Vocabulary"
-  {:rdfa/uri         "http://purl.org/stuff/rev#",
+  {:dcat/downloadURL "https://raw.githubusercontent.com/iand/vocabdotorg/main/www/src/review/review.rdf"
+   :rdfa/uri         "http://purl.org/stuff/rev#",
    :rdfa/prefix      "rev",
    :rdfs/isDefinedBy {:rdf/uri "http://vocab.org/review/terms.html"},
    :rdf/type         :rdfa/PrefixMapping})

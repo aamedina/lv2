@@ -70,6 +70,7 @@
    [net.wikipunk.rdf.odrl :as odrl]
    [net.wikipunk.rdf.org :as org]
    [net.wikipunk.rdf.qb :as qb]
+   [net.wikipunk.rdf.rev :as rev]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]

@@ -131,7 +131,11 @@
                                        (.toGraph parser)
                                        (catch org.apache.jena.riot.RiotException ex
                                          ;; if an appropriate content-type cannot be inferred try Turtle
-                                         (.toGraph (doto parser (.lang Lang/TTL)))))
+                                         (try
+                                           (.toGraph (doto parser (.lang Lang/TTL)))
+                                           (catch org.apache.jena.riot.RiotException ex
+                                             ;; ...try RDF/XML?
+                                             (.toGraph (doto parser (.lang Lang/RDFXML)))))))
           ns-prefix-map              (dissoc (into (if (and prefix uri)
                                                      {prefix uri}
                                                      {})
