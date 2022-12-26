@@ -136,12 +136,13 @@
                                            (catch org.apache.jena.riot.RiotException ex
                                              ;; ...try RDF/XML?
                                              (.toGraph (doto parser (.lang Lang/RDFXML)))))))
-          ns-prefix-map              (dissoc (into (if (and prefix uri)
-                                                     {prefix uri}
-                                                     {})
-                                                   (.getNsPrefixMap (.getPrefixMapping g)))
-                                             ""
-                                             "ruleml")]
+          ns-prefix-map              (set/rename-keys (dissoc (into (if (and prefix uri)
+                                                                      {prefix uri}
+                                                                      {})
+                                                                    (.getNsPrefixMap (.getPrefixMapping g)))
+                                                              ""
+                                                              "ruleml")
+                                                      {"sdo" "schema"})]
       (reg/with ns-prefix-map
                 (into (with-meta [] (assoc md :rdf/ns-prefix-map ns-prefix-map))
                       (map (fn [[subject triples]]
@@ -195,7 +196,8 @@
                                      (get index form)
                                      form))
                                  (or (get (group-by :rdf/type model) :owl/Ontology)
-                                     (get (group-by :rdf/type model) :lv2/Feature)))
+                                     (get (group-by :rdf/type model) :lv2/Feature)
+                                     (get (group-by :rdf/type model) [:adms/SemanticAsset :owl/Ontology])))
         md         (walk/prewalk (fn [form]
                                    (if (and (keyword? form) (or (= (namespace form) "dc")
                                                                 (= (namespace form) "dct")))
