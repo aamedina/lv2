@@ -36,6 +36,12 @@
    :rdfa/prefix "bibo"
    :rdf/type    :rdfa/PrefixMapping})
 
+(def bio
+  {:dcat/downloadURL "https://vocab.org/bio/schema.rdf"
+   :rdfa/uri         "http://purl.org/vocab/bio/0.1/"
+   :rdfa/prefix      "bio"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def cc
   "ccREL"
   {:dcat/downloadURL "https://creativecommons.org/schema.rdf"
