@@ -461,6 +461,11 @@
                       "https://www.w3.org/TR/2017/REC-owl-time-20171019/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def rdfg
+  {:rdfa/uri    "http://www.w3.org/2004/03/trix/rdfg-1/"
+   :rdfa/prefix "rdfg"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def v
   "Google Rich Snippets' Vocabularies"
   {:rdfa/uri    "http://rdf.data-vocabulary.org/#",
@@ -479,6 +484,11 @@
 (def vs
   {:rdfa/uri    "http://www.w3.org/2003/06/sw-vocab-status/ns#"
    :rdfa/prefix "vs",
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def vaem
+  {:rdfa/uri    "http://www.linkedmodel.org/schema/vaem#"
+   :rdfa/prefix "vaem",
    :rdf/type    :rdfa/PrefixMapping})
 
 (def vann

@@ -96,6 +96,7 @@
    [net.wikipunk.rdf.pav :as pav]
    [net.wikipunk.rdf.spin :as spin]
    [net.wikipunk.rdf.svcs :as svcs]
+   [net.wikipunk.rdf.rdfg :as rdfg]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
