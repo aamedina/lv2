@@ -97,6 +97,12 @@
    :rdfs/isDefinedBy {:rdf/uri "https://www.w3.org/TR/vocab-duv/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def event
+  {:dcat/downloadURL "https://purl.org/NET/c4dm/event.owl"
+   :rdfa/uri         "http://purl.org/NET/c4dm/event.owl#"
+   :rdfa/prefix      "event"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def foaf
   "FOAF"
   {:dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/foaf.ttl"

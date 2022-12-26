@@ -37,6 +37,7 @@
    [net.wikipunk.rdf.rdfa :as rdfa]
    [net.wikipunk.rdf.rdfs :as rdfs]
    [net.wikipunk.rdf.doap :as doap]
+   [net.wikipunk.rdf.event :as event]
    [net.wikipunk.rdf.foaf :as foaf]
    [net.wikipunk.rdf.jsonld :as jsonld]
    [net.wikipunk.rdf.jsonschema :as jsonschema]
