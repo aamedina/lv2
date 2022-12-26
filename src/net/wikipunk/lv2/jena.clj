@@ -158,6 +158,8 @@
   (parse [s]
     (parse {:dcat/downloadURL s})))
 
+(def ^:dynamic *ns-prefix* "net.wikipunk.rdf.")
+
 (defn unroll
   "Walks the parsed RDF model and replaces references to blank nodes
   with their data. Also unrolls lists."
@@ -254,24 +256,27 @@
                                                            (into (vector-of :byte) form)
                                                            form))
                                                        form))))]
-    (cons `(~'ns ~(symbol (str "net.wikipunk.lv2.rdf." (:rdfa/prefix md)))
-            ~(let [docstring (or (get-in md [:lv2/project :lv2/documentation])
-                                 (:dcterms/abstract md)
-                                 (:dcterms/description md)
-                                 (:dcterms/title md)
-                                 (:rdfs/comment md)
-                                 (:rdfs/label md)
-                                 (:rdfa/uri md)
-                                 (:doc md)
-                                 "")
-                   docstring (if (vector? docstring)
-                               (first (filter string? docstring))
-                               docstring)
-                   docstring (if (map? docstring)
-                               (:rdf/value docstring "")
-                               docstring)
-                   docstring (str/trim (str/replace docstring #"\s" " "))]
-               docstring)
+    (cons `(~'ns ~(symbol (str *ns-prefix* (:rdfa/prefix md)))
+            ~@(let [docstring (or (get-in md [:lv2/project :lv2/documentation])
+                                  (:dcterms/abstract md)
+                                  (:dcterms/description md)
+                                  (:dcterms/title md)
+                                  (:rdfs/comment md)
+                                  (:rdfs/label md)
+                                  (:rdfa/uri md)
+                                  (:skos/historyNote md)
+                                  (:doc md)
+                                  "")
+                    docstring (if (vector? docstring)
+                                (first (filter string? docstring))
+                                docstring)
+                    docstring (if (map? docstring)
+                                (:rdf/value docstring "")
+                                docstring)
+                    docstring (when docstring
+                                (str/trim (str/replace docstring #"\s" " ")))]
+                (when docstring
+                  [docstring]))
             ~(dissoc (cond-> md
                        (:lv2/project md)
                        (update :lv2/project #(dissoc % :lv2/documentation)))
@@ -279,45 +284,6 @@
             ~@(when (seq exclusions)
                 [(list :refer-clojure :exclude exclusions)]))
           forms)))
-
-(defn parse-and-spit-namespaces
-  "Crawls namespaces and spits resources."
-  ([]
-   (->> (all-ns)
-        (filter (comp :dcat/downloadURL meta))
-        (map (fn [ns] [(ns-name ns) (meta ns)]))
-        (pmap (fn [[ns-name md]]
-                (spit (str "rdf/net/wikipunk/lv2/rdf/" (:rdfa/prefix md) ".clj")
-                      (binding [*print-namespace-maps* nil]
-                        (zprint/zprint-file-str  (str/join \newline (unroll (parse md)))
-                                                 ""
-                                                 {:parse  {:interpose "\n\n"}
-                                                  :map    {:justify?      true
-                                                           :nl-separator? false
-                                                           :hang?         true
-                                                           :indent        0
-                                                           :sort-in-code? true
-                                                           :force-nl?     true}
-                                                  :vector {:wrap? false}})))))
-        (dorun)))
-  ([xs]
-   (dorun
-     (pmap (fn [x]
-             (let [model (parse x)
-                   md    (meta model)]
-               (spit (str "rdf/net/wikipunk/lv2/rdf/" (:rdfa/prefix md) ".clj")
-                     (binding [*print-namespace-maps* nil]
-                       (zprint/zprint-file-str  (str/join \newline (unroll model))
-                                                ""
-                                                {:parse  {:interpose "\n\n"}
-                                                 :map    {:justify?      true
-                                                          :nl-separator? false
-                                                          :hang?         true
-                                                          :indent        0
-                                                          :sort-in-code? true
-                                                          :force-nl?     true}
-                                                 :vector {:wrap? false}})))))
-           xs))))
 
 (defrecord Vocabulary [types boot lv2]
   com/Lifecycle
@@ -352,3 +318,39 @@
       (assoc this :types (ref types))))
   (stop [this]
     this))
+
+(defprotocol NamespaceSpitter
+  (emit [x path]))
+
+(extend-protocol NamespaceSpitter
+  clojure.lang.Sequential
+  (emit [xs path]
+    (dorun (pmap #(emit % path) xs)))
+  
+  Object
+  (emit [x path]
+    (let [model (parse x)
+          md    (meta model)]
+      (spit (str path (namespace-munge (:rdfa/prefix md)) ".clj")
+            (binding [*print-namespace-maps* nil]
+              (zprint/zprint-file-str  (str/join \newline (unroll model))
+                                       ""
+                                       {:parse  {:interpose "\n\n"}
+                                        :map    {:justify?      true
+                                                 :nl-separator? false
+                                                 :hang?         true
+                                                 :indent        0
+                                                 :sort-in-code? true
+                                                 :force-nl?     true}
+                                        :vector {:wrap? false}})))))
+
+  Vocabulary
+  (emit [component _]
+    (let [{:keys [boot boot-ns-prefix boot-target
+                  lv2 lv2-ns-prefix lv2-target]} component]
+      (binding [*ns-prefix* boot-ns-prefix]
+        (emit boot boot-target))
+      (binding [*ns-prefix* lv2-ns-prefix]
+        (emit lv2 lv2-target)))))
+
+
