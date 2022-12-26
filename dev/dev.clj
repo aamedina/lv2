@@ -57,6 +57,8 @@
    [net.wikipunk.rdf.greg :as greg]
    [net.wikipunk.rdf.sioc :as sioc]
    [net.wikipunk.rdf.cc :as cc]
+   [net.wikipunk.rdf.sosa :as sosa]
+   [net.wikipunk.rdf.ssn :as ssn]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
