@@ -1,6 +1,6 @@
 (ns net.wikipunk.boot
   "RDFa Core Initial Context"
-  (:refer-clojure :exclude [time]))
+  (:refer-clojure :exclude [time keys]))
 
 (def initial-context
   {:dcat/downloadURL "https://raw.githubusercontent.com/w3c/json-ld-rc/main/rdfa-1.1.ttl"})
@@ -221,6 +221,8 @@
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/TR/2007/REC-grddl-20070911/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+;; http://www.iana.org/assignments/relation/"
+
 (def ical
   "iCalendar terms in RDF"
   {:dcat/downloadURL "https://www.w3.org/2002/12/cal/icaltzd.rdf"
@@ -241,6 +243,12 @@
   {:rdfa/uri    "https://www.w3.org/2019/wot/json-schema#"
    :rdfa/prefix "jsonschema",
    :rdf/type    :rdfa/PrefixMapping})
+
+(def keys
+  {:dcat/downloadURL "https://motools.sourceforge.net/keys/keys.owl"
+   :rdfa/uri         "http://purl.org/NET/c4dm/keys.owl#"
+   :rdfa/prefix      "keys"
+   :rdf/type         :rdfa/PrefixMapping})
 
 (def ldp
   "Linked Data Platform Vocabulary"
