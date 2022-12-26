@@ -1,24 +1,24 @@
 (ns net.wikipunk.rdf.org
   "Core organization ontology"
-  {:dcterms/contributor [{:foaf/homepage
-                          "http://www.asahi-net.or.jp/~ax2s-kmtn/",
-                          :foaf/name "Shuji Kamitsuna"}
+  {:dcterms/contributor [{:foaf/mbox "lupe@fi.upm.es",
+                          :foaf/name "Guadalupe Aguado de Cea"}
                          {:foaf/mbox "dguardiola@quinode.fr",
                           :foaf/name "Dominique Guardiola"}
-                         {:foaf/mbox "emontiel@fi.upm.es",
-                          :foaf/name "Elena Montiel Ponsoda"}
-                         {:foaf/mbox "antonio.maccioni@agid.gov.it",
-                          :foaf/name "Antonio Maccioni"}
-                         {:foaf/mbox "mpoveda@fi.upm.es",
-                          :foaf/name "María Poveda Villalón"}
-                         {:foaf/mbox "lupe@fi.upm.es",
-                          :foaf/name "Guadalupe Aguado de Cea"}
-                         {:foaf/mbox "ogiraldo@fi.upm.es",
-                          :foaf/name "Olga Ximena Giraldo"}
                          {:foaf/mbox "giorgia.lodi@agid.gov.it",
                           :foaf/name "Giorgia Lodi"}
+                         {:foaf/homepage
+                          "http://www.asahi-net.or.jp/~ax2s-kmtn/",
+                          :foaf/name "Shuji Kamitsuna"}
+                         {:foaf/mbox "antonio.maccioni@agid.gov.it",
+                          :foaf/name "Antonio Maccioni"}
+                         {:foaf/mbox "emontiel@fi.upm.es",
+                          :foaf/name "Elena Montiel Ponsoda"}
                          {:foaf/mbox "dave@epimorphics.com",
-                          :foaf/name "Dave Reynolds"}],
+                          :foaf/name "Dave Reynolds"}
+                         {:foaf/mbox "ogiraldo@fi.upm.es",
+                          :foaf/name "Olga Ximena Giraldo"}
+                         {:foaf/mbox "mpoveda@fi.upm.es",
+                          :foaf/name "María Poveda Villalón"}],
    :dcterms/created #inst "2010-05-28T00:00:00.000-04:00",
    :dcterms/license "http://www.opendatacommons.org/licenses/pddl/1.0/",
    :dcterms/modified [#inst "2010-06-09T00:00:00.000-04:00"
@@ -249,12 +249,12 @@
    [{:rdf/language "ja",
      :rdf/value
      "プロジェクトなどの2つ以上の組織間のコラボレーション。それは、アイデンティティを有し、その特定のメンバーとは無関係に目的を定めているという点で、組織としての基準を満たしますが、正式に認識された法的実体でも、あるより大きな組織内のサブユニットでもありません。一般的には、その内部の組織よりも存続期間が短いかもしれませんが、必ずしもそうとは限りません。"}
-    {:rdf/language "fr",
-     :rdf/value
-     "Une collaboration entre deux ou plusieurs Organisations, telle qu'un projet commun. Un partenariat peut être considéré comme Organisation dans le sens ou il possède une identité et un But propre indépendant de ceux de ses membres, mais ce n'est ni une entité légale ni une sous-unité d'une Organisation plus grande. Typiquement, elle peut avoir une durée de vie plus courte que les Organisations qui la composent, mais pas nécessairement. Tous les membres sont des `org:Organization`s plutôt que des individus et ces Organisations peuvent jouer des Rôles particuliers au sein du Partenariat. "}
     {:rdf/language "es",
      :rdf/value
      "Colaboración determinada entre dos o más organizaciones, como en el caso de un proyecto común. Cumple con los criterios de ser una organización en sí misma, en la medida en que tiene una identidad y un propósito definido independiente de sus miembros en particular, pero no es una entidad legal formalmente reconocida ni una sub-unidad dentro de una organización más grande. La duración suele ser más corta que la de las organizaciones que lo componen, pero no necesariamente. Todos sus miembros son de tipo `org:Organization` en vez de individuos, y desempeñan una actividad concreta en el marco del proyecto de cooperación."}
+    {:rdf/language "fr",
+     :rdf/value
+     "Une collaboration entre deux ou plusieurs Organisations, telle qu'un projet commun. Un partenariat peut être considéré comme Organisation dans le sens ou il possède une identité et un But propre indépendant de ceux de ses membres, mais ce n'est ni une entité légale ni une sous-unité d'une Organisation plus grande. Typiquement, elle peut avoir une durée de vie plus courte que les Organisations qui la composent, mais pas nécessairement. Tous les membres sont des `org:Organization`s plutôt que des individus et ces Organisations peuvent jouer des Rôles particuliers au sein du Partenariat. "}
     {:rdf/language "it",
      :rdf/value
      "È una collaborazione tra due o più Organization come ad esempio un progetto. Consente di rappresentare alcune identità dell'Organization che sono fuori dallo scopo principale e non sono formalmente riconosciute. Potrebbe anche avere un ciclo di vita limitato."}

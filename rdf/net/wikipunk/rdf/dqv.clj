@@ -1,11 +1,11 @@
 (ns net.wikipunk.rdf.dqv
   "The Data Quality Vocabulary (DQV) is seen as an extension to DCAT to cover the quality of the data, how frequently is it updated, whether it accepts user corrections, persistence commitments etc. When used by publishers, this vocabulary will foster trust in the data amongst developers."
-  {:dcterms/contributor [{:foaf/name "Amrapali Zaveri"}
-                         {:foaf/name "Deirdre Lee"}
-                         {:foaf/name "Jeremy Debattista"}
-                         {:foaf/name "Christophe Guéret"}
+  {:dcterms/contributor [{:foaf/name "Deirdre Lee"}
+                         {:foaf/name "Amrapali Zaveri"}
                          {:foaf/name "Nandana Mihindukulasooriya"}
-                         {:foaf/name "Makx Dekkers"}],
+                         {:foaf/name "Makx Dekkers"}
+                         {:foaf/name "Jeremy Debattista"}
+                         {:foaf/name "Christophe Guéret"}],
    :dcterms/created #inst "2015-12-17T00:00:00.000-05:00",
    :dcterms/creator [{:foaf/name "Antoine Isaac"}
                      {:foaf/name "Riccardo Albertoni"}],

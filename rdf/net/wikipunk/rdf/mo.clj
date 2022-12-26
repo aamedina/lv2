@@ -8,12 +8,12 @@
    :foaf/maker [{:foaf/homepage "http://simon-reinhardt.de/",
                  :foaf/name     "Simon Reinhardt"}
                 "http://www.talkdigger.com/foaf/fgiasson"
-                {:foaf/name "George Fazekas"}
                 {:foaf/homepage "http://apassant.net/",
                  :foaf/name     "Alexandre Passant"}
                 "http://raimond.me.uk/foaf.rdf#moustaki"
                 "http://foaf.me/zazi#me"
-                "http://kurtisrandom.com/foaf.rdf#kurtjx"],
+                "http://kurtisrandom.com/foaf.rdf#kurtjx"
+                {:foaf/name "George Fazekas"}],
    :owl/imports ["http://purl.org/vocab/bio/0.1/"
                  "http://purl.org/NET/c4dm/event.owl"
                  "http://purl.org/ontology/ao/core"

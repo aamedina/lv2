@@ -1,8 +1,8 @@
 (ns net.wikipunk.rdf.oa
   "Web Annotation Ontology"
-  {:dcterms/creator [{:foaf/name "Benjamin Young",
+  {:dcterms/creator [{:foaf/name "Robert Sanderson",
                       :rdf/type  :foaf/Person}
-                     {:foaf/name "Robert Sanderson",
+                     {:foaf/name "Benjamin Young",
                       :rdf/type  :foaf/Person}
                      {:foaf/name "Paolo Ciccarese",
                       :rdf/type  :foaf/Person}],
