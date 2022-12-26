@@ -190,14 +190,18 @@
                                            ;; dcterms is a superset of dc(11)
                                            ;; https://www.dublincore.org/specifications/dublin-core/dces/
                                            (keyword "dcterms" (name form))
-                                           form))))        
+                                           form))))
+        types (group-by :rdf/type model)
         ontologies (walk/prewalk (fn [form]
                                    (if-some [node (:rdf/blank form)]
                                      (get index form)
                                      form))
-                                 (or (get (group-by :rdf/type model) :owl/Ontology)
-                                     (get (group-by :rdf/type model) :lv2/Feature)
-                                     (get (group-by :rdf/type model) [:adms/SemanticAsset :owl/Ontology])))
+                                 (or (get types :owl/Ontology)
+                                     (get types :lv2/Feature)
+                                     (get types :voaf/Vocabulary)
+                                     (get types :adms/SemanticAsset)
+                                     (get types [:adms/SemanticAsset :owl/Ontology])
+                                     (get types [:voaf/Vocabulary :owl/Ontology])))
         md         (walk/prewalk (fn [form]
                                    (if (and (keyword? form) (or (= (namespace form) "dc")
                                                                 (= (namespace form) "dct")))

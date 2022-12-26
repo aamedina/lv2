@@ -43,7 +43,8 @@
                           net.wikipunk.boot/sd
                           net.wikipunk.boot/skosxl
                           net.wikipunk.boot/voaf
-                          net.wikipunk.boot/void]
+                          net.wikipunk.boot/void
+                          net.wikipunk.boot/adms]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2

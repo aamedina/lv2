@@ -75,6 +75,7 @@
    [net.wikipunk.rdf.skosxl :as skosxl]
    [net.wikipunk.rdf.voaf :as voaf]
    [net.wikipunk.rdf.void :as void]
+   [net.wikipunk.rdf.adms :as adms]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]

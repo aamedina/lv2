@@ -5,6 +5,11 @@
 (def initial-context
   {:dcat/downloadURL "https://raw.githubusercontent.com/w3c/json-ld-rc/main/rdfa-1.1.ttl"})
 
+(def adms
+  {:rdfa/uri    "http://www.w3.org/ns/adms#"
+   :rdfa/prefix "adms"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def as
   "Activity Vocabulary"
   {:dcat/downloadURL #_ "https://raw.githubusercontent.com/w3c/activitystreams/master/vocabulary/activitystreams2.owl"
