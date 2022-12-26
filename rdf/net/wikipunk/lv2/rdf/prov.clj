@@ -66,6 +66,7 @@
    :rdfs/label "Activity"})
 
 (def ActivityInfluence
+  "ActivitiyInfluence is the capacity of an activity to have an effect on the character, development, or behavior of another by means of generation, invalidation, communication, or other."
   {:owl/disjointWith :prov/EntityInfluence,
    :prov/category "qualified",
    :prov/editorsDefinition
@@ -106,6 +107,7 @@
    :rdfs/label "Agent"})
 
 (def AgentInfluence
+  "AgentInfluence is the capacity of an agent to have an effect on the character, development, or behavior of another by means of attribution, association, delegation, or other."
   {:prov/category "qualified",
    :prov/editorsDefinition
    {:rdf/language "en",
@@ -443,6 +445,7 @@
    :rdfs/label "Entity"})
 
 (def EntityInfluence
+  "EntityInfluence is the capacity of an entity to have an effect on the character, development, or behavior of another by means of usage, start, end, derivation, or other."
   {:prov/category "qualified",
    :prov/editorsDefinition
    {:rdf/language "en",
@@ -530,10 +533,10 @@
    :rdfs/subClassOf [{:owl/cardinality 1,
                       :owl/onProperty  :prov/dictionary,
                       :rdf/type        :owl/Restriction}
+                     :prov/Derivation
                      {:owl/minCardinality 1,
                       :owl/onProperty     :prov/insertedKeyEntityPair,
-                      :rdf/type           :owl/Restriction}
-                     :prov/Derivation]})
+                      :rdf/type           :owl/Restriction}]})
 
 (def InstantaneousEvent
   "The PROV data model is implicitly based on a notion of instantaneous events (or just events), that mark transitions in the world. Events include generation, usage, or invalidation of entities, as well as starting or ending of activities. This notion of event is not first-class in the data model, but it is useful for explaining its other concepts and its semantics."
@@ -760,12 +763,12 @@
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov#",
    :rdfs/label "Removal",
    :rdfs/subClassOf [:prov/Derivation
-                     {:owl/minCardinality 1,
-                      :owl/onProperty     :prov/removedKey,
-                      :rdf/type           :owl/Restriction}
                      {:owl/cardinality 1,
                       :owl/onProperty  :prov/dictionary,
-                      :rdf/type        :owl/Restriction}]})
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minCardinality 1,
+                      :owl/onProperty     :prov/removedKey,
+                      :rdf/type           :owl/Restriction}]})
 
 (def Replace
   "Activity that identifies the replacement of a resource."
@@ -950,6 +953,7 @@
    :rdfs/subPropertyOf :prov/wasInfluencedBy})
 
 (def activity
+  "The prov:activity property references an prov:Activity which influenced a resource. This property applies to an prov:ActivityInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent."
   {:prov/category "qualified",
    :prov/editorialNote
    {:rdf/language "en",
@@ -973,6 +977,7 @@
    :rdfs/label       "activityOfInfluence"})
 
 (def agent
+  "The prov:agent property references an prov:Agent which influenced a resource. This property applies to an prov:AgentInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent."
   {:prov/category "qualified",
    :prov/editorialNote
    {:rdf/language "en",
@@ -1280,6 +1285,7 @@
    :rdfs/range :xsd/dateTime})
 
 (def entity
+  "The prov:entity property references an prov:Entity which influenced a resource. This property applies to an prov:EntityInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent."
   {:prov/category "qualified",
    :prov/editorialNote
    {:rdf/language "en",
@@ -1482,7 +1488,7 @@
    :rdfs/label       "hadRevision"})
 
 (def hadRole
-  "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>."
+  "prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end."
   {:prov/category "qualified",
    :prov/component "agents-responsibility",
    :prov/editorsDefinition
@@ -1579,7 +1585,7 @@
    :rdfs/label       "influenced"})
 
 (def influencer
-  "Subproperties of prov:influencer are used to cite the object of an unqualified PROV-O triple whose predicate is a subproperty of prov:wasInfluencedBy (e.g. prov:used, prov:wasGeneratedBy). prov:influencer is used much like rdf:object is used."
+  "This property is used as part of the qualified influence pattern. Subclasses of prov:Influence use these subproperties to reference the resource (Entity, Agent, or Activity) whose influence is being qualified."
   {:prov/category "qualified",
    :prov/dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence",
    :prov/editorialNote

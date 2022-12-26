@@ -235,6 +235,7 @@
                                                    (:dcterms/description v)
                                                    (:skos/definition v)
                                                    (:prov/definition v)
+                                                   (:prov/editorsDefinition v)
                                                    (:rdfs/comment v))
                                      docstring (if (vector? docstring)
                                                  (first (filter string? docstring))
