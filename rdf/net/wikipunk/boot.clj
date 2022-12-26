@@ -92,6 +92,29 @@
                       "http://dublincore.org/documents/dcmi-terms/#H2"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def dpvo
+  "Data Privacy Vocabulary OWL"
+  {:rdfa/uri         "https://w3id.org/dpv/dpv-owl#"
+   :rdfa/prefix      "dpvo",
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def dpvo-pd
+  {:rdfa/uri    "https://w3id.org/dpv/dpv-owl/dpv-pd#"
+   :rdfa/prefix "dpvo-pd",
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def dpvo-gdpr
+  {:rdfa/uri    "https://w3id.org/dpv/dpv-owl/dpv-gdpr#"
+   :rdfa/prefix "dpvo-gdpr",
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def dpvo-risk
+  {:rdfa/uri    "https://w3id.org/dpv/dpv-owl/risk#"
+   :rdfa/prefix "dpvo-risk",
+   :rdf/type    :rdfa/PrefixMapping})
+
+;; https://github.com/w3c/dpv/issues/47
+
 (def doap
   "Description of a Project"
   {:dcat/downloadURL "https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf"
