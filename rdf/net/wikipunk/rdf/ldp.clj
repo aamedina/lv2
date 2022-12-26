@@ -2,8 +2,8 @@
   "Vocabulary URIs defined in the Linked Data Platform (LDP) namespace."
   {:dcterms/created #inst "2015-02-26T00:00:00.000-05:00",
    :dcterms/creator [{:foaf/name "Ashok Malhotra"}
-                     {:foaf/name "John Arwe"}
-                     {:foaf/name "Steve Speicher"}],
+                     {:foaf/name "Steve Speicher"}
+                     {:foaf/name "John Arwe"}],
    :dcterms/description
    "Vocabulary URIs defined in the Linked Data Platform (LDP) namespace.",
    :dcterms/publisher "http://www.w3.org/data#W3C",

@@ -34,6 +34,7 @@
   (:refer-clojure :exclude [name]))
 
 (def ArchRepository
+  "GNU Arch source code repository."
   {:rdf/about        :doap/ArchRepository,
    :rdf/type         [:owl/Class :rdfs/Class],
    :rdfs/comment     [{:rdf/language "en",
@@ -60,6 +61,7 @@
    :rdfs/subClassOf  :doap/Repository})
 
 (def BKRepository
+  "BitKeeper source code repository."
   {:rdf/about        :doap/BKRepository,
    :rdf/type         [:rdfs/Class :owl/Class],
    :rdfs/comment     [{:rdf/language "fr",
@@ -97,6 +99,7 @@
    :rdfs/subClassOf  :doap/Repository})
 
 (def CVSRepository
+  "CVS source code repository."
   {:rdf/about        :doap/CVSRepository,
    :rdf/type         [:rdfs/Class :owl/Class],
    :rdfs/comment     [{:rdf/language "fr",
@@ -123,6 +126,7 @@
    :rdfs/subClassOf  :doap/Repository})
 
 (def DarcsRepository
+  "darcs source code repository."
   {:rdf/about        :doap/DarcsRepository,
    :rdf/type         :rdfs/Class,
    :rdfs/comment     [{:rdf/language "en",
@@ -163,6 +167,7 @@
    :rdfs/subClassOf  :doap/Repository})
 
 (def Project
+  "A project."
   {:rdf/about        :doap/Project,
    :rdf/type         :rdfs/Class,
    :rdfs/comment     [{:rdf/language "cs",
@@ -189,6 +194,7 @@
    :rdfs/subClassOf  :foaf/Project})
 
 (def Repository
+  "Source code repository."
   {:rdf/about        :doap/Repository,
    :rdf/type         :rdfs/Class,
    :rdfs/comment     [{:rdf/language "en",
@@ -214,6 +220,7 @@
                        :rdf/value    "Repositorio"}]})
 
 (def SVNRepository
+  "Subversion source code repository."
   {:rdf/about        :doap/SVNRepository,
    :rdf/type         :rdfs/Class,
    :rdfs/comment     [{:rdf/language "en",
@@ -252,6 +259,7 @@
                 :rdf/value    "Specification"}})
 
 (def Version
+  "Version information of a project release."
   {:rdf/about :doap/Version,
    :rdf/type :rdfs/Class,
    :rdfs/comment
@@ -300,6 +308,7 @@
                       :rdf/value    "blog"}})
 
 (def browse
+  "Web browser interface to repository."
   {:rdf/about        :doap/browse,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment     [{:rdf/language "cs",
@@ -326,6 +335,7 @@
                        :rdf/value    "browse"}]})
 
 (def bug-database
+  "Bug tracker for a project."
   {:rdf/about        :doap/bug-database,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment     [{:rdf/language "fr",
@@ -352,6 +362,7 @@
                        :rdf/value    "base de datos de bugs"}]})
 
 (def category
+  "A category of project."
   {:rdf/about        :doap/category,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment     [{:rdf/language "de",
@@ -378,6 +389,7 @@
                        :rdf/value    "catégorie"}]})
 
 (def created
+  "Date when something was created, in YYYY-MM-DD form. e.g. 2004-04-05"
   {:rdf/about :doap/created,
    :rdf/type [:rdf/Property :owl/DatatypeProperty],
    :rdfs/comment
@@ -409,6 +421,7 @@
                  :rdf/value    "créé"}]})
 
 (def description
+  "Plain text description of a project, of 2-4 sentences in length."
   {:rdf/about :doap/description,
    :rdf/type [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment
@@ -438,6 +451,7 @@
                  :rdf/value    "Beschreibung"}]})
 
 (def developer
+  "Developer of software for the project."
   {:rdf/about        :doap/developer,
    :rdf/type         [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment     [{:rdf/language "cs",
@@ -465,6 +479,7 @@
    :rdfs/range       :foaf/Person})
 
 (def documenter
+  "Contributor of documentation to the project."
   {:rdf/about        :doap/documenter,
    :rdf/type         [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment     [{:rdf/language "es",
@@ -495,6 +510,7 @@
    :rdfs/range       :foaf/Person})
 
 (def download-mirror
+  "Mirror of software download web page."
   {:rdf/about :doap/download-mirror,
    :rdf/type [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment
@@ -523,6 +539,7 @@
                  :rdf/value    "mirror de descarga"}]})
 
 (def download-page
+  "Web page from which the project software can be downloaded."
   {:rdf/about :doap/download-page,
    :rdf/type [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment
@@ -552,6 +569,7 @@
                  :rdf/value    "página de descarga"}]})
 
 (def file-release
+  "URI of download associated with this release."
   {:rdf/about        :doap/file-release,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment     [{:rdf/language "en",
@@ -567,6 +585,7 @@
                        :rdf/value    "file-release"}]})
 
 (def helper
+  "Project contributor."
   {:rdf/about        :doap/helper,
    :rdf/type         [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment     [{:rdf/language "cs",
@@ -594,6 +613,7 @@
    :rdfs/range       :foaf/Person})
 
 (def homepage
+  "URL of a project's homepage,   associated with exactly one project."
   {:rdf/about :doap/homepage,
    :rdf/type [:owl/InverseFunctionalProperty :rdf/Property],
    :rdfs/comment
@@ -653,6 +673,7 @@
                       :rdf/value    "language"}})
 
 (def license
+  "The URI of an RDF description of the license the software is distributed under."
   {:rdf/about :doap/license,
    :rdf/type :rdf/Property,
    :rdfs/comment
@@ -684,6 +705,7 @@
                  :rdf/value    "licencia"}]})
 
 (def location
+  "Location of a repository."
   {:rdf/about        :doap/location,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment     [{:rdf/language "de",
@@ -710,6 +732,7 @@
                        :rdf/value    "Repository Lokation"}]})
 
 (def mailing-list
+  "Mailing list home page or email address."
   {:rdf/about :doap/mailing-list,
    :rdf/type [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment
@@ -737,6 +760,7 @@
                  :rdf/value    "e–mailová diskuse"}]})
 
 (def maintainer
+  "Maintainer of a project, a project leader."
   {:rdf/about :doap/maintainer,
    :rdf/type [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment
@@ -765,6 +789,7 @@
    :rdfs/range :foaf/Person})
 
 (def module
+  "Module name of a Subversion, CVS, BitKeeper or Arch repository."
   {:rdf/about :doap/module,
    :rdf/type [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment
@@ -797,6 +822,7 @@
                  :rdf/value    "módulo"}]})
 
 (def name
+  "A name of something."
   {:rdf/about          :doap/name,
    :rdf/type           [:rdf/Property :owl/AnnotationProperty],
    :rdfs/comment       [{:rdf/language "en",
@@ -823,6 +849,7 @@
    :rdfs/subPropertyOf :rdfs/label})
 
 (def old-homepage
+  "URL of a project's past homepage,   associated with exactly one project."
   {:rdf/about :doap/old-homepage,
    :rdf/type [:owl/InverseFunctionalProperty :rdf/Property],
    :rdfs/comment
@@ -856,6 +883,7 @@
    :rdfs/subPropertyOf :foaf/homepage})
 
 (def os
+  "Operating system that a project is limited to.  Omit this property if the project is not OS-specific."
   {:rdf/about :doap/os,
    :rdf/type [:rdf/Property :owl/DatatypeProperty],
    :rdfs/comment
@@ -901,6 +929,7 @@
                 :rdf/value    "platform"}})
 
 (def programming-language
+  "Programming language a project is implemented in or intended for use with."
   {:rdf/about :doap/programming-language,
    :rdf/type [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment
@@ -933,6 +962,7 @@
                  :rdf/value    "Programmiersprache"}]})
 
 (def release
+  "A project release."
   {:rdf/about        :doap/release,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment     [{:rdf/language "fr",
@@ -960,6 +990,7 @@
    :rdfs/range       :doap/Version})
 
 (def repository
+  "Source code repository."
   {:rdf/about        :doap/repository,
    :rdf/type         [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment     [{:rdf/language "es",
@@ -987,6 +1018,7 @@
    :rdfs/range       :doap/Repository})
 
 (def revision
+  "Revision identifier of a software release."
   {:rdf/about :doap/revision,
    :rdf/type [:rdf/Property :owl/DatatypeProperty],
    :rdfs/comment
@@ -1014,6 +1046,7 @@
                  :rdf/value    "verze"}]})
 
 (def screenshots
+  "Web page with screenshots of project."
   {:rdf/about        :doap/screenshots,
    :rdf/type         [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment     [{:rdf/language "en",
@@ -1057,6 +1090,7 @@
                 :rdf/value    "service endpoint"}})
 
 (def shortdesc
+  "Short (8 or 9 words) plain text description of a project."
   {:rdf/about :doap/shortdesc,
    :rdf/type [:rdf/Property :owl/DatatypeProperty],
    :rdfs/comment
@@ -1085,6 +1119,7 @@
                  :rdf/value    "short description"}]})
 
 (def tester
+  "A tester or other quality control contributor."
   {:rdf/about :doap/tester,
    :rdf/type [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment
@@ -1113,6 +1148,7 @@
    :rdfs/range :foaf/Person})
 
 (def translator
+  "Contributor of translations to the project."
   {:rdf/about        :doap/translator,
    :rdf/type         [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment     [{:rdf/language "es",
@@ -1154,6 +1190,7 @@
    :rdfs/range       :foaf/Organization})
 
 (def wiki
+  "URL of Wiki for collaborative discussion of project."
   {:rdf/about :doap/wiki,
    :rdf/type [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment
