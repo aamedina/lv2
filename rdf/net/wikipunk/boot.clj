@@ -115,6 +115,11 @@
    :rdfa/prefix      "dcmitype",,
    :rdf/type         :rdfa/PrefixMapping})
 
+(def disco
+  {:rdfa/uri    "http://rdf-vocabulary.ddialliance.org/discovery#"
+   :rdfa/prefix "disco",
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def dpvo
   "Data Privacy Vocabulary OWL"
   {:rdfa/uri         "https://w3id.org/dpv/dpv-owl#"
