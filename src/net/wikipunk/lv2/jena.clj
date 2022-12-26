@@ -96,7 +96,7 @@
               (keyword (namespace k) (str \| (name k) \|))
 
               :else k))
-          {:rdf/uri uri})))
+          uri)))
 
   Node_Blank
   (data [n]
@@ -124,12 +124,11 @@
 (extend-protocol Parsable
   clojure.lang.IPersistentMap
   (parse [md]
-    (let [{:vann/keys [preferredNamespaceUri
-                       preferredNamespacePrefix]
+    (let [{:rdfa/keys [uri prefix]
            :dcat/keys [downloadURL]} md
-          g                          (.toGraph (RDFParser/source downloadURL))
-          ns-prefix-map              (dissoc (into (if (and preferredNamespacePrefix preferredNamespaceUri)
-                                                     {preferredNamespacePrefix preferredNamespaceUri}
+          g                          (.toGraph (RDFParser/source (or downloadURL uri)))
+          ns-prefix-map              (dissoc (into (if (and prefix uri)
+                                                     {prefix uri}
                                                      {})
                                                    (.getNsPrefixMap (.getPrefixMapping g)))
                                              "")]
@@ -144,6 +143,16 @@
                                                              objects)])))
                                    (group-by #(.getPredicate ^Triple %) triples))))
                       (group-by #(.getSubject ^Triple %) (into [] g))))))
+
+  clojure.lang.Named
+  (parse [ident]
+    (if (qualified-ident? ident)
+      (some-> (resolve ident) deref parse)
+      (some-> (find-ns ident) meta parse)))
+
+  clojure.lang.Namespace
+  (parse [ns]
+    (parse (meta ns)))
 
   String
   (parse [s]
@@ -162,7 +171,8 @@
                                           form))
                                       index)
                         (walk/postwalk (fn [form]
-                                         (if (and (keyword? form) (= (namespace form) "dc"))
+                                         (if (and (keyword? form) (or (= (namespace form) "dc")
+                                                                      (= (namespace form) "dct")))
                                            ;; dcterms is a superset of dc(11)
                                            ;; https://www.dublincore.org/specifications/dublin-core/dces/
                                            (keyword "dcterms" (name form))
@@ -174,11 +184,12 @@
                                       (or (get (group-by :rdf/type model) :owl/Ontology)
                                           (get (group-by :rdf/type model) :lv2/Feature)))
         md         (walk/prewalk (fn [form]
-                                   (if (and (keyword? form) (= (namespace form) "dc"))
+                                   (if (and (keyword? form) (or (= (namespace form) "dc")
+                                                                (= (namespace form) "dct")))
                                      (keyword "dcterms" (name form))
                                      form))
                                  (reduce merge (meta model) ontologies))
-        seeAlso (:rdf/uri (:rdfs/seeAlso md))
+        seeAlso (:rdfs/seeAlso md)
         seeAlso (when (and seeAlso (str/ends-with? seeAlso "ttl"))
                   (update-vals (group-by :rdf/about (parse seeAlso)) first))
         project (when seeAlso
@@ -221,6 +232,7 @@
                                       :else sym)
                                 docstring (or (some-> (:lv2/documentation v))
                                               (:dcterms/description v)
+                                              (:skos/definition v)
                                               (:rdfs/comment v))
                                 docstring (if (vector? docstring)
                                             (first (filter string? docstring))
@@ -239,13 +251,14 @@
                                                       (into (vector-of :byte) form)
                                                       form))
                                                   form))))]
-    (cons `(~'ns ~(symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
+    (cons `(~'ns ~(symbol (str "net.wikipunk.lv2.rdf." (:rdfa/prefix md)))
             ~(let [docstring (or (get-in md [:lv2/project :lv2/documentation])
                                  (:dcterms/abstract md)
+                                 (:dcterms/description md)
                                  (:dcterms/title md)
                                  (:rdfs/comment md)
                                  (:rdfs/label md)
-                                 (:vann/preferredNamespaceUri md)
+                                 (:rdfa/uri md)
                                  (:doc md)
                                  "")
                    docstring (if (vector? docstring)
@@ -266,12 +279,12 @@
 
 (defn parse-and-spit-namespaces
   "Crawls namespaces and spits resources."
-  []
-  (->> (all-ns)
+  ([]
+   (->> (all-ns)
        (filter (comp :dcat/downloadURL meta))
        (map (fn [ns] [(ns-name ns) (meta ns)]))
        (pmap (fn [[ns-name md]]
-               (spit (str "rdf/net/wikipunk/rdf/lv2/" (:vann/preferredNamespacePrefix md) ".clj")
+               (spit (str "rdf/net/wikipunk/lv2/rdf/" (:rdfa/prefix md) ".clj")
                      (binding [*print-namespace-maps* nil]
                        (zprint/zprint-file-str  (str/join \newline (unroll (parse md)))
                                                 ""
@@ -284,8 +297,26 @@
                                                           :force-nl?     true}
                                                  :vector {:wrap? false}})))))
        (dorun)))
+  ([xs]
+   (dorun
+     (pmap (fn [x]
+             (let [model (parse x)
+                   md    (meta model)]
+               (spit (str "rdf/net/wikipunk/lv2/rdf/" (:rdfa/prefix md) ".clj")
+                     (binding [*print-namespace-maps* nil]
+                       (zprint/zprint-file-str  (str/join \newline (unroll model))
+                                                ""
+                                                {:parse  {:interpose "\n\n"}
+                                                 :map    {:justify?      true
+                                                          :nl-separator? false
+                                                          :hang?         true
+                                                          :indent        0
+                                                          :sort-in-code? true
+                                                          :force-nl?     true}
+                                                 :vector {:wrap? false}})))))
+           xs))))
 
-(defrecord Vocabulary [types]
+(defrecord Vocabulary [types boot lv2]
   com/Lifecycle
   (start [this]
     (let [vocab (->> (all-ns)

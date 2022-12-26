@@ -1,2 +1,37 @@
-{:host  {:sc/create-fn net.wikipunk.lv2.host/map->Host}
- :vocab {:sc/create-fn net.wikipunk.lv2.jena/map->Vocabulary}}
+{:vocab {:sc/create-fn net.wikipunk.lv2.jena/map->Vocabulary
+         :boot         [net.wikipunk.rdfa/rdf
+                        net.wikipunk.rdfa/rdfs
+                        net.wikipunk.rdfa/rdfa
+                        net.wikipunk.rdfa/owl
+                        net.wikipunk.rdfa/jsonld
+                        net.wikipunk.rdfa/xsd
+                        net.wikipunk.rdfa/skos
+                        net.wikipunk.rdfa/dcterms
+                        net.wikipunk.rdfa/dcam
+                        net.wikipunk.rdfa/foaf
+                        net.wikipunk.rdfa/doap
+                        net.wikipunk.rdfa/schema]
+         :lv2          [net.wikipunk.lv2
+                        net.wikipunk.lv2/atom
+                        net.wikipunk.lv2/buf-size
+                        net.wikipunk.lv2/data-access
+                        net.wikipunk.lv2/dynmanifest
+                        net.wikipunk.lv2/event
+                        net.wikipunk.lv2/instance-access
+                        net.wikipunk.lv2/log
+                        net.wikipunk.lv2/midi
+                        net.wikipunk.lv2/morph
+                        net.wikipunk.lv2/options
+                        net.wikipunk.lv2/parameters
+                        net.wikipunk.lv2/patch
+                        net.wikipunk.lv2/port-groups
+                        net.wikipunk.lv2/port-props
+                        net.wikipunk.lv2/presets
+                        net.wikipunk.lv2/resize-port
+                        net.wikipunk.lv2/state
+                        net.wikipunk.lv2/time
+                        net.wikipunk.lv2/ui
+                        net.wikipunk.lv2/units
+                        net.wikipunk.lv2/uri-map
+                        net.wikipunk.lv2/urid
+                        net.wikipunk.lv2/worker]}}
