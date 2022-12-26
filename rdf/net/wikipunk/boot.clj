@@ -109,6 +109,12 @@
                       "http://dublincore.org/documents/dcmi-terms/#H2"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def dcmitype
+  {:dcat/downloadURL "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl"
+   :rdfa/uri         "http://purl.org/dc/dcmitype/",
+   :rdfa/prefix      "dcmitype",,
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def dpvo
   "Data Privacy Vocabulary OWL"
   {:rdfa/uri         "https://w3id.org/dpv/dpv-owl#"

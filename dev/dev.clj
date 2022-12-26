@@ -88,6 +88,7 @@
    [net.wikipunk.rdf.ao :as ao]
    [net.wikipunk.rdf.bio :as bio]
    [net.wikipunk.rdf.cnt :as cnt]
+   [net.wikipunk.rdf.dcmitype :as dcmitype]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
