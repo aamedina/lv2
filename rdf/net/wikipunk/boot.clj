@@ -94,7 +94,7 @@
 
 (def doap
   "Description of a Project"
-  {:dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/doap.ttl"
+  {:dcat/downloadURL "https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf"
    :rdfa/prefix      "doap",
    :rdfa/uri         "http://usefulinc.com/ns/doap#"
    :rdf/type         :rdfa/PrefixMapping})

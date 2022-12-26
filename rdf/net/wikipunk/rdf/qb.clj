@@ -3,8 +3,8 @@
   {:dcterms/contributor [{:foaf/mbox "ian@epimorphics.com"}
                          {:foaf/mbox "dave@epimorphics.com"}
                          {:foaf/mbox "richard@cyganiak.de"}
-                         {:foaf/mbox "arofan.gregory@earthlink.net"}
-                         {:foaf/mbox "jeni@jenitennison.com"}],
+                         {:foaf/mbox "jeni@jenitennison.com"}
+                         {:foaf/mbox "arofan.gregory@earthlink.net"}],
    :dcterms/created #inst "2010-07-12T00:00:00.000-04:00",
    :dcterms/license "http://www.opendatacommons.org/licenses/pddl/1.0/",
    :dcterms/modified [#inst "2010-11-27T00:00:00.000-05:00"

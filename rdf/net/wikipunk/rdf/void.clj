@@ -3,14 +3,6 @@
   {:dcterms/created #inst "2010-01-26T00:00:00.000-05:00",
    :dcterms/creator
    [{:rdf/type           :schema/Person,
-     :schema/affiliation {:foaf/homepage "http://www.deri.ie/",
-                          :foaf/name
-                          "Digital Enterprise Research Institute, NUI Galway",
-                          :rdf/type :schema/Organization},
-     :schema/email       "mailto:richard.cyganiak@deri.org",
-     :schema/name        "Richard Cyganiak",
-     :schema/url         "http://richard.cyganiak.de/"}
-    {:rdf/type           :schema/Person,
      :schema/affiliation {:rdf/type    :schema/Organization,
                           :schema/name "LiDRC",
                           :schema/url  "http://linkeddata.deri.ie/"},
@@ -24,6 +16,14 @@
      :schema/email       "mailto:Keith.Alexander@talis.com",
      :schema/name        "Keith Alexander",
      :schema/url         "http://kwijibo.talis.com/"}
+    {:rdf/type           :schema/Person,
+     :schema/affiliation {:foaf/homepage "http://www.deri.ie/",
+                          :foaf/name
+                          "Digital Enterprise Research Institute, NUI Galway",
+                          :rdf/type :schema/Organization},
+     :schema/email       "mailto:richard.cyganiak@deri.org",
+     :schema/name        "Richard Cyganiak",
+     :schema/url         "http://richard.cyganiak.de/"}
     {:rdf/type           :schema/Person,
      :schema/affiliation {:rdf/type :schema/Organization,
                           :schema/name

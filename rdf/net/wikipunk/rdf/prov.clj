@@ -533,10 +533,10 @@
    :rdfs/subClassOf [{:owl/cardinality 1,
                       :owl/onProperty  :prov/dictionary,
                       :rdf/type        :owl/Restriction}
-                     :prov/Derivation
                      {:owl/minCardinality 1,
                       :owl/onProperty     :prov/insertedKeyEntityPair,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :prov/Derivation]})
 
 (def InstantaneousEvent
   "The PROV data model is implicitly based on a notion of instantaneous events (or just events), that mark transitions in the world. Events include generation, usage, or invalidation of entities, as well as starting or ending of activities. This notion of event is not first-class in the data model, but it is useful for explaining its other concepts and its semantics."
@@ -762,13 +762,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov#",
    :rdfs/label "Removal",
-   :rdfs/subClassOf [:prov/Derivation
+   :rdfs/subClassOf [{:owl/cardinality 1,
+                      :owl/onProperty  :prov/dictionary,
+                      :rdf/type        :owl/Restriction}
+                     :prov/Derivation
                      {:owl/minCardinality 1,
                       :owl/onProperty     :prov/removedKey,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :prov/dictionary,
-                      :rdf/type        :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}]})
 
 (def Replace
   "Activity that identifies the replacement of a resource."
