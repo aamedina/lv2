@@ -10,6 +10,7 @@
   (:refer-clojure :exclude [long]))
 
 (def Point
+  ""
   {:rdf/about :geo/Point,
    :rdf/type :rdfs/Class,
    :rdfs/comment

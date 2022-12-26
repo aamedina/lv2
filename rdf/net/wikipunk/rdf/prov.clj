@@ -85,10 +85,10 @@
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov-o#",
    :rdfs/label "ActivityInfluence",
    :rdfs/seeAlso :prov/activity,
-   :rdfs/subClassOf [{:owl/maxCardinality 0,
+   :rdfs/subClassOf [:prov/Influence
+                     {:owl/maxCardinality 0,
                       :owl/onProperty     :prov/hadActivity,
-                      :rdf/type           :owl/Restriction}
-                     :prov/Influence]})
+                      :rdf/type           :owl/Restriction}]})
 
 (def Agent
   "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."
@@ -533,10 +533,10 @@
    :rdfs/subClassOf [{:owl/minCardinality 1,
                       :owl/onProperty     :prov/insertedKeyEntityPair,
                       :rdf/type           :owl/Restriction}
-                     :prov/Derivation
                      {:owl/cardinality 1,
                       :owl/onProperty  :prov/dictionary,
-                      :rdf/type        :owl/Restriction}]})
+                      :rdf/type        :owl/Restriction}
+                     :prov/Derivation]})
 
 (def InstantaneousEvent
   "The PROV data model is implicitly based on a notion of instantaneous events (or just events), that mark transitions in the world. Events include generation, usage, or invalidation of entities, as well as starting or ending of activities. This notion of event is not first-class in the data model, but it is useful for explaining its other concepts and its semantics."
@@ -596,10 +596,10 @@
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov#",
    :rdfs/label "Key-Entity Pair",
    :rdfs/subClassOf [{:owl/cardinality 1,
-                      :owl/onProperty  :prov/pairKey,
+                      :owl/onProperty  :prov/pairEntity,
                       :rdf/type        :owl/Restriction}
                      {:owl/cardinality 1,
-                      :owl/onProperty  :prov/pairEntity,
+                      :owl/onProperty  :prov/pairKey,
                       :rdf/type        :owl/Restriction}]})
 
 (def Location
@@ -763,12 +763,12 @@
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov#",
    :rdfs/label "Removal",
    :rdfs/subClassOf [:prov/Derivation
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :prov/dictionary,
-                      :rdf/type        :owl/Restriction}
                      {:owl/minCardinality 1,
                       :owl/onProperty     :prov/removedKey,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :prov/dictionary,
+                      :rdf/type        :owl/Restriction}]})
 
 (def Replace
   "Activity that identifies the replacement of a resource."
@@ -1504,9 +1504,9 @@
      :rdf/value
      "The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ]."}
     "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>."],
-   :rdfs/domain [{:owl/unionOf [:prov/Association :prov/InstantaneousEvent],
-                  :rdf/type    :owl/Class}
-                 :prov/Influence],
+   :rdfs/domain [:prov/Influence
+                 {:owl/unionOf [:prov/Association :prov/InstantaneousEvent],
+                  :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov-o#",
    :rdfs/label "hadRole",
    :rdfs/range :prov/Role})

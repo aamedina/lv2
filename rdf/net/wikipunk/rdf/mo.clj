@@ -5,9 +5,9 @@
    :dcterms/description
    "\n        The Music Ontology Specification provides main concepts and \n        properties fo describing music (i.e. artists, albums and tracks) \n        on the Semantic Web. \n    ",
    :dcterms/title "The Music Ontology",
-   :foaf/maker [{:foaf/homepage "http://simon-reinhardt.de/",
+   :foaf/maker [{:foaf/name "George Fazekas"}
+                {:foaf/homepage "http://simon-reinhardt.de/",
                  :foaf/name     "Simon Reinhardt"}
-                {:foaf/name "George Fazekas"}
                 "http://www.talkdigger.com/foaf/fgiasson"
                 {:foaf/homepage "http://apassant.net/",
                  :foaf/name     "Alexandre Passant"}
