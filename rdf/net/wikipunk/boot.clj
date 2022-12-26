@@ -428,6 +428,11 @@
                       "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def spin
+  {:rdfa/uri    "http://spinrdf.org/spin#"
+   :rdfa/prefix "spin"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def ssn
   "Semantic Sensor Network Ontology"
   {:rdfa/uri         "http://www.w3.org/ns/ssn/",

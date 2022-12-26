@@ -31,11 +31,11 @@
    [{:rdf/value "Fixed type in film example and added creator and date",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-10"}
-    {:rdf/value
-     "Added experimental paraphrases to property and class descriptions",
+    {:rdf/value "Sorted properties and classes alphabetically by URI",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-10"}
-    {:rdf/value "Sorted properties and classes alphabetically by URI",
+    {:rdf/value
+     "Added experimental paraphrases to property and class descriptions",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-10"}],
    :skos/example "https://vocab.org/frbr/frbr-example-film-20050809.html",
@@ -43,11 +43,11 @@
    [{:rdf/value "Made domains and ranges of many properties more specific",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-10"}
-    {:rdf/value
-     "Added alternate, alternateOf, reconfiguration, reconfigurationOf properties",
+    {:rdf/value "Item is now not a subclass of geo:SpatialThing",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-10"}
-    {:rdf/value "Item is now not a subclass of geo:SpatialThing",
+    {:rdf/value
+     "Added alternate, alternateOf, reconfiguration, reconfigurationOf properties",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-10"}],
    :vann/preferredNamespacePrefix "frbr",
@@ -83,10 +83,10 @@
    [{:rdf/value "Extracted definition from existing comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+    {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added comment",
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
@@ -145,10 +145,10 @@
    [{:rdf/value "Extracted definition from existing comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added comment",
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+    {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
@@ -197,15 +197,15 @@
                 :rdf/value    "expression"},
    :rdfs/subClassOf :frbr/Endeavour,
    :skos/changeNote
-   [{:rdf/value "Added comment",
+   [{:rdf/value "Extracted definition from existing comment",
+     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
     {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Extracted definition from existing comment",
-     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value "A realization of a single work usually in a physical form."}})
@@ -224,15 +224,15 @@
                 :rdf/value    "item"},
    :rdfs/subClassOf :frbr/Endeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Extracted definition from existing comment",
+     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
     {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Extracted definition from existing comment",
-     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "An exemplar of a single manifestation."},
    :skos/historyNote [{:rdf/value "Made subclass of geo:SpatialThing",
@@ -286,12 +286,12 @@
    :rdfs/subClassOf ["http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
                      :frbr/Subject],
    :skos/changeNote
-   [{:rdf/value "Extracted definition from existing comment",
-     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Extracted definition from existing comment",
+     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
     {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
@@ -318,12 +318,12 @@
    [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Extracted definition from existing comment",
-     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
     {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Extracted definition from existing comment",
+     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A living or dead individual."}})
 
@@ -377,10 +377,10 @@
    [{:rdf/value "Extracted definition from existing comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+    {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added comment",
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition
@@ -404,15 +404,15 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "subject"},
    :skos/changeNote
-   [{:rdf/value "Extracted definition from existing comment",
-     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
     {:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Extracted definition from existing comment",
+     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "Something that may serve as the subject of a work."}})
@@ -431,15 +431,15 @@
                 :rdf/value    "work"},
    :rdfs/subClassOf [:frbr/Endeavour "http://xmlns.com/wordnet/1.6/Work~2"],
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
-     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added comment",
+   [{:rdf/value "Added comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
      "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
     {:rdf/value "Extracted definition from existing comment",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value "An abstract notion of an artistic or intellectual creation."},
@@ -460,12 +460,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "An abridgment of an expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Expression",
@@ -512,12 +512,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "An adaption of a work or expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -539,12 +539,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A work or expression that is adapted."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -594,12 +594,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "An arrangement of an expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Expression",
@@ -619,12 +619,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "An expression that is arranged."},
    :skos/historyNote {:rdf/value "Added domain and range of Expression",
@@ -646,12 +646,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A complement to a work or expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -673,12 +673,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value "A work or expression that is complemented."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -745,12 +745,12 @@
    :rdfs/range :frbr/Manifestation,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "A manifestation that embodies an expression."}})
@@ -768,12 +768,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "An expression that is embodied by a manifestation."}})
@@ -814,12 +814,12 @@
    :rdfs/range :frbr/Manifestation,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "The manifestation that is exemplified by a item."}})
@@ -866,12 +866,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A work or expression that is imitated."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -891,12 +891,12 @@
    :rdfs/range :frbr/ResponsibleEntity,
    :rdfs/subPropertyOf :frbr/responsibleEntity,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "An entity that owns an item."}})
 
@@ -913,12 +913,12 @@
    :rdfs/range :frbr/Item,
    :rdfs/subPropertyOf :frbr/responsibleEntityOf,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "An item that is in some way owned an entity."}})
@@ -1023,12 +1023,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1070,12 +1070,12 @@
    :rdfs/range :frbr/ResponsibleEntity,
    :rdfs/subPropertyOf :frbr/responsibleEntity,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1094,12 +1094,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/responsibleEntityOf,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value    "An expression that was in some way realized by an entity."}})
@@ -1269,12 +1269,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A revision of an expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Expression",
@@ -1370,12 +1370,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A work or expression that is succeeded."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -1397,12 +1397,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A summarization of a work or expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -1424,12 +1424,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+   [{:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
-    {:rdf/value "Added definition",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
+    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A work or expression that is summarized."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -1451,12 +1451,12 @@
                 :rdf/type    :owl/Class},
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A supplement to a work or expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Work or Expression",
@@ -1557,12 +1557,12 @@
    :rdfs/range :frbr/Expression,
    :rdfs/subPropertyOf :frbr/relatedEndeavour,
    :skos/changeNote
-   [{:rdf/value "Added definition",
+   [{:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}
-    {:rdf/value "Added isDefinedBy property referring to FRBR core namespace",
+     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}
+    {:rdf/value "Added definition",
      "http://purl.org/dc/elements/1.1/creator" "Ian Davis",
-     "http://purl.org/dc/elements/1.1/date" "2005-08-08"}],
+     "http://purl.org/dc/elements/1.1/date" "2005-08-09"}],
    :skos/definition {:rdf/language "en",
                      :rdf/value    "A translation of an expression."},
    :skos/historyNote {:rdf/value "Added domain and range of Expression",
