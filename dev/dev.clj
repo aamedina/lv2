@@ -51,6 +51,7 @@
    [net.wikipunk.lv2.rdf.as :as as]
    [net.wikipunk.lv2.rdf.ldp :as ldp]
    [net.wikipunk.lv2.rdf.rr :as rr]
+   [net.wikipunk.lv2.rdf.mo :as mo]
    ;; ;; LV2 RDF models
    [net.wikipunk.lv2.rdf.atom :as atom]
    [net.wikipunk.lv2.rdf.bufsz :as bufsz]

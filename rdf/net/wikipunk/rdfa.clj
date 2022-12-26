@@ -155,6 +155,12 @@
                       "http://www.w3.org/TR/2012/REC-mediaont-10-20120209/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def mo
+  "Music Ontology"
+  {:rdfa/uri    "http://purl.org/ontology/mo/"
+   :rdfa/prefix "mo"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def oa
   "Web Annotation Vocabulary"
   {:rdfa/uri         "http://www.w3.org/ns/oa#",

@@ -17,7 +17,8 @@
                         net.wikipunk.rdfa/prov
                         net.wikipunk.rdfa/as
                         net.wikipunk.rdfa/ldp
-                        net.wikipunk.rdfa/rr]
+                        net.wikipunk.rdfa/rr
+                        net.wikipunk.rdfa/mo]
          :lv2          [net.wikipunk.lv2
                         net.wikipunk.lv2/atom
                         net.wikipunk.lv2/buf-size
