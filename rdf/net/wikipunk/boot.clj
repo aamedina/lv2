@@ -15,6 +15,12 @@
    :rdfa/prefix "adms"
    :rdf/type    :rdfa/PrefixMapping})
 
+(def ao
+  {:dcat/downloadURL "https://purl.org/ontology/ao/associationontology.owl"
+   :rdfa/uri         "http://purl.org/ontology/ao/core#"
+   :rdfa/prefix      "ao"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def as
   "Activity Vocabulary"
   {:dcat/downloadURL #_ "https://raw.githubusercontent.com/w3c/activitystreams/master/vocabulary/activitystreams2.owl"

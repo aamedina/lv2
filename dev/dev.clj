@@ -85,6 +85,7 @@
    [net.wikipunk.rdf.dpvo-gdpr :as dpvo-gdpr]
    [net.wikipunk.rdf.dpvo-risk :as dpvo-risk]
    [net.wikipunk.rdf.gen :as gen]
+   [net.wikipunk.rdf.ao :as ao]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
