@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.urid
-  "This extension defines a simple mechanism for plugins to map URIs to and from integers.  This is usually used for performance reasons, for example for processing events with URI types in real-time audio code).  Typically, plugins map URIs to integers for things they \"understand\" at instantiation time, and store those values for use in the audio thread without doing any string comparison.  This allows for the extensibility of RDF but with the performance of integers.  This extension is intended as an improved and simplified replacement for the [uri-map](uri-map.html) extension, since the `map` context parameter there has proven problematic.  This extension is functionally equivalent to the uri-map extension with a NULL context.  New implementations are encouraged to use this extension for URI mapping."
+  "Features for mapping URIs to and from integers."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/urid.lv2/urid.ttl",
    :lv2/project
@@ -28,14 +28,14 @@
   (:refer-clojure :exclude [map]))
 
 (def map
-  "To support this feature, the host must pass an LV2_Feature to LV2_Descriptor::instantiate() with URI LV2_URID__map and data pointed to an instance of LV2_URID_Map."
+  "A feature to map URI strings to integer URIDs."
   {:rdf/about    :urid/map,
    :rdf/type     :lv2/Feature,
    :rdfs/comment "A feature to map URI strings to integer URIDs.",
    :rdfs/label   "map"})
 
 (def unmap
-  "To support this feature, the host must pass an LV2_Feature to LV2_Descriptor::instantiate() with URI LV2_URID__unmap and data pointed to an instance of LV2_URID_Unmap."
+  "A feature to unmap URIDs back to strings."
   {:rdf/about    :urid/unmap,
    :rdf/type     :lv2/Feature,
    :rdfs/comment "A feature to unmap URIDs back to strings.",

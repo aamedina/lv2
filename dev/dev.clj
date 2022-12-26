@@ -38,6 +38,7 @@
    [net.wikipunk.rdf.lv2.foaf :as foaf]
    [net.wikipunk.rdf.lv2.dcterms :as dcterms]
    [net.wikipunk.rdf.lv2.schema :as schema]
+   [net.wikipunk.rdf.lv2.xsd :as xsd]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]

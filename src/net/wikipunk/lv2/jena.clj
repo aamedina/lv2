@@ -107,14 +107,11 @@
     (if (= XSDDatatype/XSDdateTime (.getLiteralDatatype n))
       (.getTime (.asCalendar ^XSDDateTime (.getLiteralValue n)))
       (if-let [lang (not-empty (.getLiteralLanguage n))]
-        (if (str/starts-with? lang "en")
-          (.getLiteralValue n)
-          {:rdf/literal (.getLiteralValue n)
-           :rdf/lang    lang})
+        {:rdf/value    (.getLiteralValue n)
+         :rdf/language lang}
         (let [value (.getLiteralValue n)]
           (if (instance? BaseDatatype$TypedValue value)
-            {:rdf/literal (.-lexicalValue value)
-             :rdf/uri     (.-datatypeURI value)}
+            (.-lexicalValue value)
             value))))))
 
 (defprotocol Parsable
@@ -222,12 +219,15 @@
                                       'null
                                       
                                       :else sym)
-                                docstring (or (some-> (:lv2/documentation v) :rdf/literal)
+                                docstring (or (some-> (:lv2/documentation v) :rdf/value)
                                               (:dcterms/description v)
                                               (:rdfs/comment v))
-                                docstring (if (coll? docstring)
+                                docstring (if (vector? docstring)
                                             (first (filter string? docstring))
                                             docstring)
+                                docstring (if (string? docstring)
+                                            docstring
+                                            (:rdf/value docstring))
                                 docstring (when docstring
                                             (str/trim (str/replace docstring #"\s" " ")))
                                 v         (assoc v :rdf/about k)]
@@ -242,7 +242,7 @@
     (cons `(~'ns ~(symbol (str "net.wikipunk.rdf.lv2." (:vann/preferredNamespacePrefix md)))
             ~(let [docstring (or (:dcterms/abstract md)
                                  (:dcterms/title md)
-                                 (get-in md [:lv2/project :lv2/documentation :rdf/literal])
+                                 (get-in md [:lv2/project :lv2/documentation :rdf/value])
                                  (:rdfs/comment md)
                                  (:rdfs/label md)
                                  (:vann/preferredNamespaceUri md)
@@ -251,6 +251,9 @@
                    docstring (if (and (coll? docstring) (seq docstring))
                                (first (filter string? docstring))
                                docstring)
+                   docstring (if (string? docstring)
+                               docstring
+                               (:rdf/value docstring ""))
                    docstring (str/trim (str/replace docstring #"\s" " "))]
                docstring)
             ~(dissoc (cond-> md

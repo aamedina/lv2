@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.midi
-  "This specification defines a data type for a MIDI message, midi:MidiEvent, which is normalised for fast and convenient real-time processing.  MIDI is the <q>Musical Instrument Digital Interface</q>, a ubiquitous binary standard for controlling digital music devices.  For plugins that process MIDI (or other situations where MIDI is sent via a generic transport) the main type defined here, midi:MidiEvent, can be mapped to an integer and used as the type of an LV2 [Atom](atom.html#Atom) or [Event](event.html#Event).  This specification also defines a complete vocabulary for the MIDI standard, except for standard controller numbers.  These descriptions are detailed enough to express any MIDI message as properties."
+  "A normalised definition of raw MIDI."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.ttl",
    :lv2/project
@@ -123,7 +123,7 @@
    :rdfs/label           "Hex Byte"})
 
 (def MidiEvent
-  "A single raw MIDI message (a sequence of bytes).  This is equivalent to a standard MIDI messages, except with the following restrictions to simplify handling:    * Running status is not allowed, every message must have its own status byte.    * Note On messages with velocity 0 are not allowed.  These messages are     equivalent to Note Off in standard MIDI streams, but here only proper Note     Off messages are allowed.    * \"Realtime messages\" (status bytes 0xF8 to 0xFF) are allowed, but may not      occur inside other messages like they can in standard MIDI streams.    * All messages are complete valid MIDI messages.  This means, for example,     that only the first byte in each event (the status byte) may have the     eighth bit set, that Note On and Note Off events are always 3 bytes long,     etc.  Where messages are communicated, the writer is responsible for writing valid messages, and the reader may assume that all events are valid.  If a midi:MidiEvent is serialised to a string, the format should be xsd:hexBinary, for example:      :::turtle     [] eg:someEvent \"901A01\"^^midi:MidiEvent ."
+  "A single raw MIDI message."
   {:owl/onDatatype  :xsd/hexBinary,
    :rdf/about       :midi/MidiEvent,
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
@@ -391,7 +391,7 @@
    :rdfs/range   :midi/HexByte})
 
 (def statusMask
-  "This is a status byte with the lower nibble set to zero."
+  "The status byte for a message of this type on channel 1."
   {:rdf/about    :midi/statusMask,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The status byte for a message of this type on channel 1.",

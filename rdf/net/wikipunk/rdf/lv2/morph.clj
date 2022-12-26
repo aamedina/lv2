@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.morph
-  "This extension defines two port types: morph:MorphPort, which has a host-configurable type, and morph:AutoMorphPort, which may automatically change type when a MorphPort's type is changed.  These ports always have a default type and work normally work in hosts that are unaware of this extension.  Thus, this extension provides a backwards compatibility mechanism which allows plugins to use new port types but gracefully fall back to a default type in hosts that do not support them.  This extension only defines port types and properties for describing morph ports.  The actual run-time switching is done via the opts:interface API."
+  "Ports that can dynamically change type."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/morph.lv2/morph.ttl",
    :lv2/project {:doap/created   "2012-05-22",
@@ -29,7 +29,7 @@
    :vann/preferredNamespaceUri "http://lv2plug.in/ns/ext/morph#"})
 
 (def AutoMorphPort
-  "Ports of this type MUST have another type which defines the default buffer format (for example, lv2:ControlPort) but may dynamically change types based on the configured types of any morph:MorphPort ports on the same plugin instance.  The type of a port may only change in response to a host call to LV2_Options_Interface::set().  Whenever any port type on the instance changes, the host MUST check the type of all morph:AutoMorphPort ports with LV2_Options_Interface::get() before calling run() again, since they may have changed.  If the type of any port is zero, it means the current configuration is invalid and the plugin may not be run (unless that port is lv2:connectionOptional and connected to NULL).  This is mainly useful for outputs whose type depends on the type of corresponding inputs."
+  "A port that can change its type based on that of another."
   {:rdf/about       :morph/AutoMorphPort,
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A port that can change its type based on that of another.",
@@ -37,7 +37,7 @@
    :rdfs/subClassOf :lv2/Port})
 
 (def MorphPort
-  "Ports of this type MUST have another type which defines the default buffer format (for example lv2:ControlPort) but can be dynamically changed to a different type in hosts that support opts:interface.  The host may change the type of a MorphPort by setting its morph:currentType with LV2_Options_Interface::set().  If the plugin has any morph:AutoMorphPort ports, the host MUST check their types after changing any port type since they may have changed."
+  "A port which can be switched to another type."
   {:rdf/about       :morph/MorphPort,
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A port which can be switched to another type.",
@@ -45,7 +45,7 @@
    :rdfs/subClassOf :lv2/Port})
 
 (def currentType
-  "The currently active type of the port.  This is for dynamic use as an option and SHOULD NOT be listed in the static plugin data."
+  "The currently active type of the port."
   {:rdf/about    :morph/currentType,
    :rdf/type     [:owl/ObjectProperty :opts/Option :rdf/Property],
    :rdfs/comment "The currently active type of the port.",
@@ -53,7 +53,7 @@
    :rdfs/label   "current type"})
 
 (def supportsType
-  "Indicates that a port supports being switched to a certain type.  A MorphPort MUST list each type it supports being switched to in the plugin data using this property."
+  "A type that a port supports being switched to."
   {:rdf/about    :morph/supportsType,
    :rdf/type     [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment "A type that a port supports being switched to.",

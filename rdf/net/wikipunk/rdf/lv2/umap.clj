@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.umap
-  "<span class=\"warning\">This extension is deprecated.</span> New implementations should use [LV2 URID](urid.html) instead.  This extension defines a simple mechanism for plugins to map URIs to integers, usually for performance reasons (e.g. processing events typed by URIs in real time).  The expected use case is for plugins to map URIs to integers for things they 'understand' at instantiation time, and store those values for use in the audio thread without doing any string comparison.  This allows the extensibility of RDF with the performance of integers (or centrally defined enumerations)."
+  "A feature for mapping URIs to integers."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/uri-map.lv2/uri-map.ttl",
    :lv2/project
