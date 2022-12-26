@@ -5,6 +5,11 @@
 (def initial-context
   {:dcat/downloadURL "https://raw.githubusercontent.com/w3c/json-ld-rc/main/rdfa-1.1.ttl"})
 
+(def acl
+  {:rdfa/uri    "http://www.w3.org/ns/auth/acl#"
+   :rdfa/prefix "acl"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def adms
   {:rdfa/uri    "http://www.w3.org/ns/adms#"
    :rdfa/prefix "adms"
