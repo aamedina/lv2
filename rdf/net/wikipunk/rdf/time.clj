@@ -162,12 +162,12 @@
    :rdfs/label ["duración de tiempo"
                 {:rdf/language "en",
                  :rdf/value    "Time duration"}],
-   :rdfs/subClassOf [:time/TemporalDuration
+   :rdfs/subClassOf [{:owl/cardinality 1,
+                      :owl/onProperty  :time/numericDuration,
+                      :rdf/type        :owl/Restriction}
+                     :time/TemporalDuration
                      {:owl/cardinality 1,
                       :owl/onProperty  :time/unitType,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :time/numericDuration,
                       :rdf/type        :owl/Restriction}],
    :skos/definition
    [{:rdf/language "en",
@@ -200,30 +200,30 @@
                 {:rdf/language "en",
                  :rdf/value    "Duration description"}],
    :rdfs/subClassOf [{:owl/allValuesFrom :xsd/decimal,
-                      :owl/onProperty    :time/seconds,
-                      :rdf/type          :owl/Restriction}
-                     :time/GeneralDurationDescription
-                     {:owl/allValuesFrom :xsd/decimal,
-                      :owl/onProperty    :time/years,
+                      :owl/onProperty    :time/weeks,
                       :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :xsd/decimal,
-                      :owl/onProperty    :time/hours,
+                      :owl/onProperty    :time/months,
                       :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :xsd/decimal,
                       :owl/onProperty    :time/minutes,
                       :rdf/type          :owl/Restriction}
+                     :time/GeneralDurationDescription
                      {:owl/allValuesFrom :xsd/decimal,
-                      :owl/onProperty    :time/months,
+                      :owl/onProperty    :time/days,
                       :rdf/type          :owl/Restriction}
                      {:owl/hasValue
                       "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
                       :owl/onProperty :time/hasTRS,
                       :rdf/type :owl/Restriction}
                      {:owl/allValuesFrom :xsd/decimal,
-                      :owl/onProperty    :time/weeks,
+                      :owl/onProperty    :time/seconds,
                       :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :xsd/decimal,
-                      :owl/onProperty    :time/days,
+                      :owl/onProperty    :time/years,
+                      :rdf/type          :owl/Restriction}
+                     {:owl/allValuesFrom :xsd/decimal,
+                      :owl/onProperty    :time/hours,
                       :rdf/type          :owl/Restriction}],
    :skos/definition
    [{:rdf/language "en",
@@ -241,6 +241,7 @@
      "En el calendario gregoriano la longitud de los meses no es fija. Por lo tanto, un valor como \"2,5 meses\" no se puede comparar exactamente con una duración similar expresada en términos de semanas o días."}]})
 
 (def Friday
+  "Friday"
   {:rdf/about      :time/Friday,
    :rdf/type       :time/DayOfWeek,
    :rdfs/label     {:rdf/language "en",
@@ -286,42 +287,42 @@
                 {:rdf/language "en",
                  :rdf/value    "Generalized date-time description"}],
    :rdfs/subClassOf [{:owl/maxCardinality 1,
-                      :owl/onProperty     :time/day,
+                      :owl/onProperty     :time/timeZone,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/dayOfYear,
+                      :owl/onProperty     :time/year,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxCardinality 1,
+                      :owl/onProperty     :time/dayOfWeek,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :time/unitType,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/maxCardinality 1,
+                      :owl/onProperty     :time/month,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxCardinality 1,
+                      :owl/onProperty     :time/hour,
                       :rdf/type           :owl/Restriction}
                      :time/TemporalPosition
                      {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/year,
+                      :owl/onProperty     :time/minute,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxCardinality 1,
+                      :owl/onProperty     :time/day,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
                       :owl/onProperty     :time/second,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/minute,
+                      :owl/onProperty     :time/monthOfYear,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/timeZone,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/month,
+                      :owl/onProperty     :time/dayOfYear,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
                       :owl/onProperty     :time/week,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/dayOfWeek,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/hour,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/monthOfYear,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :time/unitType,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    ["Descripción de fecha y hora estructurada con valores separados para los distintos elementos de un sistema calendario-reloj."
     {:rdf/language "en",
@@ -352,26 +353,26 @@
                       :owl/onProperty  :time/hasTRS,
                       :rdf/type        :owl/Restriction}
                      {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/minutes,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/days,
+                      :owl/onProperty     :time/months,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
                       :owl/onProperty     :time/years,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/weeks,
+                      :owl/onProperty     :time/days,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxCardinality 1,
                       :owl/onProperty     :time/hours,
                       :rdf/type           :owl/Restriction}
-                     :time/TemporalDuration
                      {:owl/maxCardinality 1,
                       :owl/onProperty     :time/seconds,
                       :rdf/type           :owl/Restriction}
+                     :time/TemporalDuration
                      {:owl/maxCardinality 1,
-                      :owl/onProperty     :time/months,
+                      :owl/onProperty     :time/minutes,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxCardinality 1,
+                      :owl/onProperty     :time/weeks,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    [{:rdf/language "en",
@@ -448,6 +449,7 @@
    "This class was present in the 2006 version of OWL-Time. It was presented as an example of how DateTimeDescription could be specialized, but does not belong in the revised ontology. "})
 
 (def Monday
+  "Monday"
   {:rdf/about      :time/Monday,
    :rdf/type       :time/DayOfWeek,
    :rdfs/label     {:rdf/language "en",
@@ -489,14 +491,14 @@
                  :rdf/value    "Month of year"}
                 {:rdf/language "es",
                  :rdf/value    "mes del año"}],
-   :rdfs/subClassOf [{:owl/cardinality 0,
-                      :owl/onProperty  :time/day,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/cardinality 1,
+   :rdfs/subClassOf [{:owl/cardinality 1,
                       :owl/onProperty  :time/month,
                       :rdf/type        :owl/Restriction}
+                     {:owl/hasValue   :time/unitMonth,
+                      :owl/onProperty :time/unitType,
+                      :rdf/type       :owl/Restriction}
                      {:owl/cardinality 0,
-                      :owl/onProperty  :time/week,
+                      :owl/onProperty  :time/year,
                       :rdf/type        :owl/Restriction}
                      {:owl/cardinality 0,
                       :owl/onProperty  :time/hour,
@@ -504,14 +506,14 @@
                      {:owl/cardinality 0,
                       :owl/onProperty  :time/minute,
                       :rdf/type        :owl/Restriction}
-                     {:owl/hasValue   :time/unitMonth,
-                      :owl/onProperty :time/unitType,
-                      :rdf/type       :owl/Restriction}
                      {:owl/cardinality 0,
                       :owl/onProperty  :time/second,
                       :rdf/type        :owl/Restriction}
                      {:owl/cardinality 0,
-                      :owl/onProperty  :time/year,
+                      :owl/onProperty  :time/week,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/cardinality 0,
+                      :owl/onProperty  :time/day,
                       :rdf/type        :owl/Restriction}
                      :time/DateTimeDescription],
    :skos/definition [{:rdf/language "en",
@@ -559,6 +561,7 @@
      "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"}]})
 
 (def Saturday
+  "Saturday"
   {:rdf/about      :time/Saturday,
    :rdf/type       :time/DayOfWeek,
    :rdfs/label     {:rdf/language "en",
@@ -589,6 +592,7 @@
                      :rdf/value    "Samstag"}]})
 
 (def Sunday
+  "Sunday"
   {:rdf/about      :time/Sunday,
    :rdf/type       :time/DayOfWeek,
    :rdfs/label     {:rdf/language "en",
@@ -746,6 +750,7 @@
      "Membership of the class TemporalUnit is open, to allow for other temporal units used in some technical applications (e.g. millions of years, Baha'i month)."}]})
 
 (def Thursday
+  "Thursday"
   {:rdf/about      :time/Thursday,
    :rdf/type       :time/DayOfWeek,
    :rdfs/label     {:rdf/language "en",
@@ -850,6 +855,7 @@
     "In this implementation TimeZone has no properties defined. It should be thought of as an 'abstract' superclass of all specific timezone implementations."]})
 
 (def Tuesday
+  "Tuesday"
   {:rdf/about      :time/Tuesday,
    :rdf/type       :time/DayOfWeek,
    :rdfs/label     {:rdf/language "en",
@@ -880,6 +886,7 @@
                      :rdf/value    "Martedì"}]})
 
 (def Wednesday
+  "Wednesday"
   {:rdf/about      :time/Wednesday,
    :rdf/type       :time/DayOfWeek,
    :rdfs/label     {:rdf/language "en",
@@ -918,16 +925,13 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Year"},
    :rdfs/subClassOf [{:owl/cardinality 0,
-                      :owl/onProperty  :time/seconds,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/cardinality 0,
-                      :owl/onProperty  :time/months,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/cardinality 0,
                       :owl/onProperty  :time/weeks,
                       :rdf/type        :owl/Restriction}
                      {:owl/cardinality 1,
                       :owl/onProperty  :time/years,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/cardinality 0,
+                      :owl/onProperty  :time/months,
                       :rdf/type        :owl/Restriction}
                      {:owl/cardinality 0,
                       :owl/onProperty  :time/minutes,
@@ -938,13 +942,14 @@
                      :time/DurationDescription
                      {:owl/cardinality 0,
                       :owl/onProperty  :time/hours,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/cardinality 0,
+                      :owl/onProperty  :time/seconds,
                       :rdf/type        :owl/Restriction}],
    :skos/definition "Year duration",
    :skos/historyNote
    "Year was proposed in the 2006 version of OWL-Time as an example of how DurationDescription could be specialized to allow for a duration to be restricted to a number of years. \n\nIt is deprecated in this edition of OWL-Time. ",
-   :skos/prefLabel [{:rdf/language "pt",
-                     :rdf/value    "Ano"}
-                    {:rdf/language "it",
+   :skos/prefLabel [{:rdf/language "it",
                      :rdf/value    "Anno"}
                     {:rdf/language "ar",
                      :rdf/value    "سنة"}
@@ -965,7 +970,9 @@
                     {:rdf/language "zh",
                      :rdf/value    "年"}
                     {:rdf/language "ja",
-                     :rdf/value    "年"}]})
+                     :rdf/value    "年"}
+                    {:rdf/language "pt",
+                     :rdf/value    "Ano"}]})
 
 (def after
   "Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2."
@@ -2341,6 +2348,7 @@
      "IANA mantiene una base de datos de husos horarios. Éstas están bien mantenidas y generalmente se consideran autorizadas, pero los ítems individuales no están disponibles en URIs individuales, por tanto, no se pueden utilizar directamente en datos expresados utilizando OWL-Time.\n            La BDPedia proporciona un conjunto de recursos correspondientes a los husos horarios de IANA, con una URI para cada uno (por ejemplo, http://dbpedia.org/resource/Australia/Eucla). El Servicio de Reloj Mundial también proporciona una lista de husos horarios con la descripción de cada uno de los disponibles como una página Web individual con una URI adecuada individual (por ejemplo, https://www.timeanddate.com/time/zones/acwst). Éstos, y otros recursos similares, se puden usar como un valor de la propiedad 'huso horario'."}]})
 
 (def unitCentury
+  "century"
   {:rdf/about      :time/unitCentury,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2380,6 +2388,7 @@
    :time/years     100})
 
 (def unitDay
+  "day"
   {:rdf/about      :time/unitDay,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2417,6 +2426,7 @@
    :time/years     0})
 
 (def unitDecade
+  "decade"
   {:rdf/about      :time/unitDecade,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2456,6 +2466,7 @@
    :time/years     10})
 
 (def unitHour
+  "hour"
   {:rdf/about      :time/unitHour,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2494,6 +2505,7 @@
    :time/years     0})
 
 (def unitMillenium
+  "millenium"
   {:rdf/about      :time/unitMillenium,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2533,6 +2545,7 @@
    :time/years     1000})
 
 (def unitMinute
+  "minute"
   {:rdf/about      :time/unitMinute,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2572,6 +2585,7 @@
    :time/years     0})
 
 (def unitMonth
+  "month"
   {:rdf/about      :time/unitMonth,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2609,6 +2623,7 @@
    :time/years     0})
 
 (def unitSecond
+  "second"
   {:rdf/about      :time/unitSecond,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2665,6 +2680,7 @@
    :rdfs/range :time/TemporalUnit})
 
 (def unitWeek
+  "week"
   {:rdf/about      :time/unitWeek,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",
@@ -2704,6 +2720,7 @@
    :time/years     0})
 
 (def unitYear
+  "year"
   {:rdf/about      :time/unitYear,
    :rdf/type       :time/TemporalUnit,
    :rdfs/label     {:rdf/language "en",

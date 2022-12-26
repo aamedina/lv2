@@ -24,6 +24,7 @@
                 :rdf/value    "The gregorian months"}})
 
 (def April
+  "April"
   {:rdf/about       :greg/April,
    :rdf/type        :time/MonthOfYear,
    :rdfs/label      {:rdf/language "en",
@@ -59,6 +60,7 @@
    :time/unitType   :time/unitMonth})
 
 (def August
+  "August"
   {:rdf/about      :greg/August,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -91,6 +93,7 @@
    :time/unitType  :time/unitMonth})
 
 (def December
+  "December"
   {:rdf/about      :greg/December,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -122,6 +125,7 @@
    :time/month     #inst "2000-12-15T00:00:00.000-05:00"})
 
 (def February
+  "February"
   {:rdf/about      :greg/February,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -153,6 +157,7 @@
    :time/month     #inst "2000-02-15T00:00:00.000-05:00"})
 
 (def January
+  "January"
   {:rdf/about :greg/January,
    :rdf/type :time/MonthOfYear,
    :rdfs/label "January",
@@ -185,6 +190,7 @@
    :time/month #inst "2000-01-15T00:00:00.000-05:00"})
 
 (def July
+  "July"
   {:rdf/about      :greg/July,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -216,6 +222,7 @@
    :time/month     #inst "2000-07-15T00:00:00.000-04:00"})
 
 (def June
+  "June"
   {:rdf/about      :greg/June,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -247,6 +254,7 @@
    :time/month     #inst "2000-06-15T00:00:00.000-04:00"})
 
 (def March
+  "March"
   {:rdf/about      :greg/March,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -278,6 +286,7 @@
    :time/month     #inst "2000-03-15T00:00:00.000-05:00"})
 
 (def May
+  "May"
   {:rdf/about      :greg/May,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -309,6 +318,7 @@
    :time/month     #inst "2000-05-15T00:00:00.000-04:00"})
 
 (def November
+  "November"
   {:rdf/about      :greg/November,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -340,6 +350,7 @@
    :time/month     #inst "2000-11-15T00:00:00.000-05:00"})
 
 (def October
+  "October"
   {:rdf/about      :greg/October,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",
@@ -371,6 +382,7 @@
    :time/month     #inst "2000-10-15T00:00:00.000-04:00"})
 
 (def September
+  "September"
   {:rdf/about      :greg/September,
    :rdf/type       :time/MonthOfYear,
    :rdfs/label     {:rdf/language "en",

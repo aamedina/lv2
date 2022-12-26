@@ -1,6 +1,23 @@
 (ns net.wikipunk.rdf.sosa
-  "http://www.w3.org/ns/sosa/"
-  {:rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
+  "This ontology is based on the SSN Ontology by the W3C Semantic Sensor Networks Incubator Group (SSN-XG), together with considerations from the W3C/OGC Spatial Data on the Web Working Group."
+  {:dcterms/created #inst "2017-04-17T00:00:00.000-04:00",
+   :dcterms/creator
+   {:foaf/name {:rdf/language "en",
+                :rdf/value    "W3C/OGC Spatial Data on the Web Working Group"},
+    :rdf/type  :foaf/Agent},
+   :dcterms/description
+   {:rdf/language "en",
+    :rdf/value
+    "This ontology is based on the SSN Ontology by the W3C Semantic Sensor Networks Incubator Group (SSN-XG), together with considerations from the W3C/OGC Spatial Data on the Web Working Group."},
+   :dcterms/license
+   ["http://www.opengeospatial.org/ogc/Software"
+    "http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"],
+   :dcterms/rights "Copyright 2017 W3C/OGC.",
+   :dcterms/title {:rdf/language "en",
+                   :rdf/value
+                   "Sensor, Observation, Sample, and Actuator (SOSA) Ontology"},
+   :rdf/about "http://www.w3.org/ns/sosa/",
+   :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "foaf"    "http://xmlns.com/foaf/0.1/",
                        "owl"     "http://www.w3.org/2002/07/owl#",
                        "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -12,11 +29,13 @@
                        "vann"    "http://purl.org/vocab/vann/",
                        "voaf"    "http://purl.org/vocommons/voaf#",
                        "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-   :rdf/type          :rdfa/PrefixMapping,
-   :rdfa/prefix       "sosa",
-   :rdfa/uri          "http://www.w3.org/ns/sosa/",
-   :rdfs/isDefinedBy  {:rdf/uri
-                       "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/"}}
+   :rdf/type [:voaf/Vocabulary :owl/Ontology],
+   :rdfa/prefix "sosa",
+   :rdfa/uri "http://www.w3.org/ns/sosa/",
+   :rdfs/isDefinedBy {:rdf/uri
+                      "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/"},
+   :vann/preferredNamespacePrefix "sosa",
+   :vann/preferredNamespaceUri "http://www.w3.org/ns/sosa/"}
   (:refer-clojure :exclude [name]))
 
 (def ActuatableProperty

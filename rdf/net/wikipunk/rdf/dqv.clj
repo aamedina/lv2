@@ -1,6 +1,27 @@
 (ns net.wikipunk.rdf.dqv
-  "http://www.w3.org/ns/dqv#"
-  {:rdf/ns-prefix-map {"daq"     "http://purl.org/eis/vocab/daq#",
+  "The Data Quality Vocabulary (DQV) is seen as an extension to DCAT to cover the quality of the data, how frequently is it updated, whether it accepts user corrections, persistence commitments etc. When used by publishers, this vocabulary will foster trust in the data amongst developers."
+  {:dcterms/contributor [{:foaf/name "Christophe Guéret"}
+                         {:foaf/name "Nandana Mihindukulasooriya"}
+                         {:foaf/name "Makx Dekkers"}
+                         {:foaf/name "Jeremy Debattista"}
+                         {:foaf/name "Amrapali Zaveri"}
+                         {:foaf/name "Deirdre Lee"}],
+   :dcterms/created #inst "2015-12-17T00:00:00.000-05:00",
+   :dcterms/creator [{:foaf/name "Antoine Isaac"}
+                     {:foaf/name "Riccardo Albertoni"}],
+   :dcterms/description
+   {:rdf/language "en",
+    :rdf/value
+    "The Data Quality Vocabulary (DQV) is seen as an extension to DCAT to cover the quality of the data, how frequently is it updated, whether it accepts user corrections, persistence commitments etc. When used by publishers, this vocabulary will foster trust in the data amongst developers."},
+   :dcterms/modified [#inst "2016-08-26T00:00:00.000-04:00"
+                      #inst "2016-12-15T00:00:00.000-05:00"],
+   :dcterms/publisher "http://www.w3.org/data#W3C",
+   :dcterms/title {:rdf/language "en",
+                   :rdf/value    "Data Quality Vocabulary"},
+   :dcterms/type "http://purl.org/adms/assettype/Ontology",
+   :foaf/homepage "http://www.w3.org/TR/vocab-dqv/",
+   :rdf/about "http://www.w3.org/ns/dqv",
+   :rdf/ns-prefix-map {"daq"     "http://purl.org/eis/vocab/daq#",
                        "dcterms" "http://purl.org/dc/terms/",
                        "dqv"     "http://www.w3.org/ns/dqv#",
                        "duv"     "http://www.w3.org/ns/duv#",
@@ -14,10 +35,12 @@
                        "vann"    "http://purl.org/vocab/vann/",
                        "voaf"    "http://purl.org/vocommons/voaf#",
                        "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-   :rdf/type          :rdfa/PrefixMapping,
-   :rdfa/prefix       "dqv",
-   :rdfa/uri          "http://www.w3.org/ns/dqv#",
-   :rdfs/isDefinedBy  {:rdf/uri "https://www.w3.org/TR/vocab-dqv/"}})
+   :rdf/type :voaf/Vocabulary,
+   :rdfa/prefix "dqv",
+   :rdfa/uri "http://www.w3.org/ns/dqv#",
+   :rdfs/isDefinedBy {:rdf/uri "https://www.w3.org/TR/vocab-dqv/"},
+   :vann/preferredNamespacePrefix "dqv",
+   :vann/preferredNamespaceUri "http://www.w3.org/ns/dqv#"})
 
 (def Category
   "Represents a group of quality dimensions in which a common type of information is used as quality indicator."

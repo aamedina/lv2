@@ -1,6 +1,20 @@
 (ns net.wikipunk.rdf.duv
-  "https://www.w3.org/ns/duv#"
-  {:rdf/ns-prefix-map {"biro" "http://purl.org/spar/biro/",
+  "The Dataset Usage Vocabulary (DUV) is used to describe consumer experiences, citations, and feedback about datasets from the human perspective."
+  {:dcterms/created #inst "2015-12-17T00:00:00.000-05:00",
+   :dcterms/creator [{:foaf/name "Eric G. Stephan"}
+                     {:foaf/name "Bernadette Farias Lóscio"}
+                     {:foaf/name "Sumit Purohit"}],
+   :dcterms/description
+   {:rdf/language "en",
+    :rdf/value
+    "The Dataset Usage Vocabulary (DUV) is used to describe consumer experiences, citations, and feedback about datasets from the human perspective."},
+   :dcterms/modified [#inst "2016-08-30T00:00:00.000-04:00"
+                      #inst "2017-01-23T00:00:00.000-05:00"],
+   :dcterms/publisher "http://www.w3.org/data#W3C",
+   :dcterms/title "Dataset Usage Vocabulary",
+   :dcterms/type "http://purl.org/adms/assettype/Ontology",
+   :rdf/about "http://www.w3.org/ns/duv",
+   :rdf/ns-prefix-map {"biro" "http://purl.org/spar/biro/",
                        "dcat" "http://www.w3.org/ns/dcat#",
                        "dct" "http://purl.org/dc/terms/",
                        "disco"
@@ -18,10 +32,12 @@
                        "vann" "http://purl.org/vocab/vann/",
                        "voaf" "http://purl.org/vocommons/voaf#",
                        "xsd" "http://www.w3.org/2001/XMLSchema#"},
-   :rdf/type          :rdfa/PrefixMapping,
-   :rdfa/prefix       "duv",
-   :rdfa/uri          "https://www.w3.org/ns/duv#",
-   :rdfs/isDefinedBy  {:rdf/uri "https://www.w3.org/TR/vocab-duv/"}})
+   :rdf/type :voaf/Vocabulary,
+   :rdfa/prefix "duv",
+   :rdfa/uri "https://www.w3.org/ns/duv#",
+   :rdfs/isDefinedBy "http://www.w3.org/TR/vocab-duv/",
+   :vann/preferredNamespacePrefix "duv",
+   :vann/preferredNamespaceUri "http://www.w3.org/ns/duv#"})
 
 (def RatingFeedback
   "Predefined criteria used to express a user opinion about a dataset or distribution using a discrete range of values."

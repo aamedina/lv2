@@ -530,12 +530,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov#",
    :rdfs/label "Insertion",
-   :rdfs/subClassOf [{:owl/minCardinality 1,
-                      :owl/onProperty     :prov/insertedKeyEntityPair,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/cardinality 1,
+   :rdfs/subClassOf [{:owl/cardinality 1,
                       :owl/onProperty  :prov/dictionary,
                       :rdf/type        :owl/Restriction}
+                     {:owl/minCardinality 1,
+                      :owl/onProperty     :prov/insertedKeyEntityPair,
+                      :rdf/type           :owl/Restriction}
                      :prov/Derivation]})
 
 (def InstantaneousEvent
@@ -596,10 +596,10 @@
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov#",
    :rdfs/label "Key-Entity Pair",
    :rdfs/subClassOf [{:owl/cardinality 1,
-                      :owl/onProperty  :prov/pairEntity,
+                      :owl/onProperty  :prov/pairKey,
                       :rdf/type        :owl/Restriction}
                      {:owl/cardinality 1,
-                      :owl/onProperty  :prov/pairKey,
+                      :owl/onProperty  :prov/pairEntity,
                       :rdf/type        :owl/Restriction}]})
 
 (def Location
@@ -762,10 +762,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy "http://www.w3.org/ns/prov#",
    :rdfs/label "Removal",
-   :rdfs/subClassOf [{:owl/minCardinality 1,
+   :rdfs/subClassOf [:prov/Derivation
+                     {:owl/minCardinality 1,
                       :owl/onProperty     :prov/removedKey,
                       :rdf/type           :owl/Restriction}
-                     :prov/Derivation
                      {:owl/cardinality 1,
                       :owl/onProperty  :prov/dictionary,
                       :rdf/type        :owl/Restriction}]})
@@ -2457,7 +2457,7 @@
     :rdf/value
     "The sub-properties of prov:wasInfluencedBy can be elaborated in more detail using the Qualification Pattern. For example, the binary relation :baking prov:used :spoon can be qualified by asserting :baking prov:qualifiedUsage [ a prov:Usage; prov:entity :spoon; prov:atLocation :kitchen ] .\n\nSubproperties of prov:wasInfluencedBy may also be asserted directly without being qualified.\n\nprov:wasInfluencedBy should not be used without also using one of its subproperties. \n"},
    :prov/inverse "influenced",
-   :prov/qualifiedForm [:prov/Influence :prov/qualifiedInfluence],
+   :prov/qualifiedForm [:prov/qualifiedInfluence :prov/Influence],
    :prov/sharesDefinitionWith :prov/Influence,
    :rdf/about :prov/wasInfluencedBy,
    :rdf/type :owl/ObjectProperty,
