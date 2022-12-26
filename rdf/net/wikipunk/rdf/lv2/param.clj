@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.param
-  "Common parameters for audio processing."
+  "This is a vocabulary for parameters that are common in audio processing software.  A <q>parameter</q> is purely a metadata concept, unrelated to any particular code mechanism.  Parameters are used to assign meaning to controls (for example, using lv2:designation for ports) so they can be used more intelligently or presented to the user more efficiently."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/parameters.lv2/parameters.ttl",
    :lv2/project {:doap/created    "2009-00-00",
@@ -52,18 +52,18 @@
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
-  {:pg/element      [{:lv2/designation :param/delay,
-                      :lv2/index       0}
+  {:pg/element      [{:lv2/designation :param/decay,
+                      :lv2/index       3}
+                     {:lv2/designation :param/hold,
+                      :lv2/index       2}
                      {:lv2/designation :param/attack,
                       :lv2/index       1}
-                     {:lv2/designation :param/decay,
-                      :lv2/index       3}
-                     {:lv2/designation :param/release,
-                      :lv2/index       5}
                      {:lv2/designation :param/sustain,
                       :lv2/index       4}
-                     {:lv2/designation :param/hold,
-                      :lv2/index       2}],
+                     {:lv2/designation :param/delay,
+                      :lv2/index       0}
+                     {:lv2/designation :param/release,
+                      :lv2/index       5}],
    :rdf/about       :param/EnvelopeControls,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a DAHDSR envelope.",
@@ -239,7 +239,7 @@
    :rdfs/range :atom/Float})
 
 (def wetDryRatio
-  "The ratio between processed and bypassed levels in the output."
+  "The ratio between processed and bypass components in output signal.  The dry and wet percentages can be calculated from the following equations:      :::c     dry = (wetDryRatio.maximum - wetDryRatio.value) / wetDryRatio.maximum     wet = wetDryRatio.value / wetDryRatio.maximum  Typically, maximum value of 1 or 100 and minimum value of 0 should be used."
   {:rdf/about :param/wetDryRatio,
    :rdf/type :lv2/Parameter,
    :rdfs/comment

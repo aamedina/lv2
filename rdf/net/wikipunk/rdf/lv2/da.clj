@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.da
-  "A feature that provides access to plugin extension data."
+  "This extension defines a feature, LV2_Extension_Data_Feature, which provides access to LV2_Descriptor::extension_data() for plugin UIs or other potentially remote users of a plugin.  Note that the use of this extension by UIs violates the important principle of UI/plugin separation, and is potentially a source of many problems. Accordingly, **use of this extension is highly discouraged**, and plugins should not expect hosts to support it, since it is often impossible to do so.  To support this feature the host must pass an LV2_Feature struct to LV2_Descriptor::extension_data() with URI LV2_DATA_ACCESS_URI and data pointed to an instance of LV2_Extension_Data_Feature."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/data-access.lv2/data-access.ttl",
    :lv2/project

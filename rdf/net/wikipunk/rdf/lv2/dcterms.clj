@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.lv2.dcterms
-  ""
+  "DCMI Metadata Terms"
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/dcterms.ttl",
    :dcterms/modified "2010-10-11",
