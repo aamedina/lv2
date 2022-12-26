@@ -72,6 +72,7 @@
    [net.wikipunk.rdf.qb :as qb]
    [net.wikipunk.rdf.rev :as rev]
    [net.wikipunk.rdf.sd :as sd]
+   [net.wikipunk.rdf.skosxl :as skosxl]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]

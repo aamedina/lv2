@@ -40,7 +40,8 @@
                           net.wikipunk.boot/org
                           net.wikipunk.boot/qb
                           net.wikipunk.boot/rev
-                          net.wikipunk.boot/sd]
+                          net.wikipunk.boot/sd
+                          net.wikipunk.boot/skosxl]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2
