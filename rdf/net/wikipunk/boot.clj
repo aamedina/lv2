@@ -141,8 +141,9 @@
 
 (def ical
   "iCalendar terms in RDF"
-  {:rdfa/uri         "http://www.w3.org/2002/12/cal/icaltzd#",
-   :rdfa/prefix      "ical",
+  {:dcat/downloadURL "https://www.w3.org/2002/12/cal/icaltzd.rdf"
+   :rdfa/uri         "http://www.w3.org/2002/12/cal/icaltzd#",
+   :rdfa/prefix      "cal",
    :rdfs/isDefinedBy {:rdf/uri "http://www.w3.org/2002/12/cal/icaltzd#"},
    :rdf/type         :rdfa/PrefixMapping})
 
