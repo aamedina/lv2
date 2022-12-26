@@ -175,6 +175,12 @@
    :rdfa/prefix "exif"
    :rdf/type    :rdfa/PrefixMapping})
 
+(def frbr
+  {:dcat/downloadURL "https://vocab.org/frbr/frbr-core-20050810.rdf"
+   :rdfa/uri         "http://purl.org/vocab/frbr/core#"
+   :rdfa/prefix      "frbr"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def foaf
   "FOAF"
   {:dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/foaf.ttl"

@@ -201,7 +201,8 @@
                                      (get types :voaf/Vocabulary)
                                      (get types :adms/SemanticAsset)
                                      (get types [:adms/SemanticAsset :owl/Ontology])
-                                     (get types [:voaf/Vocabulary :owl/Ontology])))
+                                     (get types [:voaf/Vocabulary :owl/Ontology])
+                                     (get types [:owl/Ontology :cc/Work])))
         md         (walk/prewalk (fn [form]
                                    (if (and (keyword? form) (or (= (namespace form) "dc")
                                                                 (= (namespace form) "dct")))
