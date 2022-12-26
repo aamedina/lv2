@@ -3,7 +3,7 @@
   {:dcat/downloadURL
    "https://lov.linkeddata.es/vocommons/voaf/v2.3/voaf_v2.3.rdf",
    :rdf/ns-prefix-map {"cc" "http://creativecommons.org/ns#",
-                       "dc" "http://purl.org/dc/terms/",
+                       "dcterms" "http://purl.org/dc/terms/",
                        "foaf" "http://xmlns.com/foaf/0.1/",
                        "frbr" "http://purl.org/vocab/frbr/core#",
                        "owl" "http://www.w3.org/2002/07/owl#",

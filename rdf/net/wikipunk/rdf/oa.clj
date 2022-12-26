@@ -1,10 +1,10 @@
 (ns net.wikipunk.rdf.oa
   "Web Annotation Ontology"
-  {:dcterms/creator [{:foaf/name "Robert Sanderson",
+  {:dcterms/creator [{:foaf/name "Paolo Ciccarese",
+                      :rdf/type  :foaf/Person}
+                     {:foaf/name "Robert Sanderson",
                       :rdf/type  :foaf/Person}
                      {:foaf/name "Benjamin Young",
-                      :rdf/type  :foaf/Person}
-                     {:foaf/name "Paolo Ciccarese",
                       :rdf/type  :foaf/Person}],
    :dcterms/modified "2016-11-12T21:28:11Z",
    :dcterms/title "Web Annotation Ontology",
@@ -16,8 +16,7 @@
                        "as"      "http://www.w3.org/ns/activitystreams#",
                        "bibo"    "http://purl.org/ontology/bibo/",
                        "cnt"     "http://www.w3.org/2011/content#",
-                       "dc"      "http://purl.org/dc/elements/1.1/",
-                       "dcterms" "http://purl.org/dc/terms/",
+                       "dcterms" "http://purl.org/dc/elements/1.1/",
                        "dctypes" "http://purl.org/dc/dcmitype/",
                        "exif"    "http://www.w3.org/2003/12/exif/ns#",
                        "foaf"    "http://xmlns.com/foaf/0.1/",

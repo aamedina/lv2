@@ -4,13 +4,13 @@
    {:rdf/language "en",
     :rdf/value
     "ADMS is a profile of DCAT, used to describe semantic assets (or just 'Assets'), defined as highly reusable metadata (e.g. xml schemata, generic data models) and reference data (e.g. code lists, taxonomies, dictionaries, vocabularies) that are used for eGovernment system development."},
-   :dcterms/creator [{:foaf/homepage      "http://www.w3.org/People/all#phila",
+   :dcterms/creator [{:foaf/homepage "http://makxdekkers.com/",
+                      :foaf/name "Makx Dekkers",
+                      :rdfs/seeAlso "http://makxdekkers.com/makxdekkers.rdf#me"}
+                     {:foaf/homepage      "http://www.w3.org/People/all#phila",
                       :foaf/name          "Phil Archer",
                       :rdfs/seeAlso       "http://philarcher.org/foaf.rdf#me",
                       :schema/affiliation "http://www.w3.org/data#W3C"}
-                     {:foaf/homepage "http://makxdekkers.com/",
-                      :foaf/name "Makx Dekkers",
-                      :rdfs/seeAlso "http://makxdekkers.com/makxdekkers.rdf#me"}
                      {:foaf/homepage "http://andrea-perego.name/",
                       :foaf/name "Andrea Perego",
                       :rdfs/seeAlso "http://andrea-perego.name/foaf/#me",

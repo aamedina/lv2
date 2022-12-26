@@ -1,24 +1,24 @@
 (ns net.wikipunk.rdf.org
   "Core organization ontology"
-  {:dcterms/contributor [{:foaf/mbox "lupe@fi.upm.es",
-                          :foaf/name "Guadalupe Aguado de Cea"}
-                         {:foaf/mbox "antonio.maccioni@agid.gov.it",
-                          :foaf/name "Antonio Maccioni"}
-                         {:foaf/mbox "giorgia.lodi@agid.gov.it",
-                          :foaf/name "Giorgia Lodi"}
-                         {:foaf/mbox "dave@epimorphics.com",
-                          :foaf/name "Dave Reynolds"}
-                         {:foaf/mbox "dguardiola@quinode.fr",
+  {:dcterms/contributor [{:foaf/mbox "dguardiola@quinode.fr",
                           :foaf/name "Dominique Guardiola"}
-                         {:foaf/mbox "mpoveda@fi.upm.es",
-                          :foaf/name "María Poveda Villalón"}
                          {:foaf/mbox "emontiel@fi.upm.es",
                           :foaf/name "Elena Montiel Ponsoda"}
-                         {:foaf/mbox "ogiraldo@fi.upm.es",
-                          :foaf/name "Olga Ximena Giraldo"}
                          {:foaf/homepage
                           "http://www.asahi-net.or.jp/~ax2s-kmtn/",
-                          :foaf/name "Shuji Kamitsuna"}],
+                          :foaf/name "Shuji Kamitsuna"}
+                         {:foaf/mbox "ogiraldo@fi.upm.es",
+                          :foaf/name "Olga Ximena Giraldo"}
+                         {:foaf/mbox "lupe@fi.upm.es",
+                          :foaf/name "Guadalupe Aguado de Cea"}
+                         {:foaf/mbox "dave@epimorphics.com",
+                          :foaf/name "Dave Reynolds"}
+                         {:foaf/mbox "giorgia.lodi@agid.gov.it",
+                          :foaf/name "Giorgia Lodi"}
+                         {:foaf/mbox "antonio.maccioni@agid.gov.it",
+                          :foaf/name "Antonio Maccioni"}
+                         {:foaf/mbox "mpoveda@fi.upm.es",
+                          :foaf/name "María Poveda Villalón"}],
    :dcterms/created #inst "2010-05-28T00:00:00.000-04:00",
    :dcterms/license "http://www.opendatacommons.org/licenses/pddl/1.0/",
    :dcterms/modified [#inst "2010-06-09T00:00:00.000-04:00"
@@ -41,7 +41,7 @@
                     :rdf/value    "Ontologie des organisations"}],
    :owl/versionInfo "0.8",
    :rdf/about "http://www.w3.org/ns/org#",
-   :rdf/ns-prefix-map {"dct"     "http://purl.org/dc/terms/",
+   :rdf/ns-prefix-map {"dcterms" "http://purl.org/dc/terms/",
                        "foaf"    "http://xmlns.com/foaf/0.1/",
                        "gr"      "http://purl.org/goodrelations/v1#",
                        "org"     "http://www.w3.org/ns/org#",

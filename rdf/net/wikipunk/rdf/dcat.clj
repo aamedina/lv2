@@ -1,28 +1,16 @@
 (ns net.wikipunk.rdf.dcat
   "DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web. By using DCAT to describe datasets in data catalogs, publishers increase discoverability and enable applications easily to consume metadata from multiple catalogs. It further enables decentralized publishing of catalogs and facilitates federated dataset search across sites. Aggregated DCAT metadata can serve as a manifest file to facilitate digital preservation. DCAT is defined at http://www.w3.org/TR/vocab-dcat/. Any variance between that normative document and this schema is an error in this schema."
   {:dcterms/contributor
-   [{:foaf/name "Richard Cyganiak"}
-    {:foaf/homepage      "http://www.w3.org/People/all#phila",
+   [{:foaf/homepage      "http://www.w3.org/People/all#phila",
      :foaf/name          "Phil Archer",
      :rdfs/seeAlso       "http://philarcher.org/foaf.rdf#me",
      :schema/affiliation "http://www.w3.org/data#W3C"}
-    {:foaf/name "Marios Meimaris"}
-    {:foaf/homepage "http://www.andrea-perego.name/foaf/#me",
-     :foaf/name     "Andrea Perego",
-     :rdfs/seeAlso  "https://orcid.org/0000-0001-9300-2694"}
-    {:foaf/name    "Ghislain Auguste Atemezing",
-     :rdfs/seeAlso "http://www.eurecom.fr/~atemezin/gatemezing-foaf.rdf"}
-    {:foaf/homepage
-     ["https://w3id.org/people/ralbertoni/"
-      "http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni"],
-     :foaf/name "Riccardo Albertoni",
-     :rdfs/seeAlso "https://orcid.org/0000-0001-5648-2713"}
-    {:foaf/homepage "http://makxdekkers.com/",
-     :foaf/name     "Makx Dekkers",
-     :rdfs/seeAlso  "http://makxdekkers.com/makxdekkers.rdf#me"}
-    {:foaf/name "Rufus Pollock",
-     :schema/affiliation {:foaf/homepage "http://okfn.org",
-                          :foaf/name     "Open Knowledge Foundation"}}
+    {:foaf/homepage "https://jakub.klímek.com/",
+     :foaf/name     "Jakub Klímek",
+     :rdfs/seeAlso  "https://jakub.klímek.com/#me"}
+    {:foaf/name "David Browning",
+     :schema/affiliation {:foaf/homepage "http://www.refinitiv.com",
+                          :foaf/name     "Refinitiv"}}
     {:foaf/name "Simon J D Cox",
      :foaf/workInfoHomepage "http://people.csiro.au/Simon-Cox",
      :rdf/type :foaf/Person,
@@ -31,28 +19,40 @@
      {:foaf/homepage "https://csiro.au",
       :foaf/name
       "Commonwealth Scientific and Industrial Research Organisation"}}
-    {:foaf/homepage "https://jakub.klímek.com/",
-     :foaf/name     "Jakub Klímek",
-     :rdfs/seeAlso  "https://jakub.klímek.com/#me"}
-    {:foaf/name "David Browning",
-     :schema/affiliation {:foaf/homepage "http://www.refinitiv.com",
-                          :foaf/name     "Refinitiv"}}
+    {:foaf/name "Boris Villazón-Terrazas"}
+    {:foaf/name "Richard Cyganiak"}
+    {:foaf/homepage
+     ["https://w3id.org/people/ralbertoni/"
+      "http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni"],
+     :foaf/name "Riccardo Albertoni",
+     :rdfs/seeAlso "https://orcid.org/0000-0001-5648-2713"}
+    {:foaf/homepage "http://www.andrea-perego.name/foaf/#me",
+     :foaf/name     "Andrea Perego",
+     :rdfs/seeAlso  "https://orcid.org/0000-0001-9300-2694"}
     {:foaf/name "Vassilios Peristeras",
      :schema/affiliation {:foaf/homepage "http://ec.europa.eu/dgs/informatics/",
                           :foaf/name     "European Commission, DG DIGIT"}}
-    {:foaf/name "Boris Villazón-Terrazas"}
     {:foaf/homepage      "https://agbeltran.github.io",
      :foaf/name          "Alejandra Gonzalez-Beltran",
      :rdfs/seeAlso       "https://orcid.org/0000-0003-3499-8262",
      :schema/affiliation {:foaf/homepage "http://stfc.ac.uk",
                           :foaf/name
                           "Science and Technology Facilities Council, UK"}}
+    {:foaf/name "Rufus Pollock",
+     :schema/affiliation {:foaf/homepage "http://okfn.org",
+                          :foaf/name     "Open Knowledge Foundation"}}
+    {:foaf/name "Marios Meimaris"}
     {:foaf/homepage "http://www.asahi-net.or.jp/~ax2s-kmtn/",
      :foaf/name     "Shuji Kamitsuna"}
-    {:foaf/name "Martin Alvarez-Espinar"}],
-   :dcterms/creator [{:foaf/name "John Erickson"}
-                     {:foaf/name    "Fadi Maali",
-                      :rdfs/seeAlso "http://fadmaa.me/foaf.ttl"}],
+    {:foaf/name    "Ghislain Auguste Atemezing",
+     :rdfs/seeAlso "http://www.eurecom.fr/~atemezin/gatemezing-foaf.rdf"}
+    {:foaf/name "Martin Alvarez-Espinar"}
+    {:foaf/homepage "http://makxdekkers.com/",
+     :foaf/name     "Makx Dekkers",
+     :rdfs/seeAlso  "http://makxdekkers.com/makxdekkers.rdf#me"}],
+   :dcterms/creator [{:foaf/name    "Fadi Maali",
+                      :rdfs/seeAlso "http://fadmaa.me/foaf.ttl"}
+                     {:foaf/name "John Erickson"}],
    :dcterms/license "https://creativecommons.org/licenses/by/4.0/",
    :dcterms/modified [#inst "2013-09-20T00:00:00.000-04:00"
                       #inst "2020-11-30T00:00:00.000-05:00"
@@ -83,18 +83,18 @@
      :rdf/value
      "Toto je aktualizovaná kopie slovníku DCAT verze 2.0, převzatá z https://www.w3.org/ns/dcat.ttl"}],
    :rdf/about "http://www.w3.org/ns/dcat",
-   :rdf/ns-prefix-map {"dcat"   "http://www.w3.org/ns/dcat#",
-                       "dct"    "http://purl.org/dc/terms/",
-                       "dctype" "http://purl.org/dc/dcmitype/",
-                       "foaf"   "http://xmlns.com/foaf/0.1/",
-                       "owl"    "http://www.w3.org/2002/07/owl#",
-                       "prov"   "http://www.w3.org/ns/prov#",
-                       "rdf"    "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                       "rdfs"   "http://www.w3.org/2000/01/rdf-schema#",
-                       "schema" "http://schema.org/",
-                       "skos"   "http://www.w3.org/2004/02/skos/core#",
-                       "vcard"  "http://www.w3.org/2006/vcard/ns#",
-                       "xsd"    "http://www.w3.org/2001/XMLSchema#"},
+   :rdf/ns-prefix-map {"dcat"    "http://www.w3.org/ns/dcat#",
+                       "dcterms" "http://purl.org/dc/terms/",
+                       "dctype"  "http://purl.org/dc/dcmitype/",
+                       "foaf"    "http://xmlns.com/foaf/0.1/",
+                       "owl"     "http://www.w3.org/2002/07/owl#",
+                       "prov"    "http://www.w3.org/ns/prov#",
+                       "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+                       "schema"  "http://schema.org/",
+                       "skos"    "http://www.w3.org/2004/02/skos/core#",
+                       "vcard"   "http://www.w3.org/2006/vcard/ns#",
+                       "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "dcat",
    :rdfa/uri "http://www.w3.org/ns/dcat#",
@@ -296,12 +296,12 @@
                  :rdf/value    "Katalogizační záznam"}
                 {:rdf/language "fr",
                  :rdf/value    "Registre du catalogue"}],
-   :rdfs/subClassOf [{:owl/cardinality 1,
-                      :owl/onProperty  :foaf/primaryTopic,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/allValuesFrom :dcat/Resource,
+   :rdfs/subClassOf [{:owl/allValuesFrom :dcat/Resource,
                       :owl/onProperty    :foaf/primaryTopic,
-                      :rdf/type          :owl/Restriction}],
+                      :rdf/type          :owl/Restriction}
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :foaf/primaryTopic,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    [{:rdf/language "it",
      :rdf/value

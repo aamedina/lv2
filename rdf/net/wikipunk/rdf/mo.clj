@@ -5,14 +5,14 @@
    :dcterms/description
    "\n        The Music Ontology Specification provides main concepts and \n        properties fo describing music (i.e. artists, albums and tracks) \n        on the Semantic Web. \n    ",
    :dcterms/title "The Music Ontology",
-   :foaf/maker [{:foaf/name "George Fazekas"}
-                "http://www.talkdigger.com/foaf/fgiasson"
-                {:foaf/homepage "http://simon-reinhardt.de/",
-                 :foaf/name     "Simon Reinhardt"}
+   :foaf/maker ["http://www.talkdigger.com/foaf/fgiasson"
+                {:foaf/name "George Fazekas"}
                 "http://raimond.me.uk/foaf.rdf#moustaki"
                 {:foaf/homepage "http://apassant.net/",
                  :foaf/name     "Alexandre Passant"}
                 "http://foaf.me/zazi#me"
+                {:foaf/homepage "http://simon-reinhardt.de/",
+                 :foaf/name     "Simon Reinhardt"}
                 "http://kurtisrandom.com/foaf.rdf#kurtjx"],
    :owl/imports ["http://purl.org/vocab/bio/0.1/"
                  "http://purl.org/NET/c4dm/event.owl"
@@ -27,8 +27,7 @@
    :rdf/ns-prefix-map {"ao" "http://purl.org/ontology/ao/core#",
                        "bio" "http://purl.org/vocab/bio/0.1/",
                        "cc" "http://web.resource.org/cc/",
-                       "dc" "http://purl.org/dc/elements/1.1/",
-                       "dcterms" "http://purl.org/dc/terms/",
+                       "dcterms" "http://purl.org/dc/elements/1.1/",
                        "event" "http://purl.org/NET/c4dm/event.owl#",
                        "foaf" "http://xmlns.com/foaf/0.1/",
                        "frbr" "http://purl.org/vocab/frbr/core#",
