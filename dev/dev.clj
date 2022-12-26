@@ -48,6 +48,7 @@
    [net.wikipunk.lv2.rdf.xsd :as xsd]
    [net.wikipunk.lv2.rdf.vann :as vann]
    [net.wikipunk.lv2.rdf.vs :as vs]
+   [net.wikipunk.lv2.rdf.as :as as]
    ;; ;; LV2 RDF models
    [net.wikipunk.lv2.rdf.atom :as atom]
    [net.wikipunk.lv2.rdf.bufsz :as bufsz]

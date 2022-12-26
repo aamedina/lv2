@@ -7,7 +7,9 @@
 
 (def as
   "Activity Vocabulary"
-  {:rdfa/uri         "https://www.w3.org/ns/activitystreams#",
+  {:dcat/downloadURL #_"https://raw.githubusercontent.com/w3c/activitystreams/master/vocabulary/activitystreams2.owl"
+   "https://www.w3.org/ns/activitystreams-owl"
+   :rdfa/uri         "https://www.w3.org/ns/activitystreams#",
    :rdfa/prefix      "as",
    :rdfs/isDefinedBy {:rdf/uri
                       "https://www.w3.org/TR/activitystreams-vocabulary/"},
