@@ -288,7 +288,8 @@
 
 (def sd
   "SPARQL 1.1 Service Description"
-  {:rdfa/uri         "http://www.w3.org/ns/sparql-service-description#",
+  {:dcat/downloadURL "https://www.w3.org/ns/sparql-service-description.ttl"
+   :rdfa/uri         "http://www.w3.org/ns/sparql-service-description#",
    :rdfa/prefix      "sd",
    :rdfs/isDefinedBy {:rdf/uri
                       "http://www.w3.org/TR/sparql11-service-description/"},
