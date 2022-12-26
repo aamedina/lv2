@@ -59,6 +59,7 @@
    [net.wikipunk.rdf.cc :as cc]
    [net.wikipunk.rdf.sosa :as sosa]
    [net.wikipunk.rdf.ssn :as ssn]
+   [net.wikipunk.rdf.vcard :as vcard]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
