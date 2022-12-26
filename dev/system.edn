@@ -32,7 +32,8 @@
                           net.wikipunk.boot/ma
                           net.wikipunk.boot/geo
                           net.wikipunk.boot/swrl
-                          net.wikipunk.boot/dcat]
+                          net.wikipunk.boot/dcat
+                          net.wikipunk.boot/dqv]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2

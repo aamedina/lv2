@@ -64,6 +64,7 @@
    [net.wikipunk.rdf.geo :as geo]
    [net.wikipunk.rdf.swrl :as swrl]
    [net.wikipunk.rdf.dcat :as dcat]
+   [net.wikipunk.rdf.dqv :as dqv]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
