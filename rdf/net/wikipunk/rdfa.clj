@@ -321,6 +321,18 @@
     "http://www.google.com/support/webmasters/bin/answer.py?answer=99170"},
    :rdf/type    :rdfa/PrefixMapping})
 
+(def vs
+  {:rdfa/uri    "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+   :rdfa/prefix "vs",
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def vann
+  "A vocabulary for annotating vocabulary descriptions"
+  {:rdfa/prefix      "vann"
+   :rdfa/uri         "http://purl.org/vocab/vann/"
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "https://vocab.org/vann/vann-vocab-20100607.rdf"})
+
 (def vcard
   "vCard in RDF"
   {:rdfa/uri    "http://www.w3.org/2006/vcard/ns#",

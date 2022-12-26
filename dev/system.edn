@@ -11,7 +11,9 @@
                         net.wikipunk.rdfa/dcam
                         net.wikipunk.rdfa/foaf
                         net.wikipunk.rdfa/doap
-                        net.wikipunk.rdfa/schema]
+                        net.wikipunk.rdfa/schema
+                        net.wikipunk.rdfa/vann
+                        net.wikipunk.rdfa/vs]
          :lv2          [net.wikipunk.lv2
                         net.wikipunk.lv2/atom
                         net.wikipunk.lv2/buf-size
