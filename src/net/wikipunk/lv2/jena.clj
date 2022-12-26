@@ -142,7 +142,7 @@
                                                                     (.getNsPrefixMap (.getPrefixMapping g)))
                                                               ""
                                                               "ruleml")
-                                                      {"sdo" "schema"})]
+                                                      {"sdo" "schema" "dct" "dcterms" "dc" "dcterms" "dc11" "dcterms" "terms" "dcterms" "ns" "vs"})]
       (reg/with ns-prefix-map
                 (into (with-meta [] (assoc md :rdf/ns-prefix-map ns-prefix-map))
                       (map (fn [[subject triples]]
