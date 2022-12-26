@@ -190,7 +190,8 @@
 
 (def odrl
   "ODRL Vocabulary & Expression 2.2"
-  {:rdfa/uri         "http://www.w3.org/ns/odrl/2/",
+  {:dcat/downloadURL "https://www.w3.org/ns/odrl/2/ODRL22.jsonld"
+   :rdfa/uri         "http://www.w3.org/ns/odrl/2/",
    :rdfa/prefix      "odrl",
    :rdfs/isDefinedBy {:rdf/uri "https://www.w3.org/TR/odrl-vocab/"},
    :rdf/type         :rdfa/PrefixMapping})

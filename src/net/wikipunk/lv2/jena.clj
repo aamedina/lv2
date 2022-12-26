@@ -233,14 +233,15 @@
 
                                            (= (name sym) "nil")
                                            'null
-                                           
-                                           :else sym)
+
+                                           :else (symbol (str/replace (name sym) #"^#" "")))
                                      docstring (or (some-> (:lv2/documentation v))
                                                    (:dcterms/description v)
                                                    (:skos/definition v)
                                                    (:prov/definition v)
                                                    (:prov/editorsDefinition v)
-                                                   (:rdfs/comment v))
+                                                   (:rdfs/comment v)
+                                                   (:skos/prefLabel v))
                                      docstring (if (vector? docstring)
                                                  (if (every? string? docstring)
                                                    (str/join \newline docstring)
