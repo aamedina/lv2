@@ -4,6 +4,7 @@
                         net.wikipunk.rdfa/rdfa
                         net.wikipunk.rdfa/owl
                         net.wikipunk.rdfa/jsonld
+                        net.wikipunk.rdfa/jsonschema
                         net.wikipunk.rdfa/xsd
                         net.wikipunk.rdfa/skos
                         net.wikipunk.rdfa/dcterms

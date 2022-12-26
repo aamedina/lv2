@@ -132,6 +132,12 @@
    :rdfs/isDefinedBy {:rdf/uri "https://www.w3.org/TR/json-ld/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def jsonschema
+  "JSON Schema in RDF"
+  {:rdfa/uri    "https://www.w3.org/2019/wot/json-schema#"
+   :rdfa/prefix "jsonschema",
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def ldp
   "Linked Data Platform Vocabulary"
   {:rdfa/uri         "http://www.w3.org/ns/ldp#",
