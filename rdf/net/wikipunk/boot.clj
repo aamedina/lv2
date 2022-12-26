@@ -359,6 +359,12 @@
     "http://www.google.com/support/webmasters/bin/answer.py?answer=99170"},
    :rdf/type    :rdfa/PrefixMapping})
 
+(def voaf
+  {:dcat/downloadURL "https://lov.linkeddata.es/vocommons/voaf/v2.3/voaf_v2.3.rdf"
+   :rdfa/uri         "http://purl.org/vocommons/voaf#"
+   :rdfa/prefix      "voaf"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def vs
   {:rdfa/uri    "http://www.w3.org/2003/06/sw-vocab-status/ns#"
    :rdfa/prefix "vs",
