@@ -14,7 +14,7 @@
    (org.apache.jena.datatypes BaseDatatype$TypedValue)
    (org.apache.jena.datatypes.xsd XSDDatatype XSDDateTime)
    (org.apache.jena.graph Graph Node Triple Node_URI Node_Literal Node_Variable Node_Blank)
-   (org.apache.jena.riot RDFParser)
+   (org.apache.jena.riot RDFParser Lang)
    (org.apache.jena.rdf.model Model)
    (org.apache.jena.query ResultSet)
    (org.apache.jena.util.iterator ClosableIterator)
@@ -126,7 +126,12 @@
   (parse [md]
     (let [{:rdfa/keys [uri prefix]
            :dcat/keys [downloadURL]} md
-          g                          (.toGraph (RDFParser/source (or downloadURL uri)))
+          parser                     (RDFParser/source (or downloadURL uri))
+          g                          (try
+                                       (.toGraph parser)
+                                       (catch org.apache.jena.riot.RiotException ex
+                                         ;; if an appropriate content-type cannot be inferred try Turtle
+                                         (.toGraph (doto parser (.lang Lang/TTL)))))
           ns-prefix-map              (dissoc (into (if (and prefix uri)
                                                      {prefix uri}
                                                      {})
@@ -364,3 +369,5 @@
 
 
 #rdf/global-prefix ["dcterms" "http://purl.org/dc/terms/"]
+
+(RDFParser/source "http://purl.org/linked-data/cube")

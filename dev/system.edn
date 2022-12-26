@@ -37,7 +37,8 @@
                           net.wikipunk.boot/duv
                           net.wikipunk.boot/oa
                           net.wikipunk.boot/odrl
-                          net.wikipunk.boot/org]
+                          net.wikipunk.boot/org
+                          net.wikipunk.boot/qb]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2
