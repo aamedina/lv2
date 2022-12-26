@@ -109,6 +109,11 @@
    :rdfa/prefix      "event"
    :rdf/type         :rdfa/PrefixMapping})
 
+(def exif
+  {:rdfa/uri         "http://www.w3.org/2003/12/exif/ns#"
+   :rdfa/prefix      "exif"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def foaf
   "FOAF"
   {:dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/schemas.lv2/foaf.ttl"
