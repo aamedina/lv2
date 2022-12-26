@@ -293,6 +293,11 @@
    :rdfs/isDefinedBy {:rdf/uri "http://ogp.me/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def ore
+  {:rdfa/uri    "http://www.openarchives.org/ore/terms/"
+   :rdfa/prefix "ore"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def org
   "Organizations"
   {:rdfa/uri         "http://www.w3.org/ns/org#",
