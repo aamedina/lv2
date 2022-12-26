@@ -159,6 +159,7 @@
     (parse {:dcat/downloadURL s})))
 
 (def ^:dynamic *ns-prefix* "net.wikipunk.rdf.")
+(def ^:dynamic *target* "rdf/net/wikipunk/rdf/")
 
 (defn unroll
   "Walks the parsed RDF model and replaces references to blank nodes
@@ -331,7 +332,7 @@
   (emit [x path]
     (let [model (parse x)
           md    (meta model)]
-      (spit (str path (namespace-munge (:rdfa/prefix md)) ".clj")
+      (spit (str (or path *target*) (namespace-munge (:rdfa/prefix md)) ".clj")
             (binding [*print-namespace-maps* nil]
               (zprint/zprint-file-str  (str/join \newline (unroll model))
                                        ""

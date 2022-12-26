@@ -113,6 +113,13 @@
                       "http://www.heppnetz.de/ontologies/goodrelations/v1"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def greg
+  "Gregorian months"
+  {:dcat/downloadURL "https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time-gregorian.ttl"
+   :rdfa/uri         "http://www.w3.org/ns/time/gregorian/",
+   :rdfa/prefix      "greg",
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def grddl
   "GRDDL"
   {:rdfa/uri         "http://www.w3.org/2003/g/data-view#",
@@ -319,8 +326,7 @@
    :rdfa/prefix      "time",
    :rdfs/isDefinedBy {:rdf/uri
                       "https://www.w3.org/TR/2017/REC-owl-time-20171019/"},
-   :rdf/type         :rdfa/PrefixMapping
-   :clj/ns-name      "net.wikipunk.lv2.rdf.owl-time"})
+   :rdf/type         :rdfa/PrefixMapping})
 
 (def v
   "Google Rich Snippets' Vocabularies"

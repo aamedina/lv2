@@ -20,7 +20,9 @@
                           net.wikipunk.boot/as
                           net.wikipunk.boot/ldp
                           net.wikipunk.boot/rr
-                          net.wikipunk.boot/mo]
+                          net.wikipunk.boot/mo
+                          net.wikipunk.boot/time
+                          net.wikipunk.boot/greg]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2
