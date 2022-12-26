@@ -62,6 +62,7 @@
    [net.wikipunk.rdf.vcard :as vcard]
    [net.wikipunk.rdf.ma :as ma]
    [net.wikipunk.rdf.geo :as geo]
+   [net.wikipunk.rdf.swrl :as swrl]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
@@ -95,10 +96,6 @@
           (edn/read-string)
           (sc/assemble-system))
       (throw (ex-info "system.edn is not on classpath" {})))))
-
-#rdf/global-prefix ["dcterms" "http://purl.org/dc/terms/"]
-
-
 
 (comment
   (def rdf (deref (get-in system [:vocab :types])))

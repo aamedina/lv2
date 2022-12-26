@@ -131,7 +131,8 @@
                                                      {prefix uri}
                                                      {})
                                                    (.getNsPrefixMap (.getPrefixMapping g)))
-                                             "")]
+                                             ""
+                                             "ruleml")]
       (reg/with ns-prefix-map
                 (into (with-meta [] (assoc md :rdf/ns-prefix-map ns-prefix-map))
                       (map (fn [[subject triples]]
@@ -359,3 +360,4 @@
         (emit lv2 lv2-target)))))
 
 
+#rdf/global-prefix ["dcterms" "http://purl.org/dc/terms/"]

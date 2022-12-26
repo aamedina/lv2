@@ -331,6 +331,12 @@
                       "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def swrl
+  {:dcat/downloadURL "http://www.w3.org/Submission/2004/SUBM-SWRL-20040521/swrl.rdf"
+   :rdfa/uri         "http://www.w3.org/2003/11/swrl#"
+   :rdfa/prefix      "swrl"
+   :rdf/type         :rdfa/PrefixMapping})
+
 (def time
   "Time Ontology"
   {:dcat/downloadURL "https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time.ttl"
