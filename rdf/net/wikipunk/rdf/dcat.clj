@@ -1,41 +1,7 @@
 (ns net.wikipunk.rdf.dcat
   "DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web. By using DCAT to describe datasets in data catalogs, publishers increase discoverability and enable applications easily to consume metadata from multiple catalogs. It further enables decentralized publishing of catalogs and facilitates federated dataset search across sites. Aggregated DCAT metadata can serve as a manifest file to facilitate digital preservation. DCAT is defined at http://www.w3.org/TR/vocab-dcat/. Any variance between that normative document and this schema is an error in this schema."
   {:dcterms/contributor
-   [{:foaf/homepage "http://www.asahi-net.or.jp/~ax2s-kmtn/",
-     :foaf/name     "Shuji Kamitsuna"}
-    {:foaf/name "Marios Meimaris"}
-    {:foaf/homepage "https://jakub.klímek.com/",
-     :foaf/name     "Jakub Klímek",
-     :rdfs/seeAlso  "https://jakub.klímek.com/#me"}
-    {:foaf/homepage      "https://agbeltran.github.io",
-     :foaf/name          "Alejandra Gonzalez-Beltran",
-     :rdfs/seeAlso       "https://orcid.org/0000-0003-3499-8262",
-     :schema/affiliation {:foaf/homepage "http://stfc.ac.uk",
-                          :foaf/name
-                          "Science and Technology Facilities Council, UK"}}
-    {:foaf/name "Boris Villazón-Terrazas"}
-    {:foaf/homepage
-     ["https://w3id.org/people/ralbertoni/"
-      "http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni"],
-     :foaf/name "Riccardo Albertoni",
-     :rdfs/seeAlso "https://orcid.org/0000-0001-5648-2713"}
-    {:foaf/name "Vassilios Peristeras",
-     :schema/affiliation {:foaf/homepage "http://ec.europa.eu/dgs/informatics/",
-                          :foaf/name     "European Commission, DG DIGIT"}}
-    {:foaf/name "Rufus Pollock",
-     :schema/affiliation {:foaf/homepage "http://okfn.org",
-                          :foaf/name     "Open Knowledge Foundation"}}
-    {:foaf/name "Martin Alvarez-Espinar"}
-    {:foaf/homepage "http://www.andrea-perego.name/foaf/#me",
-     :foaf/name     "Andrea Perego",
-     :rdfs/seeAlso  "https://orcid.org/0000-0001-9300-2694"}
-    {:foaf/homepage "http://makxdekkers.com/",
-     :foaf/name     "Makx Dekkers",
-     :rdfs/seeAlso  "http://makxdekkers.com/makxdekkers.rdf#me"}
-    {:foaf/name "David Browning",
-     :schema/affiliation {:foaf/homepage "http://www.refinitiv.com",
-                          :foaf/name     "Refinitiv"}}
-    {:foaf/name "Simon J D Cox",
+   [{:foaf/name "Simon J D Cox",
      :foaf/workInfoHomepage "http://people.csiro.au/Simon-Cox",
      :rdf/type :foaf/Person,
      :rdfs/seeAlso "https://orcid.org/0000-0002-3884-3420",
@@ -43,13 +9,47 @@
      {:foaf/homepage "https://csiro.au",
       :foaf/name
       "Commonwealth Scientific and Industrial Research Organisation"}}
+    {:foaf/homepage "http://www.andrea-perego.name/foaf/#me",
+     :foaf/name     "Andrea Perego",
+     :rdfs/seeAlso  "https://orcid.org/0000-0001-9300-2694"}
+    {:foaf/name "Boris Villazón-Terrazas"}
+    {:foaf/name "Richard Cyganiak"}
+    {:foaf/name "Rufus Pollock",
+     :schema/affiliation {:foaf/homepage "http://okfn.org",
+                          :foaf/name     "Open Knowledge Foundation"}}
+    {:foaf/homepage "https://jakub.klímek.com/",
+     :foaf/name     "Jakub Klímek",
+     :rdfs/seeAlso  "https://jakub.klímek.com/#me"}
+    {:foaf/homepage "http://www.asahi-net.or.jp/~ax2s-kmtn/",
+     :foaf/name     "Shuji Kamitsuna"}
+    {:foaf/name "Marios Meimaris"}
+    {:foaf/name "Vassilios Peristeras",
+     :schema/affiliation {:foaf/homepage "http://ec.europa.eu/dgs/informatics/",
+                          :foaf/name     "European Commission, DG DIGIT"}}
+    {:foaf/name "Martin Alvarez-Espinar"}
+    {:foaf/name "David Browning",
+     :schema/affiliation {:foaf/homepage "http://www.refinitiv.com",
+                          :foaf/name     "Refinitiv"}}
+    {:foaf/homepage "http://makxdekkers.com/",
+     :foaf/name     "Makx Dekkers",
+     :rdfs/seeAlso  "http://makxdekkers.com/makxdekkers.rdf#me"}
     {:foaf/homepage      "http://www.w3.org/People/all#phila",
      :foaf/name          "Phil Archer",
      :rdfs/seeAlso       "http://philarcher.org/foaf.rdf#me",
      :schema/affiliation "http://www.w3.org/data#W3C"}
-    {:foaf/name "Richard Cyganiak"}
     {:foaf/name    "Ghislain Auguste Atemezing",
-     :rdfs/seeAlso "http://www.eurecom.fr/~atemezin/gatemezing-foaf.rdf"}],
+     :rdfs/seeAlso "http://www.eurecom.fr/~atemezin/gatemezing-foaf.rdf"}
+    {:foaf/homepage      "https://agbeltran.github.io",
+     :foaf/name          "Alejandra Gonzalez-Beltran",
+     :rdfs/seeAlso       "https://orcid.org/0000-0003-3499-8262",
+     :schema/affiliation {:foaf/homepage "http://stfc.ac.uk",
+                          :foaf/name
+                          "Science and Technology Facilities Council, UK"}}
+    {:foaf/homepage
+     ["https://w3id.org/people/ralbertoni/"
+      "http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni"],
+     :foaf/name "Riccardo Albertoni",
+     :rdfs/seeAlso "https://orcid.org/0000-0001-5648-2713"}],
    :dcterms/creator [{:foaf/name "John Erickson"}
                      {:foaf/name    "Fadi Maali",
                       :rdfs/seeAlso "http://fadmaa.me/foaf.ttl"}],

@@ -52,7 +52,8 @@
                           net.wikipunk.boot/dpvo
                           net.wikipunk.boot/dpvo-pd
                           net.wikipunk.boot/dpvo-gdpr
-                          net.wikipunk.boot/dpvo-risk]
+                          net.wikipunk.boot/dpvo-risk
+                          net.wikipunk.boot/gen]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2

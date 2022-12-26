@@ -155,6 +155,11 @@
    :rdfs/isDefinedBy {:rdf/uri "http://xmlns.com/foaf/spec/"},
    :rdf/type         :rdfa/PrefixMapping})
 
+(def gen
+  {:rdfa/uri    "http://www.w3.org/2006/gen/ont#"
+   :rdfa/prefix "gen"
+   :rdf/type    :rdfa/PrefixMapping})
+
 (def geo
   {:rdfa/uri    "http://www.w3.org/2003/01/geo/wgs84_pos#"
    :rdfa/prefix "geo"

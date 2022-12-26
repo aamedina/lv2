@@ -5,15 +5,15 @@
    :dcterms/description
    "\n        The Music Ontology Specification provides main concepts and \n        properties fo describing music (i.e. artists, albums and tracks) \n        on the Semantic Web. \n    ",
    :dcterms/title "The Music Ontology",
-   :foaf/maker [{:foaf/homepage "http://simon-reinhardt.de/",
+   :foaf/maker ["http://www.talkdigger.com/foaf/fgiasson"
+                {:foaf/homepage "http://simon-reinhardt.de/",
                  :foaf/name     "Simon Reinhardt"}
-                "http://www.talkdigger.com/foaf/fgiasson"
                 {:foaf/homepage "http://apassant.net/",
                  :foaf/name     "Alexandre Passant"}
+                {:foaf/name "George Fazekas"}
                 "http://raimond.me.uk/foaf.rdf#moustaki"
                 "http://foaf.me/zazi#me"
-                "http://kurtisrandom.com/foaf.rdf#kurtjx"
-                {:foaf/name "George Fazekas"}],
+                "http://kurtisrandom.com/foaf.rdf#kurtjx"],
    :owl/imports ["http://purl.org/vocab/bio/0.1/"
                  "http://purl.org/NET/c4dm/event.owl"
                  "http://purl.org/ontology/ao/core"

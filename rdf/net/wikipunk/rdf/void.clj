@@ -3,13 +3,6 @@
   {:dcterms/created #inst "2010-01-26T00:00:00.000-05:00",
    :dcterms/creator
    [{:rdf/type           :schema/Person,
-     :schema/affiliation {:rdf/type    :schema/Organization,
-                          :schema/name "LiDRC",
-                          :schema/url  "http://linkeddata.deri.ie/"},
-     :schema/email       "mailto:michael.hausenblas@deri.org",
-     :schema/name        "Michael Hausenblas",
-     :schema/url         "http://sw-app.org/about.html"}
-    {:rdf/type           :schema/Person,
      :schema/affiliation {:rdf/type :schema/Organization,
                           :schema/name
                           "Department of Zoology, University of Oxford",
@@ -18,20 +11,27 @@
      :schema/name        "Jun Zhao",
      :schema/url         "http://users.ox.ac.uk/~zool0770/"}
     {:rdf/type           :schema/Person,
+     :schema/affiliation {:rdf/type    :schema/Organization,
+                          :schema/name "Talis",
+                          :schema/url  "http://www.talis.com/"},
+     :schema/email       "mailto:Keith.Alexander@talis.com",
+     :schema/name        "Keith Alexander",
+     :schema/url         "http://kwijibo.talis.com/"}
+    {:rdf/type           :schema/Person,
+     :schema/affiliation {:rdf/type    :schema/Organization,
+                          :schema/name "LiDRC",
+                          :schema/url  "http://linkeddata.deri.ie/"},
+     :schema/email       "mailto:michael.hausenblas@deri.org",
+     :schema/name        "Michael Hausenblas",
+     :schema/url         "http://sw-app.org/about.html"}
+    {:rdf/type           :schema/Person,
      :schema/affiliation {:foaf/homepage "http://www.deri.ie/",
                           :foaf/name
                           "Digital Enterprise Research Institute, NUI Galway",
                           :rdf/type :schema/Organization},
      :schema/email       "mailto:richard.cyganiak@deri.org",
      :schema/name        "Richard Cyganiak",
-     :schema/url         "http://richard.cyganiak.de/"}
-    {:rdf/type           :schema/Person,
-     :schema/affiliation {:rdf/type    :schema/Organization,
-                          :schema/name "Talis",
-                          :schema/url  "http://www.talis.com/"},
-     :schema/email       "mailto:Keith.Alexander@talis.com",
-     :schema/name        "Keith Alexander",
-     :schema/url         "http://kwijibo.talis.com/"}],
+     :schema/url         "http://richard.cyganiak.de/"}],
    :dcterms/description
    "The Vocabulary of Interlinked Datasets (VoID) is an RDF Schema vocabulary for expressing metadata about RDF datasets. It is intended as a bridge between the publishers and users of RDF data, with applications ranging from data discovery to cataloging and archiving of datasets. This document provides a formal definition of the new RDF classes and properties introduced for VoID. It is a companion to the main specification document for VoID, <em><a href=\"http://www.w3.org/TR/void/\">Describing Linked Datasets with the VoID Vocabulary</a></em>.",
    :dcterms/modified #inst "2011-03-06T00:00:00.000-05:00",
@@ -47,7 +47,7 @@
    :foaf/homepage "http://vocab.deri.ie/void.html",
    :rdf/about "http://vocab.deri.ie/void",
    :rdf/ns-prefix-map {"adms"    "http://www.w3.org/ns/adms#",
-                       "dcterms" "http://purl.org/dc/elements/1.1/",
+                       "dcterms" "http://purl.org/dc/terms/",
                        "foaf"    "http://xmlns.com/foaf/0.1/",
                        "owl"     "http://www.w3.org/2002/07/owl#",
                        "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",

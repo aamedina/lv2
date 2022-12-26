@@ -1,8 +1,8 @@
 (ns net.wikipunk.rdf.qb
   "Vocabulary for multi-dimensional (e.g. statistical) data publishing"
-  {:dcterms/contributor [{:foaf/mbox "ian@epimorphics.com"}
+  {:dcterms/contributor [{:foaf/mbox "arofan.gregory@earthlink.net"}
                          {:foaf/mbox "jeni@jenitennison.com"}
-                         {:foaf/mbox "arofan.gregory@earthlink.net"}
+                         {:foaf/mbox "ian@epimorphics.com"}
                          {:foaf/mbox "richard@cyganiak.de"}
                          {:foaf/mbox "dave@epimorphics.com"}],
    :dcterms/created #inst "2010-07-12T00:00:00.000-04:00",
