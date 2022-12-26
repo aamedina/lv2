@@ -24,7 +24,8 @@
                           net.wikipunk.boot/time
                           net.wikipunk.boot/greg
                           net.wikipunk.boot/sioc
-                          net.wikipunk.boot/event]
+                          net.wikipunk.boot/event
+                          net.wikipunk.boot/cc]
          :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
          :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
          :lv2            [net.wikipunk.boot.lv2

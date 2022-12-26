@@ -56,6 +56,7 @@
    [net.wikipunk.rdf.time :as owl-time]
    [net.wikipunk.rdf.greg :as greg]
    [net.wikipunk.rdf.sioc :as sioc]
+   [net.wikipunk.rdf.cc :as cc]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]

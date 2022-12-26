@@ -17,11 +17,12 @@
 
 (def cc
   "ccREL"
-  {:rdfa/uri    "http://creativecommons.org/ns#",
-   :rdfa/prefix "cc",
+  {:dcat/downloadURL "https://creativecommons.org/schema.rdf"
+   :rdfa/uri         "http://creativecommons.org/ns#",
+   :rdfa/prefix      "cc",
    :rdfs/isDefinedBy
    {:rdf/uri "http://www.w3.org/Submission/2008/SUBM-ccREL-20080501/"},
-   :rdf/type    :rdfa/PrefixMapping})
+   :rdf/type         :rdfa/PrefixMapping})
 
 (def csvw
   "Metadata for Tabular Data"
