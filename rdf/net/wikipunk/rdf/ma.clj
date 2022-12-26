@@ -1,5 +1,5 @@
 (ns net.wikipunk.rdf.ma
-  "T"
+  "THE CONTENT OF THIS MA-ONT.RDF AND DERIVED MA-ONT.TTL FILES PREVAIL OVER THE SPECIFICATION. Created by Tobias Buerger, Jean Pierre Evain and Pierre-Antoine Champin with the RDFS Taskforce within the W3C Media Annotation Working Group."
   {:dcterms/date #inst "2013-03-20T00:00:00.000-04:00",
    :owl/imports "http://dublincore.org/2008/01/14/dcelements.rdf",
    :owl/versionInfo "R36",
