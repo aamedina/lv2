@@ -1,94 +1,27 @@
-{:vocab {:sc/create-fn   net.wikipunk.lv2.jena/map->Vocabulary
-         :boot-ns-prefix "net.wikipunk.rdf."
-         :boot-target    "rdf/net/wikipunk/rdf/"
-         :boot           [net.wikipunk.boot/rdf
-                          net.wikipunk.boot/rdfs
-                          net.wikipunk.boot/rdfa
-                          net.wikipunk.boot/owl
-                          net.wikipunk.boot/jsonld
-                          net.wikipunk.boot/jsonschema
-                          net.wikipunk.boot/xsd
-                          net.wikipunk.boot/skos
-                          net.wikipunk.boot/dcterms
-                          net.wikipunk.boot/dcam
-                          net.wikipunk.boot/foaf
-                          net.wikipunk.boot/doap
-                          net.wikipunk.boot/schema
-                          net.wikipunk.boot/vann
-                          net.wikipunk.boot/vs
-                          net.wikipunk.boot/prov
-                          net.wikipunk.boot/as
-                          net.wikipunk.boot/ldp
-                          net.wikipunk.boot/rr
-                          net.wikipunk.boot/mo
-                          net.wikipunk.boot/time
-                          net.wikipunk.boot/greg
-                          net.wikipunk.boot/sioc
-                          net.wikipunk.boot/event
-                          net.wikipunk.boot/cc
-                          net.wikipunk.boot/sosa
-                          net.wikipunk.boot/ssn
-                          net.wikipunk.boot/vcard
-                          net.wikipunk.boot/ma
-                          net.wikipunk.boot/geo
-                          net.wikipunk.boot/swrl
-                          net.wikipunk.boot/dcat
-                          net.wikipunk.boot/dqv
-                          net.wikipunk.boot/duv
-                          net.wikipunk.boot/oa
-                          net.wikipunk.boot/odrl
-                          net.wikipunk.boot/org
-                          net.wikipunk.boot/qb
-                          net.wikipunk.boot/rev
-                          net.wikipunk.boot/sd
-                          net.wikipunk.boot/skosxl
-                          net.wikipunk.boot/voaf
-                          net.wikipunk.boot/void
-                          net.wikipunk.boot/adms
-                          net.wikipunk.boot/exif
-                          net.wikipunk.boot/acl
-                          net.wikipunk.boot/bibo
-                          net.wikipunk.boot/csvw
-                          net.wikipunk.boot/dpvo
-                          net.wikipunk.boot/dpvo-pd
-                          net.wikipunk.boot/dpvo-gdpr
-                          net.wikipunk.boot/dpvo-risk
-                          net.wikipunk.boot/gen
-                          net.wikipunk.boot/ao
-                          net.wikipunk.boot/bio
-                          net.wikipunk.boot/cnt
-                          net.wikipunk.boot/dcmitype
-                          net.wikipunk.boot/disco
-                          net.wikipunk.boot/frbr
-                          net.wikipunk.boot/keys
-                          net.wikipunk.boot/ore
-                          net.wikipunk.boot/pav
-                          net.wikipunk.boot/spin
-                          net.wikipunk.boot/svcs
-                          net.wikipunk.boot/rdfg]
-         :lv2-ns-prefix  "net.wikipunk.rdf.lv2."
-         :lv2-target     "rdf/net/wikipunk/rdf/lv2/"
-         :lv2            [net.wikipunk.boot.lv2
-                          net.wikipunk.boot.lv2/atom
-                          net.wikipunk.boot.lv2/buf-size
-                          net.wikipunk.boot.lv2/data-access
-                          net.wikipunk.boot.lv2/dynmanifest
-                          net.wikipunk.boot.lv2/event
-                          net.wikipunk.boot.lv2/instance-access
-                          net.wikipunk.boot.lv2/log
-                          net.wikipunk.boot.lv2/midi
-                          net.wikipunk.boot.lv2/morph
-                          net.wikipunk.boot.lv2/options
-                          net.wikipunk.boot.lv2/parameters
-                          net.wikipunk.boot.lv2/patch
-                          net.wikipunk.boot.lv2/port-groups
-                          net.wikipunk.boot.lv2/port-props
-                          net.wikipunk.boot.lv2/presets
-                          net.wikipunk.boot.lv2/resize-port
-                          net.wikipunk.boot.lv2/state
-                          net.wikipunk.boot.lv2/time
-                          net.wikipunk.boot.lv2/ui
-                          net.wikipunk.boot.lv2/units
-                          net.wikipunk.boot.lv2/uri-map
-                          net.wikipunk.boot.lv2/urid
-                          net.wikipunk.boot.lv2/worker]}}
+{:vocab {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
+         :ns-prefix    "net.wikipunk.rdf.lv2."
+         :target       "src/net/wikipunk/rdf/lv2/" 
+         :boot         [net.wikipunk.lv2.boot/core
+                        net.wikipunk.lv2.boot/atom
+                        net.wikipunk.lv2.boot/buf-size
+                        net.wikipunk.lv2.boot/data-access
+                        net.wikipunk.lv2.boot/dynmanifest
+                        net.wikipunk.lv2.boot/event
+                        net.wikipunk.lv2.boot/instance-access
+                        net.wikipunk.lv2.boot/log
+                        net.wikipunk.lv2.boot/midi
+                        net.wikipunk.lv2.boot/morph
+                        net.wikipunk.lv2.boot/options
+                        net.wikipunk.lv2.boot/parameters
+                        net.wikipunk.lv2.boot/patch
+                        net.wikipunk.lv2.boot/port-groups
+                        net.wikipunk.lv2.boot/port-props
+                        net.wikipunk.lv2.boot/presets
+                        net.wikipunk.lv2.boot/resize-port
+                        net.wikipunk.lv2.boot/state
+                        net.wikipunk.lv2.boot/time
+                        net.wikipunk.lv2.boot/ui
+                        net.wikipunk.lv2.boot/units
+                        net.wikipunk.lv2.boot/uri-map
+                        net.wikipunk.lv2.boot/urid
+                        net.wikipunk.lv2.boot/worker]}}

@@ -1,8 +1,6 @@
-(ns net.wikipunk.boot.lv2
+(ns net.wikipunk.lv2.boot
   "LV2 RDF models"
-  {:rdfa/prefix      "lv2",
-   :rdfa/uri         "http://lv2plug.in/ns/lv2core#",
-   :dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.ttl"}
+  {:rdf/type :jsonld/Context}
   (:refer-clojure :exclude [atom time]))
 
 (def atom
@@ -16,6 +14,12 @@
    :rdfa/uri         "http://lv2plug.in/ns/ext/buf-size#",
    :rdf/type         :rdfa/PrefixMapping
    :dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/lv2/buf-size.lv2/buf-size.ttl"})
+
+(def core
+  {:rdfa/prefix      "lv2",
+   :rdfa/uri         "http://lv2plug.in/ns/lv2core#",
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/lv2/core.lv2/lv2core.ttl"})
 
 (def data-access
   {:rdfa/prefix      "da",

@@ -3,28 +3,19 @@
   {:mvn/version "10.000-beta-16"}  
   com.stuartsierra/component
   {:mvn/version "1.1.0"}
-  io.github.arachne-framework/aristotle
-  {:git/sha "86f3ace210318bd9820322da45e627cec9cfba48"}
+  io.github.aamedina/rdf
+  {:git/sha "8afa250b6617b1ccbed9f829ac4ddbf8627f1860"}
   net.java.dev.jna/jna
   {:mvn/version "5.7.0"}
-  ont-app/vocabulary
-  {:mvn/version "0.2.1"}
-  org.apache.jena/apache-jena-libs
-  {:mvn/version "4.6.1"
-   :extension   "pom"}
   org.clojure/clojure
   {:mvn/version "1.11.1"}
   org.clojure/tools.logging
-  {:mvn/version "1.2.4"}
-  zprint/zprint
   {:mvn/version "1.2.4"}}
- :paths ["src" "resources" "classes" "rdf"]
+ :paths ["src" "classes"]
  :aliases
  {:dev
   {:extra-deps
-   {com.datomic/dev-local
-    {:mvn/version "1.0.243"}
-    com.walmartlabs/schematic
+   {com.walmartlabs/schematic
     {:mvn/version "1.3.0"}
     com.stuartsierra/component.repl
     {:mvn/version "0.2.0"}    
