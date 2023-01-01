@@ -27,7 +27,6 @@
    [zprint.core :as zprint]
    [net.wikipunk.rdf :as rdf]
    [net.wikipunk.lv2.boot :as boot]
-   [net.wikipunk.lv2.host :as host]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
