@@ -4,13 +4,13 @@
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/ui.lv2/ui.ttl",
    :owl/imports ["http://lv2plug.in/ns/ext/options"
                  "http://lv2plug.in/ns/lv2core"],
-   :rdf/ns-prefix-map {"lv2"    "http://lv2plug.in/ns/lv2core#",
-                       "lv2.ui" "http://lv2plug.in/ns/extensions/ui#",
-                       "opts"   "http://lv2plug.in/ns/ext/options#",
-                       "owl"    "http://www.w3.org/2002/07/owl#",
-                       "rdf"    "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                       "rdfs"   "http://www.w3.org/2000/01/rdf-schema#",
-                       "xsd"    "http://www.w3.org/2001/XMLSchema#"},
+   :rdf/ns-prefix-map {"lv2"      "http://lv2plug.in/ns/lv2core#",
+                       "lv2.opts" "http://lv2plug.in/ns/ext/options#",
+                       "lv2.ui"   "http://lv2plug.in/ns/extensions/ui#",
+                       "owl"      "http://www.w3.org/2002/07/owl#",
+                       "rdf"      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "http://lv2plug.in/ns/extensions/ui",
    :rdfa/prefix "lv2.ui",
@@ -106,7 +106,7 @@
 (def backgroundColor
   "The background color of the host's UI."
   {:db/ident     :lv2.ui/backgroundColor,
-   :rdf/type     [:opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The background color of the host's UI.",
    :rdfs/label   "background color"})
 
@@ -136,7 +136,7 @@
 (def foregroundColor
   "The foreground color of the host's UI."
   {:db/ident     :lv2.ui/foregroundColor,
-   :rdf/type     [:opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The foreground color of the host's UI.",
    :rdfs/label   "foreground color"})
 
@@ -257,7 +257,7 @@
 (def scaleFactor
   "Scale factor for high resolution screens."
   {:db/ident     :lv2.ui/scaleFactor,
-   :rdf/type     [:opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "Scale factor for high resolution screens.",
    :rdfs/label   "scale factor",
    :rdfs/range   :xsd/float})

@@ -233,7 +233,7 @@
    :rdf/type         :rdfa/PrefixMapping
    :rdf/ns-prefix-map {"lv2"    "http://lv2plug.in/ns/lv2core#",
                        "lv2.ui" "http://lv2plug.in/ns/extensions/ui#",
-                       "opts"   "http://lv2plug.in/ns/ext/options#",
+                       "lv2.opts"   "http://lv2plug.in/ns/ext/options#",
                        "owl"    "http://www.w3.org/2002/07/owl#",
                        "rdf"    "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"   "http://www.w3.org/2000/01/rdf-schema#",
