@@ -8,7 +8,6 @@
                        "owl"      "http://www.w3.org/2002/07/owl#",
                        "rdf"      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
-                       "work"     "http://lv2plug.in/ns/ext/worker#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "http://lv2plug.in/ns/ext/worker",
@@ -18,3 +17,17 @@
    :rdfs/label "LV2 Worker",
    :rdfs/seeAlso
    ["https://gitlab.com/lv2/lv2/-/raw/master/lv2/worker.lv2/worker.meta.ttl"]})
+
+(def interface
+  "The work interface provided by a plugin."
+  {:db/ident     :lv2.work/interface,
+   :rdf/type     :lv2/ExtensionData,
+   :rdfs/comment "The work interface provided by a plugin.",
+   :rdfs/label   "work interface"})
+
+(def schedule
+  "The work scheduling feature provided by a host."
+  {:db/ident     :lv2.work/schedule,
+   :rdf/type     :lv2/Feature,
+   :rdfs/comment "The work scheduling feature provided by a host.",
+   :rdfs/label   "work schedule"})

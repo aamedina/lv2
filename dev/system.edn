@@ -1,7 +1,7 @@
 {:vocab {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
          :sc/refs      [:dev]
-         :ns-prefix    "net.wikipunk.rdf.lv2."
-         :target       "src/net/wikipunk/rdf/lv2/" 
+         ;; :ns-prefix    "net.wikipunk.rdf.lv2."
+         ;; :target       "src/net/wikipunk/rdf/"
          :boot         [net.wikipunk.lv2.boot/core
                         net.wikipunk.lv2.boot/atom
                         net.wikipunk.lv2.boot/buf-size

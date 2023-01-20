@@ -4,7 +4,7 @@
   com.stuartsierra/component
   {:mvn/version "1.1.0"}
   io.github.aamedina/rdf
-  {:git/sha "dc760d5e835c72b476218e47edcbe3ef98f4b520"}
+  {:git/sha "d73b66a7a782f9e672907a4f850a5f5e5367d09a"}
   net.java.dev.jna/jna
   {:mvn/version "5.7.0"}
   org.clojure/clojure

@@ -5,15 +5,14 @@
    :owl/imports ["http://lv2plug.in/ns/lv2core"
                  "http://lv2plug.in/ns/ext/port-groups"
                  "http://lv2plug.in/ns/ext/atom"],
-   :rdf/ns-prefix-map {"atom" "http://lv2plug.in/ns/ext/atom#",
-                       "lv2" "http://lv2plug.in/ns/lv2core#",
+   :rdf/ns-prefix-map {"lv2" "http://lv2plug.in/ns/lv2core#",
+                       "lv2.atom" "http://lv2plug.in/ns/ext/atom#",
                        "lv2.param" "http://lv2plug.in/ns/ext/parameters#",
+                       "lv2.pg" "http://lv2plug.in/ns/ext/port-groups#",
+                       "lv2.units" "http://lv2plug.in/ns/extensions/units#",
                        "owl" "http://www.w3.org/2002/07/owl#",
-                       "param" "http://lv2plug.in/ns/ext/parameters#",
-                       "pg" "http://lv2plug.in/ns/ext/port-groups#",
                        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                       "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                       "units" "http://lv2plug.in/ns/extensions/units#"},
+                       "rdfs" "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "http://lv2plug.in/ns/ext/parameters",
    :rdfa/prefix "lv2.param",
@@ -27,7 +26,7 @@
 (def CompressorControls
   "Typical controls for a compressor."
   {:db/ident        :lv2.param/CompressorControls,
-   :pg/element      [{:lv2/designation :lv2.param/ratio}
+   :lv2.pg/element  [{:lv2/designation :lv2.param/ratio}
                      {:lv2/designation :lv2.param/threshold}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a compressor.",
@@ -40,15 +39,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A group representing a set of associated controls.",
    :rdfs/label      "Control Group",
-   :rdfs/subClassOf :pg/Group})
+   :rdfs/subClassOf :lv2.pg/Group})
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
   {:db/ident        :lv2.param/EnvelopeControls,
-   :pg/element      [{:lv2/designation :lv2.param/sustain,
+   :lv2.pg/element  [{:lv2/designation :lv2.param/sustain,
                       :lv2/index       4}
-                     {:lv2/designation :lv2.param/hold,
-                      :lv2/index       2}
                      {:lv2/designation :lv2.param/release,
                       :lv2/index       5}
                      {:lv2/designation :lv2.param/attack,
@@ -56,7 +53,9 @@
                      {:lv2/designation :lv2.param/delay,
                       :lv2/index       0}
                      {:lv2/designation :lv2.param/decay,
-                      :lv2/index       3}],
+                      :lv2/index       3}
+                     {:lv2/designation :lv2.param/hold,
+                      :lv2/index       2}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a DAHDSR envelope.",
    :rdfs/label      "Envelope Controls",
@@ -65,7 +64,7 @@
 (def FilterControls
   "Typical controls for a filter."
   {:db/ident        :lv2.param/FilterControls,
-   :pg/element      [{:lv2/designation :lv2.param/resonance}
+   :lv2.pg/element  [{:lv2/designation :lv2.param/resonance}
                      {:lv2/designation :lv2.param/cutoffFrequency}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a filter.",
@@ -75,7 +74,7 @@
 (def OscillatorControls
   "Typical controls for an oscillator."
   {:db/ident        :lv2.param/OscillatorControls,
-   :pg/element      [{:lv2/designation :lv2.param/pulseWidth}
+   :lv2.pg/element  [{:lv2/designation :lv2.param/pulseWidth}
                      {:lv2/designation :lv2.param/waveform}
                      {:lv2/designation :lv2.param/amplitude}
                      {:lv2/designation :lv2.param/frequency}],
@@ -90,7 +89,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "An amplitude as a factor, where 0 is silent and 1 is unity.",
    :rdfs/label   "amplitude",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def attack
   "The duration of an envelope attack stage."
@@ -98,7 +97,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The duration of an envelope attack stage.",
    :rdfs/label   "attack",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def bypass
   "A boolean parameter that disables processing if true."
@@ -113,7 +112,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The cutoff frequency, typically in Hz, for a filter.",
    :rdfs/label   "cutoff frequency",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def decay
   "The duration of an envelope decay stage."
@@ -121,7 +120,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The duration of an envelope decay stage.",
    :rdfs/label   "decay",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def delay
   "The duration of an envelope delay stage."
@@ -129,7 +128,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The duration of an envelope delay stage.",
    :rdfs/label   "delay",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def dryLevel
   "The level of the unprocessed component of a signal."
@@ -144,19 +143,19 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "A frequency, typically in Hz.",
    :rdfs/label   "frequency",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def gain
   "Gain in decibels."
-  {:db/ident     :lv2.param/gain,
-   :lv2/default  0,
-   :lv2/maximum  20,
-   :lv2/minimum  -20,
-   :rdf/type     :lv2/Parameter,
-   :rdfs/comment "Gain in decibels.",
-   :rdfs/label   "gain",
-   :rdfs/range   :atom/Float,
-   :units/unit   :units/db})
+  {:db/ident       :lv2.param/gain,
+   :lv2.units/unit :lv2.units/db,
+   :lv2/default    0,
+   :lv2/maximum    20,
+   :lv2/minimum    -20,
+   :rdf/type       :lv2/Parameter,
+   :rdfs/comment   "Gain in decibels.",
+   :rdfs/label     "gain",
+   :rdfs/range     :lv2.atom/Float})
 
 (def hold
   "The duration of an envelope hold stage."
@@ -164,7 +163,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The duration of an envelope hold stage.",
    :rdfs/label   "hold",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def pulseWidth
   "The width of a pulse of a rectangular waveform."
@@ -172,7 +171,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The width of a pulse of a rectangular waveform.",
    :rdfs/label   "pulse width",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def ratio
   "Compression ratio."
@@ -180,7 +179,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "Compression ratio.",
    :rdfs/label   "ratio",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def release
   "The duration of an envelope release stage."
@@ -188,7 +187,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The duration of an envelope release stage.",
    :rdfs/label   "release",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def resonance
   "The resonance of a filter."
@@ -196,7 +195,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The resonance of a filter.",
    :rdfs/label   "resonance",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def sampleRate
   "A sample rate in Hz."
@@ -211,7 +210,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The level of an envelope sustain stage as a factor.",
    :rdfs/label   "sustain",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def threshold
   "Compression threshold."
@@ -219,7 +218,7 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "Compression threshold.",
    :rdfs/label   "threshold",
-   :rdfs/range   :atom/Float})
+   :rdfs/range   :lv2.atom/Float})
 
 (def waveform
   "The waveform \"fader\" for oscillators or modulators that have several."
@@ -228,7 +227,7 @@
    :rdfs/comment
    "The waveform \"fader\" for oscillators or modulators that have several.",
    :rdfs/label "waveform",
-   :rdfs/range :atom/Float})
+   :rdfs/range :lv2.atom/Float})
 
 (def wetDryRatio
   "The ratio between processed and bypassed levels in the output."
