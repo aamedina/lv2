@@ -28,6 +28,7 @@
    [net.wikipunk.rdf :as rdf :refer [doc *classes* *properties*]]
    [net.wikipunk.lv2.boot :as boot]
    ;; LV2 RDF models
+   [net.wikipunk.rdf.lv2 :as lv2]
    [net.wikipunk.rdf.lv2.atom :as atom]
    [net.wikipunk.rdf.lv2.bufsz :as bufsz]
    [net.wikipunk.rdf.lv2.da :as da]
@@ -35,7 +36,6 @@
    [net.wikipunk.rdf.lv2.ev :as ev]
    [net.wikipunk.rdf.lv2.ia :as ia]
    [net.wikipunk.rdf.lv2.log :as log]   
-   [net.wikipunk.rdf.lv2.lv2 :as lv2]
    [net.wikipunk.rdf.lv2.midi :as midi]
    [net.wikipunk.rdf.lv2.morph :as morph]
    [net.wikipunk.rdf.lv2.opts :as opts]
