@@ -242,7 +242,7 @@
 
 (def units
   {:rdfa/prefix      "lv2.units",
-   :rdfa/uri         "http://lv2plug.in/ns/ext/units#",
+   :rdfa/uri         "http://lv2plug.in/ns/extensions/units#",
    :rdf/type         :rdfa/PrefixMapping
    :rdf/ns-prefix-map {"lv2.units" "http://lv2plug.in/ns/ext/units#",
                        "owl"       "http://www.w3.org/2002/07/owl#",
