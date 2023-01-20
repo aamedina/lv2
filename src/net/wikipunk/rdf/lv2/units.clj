@@ -1,34 +1,25 @@
 (ns net.wikipunk.rdf.lv2.units
-  "This is a vocabulary for units typically used for control values in audio processing.  For example, to say that a gain control is in decibels:      :::turtle     @prefix units: <http://lv2plug.in/ns/extensions/units#> .     @prefix eg:    <http://example.org/> .      eg:plugin lv2:port [         a            lv2:ControlPort , lv2:InputPort ;         lv2:index    0 ;         lv2:symbol   \"gain\" ;         lv2:name     \"Gain\" ;         units:unit   units:db     ] .  Using the same form, plugins may also specify one-off units inline, to give better display hints to hosts:      :::turtle     eg:plugin lv2:port [         a            lv2:ControlPort , lv2:InputPort ;         lv2:index    0 ;         lv2:symbol   \"frob\" ;         lv2:name     \"frob level\" ;         units:unit [             a            units:Unit ;             rdfs:label   \"frobnication\" ;             units:symbol \"fr\" ;             units:render \"%f f\"         ]     ] .  It is also possible to define conversions between various units, which makes it possible for hosts to automatically convert between units where possible.  The units defined in this extension include conversion definitions where it makes sense to do so."
+  "Units for LV2 values."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.ttl",
-   :lv2/project {:doap/created    "2007-02-06",
-                 :doap/developer  "http://plugin.org.uk/swh.xrdf#me",
-                 :doap/homepage   "http://lv2plug.in/ns/extensions/units",
-                 :doap/license    "http://opensource.org/licenses/isc",
-                 :doap/maintainer "http://drobilla.net/drobilla#me",
-                 :doap/name       "LV2 Units",
-                 :doap/shortdesc  "Units for LV2 values.",
-                 :rdf/about       "http://lv2plug.in/ns/extensions/units",
-                 :rdf/type        :doap/Project},
-   :rdf/about "http://lv2plug.in/ns/extensions/units",
    :rdf/ns-prefix-map {"owl"   "http://www.w3.org/2002/07/owl#",
                        "rdf"   "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
                        "units" "http://lv2plug.in/ns/extensions/units#",
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdf/uri "http://lv2plug.in/ns/extensions/units",
    :rdfa/prefix "units",
    :rdfa/uri "http://lv2plug.in/ns/ext/units#",
    :rdfs/comment "Units for LV2 values.",
    :rdfs/label "LV2 Units",
    :rdfs/seeAlso
-   "https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.meta.ttl"}
+   ["https://gitlab.com/lv2/lv2/-/raw/master/lv2/units.lv2/units.meta.ttl"]}
   (:refer-clojure :exclude [min symbol]))
 
 (def Conversion
   "A conversion from one unit to another."
-  {:rdf/about       :units/Conversion,
+  {:db/ident        :units/Conversion,
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A conversion from one unit to another.",
    :rdfs/label      "Conversion",
@@ -40,14 +31,14 @@
 
 (def Unit
   "A unit for a control value."
-  {:rdf/about    :units/Unit,
+  {:db/ident     :units/Unit,
    :rdf/type     [:owl/Class :rdfs/Class],
    :rdfs/comment "A unit for a control value.",
    :rdfs/label   "Unit"})
 
 (def bar
   "Musical bars or measures."
-  {:rdf/about    :units/bar,
+  {:db/ident     :units/bar,
    :rdf/type     :units/Unit,
    :rdfs/comment "Musical bars or measures.",
    :rdfs/label   "bars",
@@ -56,7 +47,7 @@
 
 (def beat
   "Musical beats."
-  {:rdf/about    :units/beat,
+  {:db/ident     :units/beat,
    :rdf/type     :units/Unit,
    :rdfs/comment "Musical beats.",
    :rdfs/label   "beats",
@@ -65,7 +56,7 @@
 
 (def bpm
   "Beats Per Minute (BPM), the standard unit for musical tempo."
-  {:rdf/about :units/bpm,
+  {:db/ident :units/bpm,
    :rdf/type :units/Unit,
    :rdfs/comment "Beats Per Minute (BPM), the standard unit for musical tempo.",
    :rdfs/label "beats per minute",
@@ -76,7 +67,7 @@
 
 (def cent
   "Cents (hundredths of semitones)."
-  {:rdf/about        :units/cent,
+  {:db/ident         :units/cent,
    :rdf/type         :units/Unit,
    :rdfs/comment     "Cents (hundredths of semitones).",
    :rdfs/label       "cents",
@@ -87,7 +78,7 @@
 
 (def cm
   "Centimetres (hundredths of metres)."
-  {:rdf/about              :units/cm,
+  {:db/ident               :units/cm,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Centimetres (hundredths of metres).",
    :rdfs/label             "centimetres",
@@ -104,7 +95,7 @@
 
 (def coef
   "A scale coefficient where 1 is unity, or 100 percent."
-  {:rdf/about        :units/coef,
+  {:db/ident         :units/coef,
    :rdf/type         :units/Unit,
    :rdfs/comment     "A scale coefficient where 1 is unity, or 100 percent.",
    :rdfs/label       "coefficient",
@@ -115,7 +106,7 @@
 
 (def conversion
   "A conversion from this unit to another."
-  {:rdf/about    :units/conversion,
+  {:db/ident     :units/conversion,
    :rdf/type     [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment "A conversion from this unit to another.",
    :rdfs/domain  :units/Unit,
@@ -124,7 +115,7 @@
 
 (def db
   "Decibels, a logarithmic relative unit where 0 is unity."
-  {:rdf/about    :units/db,
+  {:db/ident     :units/db,
    :rdf/type     :units/Unit,
    :rdfs/comment "Decibels, a logarithmic relative unit where 0 is unity.",
    :rdfs/label   "decibels",
@@ -133,7 +124,7 @@
 
 (def degree
   "An angle where 360 degrees is one full rotation."
-  {:rdf/about    :units/degree,
+  {:db/ident     :units/degree,
    :rdf/type     :units/Unit,
    :rdfs/comment "An angle where 360 degrees is one full rotation.",
    :rdfs/label   "degrees",
@@ -142,7 +133,7 @@
 
 (def factor
   "The factor to multiply the source value by in order to convert to the target unit."
-  {:rdf/about :units/factor,
+  {:db/ident :units/factor,
    :rdf/type [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment
    "The factor to multiply the source value by in order to convert to the target unit.",
@@ -151,7 +142,7 @@
 
 (def frame
   "Audio frames or samples."
-  {:rdf/about    :units/frame,
+  {:db/ident     :units/frame,
    :rdf/type     :units/Unit,
    :rdfs/comment "Audio frames or samples.",
    :rdfs/label   "audio frames",
@@ -160,7 +151,7 @@
 
 (def hz
   "Hertz, or inverse seconds, the SI derived unit for frequency."
-  {:rdf/about :units/hz,
+  {:db/ident :units/hz,
    :rdf/type :units/Unit,
    :rdfs/comment
    "Hertz, or inverse seconds, the SI derived unit for frequency.",
@@ -174,7 +165,7 @@
 
 (def inch
   "An inch, defined as exactly 0.0254 metres."
-  {:rdf/about        :units/inch,
+  {:db/ident         :units/inch,
    :rdf/type         :units/Unit,
    :rdfs/comment     "An inch, defined as exactly 0.0254 metres.",
    :rdfs/label       "inches",
@@ -185,7 +176,7 @@
 
 (def khz
   "Kilohertz (thousands of Hertz)."
-  {:rdf/about              :units/khz,
+  {:db/ident               :units/khz,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Kilohertz (thousands of Hertz).",
    :rdfs/label             "kilohertz",
@@ -198,7 +189,7 @@
 
 (def km
   "Kilometres (thousands of metres)."
-  {:rdf/about              :units/km,
+  {:db/ident               :units/km,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Kilometres (thousands of metres).",
    :rdfs/label             "kilometres",
@@ -215,7 +206,7 @@
 
 (def m
   "Metres, the SI base unit for length."
-  {:rdf/about              :units/m,
+  {:db/ident               :units/m,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Metres, the SI base unit for length.",
    :rdfs/label             "metres",
@@ -232,7 +223,7 @@
 
 (def mhz
   "Megahertz (millions of Hertz)."
-  {:rdf/about              :units/mhz,
+  {:db/ident               :units/mhz,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Megahertz (millions of Hertz).",
    :rdfs/label             "megahertz",
@@ -245,7 +236,7 @@
 
 (def midiNote
   "A MIDI note number."
-  {:rdf/about    :units/midiNote,
+  {:db/ident     :units/midiNote,
    :rdf/type     :units/Unit,
    :rdfs/comment "A MIDI note number.",
    :rdfs/label   "MIDI note",
@@ -254,7 +245,7 @@
 
 (def mile
   "A mile, defined as exactly 1609.344 metres."
-  {:rdf/about        :units/mile,
+  {:db/ident         :units/mile,
    :rdf/type         :units/Unit,
    :rdfs/comment     "A mile, defined as exactly 1609.344 metres.",
    :rdfs/label       "miles",
@@ -265,7 +256,7 @@
 
 (def min
   "Minutes (60s of seconds and 60ths of an hour)."
-  {:rdf/about        :units/min,
+  {:db/ident         :units/min,
    :rdf/type         :units/Unit,
    :rdfs/comment     "Minutes (60s of seconds and 60ths of an hour).",
    :rdfs/label       "minutes",
@@ -276,7 +267,7 @@
 
 (def mm
   "Millimetres (thousandths of metres)."
-  {:rdf/about              :units/mm,
+  {:db/ident               :units/mm,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Millimetres (thousandths of metres).",
    :rdfs/label             "millimetres",
@@ -293,7 +284,7 @@
 
 (def ms
   "Milliseconds (thousandths of seconds)."
-  {:rdf/about              :units/ms,
+  {:db/ident               :units/ms,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Milliseconds (thousandths of seconds).",
    :rdfs/label             "milliseconds",
@@ -304,7 +295,7 @@
 
 (def oct
   "Octaves, relative musical pitch where +1 octave doubles the frequency."
-  {:rdf/about :units/oct,
+  {:db/ident :units/oct,
    :rdf/type :units/Unit,
    :rdfs/comment
    "Octaves, relative musical pitch where +1 octave doubles the frequency.",
@@ -316,7 +307,7 @@
 
 (def pc
   "Percentage, a ratio as a fraction of 100."
-  {:rdf/about        :units/pc,
+  {:db/ident         :units/pc,
    :rdf/type         :units/Unit,
    :rdfs/comment     "Percentage, a ratio as a fraction of 100.",
    :rdfs/label       "percent",
@@ -327,7 +318,7 @@
 
 (def prefixConversion
   "A conversion from this unit to another with the same base but a different prefix."
-  {:rdf/about :units/prefixConversion,
+  {:db/ident :units/prefixConversion,
    :rdf/type [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment
    "A conversion from this unit to another with the same base but a different prefix.",
@@ -338,7 +329,7 @@
 
 (def render
   "A printf format string for rendering a value (e.g., \"%f dB\")."
-  {:rdf/about :units/render,
+  {:db/ident :units/render,
    :rdf/type [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment
    "A printf format string for rendering a value (e.g., \"%f dB\").",
@@ -348,7 +339,7 @@
 
 (def s
   "Seconds, the SI base unit for time."
-  {:rdf/about              :units/s,
+  {:db/ident               :units/s,
    :rdf/type               :units/Unit,
    :rdfs/comment           "Seconds, the SI base unit for time.",
    :rdfs/label             "seconds",
@@ -361,7 +352,7 @@
 
 (def semitone12TET
   "A semitone in the 12-tone equal temperament scale."
-  {:rdf/about        :units/semitone12TET,
+  {:db/ident         :units/semitone12TET,
    :rdf/type         :units/Unit,
    :rdfs/comment     "A semitone in the 12-tone equal temperament scale.",
    :rdfs/label       "semitones",
@@ -372,7 +363,7 @@
 
 (def symbol
   "The abbreviated symbol for this unit (e.g., \"dB\")."
-  {:rdf/about    :units/symbol,
+  {:db/ident     :units/symbol,
    :rdf/type     [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The abbreviated symbol for this unit (e.g., \"dB\").",
    :rdfs/domain  :units/Unit,
@@ -381,7 +372,7 @@
 
 (def to
   "The target unit this conversion converts to."
-  {:rdf/about    :units/to,
+  {:db/ident     :units/to,
    :rdf/type     [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment "The target unit this conversion converts to.",
    :rdfs/domain  :units/Conversion,
@@ -390,7 +381,7 @@
 
 (def unit
   "The unit used by the value of a port or parameter."
-  {:rdf/about    :units/unit,
+  {:db/ident     :units/unit,
    :rdf/type     [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment "The unit used by the value of a port or parameter.",
    :rdfs/label   "unit",

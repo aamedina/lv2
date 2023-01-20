@@ -1,4 +1,5 @@
 {:vocab {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
+         :sc/refs      [:dev]
          :ns-prefix    "net.wikipunk.rdf.lv2."
          :target       "src/net/wikipunk/rdf/lv2/" 
          :boot         [net.wikipunk.lv2.boot/core
@@ -24,4 +25,5 @@
                         net.wikipunk.lv2.boot/units
                         net.wikipunk.lv2.boot/uri-map
                         net.wikipunk.lv2.boot/urid
-                        net.wikipunk.lv2.boot/worker]}}
+                        net.wikipunk.lv2.boot/worker]}
+ :dev   {:sc/create-fn dev/map->Quickstart}}

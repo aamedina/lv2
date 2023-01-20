@@ -16,7 +16,7 @@
    [clojure.java.shell :as sh :refer [sh]]
    [clojure.pprint :refer [pprint pp]]
    [clojure.reflect :refer [reflect]]
-   [clojure.repl :refer [apropos dir doc find-doc pst source]]
+   [clojure.repl :refer [apropos dir find-doc pst source]]
    [clojure.set :as set]
    [clojure.string :as str]
    [clojure.tools.namespace.repl :refer [refresh refresh-all clear]]
@@ -25,7 +25,7 @@
    [com.stuartsierra.component.repl :refer [reset set-init start stop system]]
    [com.walmartlabs.schematic :as sc]
    [zprint.core :as zprint]
-   [net.wikipunk.rdf :as rdf]
+   [net.wikipunk.rdf :as rdf :refer [doc *classes* *properties*]]
    [net.wikipunk.lv2.boot :as boot]
    ;; LV2 RDF models
    [net.wikipunk.rdf.lv2.atom :as atom]
@@ -61,14 +61,13 @@
           (sc/assemble-system))
       (throw (ex-info "system.edn is not on classpath" {})))))
 
+
+(defrecord Quickstart []
+  com/Lifecycle
+  (start [this]
+    this)
+  (stop [this]
+    this))
+
 (comment
-  (def rdf (deref (get-in system [:vocab :types])))
-  
-  ;; A Clojure multimethod hierarchy contained in a ref
-  (get-in system [:vocab :types])
-
-  ;; Use it like this...
-  (isa? rdf :owl/Class :rdfs/Class)
-
-  )
-
+  (descendants *classes* :midi/MidiEvent))

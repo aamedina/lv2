@@ -1,17 +1,7 @@
 (ns net.wikipunk.rdf.lv2.midi
-  "This specification defines a data type for a MIDI message, midi:MidiEvent, which is normalised for fast and convenient real-time processing.  MIDI is the <q>Musical Instrument Digital Interface</q>, a ubiquitous binary standard for controlling digital music devices.  For plugins that process MIDI (or other situations where MIDI is sent via a generic transport) the main type defined here, midi:MidiEvent, can be mapped to an integer and used as the type of an LV2 [Atom](atom.html#Atom) or [Event](event.html#Event).  This specification also defines a complete vocabulary for the MIDI standard, except for standard controller numbers.  These descriptions are detailed enough to express any MIDI message as properties."
+  "A normalised definition of raw MIDI."
   {:dcat/downloadURL
    "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.ttl",
-   :lv2/project {:doap/created    "2006-00-00",
-                 :doap/developer  ["http://drobilla.net/drobilla#me"
-                                   "http://lv2plug.in/ns/meta#larsl"],
-                 :doap/license    "http://opensource.org/licenses/isc",
-                 :doap/maintainer "http://drobilla.net/drobilla#me",
-                 :doap/name       "LV2 MIDI",
-                 :doap/shortdesc  "A normalised definition of raw MIDI.",
-                 :rdf/about       "http://lv2plug.in/ns/ext/midi",
-                 :rdf/type        :doap/Project},
-   :rdf/about "http://lv2plug.in/ns/ext/midi",
    :rdf/ns-prefix-map {"atom" "http://lv2plug.in/ns/ext/atom#",
                        "ev"   "http://lv2plug.in/ns/ext/event#",
                        "lv2"  "http://lv2plug.in/ns/lv2core#",
@@ -21,18 +11,19 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
+   :rdf/uri "http://lv2plug.in/ns/ext/midi",
    :rdfa/prefix "midi",
    :rdfa/uri "http://lv2plug.in/ns/ext/midi#",
    :rdfs/comment "A normalised definition of raw MIDI.",
    :rdfs/label "LV2 MIDI",
    :rdfs/seeAlso
-   "https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.meta.ttl"}
+   ["https://gitlab.com/lv2/lv2/-/raw/master/lv2/midi.lv2/midi.meta.ttl"]}
   (:refer-clojure :exclude [binding chunk]))
 
 (def ActiveSense
   "MIDI active sense message."
-  {:midi/status     [-2],
-   :rdf/about       :midi/ActiveSense,
+  {:db/ident        :midi/ActiveSense,
+   :midi/status     [-2],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI active sense message.",
    :rdfs/label      "Active Sense",
@@ -40,12 +31,12 @@
 
 (def Aftertouch
   "MIDI aftertouch message."
-  {:midi/chunk      [{:midi/byteNumber 1,
+  {:db/ident        :midi/Aftertouch,
+   :midi/chunk      [{:midi/byteNumber 1,
                       :midi/property   :midi/pressure}
                      {:midi/byteNumber 0,
                       :midi/property   :midi/noteNumber}],
    :midi/statusMask [-96],
-   :rdf/about       :midi/Aftertouch,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI aftertouch message.",
    :rdfs/label      "Aftertouch",
@@ -53,10 +44,10 @@
 
 (def Bender
   "MIDI bender message."
-  {:midi/chunk      {:midi/byteNumber [1 0],
+  {:db/ident        :midi/Bender,
+   :midi/chunk      {:midi/byteNumber [1 0],
                      :midi/property   :midi/benderValue},
    :midi/statusMask [-32],
-   :rdf/about       :midi/Bender,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI bender message.",
    :rdfs/label      "Bender",
@@ -64,10 +55,10 @@
 
 (def ChannelPressure
   "MIDI channel pressure message."
-  {:midi/chunk      {:midi/byteNumber 0,
+  {:db/ident        :midi/ChannelPressure,
+   :midi/chunk      {:midi/byteNumber 0,
                      :midi/property   :midi/pressure},
    :midi/statusMask [-48],
-   :rdf/about       :midi/ChannelPressure,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI channel pressure message.",
    :rdfs/label      "Channel Pressure",
@@ -75,15 +66,15 @@
 
 (def Chunk
   "A sequence of contiguous bytes in a MIDI message."
-  {:rdf/about    :midi/Chunk,
+  {:db/ident     :midi/Chunk,
    :rdf/type     :rdfs/Class,
    :rdfs/comment "A sequence of contiguous bytes in a MIDI message.",
    :rdfs/label   "Chunk"})
 
 (def Clock
   "MIDI clock message."
-  {:midi/status     [-8],
-   :rdf/about       :midi/Clock,
+  {:db/ident        :midi/Clock,
+   :midi/status     [-8],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI clock message.",
    :rdfs/label      "Clock",
@@ -91,8 +82,8 @@
 
 (def Continue
   "MIDI continue message."
-  {:midi/status     [-5],
-   :rdf/about       :midi/Continue,
+  {:db/ident        :midi/Continue,
+   :midi/status     [-5],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI continue message.",
    :rdfs/label      "Continue",
@@ -100,12 +91,12 @@
 
 (def Controller
   "MIDI controller change message."
-  {:midi/chunk      [{:midi/byteNumber 1,
+  {:db/ident        :midi/Controller,
+   :midi/chunk      [{:midi/byteNumber 1,
                       :midi/property   :midi/controllerValue}
                      {:midi/byteNumber 0,
                       :midi/property   :midi/controllerNumber}],
    :midi/statusMask [-80],
-   :rdf/about       :midi/Controller,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI controller change message.",
    :rdfs/label      "Controller",
@@ -113,17 +104,17 @@
 
 (def HexByte
   "A hexadecimal byte, which has a value <= FF."
-  {:owl/onDatatype       :xsd/hexBinary,
-   :owl/withRestrictions [{:xsd/maxInclusive "FF"}],
-   :rdf/about            :midi/HexByte,
+  {:db/ident             :midi/HexByte,
+   :owl/onDatatype       :xsd/hexBinary,
+   :owl/withRestrictions [{:xsd/maxInclusive 255.0}],
    :rdf/type             :rdfs/Datatype,
    :rdfs/comment         "A hexadecimal byte, which has a value <= FF.",
    :rdfs/label           "Hex Byte"})
 
 (def MidiEvent
-  "A single raw MIDI message (a sequence of bytes).  This is equivalent to a standard MIDI messages, except with the following restrictions to simplify handling:    * Running status is not allowed, every message must have its own status byte.    * Note On messages with velocity 0 are not allowed.  These messages are     equivalent to Note Off in standard MIDI streams, but here only proper Note     Off messages are allowed.    * \"Realtime messages\" (status bytes 0xF8 to 0xFF) are allowed, but may not      occur inside other messages like they can in standard MIDI streams.    * All messages are complete valid MIDI messages.  This means, for example,     that only the first byte in each event (the status byte) may have the     eighth bit set, that Note On and Note Off events are always 3 bytes long,     etc.  Where messages are communicated, the writer is responsible for writing valid messages, and the reader may assume that all events are valid.  If a midi:MidiEvent is serialised to a string, the format should be xsd:hexBinary, for example:      :::turtle     [] eg:someEvent \"901A01\"^^midi:MidiEvent ."
-  {:owl/onDatatype  :xsd/hexBinary,
-   :rdf/about       :midi/MidiEvent,
+  "A single raw MIDI message."
+  {:db/ident        :midi/MidiEvent,
+   :owl/onDatatype  :xsd/hexBinary,
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A single raw MIDI message.",
    :rdfs/label      "MIDI Message",
@@ -131,12 +122,12 @@
 
 (def NoteOff
   "MIDI note off message."
-  {:midi/chunk      [{:midi/byteNumber 1,
+  {:db/ident        :midi/NoteOff,
+   :midi/chunk      [{:midi/byteNumber 1,
                       :midi/property   :midi/velocity}
                      {:midi/byteNumber 0,
                       :midi/property   :midi/noteNumber}],
    :midi/statusMask [-128],
-   :rdf/about       :midi/NoteOff,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI note off message.",
    :rdfs/label      "Note Off",
@@ -144,12 +135,12 @@
 
 (def NoteOn
   "MIDI note on message."
-  {:midi/chunk      [{:midi/byteNumber 1,
+  {:db/ident        :midi/NoteOn,
+   :midi/chunk      [{:midi/byteNumber 1,
                       :midi/property   :midi/velocity}
                      {:midi/byteNumber 0,
                       :midi/property   :midi/noteNumber}],
    :midi/statusMask [-112],
-   :rdf/about       :midi/NoteOn,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI note on message.",
    :rdfs/label      "Note On",
@@ -157,10 +148,10 @@
 
 (def ProgramChange
   "MIDI program change message."
-  {:midi/chunk      {:midi/byteNumber 0,
+  {:db/ident        :midi/ProgramChange,
+   :midi/chunk      {:midi/byteNumber 0,
                      :midi/property   :midi/programNumber},
    :midi/statusMask [-64],
-   :rdf/about       :midi/ProgramChange,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI program change message.",
    :rdfs/label      "Program Change",
@@ -168,8 +159,8 @@
 
 (def QuarterFrame
   "MIDI quarter frame message."
-  {:midi/status     [-15],
-   :rdf/about       :midi/QuarterFrame,
+  {:db/ident        :midi/QuarterFrame,
+   :midi/status     [-15],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI quarter frame message.",
    :rdfs/label      "Quarter Frame",
@@ -177,8 +168,8 @@
 
 (def Reset
   "MIDI reset message."
-  {:midi/status     [-1],
-   :rdf/about       :midi/Reset,
+  {:db/ident        :midi/Reset,
+   :midi/status     [-1],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI reset message.",
    :rdfs/label      "Reset",
@@ -186,10 +177,10 @@
 
 (def SongPosition
   "MIDI song position pointer message."
-  {:midi/chunk      {:midi/byteNumber [1 0],
+  {:db/ident        :midi/SongPosition,
+   :midi/chunk      {:midi/byteNumber [1 0],
                      :midi/property   :midi/songPosition},
    :midi/status     [-14],
-   :rdf/about       :midi/SongPosition,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI song position pointer message.",
    :rdfs/label      "Song Position",
@@ -197,8 +188,8 @@
 
 (def SongSelect
   "MIDI song select message."
-  {:midi/status     [-13],
-   :rdf/about       :midi/SongSelect,
+  {:db/ident        :midi/SongSelect,
+   :midi/status     [-13],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI song select message.",
    :rdfs/label      "Song Select",
@@ -206,8 +197,8 @@
 
 (def Start
   "MIDI start message."
-  {:midi/status     [-6],
-   :rdf/about       :midi/Start,
+  {:db/ident        :midi/Start,
+   :midi/status     [-6],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI start message.",
    :rdfs/label      "Start",
@@ -215,8 +206,8 @@
 
 (def Stop
   "MIDI stop message."
-  {:midi/status     [-4],
-   :rdf/about       :midi/Stop,
+  {:db/ident        :midi/Stop,
+   :midi/status     [-4],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI stop message.",
    :rdfs/label      "Stop",
@@ -224,7 +215,7 @@
 
 (def SystemCommon
   "MIDI system common message."
-  {:rdf/about       :midi/SystemCommon,
+  {:db/ident        :midi/SystemCommon,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI system common message.",
    :rdfs/label      "System Common",
@@ -232,8 +223,8 @@
 
 (def SystemExclusive
   "MIDI system exclusive message."
-  {:midi/status     [-16],
-   :rdf/about       :midi/SystemExclusive,
+  {:db/ident        :midi/SystemExclusive,
+   :midi/status     [-16],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI system exclusive message.",
    :rdfs/label      "System Exclusive",
@@ -241,8 +232,8 @@
 
 (def SystemMessage
   "MIDI system message."
-  {:midi/statusMask [-16],
-   :rdf/about       :midi/SystemMessage,
+  {:db/ident        :midi/SystemMessage,
+   :midi/statusMask [-16],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI system message.",
    :rdfs/label      "System Message",
@@ -250,7 +241,7 @@
 
 (def SystemRealtime
   "MIDI system realtime message."
-  {:rdf/about       :midi/SystemRealtime,
+  {:db/ident        :midi/SystemRealtime,
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI system realtime message.",
    :rdfs/label      "System Realtime",
@@ -258,8 +249,8 @@
 
 (def TuneRequest
   "MIDI tune request message."
-  {:midi/status     [-10],
-   :rdf/about       :midi/TuneRequest,
+  {:db/ident        :midi/TuneRequest,
+   :midi/status     [-10],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI tune request message.",
    :rdfs/label      "Tune Request",
@@ -267,8 +258,8 @@
 
 (def VoiceMessage
   "MIDI voice message."
-  {:midi/statusMask [-16],
-   :rdf/about       :midi/VoiceMessage,
+  {:db/ident        :midi/VoiceMessage,
+   :midi/statusMask [-16],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI voice message.",
    :rdfs/label      "Voice Message",
@@ -276,7 +267,7 @@
 
 (def benderValue
   "MIDI pitch bender message (-8192 to 8192)."
-  {:rdf/about    :midi/benderValue,
+  {:db/ident     :midi/benderValue,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "MIDI pitch bender message (-8192 to 8192).",
    :rdfs/label   "bender value",
@@ -284,7 +275,7 @@
 
 (def binding
   "The MIDI event to bind a parameter to."
-  {:rdf/about    :midi/binding,
+  {:db/ident     :midi/binding,
    :rdf/type     [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment "The MIDI event to bind a parameter to.",
    :rdfs/label   "binding",
@@ -292,7 +283,7 @@
 
 (def byteNumber
   "The 0-based index of a byte which is part of this chunk."
-  {:rdf/about    :midi/byteNumber,
+  {:db/ident     :midi/byteNumber,
    :rdf/type     [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The 0-based index of a byte which is part of this chunk.",
    :rdfs/domain  :midi/Chunk,
@@ -301,7 +292,7 @@
 
 (def channel
   "The channel number of a MIDI message."
-  {:rdf/about    :midi/channel,
+  {:db/ident     :midi/channel,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The channel number of a MIDI message.",
    :rdfs/label   "MIDI channel",
@@ -309,7 +300,7 @@
 
 (def chunk
   "A chunk of a MIDI message."
-  {:rdf/about    :midi/chunk,
+  {:db/ident     :midi/chunk,
    :rdf/type     [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment "A chunk of a MIDI message.",
    :rdfs/label   "MIDI chunk",
@@ -317,7 +308,7 @@
 
 (def controllerNumber
   "The numeric ID of a controller (0 to 127)."
-  {:rdf/about    :midi/controllerNumber,
+  {:db/ident     :midi/controllerNumber,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The numeric ID of a controller (0 to 127).",
    :rdfs/label   "MIDI controller number",
@@ -325,7 +316,7 @@
 
 (def controllerValue
   "The value of a controller (0 to 127)."
-  {:rdf/about    :midi/controllerValue,
+  {:db/ident     :midi/controllerValue,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The value of a controller (0 to 127).",
    :rdfs/label   "MIDI controller value",
@@ -333,7 +324,7 @@
 
 (def noteNumber
   "The numeric ID of a note (0 to 127)."
-  {:rdf/about    :midi/noteNumber,
+  {:db/ident     :midi/noteNumber,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The numeric ID of a note (0 to 127).",
    :rdfs/label   "note number",
@@ -341,7 +332,7 @@
 
 (def pressure
   "Key pressure (0 to 127)."
-  {:rdf/about    :midi/pressure,
+  {:db/ident     :midi/pressure,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "Key pressure (0 to 127).",
    :rdfs/label   "key pressure",
@@ -349,7 +340,7 @@
 
 (def programNumber
   "The numeric ID of a program (0 to 127)."
-  {:rdf/about    :midi/programNumber,
+  {:db/ident     :midi/programNumber,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The numeric ID of a program (0 to 127).",
    :rdfs/label   "program number",
@@ -357,7 +348,7 @@
 
 (def property
   "The property this chunk represents."
-  {:rdf/about    :midi/property,
+  {:db/ident     :midi/property,
    :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
    :rdfs/comment "The property this chunk represents.",
    :rdfs/domain  :midi/Chunk,
@@ -366,7 +357,7 @@
 
 (def songNumber
   "The numeric ID of a song (0 to 127)."
-  {:rdf/about    :midi/songNumber,
+  {:db/ident     :midi/songNumber,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The numeric ID of a song (0 to 127).",
    :rdfs/label   "song number",
@@ -374,7 +365,7 @@
 
 (def songPosition
   "Song position in MIDI beats (16th notes) (-8192 to 8192)."
-  {:rdf/about    :midi/songPosition,
+  {:db/ident     :midi/songPosition,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "Song position in MIDI beats (16th notes) (-8192 to 8192).",
    :rdfs/label   "song position",
@@ -382,15 +373,15 @@
 
 (def status
   "The exact status byte for a message of this type."
-  {:rdf/about    :midi/status,
+  {:db/ident     :midi/status,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The exact status byte for a message of this type.",
    :rdfs/label   "status byte",
    :rdfs/range   :midi/HexByte})
 
 (def statusMask
-  "This is a status byte with the lower nibble set to zero."
-  {:rdf/about    :midi/statusMask,
+  "The status byte for a message of this type on channel 1."
+  {:db/ident     :midi/statusMask,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The status byte for a message of this type on channel 1.",
    :rdfs/label   "status mask",
@@ -398,7 +389,7 @@
 
 (def velocity
   "The velocity of a note message (0 to 127)."
-  {:rdf/about    :midi/velocity,
+  {:db/ident     :midi/velocity,
    :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The velocity of a note message (0 to 127).",
    :rdfs/label   "velocity",
