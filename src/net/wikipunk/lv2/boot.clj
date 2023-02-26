@@ -1,7 +1,7 @@
 (ns net.wikipunk.lv2.boot
   "LV2 RDF models"
   {:rdf/type :jsonld/Context}
-  (:refer-clojure :exclude [atom time]))
+  (:refer-clojure :exclude [atom time keys]))
 
 (def atom
   {:rdfa/prefix       "lv2.atom",
@@ -284,5 +284,14 @@
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"}
    :dcat/downloadURL "https://gitlab.com/lv2/lv2/-/raw/master/lv2/worker.lv2/worker.ttl"})
 
+(def keys
+  {:dcat/downloadURL "https://motools.sourceforge.net/keys/keys.owl"
+   :rdfa/prefix      "keys"
+   :rdfa/uri         "http://purl.org/NET/c4dm/keys.owl#"
+   :rdf/type         :rdfa/PrefixMapping})
 
-
+(def mo
+  "Music Ontology"
+  {:rdfa/uri    "http://purl.org/ontology/mo/"
+   :rdfa/prefix "mo"
+   :rdf/type    :rdfa/PrefixMapping})

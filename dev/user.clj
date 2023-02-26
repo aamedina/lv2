@@ -6,7 +6,7 @@
    [clojure.tools.namespace.repl]
    [com.stuartsierra.component.user-helpers :refer [dev go reset]]))
 
-(clojure.tools.namespace.repl/set-refresh-dirs "rdf" "dev" "src")
+(clojure.tools.namespace.repl/set-refresh-dirs "dev" "src")
 
 (Thread/setDefaultUncaughtExceptionHandler
   (reify Thread$UncaughtExceptionHandler
