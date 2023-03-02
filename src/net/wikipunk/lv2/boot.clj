@@ -295,3 +295,16 @@
   {:rdfa/uri    "http://purl.org/ontology/mo/"
    :rdfa/prefix "mo"
    :rdf/type    :rdfa/PrefixMapping})
+
+(def ingen
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/ingen.ttl"
+   :rdfa/prefix      "ingen",
+   :rdfa/uri         "http://drobilla.net/ns/ingen#",
+   :rdf/type         :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"lv2"      "http://lv2plug.in/ns/lv2core#",
+                       "lv2.ui"   "http://lv2plug.in/ns/extensions/ui#",
+                       "lv2.work" "http://lv2plug.in/ns/ext/worker#",
+                       "owl"      "http://www.w3.org/2002/07/owl#",
+                       "rdf"      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"      "http://www.w3.org/2001/XMLSchema#"}})

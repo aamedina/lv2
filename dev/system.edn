@@ -1,43 +1,36 @@
-{:vocab {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
-         :init-ns      net.wikipunk.temple.init
-         :ns-prefix    "net.wikipunk.rdf."
-         :boot         [net.wikipunk.lv2.boot/core
-                        net.wikipunk.lv2.boot/atom
-                        net.wikipunk.lv2.boot/buf-size
-                        net.wikipunk.lv2.boot/data-access
-                        net.wikipunk.lv2.boot/dynmanifest
-                        net.wikipunk.lv2.boot/event
-                        net.wikipunk.lv2.boot/instance-access
-                        net.wikipunk.lv2.boot/log
-                        net.wikipunk.lv2.boot/midi
-                        net.wikipunk.lv2.boot/morph
-                        net.wikipunk.lv2.boot/options
-                        net.wikipunk.lv2.boot/parameters
-                        net.wikipunk.lv2.boot/patch
-                        net.wikipunk.lv2.boot/port-groups
-                        net.wikipunk.lv2.boot/port-props
-                        net.wikipunk.lv2.boot/presets
-                        net.wikipunk.lv2.boot/resize-port
-                        net.wikipunk.lv2.boot/state
-                        net.wikipunk.lv2.boot/time
-                        net.wikipunk.lv2.boot/ui
-                        net.wikipunk.lv2.boot/units
-                        net.wikipunk.lv2.boot/uri-map
-                        net.wikipunk.lv2.boot/urid
-                        net.wikipunk.lv2.boot/worker
-                        net.wikipunk.lv2.boot/mo
-                        net.wikipunk.lv2.boot/keys]
-         :config       {:xtdb/index-store
-                        {:kv-store
-                         {:xtdb/module xtdb.lmdb/->kv-store
-                          :db-dir      ".vocab/index-store"}}
-                        :xtdb/tx-log
-                        {:kv-store
-                         {:xtdb/module xtdb.lmdb/->kv-store
-                          :db-dir      ".vocab/tx-log"}}
-                        :xtdb/document-store
-                        {:kv-store
-                         {:xtdb/module xtdb.lmdb/->kv-store
-                          :db-dir      ".vocab/document-store"}}
-                        :xtdb.lucene/lucene-store
-                        {:db-dir ".vocab/lucene"}}}}
+{:vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
+          :sc/refs      [:openai :qudt]
+          :init-ns      net.wikipunk.temple.init
+          :ns-prefix    "net.wikipunk.rdf."
+          :boot         [net.wikipunk.lv2.boot/core
+                         net.wikipunk.lv2.boot/atom
+                         net.wikipunk.lv2.boot/buf-size
+                         net.wikipunk.lv2.boot/data-access
+                         net.wikipunk.lv2.boot/dynmanifest
+                         net.wikipunk.lv2.boot/event
+                         net.wikipunk.lv2.boot/instance-access
+                         net.wikipunk.lv2.boot/log
+                         net.wikipunk.lv2.boot/midi
+                         net.wikipunk.lv2.boot/morph
+                         net.wikipunk.lv2.boot/options
+                         net.wikipunk.lv2.boot/parameters
+                         net.wikipunk.lv2.boot/patch
+                         net.wikipunk.lv2.boot/port-groups
+                         net.wikipunk.lv2.boot/port-props
+                         net.wikipunk.lv2.boot/presets
+                         net.wikipunk.lv2.boot/resize-port
+                         net.wikipunk.lv2.boot/state
+                         net.wikipunk.lv2.boot/time
+                         net.wikipunk.lv2.boot/ui
+                         net.wikipunk.lv2.boot/units
+                         net.wikipunk.lv2.boot/uri-map
+                         net.wikipunk.lv2.boot/urid
+                         net.wikipunk.lv2.boot/worker
+                         net.wikipunk.lv2.boot/mo
+                         net.wikipunk.lv2.boot/keys]
+          :config       {:xtdb.lucene/lucene-store
+                         {:db-dir ".vocab/lucene"}}}
+ :openai {:sc/create-fn net.wikipunk.openai/map->Client}
+ :qudt   {:sc/create-fn net.wikipunk.qudt/map->QUDT}}
+
+
