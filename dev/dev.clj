@@ -28,9 +28,11 @@
    [libpython-clj2.python :as py]
    [libpython-clj2.require :refer [require-python]]
    [zprint.core :as zprint]
-   [net.wikipunk.rdf :as rdf :refer [doc *classes* *properties*]]
+   [net.wikipunk.rdf :as rdf :refer [doc]]
+   [net.wikipunk.mop :as mop :refer [isa? descendants ancestors parents]]
    [net.wikipunk.lv2.boot :as boot]
-   [net.wikipunk.lv2 :as lv2]))
+   [net.wikipunk.lv2 :as lv2])
+  (:refer-clojure :exclude [isa? descendants ancestors parents]))
 
 (set-init
   (fn [_]
@@ -39,14 +41,6 @@
           (edn/read-string)
           (sc/assemble-system))
       (throw (ex-info "system.edn is not on classpath" {})))))
-
-
-(defrecord Quickstart []
-  com/Lifecycle
-  (start [this]
-    this)
-  (stop [this]
-    this))
 
 (comment
   (descendants *classes* :midi/MidiEvent))
