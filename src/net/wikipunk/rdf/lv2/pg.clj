@@ -10,9 +10,8 @@
                        "rdfs"   "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"    "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/port-groups",
    :rdfa/prefix "lv2.pg",
-   :rdfa/uri "http://lv2plug.in/ns/ext/port-groups#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/port-groups",
    :rdfs/comment "Multi-channel groups of LV2 ports.",
    :rdfs/label "LV2 Port Groups",
    :rdfs/seeAlso
@@ -232,18 +231,18 @@
 (def AmbisonicBH2P1Group
   "Ambisonic B stream of horizontal order 2 and peripheral order 1."
   {:db/ident :lv2.pg/AmbisonicBH2P1Group,
-   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN1,
-                     :lv2/index       1}
-                    {:lv2/designation :lv2.pg/ACN4,
-                     :lv2/index       4}
+   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN2,
+                     :lv2/index       2}
+                    {:lv2/designation :lv2.pg/ACN0,
+                     :lv2/index       0}
                     {:lv2/designation :lv2.pg/ACN3,
                      :lv2/index       3}
-                    {:lv2/designation :lv2.pg/ACN2,
-                     :lv2/index       2}
+                    {:lv2/designation :lv2.pg/ACN4,
+                     :lv2/index       4}
+                    {:lv2/designation :lv2.pg/ACN1,
+                     :lv2/index       1}
                     {:lv2/designation :lv2.pg/ACN8,
-                     :lv2/index       5}
-                    {:lv2/designation :lv2.pg/ACN0,
-                     :lv2/index       0}],
+                     :lv2/index       5}],
    :rdf/type :rdfs/Class,
    :rdfs/comment
    "Ambisonic B stream of horizontal order 2 and peripheral order 1.",
@@ -253,24 +252,24 @@
 (def AmbisonicBH2P2Group
   "Ambisonic B stream of horizontal order 2 and peripheral order 2."
   {:db/ident :lv2.pg/AmbisonicBH2P2Group,
-   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN4,
-                     :lv2/index       4}
-                    {:lv2/designation :lv2.pg/ACN0,
-                     :lv2/index       0}
-                    {:lv2/designation :lv2.pg/ACN8,
-                     :lv2/index       8}
-                    {:lv2/designation :lv2.pg/ACN7,
+   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN7,
                      :lv2/index       7}
+                    {:lv2/designation :lv2.pg/ACN3,
+                     :lv2/index       3}
                     {:lv2/designation :lv2.pg/ACN5,
                      :lv2/index       5}
                     {:lv2/designation :lv2.pg/ACN1,
                      :lv2/index       1}
                     {:lv2/designation :lv2.pg/ACN6,
                      :lv2/index       6}
+                    {:lv2/designation :lv2.pg/ACN0,
+                     :lv2/index       0}
+                    {:lv2/designation :lv2.pg/ACN4,
+                     :lv2/index       4}
                     {:lv2/designation :lv2.pg/ACN2,
                      :lv2/index       2}
-                    {:lv2/designation :lv2.pg/ACN3,
-                     :lv2/index       3}],
+                    {:lv2/designation :lv2.pg/ACN8,
+                     :lv2/index       8}],
    :rdf/type :rdfs/Class,
    :rdfs/comment
    "Ambisonic B stream of horizontal order 2 and peripheral order 2.",
@@ -280,20 +279,20 @@
 (def AmbisonicBH3P0Group
   "Ambisonic B stream of horizontal order 3 and peripheral order 0."
   {:db/ident :lv2.pg/AmbisonicBH3P0Group,
-   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN9,
-                     :lv2/index       5}
+   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN3,
+                     :lv2/index       2}
                     {:lv2/designation :lv2.pg/ACN15,
                      :lv2/index       6}
-                    {:lv2/designation :lv2.pg/ACN8,
-                     :lv2/index       4}
-                    {:lv2/designation :lv2.pg/ACN3,
-                     :lv2/index       2}
-                    {:lv2/designation :lv2.pg/ACN0,
-                     :lv2/index       0}
+                    {:lv2/designation :lv2.pg/ACN1,
+                     :lv2/index       1}
                     {:lv2/designation :lv2.pg/ACN4,
                      :lv2/index       3}
-                    {:lv2/designation :lv2.pg/ACN1,
-                     :lv2/index       1}],
+                    {:lv2/designation :lv2.pg/ACN0,
+                     :lv2/index       0}
+                    {:lv2/designation :lv2.pg/ACN8,
+                     :lv2/index       4}
+                    {:lv2/designation :lv2.pg/ACN9,
+                     :lv2/index       5}],
    :rdf/type :rdfs/Class,
    :rdfs/comment
    "Ambisonic B stream of horizontal order 3 and peripheral order 0.",
@@ -303,22 +302,22 @@
 (def AmbisonicBH3P1Group
   "Ambisonic B stream of horizontal order 3 and peripheral order 1."
   {:db/ident :lv2.pg/AmbisonicBH3P1Group,
-   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN3,
-                     :lv2/index       3}
+   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN2,
+                     :lv2/index       2}
+                    {:lv2/designation :lv2.pg/ACN15,
+                     :lv2/index       7}
+                    {:lv2/designation :lv2.pg/ACN8,
+                     :lv2/index       5}
                     {:lv2/designation :lv2.pg/ACN4,
                      :lv2/index       4}
                     {:lv2/designation :lv2.pg/ACN0,
                      :lv2/index       0}
-                    {:lv2/designation :lv2.pg/ACN15,
-                     :lv2/index       7}
-                    {:lv2/designation :lv2.pg/ACN9,
-                     :lv2/index       6}
-                    {:lv2/designation :lv2.pg/ACN2,
-                     :lv2/index       2}
                     {:lv2/designation :lv2.pg/ACN1,
                      :lv2/index       1}
-                    {:lv2/designation :lv2.pg/ACN8,
-                     :lv2/index       5}],
+                    {:lv2/designation :lv2.pg/ACN9,
+                     :lv2/index       6}
+                    {:lv2/designation :lv2.pg/ACN3,
+                     :lv2/index       3}],
    :rdf/type :rdfs/Class,
    :rdfs/comment
    "Ambisonic B stream of horizontal order 3 and peripheral order 1.",
@@ -328,28 +327,28 @@
 (def AmbisonicBH3P2Group
   "Ambisonic B stream of horizontal order 3 and peripheral order 2."
   {:db/ident :lv2.pg/AmbisonicBH3P2Group,
-   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN3,
-                     :lv2/index       3}
-                    {:lv2/designation :lv2.pg/ACN0,
-                     :lv2/index       0}
-                    {:lv2/designation :lv2.pg/ACN9,
-                     :lv2/index       9}
-                    {:lv2/designation :lv2.pg/ACN5,
-                     :lv2/index       5}
-                    {:lv2/designation :lv2.pg/ACN6,
-                     :lv2/index       6}
-                    {:lv2/designation :lv2.pg/ACN7,
-                     :lv2/index       7}
-                    {:lv2/designation :lv2.pg/ACN8,
-                     :lv2/index       8}
+   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN1,
+                     :lv2/index       1}
                     {:lv2/designation :lv2.pg/ACN15,
                      :lv2/index       10}
-                    {:lv2/designation :lv2.pg/ACN2,
-                     :lv2/index       2}
+                    {:lv2/designation :lv2.pg/ACN8,
+                     :lv2/index       8}
+                    {:lv2/designation :lv2.pg/ACN6,
+                     :lv2/index       6}
+                    {:lv2/designation :lv2.pg/ACN5,
+                     :lv2/index       5}
+                    {:lv2/designation :lv2.pg/ACN9,
+                     :lv2/index       9}
+                    {:lv2/designation :lv2.pg/ACN3,
+                     :lv2/index       3}
                     {:lv2/designation :lv2.pg/ACN4,
                      :lv2/index       4}
-                    {:lv2/designation :lv2.pg/ACN1,
-                     :lv2/index       1}],
+                    {:lv2/designation :lv2.pg/ACN0,
+                     :lv2/index       0}
+                    {:lv2/designation :lv2.pg/ACN7,
+                     :lv2/index       7}
+                    {:lv2/designation :lv2.pg/ACN2,
+                     :lv2/index       2}],
    :rdf/type :rdfs/Class,
    :rdfs/comment
    "Ambisonic B stream of horizontal order 3 and peripheral order 2.",
@@ -359,36 +358,36 @@
 (def AmbisonicBH3P3Group
   "Ambisonic B stream of horizontal order 3 and peripheral order 3."
   {:db/ident :lv2.pg/AmbisonicBH3P3Group,
-   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN14,
-                     :lv2/index       14}
-                    {:lv2/designation :lv2.pg/ACN9,
-                     :lv2/index       9}
-                    {:lv2/designation :lv2.pg/ACN3,
-                     :lv2/index       3}
-                    {:lv2/designation :lv2.pg/ACN8,
-                     :lv2/index       8}
-                    {:lv2/designation :lv2.pg/ACN6,
-                     :lv2/index       6}
-                    {:lv2/designation :lv2.pg/ACN4,
-                     :lv2/index       4}
-                    {:lv2/designation :lv2.pg/ACN11,
+   :lv2.pg/element [{:lv2/designation :lv2.pg/ACN11,
                      :lv2/index       11}
                     {:lv2/designation :lv2.pg/ACN7,
                      :lv2/index       7}
-                    {:lv2/designation :lv2.pg/ACN12,
-                     :lv2/index       12}
+                    {:lv2/designation :lv2.pg/ACN8,
+                     :lv2/index       8}
                     {:lv2/designation :lv2.pg/ACN0,
                      :lv2/index       0}
-                    {:lv2/designation :lv2.pg/ACN15,
-                     :lv2/index       15}
                     {:lv2/designation :lv2.pg/ACN10,
                      :lv2/index       10}
+                    {:lv2/designation :lv2.pg/ACN3,
+                     :lv2/index       3}
+                    {:lv2/designation :lv2.pg/ACN14,
+                     :lv2/index       14}
+                    {:lv2/designation :lv2.pg/ACN12,
+                     :lv2/index       12}
                     {:lv2/designation :lv2.pg/ACN2,
                      :lv2/index       2}
-                    {:lv2/designation :lv2.pg/ACN5,
-                     :lv2/index       5}
                     {:lv2/designation :lv2.pg/ACN13,
                      :lv2/index       13}
+                    {:lv2/designation :lv2.pg/ACN9,
+                     :lv2/index       9}
+                    {:lv2/designation :lv2.pg/ACN4,
+                     :lv2/index       4}
+                    {:lv2/designation :lv2.pg/ACN15,
+                     :lv2/index       15}
+                    {:lv2/designation :lv2.pg/ACN6,
+                     :lv2/index       6}
+                    {:lv2/designation :lv2.pg/ACN5,
+                     :lv2/index       5}
                     {:lv2/designation :lv2.pg/ACN1,
                      :lv2/index       1}],
    :rdf/type :rdfs/Class,
@@ -434,14 +433,14 @@
                      :lv2/index       5}
                     {:lv2/designation :lv2.pg/right,
                      :lv2/index       2}
+                    {:lv2/designation :lv2.pg/rearLeft,
+                     :lv2/index       3}
                     {:lv2/designation :lv2.pg/center,
                      :lv2/index       1}
-                    {:lv2/designation :lv2.pg/left,
-                     :lv2/index       0}
                     {:lv2/designation :lv2.pg/rearRight,
                      :lv2/index       4}
-                    {:lv2/designation :lv2.pg/rearLeft,
-                     :lv2/index       3}],
+                    {:lv2/designation :lv2.pg/left,
+                     :lv2/index       0}],
    :rdf/type :rdfs/Class,
    :rdfs/comment "A 5.1 (3-2 stereo with sub) discrete surround sound group.",
    :rdfs/label "5.1 Surround",
@@ -534,22 +533,22 @@
 (def SevenPointOneGroup
   "A 7.1 discrete surround sound group."
   {:db/ident        :lv2.pg/SevenPointOneGroup,
-   :lv2.pg/element  [{:lv2/designation :lv2.pg/sideLeft,
+   :lv2.pg/element  [{:lv2/designation :lv2.pg/left,
+                      :lv2/index       0}
+                     {:lv2/designation :lv2.pg/sideLeft,
                       :lv2/index       3}
-                     {:lv2/designation :lv2.pg/rearLeft,
-                      :lv2/index       5}
                      {:lv2/designation :lv2.pg/lowFrequencyEffects,
                       :lv2/index       7}
-                     {:lv2/designation :lv2.pg/left,
-                      :lv2/index       0}
+                     {:lv2/designation :lv2.pg/rearRight,
+                      :lv2/index       6}
+                     {:lv2/designation :lv2.pg/right,
+                      :lv2/index       2}
+                     {:lv2/designation :lv2.pg/rearLeft,
+                      :lv2/index       5}
                      {:lv2/designation :lv2.pg/center,
                       :lv2/index       1}
                      {:lv2/designation :lv2.pg/sideRight,
-                      :lv2/index       4}
-                     {:lv2/designation :lv2.pg/right,
-                      :lv2/index       2}
-                     {:lv2/designation :lv2.pg/rearRight,
-                      :lv2/index       6}],
+                      :lv2/index       4}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A 7.1 discrete surround sound group.",
    :rdfs/label      "7.1 Surround",
@@ -558,22 +557,22 @@
 (def SevenPointOneWideGroup
   "A 7.1 wide discrete surround sound group."
   {:db/ident        :lv2.pg/SevenPointOneWideGroup,
-   :lv2.pg/element  [{:lv2/designation :lv2.pg/lowFrequencyEffects,
-                      :lv2/index       7}
-                     {:lv2/designation :lv2.pg/centerLeft,
+   :lv2.pg/element  [{:lv2/designation :lv2.pg/centerLeft,
                       :lv2/index       1}
-                     {:lv2/designation :lv2.pg/center,
-                      :lv2/index       2}
+                     {:lv2/designation :lv2.pg/rearLeft,
+                      :lv2/index       5}
                      {:lv2/designation :lv2.pg/right,
                       :lv2/index       4}
                      {:lv2/designation :lv2.pg/rearRight,
                       :lv2/index       6}
-                     {:lv2/designation :lv2.pg/rearLeft,
-                      :lv2/index       5}
+                     {:lv2/designation :lv2.pg/centerRight,
+                      :lv2/index       3}
                      {:lv2/designation :lv2.pg/left,
                       :lv2/index       0}
-                     {:lv2/designation :lv2.pg/centerRight,
-                      :lv2/index       3}],
+                     {:lv2/designation :lv2.pg/center,
+                      :lv2/index       2}
+                     {:lv2/designation :lv2.pg/lowFrequencyEffects,
+                      :lv2/index       7}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A 7.1 wide discrete surround sound group.",
    :rdfs/label      "7.1 Surround (Wide)",
@@ -582,20 +581,20 @@
 (def SixPointOneGroup
   "A 6.1 discrete surround sound group."
   {:db/ident        :lv2.pg/SixPointOneGroup,
-   :lv2.pg/element  [{:lv2/designation :lv2.pg/center,
-                      :lv2/index       1}
-                     {:lv2/designation :lv2.pg/sideRight,
+   :lv2.pg/element  [{:lv2/designation :lv2.pg/sideRight,
                       :lv2/index       4}
-                     {:lv2/designation :lv2.pg/lowFrequencyEffects,
-                      :lv2/index       6}
-                     {:lv2/designation :lv2.pg/left,
-                      :lv2/index       0}
-                     {:lv2/designation :lv2.pg/right,
-                      :lv2/index       2}
                      {:lv2/designation :lv2.pg/sideLeft,
                       :lv2/index       3}
+                     {:lv2/designation :lv2.pg/right,
+                      :lv2/index       2}
+                     {:lv2/designation :lv2.pg/left,
+                      :lv2/index       0}
                      {:lv2/designation :lv2.pg/rearCenter,
-                      :lv2/index       5}],
+                      :lv2/index       5}
+                     {:lv2/designation :lv2.pg/center,
+                      :lv2/index       1}
+                     {:lv2/designation :lv2.pg/lowFrequencyEffects,
+                      :lv2/index       6}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A 6.1 discrete surround sound group.",
    :rdfs/label      "6.1 Surround",

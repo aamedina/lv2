@@ -14,9 +14,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/atom",
    :rdfa/prefix "lv2.atom",
-   :rdfa/uri "http://lv2plug.in/ns/ext/atom#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/atom",
    :rdfs/comment "A generic value container and several data types.",
    :rdfs/label "LV2 Atom",
    :rdfs/seeAlso

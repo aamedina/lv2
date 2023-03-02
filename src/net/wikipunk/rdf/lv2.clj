@@ -10,9 +10,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"  "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/lv2core",
    :rdfa/prefix "lv2",
-   :rdfa/uri "http://lv2plug.in/ns/lv2core#",
+   :rdfa/uri "http://lv2plug.in/ns/lv2core",
    :rdfs/comment "An extensible open standard for audio plugins.",
    :rdfs/label "LV2",
    :rdfs/seeAlso

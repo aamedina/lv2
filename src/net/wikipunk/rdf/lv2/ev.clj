@@ -10,9 +10,8 @@
                        "rdf"    "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"   "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/event",
    :rdfa/prefix "lv2.ev",
-   :rdfa/uri "http://lv2plug.in/ns/ext/event#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/event",
    :rdfs/comment "A port-based real-time generic event interface.",
    :rdfs/label "LV2 Event",
    :rdfs/seeAlso

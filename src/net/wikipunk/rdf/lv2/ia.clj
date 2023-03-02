@@ -6,9 +6,8 @@
                        "lv2.ia" "http://lv2plug.in/ns/ext/instance-access#",
                        "rdfs"   "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/instance-access",
    :rdfa/prefix "lv2.ia",
-   :rdfa/uri "http://lv2plug.in/ns/ext/instance-access#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/instance-access",
    :rdfs/comment "A feature that provides access to a plugin instance.",
    :rdfs/label "instance access",
    :rdfs/seeAlso

@@ -10,9 +10,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/port-props",
    :rdfa/prefix "lv2.pprops",
-   :rdfa/uri "http://lv2plug.in/ns/ext/port-props#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/port-props",
    :rdfs/comment "Various properties for LV2 plugin ports.",
    :rdfs/label "LV2 Port Properties",
    :rdfs/seeAlso

@@ -308,3 +308,140 @@
                        "rdf"      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"}})
+
+(def ingen.lv2
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/manifest.ttl"
+   :rdfa/prefix "ingen.lv2"
+   :rdfa/uri    "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+   :rdf/type :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"owl"       "http://www.w3.org/2002/07/owl#",
+                       "rdf"       "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "ingen"     "http://drobilla.net/ns/ingen#",
+                       "ingen.lv2" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+                       "lv2"       "http://lv2plug.in/ns/lv2core#",
+                       "lv2.work"  "http://lv2plug.in/ns/ext/worker#"
+                       "lv2.midi"  "http://lv2plug.in/ns/ext/midi#",,
+                       "lv2.patch" "http://lv2plug.in/ns/ext/patch#"
+                       "lv2.atom"  "http://lv2plug.in/ns/ext/atom#",
+                       "doap"      "http://usefulinc.com/ns/doap#",
+                       "rdfs"      "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"       "http://www.w3.org/2001/XMLSchema#"}})
+
+(def MonoEffect
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/MonoEffect.ttl"
+   :rdfa/prefix      "ingen.MonoEffect",
+   :rdfa/uri         "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/MonoEffect.ttl#"
+   :rdf/type         :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"owl"       "http://www.w3.org/2002/07/owl#",
+                       "rdf"       "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "ingen"     "http://drobilla.net/ns/ingen#",
+                       "ingen.lv2" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+                       "lv2"       "http://lv2plug.in/ns/lv2core#",
+                       "lv2.work"  "http://lv2plug.in/ns/ext/worker#"
+                       "lv2.midi"  "http://lv2plug.in/ns/ext/midi#",,
+                       "lv2.patch" "http://lv2plug.in/ns/ext/patch#"
+                       "lv2.atom"  "http://lv2plug.in/ns/ext/atom#",
+                       "doap"      "http://usefulinc.com/ns/doap#",
+                       "rdfs"      "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"       "http://www.w3.org/2001/XMLSchema#"}})
+
+(def MonoInstrument
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/MonoInstrument.ttl"
+   :rdfa/prefix      "ingen.MonoInstrument",
+   :rdfa/uri         "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/MonoInstrument.ttl#"
+   :rdf/type         :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"owl"        "http://www.w3.org/2002/07/owl#",
+                       "rdf"        "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "ingen"      "http://drobilla.net/ns/ingen#",
+                       "ingen.lv2"  "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+                       "ingen.note" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/Note/"
+                       "lv2"        "http://lv2plug.in/ns/lv2core#",
+                       "lv2.work"   "http://lv2plug.in/ns/ext/worker#"
+                       "lv2.midi"   "http://lv2plug.in/ns/ext/midi#",,
+                       "lv2.patch"  "http://lv2plug.in/ns/ext/patch#"
+                       "lv2.atom"   "http://lv2plug.in/ns/ext/atom#",
+                       "doap"       "http://usefulinc.com/ns/doap#",
+                       "rdfs"       "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"        "http://www.w3.org/2001/XMLSchema#"}})
+
+(def StereoEffect
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/StereoEffect.ttl"
+   :rdfa/prefix      "ingen.StereoEffect",
+   :rdfa/uri         "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/StereoEffect.ttl#"
+   :rdf/type         :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"owl"       "http://www.w3.org/2002/07/owl#",
+                       "rdf"       "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "ingen"     "http://drobilla.net/ns/ingen#",
+                       "ingen.lv2" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+                       "lv2"       "http://lv2plug.in/ns/lv2core#",
+                       "lv2.work"  "http://lv2plug.in/ns/ext/worker#"
+                       "lv2.midi"  "http://lv2plug.in/ns/ext/midi#",,
+                       "lv2.patch" "http://lv2plug.in/ns/ext/patch#"
+                       "lv2.atom"  "http://lv2plug.in/ns/ext/atom#",
+                       "doap"      "http://usefulinc.com/ns/doap#",
+                       "rdfs"      "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"       "http://www.w3.org/2001/XMLSchema#"}})
+
+(def ingen.note
+  {:rdfa/uri    "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/Note/"
+   :rdfa/prefid "ingen.note"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def StereoInstrument
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/StereoInstrument.ttl"
+   :rdfa/prefix      "ingen.StereoInstrument",
+   :rdfa/uri         "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/StereoInstrument.ttl#"
+   :rdf/type         :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"owl"       "http://www.w3.org/2002/07/owl#",
+                       "rdf"       "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "ingen"     "http://drobilla.net/ns/ingen#",
+                       "ingen.lv2" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+                       "ingen.note" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/Note/"
+                       "lv2"       "http://lv2plug.in/ns/lv2core#",
+                       "lv2.work"  "http://lv2plug.in/ns/ext/worker#"
+                       "lv2.midi"  "http://lv2plug.in/ns/ext/midi#",,
+                       "lv2.patch" "http://lv2plug.in/ns/ext/patch#"
+                       "lv2.atom"  "http://lv2plug.in/ns/ext/atom#",
+                       "doap"      "http://usefulinc.com/ns/doap#",
+                       "rdfs"      "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"       "http://www.w3.org/2001/XMLSchema#"}})
+
+(def ingen.errors
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/errors.ttl"
+   :rdfa/prefix      "ingen.errors",
+   :rdfa/uri         "http://drobilla.net/ns/ingen/errors#"
+   :rdf/type         :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"owl"       "http://www.w3.org/2002/07/owl#",
+                       "rdf"       "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "ingen"     "http://drobilla.net/ns/ingen#",
+                       "ingen.lv2" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+                       "lv2"       "http://lv2plug.in/ns/lv2core#",
+                       "lv2.work"  "http://lv2plug.in/ns/ext/worker#"
+                       "lv2.midi"  "http://lv2plug.in/ns/ext/midi#",,
+                       "lv2.patch" "http://lv2plug.in/ns/ext/patch#"
+                       "lv2.atom"  "http://lv2plug.in/ns/ext/atom#",
+                       "doap"      "http://usefulinc.com/ns/doap#",
+                       "rdfs"      "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"       "http://www.w3.org/2001/XMLSchema#"}})
+
+(def ingen.internals
+  {:dcat/downloadURL "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/internals.ttl"
+   :rdfa/prefix      "ingen.internals",
+   :rdfa/uri         "http://drobilla.net/ns/ingen-internals#"
+   :rdf/type         :rdfa/PrefixMapping
+   :rdf/ns-prefix-map {"owl"       "http://www.w3.org/2002/07/owl#",
+                       "rdf"       "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                       "ingen"     "http://drobilla.net/ns/ingen#",
+                       "ingen.lv2" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
+                       "lv2"       "http://lv2plug.in/ns/lv2core#",
+                       "lv2.work"  "http://lv2plug.in/ns/ext/worker#"
+                       "lv2.midi"  "http://lv2plug.in/ns/ext/midi#",,
+                       "lv2.patch" "http://lv2plug.in/ns/ext/patch#"
+                       "lv2.atom"  "http://lv2plug.in/ns/ext/atom#",
+                       "doap"      "http://usefulinc.com/ns/doap#",
+                       "rdfs"      "http://www.w3.org/2000/01/rdf-schema#",
+                       "xsd"       "http://www.w3.org/2001/XMLSchema#"}})
+
+
+
+

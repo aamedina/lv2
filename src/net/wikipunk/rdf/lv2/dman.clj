@@ -9,9 +9,8 @@
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/dynmanifest",
    :rdfa/prefix "lv2.dman",
-   :rdfa/uri "http://lv2plug.in/ns/ext/dynmanifest#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/dynmanifest",
    :rdfs/comment "Support for dynamic manifest data generation.",
    :rdfs/label "LV2 Dyn Manifest",
    :rdfs/seeAlso

@@ -14,9 +14,8 @@
                        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/parameters",
    :rdfa/prefix "lv2.param",
-   :rdfa/uri "http://lv2plug.in/ns/ext/parameters#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/parameters",
    :rdfs/comment "Common parameters for audio processing.",
    :rdfs/label "LV2 Parameters",
    :rdfs/seeAlso
@@ -44,18 +43,18 @@
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
   {:db/ident        :lv2.param/EnvelopeControls,
-   :lv2.pg/element  [{:lv2/designation :lv2.param/delay,
-                      :lv2/index       0}
-                     {:lv2/designation :lv2.param/attack,
+   :lv2.pg/element  [{:lv2/designation :lv2.param/attack,
                       :lv2/index       1}
+                     {:lv2/designation :lv2.param/hold,
+                      :lv2/index       2}
                      {:lv2/designation :lv2.param/sustain,
                       :lv2/index       4}
+                     {:lv2/designation :lv2.param/delay,
+                      :lv2/index       0}
                      {:lv2/designation :lv2.param/release,
                       :lv2/index       5}
                      {:lv2/designation :lv2.param/decay,
-                      :lv2/index       3}
-                     {:lv2/designation :lv2.param/hold,
-                      :lv2/index       2}],
+                      :lv2/index       3}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a DAHDSR envelope.",
    :rdfs/label      "Envelope Controls",

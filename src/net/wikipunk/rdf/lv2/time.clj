@@ -9,9 +9,8 @@
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/time",
    :rdfa/prefix "lv2.time",
-   :rdfa/uri "http://lv2plug.in/ns/ext/time#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/time",
    :rdfs/comment "A vocabulary for describing musical time.",
    :rdfs/label "LV2 Time",
    :rdfs/seeAlso

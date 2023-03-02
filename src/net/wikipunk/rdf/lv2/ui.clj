@@ -12,9 +12,8 @@
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/extensions/ui",
    :rdfa/prefix "lv2.ui",
-   :rdfa/uri "http://lv2plug.in/ns/extensions/ui#",
+   :rdfa/uri "http://lv2plug.in/ns/extensions/ui",
    :rdfs/comment "User interfaces for LV2 plugins.",
    :rdfs/label "LV2 UI",
    :rdfs/seeAlso

@@ -9,9 +9,8 @@
                        "rdf"      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/uri-map",
    :rdfa/prefix "lv2.umap",
-   :rdfa/uri "http://lv2plug.in/ns/ext/uri-map#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/uri-map",
    :rdfs/comment "A feature for mapping URIs to integers.",
    :rdfs/label "LV2 URI Map",
    :rdfs/seeAlso

@@ -13,9 +13,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/morph",
    :rdfa/prefix "lv2.morph",
-   :rdfa/uri "http://lv2plug.in/ns/ext/morph#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/morph",
    :rdfs/comment "Ports that can dynamically change type.",
    :rdfs/label "LV2 Morph",
    :rdfs/seeAlso

@@ -11,9 +11,8 @@
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/midi",
    :rdfa/prefix "lv2.midi",
-   :rdfa/uri "http://lv2plug.in/ns/ext/midi#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/midi",
    :rdfs/comment "A normalised definition of raw MIDI.",
    :rdfs/label "LV2 MIDI",
    :rdfs/seeAlso

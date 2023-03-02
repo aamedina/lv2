@@ -9,9 +9,8 @@
                        "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/state",
    :rdfa/prefix "lv2.state",
-   :rdfa/uri "http://lv2plug.in/ns/ext/state#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/state",
    :rdfs/comment "An interface for LV2 plugins to save and restore state.",
    :rdfs/label "LV2 State",
    :rdfs/seeAlso

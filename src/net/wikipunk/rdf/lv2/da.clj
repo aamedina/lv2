@@ -6,9 +6,8 @@
                        "lv2.da" "http://lv2plug.in/ns/ext/data-access#",
                        "rdfs"   "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/data-access",
    :rdfa/prefix "lv2.da",
-   :rdfa/uri "http://lv2plug.in/ns/ext/data-access#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/data-access",
    :rdfs/comment "A feature that provides access to plugin extension data.",
    :rdfs/label "data access",
    :rdfs/seeAlso

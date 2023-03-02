@@ -12,9 +12,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/buf-size",
    :rdfa/prefix "lv2.bufsz",
-   :rdfa/uri "http://lv2plug.in/ns/ext/buf-size#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/buf-size",
    :rdfs/comment "Access to, and restrictions on, buffer sizes.",
    :rdfs/label "LV2 Buf Size",
    :rdfs/seeAlso

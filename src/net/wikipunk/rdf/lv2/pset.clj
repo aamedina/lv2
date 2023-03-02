@@ -10,9 +10,8 @@
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/presets",
    :rdfa/prefix "lv2.pset",
-   :rdfa/uri "http://lv2plug.in/ns/ext/presets#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/presets",
    :rdfs/comment "Presets for LV2 plugins.",
    :rdfs/label "LV2 Presets",
    :rdfs/seeAlso

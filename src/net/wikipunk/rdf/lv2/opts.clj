@@ -10,9 +10,8 @@
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/options",
    :rdfa/prefix "lv2.opts",
-   :rdfa/uri "http://lv2plug.in/ns/ext/options#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/options",
    :rdfs/comment "Runtime options for LV2 plugins and UIs.",
    :rdfs/label "LV2 Options",
    :rdfs/seeAlso

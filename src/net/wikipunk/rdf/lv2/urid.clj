@@ -8,9 +8,8 @@
                        "owl"      "http://www.w3.org/2002/07/owl#",
                        "rdfs"     "http://www.w3.org/2000/01/rdf-schema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/urid",
    :rdfa/prefix "lv2.urid",
-   :rdfa/uri "http://lv2plug.in/ns/ext/urid#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/urid",
    :rdfs/comment "Features for mapping URIs to and from integers.",
    :rdfs/label "LV2 URID",
    :rdfs/seeAlso

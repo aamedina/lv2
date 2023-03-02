@@ -8,9 +8,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/extensions/units",
    :rdfa/prefix "lv2.units",
-   :rdfa/uri "http://lv2plug.in/ns/extensions/units#",
+   :rdfa/uri "http://lv2plug.in/ns/extensions/units",
    :rdfs/comment "Units for LV2 values.",
    :rdfs/label "LV2 Units",
    :rdfs/seeAlso

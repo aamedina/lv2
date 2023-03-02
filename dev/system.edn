@@ -8,6 +8,14 @@
                          net.wikipunk.lv2.boot/data-access
                          net.wikipunk.lv2.boot/dynmanifest
                          net.wikipunk.lv2.boot/event
+                         net.wikipunk.lv2.boot/ingen
+                         net.wikipunk.lv2.boot/MonoEffect
+                         net.wikipunk.lv2.boot/MonoInstrument
+                         net.wikipunk.lv2.boot/StereoEffect
+                         net.wikipunk.lv2.boot/StereoInstrument
+                         net.wikipunk.lv2.boot/ingen.errors
+                         net.wikipunk.lv2.boot/ingen.internals
+                         net.wikipunk.lv2.boot/ingen.manifest
                          net.wikipunk.lv2.boot/instance-access
                          net.wikipunk.lv2.boot/log
                          net.wikipunk.lv2.boot/midi

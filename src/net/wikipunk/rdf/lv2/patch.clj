@@ -9,9 +9,8 @@
                        "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "http://lv2plug.in/ns/ext/patch",
    :rdfa/prefix "lv2.patch",
-   :rdfa/uri "http://lv2plug.in/ns/ext/patch#",
+   :rdfa/uri "http://lv2plug.in/ns/ext/patch",
    :rdfs/comment "A protocol for accessing and manipulating properties.",
    :rdfs/label "LV2 Patch",
    :rdfs/seeAlso
