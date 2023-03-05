@@ -467,6 +467,13 @@
    :rdf/type         :rdfa/PrefixMapping
    :dcat/downloadURL "https://lov.linkeddata.es/dataset/lov/vocabs/chord/versions/2007-10-25.n3"})
 
+(def sim
+  "similarity"
+  {:rdfa/prefix      "sim"
+   :rdfa/uri         "http://purl.org/ontology/similarity/"
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "https://lov.linkeddata.es/dataset/lov/vocabs/sim/versions/2010-03-10.n3"})
+
 (def vamp
   {:rdfa/prefix      "vamp",
    :rdfa/uri         "http://purl.org/ontology/vamp/",
