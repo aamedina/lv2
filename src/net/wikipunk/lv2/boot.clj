@@ -1,6 +1,8 @@
 (ns net.wikipunk.lv2.boot
   "LV2 RDF models"
   {:rdf/type :jsonld/Context}
+  (:require
+   [net.wikipunk.rdf.time])
   (:refer-clojure :exclude [atom time keys]))
 
 (def atom
@@ -442,6 +444,42 @@
                        "rdfs"      "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"       "http://www.w3.org/2001/XMLSchema#"}})
 
+(def tl
+  {:rdfa/prefix      "tl",
+   :rdfa/uri         "http://purl.org/NET/c4dm/timeline.owl#",
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "https://motools.sf.net/timeline/timeline.n3"})
 
+(def af
+  {:rdfa/prefix      "af",
+   :rdfa/uri         "http://purl.org/ontology/af/",
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "https://lov.linkeddata.es/dataset/lov/vocabs/af/versions/2008-06-23.n3"})
 
+(def note
+  {:rdfa/prefix      "note",
+   :rdfa/uri         "http://purl.org/ontology/chord/note/",
+   :rdf/type         :rdfa/PrefixMapping})
 
+(def chord
+  {:rdfa/prefix      "chord",
+   :rdfa/uri         "http://purl.org/ontology/chord/",
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "https://lov.linkeddata.es/dataset/lov/vocabs/chord/versions/2007-10-25.n3"})
+
+(def vamp
+  {:rdfa/prefix      "vamp",
+   :rdfa/uri         "http://purl.org/ontology/vamp/",
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "https://vamp-plugins.org/rdf/",
+   :rdf/ns-prefix-map
+   {"owl"   "http://www.w3.org/2002/07/owl#",
+    "foaf"  "http://xmlns.com/foaf/0.1/",
+    "rdf"   "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "vamp"  "http://purl.org/ontology/vamp/"
+    "event" "http://purl.org/NET/c4dm/event.owl#",
+    "af"    "http://purl.org/ontology/af/",
+    "dc11"  "http://purl.org/dc/elements/1.1/",
+    "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
+    "vs"    "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "xsd"   "http://www.w3.org/2001/XMLSchema#"}})
