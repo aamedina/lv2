@@ -43,4 +43,4 @@
       (throw (ex-info "system.edn is not on classpath" {})))))
 
 (comment
-  (descendants *classes* :midi/MidiEvent))
+  (descendants :lv2.midi/MidiEvent))
