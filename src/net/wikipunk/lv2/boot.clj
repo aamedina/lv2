@@ -2,7 +2,9 @@
   "LV2 RDF models"
   {:rdf/type :jsonld/Context}
   (:require
-   [net.wikipunk.rdf.time])
+   [net.wikipunk.rdf.time]
+   [net.wikipunk.rdf.sim]
+   [net.wikipunk.rdf.ao])
   (:refer-clojure :exclude [atom time keys]))
 
 (def atom
@@ -483,3 +485,145 @@
     "rdfs"  "http://www.w3.org/2000/01/rdf-schema#",
     "vs"    "http://www.w3.org/2003/06/sw-vocab-status/ns#",
     "xsd"   "http://www.w3.org/2001/XMLSchema#"}})
+
+;; (clojure.string/split-lines (slurp "https://vamp-plugins.org/rdf/plugins/index.txt"))
+
+(def azi
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/azi",
+   :rdfa/prefix "azi",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def bbc-vamp-plugins
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/bbc-vamp-plugins",
+   :rdfa/prefix "bbc",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def beatroot-vamp
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/beatroot-vamp",
+   :rdfa/prefix "beatroot",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def cepstral-pitchtracker
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/cepstral-pitchtracker",
+   :rdfa/prefix "cpt",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def cqvamp
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/cqvamp",
+   :rdfa/prefix "cqvamp",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def FChT_f0gram
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/FChT_f0gram",
+   :rdfa/prefix "FChT_f0gram",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def match-vamp-plugin
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/match-vamp-plugin",
+   :rdfa/prefix "match",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def mazurka-plugins
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/mazurka-plugins",
+   :rdfa/prefix "mazurka",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def mir-edu
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/mir-edu",
+   :rdfa/prefix "mir-edu",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def mtg-melodia
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/mtg-melodia",
+   :rdfa/prefix "mtg-melodia",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def mvamp-ibt
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/mvamp-ibt",
+   :rdfa/prefix "mvamp-ibt",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def mvamp
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/mvamp",
+   :rdfa/prefix "mvamp",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def nnls-chroma
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/nnls-chroma",
+   :rdfa/prefix "nnls-chroma",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def ofa-vamp-plugin
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/ofa-vamp-plugin",
+   :rdfa/prefix "ofa",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def pyin
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/pyin",
+   :rdfa/prefix "pyin",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def qm-vamp-plugins
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/qm-vamp-plugins",
+   :rdfa/prefix "qm",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def segmentino
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/segmentino",
+   :rdfa/prefix "segmentino",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def silvet
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/silvet",
+   :rdfa/prefix "silvet",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def simple-cepstrum
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/simple-cepstrum",
+   :rdfa/prefix "simple-cepstrum",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def tempogram
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/tempogram",
+   :rdfa/prefix "tempogram",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def tipic
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/tipic",
+   :rdfa/prefix "tipic",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def tuning-difference
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/tuning-difference",
+   :rdfa/prefix "tuning-difference",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def ua-vamp-plugins
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/ua-vamp-plugins",
+   :rdfa/prefix "ua-vamp-plugins",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def vamp-aubio
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/vamp-aubio",
+   :rdfa/prefix "vamp-aubio",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def vamp-example-plugins
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/vamp-example-plugins",
+   :rdfa/prefix "vamp-example-plugins",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def vamp-hpcp-mtg
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/vamp-hpcp-mtg",
+   :rdfa/prefix "vamp-hpcp-mtg",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def vamp-libxtract
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/vamp-libxtract",
+   :rdfa/prefix "vamp-libxtract",
+   :rdf/type :rdfa/PrefixMapping})
+
+(def vamp-onsetsds
+  {:rdfa/uri "http://vamp-plugins.org/rdf/plugins/vamp-onsetsds",
+   :rdfa/prefix "vamp-onsetsds",
+   :rdf/type :rdfa/PrefixMapping})

@@ -45,5 +45,3 @@
                          {:db-dir ".vocab/lucene"}}}
  :openai {:sc/create-fn net.wikipunk.openai/map->Client}
  :qudt   {:sc/create-fn net.wikipunk.qudt/map->QUDT}}
-
-

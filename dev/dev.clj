@@ -31,7 +31,8 @@
    [net.wikipunk.rdf :as rdf :refer [doc]]
    [net.wikipunk.mop :as mop :refer [isa? descendants ancestors parents]]
    [net.wikipunk.lv2.boot :as boot]
-   [net.wikipunk.lv2 :as lv2])
+   [net.wikipunk.lv2 :as lv2]
+   [net.wikipunk.sonic-annotator :as sa])
   (:refer-clojure :exclude [isa? descendants ancestors parents]))
 
 (set-init
