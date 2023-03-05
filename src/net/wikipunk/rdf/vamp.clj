@@ -17,7 +17,7 @@
                        "xsd"   "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "vamp",
-   :rdfa/uri "file:///work/vamp-svn/website/rdf/vamp.n3",
+   :rdfa/uri "http://purl.org/ontology/vamp/",
    :rdfs/comment
    "\n\t\t\tVamp Ontology. This ontology includes the following descriptions:\n\t\t\t\n\t\t\t\t- OWL description of the Vamp API\n\t\t\t\t- OWL description of the Transform environment necessary to set up the execution of any plugin \n\t\t\t\n\t\t\tThis Ontology provides semantics to describe and control Vamp plugins in RDF. Any \"RDF-speaker\" host is therefore able to \n\t\t\tuse this ontology to read, set up and execute plugins.\n\t\t\tThe extracted features are expressed in terms of the Audio Features Ontology: http://purl.org/ontology/af/.\n\t\t\tFor more information, please visit the Vamp Plugins website: http://www.vamp-plugins.org/\n\t",
    :rdfs/label "Vamp Plugins Ontology"}
