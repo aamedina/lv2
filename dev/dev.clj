@@ -25,14 +25,11 @@
    [com.stuartsierra.component :as com]
    [com.stuartsierra.component.repl :refer [reset set-init start stop system]]
    [com.walmartlabs.schematic :as sc]
-   [libpython-clj2.python :as py]
-   [libpython-clj2.require :refer [require-python]]
    [zprint.core :as zprint]
    [net.wikipunk.rdf :as rdf :refer [doc]]
    [net.wikipunk.mop :as mop :refer [isa? descendants ancestors parents]]
    [net.wikipunk.lv2.boot :as boot]
-   [net.wikipunk.lv2 :as lv2]
-   [net.wikipunk.sonic-annotator :as sa])
+   [net.wikipunk.lv2 :as lv2])
   (:refer-clojure :exclude [isa? descendants ancestors parents]))
 
 (set-init

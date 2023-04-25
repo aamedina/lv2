@@ -1,47 +1,7 @@
-{:vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
-          :sc/refs      [:openai :qudt]
-          :init-ns      net.wikipunk.temple.init
-          :ns-prefix    "net.wikipunk.rdf."
-          :boot         [net.wikipunk.lv2.boot/core
-                         net.wikipunk.lv2.boot/atom
-                         net.wikipunk.lv2.boot/buf-size
-                         net.wikipunk.lv2.boot/data-access
-                         net.wikipunk.lv2.boot/dynmanifest
-                         net.wikipunk.lv2.boot/event
-                         net.wikipunk.lv2.boot/ingen
-                         net.wikipunk.lv2.boot/MonoEffect
-                         net.wikipunk.lv2.boot/MonoInstrument
-                         net.wikipunk.lv2.boot/StereoEffect
-                         net.wikipunk.lv2.boot/StereoInstrument
-                         net.wikipunk.lv2.boot/ingen.errors
-                         net.wikipunk.lv2.boot/ingen.internals
-                         net.wikipunk.lv2.boot/ingen.manifest
-                         net.wikipunk.lv2.boot/instance-access
-                         net.wikipunk.lv2.boot/log
-                         net.wikipunk.lv2.boot/midi
-                         net.wikipunk.lv2.boot/morph
-                         net.wikipunk.lv2.boot/options
-                         net.wikipunk.lv2.boot/parameters
-                         net.wikipunk.lv2.boot/patch
-                         net.wikipunk.lv2.boot/port-groups
-                         net.wikipunk.lv2.boot/port-props
-                         net.wikipunk.lv2.boot/presets
-                         net.wikipunk.lv2.boot/resize-port
-                         net.wikipunk.lv2.boot/state
-                         net.wikipunk.lv2.boot/time
-                         net.wikipunk.lv2.boot/ui
-                         net.wikipunk.lv2.boot/units
-                         net.wikipunk.lv2.boot/uri-map
-                         net.wikipunk.lv2.boot/urid
-                         net.wikipunk.lv2.boot/worker
-                         net.wikipunk.lv2.boot/mo
-                         net.wikipunk.lv2.boot/keys
-                         net.wikipunk.lv2.boot/af
-                         net.wikipunk.lv2.boot/tl
-                         net.wikipunk.lv2.boot/note
-                         net.wikipunk.lv2.boot/chord
-                         net.wikipunk.lv2.boot/vamp]
-          :config       {:xtdb.lucene/lucene-store
-                         {:db-dir ".vocab/lucene"}}}
- :openai {:sc/create-fn net.wikipunk.openai/map->Client}
- :qudt   {:sc/create-fn net.wikipunk.qudt/map->QUDT}}
+{:vocab {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
+         :sc/refs      [:qudt :lv2]
+         :boot         [net.wikipunk.lv2.boot]
+         :config       {:xtdb.lucene/lucene-store
+                        {:db-dir ".vocab/lucene"}}}
+ :qudt  {:sc/create-fn net.wikipunk.qudt/map->QUDT}
+ :lv2   {:sc/create-fn net.wikipunk.lv2/map->LV2}}

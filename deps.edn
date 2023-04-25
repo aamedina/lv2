@@ -1,21 +1,11 @@
 {:deps
- {clj-python/libpython-clj
-  {:mvn/version "2.024"}
-  cnuernber/dtype-next
-  {:mvn/version "10.000-beta-36"}
-  com.stuartsierra/component
-  {:mvn/version "1.1.0"}
-  io.github.aamedina/rdf
-  {:git/sha "f18e9259dd90e1ef1a48a43f878420a0a0af4ba7"}
-  io.github.aamedina/punk.qudt
-  {:git/sha "3c747732cf1d2f56e43a07be798700024a6c6b81"}
-  net.java.dev.jna/jna
-  {:mvn/version "5.7.0"}
+ {io.github.aamedina/punk.qudt
+  {:git/sha "8383707d74a94d590b9f721ca823575d6354cbee"}
   org.clojure/clojure
   {:mvn/version "1.11.1"}
   org.clojure/tools.logging
   {:mvn/version "1.2.4"}}
- :paths ["src" "classes" "resources"]
+ :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases
  {:dev
   {:extra-deps
@@ -32,7 +22,4 @@
    :extra-paths ["dev"]
    :jvm-opts    ["-XX:-OmitStackTraceInFastThrow"
                  "-XX:+HeapDumpOnOutOfMemoryError"
-                 "-Dorg.slf4j.simpleLogger.defaultLogLevel=warn"
-                 "--add-modules" "jdk.incubator.foreign,jdk.incubator.vector"
-                 "--enable-native-access=ALL-UNNAMED"
-                 "-Djava.library.path=resources/linux/x64/net/wikipunk/lv2"]}}}
+                 "-Dorg.slf4j.simpleLogger.defaultLogLevel=warn"]}}}
