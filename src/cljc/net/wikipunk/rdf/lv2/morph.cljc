@@ -26,7 +26,7 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A port that can change its type based on that of another.",
    :rdfs/label      "Auto Morph Port",
-   :rdfs/subClassOf :lv2/Port})
+   :rdfs/subClassOf [:rdfs/Resource :lv2/Port :lv2.morph/AutoMorphPort]})
 
 (def MorphPort
   "A port which can be switched to another type."
@@ -34,20 +34,22 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A port which can be switched to another type.",
    :rdfs/label      "Morph Port",
-   :rdfs/subClassOf :lv2/Port})
+   :rdfs/subClassOf [:rdfs/Resource :lv2/Port :lv2.morph/MorphPort]})
 
 (def currentType
   "The currently active type of the port."
-  {:db/ident     :lv2.morph/currentType,
-   :rdf/type     [:owl/ObjectProperty :lv2.opts/Option :rdf/Property],
-   :rdfs/comment "The currently active type of the port.",
-   :rdfs/domain  :lv2.morph/MorphPort,
-   :rdfs/label   "current type"})
+  {:db/ident           :lv2.morph/currentType,
+   :rdf/type           [:owl/ObjectProperty :lv2.opts/Option :rdf/Property],
+   :rdfs/comment       "The currently active type of the port.",
+   :rdfs/domain        :lv2.morph/MorphPort,
+   :rdfs/label         "current type",
+   :rdfs/subPropertyOf :lv2.morph/currentType})
 
 (def supportsType
   "A type that a port supports being switched to."
-  {:db/ident     :lv2.morph/supportsType,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "A type that a port supports being switched to.",
-   :rdfs/domain  :lv2.morph/MorphPort,
-   :rdfs/label   "supports type"})
+  {:db/ident           :lv2.morph/supportsType,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "A type that a port supports being switched to.",
+   :rdfs/domain        :lv2.morph/MorphPort,
+   :rdfs/label         "supports type",
+   :rdfs/subPropertyOf :lv2.morph/supportsType})

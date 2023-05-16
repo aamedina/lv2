@@ -19,10 +19,11 @@
 
 (def Entry
   "A log entry."
-  {:db/ident     :lv2.log/Entry,
-   :rdf/type     :rdfs/Class,
-   :rdfs/comment "A log entry.",
-   :rdfs/label   "Entry"})
+  {:db/ident        :lv2.log/Entry,
+   :rdf/type        :rdfs/Class,
+   :rdfs/comment    "A log entry.",
+   :rdfs/label      "Entry",
+   :rdfs/subClassOf [:rdfs/Resource :lv2.log/Entry]})
 
 (def ErrorClass
   "An error message."
@@ -30,7 +31,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "An error message.",
    :rdfs/label      "Error",
-   :rdfs/subClassOf :lv2.log/Entry})
+   :rdfs/subClassOf [:lv2.log/Entry :lv2.log/Error :rdfs/Resource]})
 
 (def Note
   "An informative message."
@@ -38,7 +39,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "An informative message.",
    :rdfs/label      "Note",
-   :rdfs/subClassOf :lv2.log/Entry})
+   :rdfs/subClassOf [:lv2.log/Entry :lv2.log/Note :rdfs/Resource]})
 
 (def Trace
   "A debugging trace message."
@@ -46,7 +47,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A debugging trace message.",
    :rdfs/label      "Trace",
-   :rdfs/subClassOf :lv2.log/Entry})
+   :rdfs/subClassOf [:lv2.log/Entry :lv2.log/Trace :rdfs/Resource]})
 
 (def Warning
   "A warning message."
@@ -54,7 +55,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A warning message.",
    :rdfs/label      "Warning",
-   :rdfs/subClassOf :lv2.log/Entry})
+   :rdfs/subClassOf [:lv2.log/Entry :lv2.log/Warning :rdfs/Resource]})
 
 (def log
   "Logging feature."

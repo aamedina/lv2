@@ -32,7 +32,7 @@
    :rdf/type            :owl/Class,
    :rdfs/comment        "An instant defined on an abstract timeline",
    :rdfs/label          "abstract instant",
-   :rdfs/subClassOf     :tl/Instant,
+   :rdfs/subClassOf     [:tl/Instant :tl/AbstractInstant],
    :vs/term_status      "stable"})
 
 (def AbstractInterval
@@ -44,7 +44,7 @@
    :rdf/type :owl/Class,
    :rdfs/comment "\n\tAn interval defined on an abstract time-line.\n    ",
    :rdfs/label "abstract interval",
-   :rdfs/subClassOf :tl/Interval,
+   :rdfs/subClassOf [:tl/Interval :tl/AbstractInterval],
    :vs/term_status "stable"})
 
 (def AbstractTimeLine
@@ -54,7 +54,7 @@
    :rdfs/comment
    "\n    \tAbstract time lines may be used as a backbone for Score, Works, ... \n\tThis allows for TimeLine maps to relate works to a given \n\tperformance (this part was played at this time).",
    :rdfs/label "abstract timeline",
-   :rdfs/subClassOf :tl/TimeLine,
+   :rdfs/subClassOf [:tl/TimeLine :tl/AbstractTimeLine],
    :vs/term_status "stable"})
 
 (def ContinuousTimeLine
@@ -68,7 +68,7 @@
    :rdfs/comment
    "A continuous timeline, like the universal one, or the one backing an analog signal",
    :rdfs/label "continuous timeline",
-   :rdfs/subClassOf :tl/TimeLine,
+   :rdfs/subClassOf [:tl/TimeLine :tl/ContinuousTimeLine],
    :vs/term_status "stable"})
 
 (def DiscreteInstant
@@ -83,9 +83,10 @@
    :rdf/type            :owl/Class,
    :rdfs/comment        "An instant defined on a discrete timeline",
    :rdfs/label          "discrete instant",
-   :rdfs/subClassOf     {:owl/cardinality 1,
-                         :owl/onProperty  :tl/atInt,
-                         :rdf/type        :owl/Restriction},
+   :rdfs/subClassOf     [{:owl/cardinality 1,
+                          :owl/onProperty  :tl/atInt,
+                          :rdf/type        :owl/Restriction}
+                         :tl/DiscreteInstant],
    :vs/term_status      "stable"})
 
 (def DiscreteInterval
@@ -101,29 +102,30 @@
    :rdfs/comment
    "An interval defined on a discrete timeline, like the one backing a digital signal",
    :rdfs/label "discrete interval",
-   :rdfs/subClassOf {:owl/unionOf
-                     [{:owl/intersectionOf [{:owl/cardinality 1,
-                                             :owl/onProperty :time/hasBeginning,
-                                             :rdf/type :owl/Restriction}
-                                            {:owl/cardinality 1,
-                                             :owl/onProperty :time/hasEnd,
-                                             :rdf/type :owl/Restriction}],
-                       :rdf/type :owl/Class}
-                      {:owl/intersectionOf [{:owl/cardinality 1,
-                                             :owl/onProperty  :tl/beginsAtInt,
-                                             :rdf/type        :owl/Restriction}
-                                            {:owl/cardinality 1,
-                                             :owl/onProperty :tl/endsAtInt,
-                                             :rdf/type :owl/Restriction}],
-                       :rdf/type :owl/Class}
-                      {:owl/intersectionOf [{:owl/cardinality 1,
-                                             :owl/onProperty  :tl/beginsAtInt,
-                                             :rdf/type        :owl/Restriction}
-                                            {:owl/cardinality 1,
-                                             :owl/onProperty :tl/durationInt,
-                                             :rdf/type :owl/Restriction}],
-                       :rdf/type :owl/Class}],
-                     :rdf/type :owl/Class},
+   :rdfs/subClassOf
+   [{:owl/unionOf [{:owl/intersectionOf [{:owl/cardinality 1,
+                                          :owl/onProperty  :time/hasBeginning,
+                                          :rdf/type        :owl/Restriction}
+                                         {:owl/cardinality 1,
+                                          :owl/onProperty  :time/hasEnd,
+                                          :rdf/type        :owl/Restriction}],
+                    :rdf/type :owl/Class}
+                   {:owl/intersectionOf [{:owl/cardinality 1,
+                                          :owl/onProperty  :tl/beginsAtInt,
+                                          :rdf/type        :owl/Restriction}
+                                         {:owl/cardinality 1,
+                                          :owl/onProperty  :tl/endsAtInt,
+                                          :rdf/type        :owl/Restriction}],
+                    :rdf/type :owl/Class}
+                   {:owl/intersectionOf [{:owl/cardinality 1,
+                                          :owl/onProperty  :tl/beginsAtInt,
+                                          :rdf/type        :owl/Restriction}
+                                         {:owl/cardinality 1,
+                                          :owl/onProperty  :tl/durationInt,
+                                          :rdf/type        :owl/Restriction}],
+                    :rdf/type :owl/Class}],
+     :rdf/type    :owl/Class}
+    :tl/DiscreteInterval],
    :vs/term_status "stable"})
 
 (def DiscreteTimeLine
@@ -134,7 +136,7 @@
    :rdfs/comment
    "A discrete time line (like the time line backing a digital signal",
    :rdfs/label "discrete time line",
-   :rdfs/subClassOf :tl/TimeLine,
+   :rdfs/subClassOf [:tl/TimeLine :tl/DiscreteTimeLine],
    :vs/term_status "stable"})
 
 (def Instant
@@ -144,6 +146,7 @@
    :rdf/type            :owl/Class,
    :rdfs/comment        "An instant (same as in OWL-Time)",
    :rdfs/label          "instant",
+   :rdfs/subClassOf     :tl/Instant,
    :vs/term_status      "stable"})
 
 (def Interval
@@ -154,6 +157,7 @@
    :rdfs/comment
    "An interval (same as in OWL-Time). Allen's relationships are defined in OWL-Time.",
    :rdfs/label "interval",
+   :rdfs/subClassOf :tl/Interval,
    :vs/term_status "stable"})
 
 (def OriginMap
@@ -169,7 +173,8 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :tl/rangeTimeLine,
                       :owl/someValuesFrom :tl/RelativeTimeLine,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :tl/OriginMap],
    :vs/term_status "stable"})
 
 (def PhysicalTimeLine
@@ -180,7 +185,7 @@
    :rdfs/comment
    "A \"physical\" time-line (the universal time line (UTC)) is an instance of this class. Other time zones consists in instances of this class as well, with a \"shifting\" time line map relating them to the universal time line map.",
    :rdfs/label "physical timeline",
-   :rdfs/subClassOf :tl/ContinuousTimeLine,
+   :rdfs/subClassOf [:tl/ContinuousTimeLine :tl/PhysicalTimeLine :tl/TimeLine],
    :vs/term_status "stable"})
 
 (def RelativeInstant
@@ -195,9 +200,10 @@
    :rdf/type            :owl/Class,
    :rdfs/comment        "An instant defined on a relative timeline",
    :rdfs/label          "relative instant",
-   :rdfs/subClassOf     {:owl/cardinality 1,
-                         :owl/onProperty  :tl/atDuration,
-                         :rdf/type        :owl/Restriction},
+   :rdfs/subClassOf     [{:owl/cardinality 1,
+                          :owl/onProperty  :tl/atDuration,
+                          :rdf/type        :owl/Restriction}
+                         :tl/RelativeInstant],
    :vs/term_status      "stable"})
 
 (def RelativeInterval
@@ -212,31 +218,32 @@
    :rdf/type            :owl/Class,
    :rdfs/comment        "an interval defined on a relative timeline",
    :rdfs/label          "relative interval",
-   :rdfs/subClassOf     {:owl/unionOf [{:owl/intersectionOf
-                                        [{:owl/cardinality 1,
-                                          :owl/onProperty  :time/hasBeginning,
-                                          :rdf/type        :owl/Restriction}
-                                         {:owl/cardinality 1,
-                                          :owl/onProperty  :time/hasEnd,
-                                          :rdf/type        :owl/Restriction}],
-                                        :rdf/type :owl/Class}
-                                       {:owl/intersectionOf
-                                        [{:owl/cardinality 1,
-                                          :owl/onProperty  :tl/beginsAtDuration,
-                                          :rdf/type        :owl/Restriction}
-                                         {:owl/cardinality 1,
-                                          :owl/onProperty  :tl/durationXSD,
-                                          :rdf/type        :owl/Restriction}],
-                                        :rdf/type :owl/Class}
-                                       {:owl/intersectionOf
-                                        [{:owl/cardinality 1,
-                                          :owl/onProperty  :tl/beginsAtDuration,
-                                          :rdf/type        :owl/Restriction}
-                                         {:owl/cardinality 1,
-                                          :owl/onProperty  :tl/endsAtDuration,
-                                          :rdf/type        :owl/Restriction}],
-                                        :rdf/type :owl/Class}],
-                         :rdf/type    :owl/Class},
+   :rdfs/subClassOf     [{:owl/unionOf [{:owl/intersectionOf
+                                         [{:owl/cardinality 1,
+                                           :owl/onProperty  :time/hasBeginning,
+                                           :rdf/type        :owl/Restriction}
+                                          {:owl/cardinality 1,
+                                           :owl/onProperty  :time/hasEnd,
+                                           :rdf/type        :owl/Restriction}],
+                                         :rdf/type :owl/Class}
+                                        {:owl/intersectionOf
+                                         [{:owl/cardinality 1,
+                                           :owl/onProperty :tl/beginsAtDuration,
+                                           :rdf/type :owl/Restriction}
+                                          {:owl/cardinality 1,
+                                           :owl/onProperty  :tl/durationXSD,
+                                           :rdf/type        :owl/Restriction}],
+                                         :rdf/type :owl/Class}
+                                        {:owl/intersectionOf
+                                         [{:owl/cardinality 1,
+                                           :owl/onProperty :tl/beginsAtDuration,
+                                           :rdf/type :owl/Restriction}
+                                          {:owl/cardinality 1,
+                                           :owl/onProperty  :tl/endsAtDuration,
+                                           :rdf/type        :owl/Restriction}],
+                                         :rdf/type :owl/Class}],
+                          :rdf/type    :owl/Class}
+                         :tl/RelativeInterval],
    :vs/term_status      "stable"})
 
 (def RelativeTimeLine
@@ -247,7 +254,7 @@
    :rdfs/comment
    "Semi infinite time line...canonical coordinate system --> adressed through xsd:duration since the instant 0.",
    :rdfs/label "relative timeline",
-   :rdfs/subClassOf :tl/ContinuousTimeLine,
+   :rdfs/subClassOf [:tl/ContinuousTimeLine :tl/RelativeTimeLine :tl/TimeLine],
    :vs/term_status "stable"})
 
 (def ShiftMap
@@ -256,7 +263,7 @@
    :rdf/type        :owl/Class,
    :rdfs/comment    "a map just shifting one timeline to another",
    :rdfs/label      "shift map",
-   :rdfs/subClassOf :tl/TimeLineMap,
+   :rdfs/subClassOf [:tl/TimeLineMap :tl/ShiftMap],
    :vs/term_status  "stable"})
 
 (def TimeLine
@@ -266,15 +273,17 @@
    :rdfs/comment
    "Represents a linear and coherent piece of time -- can be either abstract (such as the one behind a score) or concrete (such as the universal time line).\nTwo timelines can be mapped using timeline maps.",
    :rdfs/label "timeline",
+   :rdfs/subClassOf :tl/TimeLine,
    :vs/term_status "stable"})
 
 (def TimeLineMap
   "Allows to map two time lines together"
-  {:db/ident       :tl/TimeLineMap,
-   :rdf/type       :owl/Class,
-   :rdfs/comment   "Allows to map two time lines together",
-   :rdfs/label     "timeline map",
-   :vs/term_status "stable"})
+  {:db/ident        :tl/TimeLineMap,
+   :rdf/type        :owl/Class,
+   :rdfs/comment    "Allows to map two time lines together",
+   :rdfs/label      "timeline map",
+   :rdfs/subClassOf :tl/TimeLineMap,
+   :vs/term_status  "stable"})
 
 (def UTInstant
   "This concept expresses that an instant defined on the universal timeline must be associated to a dateTime value"
@@ -289,9 +298,10 @@
    :rdfs/comment
    "This concept expresses that an instant defined on the universal timeline must be associated to a dateTime value",
    :rdfs/label "instant on the universal timeline",
-   :rdfs/subClassOf {:owl/cardinality 1,
-                     :owl/onProperty  :tl/atDateTime,
-                     :rdf/type        :owl/Restriction},
+   :rdfs/subClassOf [{:owl/cardinality 1,
+                      :owl/onProperty  :tl/atDateTime,
+                      :rdf/type        :owl/Restriction}
+                     :tl/UTInstant],
    :vs/term_status "stable"})
 
 (def UTInterval
@@ -307,37 +317,38 @@
    :rdfs/comment "an interval defined on the universal time line",
    :rdfs/label "universal timeline interval",
    :rdfs/subClassOf
-   {:owl/unionOf [{:owl/cardinality 1,
-                   :owl/onProperty  :tl/atYear,
-                   :rdf/type        :owl/Restriction}
-                  {:owl/cardinality 1,
-                   :owl/onProperty  :tl/atYearMonth,
-                   :rdf/type        :owl/Restriction}
-                  {:owl/cardinality 1,
-                   :owl/onProperty  :tl/atDate,
-                   :rdf/type        :owl/Restriction}
-                  {:owl/intersectionOf [{:owl/cardinality 1,
-                                         :owl/onProperty  :tl/beginsAtDateTime,
-                                         :rdf/type        :owl/Restriction}
-                                        {:owl/cardinality 1,
-                                         :owl/onProperty  :tl/durationXSD,
-                                         :rdf/type        :owl/Restriction}],
-                   :rdf/type :owl/Class}
-                  {:owl/intersectionOf [{:owl/cardinality 1,
-                                         :owl/onProperty  :time/hasBeginning,
-                                         :rdf/type        :owl/Restriction}
-                                        {:owl/cardinality 1,
-                                         :owl/onProperty  :time/hasEnd,
-                                         :rdf/type        :owl/Restriction}],
-                   :rdf/type :owl/Class}
-                  {:owl/intersectionOf [{:owl/cardinality 1,
-                                         :owl/onProperty  :tl/beginsAtDateTime,
-                                         :rdf/type        :owl/Restriction}
-                                        {:owl/cardinality 1,
-                                         :owl/onProperty  :tl/endsAtDateTime,
-                                         :rdf/type        :owl/Restriction}],
-                   :rdf/type :owl/Class}],
-    :rdf/type    :owl/Class},
+   [{:owl/unionOf [{:owl/cardinality 1,
+                    :owl/onProperty  :tl/atYear,
+                    :rdf/type        :owl/Restriction}
+                   {:owl/cardinality 1,
+                    :owl/onProperty  :tl/atYearMonth,
+                    :rdf/type        :owl/Restriction}
+                   {:owl/cardinality 1,
+                    :owl/onProperty  :tl/atDate,
+                    :rdf/type        :owl/Restriction}
+                   {:owl/intersectionOf [{:owl/cardinality 1,
+                                          :owl/onProperty  :tl/beginsAtDateTime,
+                                          :rdf/type        :owl/Restriction}
+                                         {:owl/cardinality 1,
+                                          :owl/onProperty  :tl/durationXSD,
+                                          :rdf/type        :owl/Restriction}],
+                    :rdf/type :owl/Class}
+                   {:owl/intersectionOf [{:owl/cardinality 1,
+                                          :owl/onProperty  :time/hasBeginning,
+                                          :rdf/type        :owl/Restriction}
+                                         {:owl/cardinality 1,
+                                          :owl/onProperty  :time/hasEnd,
+                                          :rdf/type        :owl/Restriction}],
+                    :rdf/type :owl/Class}
+                   {:owl/intersectionOf [{:owl/cardinality 1,
+                                          :owl/onProperty  :tl/beginsAtDateTime,
+                                          :rdf/type        :owl/Restriction}
+                                         {:owl/cardinality 1,
+                                          :owl/onProperty  :tl/endsAtDateTime,
+                                          :rdf/type        :owl/Restriction}],
+                    :rdf/type :owl/Class}],
+     :rdf/type    :owl/Class}
+    :tl/UTInterval],
    :vs/term_status "stable"})
 
 (def UniformSamplingMap
@@ -348,16 +359,17 @@
    :rdfs/comment
    "Describe the relation between a continuous time-line and its sampled equivalent",
    :rdfs/label "uniform sampling map",
-   :rdfs/subClassOf [{:owl/onProperty     :tl/domainTimeLine,
-                      :owl/someValuesFrom :tl/RelativeTimeLine,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :tl/rangeTimeLine,
+   :rdfs/subClassOf [{:owl/onProperty     :tl/rangeTimeLine,
                       :owl/someValuesFrom :tl/DiscreteTimeLine,
                       :rdf/type           :owl/Restriction}
-                     :tl/TimeLineMap
                      {:owl/cardinality 1,
                       :owl/onProperty  :tl/sampleRate,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :tl/domainTimeLine,
+                      :owl/someValuesFrom :tl/RelativeTimeLine,
+                      :rdf/type           :owl/Restriction}
+                     :tl/TimeLineMap
+                     :tl/UniformSamplingMap],
    :vs/term_status "stable"})
 
 (def UniformSamplingWindowingMap
@@ -368,22 +380,23 @@
    :rdfs/comment
    "Describes the relation between a continuous time-line, and a time-line that corresponds to its sampled and windowed equivalent",
    :rdfs/label "Uniform sampling and windowing map",
-   :rdfs/subClassOf [{:owl/cardinality 1,
-                      :owl/onProperty  :tl/sampleRate,
-                      :rdf/type        :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :tl/rangeTimeLine,
+                      :owl/someValuesFrom :tl/DiscreteTimeLine,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :tl/domainTimeLine,
                       :owl/someValuesFrom :tl/ContinuousTimeLine,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :tl/rangeTimeLine,
-                      :owl/someValuesFrom :tl/DiscreteTimeLine,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :tl/sampleRate,
+                      :rdf/type        :owl/Restriction}
                      :tl/TimeLineMap
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :tl/windowLength,
+                      :rdf/type        :owl/Restriction}
                      {:owl/cardinality 1,
                       :owl/onProperty  :tl/hopSize,
                       :rdf/type        :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :tl/windowLength,
-                      :rdf/type        :owl/Restriction}],
+                     :tl/UniformSamplingWindowingMap],
    :vs/term_status "stable"})
 
 (def UniformWindowingMap
@@ -394,19 +407,20 @@
    :rdfs/comment
    "Describes the relation between a discrete time line and its windowed equivalent",
    :rdfs/label "uniform windowing map",
-   :rdfs/subClassOf [{:owl/onProperty     :tl/rangeTimeLine,
-                      :owl/someValuesFrom :tl/DiscreteTimeLine,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [{:owl/cardinality 1,
+                      :owl/onProperty  :tl/hopSize,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :tl/domainTimeLine,
                       :owl/someValuesFrom :tl/DiscreteTimeLine,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :tl/rangeTimeLine,
+                      :owl/someValuesFrom :tl/DiscreteTimeLine,
+                      :rdf/type           :owl/Restriction}
+                     :tl/TimeLineMap
                      {:owl/cardinality 1,
                       :owl/onProperty  :tl/windowLength,
                       :rdf/type        :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :tl/hopSize,
-                      :rdf/type        :owl/Restriction}
-                     :tl/TimeLineMap],
+                     :tl/UniformWindowingMap],
    :vs/term_status "stable"})
 
 (def after
@@ -423,6 +437,7 @@
    :rdfs/domain {:owl/unionOf [:tl/Interval :tl/Instant],
                  :rdf/type    :owl/Class},
    :rdfs/label "at",
+   :rdfs/subPropertyOf :tl/at,
    :vs/term_status "stable"})
 
 (def atDate
@@ -433,7 +448,7 @@
    "A subproperty of :at, allowing to address a date (beginning of it for an instant, all of it for an interval)",
    :rdfs/label "at (date)",
    :rdfs/range :xsd/date,
-   :rdfs/subPropertyOf :tl/at,
+   :rdfs/subPropertyOf [:tl/at :tl/atDate],
    :vs/term_status "stable"})
 
 (def atDateTime
@@ -444,7 +459,7 @@
    "This property links an instant defined on the universal time line to an XSD date/time value",
    :rdfs/label "at date/time",
    :rdfs/range :xsd/dateTime,
-   :rdfs/subPropertyOf :tl/at,
+   :rdfs/subPropertyOf [:tl/at :tl/atDateTime],
    :vs/term_status "stable"})
 
 (def atDuration
@@ -455,7 +470,7 @@
    "A property enabling to adress a time point P through the duration of the interval [0,P] on a continuous timeline",
    :rdfs/label "at (duration)",
    :rdfs/range :xsd/duration,
-   :rdfs/subPropertyOf :tl/at,
+   :rdfs/subPropertyOf [:tl/at :tl/atDuration],
    :vs/term_status "stable"})
 
 (def atInt
@@ -465,7 +480,7 @@
    :rdfs/comment "A subproperty of :at, having as a specific range xsd:int",
    :rdfs/label "at (integer)",
    :rdfs/range :xsd/int,
-   :rdfs/subPropertyOf :tl/at,
+   :rdfs/subPropertyOf [:tl/at :tl/atInt],
    :vs/term_status "stable"})
 
 (def atReal
@@ -475,7 +490,7 @@
    :rdfs/comment       "subproperty of :at, having xsd:float as a range",
    :rdfs/label         "at (real)",
    :rdfs/range         :xsd/float,
-   :rdfs/subPropertyOf :tl/at,
+   :rdfs/subPropertyOf [:tl/at :tl/atReal],
    :vs/term_status     "stable"})
 
 (def atYear
@@ -486,7 +501,7 @@
    "A subproperty of :at, allowing to address a year (beginning of it for an instant, all of it for an interval)",
    :rdfs/label "at (year)",
    :rdfs/range :xsd/gYear,
-   :rdfs/subPropertyOf :tl/at,
+   :rdfs/subPropertyOf [:tl/at :tl/atYear],
    :vs/term_status "stable"})
 
 (def atYearMonth
@@ -497,7 +512,7 @@
    "A subproperty of :at, allowing to address a year/month (beginning of it for an instant, all of it for an interval)",
    :rdfs/label "at (year/month)",
    :rdfs/range :xsd/gYearMonth,
-   :rdfs/subPropertyOf :tl/at,
+   :rdfs/subPropertyOf [:tl/at :tl/atYearMonth],
    :vs/term_status "stable"})
 
 (def before
@@ -518,7 +533,7 @@
    "A subproperty of :beginsAt, allowing to address the beginning of an interval as a date/time",
    :rdfs/label "begins at (date/time)",
    :rdfs/range :xsd/dateTime,
-   :rdfs/subPropertyOf :tl/start,
+   :rdfs/subPropertyOf [:tl/start :tl/beginsAtDateTime],
    :vs/term_status "stable"})
 
 (def beginsAtDuration
@@ -529,7 +544,7 @@
    "A property enabling to adress a start time point P of an interval [P,E] through the duration of the interval [0,P] on a continuous timeline",
    :rdfs/label "begins at (xsd:duration)",
    :rdfs/range :xsd/duration,
-   :rdfs/subPropertyOf :tl/start,
+   :rdfs/subPropertyOf [:tl/start :tl/beginsAtDuration],
    :vs/term_status "stable"})
 
 (def beginsAtInt
@@ -539,7 +554,7 @@
    :rdfs/comment       "A subproperty of :beginsAt, having xsd:int as a range",
    :rdfs/label         "begins at (integer)",
    :rdfs/range         :xsd/int,
-   :rdfs/subPropertyOf :tl/start,
+   :rdfs/subPropertyOf [:tl/start :tl/beginsAtInt],
    :vs/term_status     "stable"})
 
 (def contains
@@ -568,12 +583,13 @@
 
 (def duration
   "the duration of a time interval"
-  {:db/ident       :tl/duration,
-   :rdf/type       :owl/DatatypeProperty,
-   :rdfs/comment   "the duration of a time interval",
-   :rdfs/domain    :tl/Interval,
-   :rdfs/label     "duration",
-   :vs/term_status "stable"})
+  {:db/ident           :tl/duration,
+   :rdf/type           :owl/DatatypeProperty,
+   :rdfs/comment       "the duration of a time interval",
+   :rdfs/domain        :tl/Interval,
+   :rdfs/label         "duration",
+   :rdfs/subPropertyOf :tl/duration,
+   :vs/term_status     "stable"})
 
 (def durationInt
   "A subproperty of :duration, having xsd:int as a range"
@@ -582,7 +598,7 @@
    :rdfs/comment       "A subproperty of :duration, having xsd:int as a range",
    :rdfs/label         "duration (integer)",
    :rdfs/range         :xsd/int,
-   :rdfs/subPropertyOf :tl/duration,
+   :rdfs/subPropertyOf [:tl/duration :tl/durationInt],
    :vs/term_status     "stable"})
 
 (def durationXSD
@@ -592,7 +608,7 @@
    :rdfs/comment "A subproperty of :duration, having xsd:duration as a range",
    :rdfs/label "duration (xsd:duration)",
    :rdfs/range :xsd/duration,
-   :rdfs/subPropertyOf :tl/duration,
+   :rdfs/subPropertyOf [:tl/duration :tl/durationXSD],
    :vs/term_status "stable"})
 
 (def during
@@ -608,6 +624,7 @@
    "refers to the end of a time interval, through an explicit datatype. time:hasEnd can be used as well, if you want to associate the end of the interval to an explicit time point resource",
    :rdfs/domain :tl/Interval,
    :rdfs/label "ends at",
+   :rdfs/subPropertyOf :tl/end,
    :vs/term_status "stable"})
 
 (def endsAt
@@ -623,7 +640,7 @@
    "A subproperty of :endsAt, allowing to address the end of an interval as a date/time",
    :rdfs/label "ends at (date/time)",
    :rdfs/range :xsd/dateTime,
-   :rdfs/subPropertyOf :tl/end,
+   :rdfs/subPropertyOf [:tl/end :tl/endsAtDateTime],
    :vs/term_status "stable"})
 
 (def endsAtDuration
@@ -634,7 +651,7 @@
    "A property enabling to adress an end time point P of an interval [S,P] through the duration of the interval [0,P] on a continuous timeline",
    :rdfs/label "ends at (xsd:duration)",
    :rdfs/range :xsd/duration,
-   :rdfs/subPropertyOf :tl/end,
+   :rdfs/subPropertyOf [:tl/end :tl/endsAtDuration],
    :vs/term_status "stable"})
 
 (def endsAtInt
@@ -644,7 +661,7 @@
    :rdfs/comment       "A subproperty of :endsAt, having xsd:int as a range",
    :rdfs/label         "ends at (integer)",
    :rdfs/range         :xsd/int,
-   :rdfs/subPropertyOf :tl/end,
+   :rdfs/subPropertyOf [:tl/end :tl/endsAtInt],
    :vs/term_status     "stable"})
 
 (def equals
@@ -740,6 +757,7 @@
    "refers to the beginning of a time interval, through an explicit datatype. time:hasBeginning can be used as well, if you want to associate the beginning of the interval to an explicit time point resource",
    :rdfs/domain :tl/Interval,
    :rdfs/label "begins at",
+   :rdfs/subPropertyOf :tl/start,
    :vs/term_status "stable"})
 
 (def startedBy
@@ -769,7 +787,7 @@
   {:db/ident :tl/universaltimeline,
    :dc11/description "The timeline one can addresss \"the 1st of July, 2007\"",
    :dc11/title "the universal time line",
-   :rdf/type :tl/PhysicalTimeLine,
+   :rdf/type [:tl/PhysicalTimeLine :tl/TimeLine :tl/ContinuousTimeLine],
    :rdfs/comment
    "this is the `universal' time line -- can adress time intervals on it using date/dateTime -- UTC",
    :vs/term_status "stable"})
@@ -785,15 +803,3 @@
    :rdfs/label     "window length",
    :rdfs/range     :xsd/int,
    :vs/term_status "stable"})
-
-(def ^{:private true} Person
-  {:db/ident :foaf/Person,
-   :rdf/type :owl/Class})
-
-(def ^{:private true} maker
-  {:db/ident :foaf/maker,
-   :rdf/type :owl/ObjectProperty})
-
-(def ^{:private true} term_status
-  {:db/ident :vs/term_status,
-   :rdf/type :owl/AnnotationProperty})

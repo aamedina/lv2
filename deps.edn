@@ -1,15 +1,18 @@
+
 {:deps
- {io.github.aamedina/punk.qudt
-  {:git/sha "8383707d74a94d590b9f721ca823575d6354cbee"}
-  org.clojure/clojure
-  {:mvn/version "1.11.1"}
-  org.clojure/tools.logging
-  {:mvn/version "1.2.4"}}
+ {io.github.aamedina/rdf
+  {:git/sha "88375ec7f4b6aa657c20e35d15a191f061b2428d"}
+  io.github.aamedina/punk.qudt
+  {:git/sha "aecbdb955d7a9d11201e5bfc4ef1755d3b9d9a42"}}
  :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases
  {:dev
   {:extra-deps
-   {com.walmartlabs/schematic
+   {com.datomic/dev-local
+    {:mvn/version "1.0.243"}
+    io.github.aamedina/punk.db
+    {:git/sha "534298494e8ae1edffc8edc412a8c68da1cd833c"}
+    com.walmartlabs/schematic
     {:mvn/version "1.3.0"}
     com.stuartsierra/component.repl
     {:mvn/version "0.2.0"}

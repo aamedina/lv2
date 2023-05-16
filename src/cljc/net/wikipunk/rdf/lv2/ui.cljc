@@ -25,7 +25,7 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A UI where the widget is a pointer to a NSView.",
    :rdfs/label      "Cocoa UI",
-   :rdfs/subClassOf :lv2.ui/UI})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI :lv2.ui/CocoaUI]})
 
 (def Gtk3UI
   "A UI where the widget is a pointer to a Gtk+ 3.0 GtkWidget."
@@ -33,7 +33,7 @@
    :rdf/type [:owl/Class :rdfs/Class],
    :rdfs/comment "A UI where the widget is a pointer to a Gtk+ 3.0 GtkWidget.",
    :rdfs/label "GTK3 UI",
-   :rdfs/subClassOf :lv2.ui/UI})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI :lv2.ui/Gtk3UI]})
 
 (def GtkUI
   "A UI where the widget is a pointer to a Gtk+ 2.0 GtkWidget."
@@ -41,7 +41,7 @@
    :rdf/type [:owl/Class :rdfs/Class],
    :rdfs/comment "A UI where the widget is a pointer to a Gtk+ 2.0 GtkWidget.",
    :rdfs/label "GTK2 UI",
-   :rdfs/subClassOf :lv2.ui/UI})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI :lv2.ui/GtkUI]})
 
 (def PortNotification
   "A description of port updates that a host must send a UI."
@@ -49,11 +49,13 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A description of port updates that a host must send a UI.",
    :rdfs/label      "Port Notification",
-   :rdfs/subClassOf {:owl/cardinality 1,
-                     :owl/onProperty :lv2.ui/plugin,
-                     :rdf/type :owl/Restriction,
-                     :rdfs/comment
-                     "A PortNotification MUST have exactly one ui:plugin."}})
+   :rdfs/subClassOf [:rdfs/Resource
+                     {:owl/cardinality 1,
+                      :owl/onProperty :lv2.ui/plugin,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment
+                      "A PortNotification MUST have exactly one ui:plugin."}
+                     :lv2.ui/PortNotification]})
 
 (def PortProtocol
   "A method to communicate port data between a UI and plugin."
@@ -61,7 +63,7 @@
    :rdf/type :rdfs/Class,
    :rdfs/comment "A method to communicate port data between a UI and plugin.",
    :rdfs/label "Port Protocol",
-   :rdfs/subClassOf :lv2/Feature})
+   :rdfs/subClassOf [:rdfs/Resource :lv2/Feature :lv2.ui/PortProtocol]})
 
 (def Qt4UI
   "A UI where the widget is a pointer to a Qt4 QWidget."
@@ -69,7 +71,7 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A UI where the widget is a pointer to a Qt4 QWidget.",
    :rdfs/label      "Qt4 UI",
-   :rdfs/subClassOf :lv2.ui/UI})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI :lv2.ui/Qt4UI]})
 
 (def Qt5UI
   "A UI where the widget is a pointer to a Qt5 QWidget."
@@ -77,14 +79,15 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A UI where the widget is a pointer to a Qt5 QWidget.",
    :rdfs/label      "Qt5 UI",
-   :rdfs/subClassOf :lv2.ui/UI})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI :lv2.ui/Qt5UI]})
 
 (def UI
   "A UI for an LV2 plugin."
-  {:db/ident     :lv2.ui/UI,
-   :rdf/type     [:owl/Class :rdfs/Class],
-   :rdfs/comment "A UI for an LV2 plugin.",
-   :rdfs/label   "User Interface"})
+  {:db/ident        :lv2.ui/UI,
+   :rdf/type        [:owl/Class :rdfs/Class],
+   :rdfs/comment    "A UI for an LV2 plugin.",
+   :rdfs/label      "User Interface",
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI]})
 
 (def WindowsUI
   "A UI where the widget is a Windows HWND window ID."
@@ -92,7 +95,7 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A UI where the widget is a Windows HWND window ID.",
    :rdfs/label      "Windows UI",
-   :rdfs/subClassOf :lv2.ui/UI})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI :lv2.ui/WindowsUI]})
 
 (def X11UI
   "A UI where the widget is an X11 Window window ID."
@@ -100,23 +103,25 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A UI where the widget is an X11 Window window ID.",
    :rdfs/label      "X11 UI",
-   :rdfs/subClassOf :lv2.ui/UI})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.ui/UI :lv2.ui/X11UI]})
 
 (def backgroundColor
   "The background color of the host's UI."
-  {:db/ident     :lv2.ui/backgroundColor,
-   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The background color of the host's UI.",
-   :rdfs/label   "background color"})
+  {:db/ident           :lv2.ui/backgroundColor,
+   :rdf/type           [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "The background color of the host's UI.",
+   :rdfs/label         "background color",
+   :rdfs/subPropertyOf :lv2.ui/backgroundColor})
 
 (def binary
   "The shared library that a UI resides in."
-  {:db/ident       :lv2.ui/binary,
-   :owl/deprecated true,
-   :owl/sameAs     :lv2/binary,
-   :rdf/type       [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment   "The shared library that a UI resides in.",
-   :rdfs/label     "binary"})
+  {:db/ident           :lv2.ui/binary,
+   :owl/deprecated     true,
+   :owl/sameAs         :lv2/binary,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The shared library that a UI resides in.",
+   :rdfs/label         "binary",
+   :rdfs/subPropertyOf :lv2.ui/binary})
 
 (def fixedSize
   "Non-resizable UI that will never resize itself."
@@ -128,16 +133,17 @@
 (def floatProtocol
   "A protocol for transferring single floating point values."
   {:db/ident     :lv2.ui/floatProtocol,
-   :rdf/type     :lv2.ui/PortProtocol,
+   :rdf/type     [:lv2.ui/PortProtocol :lv2/Feature :rdfs/Resource],
    :rdfs/comment "A protocol for transferring single floating point values.",
    :rdfs/label   "float protocol"})
 
 (def foregroundColor
   "The foreground color of the host's UI."
-  {:db/ident     :lv2.ui/foregroundColor,
-   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The foreground color of the host's UI.",
-   :rdfs/label   "foreground color"})
+  {:db/ident           :lv2.ui/foregroundColor,
+   :rdf/type           [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "The foreground color of the host's UI.",
+   :rdfs/label         "foreground color",
+   :rdfs/subPropertyOf :lv2.ui/foregroundColor})
 
 (def idleInterface
   "A feature that provides a callback for the host to drive the UI."
@@ -164,11 +170,12 @@
 
 (def notifyType
   "A particular type that the UI should be notified of."
-  {:db/ident     :lv2.ui/notifyType,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "A particular type that the UI should be notified of.",
-   :rdfs/domain  :lv2.ui/PortNotification,
-   :rdfs/label   "notify type"})
+  {:db/ident           :lv2.ui/notifyType,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "A particular type that the UI should be notified of.",
+   :rdfs/domain        :lv2.ui/PortNotification,
+   :rdfs/label         "notify type",
+   :rdfs/subPropertyOf :lv2.ui/notifyType})
 
 (def parent
   "The parent for a UI."
@@ -180,28 +187,30 @@
 (def peakProtocol
   "A protocol for sending continuous peak measurements of an audio signal."
   {:db/ident :lv2.ui/peakProtocol,
-   :rdf/type :lv2.ui/PortProtocol,
+   :rdf/type [:lv2.ui/PortProtocol :lv2/Feature :rdfs/Resource],
    :rdfs/comment
    "A protocol for sending continuous peak measurements of an audio signal.",
    :rdfs/label "peak protocol"})
 
 (def plugin
   "The plugin a portNotification applies to."
-  {:db/ident     :lv2.ui/plugin,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The plugin a portNotification applies to.",
-   :rdfs/domain  :lv2.ui/PortNotification,
-   :rdfs/label   "plugin",
-   :rdfs/range   :lv2/Plugin})
+  {:db/ident           :lv2.ui/plugin,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The plugin a portNotification applies to.",
+   :rdfs/domain        :lv2.ui/PortNotification,
+   :rdfs/label         "plugin",
+   :rdfs/range         :lv2/Plugin,
+   :rdfs/subPropertyOf :lv2.ui/plugin})
 
 (def portIndex
   "The index of the port a portNotification applies to."
-  {:db/ident     :lv2.ui/portIndex,
-   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The index of the port a portNotification applies to.",
-   :rdfs/domain  :lv2.ui/PortNotification,
-   :rdfs/label   "port index",
-   :rdfs/range   :xsd/decimal})
+  {:db/ident           :lv2.ui/portIndex,
+   :rdf/type           [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "The index of the port a portNotification applies to.",
+   :rdfs/domain        :lv2.ui/PortNotification,
+   :rdfs/label         "port index",
+   :rdfs/range         :xsd/decimal,
+   :rdfs/subPropertyOf :lv2.ui/portIndex})
 
 (def portMap
   "A feature for accessing the index of a port by symbol."
@@ -212,12 +221,13 @@
 
 (def portNotification
   "Specifies a port notification that is required by a UI."
-  {:db/ident     :lv2.ui/portNotification,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+  {:db/ident :lv2.ui/portNotification,
+   :rdf/type [:owl/ObjectProperty :rdf/Property],
    :rdfs/comment "Specifies a port notification that is required by a UI.",
-   :rdfs/domain  :lv2.ui/UI,
-   :rdfs/label   "port notification",
-   :rdfs/range   :lv2.ui/PortNotification})
+   :rdfs/domain :lv2.ui/UI,
+   :rdfs/label "port notification",
+   :rdfs/range :lv2.ui/PortNotification,
+   :rdfs/subPropertyOf :lv2.ui/portNotification})
 
 (def portSubscribe
   "A feature for dynamically subscribing to updates from a port."
@@ -229,12 +239,13 @@
 
 (def protocol
   "The protocol to be used for this notification."
-  {:db/ident     :lv2.ui/protocol,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The protocol to be used for this notification.",
-   :rdfs/domain  :lv2.ui/PortNotification,
-   :rdfs/label   "protocol",
-   :rdfs/range   :lv2.ui/PortProtocol})
+  {:db/ident           :lv2.ui/protocol,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The protocol to be used for this notification.",
+   :rdfs/domain        :lv2.ui/PortNotification,
+   :rdfs/label         "protocol",
+   :rdfs/range         :lv2.ui/PortProtocol,
+   :rdfs/subPropertyOf :lv2.ui/protocol})
 
 (def requestValue
   "A feature to request a parameter value from the user via the host."
@@ -255,11 +266,12 @@
 
 (def scaleFactor
   "Scale factor for high resolution screens."
-  {:db/ident     :lv2.ui/scaleFactor,
-   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "Scale factor for high resolution screens.",
-   :rdfs/label   "scale factor",
-   :rdfs/range   :xsd/float})
+  {:db/ident           :lv2.ui/scaleFactor,
+   :rdf/type           [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "Scale factor for high resolution screens.",
+   :rdfs/label         "scale factor",
+   :rdfs/range         :xsd/float,
+   :rdfs/subPropertyOf :lv2.ui/scaleFactor})
 
 (def showInterface
   "An interface for showing and hiding a window for a UI."
@@ -278,25 +290,28 @@
 
 (def ui
   "Relates a plugin to a UI that applies to it."
-  {:db/ident     :lv2.ui/ui,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "Relates a plugin to a UI that applies to it.",
-   :rdfs/domain  :lv2/Plugin,
-   :rdfs/label   "user interface",
-   :rdfs/range   :lv2.ui/UI})
+  {:db/ident           :lv2.ui/ui,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "Relates a plugin to a UI that applies to it.",
+   :rdfs/domain        :lv2/Plugin,
+   :rdfs/label         "user interface",
+   :rdfs/range         :lv2.ui/UI,
+   :rdfs/subPropertyOf :lv2.ui/ui})
 
 (def updateRate
   "The target rate, in Hz, to send updates to the UI."
-  {:db/ident     :lv2.ui/updateRate,
-   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The target rate, in Hz, to send updates to the UI.",
-   :rdfs/label   "update rate",
-   :rdfs/range   :xsd/float})
+  {:db/ident           :lv2.ui/updateRate,
+   :rdf/type           [:owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "The target rate, in Hz, to send updates to the UI.",
+   :rdfs/label         "update rate",
+   :rdfs/range         :xsd/float,
+   :rdfs/subPropertyOf :lv2.ui/updateRate})
 
 (def windowTitle
   "The title for the window shown by LV2UI_Show_Interface."
-  {:db/ident     :lv2.ui/windowTitle,
-   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
+  {:db/ident :lv2.ui/windowTitle,
+   :rdf/type [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The title for the window shown by LV2UI_Show_Interface.",
-   :rdfs/label   "window title",
-   :rdfs/range   :xsd/string})
+   :rdfs/label "window title",
+   :rdfs/range :xsd/string,
+   :rdfs/subPropertyOf :lv2.ui/windowTitle})

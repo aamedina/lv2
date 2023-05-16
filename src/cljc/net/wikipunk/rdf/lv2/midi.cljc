@@ -26,49 +26,75 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI active sense message.",
    :rdfs/label      "Active Sense",
-   :rdfs/subClassOf :lv2.midi/SystemRealtime})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemRealtime
+                     :lv2.midi/ActiveSense
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def Aftertouch
   "MIDI aftertouch message."
   {:db/ident            :lv2.midi/Aftertouch,
    :lv2.midi/chunk      [{:lv2.midi/byteNumber 1,
-                          :lv2.midi/property   :lv2.midi/pressure}
+                          :lv2.midi/property :lv2.midi/pressure,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}
                          {:lv2.midi/byteNumber 0,
-                          :lv2.midi/property   :lv2.midi/noteNumber}],
+                          :lv2.midi/property :lv2.midi/noteNumber,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}],
    :lv2.midi/statusMask [-96],
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI aftertouch message.",
    :rdfs/label          "Aftertouch",
-   :rdfs/subClassOf     :lv2.midi/VoiceMessage})
+   :rdfs/subClassOf     [:rdfs/Resource
+                         :lv2.midi/VoiceMessage
+                         :lv2.midi/Aftertouch
+                         :lv2.midi/MidiEvent
+                         :lv2.atom/Atom
+                         :lv2.ev/Event]})
 
 (def Bender
   "MIDI bender message."
   {:db/ident            :lv2.midi/Bender,
    :lv2.midi/chunk      {:lv2.midi/byteNumber [1 0],
-                         :lv2.midi/property   :lv2.midi/benderValue},
+                         :lv2.midi/property :lv2.midi/benderValue,
+                         :rdf/type [:lv2.midi/Chunk :rdfs/Resource]},
    :lv2.midi/statusMask [-32],
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI bender message.",
    :rdfs/label          "Bender",
-   :rdfs/subClassOf     :lv2.midi/VoiceMessage})
+   :rdfs/subClassOf     [:lv2.midi/VoiceMessage
+                         :lv2.midi/Bender
+                         :lv2.midi/MidiEvent
+                         :lv2.atom/Atom
+                         :lv2.ev/Event
+                         :rdfs/Resource]})
 
 (def ChannelPressure
   "MIDI channel pressure message."
   {:db/ident            :lv2.midi/ChannelPressure,
    :lv2.midi/chunk      {:lv2.midi/byteNumber 0,
-                         :lv2.midi/property   :lv2.midi/pressure},
+                         :lv2.midi/property :lv2.midi/pressure,
+                         :rdf/type [:lv2.midi/Chunk :rdfs/Resource]},
    :lv2.midi/statusMask [-48],
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI channel pressure message.",
    :rdfs/label          "Channel Pressure",
-   :rdfs/subClassOf     :lv2.midi/VoiceMessage})
+   :rdfs/subClassOf     [:lv2.midi/VoiceMessage
+                         :lv2.midi/ChannelPressure
+                         :lv2.midi/MidiEvent
+                         :lv2.atom/Atom
+                         :lv2.ev/Event
+                         :rdfs/Resource]})
 
 (def Chunk
   "A sequence of contiguous bytes in a MIDI message."
-  {:db/ident     :lv2.midi/Chunk,
-   :rdf/type     :rdfs/Class,
-   :rdfs/comment "A sequence of contiguous bytes in a MIDI message.",
-   :rdfs/label   "Chunk"})
+  {:db/ident        :lv2.midi/Chunk,
+   :rdf/type        :rdfs/Class,
+   :rdfs/comment    "A sequence of contiguous bytes in a MIDI message.",
+   :rdfs/label      "Chunk",
+   :rdfs/subClassOf [:rdfs/Resource :lv2.midi/Chunk]})
 
 (def Clock
   "MIDI clock message."
@@ -77,7 +103,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI clock message.",
    :rdfs/label      "Clock",
-   :rdfs/subClassOf :lv2.midi/SystemRealtime})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemRealtime
+                     :lv2.midi/Clock
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def Continue
   "MIDI continue message."
@@ -86,20 +118,33 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI continue message.",
    :rdfs/label      "Continue",
-   :rdfs/subClassOf :lv2.midi/SystemRealtime})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemRealtime
+                     :lv2.midi/Continue
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def Controller
   "MIDI controller change message."
   {:db/ident            :lv2.midi/Controller,
    :lv2.midi/chunk      [{:lv2.midi/byteNumber 1,
-                          :lv2.midi/property   :lv2.midi/controllerValue}
+                          :lv2.midi/property :lv2.midi/controllerValue,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}
                          {:lv2.midi/byteNumber 0,
-                          :lv2.midi/property   :lv2.midi/controllerNumber}],
+                          :lv2.midi/property :lv2.midi/controllerNumber,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}],
    :lv2.midi/statusMask [-80],
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI controller change message.",
    :rdfs/label          "Controller",
-   :rdfs/subClassOf     :lv2.midi/VoiceMessage})
+   :rdfs/subClassOf     [:rdfs/Resource
+                         :lv2.midi/VoiceMessage
+                         :lv2.midi/Controller
+                         :lv2.midi/MidiEvent
+                         :lv2.atom/Atom
+                         :lv2.ev/Event]})
 
 (def HexByte
   "A hexadecimal byte, which has a value <= FF."
@@ -117,44 +162,67 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A single raw MIDI message.",
    :rdfs/label      "MIDI Message",
-   :rdfs/subClassOf [:lv2.atom/Atom :lv2.ev/Event]})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.atom/Atom
+                     :lv2.ev/Event
+                     :lv2.midi/MidiEvent]})
 
 (def NoteOff
   "MIDI note off message."
   {:db/ident            :lv2.midi/NoteOff,
    :lv2.midi/chunk      [{:lv2.midi/byteNumber 1,
-                          :lv2.midi/property   :lv2.midi/velocity}
+                          :lv2.midi/property :lv2.midi/velocity,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}
                          {:lv2.midi/byteNumber 0,
-                          :lv2.midi/property   :lv2.midi/noteNumber}],
+                          :lv2.midi/property :lv2.midi/noteNumber,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}],
    :lv2.midi/statusMask [-128],
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI note off message.",
    :rdfs/label          "Note Off",
-   :rdfs/subClassOf     :lv2.midi/VoiceMessage})
+   :rdfs/subClassOf     [:lv2.midi/VoiceMessage
+                         :lv2.midi/NoteOff
+                         :lv2.midi/MidiEvent
+                         :lv2.atom/Atom
+                         :lv2.ev/Event
+                         :rdfs/Resource]})
 
 (def NoteOn
   "MIDI note on message."
   {:db/ident            :lv2.midi/NoteOn,
    :lv2.midi/chunk      [{:lv2.midi/byteNumber 1,
-                          :lv2.midi/property   :lv2.midi/velocity}
+                          :lv2.midi/property :lv2.midi/velocity,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}
                          {:lv2.midi/byteNumber 0,
-                          :lv2.midi/property   :lv2.midi/noteNumber}],
+                          :lv2.midi/property :lv2.midi/noteNumber,
+                          :rdf/type [:lv2.midi/Chunk :rdfs/Resource]}],
    :lv2.midi/statusMask [-112],
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI note on message.",
    :rdfs/label          "Note On",
-   :rdfs/subClassOf     :lv2.midi/VoiceMessage})
+   :rdfs/subClassOf     [:lv2.midi/VoiceMessage
+                         :lv2.midi/NoteOn
+                         :lv2.midi/MidiEvent
+                         :lv2.atom/Atom
+                         :lv2.ev/Event
+                         :rdfs/Resource]})
 
 (def ProgramChange
   "MIDI program change message."
   {:db/ident            :lv2.midi/ProgramChange,
    :lv2.midi/chunk      {:lv2.midi/byteNumber 0,
-                         :lv2.midi/property   :lv2.midi/programNumber},
+                         :lv2.midi/property :lv2.midi/programNumber,
+                         :rdf/type [:lv2.midi/Chunk :rdfs/Resource]},
    :lv2.midi/statusMask [-64],
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI program change message.",
    :rdfs/label          "Program Change",
-   :rdfs/subClassOf     :lv2.midi/VoiceMessage})
+   :rdfs/subClassOf     [:lv2.midi/VoiceMessage
+                         :lv2.midi/ProgramChange
+                         :lv2.midi/MidiEvent
+                         :lv2.atom/Atom
+                         :lv2.ev/Event
+                         :rdfs/Resource]})
 
 (def QuarterFrame
   "MIDI quarter frame message."
@@ -163,7 +231,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI quarter frame message.",
    :rdfs/label      "Quarter Frame",
-   :rdfs/subClassOf :lv2.midi/SystemCommon})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemCommon
+                     :lv2.midi/QuarterFrame
+                     :lv2.midi/MidiEvent
+                     :lv2.midi/SystemMessage
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def Reset
   "MIDI reset message."
@@ -172,18 +246,31 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI reset message.",
    :rdfs/label      "Reset",
-   :rdfs/subClassOf :lv2.midi/SystemRealtime})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemRealtime
+                     :lv2.midi/Reset
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def SongPosition
   "MIDI song position pointer message."
   {:db/ident        :lv2.midi/SongPosition,
    :lv2.midi/chunk  {:lv2.midi/byteNumber [1 0],
-                     :lv2.midi/property   :lv2.midi/songPosition},
+                     :lv2.midi/property :lv2.midi/songPosition,
+                     :rdf/type [:lv2.midi/Chunk :rdfs/Resource]},
    :lv2.midi/status [-14],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI song position pointer message.",
    :rdfs/label      "Song Position",
-   :rdfs/subClassOf :lv2.midi/SystemCommon})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemCommon
+                     :lv2.midi/SongPosition
+                     :lv2.midi/MidiEvent
+                     :lv2.midi/SystemMessage
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def SongSelect
   "MIDI song select message."
@@ -192,7 +279,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI song select message.",
    :rdfs/label      "Song Select",
-   :rdfs/subClassOf :lv2.midi/SystemCommon})
+   :rdfs/subClassOf [:lv2.midi/SystemCommon
+                     :lv2.midi/SongSelect
+                     :lv2.midi/MidiEvent
+                     :lv2.midi/SystemMessage
+                     :lv2.atom/Atom
+                     :lv2.ev/Event
+                     :rdfs/Resource]})
 
 (def Start
   "MIDI start message."
@@ -201,7 +294,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI start message.",
    :rdfs/label      "Start",
-   :rdfs/subClassOf :lv2.midi/SystemRealtime})
+   :rdfs/subClassOf [:lv2.midi/SystemRealtime
+                     :lv2.midi/Start
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event
+                     :rdfs/Resource]})
 
 (def Stop
   "MIDI stop message."
@@ -210,7 +309,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI stop message.",
    :rdfs/label      "Stop",
-   :rdfs/subClassOf :lv2.midi/SystemRealtime})
+   :rdfs/subClassOf [:lv2.midi/SystemRealtime
+                     :lv2.midi/Stop
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event
+                     :rdfs/Resource]})
 
 (def SystemCommon
   "MIDI system common message."
@@ -218,7 +323,12 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI system common message.",
    :rdfs/label      "System Common",
-   :rdfs/subClassOf :lv2.midi/SystemMessage})
+   :rdfs/subClassOf [:lv2.midi/SystemMessage
+                     :lv2.midi/SystemCommon
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event
+                     :rdfs/Resource]})
 
 (def SystemExclusive
   "MIDI system exclusive message."
@@ -227,7 +337,12 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI system exclusive message.",
    :rdfs/label      "System Exclusive",
-   :rdfs/subClassOf :lv2.midi/SystemMessage})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/SystemExclusive
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def SystemMessage
   "MIDI system message."
@@ -236,7 +351,11 @@
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI system message.",
    :rdfs/label          "System Message",
-   :rdfs/subClassOf     :lv2.midi/MidiEvent})
+   :rdfs/subClassOf     [:lv2.midi/MidiEvent
+                         :lv2.midi/SystemMessage
+                         :lv2.atom/Atom
+                         :lv2.ev/Event
+                         :rdfs/Resource]})
 
 (def SystemRealtime
   "MIDI system realtime message."
@@ -244,7 +363,12 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI system realtime message.",
    :rdfs/label      "System Realtime",
-   :rdfs/subClassOf :lv2.midi/SystemMessage})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemMessage
+                     :lv2.midi/SystemRealtime
+                     :lv2.midi/MidiEvent
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def TuneRequest
   "MIDI tune request message."
@@ -253,7 +377,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "MIDI tune request message.",
    :rdfs/label      "Tune Request",
-   :rdfs/subClassOf :lv2.midi/SystemCommon})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.midi/SystemCommon
+                     :lv2.midi/TuneRequest
+                     :lv2.midi/MidiEvent
+                     :lv2.midi/SystemMessage
+                     :lv2.atom/Atom
+                     :lv2.ev/Event]})
 
 (def VoiceMessage
   "MIDI voice message."
@@ -262,134 +392,176 @@
    :rdf/type            :rdfs/Class,
    :rdfs/comment        "MIDI voice message.",
    :rdfs/label          "Voice Message",
-   :rdfs/subClassOf     :lv2.midi/MidiEvent})
+   :rdfs/subClassOf     [:rdfs/Resource
+                         :lv2.midi/MidiEvent
+                         :lv2.midi/VoiceMessage
+                         :lv2.atom/Atom
+                         :lv2.ev/Event]})
 
 (def benderValue
   "MIDI pitch bender message (-8192 to 8192)."
-  {:db/ident     :lv2.midi/benderValue,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "MIDI pitch bender message (-8192 to 8192).",
-   :rdfs/label   "bender value",
-   :rdfs/range   :xsd/short})
+  {:db/ident           :lv2.midi/benderValue,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "MIDI pitch bender message (-8192 to 8192).",
+   :rdfs/label         "bender value",
+   :rdfs/range         :xsd/short,
+   :rdfs/subPropertyOf :lv2.midi/benderValue})
 
 (def binding
   "The MIDI event to bind a parameter to."
-  {:db/ident     :lv2.midi/binding,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The MIDI event to bind a parameter to.",
-   :rdfs/label   "binding",
-   :rdfs/range   :lv2.midi/MidiEvent})
+  {:db/ident           :lv2.midi/binding,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The MIDI event to bind a parameter to.",
+   :rdfs/label         "binding",
+   :rdfs/range         :lv2.midi/MidiEvent,
+   :rdfs/subPropertyOf :lv2.midi/binding})
 
 (def byteNumber
   "The 0-based index of a byte which is part of this chunk."
-  {:db/ident     :lv2.midi/byteNumber,
-   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
+  {:db/ident :lv2.midi/byteNumber,
+   :rdf/type [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The 0-based index of a byte which is part of this chunk.",
-   :rdfs/domain  :lv2.midi/Chunk,
-   :rdfs/label   "byte number",
-   :rdfs/range   :xsd/unsignedByte})
+   :rdfs/domain :lv2.midi/Chunk,
+   :rdfs/label "byte number",
+   :rdfs/range :xsd/unsignedByte,
+   :rdfs/subPropertyOf :lv2.midi/byteNumber})
 
 (def channel
   "The channel number of a MIDI message."
-  {:db/ident     :lv2.midi/channel,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The channel number of a MIDI message.",
-   :rdfs/label   "MIDI channel",
-   :rdfs/range   :xsd/unsignedByte})
+  {:db/ident           :lv2.midi/channel,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The channel number of a MIDI message.",
+   :rdfs/label         "MIDI channel",
+   :rdfs/range         :xsd/unsignedByte,
+   :rdfs/subPropertyOf :lv2.midi/channel})
 
 (def chunk
   "A chunk of a MIDI message."
-  {:db/ident     :lv2.midi/chunk,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "A chunk of a MIDI message.",
-   :rdfs/label   "MIDI chunk",
-   :rdfs/range   :lv2.midi/Chunk})
+  {:db/ident           :lv2.midi/chunk,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "A chunk of a MIDI message.",
+   :rdfs/label         "MIDI chunk",
+   :rdfs/range         :lv2.midi/Chunk,
+   :rdfs/subPropertyOf :lv2.midi/chunk})
 
 (def controllerNumber
   "The numeric ID of a controller (0 to 127)."
-  {:db/ident     :lv2.midi/controllerNumber,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The numeric ID of a controller (0 to 127).",
-   :rdfs/label   "MIDI controller number",
-   :rdfs/range   :xsd/byte})
+  {:db/ident           :lv2.midi/controllerNumber,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The numeric ID of a controller (0 to 127).",
+   :rdfs/label         "MIDI controller number",
+   :rdfs/range         :xsd/byte,
+   :rdfs/subPropertyOf :lv2.midi/controllerNumber})
 
 (def controllerValue
   "The value of a controller (0 to 127)."
-  {:db/ident     :lv2.midi/controllerValue,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The value of a controller (0 to 127).",
-   :rdfs/label   "MIDI controller value",
-   :rdfs/range   :xsd/byte})
+  {:db/ident           :lv2.midi/controllerValue,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The value of a controller (0 to 127).",
+   :rdfs/label         "MIDI controller value",
+   :rdfs/range         :xsd/byte,
+   :rdfs/subPropertyOf :lv2.midi/controllerValue})
 
 (def noteNumber
   "The numeric ID of a note (0 to 127)."
-  {:db/ident     :lv2.midi/noteNumber,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The numeric ID of a note (0 to 127).",
-   :rdfs/label   "note number",
-   :rdfs/range   :xsd/byte})
+  {:db/ident           :lv2.midi/noteNumber,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The numeric ID of a note (0 to 127).",
+   :rdfs/label         "note number",
+   :rdfs/range         :xsd/byte,
+   :rdfs/subPropertyOf :lv2.midi/noteNumber})
 
 (def pressure
   "Key pressure (0 to 127)."
-  {:db/ident     :lv2.midi/pressure,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "Key pressure (0 to 127).",
-   :rdfs/label   "key pressure",
-   :rdfs/range   :xsd/byte})
+  {:db/ident           :lv2.midi/pressure,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "Key pressure (0 to 127).",
+   :rdfs/label         "key pressure",
+   :rdfs/range         :xsd/byte,
+   :rdfs/subPropertyOf :lv2.midi/pressure})
 
 (def programNumber
   "The numeric ID of a program (0 to 127)."
-  {:db/ident     :lv2.midi/programNumber,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The numeric ID of a program (0 to 127).",
-   :rdfs/label   "program number",
-   :rdfs/range   :xsd/byte})
+  {:db/ident           :lv2.midi/programNumber,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The numeric ID of a program (0 to 127).",
+   :rdfs/label         "program number",
+   :rdfs/range         :xsd/byte,
+   :rdfs/subPropertyOf :lv2.midi/programNumber})
 
 (def property
   "The property this chunk represents."
-  {:db/ident     :lv2.midi/property,
-   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The property this chunk represents.",
-   :rdfs/domain  :lv2.midi/Chunk,
-   :rdfs/label   "property",
-   :rdfs/range   :rdf/Property})
+  {:db/ident           :lv2.midi/property,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/ObjectProperty
+                        :rdf/Property],
+   :rdfs/comment       "The property this chunk represents.",
+   :rdfs/domain        :lv2.midi/Chunk,
+   :rdfs/label         "property",
+   :rdfs/range         :rdf/Property,
+   :rdfs/subPropertyOf :lv2.midi/property})
 
 (def songNumber
   "The numeric ID of a song (0 to 127)."
-  {:db/ident     :lv2.midi/songNumber,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The numeric ID of a song (0 to 127).",
-   :rdfs/label   "song number",
-   :rdfs/range   :xsd/byte})
+  {:db/ident           :lv2.midi/songNumber,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The numeric ID of a song (0 to 127).",
+   :rdfs/label         "song number",
+   :rdfs/range         :xsd/byte,
+   :rdfs/subPropertyOf :lv2.midi/songNumber})
 
 (def songPosition
   "Song position in MIDI beats (16th notes) (-8192 to 8192)."
-  {:db/ident     :lv2.midi/songPosition,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+  {:db/ident :lv2.midi/songPosition,
+   :rdf/type [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "Song position in MIDI beats (16th notes) (-8192 to 8192).",
-   :rdfs/label   "song position",
-   :rdfs/range   :xsd/short})
+   :rdfs/label "song position",
+   :rdfs/range :xsd/short,
+   :rdfs/subPropertyOf :lv2.midi/songPosition})
 
 (def status
   "The exact status byte for a message of this type."
-  {:db/ident     :lv2.midi/status,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The exact status byte for a message of this type.",
-   :rdfs/label   "status byte",
-   :rdfs/range   :lv2.midi/HexByte})
+  {:db/ident           :lv2.midi/status,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The exact status byte for a message of this type.",
+   :rdfs/label         "status byte",
+   :rdfs/range         :lv2.midi/HexByte,
+   :rdfs/subPropertyOf :lv2.midi/status})
 
 (def statusMask
   "The status byte for a message of this type on channel 1."
-  {:db/ident     :lv2.midi/statusMask,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+  {:db/ident :lv2.midi/statusMask,
+   :rdf/type [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The status byte for a message of this type on channel 1.",
-   :rdfs/label   "status mask",
-   :rdfs/range   :lv2.midi/HexByte})
+   :rdfs/label "status mask",
+   :rdfs/range :lv2.midi/HexByte,
+   :rdfs/subPropertyOf :lv2.midi/statusMask})
 
 (def velocity
   "The velocity of a note message (0 to 127)."
-  {:db/ident     :lv2.midi/velocity,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The velocity of a note message (0 to 127).",
-   :rdfs/label   "velocity",
-   :rdfs/range   :lv2.midi/HexByte})
+  {:db/ident           :lv2.midi/velocity,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The velocity of a note message (0 to 127).",
+   :rdfs/label         "velocity",
+   :rdfs/range         :lv2.midi/HexByte,
+   :rdfs/subPropertyOf :lv2.midi/velocity})

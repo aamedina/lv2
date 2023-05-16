@@ -25,16 +25,20 @@
    "Port that this port must have at least as much buffer space as.",
    :rdfs/domain :lv2/Port,
    :rdfs/label "as large as",
-   :rdfs/range :lv2/Symbol})
+   :rdfs/range :lv2/Symbol,
+   :rdfs/subPropertyOf :lv2.rsz/asLargeAs})
 
 (def minimumSize
   "Minimum buffer size required by a port, in bytes."
-  {:db/ident     :lv2.rsz/minimumSize,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "Minimum buffer size required by a port, in bytes.",
-   :rdfs/domain  :lv2/Port,
-   :rdfs/label   "minimum size",
-   :rdfs/range   :xsd/nonNegativeInteger})
+  {:db/ident           :lv2.rsz/minimumSize,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "Minimum buffer size required by a port, in bytes.",
+   :rdfs/domain        :lv2/Port,
+   :rdfs/label         "minimum size",
+   :rdfs/range         :xsd/nonNegativeInteger,
+   :rdfs/subPropertyOf :lv2.rsz/minimumSize})
 
 (def resize
   "A feature for resizing output port buffers."

@@ -23,11 +23,12 @@
 
 (def Atom
   "Abstract base class for all atoms."
-  {:db/ident       :lv2.atom/Atom,
-   :lv2.atom/cType "LV2_Atom",
-   :rdf/type       :rdfs/Class,
-   :rdfs/comment   "Abstract base class for all atoms.",
-   :rdfs/label     "Atom"})
+  {:db/ident        :lv2.atom/Atom,
+   :lv2.atom/cType  "LV2_Atom",
+   :rdf/type        :rdfs/Class,
+   :rdfs/comment    "Abstract base class for all atoms.",
+   :rdfs/label      "Atom",
+   :rdfs/subClassOf [:rdfs/Resource :lv2.atom/Atom]})
 
 (def AtomPort
   "A port which contains an atom:Atom."
@@ -35,7 +36,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A port which contains an atom:Atom.",
    :rdfs/label      "Atom Port",
-   :rdfs/subClassOf :lv2/Port})
+   :rdfs/subClassOf [:rdfs/Resource :lv2/Port :lv2.atom/AtomPort]})
 
 (def Blank
   "An anonymous collection of properties without a URI."
@@ -45,7 +46,10 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "An anonymous collection of properties without a URI.",
    :rdfs/label      "Blank",
-   :rdfs/subClassOf :lv2.atom/Object})
+   :rdfs/subClassOf [:lv2.atom/Object
+                     :lv2.atom/Blank
+                     :lv2.atom/Atom
+                     :rdfs/Resource]})
 
 (def Bool
   "An atom:Int where 0 is false and any other value is true."
@@ -55,7 +59,7 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "An atom:Int where 0 is false and any other value is true.",
    :rdfs/label      "Bool",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:lv2.atom/Atom :lv2.atom/Bool :rdfs/Resource]})
 
 (def Chunk
   "A chunk of memory with undefined contents."
@@ -64,7 +68,7 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A chunk of memory with undefined contents.",
    :rdfs/label      "Chunk",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.atom/Atom :lv2.atom/Chunk]})
 
 (def DoubleClass
   "A native `double`."
@@ -74,15 +78,19 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A native `double`.",
    :rdfs/label      "Double",
-   :rdfs/subClassOf :lv2.atom/Number})
+   :rdfs/subClassOf [:lv2.atom/Number
+                     :lv2.atom/Double
+                     :lv2.atom/Atom
+                     :rdfs/Resource]})
 
 (def Event
   "An atom with a time stamp prefix in a sequence."
-  {:db/ident       :lv2.atom/Event,
-   :lv2.atom/cType "LV2_Atom_Event",
-   :rdf/type       :rdfs/Class,
-   :rdfs/comment   "An atom with a time stamp prefix in a sequence.",
-   :rdfs/label     "Event"})
+  {:db/ident        :lv2.atom/Event,
+   :lv2.atom/cType  "LV2_Atom_Event",
+   :rdf/type        :rdfs/Class,
+   :rdfs/comment    "An atom with a time stamp prefix in a sequence.",
+   :rdfs/label      "Event",
+   :rdfs/subClassOf [:rdfs/Resource :lv2.atom/Event]})
 
 (def FloatClass
   "A native `float`."
@@ -92,7 +100,10 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A native `float`.",
    :rdfs/label      "Float",
-   :rdfs/subClassOf :lv2.atom/Number})
+   :rdfs/subClassOf [:rdfs/Resource
+                     :lv2.atom/Number
+                     :lv2.atom/Float
+                     :lv2.atom/Atom]})
 
 (def Int
   "A native `int32_t`."
@@ -102,7 +113,10 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A native `int32_t`.",
    :rdfs/label      "Int",
-   :rdfs/subClassOf :lv2.atom/Number})
+   :rdfs/subClassOf [:lv2.atom/Number
+                     :lv2.atom/Int
+                     :lv2.atom/Atom
+                     :rdfs/Resource]})
 
 (def Literal
   "A UTF-8 string literal with optional datatype or language."
@@ -111,7 +125,7 @@
    :rdf/type :rdfs/Class,
    :rdfs/comment "A UTF-8 string literal with optional datatype or language.",
    :rdfs/label "Literal",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.atom/Atom :lv2.atom/Literal]})
 
 (def LongClass
   "A native `int64_t`."
@@ -121,7 +135,10 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A native `int64_t`.",
    :rdfs/label      "Long",
-   :rdfs/subClassOf :lv2.atom/Number})
+   :rdfs/subClassOf [:lv2.atom/Number
+                     :lv2.atom/Long
+                     :lv2.atom/Atom
+                     :rdfs/Resource]})
 
 (def NumberClass
   "Base class for numeric types."
@@ -129,7 +146,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Base class for numeric types.",
    :rdfs/label      "Number",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:lv2.atom/Atom :lv2.atom/Number :rdfs/Resource]})
 
 (def ObjectClass
   "A collection of properties."
@@ -138,7 +155,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A collection of properties.",
    :rdfs/label      "Object",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.atom/Atom :lv2.atom/Object]})
 
 (def Path
   "A local file path."
@@ -147,7 +164,11 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A local file path.",
    :rdfs/label      "Path",
-   :rdfs/subClassOf :lv2.atom/URI})
+   :rdfs/subClassOf [:lv2.atom/URI
+                     :lv2.atom/Path
+                     :lv2.atom/Atom
+                     :rdfs/Resource
+                     :lv2.atom/String]})
 
 (def Property
   "A property of an atom:Object."
@@ -156,7 +177,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A property of an atom:Object.",
    :rdfs/label      "Property",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:lv2.atom/Atom :lv2.atom/Property :rdfs/Resource]})
 
 (def Resource
   "A named collection of properties with a URI."
@@ -166,7 +187,10 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A named collection of properties with a URI.",
    :rdfs/label      "Resource",
-   :rdfs/subClassOf :lv2.atom/Object})
+   :rdfs/subClassOf [:lv2.atom/Object
+                     :lv2.atom/Resource
+                     :lv2.atom/Atom
+                     :rdfs/Resource]})
 
 (def Sequence
   "A sequence of events."
@@ -175,7 +199,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A sequence of events.",
    :rdfs/label      "Sequence",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.atom/Atom :lv2.atom/Sequence]})
 
 (def Sound
   "A atom:Vector of atom:Float which represents an audio waveform."
@@ -185,7 +209,8 @@
    :rdfs/comment
    "A atom:Vector of atom:Float which represents an audio waveform.",
    :rdfs/label "Sound",
-   :rdfs/subClassOf :lv2.atom/Vector})
+   :rdfs/subClassOf
+   [:rdfs/Resource :lv2.atom/Vector :lv2.atom/Sound :lv2.atom/Atom]})
 
 (def StringClass
   "A UTF-8 string."
@@ -195,7 +220,7 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A UTF-8 string.",
    :rdfs/label      "String",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:lv2.atom/Atom :lv2.atom/String :rdfs/Resource]})
 
 (def Tuple
   "A sequence of atoms with varying type and size."
@@ -203,7 +228,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A sequence of atoms with varying type and size.",
    :rdfs/label      "Tuple",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:lv2.atom/Atom :lv2.atom/Tuple :rdfs/Resource]})
 
 (def URI
   "A URI string."
@@ -212,7 +237,10 @@
    :rdf/type        [:rdfs/Datatype :rdfs/Class],
    :rdfs/comment    "A URI string.",
    :rdfs/label      "URI",
-   :rdfs/subClassOf :lv2.atom/String})
+   :rdfs/subClassOf [:lv2.atom/String
+                     :lv2.atom/URI
+                     :lv2.atom/Atom
+                     :rdfs/Resource]})
 
 (def URID
   "An unsigned 32-bit integer ID for a URI."
@@ -221,7 +249,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "An unsigned 32-bit integer ID for a URI.",
    :rdfs/label      "URID",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:lv2.atom/Atom :lv2.atom/URID :rdfs/Resource]})
 
 (def Vector
   "A homogeneous sequence of atom bodies with equivalent type and size."
@@ -231,7 +259,7 @@
    :rdfs/comment
    "A homogeneous sequence of atom bodies with equivalent type and size.",
    :rdfs/label "Vector",
-   :rdfs/subClassOf :lv2.atom/Atom})
+   :rdfs/subClassOf [:lv2.atom/Atom :lv2.atom/Vector :rdfs/Resource]})
 
 (def atomTransfer
   "A port protocol for transferring atoms."
@@ -242,20 +270,24 @@
 
 (def beatTime
   "A time stamp in beats."
-  {:db/ident     :lv2.atom/beatTime,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "A time stamp in beats.",
-   :rdfs/label   "beat time",
-   :rdfs/range   :xsd/decimal})
+  {:db/ident           :lv2.atom/beatTime,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "A time stamp in beats.",
+   :rdfs/label         "beat time",
+   :rdfs/range         :xsd/decimal,
+   :rdfs/subPropertyOf :lv2.atom/beatTime})
 
 (def bufferType
   "An atom type that a port may be connected to."
-  {:db/ident     :lv2.atom/bufferType,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "An atom type that a port may be connected to.",
-   :rdfs/domain  :lv2.atom/AtomPort,
-   :rdfs/label   "buffer type",
-   :rdfs/range   :rdfs/Class})
+  {:db/ident           :lv2.atom/bufferType,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "An atom type that a port may be connected to.",
+   :rdfs/domain        :lv2.atom/AtomPort,
+   :rdfs/label         "buffer type",
+   :rdfs/range         :rdfs/Class,
+   :rdfs/subPropertyOf :lv2.atom/bufferType})
 
 (def cType
   "The C type that describes the binary representation of an Atom type."
@@ -265,14 +297,16 @@
    "The C type that describes the binary representation of an Atom type.",
    :rdfs/domain :rdfs/Class,
    :rdfs/label "C type",
-   :rdfs/range :lv2/Symbol})
+   :rdfs/range :lv2/Symbol,
+   :rdfs/subPropertyOf :lv2.atom/cType})
 
 (def childType
   "The type of children in a container."
-  {:db/ident     :lv2.atom/childType,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The type of children in a container.",
-   :rdfs/label   "child type"})
+  {:db/ident           :lv2.atom/childType,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The type of children in a container.",
+   :rdfs/label         "child type",
+   :rdfs/subPropertyOf :lv2.atom/childType})
 
 (def eventTransfer
   "A port protocol for transferring events."
@@ -283,16 +317,20 @@
 
 (def frameTime
   "A time stamp in audio frames."
-  {:db/ident     :lv2.atom/frameTime,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "A time stamp in audio frames.",
-   :rdfs/label   "frame time",
-   :rdfs/range   :xsd/decimal})
+  {:db/ident           :lv2.atom/frameTime,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "A time stamp in audio frames.",
+   :rdfs/label         "frame time",
+   :rdfs/range         :xsd/decimal,
+   :rdfs/subPropertyOf :lv2.atom/frameTime})
 
 (def supports
   "A supported atom type."
-  {:db/ident     :lv2.atom/supports,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "A supported atom type.",
-   :rdfs/label   "supports",
-   :rdfs/range   :rdfs/Class})
+  {:db/ident           :lv2.atom/supports,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "A supported atom type.",
+   :rdfs/label         "supports",
+   :rdfs/range         :rdfs/Class,
+   :rdfs/subPropertyOf :lv2.atom/supports})

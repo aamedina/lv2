@@ -29,7 +29,9 @@
    [net.wikipunk.rdf :as rdf :refer [doc]]
    [net.wikipunk.mop :as mop :refer [isa? descendants ancestors parents]]
    [net.wikipunk.lv2.boot :as boot]
-   [net.wikipunk.lv2 :as lv2])
+   [net.wikipunk.lv2 :as lv2]
+   [net.wikipunk.punk.db :as db]
+   [datomic.client.api :as d])
   (:refer-clojure :exclude [isa? descendants ancestors parents]))
 
 (set-init

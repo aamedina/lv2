@@ -42,27 +42,30 @@
 
 (def maxBlockLength
   "Block length has an upper bound."
-  {:db/ident     :lv2.bufsz/maxBlockLength,
-   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "Block length has an upper bound.",
-   :rdfs/label   "maximum block length",
-   :rdfs/range   :xsd/nonNegativeInteger})
+  {:db/ident           :lv2.bufsz/maxBlockLength,
+   :rdf/type           [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "Block length has an upper bound.",
+   :rdfs/label         "maximum block length",
+   :rdfs/range         :xsd/nonNegativeInteger,
+   :rdfs/subPropertyOf :lv2.bufsz/maxBlockLength})
 
 (def minBlockLength
   "Block length has a lower bound."
-  {:db/ident     :lv2.bufsz/minBlockLength,
-   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "Block length has a lower bound.",
-   :rdfs/label   "minimum block length",
-   :rdfs/range   :xsd/nonNegativeInteger})
+  {:db/ident           :lv2.bufsz/minBlockLength,
+   :rdf/type           [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "Block length has a lower bound.",
+   :rdfs/label         "minimum block length",
+   :rdfs/range         :xsd/nonNegativeInteger,
+   :rdfs/subPropertyOf :lv2.bufsz/minBlockLength})
 
 (def nominalBlockLength
   "Typical block length that will most often be processed."
-  {:db/ident     :lv2.bufsz/nominalBlockLength,
-   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
+  {:db/ident :lv2.bufsz/nominalBlockLength,
+   :rdf/type [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "Typical block length that will most often be processed.",
-   :rdfs/label   "nominal block length",
-   :rdfs/range   :xsd/nonNegativeInteger})
+   :rdfs/label "nominal block length",
+   :rdfs/range :xsd/nonNegativeInteger,
+   :rdfs/subPropertyOf :lv2.bufsz/nominalBlockLength})
 
 (def powerOf2BlockLength
   "Block length is a power of 2."
@@ -73,8 +76,9 @@
 
 (def sequenceSize
   "The maximum size of a sequence, in bytes."
-  {:db/ident     :lv2.bufsz/sequenceSize,
-   :rdf/type     [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The maximum size of a sequence, in bytes.",
-   :rdfs/label   "sequence size",
-   :rdfs/range   :xsd/nonNegativeInteger})
+  {:db/ident           :lv2.bufsz/sequenceSize,
+   :rdf/type           [:lv2.opts/Option :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment       "The maximum size of a sequence, in bytes.",
+   :rdfs/label         "sequence size",
+   :rdfs/range         :xsd/nonNegativeInteger,
+   :rdfs/subPropertyOf :lv2.bufsz/sequenceSize})

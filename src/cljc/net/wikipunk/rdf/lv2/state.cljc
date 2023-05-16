@@ -18,10 +18,11 @@
 
 (def State
   "LV2 plugin state."
-  {:db/ident     :lv2.state/State,
-   :rdf/type     :rdfs/Class,
-   :rdfs/comment "LV2 plugin state.",
-   :rdfs/label   "State"})
+  {:db/ident        :lv2.state/State,
+   :rdf/type        :rdfs/Class,
+   :rdfs/comment    "LV2 plugin state.",
+   :rdfs/label      "State",
+   :rdfs/subClassOf [:rdfs/Resource :lv2.state/State]})
 
 (def StateChanged
   "A notification that the internal state of the plugin has changed."
@@ -29,7 +30,8 @@
    :rdf/type :rdfs/Class,
    :rdfs/comment
    "A notification that the internal state of the plugin has changed.",
-   :rdfs/label "State Changed"})
+   :rdfs/label "State Changed",
+   :rdfs/subClassOf [:rdfs/Resource :lv2.state/StateChanged]})
 
 (def freePath
   "A feature for freeing paths allocated by the host."
@@ -69,11 +71,12 @@
 
 (def state
   "The state of an LV2 plugin instance."
-  {:db/ident     :lv2.state/state,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The state of an LV2 plugin instance.",
-   :rdfs/label   "state",
-   :rdfs/range   :lv2.state/State})
+  {:db/ident           :lv2.state/state,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The state of an LV2 plugin instance.",
+   :rdfs/label         "state",
+   :rdfs/range         :lv2.state/State,
+   :rdfs/subPropertyOf :lv2.state/state})
 
 (def threadSafeRestore
   "A feature indicating support for thread-safe state restoration."

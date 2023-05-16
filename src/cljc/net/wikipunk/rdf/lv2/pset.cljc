@@ -23,11 +23,13 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A bank of presets.",
    :rdfs/label      "Bank",
-   :rdfs/subClassOf {:owl/minCardinality 1,
-                     :owl/onProperty :rdfs/label,
-                     :rdf/type :owl/Restriction,
-                     :rdfs/comment
-                     "A Bank MUST have at least one string rdfs:label."}})
+   :rdfs/subClassOf [:rdfs/Resource
+                     {:owl/minCardinality 1,
+                      :owl/onProperty :rdfs/label,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment
+                      "A Bank MUST have at least one string rdfs:label."}
+                     :lv2.pset/Bank]})
 
 (def Preset
   "A preset for an LV2 plugin."
@@ -35,35 +37,42 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A preset for an LV2 plugin.",
    :rdfs/label      "Preset",
-   :rdfs/subClassOf [{:owl/minCardinality 1,
+   :rdfs/subClassOf [:rdfs/Resource
+                     {:owl/minCardinality 1,
                       :owl/onProperty :rdfs/label,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Preset MUST have at least one string rdfs:label."}
-                     :lv2/PluginBase]})
+                     :lv2/PluginBase
+                     :lv2.pset/Preset]})
 
 (def bank
   "The bank this preset belongs to."
-  {:db/ident     :lv2.pset/bank,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The bank this preset belongs to.",
-   :rdfs/domain  :lv2.pset/Preset,
-   :rdfs/label   "bank",
-   :rdfs/range   :lv2.pset/Bank})
+  {:db/ident           :lv2.pset/bank,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The bank this preset belongs to.",
+   :rdfs/domain        :lv2.pset/Preset,
+   :rdfs/label         "bank",
+   :rdfs/range         :lv2.pset/Bank,
+   :rdfs/subPropertyOf :lv2.pset/bank})
 
 (def preset
   "The preset currently applied to a plugin instance."
-  {:db/ident     :lv2.pset/preset,
-   :rdf/type     [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment "The preset currently applied to a plugin instance.",
-   :rdfs/domain  :lv2/PluginBase,
-   :rdfs/label   "preset",
-   :rdfs/range   :lv2.pset/Preset})
+  {:db/ident           :lv2.pset/preset,
+   :rdf/type           [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment       "The preset currently applied to a plugin instance.",
+   :rdfs/domain        :lv2/PluginBase,
+   :rdfs/label         "preset",
+   :rdfs/range         :lv2.pset/Preset,
+   :rdfs/subPropertyOf :lv2.pset/preset})
 
 (def value
   "The value of a port in a preset."
-  {:db/ident     :lv2.pset/value,
-   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
-   :rdfs/comment "The value of a port in a preset.",
-   :rdfs/domain  :lv2/PortBase,
-   :rdfs/label   "value"})
+  {:db/ident           :lv2.pset/value,
+   :rdf/type           [:owl/FunctionalProperty
+                        :owl/DatatypeProperty
+                        :rdf/Property],
+   :rdfs/comment       "The value of a port in a preset.",
+   :rdfs/domain        :lv2/PortBase,
+   :rdfs/label         "value",
+   :rdfs/subPropertyOf :lv2.pset/value})
