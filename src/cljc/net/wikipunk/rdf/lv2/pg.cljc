@@ -214,12 +214,12 @@
    :rdfs/label "Ambisonic BH1P0",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH1P0Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicBH1P1Group
@@ -268,12 +268,12 @@
    :rdfs/label "Ambisonic BH1P1",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH1P1Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicBH2P0Group
@@ -331,20 +331,20 @@
    :rdfs/label "Ambisonic BH2P0",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH2P0Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicBH2P1Group
   "Ambisonic B stream of horizontal order 2 and peripheral order 1."
   {:db/ident :lv2.pg/AmbisonicBH2P1Group,
    :lv2.pg/element
-   [{:lv2/designation :lv2.pg/ACN1,
-     :lv2/index       1,
+   [{:lv2/designation :lv2.pg/ACN0,
+     :lv2/index       0,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -361,8 +361,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN0,
-     :lv2/index       0,
+    {:lv2/designation :lv2.pg/ACN1,
+     :lv2/index       1,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -379,8 +379,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN3,
-     :lv2/index       3,
+    {:lv2/designation :lv2.pg/ACN8,
+     :lv2/index       5,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -388,8 +388,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN8,
-     :lv2/index       5,
+    {:lv2/designation :lv2.pg/ACN3,
+     :lv2/index       3,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -403,20 +403,20 @@
    :rdfs/label "Ambisonic BH2P1",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH2P1Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicBH2P2Group
   "Ambisonic B stream of horizontal order 2 and peripheral order 2."
   {:db/ident :lv2.pg/AmbisonicBH2P2Group,
    :lv2.pg/element
-   [{:lv2/designation :lv2.pg/ACN7,
-     :lv2/index       7,
+   [{:lv2/designation :lv2.pg/ACN6,
+     :lv2/index       6,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -424,8 +424,26 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN0,
-     :lv2/index       0,
+    {:lv2/designation :lv2.pg/ACN3,
+     :lv2/index       3,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN4,
+     :lv2/index       4,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN7,
+     :lv2/index       7,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -442,35 +460,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN8,
-     :lv2/index       8,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/ACN1,
      :lv2/index       1,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN4,
-     :lv2/index       4,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN6,
-     :lv2/index       6,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -487,8 +478,17 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN3,
-     :lv2/index       3,
+    {:lv2/designation :lv2.pg/ACN0,
+     :lv2/index       0,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN8,
+     :lv2/index       8,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -502,29 +502,20 @@
    :rdfs/label "Ambisonic BH2P2",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH2P2Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicBH3P0Group
   "Ambisonic B stream of horizontal order 3 and peripheral order 0."
   {:db/ident :lv2.pg/AmbisonicBH3P0Group,
    :lv2.pg/element
-   [{:lv2/designation :lv2.pg/ACN0,
-     :lv2/index       0,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN9,
-     :lv2/index       5,
+   [{:lv2/designation :lv2.pg/ACN3,
+     :lv2/index       2,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -534,24 +525,6 @@
                        :rdfs/Resource]}
     {:lv2/designation :lv2.pg/ACN8,
      :lv2/index       4,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN1,
-     :lv2/index       1,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN4,
-     :lv2/index       3,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -568,53 +541,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN3,
-     :lv2/index       2,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}],
-   :rdf/type :rdfs/Class,
-   :rdfs/comment
-   "Ambisonic B stream of horizontal order 3 and peripheral order 0.",
-   :rdfs/label "Ambisonic BH3P0",
-   :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
-                     :lv2.pg/AmbisonicBH3P0Group
-                     :lv2.pg/Group
-                     {:owl/cardinality 1,
-                      :owl/onProperty :lv2/symbol,
-                      :rdf/type :owl/Restriction,
-                      :rdfs/comment
-                      "A Group MUST have exactly one string lv2:symbol."}
-                     :rdfs/Resource]})
-
-(def AmbisonicBH3P1Group
-  "Ambisonic B stream of horizontal order 3 and peripheral order 1."
-  {:db/ident :lv2.pg/AmbisonicBH3P1Group,
-   :lv2.pg/element
-   [{:lv2/designation :lv2.pg/ACN15,
-     :lv2/index       7,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/ACN9,
-     :lv2/index       6,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN4,
-     :lv2/index       4,
+     :lv2/index       5,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -640,8 +568,35 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN2,
-     :lv2/index       2,
+    {:lv2/designation :lv2.pg/ACN4,
+     :lv2/index       3,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}],
+   :rdf/type :rdfs/Class,
+   :rdfs/comment
+   "Ambisonic B stream of horizontal order 3 and peripheral order 0.",
+   :rdfs/label "Ambisonic BH3P0",
+   :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
+                     :lv2.pg/AmbisonicBH3P0Group
+                     {:owl/cardinality 1,
+                      :owl/onProperty :lv2/symbol,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment
+                      "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
+                     :rdfs/Resource]})
+
+(def AmbisonicBH3P1Group
+  "Ambisonic B stream of horizontal order 3 and peripheral order 1."
+  {:db/ident :lv2.pg/AmbisonicBH3P1Group,
+   :lv2.pg/element
+   [{:lv2/designation :lv2.pg/ACN1,
+     :lv2/index       1,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -658,8 +613,53 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN0,
+     :lv2/index       0,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN2,
+     :lv2/index       2,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/ACN3,
      :lv2/index       3,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN9,
+     :lv2/index       6,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN15,
+     :lv2/index       7,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN4,
+     :lv2/index       4,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -673,28 +673,19 @@
    :rdfs/label "Ambisonic BH3P1",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH3P1Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicBH3P2Group
   "Ambisonic B stream of horizontal order 3 and peripheral order 2."
   {:db/ident :lv2.pg/AmbisonicBH3P2Group,
    :lv2.pg/element
-   [{:lv2/designation :lv2.pg/ACN4,
-     :lv2/index       4,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN0,
+   [{:lv2/designation :lv2.pg/ACN0,
      :lv2/index       0,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
@@ -703,8 +694,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN3,
-     :lv2/index       3,
+    {:lv2/designation :lv2.pg/ACN8,
+     :lv2/index       8,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -712,8 +703,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN2,
-     :lv2/index       2,
+    {:lv2/designation :lv2.pg/ACN9,
+     :lv2/index       9,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -739,26 +730,17 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN5,
-     :lv2/index       5,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN8,
-     :lv2/index       8,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/ACN6,
      :lv2/index       6,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN5,
+     :lv2/index       5,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -775,8 +757,26 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN9,
-     :lv2/index       9,
+    {:lv2/designation :lv2.pg/ACN3,
+     :lv2/index       3,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN4,
+     :lv2/index       4,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN2,
+     :lv2/index       2,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -790,20 +790,29 @@
    :rdfs/label "Ambisonic BH3P2",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH3P2Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicBH3P3Group
   "Ambisonic B stream of horizontal order 3 and peripheral order 3."
   {:db/ident :lv2.pg/AmbisonicBH3P3Group,
    :lv2.pg/element
-   [{:lv2/designation :lv2.pg/ACN2,
-     :lv2/index       2,
+   [{:lv2/designation :lv2.pg/ACN13,
+     :lv2/index       13,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN14,
+     :lv2/index       14,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -820,8 +829,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN7,
-     :lv2/index       7,
+    {:lv2/designation :lv2.pg/ACN9,
+     :lv2/index       9,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -829,8 +838,17 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN13,
-     :lv2/index       13,
+    {:lv2/designation :lv2.pg/ACN6,
+     :lv2/index       6,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN11,
+     :lv2/index       11,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -856,35 +874,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN3,
-     :lv2/index       3,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN10,
-     :lv2/index       10,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN4,
-     :lv2/index       4,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN11,
-     :lv2/index       11,
+    {:lv2/designation :lv2.pg/ACN5,
+     :lv2/index       5,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -901,8 +892,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN9,
-     :lv2/index       9,
+    {:lv2/designation :lv2.pg/ACN7,
+     :lv2/index       7,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -910,8 +901,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN6,
-     :lv2/index       6,
+    {:lv2/designation :lv2.pg/ACN2,
+     :lv2/index       2,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -919,17 +910,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN14,
-     :lv2/index       14,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/ACN5,
-     :lv2/index       5,
+    {:lv2/designation :lv2.pg/ACN4,
+     :lv2/index       4,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -945,6 +927,24 @@
                         :rdf/type :owl/Restriction,
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN10,
+     :lv2/index       10,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/ACN3,
+     :lv2/index       3,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}],
    :rdf/type :rdfs/Class,
    :rdfs/comment
@@ -952,12 +952,12 @@
    :rdfs/label "Ambisonic BH3P3",
    :rdfs/subClassOf [:lv2.pg/AmbisonicGroup
                      :lv2.pg/AmbisonicBH3P3Group
-                     :lv2.pg/Group
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
                       "A Group MUST have exactly one string lv2:symbol."}
+                     :lv2.pg/Group
                      :rdfs/Resource]})
 
 (def AmbisonicGroup
@@ -1010,35 +1010,8 @@
   "A 5.1 (3-2 stereo with sub) discrete surround sound group."
   {:db/ident :lv2.pg/FivePointOneGroup,
    :lv2.pg/element
-   [{:lv2/designation :lv2.pg/left,
-     :lv2/index       0,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/lowFrequencyEffects,
-     :lv2/index       5,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/right,
+   [{:lv2/designation :lv2.pg/right,
      :lv2/index       2,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/center,
-     :lv2/index       1,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -1055,8 +1028,35 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/left,
+     :lv2/index       0,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/rearRight,
      :lv2/index       4,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/lowFrequencyEffects,
+     :lv2/index       5,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/center,
+     :lv2/index       1,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -1320,26 +1320,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/center,
-     :lv2/index       1,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/right,
      :lv2/index       2,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/rearRight,
-     :lv2/index       6,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -1373,6 +1355,24 @@
                         :rdf/type :owl/Restriction,
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/rearRight,
+     :lv2/index       6,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/center,
+     :lv2/index       1,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}],
    :rdf/type :rdfs/Class,
    :rdfs/comment "A 7.1 discrete surround sound group.",
@@ -1400,26 +1400,8 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/centerLeft,
-     :lv2/index       1,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/left,
      :lv2/index       0,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/right,
-     :lv2/index       4,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -1436,15 +1418,6 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/lowFrequencyEffects,
-     :lv2/index       7,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/rearRight,
      :lv2/index       6,
      :rdf/type        [:lv2.pg/Element
@@ -1454,8 +1427,35 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/lowFrequencyEffects,
+     :lv2/index       7,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/center,
      :lv2/index       2,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/centerLeft,
+     :lv2/index       1,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/right,
+     :lv2/index       4,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -1480,44 +1480,8 @@
   "A 6.1 discrete surround sound group."
   {:db/ident :lv2.pg/SixPointOneGroup,
    :lv2.pg/element
-   [{:lv2/designation :lv2.pg/right,
-     :lv2/index       2,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/center,
-     :lv2/index       1,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/sideLeft,
+   [{:lv2/designation :lv2.pg/sideLeft,
      :lv2/index       3,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/left,
-     :lv2/index       0,
-     :rdf/type        [:lv2.pg/Element
-                       {:owl/cardinality 1,
-                        :owl/onProperty :lv2/designation,
-                        :rdf/type :owl/Restriction,
-                        :rdfs/comment
-                        "An element MUST have exactly one lv2:designation."}
-                       :rdfs/Resource]}
-    {:lv2/designation :lv2.pg/rearCenter,
-     :lv2/index       5,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,
@@ -1534,8 +1498,44 @@
                         :rdfs/comment
                         "An element MUST have exactly one lv2:designation."}
                        :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/left,
+     :lv2/index       0,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
     {:lv2/designation :lv2.pg/sideRight,
      :lv2/index       4,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/rearCenter,
+     :lv2/index       5,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/center,
+     :lv2/index       1,
+     :rdf/type        [:lv2.pg/Element
+                       {:owl/cardinality 1,
+                        :owl/onProperty :lv2/designation,
+                        :rdf/type :owl/Restriction,
+                        :rdfs/comment
+                        "An element MUST have exactly one lv2:designation."}
+                       :rdfs/Resource]}
+    {:lv2/designation :lv2.pg/right,
+     :lv2/index       2,
      :rdf/type        [:lv2.pg/Element
                        {:owl/cardinality 1,
                         :owl/onProperty :lv2/designation,

@@ -61,8 +61,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -92,11 +92,11 @@
    :rdfs/label      "Emotion segment",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/EmotionSegment
+                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/Segment
-                     :af/StructuralSegment
                      :event/Event],
    :vs/term_status  "testing"})
 
@@ -142,11 +142,11 @@
    :rdfs/label "Idiom segment",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/IdiomSegment
+                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/Segment
-                     :af/StructuralSegment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -177,8 +177,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -190,11 +190,11 @@
    :rdfs/label      "Laugh",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/Laugh
+                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/Segment
-                     :af/StructuralSegment
                      :event/Event],
    :vs/term_status  "testing"})
 
@@ -233,8 +233,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status  "testing"})
 
@@ -250,8 +250,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -267,8 +267,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -315,8 +315,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -373,8 +373,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status  "testing"})
 
@@ -387,11 +387,11 @@
    :rdfs/label "Person speaking",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/PersonSpeaking
+                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/Segment
-                     :af/StructuralSegment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -409,8 +409,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Instant,
                       :rdf/type           :owl/Restriction}
@@ -506,8 +506,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status  "testing"})
 
@@ -532,11 +532,11 @@
    :rdfs/label "Text",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/Text
+                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/Segment
-                     :af/StructuralSegment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -552,8 +552,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -634,8 +634,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
                      :af/StructuralSegment
+                     :af/Segment
                      :event/Event],
    :vs/term_status "testing"})
 
@@ -764,7 +764,7 @@
   {:db/ident           :af/new_mode,
    :rdf/type           :owl/ObjectProperty,
    :rdfs/comment       "Mode that holds after the mode change event",
-   :rdfs/domain        :af/ModeChange,
+   :rdfs/domain        :af/ModeChangeEvent,
    :rdfs/label         "new mode",
    :rdfs/range         :owl/Thing,
    :rdfs/subPropertyOf [:event/factor :af/new_mode],
@@ -775,7 +775,7 @@
   {:db/ident           :af/new_tonic,
    :rdf/type           :owl/ObjectProperty,
    :rdfs/comment       "Tonic that holds after the tonic change event",
-   :rdfs/domain        :af/TonicChange,
+   :rdfs/domain        :af/TonicChangeEvent,
    :rdfs/label         "new tonic",
    :rdfs/range         :owl/Thing,
    :rdfs/subPropertyOf [:event/factor :af/new_tonic],
@@ -787,7 +787,7 @@
    :rdf/type [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment
    "\n\t\tAssociates a segment classified as holding speech content to a FOAF\n\t\tprofile (maybe holding information about genre, recognized speaker URI, etc.)\n\t\t",
-   :rdfs/domain :af/Segment,
+   :rdfs/domain :af/PersonSegment,
    :rdfs/label "person",
    :rdfs/range :foaf/Person,
    :rdfs/subPropertyOf :af/person,
@@ -888,3 +888,32 @@
    :rdfs/label "value",
    :rdfs/subPropertyOf [:rdf/value :af/value],
    :vs/term_status "testing"})
+
+(def ^{:private true} Event
+  {:db/ident        :event/Event,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :event/Event})
+
+(def ^{:private true} factor
+  {:db/ident :event/factor,
+   :rdf/type :rdf/Property,
+   :rdfs/subPropertyOf :event/factor})
+
+(def ^{:private true} hasLiteralFactor
+  {:db/ident :event/hasLiteralFactor,
+   :rdf/type :rdf/Property,
+   :rdfs/subPropertyOf :event/hasLiteralFactor})
+
+(def ^{:private true} literal_factor
+  {:db/ident :event/literal_factor,
+   :rdf/type :rdf/Property,
+   :rdfs/subPropertyOf :event/literal_factor})
+
+(def ^{:private true} Signal
+  {:db/ident        :mo/Signal,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :mo/Signal})
+
+(def ^{:private true} term_status
+  {:db/ident :vs/term_status,
+   :rdf/type :owl/AnnotationProperty})

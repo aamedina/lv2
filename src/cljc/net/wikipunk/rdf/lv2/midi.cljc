@@ -29,9 +29,9 @@
    :rdfs/subClassOf [:rdfs/Resource
                      :lv2.midi/SystemRealtime
                      :lv2.midi/ActiveSense
-                     :lv2.midi/SystemMessage
                      :lv2.midi/MidiEvent
                      :lv2.atom/Atom
+                     :lv2.midi/SystemMessage
                      :lv2.ev/Event]})
 
 (def Aftertouch
@@ -66,10 +66,10 @@
    :rdfs/label          "Bender",
    :rdfs/subClassOf     [:lv2.midi/VoiceMessage
                          :lv2.midi/Bender
+                         :rdfs/Resource
                          :lv2.midi/MidiEvent
                          :lv2.atom/Atom
-                         :lv2.ev/Event
-                         :rdfs/Resource]})
+                         :lv2.ev/Event]})
 
 (def ChannelPressure
   "MIDI channel pressure message."
@@ -83,10 +83,10 @@
    :rdfs/label          "Channel Pressure",
    :rdfs/subClassOf     [:lv2.midi/VoiceMessage
                          :lv2.midi/ChannelPressure
+                         :rdfs/Resource
                          :lv2.midi/MidiEvent
                          :lv2.atom/Atom
-                         :lv2.ev/Event
-                         :rdfs/Resource]})
+                         :lv2.ev/Event]})
 
 (def Chunk
   "A sequence of contiguous bytes in a MIDI message."
@@ -106,9 +106,9 @@
    :rdfs/subClassOf [:rdfs/Resource
                      :lv2.midi/SystemRealtime
                      :lv2.midi/Clock
-                     :lv2.midi/SystemMessage
                      :lv2.midi/MidiEvent
                      :lv2.atom/Atom
+                     :lv2.midi/SystemMessage
                      :lv2.ev/Event]})
 
 (def Continue
@@ -121,9 +121,9 @@
    :rdfs/subClassOf [:rdfs/Resource
                      :lv2.midi/SystemRealtime
                      :lv2.midi/Continue
-                     :lv2.midi/SystemMessage
                      :lv2.midi/MidiEvent
                      :lv2.atom/Atom
+                     :lv2.midi/SystemMessage
                      :lv2.ev/Event]})
 
 (def Controller
@@ -182,10 +182,10 @@
    :rdfs/label          "Note Off",
    :rdfs/subClassOf     [:lv2.midi/VoiceMessage
                          :lv2.midi/NoteOff
+                         :rdfs/Resource
                          :lv2.midi/MidiEvent
                          :lv2.atom/Atom
-                         :lv2.ev/Event
-                         :rdfs/Resource]})
+                         :lv2.ev/Event]})
 
 (def NoteOn
   "MIDI note on message."
@@ -202,10 +202,10 @@
    :rdfs/label          "Note On",
    :rdfs/subClassOf     [:lv2.midi/VoiceMessage
                          :lv2.midi/NoteOn
+                         :rdfs/Resource
                          :lv2.midi/MidiEvent
                          :lv2.atom/Atom
-                         :lv2.ev/Event
-                         :rdfs/Resource]})
+                         :lv2.ev/Event]})
 
 (def ProgramChange
   "MIDI program change message."
@@ -219,10 +219,10 @@
    :rdfs/label          "Program Change",
    :rdfs/subClassOf     [:lv2.midi/VoiceMessage
                          :lv2.midi/ProgramChange
+                         :rdfs/Resource
                          :lv2.midi/MidiEvent
                          :lv2.atom/Atom
-                         :lv2.ev/Event
-                         :rdfs/Resource]})
+                         :lv2.ev/Event]})
 
 (def QuarterFrame
   "MIDI quarter frame message."
@@ -235,8 +235,8 @@
                      :lv2.midi/SystemCommon
                      :lv2.midi/QuarterFrame
                      :lv2.midi/MidiEvent
-                     :lv2.midi/SystemMessage
                      :lv2.atom/Atom
+                     :lv2.midi/SystemMessage
                      :lv2.ev/Event]})
 
 (def Reset
@@ -249,9 +249,9 @@
    :rdfs/subClassOf [:rdfs/Resource
                      :lv2.midi/SystemRealtime
                      :lv2.midi/Reset
-                     :lv2.midi/SystemMessage
                      :lv2.midi/MidiEvent
                      :lv2.atom/Atom
+                     :lv2.midi/SystemMessage
                      :lv2.ev/Event]})
 
 (def SongPosition
@@ -268,8 +268,8 @@
                      :lv2.midi/SystemCommon
                      :lv2.midi/SongPosition
                      :lv2.midi/MidiEvent
-                     :lv2.midi/SystemMessage
                      :lv2.atom/Atom
+                     :lv2.midi/SystemMessage
                      :lv2.ev/Event]})
 
 (def SongSelect
@@ -281,11 +281,11 @@
    :rdfs/label      "Song Select",
    :rdfs/subClassOf [:lv2.midi/SystemCommon
                      :lv2.midi/SongSelect
+                     :rdfs/Resource
                      :lv2.midi/MidiEvent
-                     :lv2.midi/SystemMessage
                      :lv2.atom/Atom
-                     :lv2.ev/Event
-                     :rdfs/Resource]})
+                     :lv2.midi/SystemMessage
+                     :lv2.ev/Event]})
 
 (def Start
   "MIDI start message."
@@ -296,11 +296,11 @@
    :rdfs/label      "Start",
    :rdfs/subClassOf [:lv2.midi/SystemRealtime
                      :lv2.midi/Start
-                     :lv2.midi/SystemMessage
+                     :rdfs/Resource
                      :lv2.midi/MidiEvent
                      :lv2.atom/Atom
-                     :lv2.ev/Event
-                     :rdfs/Resource]})
+                     :lv2.midi/SystemMessage
+                     :lv2.ev/Event]})
 
 (def Stop
   "MIDI stop message."
@@ -311,11 +311,11 @@
    :rdfs/label      "Stop",
    :rdfs/subClassOf [:lv2.midi/SystemRealtime
                      :lv2.midi/Stop
-                     :lv2.midi/SystemMessage
+                     :rdfs/Resource
                      :lv2.midi/MidiEvent
                      :lv2.atom/Atom
-                     :lv2.ev/Event
-                     :rdfs/Resource]})
+                     :lv2.midi/SystemMessage
+                     :lv2.ev/Event]})
 
 (def SystemCommon
   "MIDI system common message."
@@ -325,10 +325,10 @@
    :rdfs/label      "System Common",
    :rdfs/subClassOf [:lv2.midi/SystemMessage
                      :lv2.midi/SystemCommon
+                     :rdfs/Resource
                      :lv2.midi/MidiEvent
                      :lv2.atom/Atom
-                     :lv2.ev/Event
-                     :rdfs/Resource]})
+                     :lv2.ev/Event]})
 
 (def SystemExclusive
   "MIDI system exclusive message."
@@ -353,9 +353,9 @@
    :rdfs/label          "System Message",
    :rdfs/subClassOf     [:lv2.midi/MidiEvent
                          :lv2.midi/SystemMessage
+                         :rdfs/Resource
                          :lv2.atom/Atom
-                         :lv2.ev/Event
-                         :rdfs/Resource]})
+                         :lv2.ev/Event]})
 
 (def SystemRealtime
   "MIDI system realtime message."
@@ -381,8 +381,8 @@
                      :lv2.midi/SystemCommon
                      :lv2.midi/TuneRequest
                      :lv2.midi/MidiEvent
-                     :lv2.midi/SystemMessage
                      :lv2.atom/Atom
+                     :lv2.midi/SystemMessage
                      :lv2.ev/Event]})
 
 (def VoiceMessage
@@ -565,3 +565,13 @@
    :rdfs/label         "velocity",
    :rdfs/range         :lv2.midi/HexByte,
    :rdfs/subPropertyOf :lv2.midi/velocity})
+
+(def ^{:private true} Atom
+  {:db/ident        :lv2.atom/Atom,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2.atom/Atom})
+
+(def ^{:private true} Event
+  {:db/ident        :lv2.ev/Event,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2.ev/Event})

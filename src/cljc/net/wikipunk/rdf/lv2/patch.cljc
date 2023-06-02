@@ -25,8 +25,8 @@
    :rdfs/label      "Ack",
    :rdfs/subClassOf [:lv2.patch/Response
                      :lv2.patch/Ack
-                     :lv2.patch/Message
-                     :rdfs/Resource]})
+                     :rdfs/Resource
+                     :lv2.patch/Message]})
 
 (def Copy
   "A request to copy the patch:subject to the patch:destination."
@@ -43,8 +43,8 @@
                       :rdf/type           :owl/Restriction}
                      :lv2.patch/Request
                      :lv2.patch/Copy
-                     :lv2.patch/Message
-                     :rdfs/Resource]})
+                     :rdfs/Resource
+                     :lv2.patch/Message]})
 
 (def Delete
   "Request that the patch:subject or subjects be deleted."
@@ -65,8 +65,8 @@
    :rdfs/label      "Error",
    :rdfs/subClassOf [:lv2.patch/Response
                      :lv2.patch/Error
-                     :lv2.patch/Message
-                     :rdfs/Resource]})
+                     :rdfs/Resource
+                     :lv2.patch/Message]})
 
 (def Get
   "A request for a description of the patch:subject."
@@ -90,8 +90,8 @@
                       :rdf/type        :owl/Restriction}
                      :lv2.patch/Request
                      :lv2.patch/Insert
-                     :lv2.patch/Message
-                     :rdfs/Resource]})
+                     :rdfs/Resource
+                     :lv2.patch/Message]})
 
 (def Message
   "A patch message."
@@ -137,8 +137,8 @@
                       :rdf/type           :owl/Restriction}
                      :lv2.patch/Request
                      :lv2.patch/Patch
-                     :lv2.patch/Message
-                     :rdfs/Resource]})
+                     :rdfs/Resource
+                     :lv2.patch/Message]})
 
 (def Put
   "A request to put the patch:body as the patch:subject."
@@ -184,8 +184,8 @@
                       :rdf/type        :owl/Restriction}
                      :lv2.patch/Request
                      :lv2.patch/Set
-                     :lv2.patch/Message
-                     :rdfs/Resource]})
+                     :rdfs/Resource
+                     :lv2.patch/Message]})
 
 (def accept
   "An accepted type for a response."

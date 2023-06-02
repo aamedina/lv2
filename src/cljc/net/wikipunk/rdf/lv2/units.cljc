@@ -117,15 +117,6 @@
                  :rdf/type :owl/Restriction,
                  :rdfs/comment
                  "A conversion MUST have exactly 1 units:to property."}]}
-    {:lv2.units/factor 10,
-     :lv2.units/to :lv2.units/mm,
-     :rdf/type [:lv2.units/Conversion
-                :rdfs/Resource
-                {:owl/cardinality 1,
-                 :owl/onProperty :lv2.units/to,
-                 :rdf/type :owl/Restriction,
-                 :rdfs/comment
-                 "A conversion MUST have exactly 1 units:to property."}]}
     {:lv2.units/factor 0.00001M,
      :lv2.units/to :lv2.units/km,
      :rdf/type [:lv2.units/Conversion
@@ -137,6 +128,15 @@
                  "A conversion MUST have exactly 1 units:to property."}]}
     {:lv2.units/factor 0.01M,
      :lv2.units/to :lv2.units/m,
+     :rdf/type [:lv2.units/Conversion
+                :rdfs/Resource
+                {:owl/cardinality 1,
+                 :owl/onProperty :lv2.units/to,
+                 :rdf/type :owl/Restriction,
+                 :rdfs/comment
+                 "A conversion MUST have exactly 1 units:to property."}]}
+    {:lv2.units/factor 10,
+     :lv2.units/to :lv2.units/mm,
      :rdf/type [:lv2.units/Conversion
                 :rdfs/Resource
                 {:owl/cardinality 1,
@@ -315,8 +315,8 @@
   "Kilohertz (thousands of Hertz)."
   {:db/ident :lv2.units/khz,
    :lv2.units/conversion
-   [{:lv2.units/factor 1000,
-     :lv2.units/to :lv2.units/hz,
+   [{:lv2.units/factor 0.001M,
+     :lv2.units/to :lv2.units/mhz,
      :rdf/type [:lv2.units/Conversion
                 :rdfs/Resource
                 {:owl/cardinality 1,
@@ -324,8 +324,8 @@
                  :rdf/type :owl/Restriction,
                  :rdfs/comment
                  "A conversion MUST have exactly 1 units:to property."}]}
-    {:lv2.units/factor 0.001M,
-     :lv2.units/to :lv2.units/mhz,
+    {:lv2.units/factor 1000,
+     :lv2.units/to :lv2.units/hz,
      :rdf/type [:lv2.units/Conversion
                 :rdfs/Resource
                 {:owl/cardinality 1,
@@ -613,8 +613,8 @@
                  :rdf/type :owl/Restriction,
                  :rdfs/comment
                  "A conversion MUST have exactly 1 units:to property."}]}
-    {:lv2.units/factor 0.001M,
-     :lv2.units/to :lv2.units/m,
+    {:lv2.units/factor 0.000001M,
+     :lv2.units/to :lv2.units/km,
      :rdf/type [:lv2.units/Conversion
                 :rdfs/Resource
                 {:owl/cardinality 1,
@@ -622,8 +622,8 @@
                  :rdf/type :owl/Restriction,
                  :rdfs/comment
                  "A conversion MUST have exactly 1 units:to property."}]}
-    {:lv2.units/factor 0.000001M,
-     :lv2.units/to :lv2.units/km,
+    {:lv2.units/factor 0.001M,
+     :lv2.units/to :lv2.units/m,
      :rdf/type [:lv2.units/Conversion
                 :rdfs/Resource
                 {:owl/cardinality 1,

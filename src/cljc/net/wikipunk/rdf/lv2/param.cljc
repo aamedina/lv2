@@ -46,16 +46,16 @@
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
   {:db/ident        :lv2.param/EnvelopeControls,
-   :lv2.pg/element  [{:lv2/designation :lv2.param/decay,
-                      :lv2/index       3}
-                     {:lv2/designation :lv2.param/sustain,
-                      :lv2/index       4}
+   :lv2.pg/element  [{:lv2/designation :lv2.param/release,
+                      :lv2/index       5}
                      {:lv2/designation :lv2.param/hold,
                       :lv2/index       2}
+                     {:lv2/designation :lv2.param/sustain,
+                      :lv2/index       4}
+                     {:lv2/designation :lv2.param/decay,
+                      :lv2/index       3}
                      {:lv2/designation :lv2.param/delay,
                       :lv2/index       0}
-                     {:lv2/designation :lv2.param/release,
-                      :lv2/index       5}
                      {:lv2/designation :lv2.param/attack,
                       :lv2/index       1}],
    :rdf/type        :rdfs/Class,
@@ -254,3 +254,8 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The level of the processed component of a signal.",
    :rdfs/label   "wet level"})
+
+(def ^{:private true} Group
+  {:db/ident        :lv2.pg/Group,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2.pg/Group})

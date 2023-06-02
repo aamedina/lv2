@@ -29,17 +29,17 @@
    [:rdfs/Resource
     :lv2/FilterPlugin
     :lv2/AllpassPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def AmplifierPlugin
   "A plugin that primarily changes the volume of its input."
@@ -51,17 +51,17 @@
    [:rdfs/Resource
     :lv2/DynamicsPlugin
     :lv2/AmplifierPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def AnalyserPlugin
   "A plugin that analyses its input and emits some useful information."
@@ -73,18 +73,18 @@
    :rdfs/subClassOf
    [:lv2/UtilityPlugin
     :lv2/AnalyserPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def AudioPort
   "A port connected to an array of float audio samples."
@@ -94,15 +94,15 @@
    :rdfs/label      "Audio Port",
    :rdfs/subClassOf [:lv2/Port
                      :lv2/AudioPort
-                     {:owl/cardinality 1,
-                      :owl/onProperty :lv2/symbol,
-                      :rdf/type :owl/Restriction,
-                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :rdfs/Resource
                      {:owl/minCardinality 1,
                       :owl/onProperty :lv2/name,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment "A port MUST have at least one lv2:name."}
+                     {:owl/cardinality 1,
+                      :owl/onProperty :lv2/symbol,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :lv2/PortBase]})
 
 (def BandpassPlugin
@@ -115,17 +115,17 @@
    [:rdfs/Resource
     :lv2/FilterPlugin
     :lv2/BandpassPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def CVPort
   "A port connected to an array of float control values."
@@ -136,14 +136,14 @@
    :rdfs/subClassOf [:rdfs/Resource
                      :lv2/Port
                      :lv2/CVPort
-                     {:owl/cardinality 1,
-                      :owl/onProperty :lv2/symbol,
-                      :rdf/type :owl/Restriction,
-                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      {:owl/minCardinality 1,
                       :owl/onProperty :lv2/name,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment "A port MUST have at least one lv2:name."}
+                     {:owl/cardinality 1,
+                      :owl/onProperty :lv2/symbol,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :lv2/PortBase]})
 
 (def Channel
@@ -167,18 +167,18 @@
    :rdfs/subClassOf
    [:lv2/ModulatorPlugin
     :lv2/ChorusPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def CombPlugin
   "A filter that adds a delayed version of its input to itself."
@@ -189,18 +189,18 @@
    :rdfs/subClassOf
    [:lv2/FilterPlugin
     :lv2/CombPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def CompressorPlugin
   "A plugin that reduces the dynamic range of its input."
@@ -211,18 +211,18 @@
    :rdfs/subClassOf
    [:lv2/DynamicsPlugin
     :lv2/CompressorPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def ConstantPlugin
   "A plugin that emits constant values."
@@ -233,18 +233,18 @@
    :rdfs/subClassOf
    [:lv2/GeneratorPlugin
     :lv2/ConstantPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def ControlPort
   "A port connected to a single `float`."
@@ -254,15 +254,15 @@
    :rdfs/label      "Control Port",
    :rdfs/subClassOf [:lv2/Port
                      :lv2/ControlPort
-                     {:owl/cardinality 1,
-                      :owl/onProperty :lv2/symbol,
-                      :rdf/type :owl/Restriction,
-                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :rdfs/Resource
                      {:owl/minCardinality 1,
                       :owl/onProperty :lv2/name,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment "A port MUST have at least one lv2:name."}
+                     {:owl/cardinality 1,
+                      :owl/onProperty :lv2/symbol,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :lv2/PortBase]})
 
 (def ConverterPlugin
@@ -274,18 +274,18 @@
    :rdfs/subClassOf
    [:lv2/UtilityPlugin
     :lv2/ConverterPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def DelayPlugin
   "An effect that intentionally delays its input as an effect."
@@ -297,16 +297,16 @@
    [:rdfs/Resource
     :lv2/Plugin
     :lv2/DelayPlugin
-    :lv2/PluginBase
-    {:owl/onProperty :doap/name,
-     :owl/someValuesFrom :rdf/PlainLiteral,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     {:owl/allValuesFrom :lv2/Port,
      :owl/onProperty :lv2/port,
      :rdf/type :owl/Restriction,
      :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
+    :lv2/PluginBase
+    {:owl/onProperty :doap/name,
+     :owl/someValuesFrom :rdf/PlainLiteral,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def Designation
   "A designation which defines the meaning of some data."
@@ -326,16 +326,16 @@
    [:rdfs/Resource
     :lv2/Plugin
     :lv2/DistortionPlugin
-    :lv2/PluginBase
-    {:owl/onProperty :doap/name,
-     :owl/someValuesFrom :rdf/PlainLiteral,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     {:owl/allValuesFrom :lv2/Port,
      :owl/onProperty :lv2/port,
      :rdf/type :owl/Restriction,
      :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
+    :lv2/PluginBase
+    {:owl/onProperty :doap/name,
+     :owl/someValuesFrom :rdf/PlainLiteral,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def DynamicsPlugin
   "A plugin that alters the envelope or dynamic range of its input."
@@ -347,17 +347,17 @@
    :rdfs/subClassOf
    [:lv2/Plugin
     :lv2/DynamicsPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def EQPlugin
   "A plugin that adjusts the balance between frequency components."
@@ -369,18 +369,18 @@
    :rdfs/subClassOf
    [:lv2/FilterPlugin
     :lv2/EQPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def EnvelopePlugin
   "A plugin that applies an envelope to its input."
@@ -392,17 +392,17 @@
    [:rdfs/Resource
     :lv2/DynamicsPlugin
     :lv2/EnvelopePlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def ExpanderPlugin
   "A plugin that expands the dynamic range of its input."
@@ -413,18 +413,18 @@
    :rdfs/subClassOf
    [:lv2/DynamicsPlugin
     :lv2/ExpanderPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def ExtensionData
   "Additional data defined by an extension."
@@ -452,17 +452,17 @@
    :rdfs/subClassOf
    [:lv2/Plugin
     :lv2/FilterPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def FlangerPlugin
   "An effect that mixes slightly delayed copies of its input."
@@ -473,18 +473,18 @@
    :rdfs/subClassOf
    [:lv2/ModulatorPlugin
     :lv2/FlangerPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def FunctionPlugin
   "A plugin whose output is a mathematical function of its input."
@@ -496,18 +496,18 @@
    :rdfs/subClassOf
    [:lv2/UtilityPlugin
     :lv2/FunctionPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def GatePlugin
   "A plugin that attenuates signals below some threshold."
@@ -519,17 +519,17 @@
    [:rdfs/Resource
     :lv2/DynamicsPlugin
     :lv2/GatePlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def GeneratorPlugin
   "A plugin that generates new sound internally."
@@ -541,16 +541,16 @@
    [:rdfs/Resource
     :lv2/Plugin
     :lv2/GeneratorPlugin
-    :lv2/PluginBase
-    {:owl/onProperty :doap/name,
-     :owl/someValuesFrom :rdf/PlainLiteral,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     {:owl/allValuesFrom :lv2/Port,
      :owl/onProperty :lv2/port,
      :rdf/type :owl/Restriction,
      :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
+    :lv2/PluginBase
+    {:owl/onProperty :doap/name,
+     :owl/someValuesFrom :rdf/PlainLiteral,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def HighpassPlugin
   "A filter that attenuates frequencies below some cutoff."
@@ -561,18 +561,18 @@
    :rdfs/subClassOf
    [:lv2/FilterPlugin
     :lv2/HighpassPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def InputPort
   "A port connected to constant data which is read during `run()`."
@@ -583,15 +583,15 @@
    :rdfs/label "Input Port",
    :rdfs/subClassOf [:lv2/Port
                      :lv2/InputPort
-                     {:owl/cardinality 1,
-                      :owl/onProperty :lv2/symbol,
-                      :rdf/type :owl/Restriction,
-                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :rdfs/Resource
                      {:owl/minCardinality 1,
                       :owl/onProperty :lv2/name,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment "A port MUST have at least one lv2:name."}
+                     {:owl/cardinality 1,
+                      :owl/onProperty :lv2/symbol,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :lv2/PortBase]})
 
 (def InstrumentPlugin
@@ -603,18 +603,18 @@
    :rdfs/subClassOf
    [:lv2/GeneratorPlugin
     :lv2/InstrumentPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def LimiterPlugin
   "A plugin that limits its input to some maximum level."
@@ -625,18 +625,18 @@
    :rdfs/subClassOf
    [:lv2/DynamicsPlugin
     :lv2/LimiterPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def LowpassPlugin
   "A filter that attenuates frequencies above some cutoff."
@@ -647,18 +647,18 @@
    :rdfs/subClassOf
    [:lv2/FilterPlugin
     :lv2/LowpassPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def MIDIPlugin
   "A plugin that primarily processes MIDI messages."
@@ -670,16 +670,16 @@
    [:rdfs/Resource
     :lv2/Plugin
     :lv2/MIDIPlugin
-    :lv2/PluginBase
-    {:owl/onProperty :doap/name,
-     :owl/someValuesFrom :rdf/PlainLiteral,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     {:owl/allValuesFrom :lv2/Port,
      :owl/onProperty :lv2/port,
      :rdf/type :owl/Restriction,
      :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
+    :lv2/PluginBase
+    {:owl/onProperty :doap/name,
+     :owl/someValuesFrom :rdf/PlainLiteral,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def Markdown
   "A string in Markdown syntax."
@@ -699,18 +699,18 @@
    :rdfs/subClassOf
    [:lv2/UtilityPlugin
     :lv2/MixerPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def ModulatorPlugin
   "An effect that modulats its input as an effect."
@@ -721,17 +721,17 @@
    :rdfs/subClassOf
    [:lv2/Plugin
     :lv2/ModulatorPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def MultiEQPlugin
   "A plugin that adjusts the balance between a fixed set of frequency components."
@@ -744,18 +744,18 @@
    [:rdfs/Resource
     :lv2/EQPlugin
     :lv2/MultiEQPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
-    :lv2/FilterPlugin
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/FilterPlugin]})
 
 (def OscillatorPlugin
   "A plugin that generates output with an oscillator."
@@ -766,18 +766,18 @@
    :rdfs/subClassOf
    [:lv2/GeneratorPlugin
     :lv2/OscillatorPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def OutputPort
   "A port connected to data which is written during `run()`."
@@ -787,15 +787,15 @@
    :rdfs/label      "Output Port",
    :rdfs/subClassOf [:lv2/Port
                      :lv2/OutputPort
-                     {:owl/cardinality 1,
-                      :owl/onProperty :lv2/symbol,
-                      :rdf/type :owl/Restriction,
-                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :rdfs/Resource
                      {:owl/minCardinality 1,
                       :owl/onProperty :lv2/name,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment "A port MUST have at least one lv2:name."}
+                     {:owl/cardinality 1,
+                      :owl/onProperty :lv2/symbol,
+                      :rdf/type :owl/Restriction,
+                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
                      :lv2/PortBase]})
 
 (def ParaEQPlugin
@@ -808,19 +808,19 @@
    :rdfs/subClassOf
    [:lv2/EQPlugin
     :lv2/ParaEQPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
-    :lv2/FilterPlugin
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/FilterPlugin]})
 
 (def Parameter
   "A property that is a plugin parameter."
@@ -842,18 +842,18 @@
    :rdfs/subClassOf
    [:lv2/ModulatorPlugin
     :lv2/PhaserPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def PitchPlugin
   "A plugin that shifts the pitch of its input."
@@ -864,18 +864,18 @@
    :rdfs/subClassOf
    [:lv2/SpectralPlugin
     :lv2/PitchPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def Plugin
   "An LV2 plugin."
@@ -925,11 +925,12 @@
                       :rdfs/comment "A port MUST have at least one lv2:name."}
                      :lv2/PortBase
                      :lv2/Port
+                     :rdfs/Resource
                      {:owl/cardinality 1,
                       :owl/onProperty :lv2/symbol,
                       :rdf/type :owl/Restriction,
-                      :rdfs/comment "A port MUST have exactly one lv2:symbol."}
-                     :rdfs/Resource]})
+                      :rdfs/comment
+                      "A port MUST have exactly one lv2:symbol."}]})
 
 (def PortBase
   "Base class for a port-like resource."
@@ -964,16 +965,16 @@
     :lv2/SimulatorPlugin
     :lv2/Plugin
     :lv2/ReverbPlugin
-    :lv2/PluginBase
-    {:owl/onProperty :doap/name,
-     :owl/someValuesFrom :rdf/PlainLiteral,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     {:owl/allValuesFrom :lv2/Port,
      :owl/onProperty :lv2/port,
      :rdf/type :owl/Restriction,
      :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
+    :lv2/PluginBase
+    {:owl/onProperty :doap/name,
+     :owl/someValuesFrom :rdf/PlainLiteral,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def ScalePoint
   "A single `float` Point for control inputs."
@@ -994,16 +995,16 @@
    [:rdfs/Resource
     :lv2/Plugin
     :lv2/SimulatorPlugin
-    :lv2/PluginBase
-    {:owl/onProperty :doap/name,
-     :owl/someValuesFrom :rdf/PlainLiteral,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     {:owl/allValuesFrom :lv2/Port,
      :owl/onProperty :lv2/port,
      :rdf/type :owl/Restriction,
      :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
+    :lv2/PluginBase
+    {:owl/onProperty :doap/name,
+     :owl/someValuesFrom :rdf/PlainLiteral,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def SpatialPlugin
   "A plugin that manipulates the position of audio in space."
@@ -1015,16 +1016,16 @@
    [:rdfs/Resource
     :lv2/Plugin
     :lv2/SpatialPlugin
-    :lv2/PluginBase
-    {:owl/onProperty :doap/name,
-     :owl/someValuesFrom :rdf/PlainLiteral,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
     {:owl/allValuesFrom :lv2/Port,
      :owl/onProperty :lv2/port,
      :rdf/type :owl/Restriction,
      :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
+    :lv2/PluginBase
+    {:owl/onProperty :doap/name,
+     :owl/someValuesFrom :rdf/PlainLiteral,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def Specification
   "An LV2 specifiation."
@@ -1043,17 +1044,17 @@
    :rdfs/subClassOf
    [:lv2/Plugin
     :lv2/SpectralPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def Symbol
   "A short restricted name used as a strong identifier."
@@ -1074,17 +1075,17 @@
    :rdfs/subClassOf
    [:lv2/Plugin
     :lv2/UtilityPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
-     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+     :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}]})
 
 (def WaveshaperPlugin
   "An effect that alters the shape of input waveforms."
@@ -1095,18 +1096,18 @@
    :rdfs/subClassOf
    [:lv2/DistortionPlugin
     :lv2/WaveshaperPlugin
+    {:owl/allValuesFrom :lv2/Port,
+     :owl/onProperty :lv2/port,
+     :rdf/type :owl/Restriction,
+     :rdfs/comment
+     "All ports on a plugin MUST be fully specified lv2:Port instances."}
     :lv2/PluginBase
     :rdfs/Resource
     {:owl/onProperty :doap/name,
      :owl/someValuesFrom :rdf/PlainLiteral,
      :rdf/type :owl/Restriction,
      :rdfs/comment "A plugin MUST have at least one untranslated doap:name."}
-    :lv2/Plugin
-    {:owl/allValuesFrom :lv2/Port,
-     :owl/onProperty :lv2/port,
-     :rdf/type :owl/Restriction,
-     :rdfs/comment
-     "All ports on a plugin MUST be fully specified lv2:Port instances."}]})
+    :lv2/Plugin]})
 
 (def appliesTo
   "The plugin this resource is related to."
@@ -1136,7 +1137,7 @@
 (def control
   "The primary control channel."
   {:db/ident     :lv2/control,
-   :rdf/type     [:lv2/Channel :rdfs/Resource :lv2/Designation :rdf/Property],
+   :rdf/type     [:lv2/Channel :lv2/Designation :rdf/Property :rdfs/Resource],
    :rdfs/comment "The primary control channel.",
    :rdfs/label   "control"})
 
@@ -1413,3 +1414,8 @@
    :rdf/type     [:lv2/PortProperty :rdfs/Resource],
    :rdfs/comment "Control port value is considered a boolean toggle.",
    :rdfs/label   "toggled"})
+
+(def ^{:private true} Project
+  {:db/ident        :doap/Project,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :doap/Project})

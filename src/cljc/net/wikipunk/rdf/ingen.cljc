@@ -360,3 +360,13 @@
    :rdfs/domain        :lv2/Port,
    :rdfs/label         "value",
    :rdfs/subPropertyOf :ingen/value})
+
+(def ^{:private true} PluginBase
+  {:db/ident        :lv2/PluginBase,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2/PluginBase})
+
+(def ^{:private true} Port
+  {:db/ident        :lv2/Port,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf [:ingen/Node :lv2/Port :rdfs/Resource]})

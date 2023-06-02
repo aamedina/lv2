@@ -133,7 +133,7 @@
 (def floatProtocol
   "A protocol for transferring single floating point values."
   {:db/ident     :lv2.ui/floatProtocol,
-   :rdf/type     [:lv2.ui/PortProtocol :lv2/Feature :rdfs/Resource],
+   :rdf/type     [:lv2.ui/PortProtocol :rdfs/Resource :lv2/Feature],
    :rdfs/comment "A protocol for transferring single floating point values.",
    :rdfs/label   "float protocol"})
 
@@ -187,7 +187,7 @@
 (def peakProtocol
   "A protocol for sending continuous peak measurements of an audio signal."
   {:db/ident :lv2.ui/peakProtocol,
-   :rdf/type [:lv2.ui/PortProtocol :lv2/Feature :rdfs/Resource],
+   :rdf/type [:lv2.ui/PortProtocol :rdfs/Resource :lv2/Feature],
    :rdfs/comment
    "A protocol for sending continuous peak measurements of an audio signal.",
    :rdfs/label "peak protocol"})
@@ -315,3 +315,8 @@
    :rdfs/label "window title",
    :rdfs/range :xsd/string,
    :rdfs/subPropertyOf :lv2.ui/windowTitle})
+
+(def ^{:private true} Feature
+  {:db/ident        :lv2/Feature,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2/Feature})

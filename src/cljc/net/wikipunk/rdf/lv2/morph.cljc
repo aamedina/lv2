@@ -53,3 +53,8 @@
    :rdfs/domain        :lv2.morph/MorphPort,
    :rdfs/label         "supports type",
    :rdfs/subPropertyOf :lv2.morph/supportsType})
+
+(def ^{:private true} Port
+  {:db/ident        :lv2/Port,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2/Port})

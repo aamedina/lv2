@@ -167,8 +167,8 @@
    :rdfs/subClassOf [:lv2.atom/URI
                      :lv2.atom/Path
                      :lv2.atom/Atom
-                     :rdfs/Resource
-                     :lv2.atom/String]})
+                     :lv2.atom/String
+                     :rdfs/Resource]})
 
 (def Property
   "A property of an atom:Object."
@@ -334,3 +334,8 @@
    :rdfs/label         "supports",
    :rdfs/range         :rdfs/Class,
    :rdfs/subPropertyOf :lv2.atom/supports})
+
+(def ^{:private true} Port
+  {:db/ident        :lv2/Port,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2/Port})

@@ -359,16 +359,16 @@
    :rdfs/comment
    "Describe the relation between a continuous time-line and its sampled equivalent",
    :rdfs/label "uniform sampling map",
-   :rdfs/subClassOf [{:owl/onProperty     :tl/rangeTimeLine,
-                      :owl/someValuesFrom :tl/DiscreteTimeLine,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/cardinality 1,
+   :rdfs/subClassOf [{:owl/cardinality 1,
                       :owl/onProperty  :tl/sampleRate,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :tl/rangeTimeLine,
+                      :owl/someValuesFrom :tl/DiscreteTimeLine,
+                      :rdf/type           :owl/Restriction}
+                     :tl/TimeLineMap
                      {:owl/onProperty     :tl/domainTimeLine,
                       :owl/someValuesFrom :tl/RelativeTimeLine,
                       :rdf/type           :owl/Restriction}
-                     :tl/TimeLineMap
                      :tl/UniformSamplingMap],
    :vs/term_status "stable"})
 
@@ -380,22 +380,22 @@
    :rdfs/comment
    "Describes the relation between a continuous time-line, and a time-line that corresponds to its sampled and windowed equivalent",
    :rdfs/label "Uniform sampling and windowing map",
-   :rdfs/subClassOf [{:owl/onProperty     :tl/rangeTimeLine,
-                      :owl/someValuesFrom :tl/DiscreteTimeLine,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :tl/domainTimeLine,
+   :rdfs/subClassOf [{:owl/onProperty     :tl/domainTimeLine,
                       :owl/someValuesFrom :tl/ContinuousTimeLine,
                       :rdf/type           :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :tl/sampleRate,
-                      :rdf/type        :owl/Restriction}
-                     :tl/TimeLineMap
                      {:owl/cardinality 1,
                       :owl/onProperty  :tl/windowLength,
                       :rdf/type        :owl/Restriction}
                      {:owl/cardinality 1,
                       :owl/onProperty  :tl/hopSize,
                       :rdf/type        :owl/Restriction}
+                     :tl/TimeLineMap
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :tl/sampleRate,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :tl/rangeTimeLine,
+                      :owl/someValuesFrom :tl/DiscreteTimeLine,
+                      :rdf/type           :owl/Restriction}
                      :tl/UniformSamplingWindowingMap],
    :vs/term_status "stable"})
 
@@ -410,13 +410,13 @@
    :rdfs/subClassOf [{:owl/cardinality 1,
                       :owl/onProperty  :tl/hopSize,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :tl/domainTimeLine,
-                      :owl/someValuesFrom :tl/DiscreteTimeLine,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :tl/rangeTimeLine,
                       :owl/someValuesFrom :tl/DiscreteTimeLine,
                       :rdf/type           :owl/Restriction}
                      :tl/TimeLineMap
+                     {:owl/onProperty     :tl/domainTimeLine,
+                      :owl/someValuesFrom :tl/DiscreteTimeLine,
+                      :rdf/type           :owl/Restriction}
                      {:owl/cardinality 1,
                       :owl/onProperty  :tl/windowLength,
                       :rdf/type        :owl/Restriction}
@@ -803,3 +803,15 @@
    :rdfs/label     "window length",
    :rdfs/range     :xsd/int,
    :vs/term_status "stable"})
+
+(def ^{:private true} Person
+  {:db/ident :foaf/Person,
+   :rdf/type :owl/Class})
+
+(def ^{:private true} maker
+  {:db/ident :foaf/maker,
+   :rdf/type :owl/ObjectProperty})
+
+(def ^{:private true} term_status
+  {:db/ident :vs/term_status,
+   :rdf/type :owl/AnnotationProperty})

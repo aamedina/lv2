@@ -354,12 +354,12 @@
                        "rdf"        "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
                        "ingen"      "http://drobilla.net/ns/ingen#",
                        "ingen.lv2"  "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/"
-                       "ingen.note" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/Note/"
                        "lv2"        "http://lv2plug.in/ns/lv2core#",
                        "lv2.work"   "http://lv2plug.in/ns/ext/worker#"
                        "lv2.midi"   "http://lv2plug.in/ns/ext/midi#",,
                        "lv2.patch"  "http://lv2plug.in/ns/ext/patch#"
                        "lv2.atom"   "http://lv2plug.in/ns/ext/atom#",
+                       "ingen.note" "https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/Note/"
                        "doap"       "http://usefulinc.com/ns/doap#",
                        "rdfs"       "http://www.w3.org/2000/01/rdf-schema#",
                        "xsd"        "http://www.w3.org/2001/XMLSchema#"}})
@@ -455,7 +455,8 @@
    :dcat/downloadURL "https://lov.linkeddata.es/dataset/lov/vocabs/af/versions/2008-06-23.n3"})
 
 (def note
-  {:rdfa/prefix      "note",
+  {:dcat/downloadURL "http://purl.org/ontology/chord/index.rdfs"
+   :rdfa/prefix      "note",
    :rdfa/uri         "http://purl.org/ontology/chord/note/",
    :rdf/type         :rdfa/PrefixMapping})
 

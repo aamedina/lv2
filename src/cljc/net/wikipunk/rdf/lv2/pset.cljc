@@ -76,3 +76,8 @@
    :rdfs/domain        :lv2/PortBase,
    :rdfs/label         "value",
    :rdfs/subPropertyOf :lv2.pset/value})
+
+(def ^{:private true} PluginBase
+  {:db/ident        :lv2/PluginBase,
+   :rdf/type        :rdfs/Class,
+   :rdfs/subClassOf :lv2/PluginBase})
