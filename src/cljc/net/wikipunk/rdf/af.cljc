@@ -62,8 +62,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def Chromagram
@@ -92,12 +92,12 @@
    :rdfs/label      "Emotion segment",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/EmotionSegment
-                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
-                     :event/Event],
+                     :af/StructuralSegment
+                     :event/Event
+                     :af/Segment],
    :vs/term_status  "testing"})
 
 (def EnglishIdiom
@@ -142,12 +142,12 @@
    :rdfs/label "Idiom segment",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/IdiomSegment
-                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
-                     :event/Event],
+                     :af/StructuralSegment
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def KeyChange
@@ -178,8 +178,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def Laugh
@@ -190,12 +190,12 @@
    :rdfs/label      "Laugh",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/Laugh
-                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
-                     :event/Event],
+                     :af/StructuralSegment
+                     :event/Event
+                     :af/Segment],
    :vs/term_status  "testing"})
 
 (def LinearFrequencyCentroid
@@ -234,8 +234,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status  "testing"})
 
 (def Major
@@ -251,8 +251,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def Minor
@@ -268,8 +268,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def ModeChange
@@ -299,8 +299,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def MusicStructuralSegment
@@ -316,8 +316,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def NonTonalOnset
@@ -328,11 +328,11 @@
    :rdfs/label      "Percussive onset",
    :rdfs/subClassOf [:af/Onset
                      :af/NonTonalOnset
-                     :af/Point
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Instant,
                       :rdf/type           :owl/Restriction}
-                     :event/Event],
+                     :event/Event
+                     :af/Point],
    :vs/term_status  "testing"})
 
 (def Onset
@@ -374,8 +374,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status  "testing"})
 
 (def PersonSpeaking
@@ -387,12 +387,12 @@
    :rdfs/label "Person speaking",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/PersonSpeaking
-                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
-                     :event/Event],
+                     :af/StructuralSegment
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def Pitch
@@ -409,12 +409,12 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/StructuralSegment
-                     :af/Segment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Instant,
                       :rdf/type           :owl/Restriction}
-                     :event/Event],
+                     :af/StructuralSegment
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def Point
@@ -476,8 +476,8 @@
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def StructuralSegment
@@ -507,8 +507,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status  "testing"})
 
 (def TempoDetectionFunction
@@ -532,12 +532,12 @@
    :rdfs/label "Text",
    :rdfs/subClassOf [:af/SpeechSegment
                      :af/Text
-                     :af/StructuralSegment
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
-                     :af/Segment
-                     :event/Event],
+                     :af/StructuralSegment
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def TimeSignature
@@ -553,8 +553,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def TonalChange
@@ -600,11 +600,11 @@
    :rdfs/label      "Pitched onset",
    :rdfs/subClassOf [:af/Onset
                      :af/TonalOnset
-                     :af/Point
                      {:owl/onProperty     :event/time,
                       :owl/someValuesFrom :tl/Instant,
                       :rdf/type           :owl/Restriction}
-                     :event/Event],
+                     :event/Event
+                     :af/Point],
    :vs/term_status  "testing"})
 
 (def TonicChange
@@ -635,8 +635,8 @@
                       :owl/someValuesFrom :tl/Interval,
                       :rdf/type           :owl/Restriction}
                      :af/StructuralSegment
-                     :af/Segment
-                     :event/Event],
+                     :event/Event
+                     :af/Segment],
    :vs/term_status "testing"})
 
 (def ZeroCrossing
@@ -764,7 +764,7 @@
   {:db/ident           :af/new_mode,
    :rdf/type           :owl/ObjectProperty,
    :rdfs/comment       "Mode that holds after the mode change event",
-   :rdfs/domain        :af/ModeChangeEvent,
+   :rdfs/domain        :af/ModeChange,
    :rdfs/label         "new mode",
    :rdfs/range         :owl/Thing,
    :rdfs/subPropertyOf [:event/factor :af/new_mode],
@@ -775,7 +775,7 @@
   {:db/ident           :af/new_tonic,
    :rdf/type           :owl/ObjectProperty,
    :rdfs/comment       "Tonic that holds after the tonic change event",
-   :rdfs/domain        :af/TonicChangeEvent,
+   :rdfs/domain        :af/TonicChange,
    :rdfs/label         "new tonic",
    :rdfs/range         :owl/Thing,
    :rdfs/subPropertyOf [:event/factor :af/new_tonic],
@@ -888,32 +888,3 @@
    :rdfs/label "value",
    :rdfs/subPropertyOf [:rdf/value :af/value],
    :vs/term_status "testing"})
-
-(def ^{:private true} Event
-  {:db/ident        :event/Event,
-   :rdf/type        :rdfs/Class,
-   :rdfs/subClassOf :event/Event})
-
-(def ^{:private true} factor
-  {:db/ident :event/factor,
-   :rdf/type :rdf/Property,
-   :rdfs/subPropertyOf :event/factor})
-
-(def ^{:private true} hasLiteralFactor
-  {:db/ident :event/hasLiteralFactor,
-   :rdf/type :rdf/Property,
-   :rdfs/subPropertyOf :event/hasLiteralFactor})
-
-(def ^{:private true} literal_factor
-  {:db/ident :event/literal_factor,
-   :rdf/type :rdf/Property,
-   :rdfs/subPropertyOf :event/literal_factor})
-
-(def ^{:private true} Signal
-  {:db/ident        :mo/Signal,
-   :rdf/type        :rdfs/Class,
-   :rdfs/subClassOf :mo/Signal})
-
-(def ^{:private true} term_status
-  {:db/ident :vs/term_status,
-   :rdf/type :owl/AnnotationProperty})

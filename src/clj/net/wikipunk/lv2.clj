@@ -15,6 +15,7 @@
    [net.wikipunk.rdf.bio]
    [net.wikipunk.rdf.rel]
    [net.wikipunk.rdf.lv2]
+   [net.wikipunk.rdf.tl]
    [net.wikipunk.rdf.lv2.atom]
    [net.wikipunk.rdf.lv2.bufsz]
    [net.wikipunk.rdf.lv2.da]

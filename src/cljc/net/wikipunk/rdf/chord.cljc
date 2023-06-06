@@ -319,7 +319,11 @@
 
 (def maj6
   "A major sixth chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree "5",
+                       :rdf/type     [:chord/ScaleInterval
+                                      :chord/Interval
+                                      :rdfs/Resource]}
+                      {:chord/degree "1",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
@@ -328,10 +332,6 @@
                                       :chord/Interval
                                       :rdfs/Resource]}
                       {:chord/degree "3",
-                       :rdf/type     [:chord/ScaleInterval
-                                      :chord/Interval
-                                      :rdfs/Resource]}
-                      {:chord/degree "5",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -370,11 +370,15 @@
 
 (def maj9
   "A major ninth chord."
-  {:chord/interval   [{:chord/degree "5",
+  {:chord/interval   [{:chord/degree "9",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "9",
+                      {:chord/degree "5",
+                       :rdf/type     [:chord/ScaleInterval
+                                      :chord/Interval
+                                      :rdfs/Resource]}
+                      {:chord/degree "1",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
@@ -383,10 +387,6 @@
                                       :chord/Interval
                                       :rdfs/Resource]}
                       {:chord/degree "7",
-                       :rdf/type     [:chord/ScaleInterval
-                                      :chord/Interval
-                                      :rdfs/Resource]}
-                      {:chord/degree "1",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -424,15 +424,7 @@
 
 (def min6
   "A minor sixth chord."
-  {:chord/interval   [{:chord/degree   "3",
-                       :chord/modifier :chord/flat,
-                       :rdf/type       [:chord/ScaleInterval
-                                        :chord/Interval
-                                        {:owl/unionOf [:chord/Note
-                                                       :chord/ScaleInterval],
-                                         :rdf/type    :owl/Class}
-                                        :rdfs/Resource]}
-                      {:chord/degree "5",
+  {:chord/interval   [{:chord/degree "6",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
@@ -440,10 +432,18 @@
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "6",
+                      {:chord/degree "5",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
-                                      :rdfs/Resource]}],
+                                      :rdfs/Resource]}
+                      {:chord/degree   "3",
+                       :chord/modifier :chord/flat,
+                       :rdf/type       [:chord/ScaleInterval
+                                        :chord/Interval
+                                        {:owl/unionOf [:chord/Note
+                                                       :chord/ScaleInterval],
+                                         :rdf/type    :owl/Class}
+                                        :rdfs/Resource]}],
    :db/ident         :chord/min6,
    :rdf/type         [:chord/Chord :rdfs/Resource],
    :rdfs/comment     "A minor sixth chord.",
@@ -487,15 +487,11 @@
 
 (def min9
   "A minor ninth chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree "5",
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
-                       :rdf/type     [:chord/ScaleInterval
-                                      :chord/Interval
-                                      :rdfs/Resource]}
-                      {:chord/degree   "7",
+                      {:chord/degree   "3",
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -507,7 +503,11 @@
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree "1",
+                       :rdf/type     [:chord/ScaleInterval
+                                      :chord/Interval
+                                      :rdfs/Resource]}
+                      {:chord/degree   "7",
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -725,225 +725,3 @@
    :rdfs/label "without_interval",
    :rdfs/range :chord/ScaleInterval,
    :rdfs/subPropertyOf :chord/without_interval})
-
-(def ^{:private true} Event
-  {:db/ident        :event/Event,
-   :rdf/type        :rdfs/Class,
-   :rdfs/subClassOf :event/Event})
-
-(def ^{:private true} A
-  "A"
-  {:db/ident         :note/A,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "A"})
-
-(def ^{:private true} Ab
-  "Ab"
-  {:chord/modifier   :chord/flat,
-   :chord/natural    :note/A,
-   :db/ident         :note/Ab,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "Ab"})
-
-(def ^{:private true} As
-  "A#"
-  {:chord/modifier   :chord/sharp,
-   :chord/natural    :note/A,
-   :db/ident         :note/As,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "A#"})
-
-(def ^{:private true} B
-  "B"
-  {:db/ident         :note/B,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "B"})
-
-(def ^{:private true} Bb
-  "Bb"
-  {:chord/modifier   :chord/flat,
-   :chord/natural    :note/B,
-   :db/ident         :note/Bb,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "Bb"})
-
-(def ^{:private true} Bs
-  "B#"
-  {:chord/modifier   :chord/sharp,
-   :chord/natural    :note/B,
-   :db/ident         :note/Bs,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "B#"})
-
-(def ^{:private true} C
-  "C"
-  {:db/ident         :note/C,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "C"})
-
-(def ^{:private true} Cb
-  "Cb"
-  {:chord/modifier   :chord/flat,
-   :chord/natural    :note/C,
-   :db/ident         :note/Cb,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "Cb"})
-
-(def ^{:private true} Cs
-  "C#"
-  {:chord/modifier   :chord/sharp,
-   :chord/natural    :note/C,
-   :db/ident         :note/Cs,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "C#"})
-
-(def ^{:private true} D
-  "D"
-  {:db/ident         :note/D,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "D"})
-
-(def ^{:private true} Db
-  "Db"
-  {:chord/modifier   :chord/flat,
-   :chord/natural    :note/D,
-   :db/ident         :note/Db,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "Db"})
-
-(def ^{:private true} Ds
-  "D#"
-  {:chord/modifier   :chord/sharp,
-   :chord/natural    :note/D,
-   :db/ident         :note/Ds,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "D#"})
-
-(def ^{:private true} E
-  "E"
-  {:db/ident         :note/E,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "E"})
-
-(def ^{:private true} Eb
-  "Eb"
-  {:chord/modifier   :chord/flat,
-   :chord/natural    :note/E,
-   :db/ident         :note/Eb,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "Eb"})
-
-(def ^{:private true} Es
-  "E#"
-  {:chord/modifier   :chord/sharp,
-   :chord/natural    :note/E,
-   :db/ident         :note/Es,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "E#"})
-
-(def ^{:private true} F
-  "F"
-  {:db/ident         :note/F,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "F"})
-
-(def ^{:private true} Fb
-  "Fb"
-  {:chord/modifier   :chord/flat,
-   :chord/natural    :note/F,
-   :db/ident         :note/Fb,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "Fb"})
-
-(def ^{:private true} Fs
-  "F#"
-  {:chord/modifier   :chord/sharp,
-   :chord/natural    :note/F,
-   :db/ident         :note/Fs,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "F#"})
-
-(def ^{:private true} G
-  "G"
-  {:db/ident         :note/G,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "G"})
-
-(def ^{:private true} Gb
-  "Gb"
-  {:chord/modifier   :chord/flat,
-   :chord/natural    :note/G,
-   :db/ident         :note/Gb,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "Gb"})
-
-(def ^{:private true} Gs
-  "G#"
-  {:chord/modifier   :chord/sharp,
-   :chord/natural    :note/G,
-   :db/ident         :note/Gs,
-   :rdf/type         [:chord/Note
-                      {:owl/unionOf [:chord/Note :chord/ScaleInterval],
-                       :rdf/type    :owl/Class}
-                      :rdfs/Resource],
-   :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
-   :rdfs/label       "G#"})

@@ -1,8 +1,8 @@
 {:deps
  {io.github.aamedina/rdf
-  {:git/sha "0043ea795126764bca0ac7d446d96433f0d4c0d9"}
+  {:git/sha "2434778c8a83e895d187ffc2d30b93fcbccf0727"}
   io.github.aamedina/punk.qudt
-  {:git/sha "0b37da024b254334b1b48dc574e1556bbfae45a9"}}
+  {:git/sha "b87eac7c851ed3d870e6b125671187a5294dde6b"}}
  :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases
  {:dev

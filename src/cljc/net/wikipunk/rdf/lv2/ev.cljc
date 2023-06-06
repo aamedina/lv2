@@ -105,8 +105,3 @@
    :rdfs/label         "supports time stamp type",
    :rdfs/range         :rdfs/Class,
    :rdfs/subPropertyOf :lv2.ev/supportsTimeStamp})
-
-(def ^{:private true} Port
-  {:db/ident        :lv2/Port,
-   :rdf/type        :rdfs/Class,
-   :rdfs/subClassOf :lv2/Port})
