@@ -787,7 +787,7 @@
    :rdf/type [:rdf/Property :owl/ObjectProperty],
    :rdfs/comment
    "\n\t\tAssociates a segment classified as holding speech content to a FOAF\n\t\tprofile (maybe holding information about genre, recognized speaker URI, etc.)\n\t\t",
-   :rdfs/domain :af/PersonSegment,
+   :rdfs/domain :af/Segment,
    :rdfs/label "person",
    :rdfs/range :foaf/Person,
    :rdfs/subPropertyOf :af/person,
