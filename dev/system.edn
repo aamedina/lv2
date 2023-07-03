@@ -1,9 +1,8 @@
 {:vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
-          :sc/refs      [:qudt :lv2]
+          :sc/refs      [:lv2]
           :boot         [net.wikipunk.lv2.boot]
           :config       {:xtdb.lucene/lucene-store
                          {:db-dir ".vocab/lucene"}}}
- :qudt   {:sc/create-fn net.wikipunk.qudt/map->QUDT}
  :lv2    {:sc/create-fn net.wikipunk.lv2/map->LV2}
  :client {:sc/create-fn datomic.client.api/client
           :server-type  :dev-local

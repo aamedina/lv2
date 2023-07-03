@@ -22,7 +22,7 @@
 (def A
   "A"
   {:db/ident         :note/A,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
+   :rdf/type         [:chord/Natural :chord/Note :rdfs/Resource],
    :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
    :rdfs/label       "A"})
 
@@ -53,7 +53,7 @@
 (def B
   "B"
   {:db/ident         :note/B,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
+   :rdf/type         [:chord/Natural :chord/Note :rdfs/Resource],
    :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
    :rdfs/label       "B"})
 
@@ -84,7 +84,7 @@
 (def C
   "C"
   {:db/ident         :note/C,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
+   :rdf/type         [:chord/Natural :chord/Note :rdfs/Resource],
    :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
    :rdfs/label       "C"})
 
@@ -115,7 +115,7 @@
 (def D
   "D"
   {:db/ident         :note/D,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
+   :rdf/type         [:chord/Natural :chord/Note :rdfs/Resource],
    :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
    :rdfs/label       "D"})
 
@@ -146,7 +146,7 @@
 (def E
   "E"
   {:db/ident         :note/E,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
+   :rdf/type         [:chord/Natural :chord/Note :rdfs/Resource],
    :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
    :rdfs/label       "E"})
 
@@ -177,7 +177,7 @@
 (def F
   "F"
   {:db/ident         :note/F,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
+   :rdf/type         [:chord/Natural :chord/Note :rdfs/Resource],
    :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
    :rdfs/label       "F"})
 
@@ -208,7 +208,7 @@
 (def G
   "G"
   {:db/ident         :note/G,
-   :rdf/type         [:chord/Natural :rdfs/Resource :chord/Note],
+   :rdf/type         [:chord/Natural :chord/Note :rdfs/Resource],
    :rdfs/isDefinedBy "http://purl.org/ontology/chord/",
    :rdfs/label       "G"})
 

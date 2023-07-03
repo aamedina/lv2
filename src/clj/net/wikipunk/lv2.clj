@@ -1,7 +1,6 @@
 (ns net.wikipunk.lv2
   (:require
    [com.stuartsierra.component :as com]
-   [net.wikipunk.qudt :as qudt]
    [net.wikipunk.rdf :as rdf]
    [net.wikipunk.lv2.boot]
    [net.wikipunk.rdf.event]
@@ -19,6 +18,7 @@
    [net.wikipunk.rdf.rel]
    [net.wikipunk.rdf.lv2]
    [net.wikipunk.rdf.tl]
+   [net.wikipunk.rdf.frbr]
    [net.wikipunk.rdf.lv2.atom]
    [net.wikipunk.rdf.lv2.bufsz]
    [net.wikipunk.rdf.lv2.da]

@@ -1,10 +1,7 @@
 {:deps
  {io.github.aamedina/rdf
-  {:sha     "4be87367520b88c61939e6788694366ea2a32988"
-   :git/url "https://github.com/aamedina/rdf.git"}
-  io.github.aamedina/punk.qudt
-  {:sha     "7e3c796fdff5c88a9df6ce50f0b4ed19f20c6660"
-   :git/url "https://github.com/aamedina/punk.qudt.git"}}
+  {:sha     "5d290d40fd2720f0decbe6ea4ed35fdf9678d83f"
+   :git/url "https://github.com/aamedina/rdf.git"}}
  :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases
  {:dev
@@ -12,7 +9,7 @@
    {com.datomic/dev-local
     {:mvn/version "1.0.243"}
     io.github.aamedina/punk.db
-    {:sha     "2303f5c52c7d290eb2d99ee75476e621ba44226b"
+    {:sha     "a14acb15e7880d3dd9bbc148112614c413194f69"
      :git/url "https://github.com/aamedina/punk.db.git"}
     com.walmartlabs/schematic
     {:mvn/version "1.3.0"}

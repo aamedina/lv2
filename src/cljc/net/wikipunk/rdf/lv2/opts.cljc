@@ -23,7 +23,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A value for a static option passed to an instance.",
    :rdfs/label      "Option",
-   :rdfs/subClassOf [:rdfs/Resource :rdf/Property :lv2.opts/Option]})
+   :rdfs/subClassOf [:rdfs/Resource :rdf/Property]})
 
 (def interface
   "An interface for dynamically setting and getting options."
@@ -41,18 +41,16 @@
 
 (def requiredOption
   "An option required by the instance to function at all."
-  {:db/ident           :lv2.opts/requiredOption,
-   :rdf/type           [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment       "An option required by the instance to function at all.",
-   :rdfs/label         "required option",
-   :rdfs/range         :rdf/Property,
-   :rdfs/subPropertyOf :lv2.opts/requiredOption})
+  {:db/ident     :lv2.opts/requiredOption,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "An option required by the instance to function at all.",
+   :rdfs/label   "required option",
+   :rdfs/range   :rdf/Property})
 
 (def supportedOption
   "An option supported or by the instance."
-  {:db/ident           :lv2.opts/supportedOption,
-   :rdf/type           [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment       "An option supported or by the instance.",
-   :rdfs/label         "supported option",
-   :rdfs/range         :rdf/Property,
-   :rdfs/subPropertyOf :lv2.opts/supportedOption})
+  {:db/ident     :lv2.opts/supportedOption,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "An option supported or by the instance.",
+   :rdfs/label   "supported option",
+   :rdfs/range   :rdf/Property})

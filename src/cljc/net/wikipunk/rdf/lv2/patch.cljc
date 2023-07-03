@@ -23,10 +23,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "An acknowledgement that a request was successful.",
    :rdfs/label      "Ack",
-   :rdfs/subClassOf [:lv2.patch/Response
-                     :lv2.patch/Ack
-                     :rdfs/Resource
-                     :lv2.patch/Message]})
+   :rdfs/subClassOf [:lv2.patch/Response :rdfs/Resource :lv2.patch/Message]})
 
 (def Copy
   "A request to copy the patch:subject to the patch:destination."
@@ -42,7 +39,6 @@
                       :owl/onProperty     :lv2.patch/subject,
                       :rdf/type           :owl/Restriction}
                      :lv2.patch/Request
-                     :lv2.patch/Copy
                      :rdfs/Resource
                      :lv2.patch/Message]})
 
@@ -52,10 +48,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Request that the patch:subject or subjects be deleted.",
    :rdfs/label      "Delete",
-   :rdfs/subClassOf [:rdfs/Resource
-                     :lv2.patch/Request
-                     :lv2.patch/Delete
-                     :lv2.patch/Message]})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.patch/Request :lv2.patch/Message]})
 
 (def ErrorClass
   "A response indicating an error processing a request."
@@ -63,10 +56,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A response indicating an error processing a request.",
    :rdfs/label      "Error",
-   :rdfs/subClassOf [:lv2.patch/Response
-                     :lv2.patch/Error
-                     :rdfs/Resource
-                     :lv2.patch/Message]})
+   :rdfs/subClassOf [:lv2.patch/Response :rdfs/Resource :lv2.patch/Message]})
 
 (def Get
   "A request for a description of the patch:subject."
@@ -74,10 +64,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A request for a description of the patch:subject.",
    :rdfs/label      "Get",
-   :rdfs/subClassOf [:rdfs/Resource
-                     :lv2.patch/Request
-                     :lv2.patch/Get
-                     :lv2.patch/Message]})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.patch/Request :lv2.patch/Message]})
 
 (def Insert
   "A request to insert a patch:body into the patch:subject."
@@ -89,7 +76,6 @@
                       :owl/onProperty  :lv2.patch/subject,
                       :rdf/type        :owl/Restriction}
                      :lv2.patch/Request
-                     :lv2.patch/Insert
                      :rdfs/Resource
                      :lv2.patch/Message]})
 
@@ -99,7 +85,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A patch message.",
    :rdfs/label      "Patch Message",
-   :rdfs/subClassOf [:rdfs/Resource :lv2.patch/Message]})
+   :rdfs/subClassOf :rdfs/Resource})
 
 (def Move
   "A request to move the patch:subject to the patch:destination."
@@ -116,7 +102,6 @@
                       :owl/onProperty  :lv2.patch/subject,
                       :rdf/type        :owl/Restriction}
                      :lv2.patch/Request
-                     :lv2.patch/Move
                      :lv2.patch/Message]})
 
 (def Patch
@@ -136,7 +121,6 @@
                       :owl/onProperty     :lv2.patch/subject,
                       :rdf/type           :owl/Restriction}
                      :lv2.patch/Request
-                     :lv2.patch/Patch
                      :rdfs/Resource
                      :lv2.patch/Message]})
 
@@ -151,7 +135,6 @@
                       :owl/onProperty  :lv2.patch/subject,
                       :rdf/type        :owl/Restriction}
                      :lv2.patch/Request
-                     :lv2.patch/Put
                      :lv2.patch/Message]})
 
 (def Request
@@ -160,7 +143,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A patch request message.",
    :rdfs/label      "Request",
-   :rdfs/subClassOf [:lv2.patch/Message :lv2.patch/Request :rdfs/Resource]})
+   :rdfs/subClassOf [:lv2.patch/Message :rdfs/Resource]})
 
 (def Response
   "A response to a patch:Request."
@@ -168,7 +151,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A response to a patch:Request.",
    :rdfs/label      "Response",
-   :rdfs/subClassOf [:rdfs/Resource :lv2.patch/Message :lv2.patch/Response]})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.patch/Message]})
 
 (def Set
   "A compact request to set a property to a value."
@@ -183,137 +166,110 @@
                       :owl/onProperty  :lv2.patch/property,
                       :rdf/type        :owl/Restriction}
                      :lv2.patch/Request
-                     :lv2.patch/Set
                      :rdfs/Resource
                      :lv2.patch/Message]})
 
 (def accept
   "An accepted type for a response."
-  {:db/ident           :lv2.patch/accept,
-   :rdf/type           [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment       "An accepted type for a response.",
-   :rdfs/domain        :lv2.patch/Request,
-   :rdfs/label         "accept",
-   :rdfs/range         :rdfs/Class,
-   :rdfs/subPropertyOf :lv2.patch/accept})
+  {:db/ident     :lv2.patch/accept,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "An accepted type for a response.",
+   :rdfs/domain  :lv2.patch/Request,
+   :rdfs/label   "accept",
+   :rdfs/range   :rdfs/Class})
 
 (def add
   "The properties to add to the subject."
-  {:db/ident           :lv2.patch/add,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/ObjectProperty
-                        :rdf/Property],
-   :rdfs/comment       "The properties to add to the subject.",
-   :rdfs/domain        :lv2.patch/Patch,
-   :rdfs/label         "add",
-   :rdfs/range         :rdfs/Resource,
-   :rdfs/subPropertyOf :lv2.patch/add})
+  {:db/ident     :lv2.patch/add,
+   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The properties to add to the subject.",
+   :rdfs/domain  :lv2.patch/Patch,
+   :rdfs/label   "add",
+   :rdfs/range   :rdfs/Resource})
 
 (def body
   "The body of a message."
-  {:db/ident           :lv2.patch/body,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/ObjectProperty
-                        :rdf/Property],
-   :rdfs/comment       "The body of a message.",
-   :rdfs/domain        :lv2.patch/Message,
-   :rdfs/label         "body",
-   :rdfs/subPropertyOf :lv2.patch/body})
+  {:db/ident     :lv2.patch/body,
+   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The body of a message.",
+   :rdfs/domain  :lv2.patch/Message,
+   :rdfs/label   "body"})
 
 (def context
   "The context of properties in this message."
-  {:db/ident           :lv2.patch/context,
-   :rdf/type           [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment       "The context of properties in this message.",
-   :rdfs/domain        :lv2.patch/Message,
-   :rdfs/label         "context",
-   :rdfs/subPropertyOf :lv2.patch/context})
+  {:db/ident     :lv2.patch/context,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The context of properties in this message.",
+   :rdfs/domain  :lv2.patch/Message,
+   :rdfs/label   "context"})
 
 (def destination
   "The destination to move the patch:subject to."
-  {:db/ident           :lv2.patch/destination,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/ObjectProperty
-                        :rdf/Property],
-   :rdfs/comment       "The destination to move the patch:subject to.",
-   :rdfs/domain        :lv2.patch/Message,
-   :rdfs/label         "destination",
-   :rdfs/subPropertyOf :lv2.patch/destination})
+  {:db/ident     :lv2.patch/destination,
+   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The destination to move the patch:subject to.",
+   :rdfs/domain  :lv2.patch/Message,
+   :rdfs/label   "destination"})
 
 (def property
   "The property for a patch:Set or patch:Get message."
-  {:db/ident           :lv2.patch/property,
-   :rdf/type           [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment       "The property for a patch:Set or patch:Get message.",
-   :rdfs/domain        :lv2.patch/Message,
-   :rdfs/label         "property",
-   :rdfs/range         :rdf/Property,
-   :rdfs/subPropertyOf :lv2.patch/property})
+  {:db/ident     :lv2.patch/property,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The property for a patch:Set or patch:Get message.",
+   :rdfs/domain  :lv2.patch/Message,
+   :rdfs/label   "property",
+   :rdfs/range   :rdf/Property})
 
 (def readable
   "A property that can be read with a patch:Get message."
-  {:db/ident           :lv2.patch/readable,
-   :rdf/type           [:owl/ObjectProperty :rdf/Property],
-   :rdfs/comment       "A property that can be read with a patch:Get message.",
-   :rdfs/label         "readable",
-   :rdfs/range         :rdf/Property,
-   :rdfs/subPropertyOf :lv2.patch/readable})
+  {:db/ident     :lv2.patch/readable,
+   :rdf/type     [:owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "A property that can be read with a patch:Get message.",
+   :rdfs/label   "readable",
+   :rdfs/range   :rdf/Property})
 
 (def remove
   "The properties to remove from the subject."
-  {:db/ident           :lv2.patch/remove,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/ObjectProperty
-                        :rdf/Property],
-   :rdfs/comment       "The properties to remove from the subject.",
-   :rdfs/domain        :lv2.patch/Patch,
-   :rdfs/label         "remove",
-   :rdfs/range         :rdfs/Resource,
-   :rdfs/subPropertyOf :lv2.patch/remove})
+  {:db/ident     :lv2.patch/remove,
+   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The properties to remove from the subject.",
+   :rdfs/domain  :lv2.patch/Patch,
+   :rdfs/label   "remove",
+   :rdfs/range   :rdfs/Resource})
 
 (def request
   "The request this is a response to."
-  {:db/ident           :lv2.patch/request,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/ObjectProperty
-                        :rdf/Property],
-   :rdfs/comment       "The request this is a response to.",
-   :rdfs/domain        :lv2.patch/Response,
-   :rdfs/label         "request",
-   :rdfs/range         :lv2.patch/Request,
-   :rdfs/subPropertyOf :lv2.patch/request})
+  {:db/ident     :lv2.patch/request,
+   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The request this is a response to.",
+   :rdfs/domain  :lv2.patch/Response,
+   :rdfs/label   "request",
+   :rdfs/range   :lv2.patch/Request})
 
 (def sequenceNumber
   "The sequence number of a request or response."
-  {:db/ident           :lv2.patch/sequenceNumber,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "The sequence number of a request or response.",
-   :rdfs/domain        :lv2.patch/Message,
-   :rdfs/label         "sequence number",
-   :rdfs/range         :xsd/int,
-   :rdfs/subPropertyOf :lv2.patch/sequenceNumber})
+  {:db/ident     :lv2.patch/sequenceNumber,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The sequence number of a request or response.",
+   :rdfs/domain  :lv2.patch/Message,
+   :rdfs/label   "sequence number",
+   :rdfs/range   :xsd/int})
 
 (def subject
   "The subject this message applies to."
-  {:db/ident           :lv2.patch/subject,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/ObjectProperty
-                        :rdf/Property],
-   :rdfs/comment       "The subject this message applies to.",
-   :rdfs/domain        :lv2.patch/Message,
-   :rdfs/label         "subject",
-   :rdfs/subPropertyOf :lv2.patch/subject})
+  {:db/ident     :lv2.patch/subject,
+   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "The subject this message applies to.",
+   :rdfs/domain  :lv2.patch/Message,
+   :rdfs/label   "subject"})
 
 (def value
   "The value of a property in a patch:Set message."
-  {:db/ident           :lv2.patch/value,
-   :rdf/type           :rdf/Property,
-   :rdfs/comment       "The value of a property in a patch:Set message.",
-   :rdfs/domain        :lv2.patch/Set,
-   :rdfs/label         "value",
-   :rdfs/subPropertyOf :lv2.patch/value})
+  {:db/ident     :lv2.patch/value,
+   :rdf/type     :rdf/Property,
+   :rdfs/comment "The value of a property in a patch:Set message.",
+   :rdfs/domain  :lv2.patch/Set,
+   :rdfs/label   "value"})
 
 (def wildcard
   "A wildcard that matches any resource."
@@ -329,5 +285,4 @@
    :rdfs/comment
    "A property that can be set with a patch:Set or patch:Patch message.",
    :rdfs/label "writable",
-   :rdfs/range :rdf/Property,
-   :rdfs/subPropertyOf :lv2.patch/writable})
+   :rdfs/range :rdf/Property})

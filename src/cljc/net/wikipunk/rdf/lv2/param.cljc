@@ -30,10 +30,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a compressor.",
    :rdfs/label      "Compressor Controls",
-   :rdfs/subClassOf [:lv2.param/ControlGroup
-                     :lv2.param/CompressorControls
-                     :lv2.pg/Group
-                     :rdfs/Resource]})
+   :rdfs/subClassOf [:lv2.param/ControlGroup :rdfs/Resource :lv2.pg/Group]})
 
 (def ControlGroup
   "A group representing a set of associated controls."
@@ -41,30 +38,27 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "A group representing a set of associated controls.",
    :rdfs/label      "Control Group",
-   :rdfs/subClassOf [:rdfs/Resource :lv2.pg/Group :lv2.param/ControlGroup]})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.pg/Group]})
 
 (def EnvelopeControls
   "Typical controls for a DAHDSR envelope."
   {:db/ident        :lv2.param/EnvelopeControls,
-   :lv2.pg/element  [{:lv2/designation :lv2.param/release,
-                      :lv2/index       5}
+   :lv2.pg/element  [{:lv2/designation :lv2.param/decay,
+                      :lv2/index       3}
                      {:lv2/designation :lv2.param/hold,
                       :lv2/index       2}
                      {:lv2/designation :lv2.param/sustain,
                       :lv2/index       4}
-                     {:lv2/designation :lv2.param/decay,
-                      :lv2/index       3}
-                     {:lv2/designation :lv2.param/delay,
-                      :lv2/index       0}
+                     {:lv2/designation :lv2.param/release,
+                      :lv2/index       5}
                      {:lv2/designation :lv2.param/attack,
-                      :lv2/index       1}],
+                      :lv2/index       1}
+                     {:lv2/designation :lv2.param/delay,
+                      :lv2/index       0}],
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a DAHDSR envelope.",
    :rdfs/label      "Envelope Controls",
-   :rdfs/subClassOf [:lv2.param/ControlGroup
-                     :lv2.param/EnvelopeControls
-                     :lv2.pg/Group
-                     :rdfs/Resource]})
+   :rdfs/subClassOf [:lv2.param/ControlGroup :rdfs/Resource :lv2.pg/Group]})
 
 (def FilterControls
   "Typical controls for a filter."
@@ -74,10 +68,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for a filter.",
    :rdfs/label      "Filter Controls",
-   :rdfs/subClassOf [:lv2.param/ControlGroup
-                     :lv2.param/FilterControls
-                     :lv2.pg/Group
-                     :rdfs/Resource]})
+   :rdfs/subClassOf [:lv2.param/ControlGroup :rdfs/Resource :lv2.pg/Group]})
 
 (def OscillatorControls
   "Typical controls for an oscillator."
@@ -89,10 +80,7 @@
    :rdf/type        :rdfs/Class,
    :rdfs/comment    "Typical controls for an oscillator.",
    :rdfs/label      "Oscillator Controls",
-   :rdfs/subClassOf [:lv2.param/ControlGroup
-                     :lv2.param/OscillatorControls
-                     :lv2.pg/Group
-                     :rdfs/Resource]})
+   :rdfs/subClassOf [:lv2.param/ControlGroup :rdfs/Resource :lv2.pg/Group]})
 
 (def amplitude
   "An amplitude as a factor, where 0 is silent and 1 is unity."
@@ -254,8 +242,3 @@
    :rdf/type     :lv2/Parameter,
    :rdfs/comment "The level of the processed component of a signal.",
    :rdfs/label   "wet level"})
-
-(def ^{:private true} Group
-  {:db/ident        :lv2.pg/Group,
-   :rdf/type        :rdfs/Class,
-   :rdfs/subClassOf :lv2.pg/Group})

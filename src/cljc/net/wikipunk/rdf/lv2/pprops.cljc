@@ -40,13 +40,12 @@
 
 (def displayPriority
   "A priority ranking this port in importance to its plugin."
-  {:db/ident :lv2.pprops/displayPriority,
-   :rdf/type [:owl/DatatypeProperty :rdf/Property],
+  {:db/ident     :lv2.pprops/displayPriority,
+   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "A priority ranking this port in importance to its plugin.",
-   :rdfs/domain :lv2/Port,
-   :rdfs/label "display priority",
-   :rdfs/range :xsd/nonNegativeInteger,
-   :rdfs/subPropertyOf :lv2.pprops/displayPriority})
+   :rdfs/domain  :lv2/Port,
+   :rdfs/label   "display priority",
+   :rdfs/range   :xsd/nonNegativeInteger})
 
 (def expensive
   "Input port is expensive to change."
@@ -86,13 +85,12 @@
 
 (def rangeSteps
   "The number of even steps the range should be divided into."
-  {:db/ident :lv2.pprops/rangeSteps,
-   :rdf/type [:owl/DatatypeProperty :rdf/Property],
+  {:db/ident     :lv2.pprops/rangeSteps,
+   :rdf/type     [:owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The number of even steps the range should be divided into.",
-   :rdfs/domain :lv2/Port,
-   :rdfs/label "range steps",
-   :rdfs/range :xsd/nonNegativeInteger,
-   :rdfs/subPropertyOf :lv2.pprops/rangeSteps})
+   :rdfs/domain  :lv2/Port,
+   :rdfs/label   "range steps",
+   :rdfs/range   :xsd/nonNegativeInteger})
 
 (def supportsStrictBounds
   "A feature indicating plugin support for strict port bounds."

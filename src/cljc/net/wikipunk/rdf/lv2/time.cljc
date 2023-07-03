@@ -22,7 +22,7 @@
    :rdf/type [:owl/Class :rdfs/Class],
    :rdfs/comment "A point in time and/or the speed at which time is passing.",
    :rdfs/label "Position",
-   :rdfs/subClassOf [:rdfs/Resource :lv2.time/Position]})
+   :rdfs/subClassOf :rdfs/Resource})
 
 (def Rate
   "The rate of passage of time."
@@ -30,7 +30,7 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "The rate of passage of time.",
    :rdfs/label      "Rate",
-   :rdfs/subClassOf [:lv2.time/Position :lv2.time/Rate :rdfs/Resource]})
+   :rdfs/subClassOf [:lv2.time/Position :rdfs/Resource]})
 
 (def Time
   "A point in time in some unit/dimension."
@@ -38,112 +38,87 @@
    :rdf/type        [:owl/Class :rdfs/Class],
    :rdfs/comment    "A point in time in some unit/dimension.",
    :rdfs/label      "Time",
-   :rdfs/subClassOf [:rdfs/Resource :lv2.time/Position :lv2.time/Time]})
+   :rdfs/subClassOf [:rdfs/Resource :lv2.time/Position]})
 
 (def bar
   "A musical bar or measure."
-  {:db/ident           :lv2.time/bar,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "A musical bar or measure.",
-   :rdfs/domain        :lv2.time/Time,
-   :rdfs/label         "bar",
-   :rdfs/range         :xsd/long,
-   :rdfs/subPropertyOf :lv2.time/bar})
+  {:db/ident     :lv2.time/bar,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "A musical bar or measure.",
+   :rdfs/domain  :lv2.time/Time,
+   :rdfs/label   "bar",
+   :rdfs/range   :xsd/long})
 
 (def barBeat
   "The beat number within the bar, from 0 to time:beatsPerBar."
-  {:db/ident :lv2.time/barBeat,
-   :rdf/type [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+  {:db/ident     :lv2.time/barBeat,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
    :rdfs/comment "The beat number within the bar, from 0 to time:beatsPerBar.",
-   :rdfs/domain :lv2.time/Time,
-   :rdfs/label "beat within bar",
-   :rdfs/range :xsd/float,
-   :rdfs/subPropertyOf :lv2.time/barBeat})
+   :rdfs/domain  :lv2.time/Time,
+   :rdfs/label   "beat within bar",
+   :rdfs/range   :xsd/float})
 
 (def beat
   "The global running beat number."
-  {:db/ident           :lv2.time/beat,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "The global running beat number.",
-   :rdfs/domain        :lv2.time/Time,
-   :rdfs/label         "beat",
-   :rdfs/range         :xsd/double,
-   :rdfs/subPropertyOf :lv2.time/beat})
+  {:db/ident     :lv2.time/beat,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The global running beat number.",
+   :rdfs/domain  :lv2.time/Time,
+   :rdfs/label   "beat",
+   :rdfs/range   :xsd/double})
 
 (def beatUnit
   "The note value that counts as one beat."
-  {:db/ident           :lv2.time/beatUnit,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "The note value that counts as one beat.",
-   :rdfs/domain        :lv2.time/Rate,
-   :rdfs/label         "beat unit",
-   :rdfs/range         :xsd/nonNegativeInteger,
-   :rdfs/subPropertyOf :lv2.time/beatUnit})
+  {:db/ident     :lv2.time/beatUnit,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The note value that counts as one beat.",
+   :rdfs/domain  :lv2.time/Rate,
+   :rdfs/label   "beat unit",
+   :rdfs/range   :xsd/nonNegativeInteger})
 
 (def beatsPerBar
   "The number of beats in one bar."
-  {:db/ident           :lv2.time/beatsPerBar,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "The number of beats in one bar.",
-   :rdfs/domain        :lv2.time/Rate,
-   :rdfs/label         "beats per bar",
-   :rdfs/range         :xsd/float,
-   :rdfs/subPropertyOf :lv2.time/beatsPerBar})
+  {:db/ident     :lv2.time/beatsPerBar,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "The number of beats in one bar.",
+   :rdfs/domain  :lv2.time/Rate,
+   :rdfs/label   "beats per bar",
+   :rdfs/range   :xsd/float})
 
 (def beatsPerMinute
   "Tempo in beats per minute."
-  {:db/ident           :lv2.time/beatsPerMinute,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "Tempo in beats per minute.",
-   :rdfs/domain        :lv2.time/Rate,
-   :rdfs/label         "beats per minute",
-   :rdfs/range         :xsd/float,
-   :rdfs/subPropertyOf :lv2.time/beatsPerMinute})
+  {:db/ident     :lv2.time/beatsPerMinute,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "Tempo in beats per minute.",
+   :rdfs/domain  :lv2.time/Rate,
+   :rdfs/label   "beats per minute",
+   :rdfs/range   :xsd/float})
 
 (def frame
   "A time stamp in audio frames."
-  {:db/ident           :lv2.time/frame,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "A time stamp in audio frames.",
-   :rdfs/domain        :lv2.time/Time,
-   :rdfs/label         "frame",
-   :rdfs/range         :xsd/long,
-   :rdfs/subPropertyOf :lv2.time/frame})
+  {:db/ident     :lv2.time/frame,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "A time stamp in audio frames.",
+   :rdfs/domain  :lv2.time/Time,
+   :rdfs/label   "frame",
+   :rdfs/range   :xsd/long})
 
 (def framesPerSecond
   "Frame rate in frames per second."
-  {:db/ident           :lv2.time/framesPerSecond,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/DatatypeProperty
-                        :rdf/Property],
-   :rdfs/comment       "Frame rate in frames per second.",
-   :rdfs/domain        :lv2.time/Rate,
-   :rdfs/label         "frames per second",
-   :rdfs/range         :xsd/float,
-   :rdfs/subPropertyOf :lv2.time/framesPerSecond})
+  {:db/ident     :lv2.time/framesPerSecond,
+   :rdf/type     [:owl/FunctionalProperty :owl/DatatypeProperty :rdf/Property],
+   :rdfs/comment "Frame rate in frames per second.",
+   :rdfs/domain  :lv2.time/Rate,
+   :rdfs/label   "frames per second",
+   :rdfs/range   :xsd/float})
 
 (def position
   "A musical position."
-  {:db/ident           :lv2.time/position,
-   :rdf/type           [:owl/FunctionalProperty
-                        :owl/ObjectProperty
-                        :rdf/Property],
-   :rdfs/comment       "A musical position.",
-   :rdfs/label         "position",
-   :rdfs/range         :lv2.time/Position,
-   :rdfs/subPropertyOf :lv2.time/position})
+  {:db/ident     :lv2.time/position,
+   :rdf/type     [:owl/FunctionalProperty :owl/ObjectProperty :rdf/Property],
+   :rdfs/comment "A musical position.",
+   :rdfs/label   "position",
+   :rdfs/range   :lv2.time/Position})
 
 (def speed
   "The rate of the progress of time as a fraction of normal speed."
@@ -153,5 +128,4 @@
    "The rate of the progress of time as a fraction of normal speed.",
    :rdfs/domain :lv2.time/Rate,
    :rdfs/label "speed",
-   :rdfs/range :xsd/float,
-   :rdfs/subPropertyOf :lv2.time/speed})
+   :rdfs/range :xsd/float})

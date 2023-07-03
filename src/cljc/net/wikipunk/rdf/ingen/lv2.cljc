@@ -23,68 +23,21 @@
    ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/ingen.ttl"]})
 
 (def MonoEffect_ttl
-  {:db/ident :ingen.lv2/MonoEffect.ttl,
+  {:db/ident      :ingen.lv2/MonoEffect.ttl,
    :lv2/prototype :ingen/GraphPrototype,
-   :rdf/type [:lv2/Plugin :ingen/Graph],
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/MonoEffect.ttl"]})
+   :rdf/type      [:lv2/Plugin :ingen/Graph]})
 
 (def MonoInstrument_ttl
-  {:db/ident :ingen.lv2/MonoInstrument.ttl,
+  {:db/ident      :ingen.lv2/MonoInstrument.ttl,
    :lv2/prototype :ingen/GraphPrototype,
-   :rdf/type [:lv2/Plugin :ingen/Graph],
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/MonoInstrument.ttl"]})
+   :rdf/type      [:lv2/Plugin :ingen/Graph]})
 
 (def StereoEffect_ttl
-  {:db/ident :ingen.lv2/StereoEffect.ttl,
+  {:db/ident      :ingen.lv2/StereoEffect.ttl,
    :lv2/prototype :ingen/GraphPrototype,
-   :rdf/type [:lv2/Plugin :ingen/Graph],
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/StereoEffect.ttl"]})
+   :rdf/type      [:lv2/Plugin :ingen/Graph]})
 
 (def StereoInstrument_ttl
-  {:db/ident :ingen.lv2/StereoInstrument.ttl,
+  {:db/ident      :ingen.lv2/StereoInstrument.ttl,
    :lv2/prototype :ingen/GraphPrototype,
-   :rdf/type [:lv2/Plugin :ingen/Graph],
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/StereoInstrument.ttl"]})
-
-(def ^{:private true} GraphPrototype
-  "Template for all Ingen graphs. Saved Ingen graphs always set this as their lv2:prototype. When Ingen is installed, a bundle is installed which included the Ingen LV2 binary and a description of ingen:GraphPrototype which links to it. This way, Ingen graphs can be loaded by LV2 hosts without including binaries or symbolic links in saved Ingen bundles."
-  {:db/ident :ingen/GraphPrototype,
-   :lv2/binary :ingen.lv2/libingen_lv2.so,
-   :rdf/type :lv2/PluginBase,
-   :rdfs/comment
-   "Template for all Ingen graphs.\n\nSaved Ingen graphs always set this as their lv2:prototype.  When Ingen is\ninstalled, a bundle is installed which included the Ingen LV2 binary and a\ndescription of ingen:GraphPrototype which links to it.  This way, Ingen graphs\ncan be loaded by LV2 hosts without including binaries or symbolic links in\nsaved Ingen bundles.\n"})
-
-(def ^{:private true} GraphUIGtk2
-  "The Ingen patcher interface."
-  {:db/ident      :ingen/GraphUIGtk2,
-   :lv2.ui/binary :ingen.lv2/libingen_gui_lv2.so,
-   :rdf/type      :lv2.ui/GtkUI,
-   :rdfs/comment  "The Ingen patcher interface."})
-
-(def ^{:private true} Controller
-  {:db/ident :ingen.internals/Controller,
-   :rdf/type :ingen/Plugin,
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/internals.ttl"]})
-
-(def ^{:private true} Note
-  {:db/ident :ingen.internals/Note,
-   :rdf/type :ingen/Plugin,
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/internals.ttl"]})
-
-(def ^{:private true} Transport
-  {:db/ident :ingen.internals/Transport,
-   :rdf/type :ingen/Plugin,
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/internals.ttl"]})
-
-(def ^{:private true} Trigger
-  {:db/ident :ingen.internals/Trigger,
-   :rdf/type :ingen/Plugin,
-   :rdfs/seeAlso
-   ["https://gitlab.com/drobilla/ingen/-/raw/master/bundles/ingen.lv2/internals.ttl"]})
+   :rdf/type      [:lv2/Plugin :ingen/Graph]})

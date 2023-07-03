@@ -28,175 +28,174 @@
    :ingen.errors/errorCode 2,
    :ingen.errors/formatString "Invalid index",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/BadIndex]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def BadObjectType
   {:db/ident        :ingen.errors/BadObjectType,
    :ingen.errors/errorCode 3,
    :ingen.errors/formatString "Invalid object type",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/BadObjectType]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def BadRequest
   {:db/ident        :ingen.errors/BadRequest,
    :ingen.errors/errorCode 4,
    :ingen.errors/formatString "Invalid request",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/BadRequest]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def BadURI
   {:db/ident        :ingen.errors/BadURI,
    :ingen.errors/errorCode 5,
    :ingen.errors/formatString "Invalid URI",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/BadURI]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def BadValueType
   {:db/ident        :ingen.errors/BadValueType,
    :ingen.errors/errorCode 6,
    :ingen.errors/formatString "Invalid value type",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/BadValueType]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def ClientNotFound
   {:db/ident        :ingen.errors/ClientNotFound,
    :ingen.errors/errorCode 7,
    :ingen.errors/formatString "Client not found",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/ClientNotFound]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def CreationFailed
   {:db/ident        :ingen.errors/CreationFailed,
    :ingen.errors/errorCode 8,
    :ingen.errors/formatString "Creation failed",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/CreationFailed]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def DirectionMismatch
   {:db/ident        :ingen.errors/DirectionMismatch,
    :ingen.errors/errorCode 9,
    :ingen.errors/formatString "Direction mismatch",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/DirectionMismatch]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def ErrorClass
   "An error"
-  {:db/ident        :ingen.errors/Error,
-   :rdf/type        :owl/Class,
-   :rdfs/label      "An error",
-   :rdfs/subClassOf :ingen.errors/Error})
+  {:db/ident   :ingen.errors/Error,
+   :rdf/type   :owl/Class,
+   :rdfs/label "An error"})
 
 (def Exists
   {:db/ident        :ingen.errors/Exists,
    :ingen.errors/errorCode 10,
    :ingen.errors/formatString "Object exists",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/Exists]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def InternalErrorClass
   {:db/ident        :ingen.errors/InternalError,
    :ingen.errors/errorCode 11,
    :ingen.errors/formatString "Internal error",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/InternalError]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def InvalidParentPath
   {:db/ident        :ingen.errors/InvalidParentPath,
    :ingen.errors/errorCode 12,
    :ingen.errors/formatString "Invalid parent path",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/InvalidParentPath]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def InvalidPoly
   {:db/ident        :ingen.errors/InvalidPoly,
    :ingen.errors/errorCode 13,
    :ingen.errors/formatString "Invalid polyphony",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/InvalidPoly]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def NoSpace
   {:db/ident        :ingen.errors/NoSpace,
    :ingen.errors/errorCode 18,
    :ingen.errors/formatString "Insufficient space",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/NoSpace]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def NotDeletable
   {:db/ident        :ingen.errors/NotDeletable,
    :ingen.errors/errorCode 14,
    :ingen.errors/formatString "Object not deletable",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/NotDeletable]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def NotFound
   {:db/ident        :ingen.errors/NotFound,
    :ingen.errors/errorCode 15,
    :ingen.errors/formatString "Object not found",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/NotFound]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def NotMovable
   {:db/ident        :ingen.errors/NotMovable,
    :ingen.errors/errorCode 16,
    :ingen.errors/formatString "Object not movable",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/NotMovable]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def NotPrepared
   {:db/ident        :ingen.errors/NotPrepared,
    :ingen.errors/errorCode 17,
    :ingen.errors/formatString "Not prepared",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/NotPrepared]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def ParentDiffers
   {:db/ident        :ingen.errors/ParentDiffers,
    :ingen.errors/errorCode 19,
    :ingen.errors/formatString "Parent differs",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/ParentDiffers]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def ParentNotFound
   {:db/ident        :ingen.errors/ParentNotFound,
    :ingen.errors/errorCode 20,
    :ingen.errors/formatString "Parent not found",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/ParentNotFound]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def PluginNotFound
   {:db/ident        :ingen.errors/PluginNotFound,
    :ingen.errors/errorCode 21,
    :ingen.errors/formatString "Plugin not found",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/PluginNotFound]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def PortNotFound
   {:db/ident        :ingen.errors/PortNotFound,
    :ingen.errors/errorCode 22,
    :ingen.errors/formatString "Port not found",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/PortNotFound]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def TypeMismatch
   {:db/ident        :ingen.errors/TypeMismatch,
    :ingen.errors/errorCode 23,
    :ingen.errors/formatString "Type mismatch",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/TypeMismatch]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def UnknownErrorClass
   {:db/ident        :ingen.errors/UnknownError,
    :ingen.errors/errorCode 1,
    :ingen.errors/formatString "Unknown error",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/UnknownError]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def UnknownType
   {:db/ident        :ingen.errors/UnknownType,
    :ingen.errors/errorCode 24,
    :ingen.errors/formatString "Unknown type",
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [:ingen.errors/Error :ingen.errors/UnknownType]})
+   :rdfs/subClassOf :ingen.errors/Error})
 
 (def errorCode
   "The numeric code of an error."

@@ -27,5 +27,4 @@
                       :owl/onProperty :lv2/binary,
                       :rdf/type :owl/Restriction,
                       :rdfs/comment
-                      "A DynManifest MUST have at least one lv2:binary."}
-                     :lv2.dman/DynManifest]})
+                      "A DynManifest MUST have at least one lv2:binary."}]})
