@@ -1,6 +1,7 @@
 (ns net.wikipunk.lv2
   (:require
    [com.stuartsierra.component :as com]
+   [net.wikipunk.punk.db :as db]
    [net.wikipunk.rdf :as rdf]
    [net.wikipunk.lv2.boot]
    [net.wikipunk.rdf.event]
@@ -46,6 +47,16 @@
 (defrecord LV2 []
   com/Lifecycle
   (start [this]
+    (defmethod db/infer-datomic-type :ingen.errors/errorCode [_] :db.type/long)
+    (alter-var-root #'net.wikipunk.rdf.lv2.midi/statusMask assoc
+                    :db/valueType :db.type/long
+                    :db/cardinality :db.cardinality/many)
+    (alter-var-root #'net.wikipunk.rdf.lv2.midi/status assoc
+                    :db/valueType :db.type/long
+                    :db/cardinality :db.cardinality/many)
+    (alter-var-root #'net.wikipunk.rdf.lv2.midi/velocity assoc
+                    :db/valueType :db.type/long
+                    :db/cardinality :db.cardinality/many)
     this)
   (stop [this]
     this))
