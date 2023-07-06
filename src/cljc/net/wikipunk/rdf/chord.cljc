@@ -95,15 +95,15 @@
 
 (def aug
   "An augmented chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "3",
+                      {:chord/degree 3,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "5",
+                      {:chord/degree   5,
                        :chord/modifier :chord/sharp,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -161,11 +161,11 @@
 
 (def dim
   "A diminished chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -173,7 +173,7 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree   "5",
+                      {:chord/degree   5,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -190,11 +190,11 @@
 
 (def dim7
   "A diminished seventh chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -202,7 +202,7 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree   "5",
+                      {:chord/degree   5,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -210,7 +210,7 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree   "7",
+                      {:chord/degree   7,
                        :chord/modifier :chord/doubleflat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -247,11 +247,11 @@
 
 (def hdim7
   "A half-diminished seventh chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -259,7 +259,7 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree   "5",
+                      {:chord/degree   5,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -267,7 +267,7 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree   "7",
+                      {:chord/degree   7,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -293,15 +293,15 @@
 
 (def maj
   "A major chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "3",
+                      {:chord/degree 3,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -314,19 +314,19 @@
 
 (def maj6
   "A major sixth chord."
-  {:chord/interval   [{:chord/degree "5",
+  {:chord/interval   [{:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "1",
+                      {:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "3",
+                      {:chord/degree 3,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "6",
+                      {:chord/degree 6,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -340,19 +340,19 @@
 
 (def maj7
   "A major seventh chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "3",
+                      {:chord/degree 3,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "7",
+                      {:chord/degree 7,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -365,23 +365,23 @@
 
 (def maj9
   "A major ninth chord."
-  {:chord/interval   [{:chord/degree "7",
+  {:chord/interval   [{:chord/degree 7,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "3",
+                      {:chord/degree 3,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "1",
+                      {:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "9",
+                      {:chord/degree 9,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -394,11 +394,11 @@
 
 (def min
   "A minor chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -406,7 +406,7 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -419,7 +419,7 @@
 
 (def min6
   "A minor sixth chord."
-  {:chord/interval   [{:chord/degree   "3",
+  {:chord/interval   [{:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -427,15 +427,15 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree "1",
+                      {:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "6",
+                      {:chord/degree 6,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -449,11 +449,11 @@
 
 (def min7
   "A minor seventh chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -461,11 +461,11 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "7",
+                      {:chord/degree   7,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -482,11 +482,11 @@
 
 (def min9
   "A minor ninth chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "7",
+                      {:chord/degree   7,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -494,15 +494,15 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "9",
+                      {:chord/degree 9,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -519,11 +519,11 @@
 
 (def minmaj7
   "A minor (major 7th) chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "3",
+                      {:chord/degree   3,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -531,11 +531,11 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "7",
+                      {:chord/degree 7,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -569,19 +569,19 @@
 
 (def ninth
   "A ninth chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "3",
+                      {:chord/degree 3,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "7",
+                      {:chord/degree   7,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -589,7 +589,7 @@
                                                        :chord/ScaleInterval],
                                          :rdf/type    :owl/Class}
                                         :rdfs/Resource]}
-                      {:chord/degree "9",
+                      {:chord/degree 9,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -629,19 +629,19 @@
 
 (def seventh
   "A seventh chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "3",
+                      {:chord/degree 3,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree   "7",
+                      {:chord/degree   7,
                        :chord/modifier :chord/flat,
                        :rdf/type       [:chord/ScaleInterval
                                         :chord/Interval
@@ -665,15 +665,15 @@
 
 (def sus2
   "A suspended fourth chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "2",
+                      {:chord/degree 2,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],
@@ -686,15 +686,15 @@
 
 (def sus4
   "A suspended fourth chord."
-  {:chord/interval   [{:chord/degree "1",
+  {:chord/interval   [{:chord/degree 1,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "4",
+                      {:chord/degree 4,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}
-                      {:chord/degree "5",
+                      {:chord/degree 5,
                        :rdf/type     [:chord/ScaleInterval
                                       :chord/Interval
                                       :rdfs/Resource]}],

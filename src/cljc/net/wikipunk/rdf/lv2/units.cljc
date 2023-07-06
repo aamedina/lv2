@@ -125,7 +125,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 10,
+    {:lv2.units/factor 10M,
      :lv2.units/to     :lv2.units/mm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -153,7 +153,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 10,
+    {:lv2.units/factor 10M,
      :lv2.units/to     :lv2.units/mm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -181,7 +181,7 @@
   "A scale coefficient where 1 is unity, or 100 percent."
   {:db/ident :lv2.units/coef,
    :lv2.units/conversion
-   {:lv2.units/factor 100,
+   {:lv2.units/factor 100M,
     :lv2.units/to     :lv2.units/pc,
     :rdf/type         [:lv2.units/Conversion
                        {:owl/cardinality 1,
@@ -321,7 +321,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000,
+    {:lv2.units/factor 1000M,
      :lv2.units/to     :lv2.units/hz,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -340,7 +340,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000,
+    {:lv2.units/factor 1000M,
      :lv2.units/to     :lv2.units/hz,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -368,7 +368,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000000,
+    {:lv2.units/factor 1000000M,
      :lv2.units/to     :lv2.units/mm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -377,7 +377,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 100000,
+    {:lv2.units/factor 100000M,
      :lv2.units/to     :lv2.units/cm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -386,7 +386,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000,
+    {:lv2.units/factor 1000M,
      :lv2.units/to     :lv2.units/m,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -396,7 +396,7 @@
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}],
    :lv2.units/prefixConversion
-   [{:lv2.units/factor 1000000,
+   [{:lv2.units/factor 1000000M,
      :lv2.units/to     :lv2.units/mm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -405,7 +405,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 100000,
+    {:lv2.units/factor 100000M,
      :lv2.units/to     :lv2.units/cm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -414,7 +414,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000,
+    {:lv2.units/factor 1000M,
      :lv2.units/to     :lv2.units/m,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -442,7 +442,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 100,
+    {:lv2.units/factor 100M,
      :lv2.units/to     :lv2.units/cm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -460,7 +460,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000,
+    {:lv2.units/factor 1000M,
      :lv2.units/to     :lv2.units/mm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -479,7 +479,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000,
+    {:lv2.units/factor 1000M,
      :lv2.units/to     :lv2.units/mm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -488,7 +488,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 100,
+    {:lv2.units/factor 100M,
      :lv2.units/to     :lv2.units/cm,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -507,7 +507,7 @@
   "Megahertz (millions of Hertz)."
   {:db/ident :lv2.units/mhz,
    :lv2.units/conversion
-   [{:lv2.units/factor 1000000,
+   [{:lv2.units/factor 1000000M,
      :lv2.units/to     :lv2.units/hz,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -535,7 +535,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000000,
+    {:lv2.units/factor 1000000M,
      :lv2.units/to     :lv2.units/hz,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -582,7 +582,7 @@
   "Minutes (60s of seconds and 60ths of an hour)."
   {:db/ident :lv2.units/min,
    :lv2.units/conversion
-   {:lv2.units/factor 60,
+   {:lv2.units/factor 60M,
     :lv2.units/to     :lv2.units/s,
     :rdf/type         [:lv2.units/Conversion
                        {:owl/cardinality 1,
@@ -704,7 +704,7 @@
   "Octaves, relative musical pitch where +1 octave doubles the frequency."
   {:db/ident :lv2.units/oct,
    :lv2.units/conversion
-   {:lv2.units/factor 12,
+   {:lv2.units/factor 12M,
     :lv2.units/to     :lv2.units/semitone12TET,
     :rdf/type         [:lv2.units/Conversion
                        {:owl/cardinality 1,
@@ -773,7 +773,7 @@
                          :rdfs/comment
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}
-    {:lv2.units/factor 1000,
+    {:lv2.units/factor 1000M,
      :lv2.units/to     :lv2.units/ms,
      :rdf/type         [:lv2.units/Conversion
                         {:owl/cardinality 1,
@@ -783,7 +783,7 @@
                          "A conversion MUST have exactly 1 units:to property."}
                         :rdfs/Resource]}],
    :lv2.units/prefixConversion
-   {:lv2.units/factor 1000,
+   {:lv2.units/factor 1000M,
     :lv2.units/to     :lv2.units/ms,
     :rdf/type         [:lv2.units/Conversion
                        {:owl/cardinality 1,

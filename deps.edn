@@ -1,6 +1,6 @@
 {:deps
  {io.github.aamedina/rdf
-  {:sha     "5d290d40fd2720f0decbe6ea4ed35fdf9678d83f"
+  {:sha     "f49d38094d2bfa7ed3fe0b77f7e36f93c51c670d"
    :git/url "https://github.com/aamedina/rdf.git"}}
  :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases
@@ -9,7 +9,7 @@
    {com.datomic/dev-local
     {:mvn/version "1.0.243"}
     io.github.aamedina/punk.db
-    {:sha     "a14acb15e7880d3dd9bbc148112614c413194f69"
+    {:sha     "092d385306828cdfec0f6a6187f466c974338227"
      :git/url "https://github.com/aamedina/punk.db.git"}
     com.walmartlabs/schematic
     {:mvn/version "1.3.0"}

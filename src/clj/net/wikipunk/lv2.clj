@@ -48,6 +48,8 @@
   com/Lifecycle
   (start [this]
     (defmethod db/infer-datomic-type :ingen.errors/errorCode [_] :db.type/long)
+    (defmethod db/infer-datomic-type :chord/degree [_] :db.type/long)
+    (defmethod db/infer-datomic-type :lv2.units/factor [_] :db.type/bigdec)
     (alter-var-root #'net.wikipunk.rdf.lv2.midi/statusMask assoc
                     :db/valueType :db.type/long
                     :db/cardinality :db.cardinality/many)
@@ -57,6 +59,8 @@
     (alter-var-root #'net.wikipunk.rdf.lv2.midi/velocity assoc
                     :db/valueType :db.type/long
                     :db/cardinality :db.cardinality/many)
+    (rdf/import-from 'net.wikipunk.rdf.ingen.lv2
+                     'net.wikipunk.rdf.ingen)
     this)
   (stop [this]
     this))
